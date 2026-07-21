@@ -7,13 +7,29 @@
 <body>
     <h1>To-Do Lists</h1>
     <form method="POST">
+        <input type="hidden" name="action" value="add_list">
         <input type="text" name="list_name" placeholder="New list name" required>
         <button type="submit">Create List</button>
     </form>
-    <ul>
-        {% for list in lists %}
-            <li>{{ list.name }}</li>
-        {% endfor %}
-    </ul>
+    <hr>
+    {% for list in lists %}
+        <h2>{{ list.name }}</h2>
+        <form method="POST">
+            <input type="hidden" name="action" value="add_task">
+            <input type="hidden" name="list_id" value="{{ list.id }}">
+            <input type="text" name="task_text" placeholder="New task" required>
+            <button type="submit">Add Task</button>
+        </form>
+        <ul>
+            {% for task in list.tasks %}
+                <li style="{{ 'text-decoration: line-through;' if task.completed else '' }}">
+                    <a href="{{ url_for('toggle_task', list_id=list.id, task_id=task.id) }}">
+                        {{ '✔' if task.completed else '☐' }}
+                    </a>
+                    {{ task.text }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
 </body>
 </html>

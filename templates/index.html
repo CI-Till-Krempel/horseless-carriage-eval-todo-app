@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><title>To-Do Lists</title></head>
+<body>
+    <h1>My To-Do Lists</h1>
+    <form action="/add_list" method="POST">
+        <input type="text" name="name" placeholder="New list name" required>
+        <button type="submit">Create List</button>
+    </form>
+    {% for list_id, list_data in lists.items() %}
+        <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
+            <h2>{{ list_data.name }}</h2>
+            <form action="/delete_list/{{ list_id }}" method="POST">
+                <button type="submit">Delete List</button>
+            </form>
+            <ul>
+            {% for task_id, task in list_data.tasks.items() %}
+                <li style="{{ 'text-decoration: line-through;' if task.done else '' }}">
+                    {{ task.text }}
+                    <form action="/toggle_task/{{ list_id }}/{{ task_id }}" method="POST" style="display:inline;">
+                        <button type="submit">{{ 'Undo' if task.done else 'Done' }}</button>
+                    </form>
+                    <form action="/delete_task/{{ list_id }}/{{ task_id }}" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
+            {% endfor %}
+            </ul>
+            <form action="/add_task/{{ list_id }}" method="POST">
+                <input type="text" name="text" placeholder="New task" required>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+    {% endfor %}
+</body>
+</html>

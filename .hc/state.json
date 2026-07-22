@@ -1,0 +1,460 @@
+{
+  "version": "1.0.0",
+  "product_vision": "",
+  "product_goals": [],
+  "product_backlog": [
+    {
+      "id": "EP-0001",
+      "description": "Build the core functionality for managing to-do lists and tasks via a web UI.",
+      "title": "Core To-Do List Management",
+      "type": "Epic"
+    },
+    {
+      "acceptance_criteria": [
+        "Given the user is on the main page, When they enter a list name and click Create List, Then a new to-do list is created and displayed."
+      ],
+      "id": "US-0001",
+      "value_hypothesis": "Users can create separate lists to organize distinct categories of tasks.",
+      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "priority": "P0",
+      "title": "Create To-Do List",
+      "type": "User Story"
+    },
+    {
+      "value_hypothesis": "Users can record specific action items inside their lists.",
+      "priority": "P0",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "title": "Add Task to List",
+      "id": "US-0002",
+      "acceptance_criteria": [
+        "Given a to-do list exists, When the user enters task text and clicks Add Task, Then the task is added to that list."
+      ],
+      "type": "User Story"
+    },
+    {
+      "description": "As a user, I want to mark a task as complete or incomplete so that I can track progress.",
+      "id": "US-0003",
+      "title": "Toggle Task Completion",
+      "priority": "P0",
+      "acceptance_criteria": [
+        "Given a task exists in a list, When the user clicks complete/incomplete toggle, Then the task status updates accordingly."
+      ],
+      "value_hypothesis": "Users can see which tasks are done versus pending.",
+      "type": "User Story"
+    },
+    {
+      "title": "Delete Task",
+      "value_hypothesis": "Users can clean up obsolete or incorrect tasks.",
+      "priority": "P1",
+      "id": "US-0004",
+      "acceptance_criteria": [
+        "Given a task exists in a list, When the user clicks delete on the task, Then the task is removed from the list."
+      ],
+      "description": "As a user, I want to delete a task so that I can remove unwanted items.",
+      "type": "User Story"
+    },
+    {
+      "description": "As a user, I want to delete an entire list and its tasks so that I can remove obsolete lists.",
+      "priority": "P1",
+      "value_hypothesis": "Users can discard whole categories of work when no longer needed.",
+      "title": "Delete Entire List",
+      "id": "US-0005",
+      "acceptance_criteria": [
+        "Given a to-do list exists, When the user clicks delete on the list, Then the entire list and its associated tasks are removed."
+      ],
+      "type": "User Story"
+    },
+    {
+      "id": "US-0006",
+      "acceptance_criteria": [
+        "Given the user has lists and tasks, When they view the main app interface, Then all lists and tasks are shown with completed tasks visually distinguished from incomplete ones."
+      ],
+      "value_hypothesis": "Users get immediate visual feedback on their productivity and current state.",
+      "title": "View Lists and Tasks UI",
+      "description": "As a user, I want to see all my lists and tasks with completed tasks visually distinguished so that I have a clear overview.",
+      "priority": "P0",
+      "type": "User Story"
+    }
+  ],
+  "definition_of_done": [
+    "Code reviewed",
+    "Automated tests passing",
+    "Acceptance criteria met",
+    "No critical security issues",
+    "Docs updated if needed",
+    "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
+    "Actual tokens spent logged via log_story_tokens"
+  ],
+  "sprint_goal": "",
+  "sprint_backlog": [
+    {
+      "acceptance_criteria": [
+        "Given the user is on the main page, When they enter a list name and click Create List, Then a new to-do list is created and displayed."
+      ],
+      "id": "US-0001",
+      "value_hypothesis": "Users can create separate lists to organize distinct categories of tasks.",
+      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "priority": "P0",
+      "title": "Create To-Do List",
+      "type": "User Story",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "requirements.txt",
+        "tests/test_app.py",
+        "README.md"
+      ],
+      "risks_assumptions": [
+        "Assuming single-user local web app with SQLite/in-memory storage meets all product vision and constraints.",
+        "Zero external setup complexity."
+      ],
+      "estimate": 40000,
+      "test_approach": "Write pytest unit/integration tests for Flask routes and data models, ensuring all user stories are covered and tests pass successfully.",
+      "dod_checks": [
+        "Code reviewed",
+        "Automated tests passing",
+        "Acceptance criteria met",
+        "Docs updated"
+      ],
+      "approach": "Build a lightweight Python Flask web app with an in-memory or SQLite database storage mechanism, featuring a clean HTML/CSS web UI supporting to-do list creation, adding tasks, toggling completion, deleting tasks, deleting lists, and viewing lists/tasks."
+    },
+    {
+      "value_hypothesis": "Users can record specific action items inside their lists.",
+      "priority": "P0",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "title": "Add Task to List",
+      "id": "US-0002",
+      "acceptance_criteria": [
+        "Given a to-do list exists, When the user enters task text and clicks Add Task, Then the task is added to that list."
+      ],
+      "type": "User Story",
+      "risks_assumptions": [
+        "Task is associated with a specific list ID."
+      ],
+      "approach": "Implement Add Task functionality within Flask backend and HTML frontend.",
+      "dod_checks": [
+        "Code reviewed",
+        "Automated tests passing",
+        "Acceptance criteria met"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html"
+      ],
+      "test_approach": "Pytest test for adding tasks to a list.",
+      "estimate": 25000
+    },
+    {
+      "description": "As a user, I want to mark a task as complete or incomplete so that I can track progress.",
+      "id": "US-0003",
+      "title": "Toggle Task Completion",
+      "priority": "P0",
+      "acceptance_criteria": [
+        "Given a task exists in a list, When the user clicks complete/incomplete toggle, Then the task status updates accordingly."
+      ],
+      "value_hypothesis": "Users can see which tasks are done versus pending.",
+      "type": "User Story",
+      "test_approach": "Pytest test for toggling task status.",
+      "estimate": 20000,
+      "code_files": [
+        "app.py",
+        "templates/index.html"
+      ],
+      "dod_checks": [
+        "Code reviewed",
+        "Automated tests passing",
+        "Acceptance criteria met"
+      ],
+      "approach": "Implement toggle completion route and UI checkbox/button.",
+      "risks_assumptions": [
+        "Status toggles between completed (true/false or 1/0)."
+      ]
+    },
+    {
+      "title": "Delete Task",
+      "value_hypothesis": "Users can clean up obsolete or incorrect tasks.",
+      "priority": "P1",
+      "id": "US-0004",
+      "acceptance_criteria": [
+        "Given a task exists in a list, When the user clicks delete on the task, Then the task is removed from the list."
+      ],
+      "description": "As a user, I want to delete a task so that I can remove unwanted items.",
+      "type": "User Story",
+      "approach": "Implement delete task route and UI button.",
+      "test_approach": "Pytest test for deleting a task.",
+      "dod_checks": [
+        "Code reviewed",
+        "Automated tests passing",
+        "Acceptance criteria met"
+      ],
+      "estimate": 15000,
+      "code_files": [
+        "app.py",
+        "templates/index.html"
+      ],
+      "risks_assumptions": [
+        "Task is removed from list upon request."
+      ]
+    },
+    {
+      "description": "As a user, I want to delete an entire list and its tasks so that I can remove obsolete lists.",
+      "priority": "P1",
+      "value_hypothesis": "Users can discard whole categories of work when no longer needed.",
+      "title": "Delete Entire List",
+      "id": "US-0005",
+      "acceptance_criteria": [
+        "Given a to-do list exists, When the user clicks delete on the list, Then the entire list and its associated tasks are removed."
+      ],
+      "type": "User Story",
+      "risks_assumptions": [
+        "List and associated tasks are removed cleanly."
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html"
+      ],
+      "approach": "Implement delete list route (cascade delete tasks) and UI button.",
+      "estimate": 15000,
+      "test_approach": "Pytest test for deleting a list and its tasks.",
+      "dod_checks": [
+        "Code reviewed",
+        "Automated tests passing",
+        "Acceptance criteria met"
+      ]
+    },
+    {
+      "id": "US-0006",
+      "acceptance_criteria": [
+        "Given the user has lists and tasks, When they view the main app interface, Then all lists and tasks are shown with completed tasks visually distinguished from incomplete ones."
+      ],
+      "value_hypothesis": "Users get immediate visual feedback on their productivity and current state.",
+      "title": "View Lists and Tasks UI",
+      "description": "As a user, I want to see all my lists and tasks with completed tasks visually distinguished so that I have a clear overview.",
+      "priority": "P0",
+      "type": "User Story",
+      "dod_checks": [
+        "Code reviewed",
+        "Automated tests passing",
+        "Acceptance criteria met"
+      ],
+      "approach": "Style lists and tasks with CSS classes (e.g. strikethrough/muted text for completed tasks) so completed tasks are visually distinct.",
+      "risks_assumptions": [
+        "CSS styling provides clear visual distinction."
+      ],
+      "test_approach": "UI/template test or visual verification.",
+      "code_files": [
+        "templates/index.html",
+        "static/style.css"
+      ],
+      "estimate": 20000
+    }
+  ],
+  "impediment_log": [],
+  "retro_actions": [],
+  "decision_log": [
+    {
+      "title": "Tech Stack Selection for To-Do Web App",
+      "decision": "Adopt Python + Flask + SQLite (or JSON) for backend and a clean HTML/CSS frontend, ensuring zero external setup complexity while meeting all user stories.",
+      "rationale": "Meets product vision, constraints (single-user, no auth, local web app), and enables rapid implementation across 5 sprints.",
+      "owner": "Architect"
+    }
+  ],
+  "sprint_report": "",
+  "budgets": {
+    "total": 13000000,
+    "total_usd": 15,
+    "agents": {}
+  },
+  "token_usage": {
+    "total": 357186,
+    "agents": {
+      "ScrumOrchestrator": 33117,
+      "ProductOwner": 110113,
+      "ScrumMaster": 42984,
+      "Architect": 24314,
+      "DevTeam": 146658
+    }
+  },
+  "story_estimates": {
+    "US-0001": {
+      "estimate": 40000
+    },
+    "US-0002": {
+      "estimate": 25000
+    },
+    "US-0003": {
+      "estimate": 20000
+    },
+    "US-0004": {
+      "estimate": 15000
+    },
+    "US-0005": {
+      "estimate": 15000
+    },
+    "US-0006": {
+      "estimate": 20000
+    }
+  },
+  "sprint_report_kpis": null,
+  "repo": {
+    "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
+    "local_path": "/app/eval-output/clone",
+    "default_branch": "eval/0.1.0-run7"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "\n[SYSTEM CONTEXT: CURRENT SPRINT & BUDGET STATUS]\n- Sprint Goal: Not yet defined\n- Sprint Backlog: 0/0 items completed.\n- Token Usage: 0 / 0 tokens used.\n- USD Budget Limit: $0.00\n- Repository: Not configured (N/A)\n"
+    },
+    {
+      "role": "user",
+      "content": "This is sprint 1 of a fixed 5-sprint evaluation run. You are already fully configured (repo, branch, GitHub auth, and budgets are all pre-set via environment variables) - do not ask me any setup questions.\n\nBefore delegating any work to any specialist agent, you MUST first call init_scrum_state, then call create_litellm_virtual_key exactly these 6 times, using these exact agent_name values (these are the literal internal agent names, not display names - using any other spelling, e.g. with spaces, will not match and that agent will be blocked from running):\n- create_litellm_virtual_key(agent_name=\"ProductOwner\", ...)\n- create_litellm_virtual_key(agent_name=\"ScrumMaster\", ...)\n- create_litellm_virtual_key(agent_name=\"DevTeam\", ...)\n- create_litellm_virtual_key(agent_name=\"QA\", ...)\n- create_litellm_virtual_key(agent_name=\"Architect\", ...)\n- create_litellm_virtual_key(agent_name=\"QualityGuardian\", ...)\n\nEvery specialist agent is hard-blocked in code from making any LLM call at all until a virtual key exists under its exact agent_name - delegating to one before its key exists wastes the delegation entirely, it does not queue or retry. Do this once, up front, then proceed.\n\nThe product vision for this entire evaluation, verbatim, is:\n\n# Fixed Evaluation Scenario: To-Do List Web App\n\n> **Do not edit this file to \"make the eval easier\" or to match whatever the team\n> produced.** Its entire value is being byte-identical across runs, so results are\n> comparable across Horseless Carriage versions over time. If the scenario itself\n> needs to change, that's a deliberate decision with its own commit message\n> explaining why — never a silent drift.\n\nThis is the fixed input fed verbatim to the agent team as the product vision for\nevery automated team-performance evaluation run (see `RELEASE.md` \"Team performance\nevaluation\" and `agents/scrum_team/scripts/run_eval.py`). It is intentionally small\nenough to be fully deliverable within a 5-sprint, small-budget run, while still\nrequiring real design decisions (state persistence, list vs. item modeling,\nbasic UI) that differentiate a good team performance from a mediocre one.\n\n## Product Vision\n\nBuild a simple to-do list web application. A single user should be able to:\n\n1. Create a new to-do list with a name.\n2. Add a task to a list, with a short text description.\n3. Mark a task as complete or incomplete.\n4. Delete a task.\n5. Delete an entire list (and its tasks).\n6. See all their lists and, within a list, all its tasks, with completed tasks\n   visually distinguished from incomplete ones.\n\n## Constraints (deliberately narrow, to keep this deliverable in 5 sprints)\n\n- **Single user, no authentication.** Do not build login/accounts — out of scope.\n- **No persistence requirement beyond the current session/process is assumed** unless\n  the team's own design calls for it — persistence approach (in-memory, file, or a\n  simple embedded DB) is a legitimate design decision for the team to make and\n  justify, not a hidden requirement.\n- **A working web UI is required** — the deliverable is something a person could\n  open in a browser and actually use, not just a backend API with no way to\n  interact with it.\n- **No specific language/framework is mandated.** The team should choose something\n  it can deliver completely and correctly within budget, and should say why.\n\n## Explicitly out of scope (do not let these creep in)\n\n- Multiple users, sharing, or permissions.\n- Due dates, reminders, priorities, tags, or sub-tasks.\n- Mobile app, offline support, or real-time sync.\n- Any deployment/hosting beyond running locally.\n\n## What \"done\" looks like after 5 sprints\n\nA person can clone the repo, follow the README, run the app, and actually create a\nlist, add a few tasks, mark one complete, delete one, and delete a list — end to\nend, without reading any code first.\n\n\nTreat the sprint goal and backlog for this sprint as pre-approved by me (the human) - do not wait for further approval messages, proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) for this sprint's increment. Do not ask me anything else during this sprint - make reasonable decisions yourself and note them as assumptions in the sprint report."
+    },
+    {
+      "role": "system",
+      "content": "\n[SYSTEM CONTEXT: CURRENT SPRINT & BUDGET STATUS]\n- Sprint Goal: Not yet defined\n- Sprint Backlog: 0/0 items completed.\n- Token Usage: 5,118 / 13,000,000 tokens used.\n- USD Budget Limit: $15.00\n- Repository: git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git (N/A)\n"
+    },
+    {
+      "role": "user",
+      "content": "This is sprint 1 of a fixed 5-sprint evaluation run. You are already fully configured (repo, branch, GitHub auth, and budgets are all pre-set via environment variables) - do not ask me any setup questions.\n\nBefore delegating any work to any specialist agent, you MUST first call init_scrum_state, then call create_litellm_virtual_key exactly these 6 times, using these exact agent_name values (these are the literal internal agent names, not display names - using any other spelling, e.g. with spaces, will not match and that agent will be blocked from running):\n- create_litellm_virtual_key(agent_name=\"ProductOwner\", ...)\n- create_litellm_virtual_key(agent_name=\"ScrumMaster\", ...)\n- create_litellm_virtual_key(agent_name=\"DevTeam\", ...)\n- create_litellm_virtual_key(agent_name=\"QA\", ...)\n- create_litellm_virtual_key(agent_name=\"Architect\", ...)\n- create_litellm_virtual_key(agent_name=\"QualityGuardian\", ...)\n\nEvery specialist agent is hard-blocked in code from making any LLM call at all until a virtual key exists under its exact agent_name - delegating to one before its key exists wastes the delegation entirely, it does not queue or retry. Do this once, up front, then proceed.\n\nThe product vision for this entire evaluation, verbatim, is:\n\n# Fixed Evaluation Scenario: To-Do List Web App\n\n> **Do not edit this file to \"make the eval easier\" or to match whatever the team\n> produced.** Its entire value is being byte-identical across runs, so results are\n> comparable across Horseless Carriage versions over time. If the scenario itself\n> needs to change, that's a deliberate decision with its own commit message\n> explaining why — never a silent drift.\n\nThis is the fixed input fed verbatim to the agent team as the product vision for\nevery automated team-performance evaluation run (see `RELEASE.md` \"Team performance\nevaluation\" and `agents/scrum_team/scripts/run_eval.py`). It is intentionally small\nenough to be fully deliverable within a 5-sprint, small-budget run, while still\nrequiring real design decisions (state persistence, list vs. item modeling,\nbasic UI) that differentiate a good team performance from a mediocre one.\n\n## Product Vision\n\nBuild a simple to-do list web application. A single user should be able to:\n\n1. Create a new to-do list with a name.\n2. Add a task to a list, with a short text description.\n3. Mark a task as complete or incomplete.\n4. Delete a task.\n5. Delete an entire list (and its tasks).\n6. See all their lists and, within a list, all its tasks, with completed tasks\n   visually distinguished from incomplete ones.\n\n## Constraints (deliberately narrow, to keep this deliverable in 5 sprints)\n\n- **Single user, no authentication.** Do not build login/accounts — out of scope.\n- **No persistence requirement beyond the current session/process is assumed** unless\n  the team's own design calls for it — persistence approach (in-memory, file, or a\n  simple embedded DB) is a legitimate design decision for the team to make and\n  justify, not a hidden requirement.\n- **A working web UI is required** — the deliverable is something a person could\n  open in a browser and actually use, not just a backend API with no way to\n  interact with it.\n- **No specific language/framework is mandated.** The team should choose something\n  it can deliver completely and correctly within budget, and should say why.\n\n## Explicitly out of scope (do not let these creep in)\n\n- Multiple users, sharing, or permissions.\n- Due dates, reminders, priorities, tags, or sub-tasks.\n- Mobile app, offline support, or real-time sync.\n- Any deployment/hosting beyond running locally.\n\n## What \"done\" looks like after 5 sprints\n\nA person can clone the repo, follow the README, run the app, and actually create a\nlist, add a few tasks, mark one complete, delete one, and delete a list — end to\nend, without reading any code first.\n\n\nTreat the sprint goal and backlog for this sprint as pre-approved by me (the human) - do not wait for further approval messages, proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) for this sprint's increment. Do not ask me anything else during this sprint - make reasonable decisions yourself and note them as assumptions in the sprint report."
+    },
+    {
+      "role": "system",
+      "content": "\n[SYSTEM CONTEXT: CURRENT SPRINT & BUDGET STATUS]\n- Sprint Goal: Not yet defined\n- Sprint Backlog: 0/0 items completed.\n- Token Usage: 11,655 / 13,000,000 tokens used.\n- USD Budget Limit: $15.00\n- Repository: git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git (N/A)\n"
+    },
+    {
+      "role": "user",
+      "content": "This is sprint 1 of a fixed 5-sprint evaluation run. You are already fully configured (repo, branch, GitHub auth, and budgets are all pre-set via environment variables) - do not ask me any setup questions.\n\nBefore delegating any work to any specialist agent, you MUST first call init_scrum_state, then call create_litellm_virtual_key exactly these 6 times, using these exact agent_name values (these are the literal internal agent names, not display names - using any other spelling, e.g. with spaces, will not match and that agent will be blocked from running):\n- create_litellm_virtual_key(agent_name=\"ProductOwner\", ...)\n- create_litellm_virtual_key(agent_name=\"ScrumMaster\", ...)\n- create_litellm_virtual_key(agent_name=\"DevTeam\", ...)\n- create_litellm_virtual_key(agent_name=\"QA\", ...)\n- create_litellm_virtual_key(agent_name=\"Architect\", ...)\n- create_litellm_virtual_key(agent_name=\"QualityGuardian\", ...)\n\nEvery specialist agent is hard-blocked in code from making any LLM call at all until a virtual key exists under its exact agent_name - delegating to one before its key exists wastes the delegation entirely, it does not queue or retry. Do this once, up front, then proceed.\n\nThe product vision for this entire evaluation, verbatim, is:\n\n# Fixed Evaluation Scenario: To-Do List Web App\n\n> **Do not edit this file to \"make the eval easier\" or to match whatever the team\n> produced.** Its entire value is being byte-identical across runs, so results are\n> comparable across Horseless Carriage versions over time. If the scenario itself\n> needs to change, that's a deliberate decision with its own commit message\n> explaining why — never a silent drift.\n\nThis is the fixed input fed verbatim to the agent team as the product vision for\nevery automated team-performance evaluation run (see `RELEASE.md` \"Team performance\nevaluation\" and `agents/scrum_team/scripts/run_eval.py`). It is intentionally small\nenough to be fully deliverable within a 5-sprint, small-budget run, while still\nrequiring real design decisions (state persistence, list vs. item modeling,\nbasic UI) that differentiate a good team performance from a mediocre one.\n\n## Product Vision\n\nBuild a simple to-do list web application. A single user should be able to:\n\n1. Create a new to-do list with a name.\n2. Add a task to a list, with a short text description.\n3. Mark a task as complete or incomplete.\n4. Delete a task.\n5. Delete an entire list (and its tasks).\n6. See all their lists and, within a list, all its tasks, with completed tasks\n   visually distinguished from incomplete ones.\n\n## Constraints (deliberately narrow, to keep this deliverable in 5 sprints)\n\n- **Single user, no authentication.** Do not build login/accounts — out of scope.\n- **No persistence requirement beyond the current session/process is assumed** unless\n  the team's own design calls for it — persistence approach (in-memory, file, or a\n  simple embedded DB) is a legitimate design decision for the team to make and\n  justify, not a hidden requirement.\n- **A working web UI is required** — the deliverable is something a person could\n  open in a browser and actually use, not just a backend API with no way to\n  interact with it.\n- **No specific language/framework is mandated.** The team should choose something\n  it can deliver completely and correctly within budget, and should say why.\n\n## Explicitly out of scope (do not let these creep in)\n\n- Multiple users, sharing, or permissions.\n- Due dates, reminders, priorities, tags, or sub-tasks.\n- Mobile app, offline support, or real-time sync.\n- Any deployment/hosting beyond running locally.\n\n## What \"done\" looks like after 5 sprints\n\nA person can clone the repo, follow the README, run the app, and actually create a\nlist, add a few tasks, mark one complete, delete one, and delete a list — end to\nend, without reading any code first.\n\n\nTreat the sprint goal and backlog for this sprint as pre-approved by me (the human) - do not wait for further approval messages, proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) for this sprint's increment. Do not ask me anything else during this sprint - make reasonable decisions yourself and note them as assumptions in the sprint report."
+    },
+    {
+      "role": "system",
+      "content": "\n[SYSTEM CONTEXT: CURRENT SPRINT & BUDGET STATUS]\n- Sprint Goal: Not yet defined\n- Sprint Backlog: 0/0 items completed.\n- Token Usage: 129,946 / 13,000,000 tokens used.\n- USD Budget Limit: $15.00\n- Repository: git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git (N/A)\n"
+    },
+    {
+      "role": "user",
+      "content": "This is sprint 1 of a fixed 5-sprint evaluation run. You are already fully configured (repo, branch, GitHub auth, and budgets are all pre-set via environment variables) - do not ask me any setup questions.\n\nBefore delegating any work to any specialist agent, you MUST first call init_scrum_state, then call create_litellm_virtual_key exactly these 6 times, using these exact agent_name values (these are the literal internal agent names, not display names - using any other spelling, e.g. with spaces, will not match and that agent will be blocked from running):\n- create_litellm_virtual_key(agent_name=\"ProductOwner\", ...)\n- create_litellm_virtual_key(agent_name=\"ScrumMaster\", ...)\n- create_litellm_virtual_key(agent_name=\"DevTeam\", ...)\n- create_litellm_virtual_key(agent_name=\"QA\", ...)\n- create_litellm_virtual_key(agent_name=\"Architect\", ...)\n- create_litellm_virtual_key(agent_name=\"QualityGuardian\", ...)\n\nEvery specialist agent is hard-blocked in code from making any LLM call at all until a virtual key exists under its exact agent_name - delegating to one before its key exists wastes the delegation entirely, it does not queue or retry. Do this once, up front, then proceed.\n\nThe product vision for this entire evaluation, verbatim, is:\n\n# Fixed Evaluation Scenario: To-Do List Web App\n\n> **Do not edit this file to \"make the eval easier\" or to match whatever the team\n> produced.** Its entire value is being byte-identical across runs, so results are\n> comparable across Horseless Carriage versions over time. If the scenario itself\n> needs to change, that's a deliberate decision with its own commit message\n> explaining why — never a silent drift.\n\nThis is the fixed input fed verbatim to the agent team as the product vision for\nevery automated team-performance evaluation run (see `RELEASE.md` \"Team performance\nevaluation\" and `agents/scrum_team/scripts/run_eval.py`). It is intentionally small\nenough to be fully deliverable within a 5-sprint, small-budget run, while still\nrequiring real design decisions (state persistence, list vs. item modeling,\nbasic UI) that differentiate a good team performance from a mediocre one.\n\n## Product Vision\n\nBuild a simple to-do list web application. A single user should be able to:\n\n1. Create a new to-do list with a name.\n2. Add a task to a list, with a short text description.\n3. Mark a task as complete or incomplete.\n4. Delete a task.\n5. Delete an entire list (and its tasks).\n6. See all their lists and, within a list, all its tasks, with completed tasks\n   visually distinguished from incomplete ones.\n\n## Constraints (deliberately narrow, to keep this deliverable in 5 sprints)\n\n- **Single user, no authentication.** Do not build login/accounts — out of scope.\n- **No persistence requirement beyond the current session/process is assumed** unless\n  the team's own design calls for it — persistence approach (in-memory, file, or a\n  simple embedded DB) is a legitimate design decision for the team to make and\n  justify, not a hidden requirement.\n- **A working web UI is required** — the deliverable is something a person could\n  open in a browser and actually use, not just a backend API with no way to\n  interact with it.\n- **No specific language/framework is mandated.** The team should choose something\n  it can deliver completely and correctly within budget, and should say why.\n\n## Explicitly out of scope (do not let these creep in)\n\n- Multiple users, sharing, or permissions.\n- Due dates, reminders, priorities, tags, or sub-tasks.\n- Mobile app, offline support, or real-time sync.\n- Any deployment/hosting beyond running locally.\n\n## What \"done\" looks like after 5 sprints\n\nA person can clone the repo, follow the README, run the app, and actually create a\nlist, add a few tasks, mark one complete, delete one, and delete a list — end to\nend, without reading any code first.\n\n\nTreat the sprint goal and backlog for this sprint as pre-approved by me (the human) - do not wait for further approval messages, proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) for this sprint's increment. Do not ask me anything else during this sprint - make reasonable decisions yourself and note them as assumptions in the sprint report."
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `list_docs` with parameters: {}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `list_docs` tool returned result: {'status': 'ok', 'files': {'specs': [], 'spec-templates': ['spec-templates/DOR.md', 'spec-templates/ROADMAP.md', 'spec-templates/README.md', 'spec-templates/DOD.md', 'spec-templates/announcements/TEMPLATE-ANNOUNCEMENT.md', 'spec-templates/announcements/README.md', 'spec-templates/workflows/TEMPLATE-AGENT-WORKFLOW.md', 'spec-templates/workflows/README.md', 'spec-templates/requirements/TEMPLATE-PRD.md', 'spec-templates/requirements/README.md', 'spec-templates/requirements/TEMPLATE-SRS.md', 'spec-templates/implementation-plans/TEMPLATE-IMPLEMENTATION-PLAN.md', 'spec-templates/implementation-plans/README.md', 'spec-templates/architecture/TEMPLATE-ADR.md', 'spec-templates/architecture/README.md', 'spec-templates/product-docs/TEMPLATE-USER-GUIDE.md', 'spec-templates/product-docs/README.md', 'spec-templates/stories/TEMPLATE-EPIC.md', 'spec-templates/stories/TEMPLATE-USER-STORY.md', 'spec-templates/stories/README.md']}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_epic` with parameters: {'epic': {'id': 'EP-0001', 'description': 'Build the core functionality for managing to-do lists and tasks via a web UI.', 'title': 'Core To-Do List Management'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_epic` tool returned result: {'status': 'ok', 'updated': False, 'item': {'id': 'EP-0001', 'description': 'Build the core functionality for managing to-do lists and tasks via a web UI.', 'title': 'Core To-Do List Management', 'type': 'Epic'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/EP-0001-Core-To-Do-List-Management.md'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'acceptance_criteria': ['Given the user is on the main page, When they enter a list name and click Create List, Then a new to-do list is created and displayed.'], 'id': 'US-0001', 'value_hypothesis': 'Users can create separate lists to organize distinct categories of tasks.', 'description': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.', 'priority': 'P0', 'title': 'Create To-Do List'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'acceptance_criteria': ['Given the user is on the main page, When they enter a list name and click Create List, Then a new to-do list is created and displayed.'], 'id': 'US-0001', 'value_hypothesis': 'Users can create separate lists to organize distinct categories of tasks.', 'description': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.', 'priority': 'P0', 'title': 'Create To-Do List', 'type': 'User Story'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0001-Create-To-Do-List.md'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'value_hypothesis': 'Users can record specific action items inside their lists.', 'priority': 'P0', 'description': 'As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.', 'title': 'Add Task to List', 'id': 'US-0002', 'acceptance_criteria': ['Given a to-do list exists, When the user enters task text and clicks Add Task, Then the task is added to that list.']}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'value_hypothesis': 'Users can record specific action items inside their lists.', 'priority': 'P0', 'description': 'As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.', 'title': 'Add Task to List', 'id': 'US-0002', 'acceptance_criteria': ['Given a to-do list exists, When the user enters task text and clicks Add Task, Then the task is added to that list.'], 'type': 'User Story'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0002-Add-Task-to-List.md'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'description': 'As a user, I want to mark a task as complete or incomplete so that I can track progress.', 'id': 'US-0003', 'title': 'Toggle Task Completion', 'priority': 'P0', 'acceptance_criteria': ['Given a task exists in a list, When the user clicks complete/incomplete toggle, Then the task status updates accordingly.'], 'value_hypothesis': 'Users can see which tasks are done versus pending.'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'description': 'As a user, I want to mark a task as complete or incomplete so that I can track progress.', 'id': 'US-0003', 'title': 'Toggle Task Completion', 'priority': 'P0', 'acceptance_criteria': ['Given a task exists in a list, When the user clicks complete/incomplete toggle, Then the task status updates accordingly.'], 'value_hypothesis': 'Users can see which tasks are done versus pending.', 'type': 'User Story'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0003-Toggle-Task-Completion.md'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'title': 'Delete Task', 'value_hypothesis': 'Users can clean up obsolete or incorrect tasks.', 'priority': 'P1', 'id': 'US-0004', 'acceptance_criteria': ['Given a task exists in a list, When the user clicks delete on the task, Then the task is removed from the list.'], 'description': 'As a user, I want to delete a task so that I can remove unwanted items.'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'title': 'Delete Task', 'value_hypothesis': 'Users can clean up obsolete or incorrect tasks.', 'priority': 'P1', 'id': 'US-0004', 'acceptance_criteria': ['Given a task exists in a list, When the user clicks delete on the task, Then the task is removed from the list.'], 'description': 'As a user, I want to delete a task so that I can remove unwanted items.', 'type': 'User Story'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0004-Delete-Task.md'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'description': 'As a user, I want to delete an entire list and its tasks so that I can remove obsolete lists.', 'priority': 'P1', 'value_hypothesis': 'Users can discard whole categories of work when no longer needed.', 'title': 'Delete Entire List', 'id': 'US-0005', 'acceptance_criteria': ['Given a to-do list exists, When the user clicks delete on the list, Then the entire list and its associated tasks are removed.']}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'description': 'As a user, I want to delete an entire list and its tasks so that I can remove obsolete lists.', 'priority': 'P1', 'value_hypothesis': 'Users can discard whole categories of work when no longer needed.', 'title': 'Delete Entire List', 'id': 'US-0005', 'acceptance_criteria': ['Given a to-do list exists, When the user clicks delete on the list, Then the entire list and its associated tasks are removed.'], 'type': 'User Story'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0005-Delete-Entire-List.md'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'id': 'US-0006', 'acceptance_criteria': ['Given the user has lists and tasks, When they view the main app interface, Then all lists and tasks are shown with completed tasks visually distinguished from incomplete ones.'], 'value_hypothesis': 'Users get immediate visual feedback on their productivity and current state.', 'title': 'View Lists and Tasks UI', 'description': 'As a user, I want to see all my lists and tasks with completed tasks visually distinguished so that I have a clear overview.', 'priority': 'P0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'id': 'US-0006', 'acceptance_criteria': ['Given the user has lists and tasks, When they view the main app interface, Then all lists and tasks are shown with completed tasks visually distinguished from incomplete ones.'], 'value_hypothesis': 'Users get immediate visual feedback on their productivity and current state.', 'title': 'View Lists and Tasks UI', 'description': 'As a user, I want to see all my lists and tasks with completed tasks visually distinguished so that I have a clear overview.', 'priority': 'P0', 'type': 'User Story'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0006-View-Lists-and-Tasks-UI.md'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `plan_backlog_item` with parameters: {'version': 'v1.0.0', 'priority': 'P0', 'title_or_id': 'US-0001'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `plan_backlog_item` tool returned result: {'status': 'ok', 'updates': [{'type': 'priority', 'result': {'status': 'ok', 'item': {'acceptance_criteria': ['Given the user is on the main page, When they enter a list name and click Create List, Then a new to-do list is created and displayed.'], 'id': 'US-0001', 'value_hypothesis': 'Users can create separate lists to organize distinct categories of tasks.', 'description': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.', 'priority': 'P0', 'title': 'Create To-Do List', 'type': 'User Story'}}}, {'type': 'roadmap', 'result': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}]}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `plan_backlog_item` with parameters: {'version': 'v1.0.0', 'title_or_id': 'US-0002', 'priority': 'P0'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `plan_backlog_item` tool returned result: {'status': 'ok', 'updates': [{'type': 'priority', 'result': {'status': 'ok', 'item': {'value_hypothesis': 'Users can record specific action items inside their lists.', 'priority': 'P0', 'description': 'As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.', 'title': 'Add Task to List', 'id': 'US-0002', 'acceptance_criteria': ['Given a to-do list exists, When the user enters task text and clicks Add Task, Then the task is added to that list.'], 'type': 'User Story'}}}, {'type': 'roadmap', 'result': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}]}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `plan_backlog_item` with parameters: {'title_or_id': 'US-0003', 'version': 'v1.0.0', 'priority': 'P0'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `plan_backlog_item` tool returned result: {'status': 'ok', 'updates': [{'type': 'priority', 'result': {'status': 'ok', 'item': {'description': 'As a user, I want to mark a task as complete or incomplete so that I can track progress.', 'id': 'US-0003', 'title': 'Toggle Task Completion', 'priority': 'P0', 'acceptance_criteria': ['Given a task exists in a list, When the user clicks complete/incomplete toggle, Then the task status updates accordingly.'], 'value_hypothesis': 'Users can see which tasks are done versus pending.', 'type': 'User Story'}}}, {'type': 'roadmap', 'result': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}]}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `plan_backlog_item` with parameters: {'version': 'v1.0.0', 'title_or_id': 'US-0004', 'priority': 'P1'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `plan_backlog_item` tool returned result: {'status': 'ok', 'updates': [{'type': 'priority', 'result': {'status': 'ok', 'item': {'title': 'Delete Task', 'value_hypothesis': 'Users can clean up obsolete or incorrect tasks.', 'priority': 'P1', 'id': 'US-0004', 'acceptance_criteria': ['Given a task exists in a list, When the user clicks delete on the task, Then the task is removed from the list.'], 'description': 'As a user, I want to delete a task so that I can remove unwanted items.', 'type': 'User Story'}}}, {'type': 'roadmap', 'result': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}]}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `plan_backlog_item` with parameters: {'title_or_id': 'US-0005', 'priority': 'P1', 'version': 'v1.0.0'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `plan_backlog_item` tool returned result: {'status': 'ok', 'updates': [{'type': 'priority', 'result': {'status': 'ok', 'item': {'description': 'As a user, I want to delete an entire list and its tasks so that I can remove obsolete lists.', 'priority': 'P1', 'value_hypothesis': 'Users can discard whole categories of work when no longer needed.', 'title': 'Delete Entire List', 'id': 'US-0005', 'acceptance_criteria': ['Given a to-do list exists, When the user clicks delete on the list, Then the entire list and its associated tasks are removed.'], 'type': 'User Story'}}}, {'type': 'roadmap', 'result': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}]}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `plan_backlog_item` with parameters: {'title_or_id': 'US-0006', 'version': 'v1.0.0', 'priority': 'P0'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `plan_backlog_item` tool returned result: {'status': 'ok', 'updates': [{'type': 'priority', 'result': {'status': 'ok', 'item': {'id': 'US-0006', 'acceptance_criteria': ['Given the user has lists and tasks, When they view the main app interface, Then all lists and tasks are shown with completed tasks visually distinguished from incomplete ones.'], 'value_hypothesis': 'Users get immediate visual feedback on their productivity and current state.', 'title': 'View Lists and Tasks UI', 'description': 'As a user, I want to see all my lists and tasks with completed tasks visually distinguished so that I have a clear overview.', 'priority': 'P0', 'type': 'User Story'}}}, {'type': 'roadmap', 'result': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}]}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `transfer_to_agent` with parameters: {'agent_name': 'ScrumOrchestrator'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `transfer_to_agent` tool returned result: {'result': None}"
+    }
+  ],
+  "transcript": [],
+  "hc_version": "0.1.0"
+}

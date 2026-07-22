@@ -9,7 +9,6 @@ def client():
     if os.path.exists(test_db):
         os.remove(test_db)
     
-    # Patch DB_PATH in app module
     import app as app_module
     app_module.DB_PATH = test_db
     app_module.init_db(test_db)
@@ -30,7 +29,7 @@ def test_create_list(client):
     assert response.status_code == 200
     assert b'Work' in response.data
 
-def test_add_and_toggle_and_delete_task(client):
+def test_add_edit_toggle_delete_task(client):
     client.post('/lists', data={'name': 'Groceries'}, follow_redirects=True)
     
     conn = get_db()
@@ -38,6 +37,7 @@ def test_add_and_toggle_and_delete_task(client):
     list_id = lst['id']
     conn.close()
 
+    # Add task
     response = client.post(f'/lists/{list_id}/tasks', data={'text': 'Buy milk'}, follow_redirects=True)
     assert response.status_code == 200
     assert b'Buy milk' in response.data
@@ -47,6 +47,12 @@ def test_add_and_toggle_and_delete_task(client):
     task_id = task['id']
     conn.close()
 
+    # Edit task
+    response = client.post(f'/tasks/{task_id}/edit', data={'text': 'Buy organic milk'}, follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Buy organic milk' in response.data
+
+    # Toggle complete
     response = client.post(f'/tasks/{task_id}/toggle', follow_redirects=True)
     assert response.status_code == 200
     
@@ -55,6 +61,16 @@ def test_add_and_toggle_and_delete_task(client):
     assert task['completed'] == 1
     conn.close()
 
+    # Filter tasks
+    response = client.get('/?filter=active')
+    assert response.status_code == 200
+    assert b'Buy organic milk' not in response.data
+
+    response = client.get('/?filter=completed')
+    assert response.status_code == 200
+    assert b'Buy organic milk' in response.data
+
+    # Delete task
     response = client.post(f'/tasks/{task_id}/delete', follow_redirects=True)
     assert response.status_code == 200
     

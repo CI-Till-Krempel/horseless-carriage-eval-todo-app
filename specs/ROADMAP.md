@@ -53,6 +53,14 @@ Stories
 - [ ] [US-0008] UI Polish and Responsiveness
 
 
+### v3.0.0
+Goals
+
+Stories
+- [ ] [US-0009] Edit Task Description
+- [ ] [US-0010] Filter Tasks by Status
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

@@ -61,6 +61,13 @@ Stories
 - [ ] [US-0010] Filter Tasks by Status
 
 
+### v4.0.0
+Goals
+
+Stories
+- [ ] [US-0011] User Guide and Documentation
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

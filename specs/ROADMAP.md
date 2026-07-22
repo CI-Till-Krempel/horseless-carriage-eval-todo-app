@@ -41,6 +41,14 @@ Stories
 - [ ] [US-008] Task Filtering (All / Active / Completed)
 
 
+### Sprint 3
+Goals
+- Finalize Sprint 3 with UI polish, task counters, enhanced README documentation, and final end-to-end verification.
+
+Stories
+- [ ] [US-009] UI Polish and Task Counters
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

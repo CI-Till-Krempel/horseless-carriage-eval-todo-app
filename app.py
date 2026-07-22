@@ -25,10 +25,13 @@ def index():
     status_filter = request.args.get("filter", "all")
     lists_db = load_data()
     
-    # Process tasks filtering if needed
     rendered_lists = []
     for list_id, lst in lists_db.items():
         tasks = lst["tasks"]
+        total_count = len(tasks)
+        completed_count = sum(1 for t in tasks if t["completed"])
+        active_count = total_count - completed_count
+        
         if status_filter == "active":
             filtered_tasks = [t for t in tasks if not t["completed"]]
         elif status_filter == "completed":
@@ -39,7 +42,10 @@ def index():
         rendered_lists.append({
             "id": lst["id"],
             "name": lst["name"],
-            "tasks": filtered_tasks
+            "tasks": filtered_tasks,
+            "total_count": total_count,
+            "active_count": active_count,
+            "completed_count": completed_count
         })
         
     return render_template("index.html", lists=rendered_lists, current_filter=status_filter)

@@ -1,15 +1,34 @@
-# Horseless Carriage — Evaluation Repo (To-Do List Web App)
+# To-Do List Web App
 
-This is the fixed state repo for Horseless Carriage's automated team-performance
-evaluation harness. It is **not** a real product — it exists solely so the
-Horseless Carriage agent team has a real GitHub repo to run a fixed 5-sprint
-scenario against, so results are comparable across Horseless Carriage versions
-over time.
+A clean, modern, and persistent web application for managing to-do lists and tasks, built with Python (Flask) and HTML/CSS.
 
-- Managed by: [CI-Till-Krempel/Horseless-Carriage](https://github.com/CI-Till-Krempel/Horseless-Carriage)
-- Scenario: see `eval/scenario/PRODUCT-VISION.md` in the Horseless Carriage repo for the fixed product vision fed to the team every run.
-- Each automated eval run creates a fresh branch here (`eval/<version>-run<N>`) rather than touching `main`.
-- `main` is kept empty/minimal on purpose — nothing from the eval runs should land here.
+## Features
 
-See `HORSELESS_CARRIAGE_RELEASE.md`/`SECURITY.md`/`MANUAL.md` in the main repo for
-how this fits into the release process.
+1. **Create Lists**: Organize tasks by creating named to-do lists.
+2. **Task Management**: Add short text descriptions to tasks.
+3. **Completion Tracking**: Mark tasks complete or incomplete with visual strike-through differentiation.
+4. **Task Filtering**: Filter view by **All**, **Active**, or **Completed** tasks instantly.
+5. **Data Persistence**: All lists and tasks automatically persist across server restarts via JSON storage (`todos.json`).
+6. **Deletion**: Delete individual tasks or entire lists with confirmation prompts.
+7. **Task Counters**: Real-time active and total task count badges per list.
+
+## Local Setup & Running
+
+1. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Run the Application**:
+   ```bash
+   python app.py
+   ```
+
+3. **Open in Browser**:
+   Navigate to `http://127.0.0.1:5000`.
+
+## Running Tests
+
+```bash
+pytest
+```

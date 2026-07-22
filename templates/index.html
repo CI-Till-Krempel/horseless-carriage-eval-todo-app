@@ -10,11 +10,22 @@
     <div class="container">
         <header>
             <h1>My To-Do Lists</h1>
+            <p class="subtitle">Organize your day, one task at a time.</p>
         </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
 
         <section class="create-list-section">
             <form action="{{ url_for('main.create_list') }}" method="POST" class="inline-form">
-                <input type="text" name="name" placeholder="New List Name..." required autocomplete="off">
+                <input type="text" name="name" placeholder="Enter new list name..." required autocomplete="off">
                 <button type="submit" class="btn primary">Create List</button>
             </form>
         </section>
@@ -31,7 +42,7 @@
                         </div>
 
                         <form action="{{ url_for('main.create_task', list_id=lst.id) }}" method="POST" class="task-form">
-                            <input type="text" name="description" placeholder="Add a new task..." required autocomplete="off">
+                            <input type="text" name="description" placeholder="Add a new task description..." required autocomplete="off">
                             <button type="submit" class="btn secondary small">Add Task</button>
                         </form>
 
@@ -57,7 +68,9 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <p class="empty-state">No to-do lists yet. Create your first list above!</p>
+                <div class="empty-state">
+                    <p>No to-do lists yet. Create your first list above to get started!</p>
+                </div>
             {% endif %}
         </main>
     </div>

@@ -19,21 +19,29 @@ def test_index_empty(client):
     assert response.status_code == 200
     assert b'My To-Do Lists' in response.data
 
+def test_create_list_validation_empty(client):
+    response = client.post('/lists', data={'name': ''}, follow_redirects=True)
+    assert response.status_code == 200
+    assert b'List name cannot be empty.' in response.data
+
 def test_create_list(client):
     response = client.post('/lists', data={'name': 'Groceries'}, follow_redirects=True)
     assert response.status_code == 200
     assert b'Groceries' in response.data
+    assert b'To-do list created successfully!' in response.data
+
+def test_create_task_validation_empty(client):
+    client.post('/lists', data={'name': 'Work'})
+    response = client.post('/lists/1/tasks', data={'description': ''}, follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Task description cannot be empty.' in response.data
 
 def test_create_and_complete_task(client):
-    # Create list
     client.post('/lists', data={'name': 'Work'})
-    
-    # Add task
     response = client.post('/lists/1/tasks', data={'description': 'Finish report'}, follow_redirects=True)
     assert response.status_code == 200
     assert b'Finish report' in response.data
     
-    # Toggle complete
     response = client.post('/tasks/1/toggle', follow_redirects=True)
     assert response.status_code == 200
     assert b'completed' in response.data

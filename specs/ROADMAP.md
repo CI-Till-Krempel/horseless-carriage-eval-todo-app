@@ -45,6 +45,14 @@ Stories
 - [ ] [US-006] View all lists and tasks with visual distinction
 
 
+### v1.1.0
+Goals
+
+Stories
+- [ ] [US-007] UI Polish and Responsiveness Enhancements
+- [ ] [US-008] Graceful Error Handling and Validation
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

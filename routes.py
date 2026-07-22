@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, jsonify
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 from app import db
 from models import TodoList, Task
 
@@ -12,10 +12,13 @@ def index():
 @bp.route('/lists', methods=['POST'])
 def create_list():
     name = request.form.get('name', '').strip()
-    if name:
+    if not name:
+        flash('List name cannot be empty.', 'error')
+    else:
         new_list = TodoList(name=name)
         db.session.add(new_list)
         db.session.commit()
+        flash('To-do list created successfully!', 'success')
     return redirect(url_for('main.index'))
 
 @bp.route('/lists/<int:list_id>/delete', methods=['POST'])
@@ -23,16 +26,20 @@ def delete_list(list_id):
     todo_list = TodoList.query.get_or_404(list_id)
     db.session.delete(todo_list)
     db.session.commit()
+    flash('To-do list deleted successfully.', 'success')
     return redirect(url_for('main.index'))
 
 @bp.route('/lists/<int:list_id>/tasks', methods=['POST'])
 def create_task(list_id):
     TodoList.query.get_or_404(list_id)
     description = request.form.get('description', '').strip()
-    if description:
+    if not description:
+        flash('Task description cannot be empty.', 'error')
+    else:
         task = Task(description=description, list_id=list_id, completed=False)
         db.session.add(task)
         db.session.commit()
+        flash('Task added successfully!', 'success')
     return redirect(url_for('main.index'))
 
 @bp.route('/tasks/<int:task_id>/toggle', methods=['POST'])
@@ -47,4 +54,5 @@ def delete_task(task_id):
     task = Task.query.get_or_404(task_id)
     db.session.delete(task)
     db.session.commit()
+    flash('Task deleted.', 'success')
     return redirect(url_for('main.index'))

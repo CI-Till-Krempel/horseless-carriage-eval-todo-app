@@ -88,6 +88,14 @@
       "id": "US-0006",
       "status": "Draft",
       "user_story": "As a <role>, I want <capability>, so that <benefit>."
+    },
+    {
+      "id": "US-0007",
+      "type": "User Story",
+      "title": "US-0006",
+      "status": "Draft",
+      "priority": "Must",
+      "user_story": "As a <role>, I want <capability>, so that <benefit>."
     }
   ],
   "definition_of_done": [
@@ -171,6 +179,52 @@
         "Dashboard view shows lists and tasks with completed styling",
         "Tests passing"
       ]
+    },
+    {
+      "title": "US-0003",
+      "code_files": [
+        "app/main.py",
+        "app/templates/index.html",
+        "tests/test_main.py"
+      ],
+      "tasks": [
+        "Verify toggle_task and delete_task routes in app/main.py",
+        "Verify UI forms and classes in app/templates/index.html",
+        "Add extended test cases in tests/test_main.py covering completion toggling and deletion edge cases",
+        "Commit code and verify CI checks"
+      ],
+      "test_approach": "Run pytest via CI and local execution checking task toggle and task deletion behavior.",
+      "risks": "None; endpoints already drafted in Sprint 1 and verified in tests.",
+      "estimate": "1000 tokens",
+      "dod_checks": [
+        "Task completion toggle endpoint and UI functioning correctly",
+        "Task deletion endpoint and UI functioning correctly",
+        "Pytest suite passing with 100% success",
+        "Changes committed and PR created/updated"
+      ],
+      "approach": "Review existing codebase in app/main.py, app/templates/index.html, and tests/test_main.py, ensure US-0003 (Mark Task Complete/Incomplete) and US-0004 (Delete Task) are fully implemented, robust, and tested with comprehensive unit tests.",
+      "id": "US-0008"
+    },
+    {
+      "title": "US-0004",
+      "code_files": [
+        "app/main.py",
+        "app/templates/index.html",
+        "tests/test_main.py"
+      ],
+      "test_approach": "Test deletion of tasks with TestClient.",
+      "dod_checks": [
+        "Task deletion works end-to-end",
+        "All tests passing"
+      ],
+      "risks": "None",
+      "tasks": [
+        "Check delete endpoint error handling for non-existent tasks",
+        "Verify UI delete button styling and placement",
+        "Run tests"
+      ],
+      "estimate": "500 tokens",
+      "approach": "Ensure US-0004 (Delete Task) is fully verified, robustly tested, and integrated seamlessly into the task management workflow."
     }
   ],
   "impediment_log": [],
@@ -181,6 +235,12 @@
       "decision": "Approved Python + FastAPI + lightweight web UI (or Jinja2/HTML) with in-memory or SQLite persistence for Sprint 1 MVP.",
       "rationale": "Balances rapid delivery, zero external setup friction, and clean maintainability for a 5-sprint single-user web app evaluation.",
       "owner": "Architect"
+    },
+    {
+      "title": "Sprint 2 Architecture Confirmation",
+      "decision": "Confirmed continuation of FastAPI + SQLite architecture for Sprint 2 task completion and task deletion features.",
+      "rationale": "Maintains architectural consistency and robust transaction handling for state modifications.",
+      "owner": "Architect"
     }
   ],
   "sprint_report": "",
@@ -190,19 +250,21 @@
     "agents": {}
   },
   "token_usage": {
-    "total": 162916,
+    "total": 398465,
     "agents": {
       "ScrumOrchestrator": 19450,
-      "ProductOwner": 72548,
-      "ScrumMaster": 21607,
-      "Architect": 19980,
-      "DevTeam": 29331
+      "ProductOwner": 149103,
+      "ScrumMaster": 80306,
+      "Architect": 76993,
+      "DevTeam": 72613
     }
   },
   "story_estimates": {
     "US-0001": "1500 tokens",
     "US-0002": "500 tokens",
-    "US-0006": "500 tokens"
+    "US-0006": "500 tokens",
+    "US-0003": "1000 tokens",
+    "US-0004": "500 tokens"
   },
   "sprint_report_kpis": null,
   "repo": {

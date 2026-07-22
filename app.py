@@ -36,11 +36,19 @@ init_db()
 
 @app.route('/')
 def index():
+    status_filter = request.args.get('filter', 'all')
     conn = get_db()
     lists = conn.execute('SELECT * FROM lists').fetchall()
-    tasks = conn.execute('SELECT * FROM tasks').fetchall()
+    
+    if status_filter == 'active':
+        tasks = conn.execute('SELECT * FROM tasks WHERE completed = 0').fetchall()
+    elif status_filter == 'completed':
+        tasks = conn.execute('SELECT * FROM tasks WHERE completed = 1').fetchall()
+    else:
+        tasks = conn.execute('SELECT * FROM tasks').fetchall()
+        
     conn.close()
-    return render_template('index.html', lists=lists, tasks=tasks)
+    return render_template('index.html', lists=lists, tasks=tasks, current_filter=status_filter)
 
 @app.route('/lists', methods=['POST'])
 def create_list():
@@ -50,7 +58,7 @@ def create_list():
         conn.execute('INSERT INTO lists (name) VALUES (?)', (name,))
         conn.commit()
         conn.close()
-    return redirect(url_for('index'))
+    return redirect(url_for('index', filter=request.args.get('filter', 'all')))
 
 @app.route('/lists/<int:list_id>/delete', methods=['POST'])
 def delete_list(list_id):
@@ -59,7 +67,7 @@ def delete_list(list_id):
     conn.execute('DELETE FROM lists WHERE id = ?', (list_id,))
     conn.commit()
     conn.close()
-    return redirect(url_for('index'))
+    return redirect(url_for('index', filter=request.args.get('filter', 'all')))
 
 @app.route('/lists/<int:list_id>/tasks', methods=['POST'])
 def add_task(list_id):
@@ -69,7 +77,7 @@ def add_task(list_id):
         conn.execute('INSERT INTO tasks (list_id, text, completed) VALUES (?, ?, 0)', (list_id, text))
         conn.commit()
         conn.close()
-    return redirect(url_for('index'))
+    return redirect(url_for('index', filter=request.args.get('filter', 'all')))
 
 @app.route('/tasks/<int:task_id>/toggle', methods=['POST'])
 def toggle_task(task_id):
@@ -80,7 +88,17 @@ def toggle_task(task_id):
         conn.execute('UPDATE tasks SET completed = ? WHERE id = ?', (new_status, task_id))
         conn.commit()
     conn.close()
-    return redirect(url_for('index'))
+    return redirect(url_for('index', filter=request.args.get('filter', 'all')))
+
+@app.route('/tasks/<int:task_id>/edit', methods=['POST'])
+def edit_task(task_id):
+    new_text = request.form.get('text', '').strip()
+    if new_text:
+        conn = get_db()
+        conn.execute('UPDATE tasks SET text = ? WHERE id = ?', (new_text, task_id))
+        conn.commit()
+        conn.close()
+    return redirect(url_for('index', filter=request.args.get('filter', 'all')))
 
 @app.route('/tasks/<int:task_id>/delete', methods=['POST'])
 def delete_task(task_id):
@@ -88,7 +106,7 @@ def delete_task(task_id):
     conn.execute('DELETE FROM tasks WHERE id = ?', (task_id,))
     conn.commit()
     conn.close()
-    return redirect(url_for('index'))
+    return redirect(url_for('index', filter=request.args.get('filter', 'all')))
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

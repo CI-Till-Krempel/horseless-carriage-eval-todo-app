@@ -68,6 +68,13 @@ Stories
 - [ ] [US-0011] User Guide and Documentation
 
 
+### v5.0.0
+Goals
+
+Stories
+- [ ] [US-0012] US-0012
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

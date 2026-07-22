@@ -45,6 +45,13 @@ Stories
 - [ ] [US-0006] View Lists and Tasks UI
 
 
+### v2.0.0
+Goals
+
+Stories
+- [ ] [US-0008] UI Polish and Responsiveness
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

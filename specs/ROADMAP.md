@@ -57,6 +57,7 @@ Stories
 Goals
 
 Stories
+- [ ] [US-009] Comprehensive Test Coverage & Quality Hardening
 - [ ] [US-010] User Guide and Production README Finalization
 
 

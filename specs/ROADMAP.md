@@ -53,6 +53,14 @@ Stories
 - [ ] [US-008] Graceful Error Handling and Validation
 
 
+### v1.2.0
+Goals
+
+Stories
+- [ ] [US-009] Comprehensive Test Coverage & Quality Hardening
+- [ ] [US-010] User Guide and Production README Finalization
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

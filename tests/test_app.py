@@ -59,3 +59,16 @@ def test_delete_list(client):
     response = client.post('/lists/1/delete', follow_redirects=True)
     assert response.status_code == 200
     assert b'Obsolete List' not in response.data
+
+def test_404_not_found_endpoints(client):
+    response = client.post('/lists/999/tasks', data={'description': 'Fail'})
+    assert response.status_code == 404
+
+    response = client.post('/lists/999/delete')
+    assert response.status_code == 404
+
+    response = client.post('/tasks/999/toggle')
+    assert response.status_code == 404
+
+    response = client.post('/tasks/999/delete')
+    assert response.status_code == 404

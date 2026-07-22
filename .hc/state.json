@@ -1,0 +1,152 @@
+{
+  "version": "1.0.0",
+  "product_vision": "",
+  "product_goals": [],
+  "product_backlog": [
+    {
+      "description": "Core capabilities for creating and managing to-do lists and tasks.",
+      "status": "In Progress",
+      "title": "To-Do List Core Features",
+      "id": "EP-001",
+      "type": "Epic",
+      "priority": "Must"
+    },
+    {
+      "title": "Create To-Do List",
+      "acceptance_criteria": [
+        "Given the user is on the home page, When they enter a name for a new list and click create, Then a new to-do list with that name is created and displayed."
+      ],
+      "value_hypothesis": "Users can successfully create and view lists, establishing the foundation of task organization.",
+      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "priority": "P0",
+      "id": "US-001",
+      "type": "User Story",
+      "status": "Draft",
+      "user_story": "As a <role>, I want <capability>, so that <benefit>."
+    },
+    {
+      "title": "Add Task to List",
+      "priority": "P0",
+      "value_hypothesis": "Users can add items to their lists, allowing basic task tracking.",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user adds a task with short text description, Then the task appears within that list."
+      ],
+      "id": "US-002",
+      "type": "User Story",
+      "status": "Draft",
+      "user_story": "As a <role>, I want <capability>, so that <benefit>."
+    }
+  ],
+  "definition_of_done": [
+    "Code reviewed",
+    "Automated tests passing",
+    "Acceptance criteria met",
+    "No critical security issues",
+    "Docs updated if needed"
+  ],
+  "sprint_goal": "",
+  "sprint_backlog": [
+    {
+      "id": "EP-001",
+      "type": "Epic",
+      "title": "To-Do List Core Features",
+      "status": "In Progress",
+      "priority": "Must"
+    },
+    {
+      "title": "US-001",
+      "dod_checks": [
+        "Unit tests pass for creating lists and adding tasks",
+        "App runs locally and can be accessed via browser",
+        "Code committed and PR created with passing CI"
+      ],
+      "estimate": "150 tokens",
+      "risks_assumptions": [
+        "In-memory storage is sufficient for Sprint 1 as per constraints."
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "templates/list.html",
+        "requirements.txt",
+        "tests/test_app.py"
+      ],
+      "approach": "Build a lightweight Python Flask web application with a simple in-memory data store for Sprint 1 (Create To-Do List and Add Task to List). HTML/CSS frontend templates rendered via Jinja2.",
+      "test_approach": "Pytest unit tests checking Flask test client endpoints for creating lists and adding tasks.",
+      "id": "US-0003"
+    },
+    {
+      "title": "US-002",
+      "approach": "Integrate task addition functionality directly into the Flask app and list detail view.",
+      "dod_checks": [
+        "Tasks can be added to existing lists and verified in UI and tests."
+      ],
+      "estimate": "100 tokens",
+      "test_approach": "Pytest unit tests verifying task addition to specific lists.",
+      "code_files": [
+        "app.py",
+        "templates/list.html",
+        "tests/test_app.py"
+      ],
+      "risks_assumptions": [
+        "Task association relies on list IDs in-memory."
+      ]
+    }
+  ],
+  "impediment_log": [],
+  "retro_actions": [],
+  "decision_log": [],
+  "sprint_report": "",
+  "budgets": {
+    "total": 7800000,
+    "total_usd": 9.0,
+    "agents": {}
+  },
+  "token_usage": {
+    "total": 80584,
+    "agents": {
+      "ScrumOrchestrator": 19450,
+      "ProductOwner": 45471,
+      "DevTeam": 15663
+    }
+  },
+  "story_estimates": {
+    "US-001": "150 tokens",
+    "US-002": "100 tokens"
+  },
+  "sprint_report_kpis": null,
+  "repo": {
+    "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
+    "local_path": "/app/eval-output/clone",
+    "default_branch": "eval/0.1.0-run3"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "\n[SYSTEM CONTEXT: CURRENT SPRINT & BUDGET STATUS]\n- Sprint Goal: Not yet defined\n- Sprint Backlog: 0/0 items completed.\n- Token Usage: 0 / 0 tokens used.\n- USD Budget Limit: $0.00\n- Repository: Not configured (N/A)\n"
+    },
+    {
+      "role": "user",
+      "content": "This is sprint 1 of a fixed 5-sprint evaluation run. You are already fully configured (repo, branch, GitHub auth, and budgets are all pre-set via environment variables) - do not ask me any setup questions.\n\nBefore delegating any work to any specialist agent, you MUST first call init_scrum_state, then call create_litellm_virtual_key exactly these 6 times, using these exact agent_name values (these are the literal internal agent names, not display names - using any other spelling, e.g. with spaces, will not match and that agent will be blocked from running):\n- create_litellm_virtual_key(agent_name=\"ProductOwner\", ...)\n- create_litellm_virtual_key(agent_name=\"ScrumMaster\", ...)\n- create_litellm_virtual_key(agent_name=\"DevTeam\", ...)\n- create_litellm_virtual_key(agent_name=\"QA\", ...)\n- create_litellm_virtual_key(agent_name=\"Architect\", ...)\n- create_litellm_virtual_key(agent_name=\"QualityGuardian\", ...)\n\nEvery specialist agent is hard-blocked in code from making any LLM call at all until a virtual key exists under its exact agent_name - delegating to one before its key exists wastes the delegation entirely, it does not queue or retry. Do this once, up front, then proceed.\n\nThe product vision for this entire evaluation, verbatim, is:\n\n# Fixed Evaluation Scenario: To-Do List Web App\n\n> **Do not edit this file to \"make the eval easier\" or to match whatever the team\n> produced.** Its entire value is being byte-identical across runs, so results are\n> comparable across Horseless Carriage versions over time. If the scenario itself\n> needs to change, that's a deliberate decision with its own commit message\n> explaining why — never a silent drift.\n\nThis is the fixed input fed verbatim to the agent team as the product vision for\nevery automated team-performance evaluation run (see `RELEASE.md` \"Team performance\nevaluation\" and `agents/scrum_team/scripts/run_eval.py`). It is intentionally small\nenough to be fully deliverable within a 5-sprint, small-budget run, while still\nrequiring real design decisions (state persistence, list vs. item modeling,\nbasic UI) that differentiate a good team performance from a mediocre one.\n\n## Product Vision\n\nBuild a simple to-do list web application. A single user should be able to:\n\n1. Create a new to-do list with a name.\n2. Add a task to a list, with a short text description.\n3. Mark a task as complete or incomplete.\n4. Delete a task.\n5. Delete an entire list (and its tasks).\n6. See all their lists and, within a list, all its tasks, with completed tasks\n   visually distinguished from incomplete ones.\n\n## Constraints (deliberately narrow, to keep this deliverable in 5 sprints)\n\n- **Single user, no authentication.** Do not build login/accounts — out of scope.\n- **No persistence requirement beyond the current session/process is assumed** unless\n  the team's own design calls for it — persistence approach (in-memory, file, or a\n  simple embedded DB) is a legitimate design decision for the team to make and\n  justify, not a hidden requirement.\n- **A working web UI is required** — the deliverable is something a person could\n  open in a browser and actually use, not just a backend API with no way to\n  interact with it.\n- **No specific language/framework is mandated.** The team should choose something\n  it can deliver completely and correctly within budget, and should say why.\n\n## Explicitly out of scope (do not let these creep in)\n\n- Multiple users, sharing, or permissions.\n- Due dates, reminders, priorities, tags, or sub-tasks.\n- Mobile app, offline support, or real-time sync.\n- Any deployment/hosting beyond running locally.\n\n## What \"done\" looks like after 5 sprints\n\nA person can clone the repo, follow the README, run the app, and actually create a\nlist, add a few tasks, mark one complete, delete one, and delete a list — end to\nend, without reading any code first.\n\n\nTreat the sprint goal and backlog for this sprint as pre-approved by me (the human) - do not wait for further approval messages, proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) for this sprint's increment. Do not ask me anything else during this sprint - make reasonable decisions yourself and note them as assumptions in the sprint report."
+    },
+    {
+      "role": "system",
+      "content": "\n[SYSTEM CONTEXT: CURRENT SPRINT & BUDGET STATUS]\n- Sprint Goal: Not yet defined\n- Sprint Backlog: 0/0 items completed.\n- Token Usage: 4,994 / 7,800,000 tokens used.\n- USD Budget Limit: $9.00\n- Repository: git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git (N/A)\n"
+    },
+    {
+      "role": "user",
+      "content": "This is sprint 1 of a fixed 5-sprint evaluation run. You are already fully configured (repo, branch, GitHub auth, and budgets are all pre-set via environment variables) - do not ask me any setup questions.\n\nBefore delegating any work to any specialist agent, you MUST first call init_scrum_state, then call create_litellm_virtual_key exactly these 6 times, using these exact agent_name values (these are the literal internal agent names, not display names - using any other spelling, e.g. with spaces, will not match and that agent will be blocked from running):\n- create_litellm_virtual_key(agent_name=\"ProductOwner\", ...)\n- create_litellm_virtual_key(agent_name=\"ScrumMaster\", ...)\n- create_litellm_virtual_key(agent_name=\"DevTeam\", ...)\n- create_litellm_virtual_key(agent_name=\"QA\", ...)\n- create_litellm_virtual_key(agent_name=\"Architect\", ...)\n- create_litellm_virtual_key(agent_name=\"QualityGuardian\", ...)\n\nEvery specialist agent is hard-blocked in code from making any LLM call at all until a virtual key exists under its exact agent_name - delegating to one before its key exists wastes the delegation entirely, it does not queue or retry. Do this once, up front, then proceed.\n\nThe product vision for this entire evaluation, verbatim, is:\n\n# Fixed Evaluation Scenario: To-Do List Web App\n\n> **Do not edit this file to \"make the eval easier\" or to match whatever the team\n> produced.** Its entire value is being byte-identical across runs, so results are\n> comparable across Horseless Carriage versions over time. If the scenario itself\n> needs to change, that's a deliberate decision with its own commit message\n> explaining why — never a silent drift.\n\nThis is the fixed input fed verbatim to the agent team as the product vision for\nevery automated team-performance evaluation run (see `RELEASE.md` \"Team performance\nevaluation\" and `agents/scrum_team/scripts/run_eval.py`). It is intentionally small\nenough to be fully deliverable within a 5-sprint, small-budget run, while still\nrequiring real design decisions (state persistence, list vs. item modeling,\nbasic UI) that differentiate a good team performance from a mediocre one.\n\n## Product Vision\n\nBuild a simple to-do list web application. A single user should be able to:\n\n1. Create a new to-do list with a name.\n2. Add a task to a list, with a short text description.\n3. Mark a task as complete or incomplete.\n4. Delete a task.\n5. Delete an entire list (and its tasks).\n6. See all their lists and, within a list, all its tasks, with completed tasks\n   visually distinguished from incomplete ones.\n\n## Constraints (deliberately narrow, to keep this deliverable in 5 sprints)\n\n- **Single user, no authentication.** Do not build login/accounts — out of scope.\n- **No persistence requirement beyond the current session/process is assumed** unless\n  the team's own design calls for it — persistence approach (in-memory, file, or a\n  simple embedded DB) is a legitimate design decision for the team to make and\n  justify, not a hidden requirement.\n- **A working web UI is required** — the deliverable is something a person could\n  open in a browser and actually use, not just a backend API with no way to\n  interact with it.\n- **No specific language/framework is mandated.** The team should choose something\n  it can deliver completely and correctly within budget, and should say why.\n\n## Explicitly out of scope (do not let these creep in)\n\n- Multiple users, sharing, or permissions.\n- Due dates, reminders, priorities, tags, or sub-tasks.\n- Mobile app, offline support, or real-time sync.\n- Any deployment/hosting beyond running locally.\n\n## What \"done\" looks like after 5 sprints\n\nA person can clone the repo, follow the README, run the app, and actually create a\nlist, add a few tasks, mark one complete, delete one, and delete a list — end to\nend, without reading any code first.\n\n\nTreat the sprint goal and backlog for this sprint as pre-approved by me (the human) - do not wait for further approval messages, proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) for this sprint's increment. Do not ask me anything else during this sprint - make reasonable decisions yourself and note them as assumptions in the sprint report."
+    },
+    {
+      "role": "system",
+      "content": "\n[SYSTEM CONTEXT: CURRENT SPRINT & BUDGET STATUS]\n- Sprint Goal: Not yet defined\n- Sprint Backlog: 0/0 items completed.\n- Token Usage: 11,409 / 7,800,000 tokens used.\n- USD Budget Limit: $9.00\n- Repository: git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git (N/A)\n"
+    },
+    {
+      "role": "user",
+      "content": "This is sprint 1 of a fixed 5-sprint evaluation run. You are already fully configured (repo, branch, GitHub auth, and budgets are all pre-set via environment variables) - do not ask me any setup questions.\n\nBefore delegating any work to any specialist agent, you MUST first call init_scrum_state, then call create_litellm_virtual_key exactly these 6 times, using these exact agent_name values (these are the literal internal agent names, not display names - using any other spelling, e.g. with spaces, will not match and that agent will be blocked from running):\n- create_litellm_virtual_key(agent_name=\"ProductOwner\", ...)\n- create_litellm_virtual_key(agent_name=\"ScrumMaster\", ...)\n- create_litellm_virtual_key(agent_name=\"DevTeam\", ...)\n- create_litellm_virtual_key(agent_name=\"QA\", ...)\n- create_litellm_virtual_key(agent_name=\"Architect\", ...)\n- create_litellm_virtual_key(agent_name=\"QualityGuardian\", ...)\n\nEvery specialist agent is hard-blocked in code from making any LLM call at all until a virtual key exists under its exact agent_name - delegating to one before its key exists wastes the delegation entirely, it does not queue or retry. Do this once, up front, then proceed.\n\nThe product vision for this entire evaluation, verbatim, is:\n\n# Fixed Evaluation Scenario: To-Do List Web App\n\n> **Do not edit this file to \"make the eval easier\" or to match whatever the team\n> produced.** Its entire value is being byte-identical across runs, so results are\n> comparable across Horseless Carriage versions over time. If the scenario itself\n> needs to change, that's a deliberate decision with its own commit message\n> explaining why — never a silent drift.\n\nThis is the fixed input fed verbatim to the agent team as the product vision for\nevery automated team-performance evaluation run (see `RELEASE.md` \"Team performance\nevaluation\" and `agents/scrum_team/scripts/run_eval.py`). It is intentionally small\nenough to be fully deliverable within a 5-sprint, small-budget run, while still\nrequiring real design decisions (state persistence, list vs. item modeling,\nbasic UI) that differentiate a good team performance from a mediocre one.\n\n## Product Vision\n\nBuild a simple to-do list web application. A single user should be able to:\n\n1. Create a new to-do list with a name.\n2. Add a task to a list, with a short text description.\n3. Mark a task as complete or incomplete.\n4. Delete a task.\n5. Delete an entire list (and its tasks).\n6. See all their lists and, within a list, all its tasks, with completed tasks\n   visually distinguished from incomplete ones.\n\n## Constraints (deliberately narrow, to keep this deliverable in 5 sprints)\n\n- **Single user, no authentication.** Do not build login/accounts — out of scope.\n- **No persistence requirement beyond the current session/process is assumed** unless\n  the team's own design calls for it — persistence approach (in-memory, file, or a\n  simple embedded DB) is a legitimate design decision for the team to make and\n  justify, not a hidden requirement.\n- **A working web UI is required** — the deliverable is something a person could\n  open in a browser and actually use, not just a backend API with no way to\n  interact with it.\n- **No specific language/framework is mandated.** The team should choose something\n  it can deliver completely and correctly within budget, and should say why.\n\n## Explicitly out of scope (do not let these creep in)\n\n- Multiple users, sharing, or permissions.\n- Due dates, reminders, priorities, tags, or sub-tasks.\n- Mobile app, offline support, or real-time sync.\n- Any deployment/hosting beyond running locally.\n\n## What \"done\" looks like after 5 sprints\n\nA person can clone the repo, follow the README, run the app, and actually create a\nlist, add a few tasks, mark one complete, delete one, and delete a list — end to\nend, without reading any code first.\n\n\nTreat the sprint goal and backlog for this sprint as pre-approved by me (the human) - do not wait for further approval messages, proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) for this sprint's increment. Do not ask me anything else during this sprint - make reasonable decisions yourself and note them as assumptions in the sprint report."
+    }
+  ],
+  "transcript": [],
+  "hc_version": "0.1.0"
+}

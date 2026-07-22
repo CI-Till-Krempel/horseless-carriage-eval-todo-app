@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do Lists</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f9; color: #333; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        a { text-decoration: none; color: #3498db; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        input[type="text"] { padding: 8px; width: 70%; border: 1px solid #ddd; border-radius: 4px; }
+        button { padding: 8px 15px; background: #2ecc71; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #27ae60; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My To-Do Lists</h1>
+        <form action="/lists" method="POST" style="margin-bottom: 20px;">
+            <input type="text" name="name" placeholder="New List Name" required>
+            <button type="submit">Create List</button>
+        </form>
+        <ul>
+            {% for list in lists %}
+                <li>
+                    <a href="{{ url_for('view_list', list_id=list.id) }}">{{ list.name }}</a>
+                    <span>({{ list.tasks|length }} tasks)</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,15 +1,36 @@
-# Horseless Carriage — Evaluation Repo (To-Do List Web App)
+# To-Do List Web App (v1.2.0)
 
-This is the fixed state repo for Horseless Carriage's automated team-performance
-evaluation harness. It is **not** a real product — it exists solely so the
-Horseless Carriage agent team has a real GitHub repo to run a fixed 5-sprint
-scenario against, so results are comparable across Horseless Carriage versions
-over time.
+A polished, lightweight, production-ready to-do list web application built with Python, Flask, and SQLite.
 
-- Managed by: [CI-Till-Krempel/Horseless-Carriage](https://github.com/CI-Till-Krempel/Horseless-Carriage)
-- Scenario: see `eval/scenario/PRODUCT-VISION.md` in the Horseless Carriage repo for the fixed product vision fed to the team every run.
-- Each automated eval run creates a fresh branch here (`eval/<version>-run<N>`) rather than touching `main`.
-- `main` is kept empty/minimal on purpose — nothing from the eval runs should land here.
+## Features
+1. **Create Lists**: Create multiple named to-do lists.
+2. **Add Tasks**: Add short text descriptions to specific lists.
+3. **Complete/Incomplete**: Toggle task completion with instant visual feedback (strikethrough).
+4. **Delete Tasks**: Remove individual tasks.
+5. **Delete Lists**: Remove entire lists along with all their tasks in one action.
+6. **Responsive UI**: Modern, clean CSS design optimized for both desktop and mobile devices.
+7. **Input Validation & Flash Feedback**: User-friendly success and error notifications.
 
-See `HORSELESS_CARRIAGE_RELEASE.md`/`SECURITY.md`/`MANUAL.md` in the main repo for
-how this fits into the release process.
+## Getting Started
+
+1. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Run the application**:
+   ```bash
+   flask --app app run
+   ```
+
+3. **Open your browser**:
+   Navigate to `http://127.0.0.1:5000`.
+
+## Running Tests
+```bash
+pytest -v
+```
+
+## Documentation
+- See `specs/product-docs/USER-GUIDE.md` for detailed user workflows.
+- See `specs/requirements/PRD-ToDo-MVP.md` for requirements and scope.

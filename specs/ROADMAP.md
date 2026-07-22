@@ -72,7 +72,7 @@ Stories
 Goals
 
 Stories
-- [ ] [US-0012] US-0012
+- [ ] [US-0012] Final Release Verification and Hardening
 
 
 ## Task board (Kanban)

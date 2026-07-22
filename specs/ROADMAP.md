@@ -57,6 +57,7 @@ Stories
 Goals
 
 Stories
+- [ ] [US-0009] Edit Task Description
 - [ ] [US-0010] Filter Tasks by Status
 
 

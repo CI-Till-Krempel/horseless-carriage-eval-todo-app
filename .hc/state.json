@@ -96,6 +96,14 @@
       "status": "Draft",
       "priority": "Must",
       "user_story": "As a <role>, I want <capability>, so that <benefit>."
+    },
+    {
+      "id": "US-0008",
+      "type": "User Story",
+      "title": "US-0003",
+      "status": "Draft",
+      "priority": "Must",
+      "user_story": "As a <role>, I want <capability>, so that <benefit>."
     }
   ],
   "definition_of_done": [
@@ -225,6 +233,29 @@
       ],
       "estimate": "500 tokens",
       "approach": "Ensure US-0004 (Delete Task) is fully verified, robustly tested, and integrated seamlessly into the task management workflow."
+    },
+    {
+      "title": "US-0005",
+      "tasks": [
+        "Verify delete list endpoint and UI button in app/main.py and index.html",
+        "Add comprehensive test case in tests/test_main.py verifying that deleting a list removes all its associated tasks",
+        "Push changes and create PR"
+      ],
+      "dod_checks": [
+        "Delete List feature fully verified with tasks cascade deleted",
+        "Pytest test suite passing successfully",
+        "Pull request created and verified"
+      ],
+      "test_approach": "Run pytest with TestClient checking list deletion with multiple tasks.",
+      "estimate": "800 tokens",
+      "approach": "Review and verify US-0005 (Delete List), ensure SQLAlchemy cascade delete is properly tested for lists with multiple tasks, add rigorous tests, and finalize MVP readiness.",
+      "code_files": [
+        "app/main.py",
+        "app/database.py",
+        "app/templates/index.html",
+        "tests/test_main.py"
+      ],
+      "risks": "None; cascade delete is already established in models.py and tested in basic test."
     }
   ],
   "impediment_log": [],
@@ -241,6 +272,12 @@
       "decision": "Confirmed continuation of FastAPI + SQLite architecture for Sprint 2 task completion and task deletion features.",
       "rationale": "Maintains architectural consistency and robust transaction handling for state modifications.",
       "owner": "Architect"
+    },
+    {
+      "title": "Sprint 3 Cascade Delete Architecture",
+      "decision": "Approved SQLAlchemy cascade delete (`cascade=\"all, delete-orphan\"`) for Todo Lists and Tasks in Sprint 3.",
+      "rationale": "Guarantees referential integrity and clean workspace management when deleting entire lists.",
+      "owner": "Architect"
     }
   ],
   "sprint_report": "",
@@ -250,13 +287,13 @@
     "agents": {}
   },
   "token_usage": {
-    "total": 398465,
+    "total": 684775,
     "agents": {
       "ScrumOrchestrator": 19450,
-      "ProductOwner": 149103,
-      "ScrumMaster": 80306,
-      "Architect": 76993,
-      "DevTeam": 72613
+      "ProductOwner": 234302,
+      "ScrumMaster": 166425,
+      "Architect": 161492,
+      "DevTeam": 103106
     }
   },
   "story_estimates": {
@@ -264,7 +301,8 @@
     "US-0002": "500 tokens",
     "US-0006": "500 tokens",
     "US-0003": "1000 tokens",
-    "US-0004": "500 tokens"
+    "US-0004": "500 tokens",
+    "US-0005": "800 tokens"
   },
   "sprint_report_kpis": null,
   "repo": {

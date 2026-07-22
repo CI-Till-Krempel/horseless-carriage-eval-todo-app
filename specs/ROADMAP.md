@@ -49,6 +49,7 @@ Stories
 Goals
 
 Stories
+- [ ] [US-0007] Persistent Storage (SQLite)
 - [ ] [US-0008] UI Polish and Responsiveness
 
 

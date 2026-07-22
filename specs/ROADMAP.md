@@ -68,6 +68,13 @@ Stories
 - [ ] [US-0011] User Guide and Documentation
 
 
+### v5.0.0
+Goals
+
+Stories
+- [ ] [US-0012] Final Release Verification and Hardening
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

@@ -49,6 +49,14 @@ Stories
 - [ ] [US-0004] Delete Task
 
 
+### v1.2.0
+Goals
+- Deliver Sprint 3 features: Delete Entire List and Final Polish/Validation
+
+Stories
+- [ ] [US-0005] Delete List
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

@@ -37,6 +37,11 @@ Stories
 Goals
 
 Stories
+- [ ] [US-0001] Create To-Do List
+- [ ] [US-0002] Add Task to List
+- [ ] [US-0003] Toggle Task Completion
+- [ ] [US-0004] Delete Task
+- [ ] [US-0005] Delete Entire List
 - [ ] [US-0006] View Lists and Tasks UI
 
 

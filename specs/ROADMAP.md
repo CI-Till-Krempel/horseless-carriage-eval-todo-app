@@ -49,6 +49,7 @@ Stories
 Goals
 
 Stories
+- [ ] [US-007] UI Polish and Responsiveness Enhancements
 - [ ] [US-008] Graceful Error Handling and Validation
 
 

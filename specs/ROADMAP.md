@@ -37,7 +37,12 @@ Stories
 Goals
 
 Stories
+- [ ] [US-001] Create a new to-do list with a name
+- [ ] [US-002] Add a task to a list with description
+- [ ] [US-003] Mark task as complete or incomplete
+- [ ] [US-004] Delete a task
 - [ ] [US-005] Delete an entire list and its tasks
+- [ ] [US-006] View all lists and tasks with visual distinction
 
 
 ## Task board (Kanban)

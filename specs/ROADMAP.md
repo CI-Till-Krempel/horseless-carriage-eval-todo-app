@@ -65,7 +65,7 @@ Stories
 Goals
 
 Stories
-- [ ] [US-0011] US-0011
+- [ ] [US-0011] User Guide and Documentation
 
 
 ## Task board (Kanban)

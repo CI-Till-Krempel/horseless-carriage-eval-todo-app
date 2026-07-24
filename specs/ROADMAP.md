@@ -40,10 +40,10 @@ Goals
 Stories
 - [US-0001] Create and View To-Do Lists
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0002] Add Tasks to a List
   - [ ] READY
   - [ ] IMPLEMENTED

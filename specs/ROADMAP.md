@@ -51,10 +51,10 @@ Stories
   - [x] ACCEPTED
 - [US-003] Add Task to a List
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-004] View Tasks and Visual Distinction
   - [ ] READY
   - [ ] IMPLEMENTED

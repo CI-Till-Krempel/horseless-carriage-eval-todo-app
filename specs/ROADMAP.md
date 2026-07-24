@@ -46,10 +46,10 @@ Stories
   - [x] ACCEPTED
 - [US-0002] Add Tasks to a List
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0003] Mark Tasks Complete or Incomplete
   - [ ] READY
   - [ ] IMPLEMENTED

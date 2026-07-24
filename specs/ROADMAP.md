@@ -35,8 +35,7 @@ Stories
 
 ### v1.0.0
 Goals
-- Set up project structure, architecture, and implement core To-Do List creation and viewing (Sprint 1).
-
+- Implement View All To-Do Lists (US-002) and Add Task to a List (US-003) for Sprint 2.
 Stories
 - [US-001] Create a New To-Do List
   - [x] READY
@@ -44,6 +43,18 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
+- [US-002] View All To-Do Lists
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-003] Add Task to a List
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 
 ## Task board (Kanban)

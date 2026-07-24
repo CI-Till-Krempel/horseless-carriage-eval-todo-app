@@ -7,7 +7,7 @@
 - Owner: Scrum Team
 - Last Updated: 2026-07-24
 
-## As a <role>, I want <capability>, so that <benefit>.
+## As a user, I want to see all tasks within a list with completed tasks visually distinguished from incomplete ones so that I can easily review progress.
 
 ## Acceptance Criteria
 - Given the user is viewing a list with tasks, When they view the task items, Then completed tasks are visually distinguished (e.g., struck-through or grayed out) from incomplete ones.

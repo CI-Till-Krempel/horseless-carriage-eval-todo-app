@@ -7,7 +7,7 @@
 - Owner: Scrum Team
 - Last Updated: 2026-07-24
 
-## As a <role>, I want <capability>, so that <benefit>.
+## As a user, I want to delete an entire list and its tasks so that I can remove obsolete lists.
 
 ## Acceptance Criteria
 - Given an existing to-do list, When the user clicks delete on the list, Then the list and all its associated tasks are removed from the application.

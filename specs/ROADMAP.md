@@ -39,6 +39,36 @@ Goals
 - Sprint 1: Core backend foundation, list creation, and basic UI structure.
 
 Stories
+- [US-0001] Create a new to-do list with a name
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0002] Add a task to a list with a short text description
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0003] Mark a task as complete or incomplete
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0004] Delete a task
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0005] Delete an entire list and its tasks
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0006] View all lists and tasks with visual completion distinction
   - [ ] READY
   - [ ] IMPLEMENTED

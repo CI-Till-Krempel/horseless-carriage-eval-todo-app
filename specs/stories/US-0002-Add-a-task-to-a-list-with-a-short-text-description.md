@@ -7,7 +7,7 @@
 - Owner: Scrum Team
 - Last Updated: 2026-07-24
 
-## As a <role>, I want <capability>, so that <benefit>.
+## As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.
 
 ## Acceptance Criteria
 - Given an existing to-do list, When the user adds a task with a short text description, Then the task appears within that list.
@@ -16,7 +16,4 @@
 Users can record tasks within specific lists.
 
 ## Test Approach
-pytest unit tests for task addition.
 
-### Tasks
-- Add task endpoint and UI form

@@ -2,12 +2,12 @@
 
 - Story ID: US-0001
 - Title: Create a new to-do list with a name
-- Status: Draft
+- Status: Accepted
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-24
 
-## As a <role>, I want <capability>, so that <benefit>.
+## As a user, I want to create a new to-do list with a name so that I can organize my tasks into distinct categories.
 
 ## Acceptance Criteria
 - Given the user is on the home page, When they enter a list name and click Create List, Then a new to-do list is created with that name and displayed in the application.

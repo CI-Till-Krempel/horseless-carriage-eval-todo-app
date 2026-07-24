@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List Application</h1>
+        
+        <div class="main-layout">
+            <!-- Sidebar: Lists -->
+            <div class="sidebar">
+                <h2>My Lists</h2>
+                <form action="{{ url_for('create_list') }}" method="POST" class="form-inline">
+                    <input type="text" name="name" placeholder="New list name..." required>
+                    <button type="submit" class="btn btn-primary">Create List</button>
+                </form>
+
+                <ul class="list-group">
+                    {% for l in lists %}
+                        <li class="list-item {% if selected_list and selected_list.id == l.id %}active{% endif %}">
+                            <a href="{{ url_for('index', list_id=l.id) }}">{{ l.name }}</a>
+                            <form action="{{ url_for('delete_list', list_id=l.id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Delete entire list and its tasks?');">
+                                <button type="submit" class="btn-danger-sm" title="Delete List">&times;</button>
+                            </form>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Content Area: Tasks -->
+            <div class="content">
+                {% if selected_list %}
+                    <div class="list-header">
+                        <h2>{{ selected_list.name }}</h2>
+                    </div>
+
+                    <form action="{{ url_for('add_task', list_id=selected_list.id) }}" method="POST" class="form-inline task-form">
+                        <input type="text" name="description" placeholder="Add a new task..." required>
+                        <button type="submit" class="btn btn-success">Add Task</button>
+                    </form>
+
+                    <ul class="task-list">
+                        {% for task in tasks %}
+                            <li class="task-item {% if task.completed %}completed{% endif %}">
+                                <form action="{{ url_for('toggle_task', task_id=task.id) }}" method="POST" style="display:inline;">
+                                    <input type="checkbox" onChange="this.form.submit()" {% if task.completed %}checked{% endif %}>
+                                </form>
+                                <span class="task-desc">{{ task.description }}</span>
+                                <form action="{{ url_for('delete_task', task_id=task.id) }}" method="POST" style="display:inline;">
+                                    <button type="submit" class="btn-danger-sm">Delete</button>
+                                </form>
+                            </li>
+                        {% else %}
+                            <p class="empty-msg">No tasks in this list yet. Add one above!</p>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p class="empty-msg">Create or select a to-do list to view and manage tasks.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

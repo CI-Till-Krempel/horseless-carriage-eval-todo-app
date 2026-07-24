@@ -51,11 +51,11 @@ Stories
   - [x] TESTED
   - [x] ACCEPTED
 - [US-0003] Mark Tasks Complete or Incomplete
-  - [ ] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0004] Delete Tasks and Lists
   - [ ] READY
   - [ ] IMPLEMENTED

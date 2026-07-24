@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Tasks Complete or Incomplete
-- Status: Draft
+- Status: Accepted
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-07-24
@@ -17,4 +17,4 @@
 Users can toggle task completion status and see visual differentiation.
 
 ## Test Approach
-
+Pytest tests checking task completion toggle endpoints and status persistence.

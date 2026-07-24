@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List Web App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; color: #333; }
+        .container { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; }
+        .list-card { border: 1px solid #ddd; border-radius: 6px; padding: 15px; margin-bottom: 20px; background: #fff; }
+        .list-card h3 { margin-top: 0; color: #34495e; }
+        form { margin-bottom: 10px; }
+        input[type="text"] { padding: 8px; width: 70%; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 12px; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My To-Do Lists</h1>
+        
+        <form action="/lists" method="POST">
+            <input type="text" name="name" placeholder="New List Name..." required>
+            <button type="submit">Create List</button>
+        </form>
+
+        <hr>
+
+        {% if not lists %}
+            <p>No to-do lists yet. Create one above!</p>
+        {% endif %}
+
+        {% for list in lists %}
+            <div class="list-card">
+                <h3>{{ list.name }}</h3>
+                
+                <ul>
+                    {% for task in list.tasks %}
+                        <li>{{ task.text }}</li>
+                    {% else %}
+                        <li>No tasks in this list yet.</li>
+                    {% endfor %}
+                </ul>
+
+                <form action="/lists/{{ list.id }}/tasks" method="POST">
+                    <input type="text" name="text" placeholder="New Task Description..." required>
+                    <button type="submit">Add Task</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Web App</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; color: #333; }
+        h1 { color: #2c3e50; }
+        .list-card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .list-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        form { margin-top: 15px; display: flex; gap: 10px; }
+        input[type="text"] { flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        button { padding: 8px 15px; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        .delete-btn { background: #e74c3c; }
+        .delete-btn:hover { background: #c0392b; }
+        ul { list-style: none; padding: 0; }
+        li { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #f1f1f1; }
+        .completed { text-decoration: line-through; color: #888; }
+    </style>
+</head>
+<body>
+    <h1>My To-Do Lists</h1>
+    
+    <div class="list-card">
+        <h3>Create New List</h3>
+        <form action="/lists" method="POST">
+            <input type="text" name="name" placeholder="List Name (e.g. Groceries, Work)" required>
+            <button type="submit">Create List</button>
+        </form>
+    </div>
+
+    {% for list in lists %}
+    <div class="list-card">
+        <div class="list-header">
+            <h2>{{ list.name }}</h2>
+            <form action="/lists/{{ list.id }}" method="POST" style="margin:0;" onsubmit="return confirm('Delete entire list?');">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="delete-btn" onclick="event.preventDefault(); fetch('/lists/{{ list.id }}', {method: 'DELETE'}).then(() => window.location.reload());">Delete List</button>
+            </form>
+        </div>
+        
+        <ul>
+            {% for task in list.tasks %}
+            <li>
+                <span class="{% if task.completed %}completed{% endif %}">{{ task.text }}</span>
+                <div>
+                    <button onclick="fetch('/tasks/{{ task.id }}/toggle', {method: 'POST'}).then(() => window.location.reload());">
+                        {% if task.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}
+                    </button>
+                    <button class="delete-btn" onclick="fetch('/tasks/{{ task.id }}', {method: 'DELETE'}).then(() => window.location.reload());">Delete</button>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <form action="/lists/{{ list.id }}/tasks" method="POST">
+            <input type="text" name="text" placeholder="New task description..." required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+    {% endfor %}
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 - Story ID: US-001
 - Title: Create a New To-Do List
-- Status: Ready
+- Status: Accepted
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-24

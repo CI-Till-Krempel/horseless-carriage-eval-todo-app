@@ -4,10 +4,6 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify
 app = Flask(__name__)
 
 # In-memory storage for lists and tasks for MVP
-# Structure:
-# lists = {
-#    1: {"id": 1, "name": "Work", "tasks": [{"id": 1, "text": "Finish report", "completed": False}]}
-# }
 lists_db = {}
 next_list_id = 1
 next_task_id = 1
@@ -19,15 +15,17 @@ def index():
 @app.route('/lists', methods=['POST'])
 def create_list():
     global next_list_id
-    name = request.form.get('name') or (request.json and request.json.get('name'))
-    if name:
-        new_id = next_list_id
-        next_list_id += 1
-        lists_db[new_id] = {"id": new_id, "name": name, "tasks": []}
+    name = (request.form.get('name') or (request.json and request.json.get('name')) or '').strip()
+    if not name:
         if request.is_json:
-            return jsonify(lists_db[new_id]), 201
+            return jsonify({"error": "List name cannot be empty"}), 400
+        return redirect(url_for('index'))
+    
+    new_id = next_list_id
+    next_list_id += 1
+    lists_db[new_id] = {"id": new_id, "name": name, "tasks": []}
     if request.is_json:
-        return jsonify({"error": "Name is required"}), 400
+        return jsonify(lists_db[new_id]), 201
     return redirect(url_for('index'))
 
 @app.route('/lists/<int:list_id>', methods=['GET'])
@@ -46,16 +44,18 @@ def create_task(list_id):
             return jsonify({"error": "List not found"}), 404
         return redirect(url_for('index'))
     
-    text = request.form.get('text') or (request.json and request.json.get('text'))
-    if text:
-        task_id = next_task_id
-        next_task_id += 1
-        task = {"id": task_id, "text": text, "completed": False}
-        todo_list["tasks"].append(task)
+    text = (request.form.get('text') or (request.json and request.json.get('text')) or '').strip()
+    if not text:
         if request.is_json:
-            return jsonify(task), 201
+            return jsonify({"error": "Task text cannot be empty"}), 400
+        return redirect(url_for('index'))
+
+    task_id = next_task_id
+    next_task_id += 1
+    task = {"id": task_id, "text": text, "completed": False}
+    todo_list["tasks"].append(task)
     if request.is_json:
-        return jsonify({"error": "Task text is required"}), 400
+        return jsonify(task), 201
     return redirect(url_for('index'))
 
 @app.route('/tasks/<int:task_id>/toggle', methods=['POST'])

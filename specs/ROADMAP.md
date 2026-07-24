@@ -63,10 +63,10 @@ Stories
   - [x] ACCEPTED
 - [US-005] Mark Task Complete or Incomplete
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-006] Delete a Task
   - [ ] READY
   - [ ] IMPLEMENTED

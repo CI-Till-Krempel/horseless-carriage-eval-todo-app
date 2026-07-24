@@ -7,7 +7,7 @@
 - Owner: Scrum Team
 - Last Updated: 2026-07-24
 
-## As a <role>, I want <capability>, so that <benefit>.
+## As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.
 
 ## Acceptance Criteria
 - Given the user is viewing a specific to-do list, When they enter a short text description and add a task, Then the task appears within that list.

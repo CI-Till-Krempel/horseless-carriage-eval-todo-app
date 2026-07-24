@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Tasks to a List
-- Status: Draft
+- Status: Accepted
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-24
@@ -16,4 +16,4 @@
 Users can successfully add tasks to specific lists.
 
 ## Test Approach
-
+Pytest test checking task creation endpoint and form submission behavior for US-0002.

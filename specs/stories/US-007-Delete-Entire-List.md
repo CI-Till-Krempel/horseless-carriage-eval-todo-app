@@ -7,7 +7,7 @@
 - Owner: Scrum Team
 - Last Updated: 2026-07-24
 
-## As a <role>, I want <capability>, so that <benefit>.
+## As a user, I want to delete an entire list (and its tasks) so that I can remove obsolete lists.
 
 ## Acceptance Criteria
 - Given the user has created a list, When they choose to delete the entire list, Then the list and all its contained tasks are removed from the application.

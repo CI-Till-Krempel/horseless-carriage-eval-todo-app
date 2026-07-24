@@ -2,7 +2,7 @@
 
 - Story ID: US-005
 - Title: Mark Task Complete or Incomplete
-- Status: Draft
+- Status: Accepted
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-07-24
@@ -16,4 +16,4 @@
 Users can update task status dynamically.
 
 ## Test Approach
-
+Pytest test cases covering US-005, US-006, and US-007.

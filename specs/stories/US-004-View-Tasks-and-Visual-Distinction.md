@@ -2,7 +2,7 @@
 
 - Story ID: US-004
 - Title: View Tasks and Visual Distinction
-- Status: Ready
+- Status: Accepted
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-24

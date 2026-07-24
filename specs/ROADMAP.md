@@ -57,10 +57,10 @@ Stories
   - [x] ACCEPTED
 - [US-004] View Tasks and Visual Distinction
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-005] Mark Task Complete or Incomplete
   - [ ] READY
   - [ ] IMPLEMENTED

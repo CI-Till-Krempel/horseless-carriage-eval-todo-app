@@ -35,7 +35,7 @@ Stories
 
 ### v1.0.0
 Goals
-- Implement View Tasks and Visual Distinction (US-004) and Mark Task Complete or Incomplete (US-005) for Sprint 4.
+- Implement Mark Task Complete/Incomplete (US-005), Delete a Task (US-006), and Delete Entire List (US-007) for Sprint 5 (Final Sprint).
 Stories
 - [US-001] Create a New To-Do List
   - [x] READY
@@ -62,6 +62,18 @@ Stories
   - [x] TESTED
   - [x] ACCEPTED
 - [US-005] Mark Task Complete or Incomplete
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-006] Delete a Task
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-007] Delete Entire List
   - [ ] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED

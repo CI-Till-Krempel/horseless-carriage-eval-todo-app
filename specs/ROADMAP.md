@@ -35,7 +35,7 @@ Stories
 
 ### v1.0.0
 Goals
-- Implement View All To-Do Lists (US-002) and Add Task to a List (US-003) for Sprint 2.
+- Implement Add Task to a List (US-003) and View Tasks and Visual Distinction (US-004) for Sprint 3.
 Stories
 - [US-001] Create a New To-Do List
   - [x] READY
@@ -50,6 +50,12 @@ Stories
   - [x] TESTED
   - [x] ACCEPTED
 - [US-003] Add Task to a List
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-004] View Tasks and Visual Distinction
   - [ ] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED

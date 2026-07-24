@@ -2,7 +2,7 @@
 
 - Story ID: US-004
 - Title: View Tasks and Visual Distinction
-- Status: Draft
+- Status: Ready
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-24
@@ -16,4 +16,4 @@
 Users get clear visual feedback on task completion status.
 
 ## Test Approach
-
+Pytest verifying task rendering and completion styling.

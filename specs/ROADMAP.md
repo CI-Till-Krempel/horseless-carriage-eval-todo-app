@@ -35,7 +35,7 @@ Stories
 
 ### v1.0.0
 Goals
-- Implement Add Task to a List (US-003) and View Tasks and Visual Distinction (US-004) for Sprint 3.
+- Implement View Tasks and Visual Distinction (US-004) and Mark Task Complete or Incomplete (US-005) for Sprint 4.
 Stories
 - [US-001] Create a New To-Do List
   - [x] READY
@@ -56,6 +56,12 @@ Stories
   - [x] TESTED
   - [x] ACCEPTED
 - [US-004] View Tasks and Visual Distinction
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-005] Mark Task Complete or Incomplete
   - [ ] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED

@@ -45,10 +45,10 @@ Stories
   - [x] ACCEPTED
 - [US-002] View All To-Do Lists
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-003] Add Task to a List
   - [ ] READY
   - [ ] IMPLEMENTED

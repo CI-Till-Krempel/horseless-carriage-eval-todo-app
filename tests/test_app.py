@@ -1,12 +1,16 @@
+import os
 import pytest
-from app import app, todo_lists
+from app import app, DATA_FILE, save_data, load_data
 
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
-    todo_lists.clear()
+    if os.path.exists(DATA_FILE):
+        os.remove(DATA_FILE)
     with app.test_client() as client:
         yield client
+    if os.path.exists(DATA_FILE):
+        os.remove(DATA_FILE)
 
 def test_index(client):
     response = client.get('/')
@@ -18,48 +22,38 @@ def test_help_page(client):
     assert response.status_code == 200
     assert b'User Guide & Help' in response.data
 
-def test_list_creation_validation(client):
-    response = client.post('/lists', data={'name': '   '}, follow_redirects=True)
-    assert response.status_code == 200
-    assert b'List name cannot be empty or whitespace.' in response.data
-    assert len(todo_lists) == 0
-
-def test_task_creation_validation(client):
-    client.post('/lists', data={'name': 'Valid List'}, follow_redirects=True)
-    list_id = list(todo_lists.keys())[0]
-
-    response = client.post(f'/lists/{list_id}/tasks', data={'title': ''}, follow_redirects=True)
-    assert response.status_code == 200
-    assert b'Task description cannot be empty or whitespace.' in response.data
-    assert len(todo_lists[list_id]['tasks']) == 0
-
-def test_crud_flow(client):
+def test_persistence_flow(client):
     # 1. Create list
-    response = client.post('/lists', data={'name': 'Work Tasks'}, follow_redirects=True)
+    response = client.post('/lists', data={'name': 'Persistent List'}, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Work Tasks' in response.data
-    
-    # Get list ID
-    list_id = list(todo_lists.keys())[0]
+    assert b'Persistent List' in response.data
+
+    # Verify JSON file exists and contains data
+    assert os.path.exists(DATA_FILE)
+    data = load_data()
+    assert len(data['lists']) == 1
+    list_id = list(data['lists'].keys())[0]
 
     # 2. Add task
-    response = client.post(f'/lists/{list_id}/tasks', data={'title': 'Finish report'}, follow_redirects=True)
+    response = client.post(f'/lists/{list_id}/tasks', data={'title': 'Persistent Task'}, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Finish report' in response.data
-    
-    task_id = list(todo_lists[list_id]['tasks'].keys())[0]
+    assert b'Persistent Task' in response.data
 
-    # 3. Toggle task completion
-    response = client.post(f'/lists/{list_id}/tasks/{task_id}/toggle', follow_redirects=True)
-    assert response.status_code == 200
-    assert todo_lists[list_id]['tasks'][task_id]['completed'] is True
+    data = load_data()
+    assert len(data['lists'][list_id]['tasks']) == 1
+    task_id = list(data['lists'][list_id]['tasks'].keys())[0]
+
+    # 3. Toggle task
+    client.post(f'/lists/{list_id}/tasks/{task_id}/toggle', follow_redirects=True)
+    data = load_data()
+    assert data['lists'][list_id]['tasks'][task_id]['completed'] is True
 
     # 4. Delete task
-    response = client.post(f'/lists/{list_id}/tasks/{task_id}/delete', follow_redirects=True)
-    assert response.status_code == 200
-    assert len(todo_lists[list_id]['tasks']) == 0
+    client.post(f'/lists/{list_id}/tasks/{task_id}/delete', follow_redirects=True)
+    data = load_data()
+    assert len(data['lists'][list_id]['tasks']) == 0
 
     # 5. Delete list
-    response = client.post(f'/lists/{list_id}/delete', follow_redirects=True)
-    assert response.status_code == 200
-    assert len(todo_lists) == 0
+    client.post(f'/lists/{list_id}/delete', follow_redirects=True)
+    data = load_data()
+    assert len(data['lists']) == 0

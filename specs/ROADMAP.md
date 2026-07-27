@@ -108,6 +108,19 @@ Stories
   - [x] ACCEPTED
 
 
+### v0.4.0
+Goals
+- Deliver Sprint 4 Local JSON file persistence (US-0010) ensuring data durability across server restarts.
+
+Stories
+- [US-0010] Local JSON file persistence
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

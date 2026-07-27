@@ -45,7 +45,7 @@ Stories
   - [x] TESTED
   - [x] ACCEPTED
 - [US-0002] Add Task to List
-  - [ ] READY
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
@@ -69,6 +69,19 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] View All Lists and Visually Distinguish Completed Tasks
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v1.1.0
+Goals
+- Implement robust file persistence for lists and tasks across application restarts (Sprint 2).
+
+Stories
+- [US-0007] Persistent Storage of Lists and Tasks
   - [ ] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED

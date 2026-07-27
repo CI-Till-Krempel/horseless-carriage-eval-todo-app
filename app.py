@@ -1,9 +1,9 @@
+# US-0002 source code update
 from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
 app.secret_key = 'todo-secret-key'
 
-# In-memory data store
 lists = []
 
 @app.route('/')
@@ -19,6 +19,21 @@ def create_list():
         new_list = {'id': len(lists) + 1, 'name': name, 'tasks': []}
         lists.append(new_list)
         flash('To-do list created successfully!', 'success')
+    return redirect(url_for('index'))
+
+@app.route('/lists/<int:list_id>/tasks', methods=['POST'])
+def add_task(list_id):
+    description = request.form.get('description', '').strip()
+    if not description:
+        flash('Task description cannot be empty.', 'error')
+    else:
+        target_list = next((lst for lst in lists if lst['id'] == list_id), None)
+        if target_list:
+            new_task = {'id': len(target_list['tasks']) + 1, 'description': description, 'completed': False}
+            target_list['tasks'].append(new_task)
+            flash('Task added successfully!', 'success')
+        else:
+            flash('To-do list not found.', 'error')
     return redirect(url_for('index'))
 
 if __name__ == '__main__':

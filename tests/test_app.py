@@ -13,6 +13,21 @@ def test_index(client):
     assert response.status_code == 200
     assert b'My To-Do Lists' in response.data
 
+def test_list_creation_validation(client):
+    response = client.post('/lists', data={'name': '   '}, follow_redirects=True)
+    assert response.status_code == 200
+    assert b'List name cannot be empty or whitespace.' in response.data
+    assert len(todo_lists) == 0
+
+def test_task_creation_validation(client):
+    client.post('/lists', data={'name': 'Valid List'}, follow_redirects=True)
+    list_id = list(todo_lists.keys())[0]
+
+    response = client.post(f'/lists/{list_id}/tasks', data={'title': ''}, follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Task description cannot be empty or whitespace.' in response.data
+    assert len(todo_lists[list_id]['tasks']) == 0
+
 def test_crud_flow(client):
     # 1. Create list
     response = client.post('/lists', data={'name': 'Work Tasks'}, follow_redirects=True)

@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
+app.secret_key = 'supersecretkey'
 
 # In-memory storage for to-do lists and tasks
-# Structure: lists = { list_id: { 'id': str, 'name': str, 'tasks': { task_id: { 'id': str, 'title': str, 'completed': bool } } } }
 todo_lists = {}
 list_id_counter = 1
 task_id_counter = 1
@@ -16,7 +16,9 @@ def index():
 def create_list():
     global list_id_counter
     name = request.form.get('name', '').strip()
-    if name:
+    if not name:
+        flash('List name cannot be empty or whitespace.', 'error')
+    else:
         l_id = str(list_id_counter)
         list_id_counter += 1
         todo_lists[l_id] = {
@@ -37,7 +39,9 @@ def add_task(list_id):
     global task_id_counter
     if list_id in todo_lists:
         title = request.form.get('title', '').strip()
-        if title:
+        if not title:
+            flash('Task description cannot be empty or whitespace.', 'error')
+        else:
             t_id = str(task_id_counter)
             task_id_counter += 1
             todo_lists[list_id]['tasks'][t_id] = {

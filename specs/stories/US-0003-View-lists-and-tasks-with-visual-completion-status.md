@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: View lists and tasks with visual completion status
-- Status: Ready
+- Status: Accepted
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-27

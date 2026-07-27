@@ -1,9 +1,9 @@
-# US-0002 source code update
 from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
 app.secret_key = 'todo-secret-key'
 
+# In-memory data store
 lists = []
 
 @app.route('/')
@@ -34,6 +34,20 @@ def add_task(list_id):
             flash('Task added successfully!', 'success')
         else:
             flash('To-do list not found.', 'error')
+    return redirect(url_for('index'))
+
+@app.route('/lists/<int:list_id>/tasks/<int:task_id>/toggle', methods=['POST'])
+def toggle_task(list_id, task_id):
+    target_list = next((lst for lst in lists if lst['id'] == list_id), None)
+    if target_list:
+        target_task = next((t for t in target_list['tasks'] if t['id'] == task_id), None)
+        if target_task:
+            target_task['completed'] = not target_task['completed']
+            flash('Task status updated!', 'success')
+        else:
+            flash('Task not found.', 'error')
+    else:
+        flash('To-do list not found.', 'error')
     return redirect(url_for('index'))
 
 if __name__ == '__main__':

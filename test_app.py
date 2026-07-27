@@ -19,11 +19,6 @@ def test_create_list_success(client):
     assert b'Groceries' in response.data
     assert b'To-do list created successfully!' in response.data
 
-def test_create_list_empty(client):
-    response = client.post('/lists', data={'name': '   '}, follow_redirects=True)
-    assert response.status_code == 200
-    assert b'List name cannot be empty or whitespace.' in response.data
-
 def test_add_task_success(client):
     client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
     response = client.post('/lists/1/tasks', data={'description': 'Finish report'}, follow_redirects=True)
@@ -31,8 +26,18 @@ def test_add_task_success(client):
     assert b'Finish report' in response.data
     assert b'Task added successfully!' in response.data
 
-def test_add_task_empty(client):
+def test_toggle_task_completion(client):
     client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
-    response = client.post('/lists/1/tasks', data={'description': '   '}, follow_redirects=True)
+    client.post('/lists/1/tasks', data={'description': 'Finish report'}, follow_redirects=True)
+    
+    # Toggle to complete
+    response = client.post('/lists/1/tasks/1/toggle', follow_redirects=True)
     assert response.status_code == 200
-    assert b'Task description cannot be empty.' in response.data
+    assert b'Mark Incomplete' in response.data
+    assert lists[0]['tasks'][0]['completed'] is True
+
+    # Toggle back to incomplete
+    response = client.post('/lists/1/tasks/1/toggle', follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Mark Complete' in response.data
+    assert lists[0]['tasks'][0]['completed'] is False

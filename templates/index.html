@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List Web App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f9; color: #333; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; }
+        .flash { padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+        .flash.error { background: #f8d7da; color: #721c24; }
+        .flash.success { background: #d4edda; color: #155724; }
+        form { display: flex; margin-bottom: 20px; }
+        input[type="text"] { flex: 1; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px 0 0 4px; }
+        button { padding: 10px 20px; font-size: 16px; background: #3498db; color: white; border: none; border-radius: 0 4px 4px 0; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 10px; background: #ecf0f1; margin-bottom: 8px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My To-Do Lists</h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('create_list') }}" method="POST">
+            <input type="text" name="name" placeholder="Enter new list name..." required>
+            <button type="submit">Create List</button>
+        </form>
+
+        <h2>Existing Lists</h2>
+        {% if lists %}
+            <ul>
+                {% for lst in lists %}
+                    <li>{{ lst.name }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No to-do lists yet. Create one above!</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,34 +1,51 @@
 import pytest
-from app import app, lists
+import os
+import json
+import app as flask_app
 
 @pytest.fixture
 def client():
-    app.config['TESTING'] = True
-    with app.test_client() as client:
-        lists.clear()
+    flask_app.app.config['TESTING'] = True
+    if os.path.exists(flask_app.DATA_FILE):
+        os.remove(flask_app.DATA_FILE)
+    flask_app.lists.clear()
+    flask_app.list_id_counter = 1
+    flask_app.task_id_counter = 1
+    with flask_app.app.test_client() as client:
         yield client
+    if os.path.exists(flask_app.DATA_FILE):
+        os.remove(flask_app.DATA_FILE)
 
 def test_index(client):
     response = client.get('/')
     assert response.status_code == 200
     assert b'My To-Do Lists' in response.data
 
-def test_create_list(client):
-    response = client.post('/lists/create', data={'name': 'Groceries'}, follow_redirects=True)
+def test_create_list_persistence(client):
+    response = client.post('/lists/create', data={'name': 'Persistent List'}, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Groceries' in response.data
+    assert b'Persistent List' in response.data
+    
+    # Verify data.json was created and populated
+    assert os.path.exists(flask_app.DATA_FILE)
+    with open(flask_app.DATA_FILE, 'r') as f:
+        data = json.load(f)
+        assert len(data['lists']) == 1
+        assert data['lists'][0]['name'] == 'Persistent List'
 
 def test_add_and_toggle_task(client):
     client.post('/lists/create', data={'name': 'Work'}, follow_redirects=True)
     list_id = 1
-    response = client.post(f'/lists/{list_id}/tasks/add', data={'text': 'Write docs'}, follow_redirects=True)
-    assert response.status_code == 200
-    assert b'Write docs' in response.data
-
+    client.post(f'/lists/{list_id}/tasks/add', data={'text': 'Write docs'}, follow_redirects=True)
+    
     # Toggle task
     response = client.post(f'/lists/{list_id}/tasks/1/toggle', follow_redirects=True)
     assert response.status_code == 200
-    assert b'completed' in response.data or b'Mark Incomplete' in response.data
+    
+    # Verify persistence file reflects toggle
+    with open(flask_app.DATA_FILE, 'r') as f:
+        data = json.load(f)
+        assert data['lists'][0]['tasks'][0]['completed'] is True
 
 def test_delete_task(client):
     client.post('/lists/create', data={'name': 'Work'}, follow_redirects=True)

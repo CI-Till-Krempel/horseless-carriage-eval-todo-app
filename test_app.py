@@ -26,18 +26,18 @@ def test_add_task_success(client):
     assert b'Finish report' in response.data
     assert b'Task added successfully!' in response.data
 
-def test_toggle_task_completion(client):
+def test_delete_task(client):
     client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
     client.post('/lists/1/tasks', data={'description': 'Finish report'}, follow_redirects=True)
-    
-    # Toggle to complete
-    response = client.post('/lists/1/tasks/1/toggle', follow_redirects=True)
+    response = client.post('/lists/1/tasks/1/delete', follow_redirects=True)
     assert response.status_code == 200
-    assert b'Mark Incomplete' in response.data
-    assert lists[0]['tasks'][0]['completed'] is True
+    assert b'Task deleted successfully!' in response.data
+    assert b'Finish report' not in response.data
 
-    # Toggle back to incomplete
-    response = client.post('/lists/1/tasks/1/toggle', follow_redirects=True)
+def test_delete_list(client):
+    client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
+    client.post('/lists/1/tasks', data={'description': 'Finish report'}, follow_redirects=True)
+    response = client.post('/lists/1/delete', follow_redirects=True)
     assert response.status_code == 200
-    assert b'Mark Complete' in response.data
-    assert lists[0]['tasks'][0]['completed'] is False
+    assert b'To-do list deleted successfully!' in response.data
+    assert b'Work' not in response.data

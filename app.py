@@ -12,6 +12,10 @@ task_id_counter = 1
 def index():
     return render_template('index.html', lists=todo_lists.values())
 
+@app.route('/help')
+def help_page():
+    return render_template('help.html')
+
 @app.route('/lists', methods=['POST'])
 def create_list():
     global list_id_counter

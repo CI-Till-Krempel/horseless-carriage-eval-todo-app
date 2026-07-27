@@ -13,6 +13,11 @@ def test_index(client):
     assert response.status_code == 200
     assert b'My To-Do Lists' in response.data
 
+def test_help_page(client):
+    response = client.get('/help')
+    assert response.status_code == 200
+    assert b'User Guide & Help' in response.data
+
 def test_list_creation_validation(client):
     response = client.post('/lists', data={'name': '   '}, follow_redirects=True)
     assert response.status_code == 200

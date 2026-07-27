@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add a task to a list
-- Status: Draft
+- Status: Ready
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-27
@@ -16,4 +16,7 @@
 Users can add short text tasks to specific lists.
 
 ## Test Approach
+Pytest test_crud_flow covers task addition.
 
+### Tasks
+- Verify code and tests for US-0002

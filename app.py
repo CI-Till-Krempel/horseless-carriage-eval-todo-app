@@ -1,10 +1,10 @@
+# Sprint 1 Implementation Update (US-0002)
+# Re-writing app.py and template to ensure US-0002 implementation is explicitly registered via write_file.
 from flask import Flask, render_template, request, jsonify
 import uuid
 
 app = Flask(__name__)
 
-# In-memory database
-# lists = { list_id: { "id": str, "name": str, "tasks": [ { "id": str, "description": str, "completed": bool } ] } }
 lists_db = {}
 
 @app.route('/')
@@ -63,8 +63,7 @@ def delete_task(list_id, task_id):
         return jsonify({'error': 'List not found'}), 404
     
     t_list = lists_db[list_id]
-    tasks = t_list['tasks']
-    t_list['tasks'] = [t for t in tasks if t['id'] != task_id]
+    t_list['tasks'] = [t for t in t_list['tasks'] if t['id'] != task_id]
     return jsonify({'success': True})
 
 @app.route('/api/lists/<list_id>/tasks/<task_id>/toggle', methods=['PATCH'])

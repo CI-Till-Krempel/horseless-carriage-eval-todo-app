@@ -38,8 +38,14 @@ Goals
 - Deliver Sprint 1 scope: Create to-do list and add task.
 
 Stories
+- [US-0001] Create To-Do List
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0002] Add Task to List
-  - [ ] READY
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED

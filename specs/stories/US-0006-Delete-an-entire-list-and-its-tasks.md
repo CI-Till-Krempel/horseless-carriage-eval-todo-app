@@ -2,7 +2,7 @@
 
 - Story ID: US-0006
 - Title: Delete an entire list and its tasks
-- Status: Ready
+- Status: Accepted
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-07-27

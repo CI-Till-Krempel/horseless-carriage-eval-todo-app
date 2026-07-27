@@ -41,11 +41,24 @@ Stories
 - [US-0001] Create a new to-do list with a name
   - [x] READY
   - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0002] Add a task to a list with a short text description
+  - [ ] READY
+  - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
+
+
+### v1.1.0
+Goals
+- Enable users to add tasks to lists with short text descriptions.
+
+Stories
 - [US-0002] Add a task to a list with a short text description
-  - [ ] READY
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED

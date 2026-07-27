@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete tasks and entire lists
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-27

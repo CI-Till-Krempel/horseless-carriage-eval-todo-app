@@ -85,7 +85,7 @@ Goals
 Stories
 - [US-0004] Delete tasks and entire lists
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

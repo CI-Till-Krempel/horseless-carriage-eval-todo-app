@@ -1,9 +1,9 @@
+# US-0002 source code update
 from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
 app.secret_key = 'todo-secret-key'
 
-# In-memory data store
 lists = []
 
 @app.route('/')

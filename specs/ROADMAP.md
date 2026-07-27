@@ -59,7 +59,7 @@ Goals
 Stories
 - [US-0002] Add a task to a list with a short text description
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

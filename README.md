@@ -1,15 +1,33 @@
-# Horseless Carriage — Evaluation Repo (To-Do List Web App)
+# To-Do List Web App
 
-This is the fixed state repo for Horseless Carriage's automated team-performance
-evaluation harness. It is **not** a real product — it exists solely so the
-Horseless Carriage agent team has a real GitHub repo to run a fixed 5-sprint
-scenario against, so results are comparable across Horseless Carriage versions
-over time.
+A simple, clean web application for managing to-do lists and tasks, built with Flask.
 
-- Managed by: [CI-Till-Krempel/Horseless-Carriage](https://github.com/CI-Till-Krempel/Horseless-Carriage)
-- Scenario: see `eval/scenario/PRODUCT-VISION.md` in the Horseless Carriage repo for the fixed product vision fed to the team every run.
-- Each automated eval run creates a fresh branch here (`eval/<version>-run<N>`) rather than touching `main`.
-- `main` is kept empty/minimal on purpose — nothing from the eval runs should land here.
+## Features
+1. Create new to-do lists with names.
+2. Add short text descriptions for tasks inside lists.
+3. Mark tasks as complete or incomplete (visually distinguished with strikethrough).
+4. Delete individual tasks.
+5. Delete entire lists along with all their nested tasks.
+6. View all lists and tasks on a responsive web UI.
 
-See `HORSELESS_CARRIAGE_RELEASE.md`/`SECURITY.md`/`MANUAL.md` in the main repo for
-how this fits into the release process.
+## Getting Started
+
+### Prerequisites
+- Python 3.8+
+- pip
+
+### Installation & Running
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Run the application:
+   ```bash
+   python app.py
+   ```
+3. Open your browser at `http://127.0.0.1:5000`.
+
+### Running Tests
+```bash
+pytest
+```

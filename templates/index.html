@@ -18,10 +18,13 @@
         .list-card h3 { margin-top: 0; }
         ul { list-style: none; padding: 0; }
         li { padding: 8px; background: white; margin-bottom: 6px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; }
+        li.completed span { text-decoration: line-through; color: #888; }
         .task-form { margin-top: 10px; margin-bottom: 0; }
         .task-form input[type="text"] { font-size: 14px; padding: 8px; }
         .task-form button { font-size: 14px; padding: 8px 15px; background: #2ecc71; }
         .task-form button:hover { background: #27ae60; }
+        .toggle-btn { background: #f39c12; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+        .toggle-btn:hover { background: #d35400; }
     </style>
 </head>
 <body>
@@ -50,7 +53,14 @@
                     {% if lst.tasks %}
                         <ul>
                             {% for task in lst.tasks %}
-                                <li>{{ task.description }}</li>
+                                <li class="{% if task.completed %}completed{% endif %}">
+                                    <span>{{ task.description }}</span>
+                                    <form action="{{ url_for('toggle_task', list_id=lst.id, task_id=task.id) }}" method="POST" style="margin: 0;">
+                                        <button type="submit" class="toggle-btn">
+                                            {% if task.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}
+                                        </button>
+                                    </form>
+                                </li>
                             {% endfor %}
                         </ul>
                     {% else %}

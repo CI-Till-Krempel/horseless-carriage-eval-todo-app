@@ -2,7 +2,7 @@
 
 - Story ID: US-0007
 - Title: Input validation for list creation
-- Status: Ready
+- Status: Accepted
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-27

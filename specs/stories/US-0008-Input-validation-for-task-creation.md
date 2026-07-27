@@ -2,7 +2,7 @@
 
 - Story ID: US-0008
 - Title: Input validation for task creation
-- Status: Draft
+- Status: Ready
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-27
@@ -16,4 +16,7 @@
 Users receive clear validation feedback when attempting to add blank tasks.
 
 ## Test Approach
+Pytest test_task_creation_validation checks blank task rejection.
 
+### Tasks
+- Verify task validation implementation

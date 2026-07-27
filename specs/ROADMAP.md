@@ -95,6 +95,19 @@ Stories
   - [x] ACCEPTED
 
 
+### v0.3.0
+Goals
+- Deliver Sprint 3 documentation polish and user guide enhancement (US-0009) ensuring complete end-to-end usability guidance.
+
+Stories
+- [US-0009] User Guide / README instructions enhancement
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

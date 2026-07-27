@@ -76,6 +76,25 @@ Stories
   - [x] ACCEPTED
 
 
+### v0.2.0
+Goals
+- Deliver Sprint 2 Usability & Polish enhancements including robust input validation and user feedback messages for lists and tasks.
+
+Stories
+- [US-0007] Input validation for list creation
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0008] Input validation for task creation
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

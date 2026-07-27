@@ -6,7 +6,7 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f9; color: #333; }
         .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; }
+        h1, h2 { color: #2c3e50; }
         .flash { padding: 10px; margin-bottom: 15px; border-radius: 4px; }
         .flash.error { background: #f8d7da; color: #721c24; }
         .flash.success { background: #d4edda; color: #155724; }
@@ -14,8 +14,14 @@
         input[type="text"] { flex: 1; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px 0 0 4px; }
         button { padding: 10px 20px; font-size: 16px; background: #3498db; color: white; border: none; border-radius: 0 4px 4px 0; cursor: pointer; }
         button:hover { background: #2980b9; }
+        .list-card { background: #ecf0f1; padding: 15px; margin-bottom: 15px; border-radius: 6px; }
+        .list-card h3 { margin-top: 0; }
         ul { list-style: none; padding: 0; }
-        li { padding: 10px; background: #ecf0f1; margin-bottom: 8px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }
+        li { padding: 8px; background: white; margin-bottom: 6px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; }
+        .task-form { margin-top: 10px; margin-bottom: 0; }
+        .task-form input[type="text"] { font-size: 14px; padding: 8px; }
+        .task-form button { font-size: 14px; padding: 8px 15px; background: #2ecc71; }
+        .task-form button:hover { background: #27ae60; }
     </style>
 </head>
 <body>
@@ -37,11 +43,26 @@
 
         <h2>Existing Lists</h2>
         {% if lists %}
-            <ul>
-                {% for lst in lists %}
-                    <li>{{ lst.name }}</li>
-                {% endfor %}
-            </ul>
+            {% for lst in lists %}
+                <div class="list-card">
+                    <h3>{{ lst.name }}</h3>
+                    
+                    {% if lst.tasks %}
+                        <ul>
+                            {% for task in lst.tasks %}
+                                <li>{{ task.description }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p style="font-size: 14px; color: #666;">No tasks in this list yet.</p>
+                    {% endif %}
+
+                    <form class="task-form" action="{{ url_for('add_task', list_id=lst.id) }}" method="POST">
+                        <input type="text" name="description" placeholder="Add a new task..." required>
+                        <button type="submit">Add Task</button>
+                    </form>
+                </div>
+            {% endfor %}
         {% else %}
             <p>No to-do lists yet. Create one above!</p>
         {% endif %}

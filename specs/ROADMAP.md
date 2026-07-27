@@ -78,6 +78,19 @@ Stories
   - [ ] ACCEPTED
 
 
+### v1.3.0
+Goals
+- Enable deletion of tasks and entire lists with their contained tasks.
+
+Stories
+- [US-0004] Delete tasks and entire lists
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

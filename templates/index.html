@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #357abd;
+        }
+        .danger-btn {
+            background-color: #e74c3c;
+        }
+        .danger-btn:hover {
+            background-color: #c0392b;
+        }
+        .todo-list {
+            border: 1px solid #e1e1e8;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #fafafa;
+        }
+        .todo-list h3 {
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .task-actions form {
+            display: inline;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My To-Do Lists</h1>
+        
+        <!-- Create List Form -->
+        <div class="form-group">
+            <form action="{{ url_for('create_list') }}" method="POST">
+                <input type="text" name="name" placeholder="New List Name..." required>
+                <button type="submit">Create List</button>
+            </form>
+        </div>
+
+        <!-- Lists Display -->
+        {% if lists %}
+            {% for l in lists %}
+                <div class="todo-list">
+                    <h3>
+                        {{ l.name }}
+                        <form action="{{ url_for('delete_list', list_id=l.id) }}" method="POST" style="display:inline;">
+                            <button type="submit" class="danger-btn">Delete List</button>
+                        </form>
+                    </h3>
+
+                    <!-- Add Task Form -->
+                    <form action="{{ url_for('add_task', list_id=l.id) }}" method="POST" style="margin-bottom: 10px;">
+                        <input type="text" name="text" placeholder="New Task Description..." required style="width: 60%;">
+                        <button type="submit">Add Task</button>
+                    </form>
+
+                    <!-- Tasks List -->
+                    {% if l.tasks %}
+                        <ul>
+                            {% for t in l.tasks %}
+                                <li>
+                                    <span class="{% if t.completed %}completed{% endif %}">
+                                        {{ t.text }}
+                                    </span>
+                                    <div class="task-actions">
+                                        <form action="{{ url_for('toggle_task', list_id=l.id, task_id=t.id) }}" method="POST">
+                                            <button type="submit">{% if t.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}</button>
+                                        </form>
+                                        <form action="{{ url_for('delete_task', list_id=l.id, task_id=t.id) }}" method="POST">
+                                            <button type="submit" class="danger-btn">Delete</button>
+                                        </form>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p style="color: #666; font-style: italic;">No tasks in this list yet.</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align: center; color: #666;">No to-do lists found. Create one above!</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add a task to a list with a short text description
-- Status: Draft
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-27
@@ -17,4 +17,9 @@
 Users can add concrete action items into specific lists.
 
 ## Test Approach
+Test task addition success and empty description validation using pytest and Flask test client.
 
+### Tasks
+- Add task creation endpoint in app.py
+- Update templates/index.html to display tasks and task creation form per list
+- Write unit tests for adding tasks and validation

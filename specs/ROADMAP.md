@@ -60,6 +60,19 @@ Stories
 - [US-0002] Add a task to a list with a short text description
   - [x] READY
   - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
+### v1.2.0
+Goals
+- Enable users to mark tasks as complete or incomplete with visual distinction.
+
+Stories
+- [US-0003] Mark a task as complete or incomplete
+  - [x] READY
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

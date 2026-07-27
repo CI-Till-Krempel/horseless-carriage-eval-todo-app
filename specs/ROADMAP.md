@@ -72,7 +72,7 @@ Goals
 Stories
 - [US-0003] Mark a task as complete or incomplete
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

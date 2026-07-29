@@ -2,7 +2,7 @@
 
 - Story ID: US-0006
 - Title: View lists and tasks with visual distinction for completed items
-- Status: Implemented
+- Status: Accepted
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-29

@@ -84,6 +84,19 @@ Stories
 - [US-0004] Delete a task
   - [x] READY
   - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
+### v1.2.0
+Goals
+- Deliver US-0005 (Delete an entire list and its tasks) for v1.2.0, ensuring robust list teardown and cascade testing.
+
+Stories
+- [US-0005] Delete an entire list and its tasks
+  - [x] READY
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

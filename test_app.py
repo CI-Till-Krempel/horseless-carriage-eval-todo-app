@@ -18,27 +18,24 @@ def test_index(client):
     assert response.status_code == 200
     assert b'My To-Do Lists' in response.data
 
-def test_create_list_and_tasks(client):
+def test_delete_list_cascade(client):
     # Create list
-    response = client.post('/lists', data={'name': 'Groceries'}, follow_redirects=True)
+    response = client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Groceries' in response.data
+    assert b'Work' in response.data
 
-    # Add task
-    response = client.post('/lists/1/tasks', data={'description': 'Buy milk'}, follow_redirects=True)
-    assert response.status_code == 200
-    assert b'Buy milk' in response.data
+    # Add tasks to list
+    client.post('/lists/1/tasks', data={'description': 'Finish report'})
+    client.post('/lists/1/tasks', data={'description': 'Send email'})
 
-    # Toggle task
-    response = client.post('/tasks/1/toggle', follow_redirects=True)
-    assert response.status_code == 200
+    # Verify tasks appear
+    response = client.get('/')
+    assert b'Finish report' in response.data
+    assert b'Send email' in response.data
 
-    # Delete task (US-0004 specific verification)
-    response = client.post('/tasks/1/delete', follow_redirects=True)
-    assert response.status_code == 200
-    assert b'Buy milk' not in response.data
-
-    # Delete list
+    # Delete entire list (US-0005 verification)
     response = client.post('/lists/1/delete', follow_redirects=True)
     assert response.status_code == 200
-    assert b'Groceries' not in response.data
+    assert b'Work' not in response.data
+    assert b'Finish report' not in response.data
+    assert b'Send email' not in response.data

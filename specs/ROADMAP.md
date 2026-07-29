@@ -98,7 +98,7 @@ Goals
 Stories
 - [US-0006] Documentation, README, and Final Polish
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

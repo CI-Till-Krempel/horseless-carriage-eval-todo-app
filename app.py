@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# In-memory data store for To-Do Lists and Tasks (US-0004 explicit file touch)
+# In-memory data store for To-Do Lists and Tasks (US-0005 explicit write_file)
 todo_lists = {}
 list_counter = 1
 task_counter = 1
@@ -23,6 +23,12 @@ def create_list():
             'name': name,
             'tasks': []
         }
+    return redirect(url_for('index'))
+
+@app.route('/lists/<list_id>/delete', methods=['POST'])
+def delete_list(list_id):
+    if list_id in todo_lists:
+        del todo_lists[list_id]
     return redirect(url_for('index'))
 
 @app.route('/lists/<list_id>/tasks', methods=['POST'])

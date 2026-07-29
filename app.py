@@ -2,8 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# In-memory data store for Sprint 1
-# Lists format: { list_id: { 'id': list_id, 'name': name, 'tasks': [ { 'id': task_id, 'description': desc, 'completed': False } ] } }
+# In-memory data store for Sprint 1 & 2
 todo_lists = {}
 list_counter = 1
 task_counter = 1

@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# In-memory data store for To-Do Lists and Tasks
+# In-memory data store for To-Do Lists and Tasks (Updated for US-0003)
 todo_lists = {}
 list_counter = 1
 task_counter = 1

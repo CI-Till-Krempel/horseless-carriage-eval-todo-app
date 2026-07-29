@@ -115,6 +115,19 @@ Stories
   - [ ] ACCEPTED
 
 
+### v1.4.0
+Goals
+- Finalize v1.4.0 release with comprehensive end-to-end documentation polish, final user guide creation, and final sign-off.
+
+Stories
+- [US-0002] Add a task to a list
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

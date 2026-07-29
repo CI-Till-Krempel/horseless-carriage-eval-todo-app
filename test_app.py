@@ -18,17 +18,18 @@ def test_index(client):
     assert response.status_code == 200
     assert b'My To-Do Lists' in response.data
 
-def test_visual_distinction_completed_tasks(client):
-    # Create list
-    client.post('/lists', data={'name': 'Personal'})
-    # Add task
-    client.post('/lists/1/tasks', data={'description': 'Read book'})
+def test_toggle_task_status(client):
+    # Create list and task
+    client.post('/lists', data={'name': 'Home'})
+    client.post('/lists/1/tasks', data={'description': 'Clean room'})
 
-    # Toggle task to complete
+    # Toggle to complete
     client.post('/tasks/1/toggle', follow_redirects=True)
-
-    # Verify visual distinction (.completed class in HTML)
     response = client.get('/')
-    assert response.status_code == 200
     assert b'class="task-item completed"' in response.data
-    assert b'Read book' in response.data
+
+    # Toggle back to incomplete
+    client.post('/tasks/1/toggle', follow_redirects=True)
+    response = client.get('/')
+    assert b'class="task-item completed"' not in response.data
+    assert b'Clean room' in response.data

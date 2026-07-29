@@ -41,9 +41,9 @@ Stories
 - [US-0001] Create a new to-do list
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0002] Add a task to a list
   - [ ] READY
   - [ ] IMPLEMENTED
@@ -71,6 +71,19 @@ Stories
 - [US-0006] View lists and tasks with visual distinction for completed items
   - [ ] READY
   - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v1.1.0
+Goals
+- Enhance Sprint 1 MVP by expanding test coverage, improving UI error handling and user feedback, and adding robust documentation/user guide for v1.1.0.
+
+Stories
+- [US-0004] Delete a task
+  - [x] READY
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

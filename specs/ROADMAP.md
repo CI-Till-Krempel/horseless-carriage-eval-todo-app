@@ -97,6 +97,19 @@ Stories
 - [US-0005] Delete an entire list and its tasks
   - [x] READY
   - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
+### v1.3.0
+Goals
+- Deliver US-0006 (View lists and tasks with visual distinction for completed items) for v1.3.0, ensuring comprehensive UI test verification and user experience polish.
+
+Stories
+- [US-0006] View lists and tasks with visual distinction for completed items
+  - [x] READY
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

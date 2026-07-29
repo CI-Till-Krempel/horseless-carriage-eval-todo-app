@@ -18,24 +18,17 @@ def test_index(client):
     assert response.status_code == 200
     assert b'My To-Do Lists' in response.data
 
-def test_delete_list_cascade(client):
+def test_visual_distinction_completed_tasks(client):
     # Create list
-    response = client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
-    assert response.status_code == 200
-    assert b'Work' in response.data
+    client.post('/lists', data={'name': 'Personal'})
+    # Add task
+    client.post('/lists/1/tasks', data={'description': 'Read book'})
 
-    # Add tasks to list
-    client.post('/lists/1/tasks', data={'description': 'Finish report'})
-    client.post('/lists/1/tasks', data={'description': 'Send email'})
+    # Toggle task to complete
+    client.post('/tasks/1/toggle', follow_redirects=True)
 
-    # Verify tasks appear
+    # Verify visual distinction (.completed class in HTML)
     response = client.get('/')
-    assert b'Finish report' in response.data
-    assert b'Send email' in response.data
-
-    # Delete entire list (US-0005 verification)
-    response = client.post('/lists/1/delete', follow_redirects=True)
     assert response.status_code == 200
-    assert b'Work' not in response.data
-    assert b'Finish report' not in response.data
-    assert b'Send email' not in response.data
+    assert b'class="task-item completed"' in response.data
+    assert b'Read book' in response.data

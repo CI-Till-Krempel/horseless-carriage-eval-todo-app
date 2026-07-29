@@ -16,4 +16,9 @@
 Users can toggle task completion status with visual feedback.
 
 ## Test Approach
+Run pytest to verify task completion toggle and test suite.
 
+### Tasks
+- 1. Verify task toggle route and UI button
+- 2. Add test case verifying task completion toggle in test_app.py
+- 3. Run pytest

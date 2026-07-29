@@ -40,7 +40,7 @@ Goals
 Stories
 - [US-0001] Create a new to-do list
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

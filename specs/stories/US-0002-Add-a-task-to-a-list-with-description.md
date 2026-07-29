@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add a task to a list with description
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-29
@@ -16,4 +16,4 @@
 Users can populate lists with actionable tasks.
 
 ## Test Approach
-Pytest for task creation endpoint and UI rendering
+None

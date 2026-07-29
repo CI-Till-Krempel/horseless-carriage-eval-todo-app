@@ -46,7 +46,7 @@ Stories
   - [x] ACCEPTED
 - [US-0002] Add a task to a list with description
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

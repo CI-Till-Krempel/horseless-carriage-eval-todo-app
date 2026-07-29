@@ -13,15 +13,24 @@ def test_index_page(client):
     assert response.status_code == 200
     assert b'My To-Do Lists' in response.data
 
-def test_create_list_and_add_task(client):
+def test_create_list_add_task_and_toggle(client):
     # Create list
-    response = client.post('/lists', data={'name': 'Groceries'}, follow_redirects=True)
+    response = client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Groceries' in response.data
+    assert b'Work' in response.data
+
+    list_id = list(todo_lists.keys())[0]
 
     # Add task
-    # Find the generated list ID
-    list_id = list(todo_lists.keys())[0]
-    response = client.post(f'/lists/{list_id}/tasks', data={'description': 'Buy milk'}, follow_redirects=True)
+    response = client.post(f'/lists/{list_id}/tasks', data={'description': 'Finish report'}, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Buy milk' in response.data
+    assert b'Finish report' in response.data
+
+    task_id = todo_lists[list_id]['tasks'][0]['id']
+    assert todo_lists[list_id]['tasks'][0]['completed'] is False
+
+    # Toggle task to complete
+    response = client.post(f'/lists/{list_id}/tasks/{task_id}/toggle', follow_redirects=True)
+    assert response.status_code == 200
+    assert todo_lists[list_id]['tasks'][0]['completed'] is True
+    assert b'Mark Incomplete' in response.data

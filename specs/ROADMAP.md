@@ -73,6 +73,19 @@ Stories
 - [US-0004] Delete a task
   - [x] READY
   - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
+### v0.4.0
+Goals
+- Implement list deletion feature (Sprint 4).
+
+Stories
+- [US-0005] Delete an entire list and its tasks
+  - [x] READY
+  - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

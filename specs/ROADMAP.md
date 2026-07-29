@@ -47,9 +47,9 @@ Stories
 - [US-0002] Add a task to a list with description
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 
 
 ### v0.2.0

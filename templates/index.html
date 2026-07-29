@@ -7,6 +7,7 @@
         body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; background: #f9f9f9; color: #333; }
         h1 { color: #2c3e50; }
         .list-card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .list-header { display: flex; justify-content: space-between; align-items: center; }
         form { margin-top: 10px; display: inline-block; }
         input[type="text"] { padding: 8px; width: 60%; border: 1px solid #ccc; border-radius: 4px; }
         button { padding: 8px 12px; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; }
@@ -31,7 +32,12 @@
 
     {% for lst in lists %}
     <div class="list-card">
-        <h2>{{ lst.name }}</h2>
+        <div class="list-header">
+            <h2>{{ lst.name }}</h2>
+            <form action="/lists/{{ lst.id }}/delete" method="POST" style="margin: 0;">
+                <button type="submit" style="background: #c0392b; font-size: 12px; padding: 6px 10px;">Delete List</button>
+            </form>
+        </div>
         <ul>
             {% for task in lst.tasks %}
             <li>

@@ -96,7 +96,7 @@ Goals
 Stories
 - [US-0005] Delete an entire list and its tasks
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

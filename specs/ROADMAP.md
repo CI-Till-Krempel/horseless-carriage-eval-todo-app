@@ -72,7 +72,7 @@ Goals
 Stories
 - [US-0004] Delete a task
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

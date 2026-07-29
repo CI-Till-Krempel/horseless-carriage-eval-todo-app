@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# In-memory data store for Sprint 1 & 2 (Explicit write for US-0002)
+# In-memory data store for To-Do Lists and Tasks
 todo_lists = {}
 list_counter = 1
 task_counter = 1
@@ -38,6 +38,15 @@ def add_task(list_id):
                 'description': description,
                 'completed': False
             })
+    return redirect(url_for('index'))
+
+@app.route('/lists/<list_id>/tasks/<task_id>/toggle', methods=['POST'])
+def toggle_task(list_id, task_id):
+    if list_id in todo_lists:
+        for task in todo_lists[list_id]['tasks']:
+            if task['id'] == task_id:
+                task['completed'] = not task['completed']
+                break
     return redirect(url_for('index'))
 
 if __name__ == '__main__':

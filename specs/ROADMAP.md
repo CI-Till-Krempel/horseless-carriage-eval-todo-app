@@ -86,6 +86,19 @@ Stories
 - [US-0005] Delete an entire list and its tasks
   - [x] READY
   - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
+### v1.0.0
+Goals
+- Finalize documentation, README, User Guide, and v1.0.0 release (Sprint 5).
+
+Stories
+- [US-0006] Documentation, README, and Final Polish
+  - [x] READY
+  - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# In-memory data store for Sprint 1 & 2
+# In-memory data store for Sprint 1 & 2 (Explicit write for US-0002)
 todo_lists = {}
 list_counter = 1
 task_counter = 1

@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add a task to a list with description
-- Status: Draft
+- Status: Ready
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-29

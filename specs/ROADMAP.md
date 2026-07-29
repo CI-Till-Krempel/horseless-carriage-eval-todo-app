@@ -41,10 +41,23 @@ Stories
 - [US-0001] Create a new to-do list with a name
   - [x] READY
   - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0002] Add a task to a list with description
+  - [x] READY
+  - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0002] Add a task to a list with description
+
+
+### v0.2.0
+Goals
+- Implement task completion toggle and visual distinction for completed tasks (Sprint 2).
+
+Stories
+- [US-0003] Mark a task as complete or incomplete
   - [ ] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED

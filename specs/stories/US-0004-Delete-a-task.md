@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete a task
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-29
@@ -16,9 +16,7 @@
 Users can remove individual tasks from lists.
 
 ## Test Approach
-Run pytest to verify task deletion and overall test suite.
+pytest
 
 ### Tasks
-- 1. Verify task deletion route and UI element
-- 2. Add dedicated test case for task deletion in test_app.py
-- 3. Run pytest and verify functionality
+- Verify task deletion

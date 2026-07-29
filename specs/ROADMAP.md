@@ -38,6 +38,12 @@ Goals
 - Establish project structure, PRD, and core to-do list creation and task addition features (Sprint 1).
 
 Stories
+- [US-0001] Create a new to-do list with a name
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0002] Add a task to a list with description
   - [ ] READY
   - [ ] IMPLEMENTED

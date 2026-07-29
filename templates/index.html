@@ -14,6 +14,7 @@
         ul { padding-left: 20px; list-style-type: none; }
         li { margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; }
         .completed { text-decoration: line-through; color: #888; }
+        .task-actions { display: flex; gap: 5px; }
         .task-form { margin-top: 10px; display: block; }
     </style>
 </head>
@@ -35,11 +36,16 @@
             {% for task in lst.tasks %}
             <li>
                 <span class="{% if task.completed %}completed{% endif %}">{{ task.description }}</span>
-                <form action="/lists/{{ lst.id }}/tasks/{{ task.id }}/toggle" method="POST" style="margin: 0;">
-                    <button type="submit" style="background: {% if task.completed %}#e74c3c{% else %}#2ecc71{% endif %}; font-size: 12px; padding: 4px 8px;">
-                        {% if task.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}
-                    </button>
-                </form>
+                <div class="task-actions">
+                    <form action="/lists/{{ lst.id }}/tasks/{{ task.id }}/toggle" method="POST" style="margin: 0;">
+                        <button type="submit" style="background: {% if task.completed %}#e74c3c{% else %}#2ecc71{% endif %}; font-size: 11px; padding: 4px 8px;">
+                            {% if task.completed %}Incomplete{% else %}Complete{% endif %}
+                        </button>
+                    </form>
+                    <form action="/lists/{{ lst.id }}/tasks/{{ task.id }}/delete" method="POST" style="margin: 0;">
+                        <button type="submit" style="background: #e74c3c; font-size: 11px; padding: 4px 8px;">Delete</button>
+                    </form>
+                </div>
             </li>
             {% else %}
             <li><em>No tasks in this list yet.</em></li>

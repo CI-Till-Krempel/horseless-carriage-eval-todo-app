@@ -60,6 +60,19 @@ Stories
 - [US-0003] Mark a task as complete or incomplete
   - [x] READY
   - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
+### v0.3.0
+Goals
+- Implement task deletion feature (Sprint 3).
+
+Stories
+- [US-0004] Delete a task
+  - [x] READY
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

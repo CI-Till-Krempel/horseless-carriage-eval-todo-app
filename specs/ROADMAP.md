@@ -109,7 +109,7 @@ Goals
 Stories
 - [US-0006] View lists and tasks with visual distinction for completed items
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

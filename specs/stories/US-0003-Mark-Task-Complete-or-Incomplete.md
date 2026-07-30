@@ -16,4 +16,9 @@
 Users can toggle task completion states.
 
 ## Test Approach
+Pytest unit test specifically asserting task completion toggle behavior.
 
+### Tasks
+- Review existing toggle route and UI button styling
+- Add dedicated test cases for toggling task completion state
+- Push changes and verify CI

@@ -26,8 +26,15 @@ Stories:
 
 ### v0.2 — Next iteration (target: YYYY-MM)
 Goals
-
+- Implement task completion toggling (US-0003) for Sprint 2.
 Stories
+- [US-0003] Mark Task Complete or Incomplete
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 ### Backlog (unplanned)
 
@@ -37,9 +44,9 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0002] Add Task to List
   - [ ] DRAFT
   - [ ] READY

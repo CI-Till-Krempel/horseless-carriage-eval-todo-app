@@ -16,9 +16,9 @@
 Users can delete tasks.
 
 ## Test Approach
-Pytest unit test verifying task removal.
+Pytest unit test verifying task deletion.
 
 ### Tasks
-- Review delete task route and UI button
-- Ensure pytest covers task deletion edge cases
-- Push code and verify CI
+- Verify task deletion endpoint and tests
+- Start feature branch for US-0004
+- Push implementation and advance story stage

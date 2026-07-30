@@ -51,9 +51,9 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0003] Mark Task Complete or Incomplete
   - [ ] DRAFT
   - [ ] READY
@@ -104,6 +104,20 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] View Lists and Tasks UI
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v0.3
+Goals
+- Implement task deletion (US-0004) for Sprint 3.
+
+Stories
+- [US-0004] Delete Task
   - [ ] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED

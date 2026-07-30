@@ -69,9 +69,9 @@ Stories
   - [x] TESTED
   - [x] ACCEPTED
 - [US-0005] Delete To-Do List
-  - [ ] DRAFT
-  - [ ] READY
-  - [ ] IMPLEMENTED
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

@@ -62,9 +62,9 @@ Stories
   - [x] TESTED
   - [x] ACCEPTED
 - [US-0004] Delete Task
-  - [ ] DRAFT
-  - [ ] READY
-  - [ ] IMPLEMENTED
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

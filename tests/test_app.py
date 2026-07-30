@@ -19,20 +19,24 @@ def test_create_list(client):
     assert b'Groceries' in response.data
 
 def test_add_task_to_list(client):
-    # First create a list
     client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
-    # Add task (list id 1)
     response = client.post('/lists/1/tasks', data={'description': 'Finish report'}, follow_redirects=True)
     assert response.status_code == 200
     assert b'Finish report' in response.data
 
-def test_toggle_task(client):
+def test_toggle_task_completion(client):
     client.post('/lists', data={'name': 'Chores'}, follow_redirects=True)
     client.post('/lists/1/tasks', data={'description': 'Clean room'}, follow_redirects=True)
-    # Toggle task 1 in list 1
+    
+    # Toggle task to complete
     response = client.post('/lists/1/tasks/1/toggle', follow_redirects=True)
     assert response.status_code == 200
-    assert b'completed' in response.data
+    assert lists_db[1]['tasks'][0]['completed'] is True
+    
+    # Toggle task back to incomplete
+    response = client.post('/lists/1/tasks/1/toggle', follow_redirects=True)
+    assert response.status_code == 200
+    assert lists_db[1]['tasks'][0]['completed'] is False
 
 def test_delete_task(client):
     client.post('/lists', data={'name': 'Temp'}, follow_redirects=True)

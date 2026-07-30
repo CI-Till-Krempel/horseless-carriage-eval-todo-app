@@ -31,6 +31,50 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
+- [US-0001] Create To-Do List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0002] Add Task to List
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0003] Mark Task Complete or Incomplete
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0004] Delete Task
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0005] Delete To-Do List
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] View Lists and Tasks UI
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### v1.0.0

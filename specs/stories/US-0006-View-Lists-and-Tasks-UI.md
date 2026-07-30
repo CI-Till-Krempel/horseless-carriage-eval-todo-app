@@ -16,8 +16,7 @@
 Users can view all lists and tasks with clear visual distinction of completed items.
 
 ## Test Approach
-Integration / UI tests via pytest and flask test client.
+Pytest rendering tests.
 
 ### Tasks
-- Design and style UI for list and task overview
-- Ensure completed tasks are visually distinguished
+- Verify view lists and tasks functionality

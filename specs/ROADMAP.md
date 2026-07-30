@@ -65,13 +65,13 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0005] Delete To-Do List
-  - [ ] DRAFT
-  - [ ] READY
-  - [ ] IMPLEMENTED
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
@@ -86,17 +86,9 @@ Stories
 
 ### v1.0.0
 Goals
-- Establish project setup, core data structures, and UI for creating lists, adding tasks, and viewing lists/tasks (Sprint 1).
-
+- Implement list deletion (US-0005) and final UI/UX polish (US-0006) for final Sprint 5.
 Stories
-- [US-0001] Create To-Do List
-  - [ ] DRAFT
-  - [ ] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-0002] Add Task to List
+- [US-0005] Delete To-Do List
   - [ ] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED

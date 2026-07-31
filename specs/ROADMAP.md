@@ -71,6 +71,27 @@ Stories
   - [ ] ACCEPTED
 
 
+### v0.2.0
+Goals
+- Implement task completion toggling and task/list deletion features for Sprint 2
+
+Stories
+- [US-0003: Mark tasks as complete or incomplete] US-0003: Mark tasks as complete or incomplete
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0004: Delete tasks and entire lists] US-0004: Delete tasks and entire lists
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

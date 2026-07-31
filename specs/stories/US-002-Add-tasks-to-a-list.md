@@ -3,11 +3,11 @@
 - Story ID: US-002
 - Title: Add tasks to a list
 - Status: Draft
-- Priority: Must
+- Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-07-31
 
-## As a <role>, I want <capability>, so that <benefit>.
+## As a user, I want to add a task with a short text description to a specific list so that I can track what needs to be done.
 
 ## Acceptance Criteria
 - Given the user is viewing a specific to-do list, When they enter a short text description for a new task and submit, Then the task is added to the list and displayed.

@@ -1,6 +1,9 @@
 import pytest
 from app import app, lists_db
 
+def test_placeholder():
+    assert True
+
 @pytest.fixture
 def client():
     app.config['TESTING'] = True

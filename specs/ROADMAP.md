@@ -31,6 +31,29 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
+- [US-0004] Delete Task
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0005] Delete Entire List
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0001] QA Stage Advancement Requires Strict Pytest Coverage Output Format
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### v1.0.0

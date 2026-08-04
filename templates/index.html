@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Web App</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f4f7f6; color: #333; }
+        h1, h2 { color: #2c3e50; }
+        .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        form { display: flex; gap: 10px; margin-bottom: 15px; }
+        input[type="text"] { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 15px; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        button.delete-btn { background: #e74c3c; }
+        button.delete-btn:hover { background: #c0392b; }
+        ul { list-style-type: none; padding: 0; }
+        li { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee; }
+        .completed { text-decoration: line-through; color: #888; }
+        .task-actions { display: flex; gap: 5px; }
+    </style>
+</head>
+<body>
+    <h1>To-Do List Web App</h1>
+
+    <div class="card">
+        <h2>Create New List</h2>
+        <form action="/lists" method="POST">
+            <input type="text" name="name" placeholder="List Name..." required>
+            <button type="submit">Create List</button>
+        </form>
+    </div>
+
+    <h2>All Lists</h2>
+    {% if not lists %}
+        <p>No to-do lists yet. Create one above!</p>
+    {% endif %}
+
+    {% for list in lists %}
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2>{{ list.name }}</h2>
+            <form action="/lists/{{ list.id }}/delete" method="POST" style="margin: 0;">
+                <button type="submit" class="delete-btn">Delete List</button>
+            </form>
+        </div>
+
+        <form action="/lists/{{ list.id }}/tasks" method="POST">
+            <input type="text" name="description" placeholder="New task description..." required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <ul>
+            {% for task in list.tasks %}
+            <li>
+                <span class="{% if task.completed %}completed{% endif %}">{{ task.description }}</span>
+                <div class="task-actions">
+                    <form action="/lists/{{ list.id }}/tasks/{{ task.id }}/toggle" method="POST" style="margin:0;">
+                        <button type="submit">{% if task.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}</button>
+                    </form>
+                    <form action="/lists/{{ list.id }}/tasks/{{ task.id }}/delete" method="POST" style="margin:0;">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+                </div>
+            </li>
+            {% else %}
+            <li><p style="color: #7f8c8d; margin: 5px 0;">No tasks in this list yet.</p></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+</body>
+</html>

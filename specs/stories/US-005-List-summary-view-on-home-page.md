@@ -16,4 +16,4 @@
 Users can see all their lists at a glance.
 
 ## Test Approach
-
+Test home page response using test client.

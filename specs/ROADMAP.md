@@ -41,7 +41,7 @@ Stories
 - [US-0001] Create and view to-do lists
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

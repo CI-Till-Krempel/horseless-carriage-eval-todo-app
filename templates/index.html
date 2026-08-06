@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do Lists</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; color: #333; }
+        h1 { color: #2c3e50; }
+        .flash { background: #e7f4e4; border: 1px solid #d4edda; padding: 10px; margin-bottom: 20px; border-radius: 4px; }
+        .error { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 10px; margin-bottom: 20px; border-radius: 4px; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #fff; margin-bottom: 10px; padding: 15px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
+        form { margin-top: 20px; }
+        input[type="text"] { padding: 8px; width: 300px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 15px; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        button.delete { background: #e74c3c; }
+        button.delete:hover { background: #c0392b; }
+        a { text-decoration: none; color: #3498db; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>My To-Do Lists</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="{{ 'error' if category == 'error' else 'flash' }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('create_list') }}" method="POST">
+        <input type="text" name="name" placeholder="New List Name" required>
+        <button type="submit">Create List</button>
+    </form>
+
+    <h2>Existing Lists</h2>
+    {% if lists %}
+        <ul>
+            {% for lst in lists %}
+                <li>
+                    <div>
+                        <a href="{{ url_for('view_list', list_id=lst.id) }}">{{ lst.name }}</a>
+                        <span style="margin-left: 15px; color: #7f8c8d; font-size: 0.9em;">
+                            ({{ lst.completed_count }}/{{ lst.total_count }} completed)
+                        </span>
+                    </div>
+                    <form action="{{ url_for('delete_list', list_id=lst.id) }}" method="POST" style="margin:0;">
+                        <button type="submit" class="delete">Delete</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No to-do lists yet. Create one above!</p>
+    {% endif %}
+</body>
+</html>

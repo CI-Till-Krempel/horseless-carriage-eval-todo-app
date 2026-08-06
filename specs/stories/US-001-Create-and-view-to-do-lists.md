@@ -2,7 +2,7 @@
 
 - Story ID: US-001
 - Title: Create and view to-do lists
-- Status: Ready
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-08-06
@@ -16,4 +16,4 @@
 Users can successfully create and view multiple named to-do lists.
 
 ## Test Approach
-
+Write unit tests using pytest and Flask test client to verify list creation and display.

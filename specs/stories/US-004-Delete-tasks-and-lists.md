@@ -16,4 +16,4 @@
 Users can delete tasks and lists cleanly.
 
 ## Test Approach
-
+Test deletion endpoints via pytest.

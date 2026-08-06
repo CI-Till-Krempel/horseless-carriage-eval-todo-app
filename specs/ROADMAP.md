@@ -36,8 +36,8 @@ Stories
 - [US-001] Create and view to-do lists
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-002] Add tasks to a list

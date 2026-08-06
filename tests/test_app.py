@@ -1,3 +1,8 @@
+import sys
+import os
+# Add current directory to python path
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + '/..'))
+
 import pytest
 from app import app, lists_store, tasks_store
 

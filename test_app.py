@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Ensure the current directory is in python path
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
 import pytest
 from app import app, todos_db
 
@@ -20,7 +26,6 @@ def test_create_and_view_list(client):
 
 def test_add_and_view_task(client):
     client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
-    # list_id should be 1
     response = client.post('/lists/1/tasks', data={'text': 'Finish report'}, follow_redirects=True)
     assert response.status_code == 200
     assert b'Finish report' in response.data
@@ -28,7 +33,6 @@ def test_add_and_view_task(client):
 def test_toggle_task(client):
     client.post('/lists', data={'name': 'Home'}, follow_redirects=True)
     client.post('/lists/1/tasks', data={'text': 'Clean room'}, follow_redirects=True)
-    # toggle task 1
     response = client.post('/lists/1/tasks/1/toggle', follow_redirects=True)
     assert response.status_code == 200
     assert b'completed' in response.data

@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-08-07
@@ -16,4 +16,8 @@
 Users can update task status cleanly.
 
 ## Test Approach
+pytest execution
 
+### Tasks
+- Add toggle test verification file
+- Run pytest

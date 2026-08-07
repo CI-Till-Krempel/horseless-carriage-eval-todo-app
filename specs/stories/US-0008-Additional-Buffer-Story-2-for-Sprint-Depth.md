@@ -2,7 +2,7 @@
 
 - Story ID: US-0008
 - Title: Additional Buffer Story 2 for Sprint Depth
-- Status: Draft
+- Status: Ready
 - Priority: P2
 - Owner: Scrum Team
 - Last Updated: 2026-08-07

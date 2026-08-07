@@ -16,4 +16,10 @@
 Allows users to structure and categorize their work items.
 
 ## Test Approach
+Pytest integration tests checking Flask test client endpoints for list creation, task addition, completion toggling, deletion, and dashboard view.
 
+### Tasks
+- Create Flask application setup and in-memory data structures
+- Implement routes for creating lists, adding tasks, toggling completion, deleting tasks, and deleting lists
+- Create HTML template with clean styling for lists and tasks dashboard
+- Add unit/integration tests with pytest

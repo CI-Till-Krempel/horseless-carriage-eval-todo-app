@@ -16,4 +16,7 @@
 Provides a comprehensive overview of all tasks across all lists.
 
 ## Test Approach
+Pytest integration test.
 
+### Tasks
+- Build dashboard layout and styling for completed vs incomplete tasks

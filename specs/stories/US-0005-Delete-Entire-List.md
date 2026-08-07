@@ -16,4 +16,7 @@
 Enables easy cleanup of entire project/category groups.
 
 ## Test Approach
+Pytest integration test.
 
+### Tasks
+- Add delete list route and button UI

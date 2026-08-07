@@ -16,4 +16,7 @@
 Allows cleaning up obsolete or incorrect tasks.
 
 ## Test Approach
+Pytest integration test.
 
+### Tasks
+- Add delete task route and button UI

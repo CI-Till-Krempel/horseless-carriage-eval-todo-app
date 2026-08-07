@@ -16,4 +16,7 @@
 Provides visual and functional feedback on task progression.
 
 ## Test Approach
+Pytest integration test.
 
+### Tasks
+- Add toggle route and checkbox UI

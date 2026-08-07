@@ -16,4 +16,7 @@
 Enables task capture within specific lists.
 
 ## Test Approach
+Pytest integration test.
 
+### Tasks
+- Add task route and UI form

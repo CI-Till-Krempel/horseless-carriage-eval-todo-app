@@ -2,7 +2,7 @@
 
 - Story ID: US-0005
 - Title: Delete an Entire List
-- Status: Implemented
+- Status: Accepted
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-08-07

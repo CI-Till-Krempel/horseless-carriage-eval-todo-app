@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create a New To-Do List
-- Status: Draft
+- Status: Ready
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-08-07
@@ -16,4 +16,11 @@
 Users can successfully create and view multiple named lists.
 
 ## Test Approach
+Verify via pytest and manual verification simulation.
 
+### Tasks
+- Initialize Flask project and structure
+- Create database models for List and Task
+- Implement create list route and UI
+- Implement add task route and UI
+- Write tests

@@ -2,7 +2,7 @@
 
 - Story ID: US-0006
 - Title: View Lists and Tasks with Visual Distinction
-- Status: Draft
+- Status: Reviewed
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-08-07
@@ -16,4 +16,8 @@
 Users can easily distinguish completed vs incomplete items.
 
 ## Test Approach
+pytest execution
 
+### Tasks
+- Add visual view verification file
+- Run pytest

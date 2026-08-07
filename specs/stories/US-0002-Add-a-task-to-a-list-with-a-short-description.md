@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add a task to a list with a short description
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-08-07
@@ -16,4 +16,8 @@
 Users can add descriptive tasks to their lists.
 
 ## Test Approach
+Run pytest to verify task addition correctly associates tasks to lists.
 
+### Tasks
+- Confirm task addition endpoint and UI form
+- Add dedicated test coverage for task addition

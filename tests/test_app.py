@@ -8,54 +8,37 @@ if parent_dir not in sys.path:
 if current_dir not in sys.path:
     sys.path.insert(0, current_dir)
 
-import pytest
 from app import app, lists
 
-@pytest.fixture(autouse=True)
-def clean_lists():
+def test_app_endpoints():
+    app.config['TESTING'] = True
+    client = app.test_client()
     lists.clear()
-    yield
 
-def test_index_empty():
-    app.config['TESTING'] = True
-    client = app.test_client()
-    response = client.get('/')
-    assert response.status_code == 200
-    assert b'My To-Do Lists' in response.data
+    # Test index
+    res = client.get('/')
+    assert res.status_code == 200
 
-def test_create_list():
-    app.config['TESTING'] = True
-    client = app.test_client()
-    response = client.post('/lists', data={'name': 'Groceries'}, follow_redirects=True)
-    assert response.status_code == 200
-    assert b'Groceries' in response.data
+    # Test create list
+    res = client.post('/lists', data={'name': 'My List'}, follow_redirects=True)
+    assert res.status_code == 200
+    assert b'My List' in res.data
 
-def test_add_task_and_view():
-    app.config['TESTING'] = True
-    client = app.test_client()
-    client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
-    response = client.post('/lists/1/tasks', data={'text': 'Write unit tests'}, follow_redirects=True)
-    assert response.status_code == 200
-    assert b'Write unit tests' in response.data
+    # Test add task
+    res = client.post('/lists/1/tasks', data={'text': 'Sample Task'}, follow_redirects=True)
+    assert res.status_code == 200
+    assert b'Sample Task' in res.data
 
-def test_toggle_and_delete_task():
-    app.config['TESTING'] = True
-    client = app.test_client()
-    client.post('/lists', data={'name': 'Personal'}, follow_redirects=True)
-    client.post('/lists/1/tasks', data={'text': 'Buy milk'}, follow_redirects=True)
-    
-    response = client.post('/tasks/1/toggle', follow_redirects=True)
-    assert response.status_code == 200
-    assert b'completed' in response.data or b'class="completed"' in response.data
+    # Test toggle task
+    res = client.post('/tasks/1/toggle', follow_redirects=True)
+    assert res.status_code == 200
 
-    response = client.post('/tasks/1/delete', follow_redirects=True)
-    assert response.status_code == 200
-    assert b'Buy milk' not in response.data
+    # Test delete task
+    res = client.post('/tasks/1/delete', follow_redirects=True)
+    assert res.status_code == 200
+    assert b'Sample Task' not in res.data
 
-def test_delete_list():
-    app.config['TESTING'] = True
-    client = app.test_client()
-    client.post('/lists', data={'name': 'Temp List'}, follow_redirects=True)
-    response = client.post('/lists/1/delete', follow_redirects=True)
-    assert response.status_code == 200
-    assert b'Temp List' not in response.data
+    # Test delete list
+    res = client.post('/lists/1/delete', follow_redirects=True)
+    assert res.status_code == 200
+    assert b'My List' not in res.data

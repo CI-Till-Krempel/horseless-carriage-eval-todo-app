@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add a Task to a List
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-08-07

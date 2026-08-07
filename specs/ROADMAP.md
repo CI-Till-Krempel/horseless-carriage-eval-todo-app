@@ -58,13 +58,13 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0005] Delete an Entire List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
@@ -85,6 +85,34 @@ Stories
 - [ISSUE-0002] Initial feature branch creation failed due to missing sprint backlog PR merge; resolved promptly by PO publishing backlog.
   - [ ] DRAFT
   - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0003] Maintain clean git working trees and explicit file staging during story spec creation to prevent push rejections.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0004] Git staging/untracked files occasionally caused push blocks during story spec generation, resolved by checking git status before committing.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0007] Additional Buffer Story for Sprint Depth
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0008] Additional Buffer Story 2 for Sprint Depth
+  - [x] DRAFT
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
@@ -125,6 +153,27 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0004] Delete a Task
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v1.2.0
+Goals
+- Implement list deletion and visual completion distinction (US-0005, US-0006).
+
+Stories
+- [US-0005] Delete an Entire List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] View Lists and Tasks with Visual Distinction
   - [ ] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED

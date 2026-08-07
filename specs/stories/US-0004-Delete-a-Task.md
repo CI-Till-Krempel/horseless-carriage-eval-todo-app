@@ -16,4 +16,8 @@
 Users can remove tasks when no longer needed.
 
 ## Test Approach
+pytest execution
 
+### Tasks
+- Add task deletion verification file
+- Run pytest

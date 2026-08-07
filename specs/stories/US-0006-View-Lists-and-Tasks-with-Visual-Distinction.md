@@ -2,7 +2,7 @@
 
 - Story ID: US-0006
 - Title: View Lists and Tasks with Visual Distinction
-- Status: Implemented
+- Status: Reviewed
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-08-07

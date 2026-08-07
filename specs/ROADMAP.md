@@ -44,9 +44,9 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
@@ -55,20 +55,34 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0004] Delete a Task
-  - [ ] DRAFT
-  - [ ] READY
+  - [x] DRAFT
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0005] Delete an Entire List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] View Lists and Tasks with Visual Distinction
   - [ ] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0006] View Lists and Tasks with Visual Distinction
+- [ISSUE-0001] Ensure Product Owner publishes the sprint backlog PR before Dev Team begins implementing stories to prevent branch creation blockers.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0002] Initial feature branch creation failed due to missing sprint backlog PR merge; resolved promptly by PO publishing backlog.
   - [ ] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED
@@ -90,6 +104,27 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0002] US-0002
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v1.1.0
+Goals
+- Implement task completion toggling and task deletion (US-0003, US-0004).
+
+Stories
+- [US-0003] Mark Task Complete or Incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0004] Delete a Task
   - [ ] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED

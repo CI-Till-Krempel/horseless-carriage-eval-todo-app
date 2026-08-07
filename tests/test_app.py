@@ -1,4 +1,10 @@
+import os
+import sys
 import pytest
+
+# Add current directory to sys.path so app can be imported cleanly
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + '/..'))
+
 from app import app, lists
 
 @pytest.fixture

@@ -16,4 +16,8 @@
 Users can update task status cleanly.
 
 ## Test Approach
+pytest execution
 
+### Tasks
+- Add toggle test verification file
+- Run pytest

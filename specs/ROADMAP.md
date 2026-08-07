@@ -42,7 +42,7 @@ Stories
 - [US-0001] Create a new to-do list with a name
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

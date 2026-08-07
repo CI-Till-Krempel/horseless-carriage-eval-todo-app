@@ -16,4 +16,11 @@
 Users can successfully create and see named lists.
 
 ## Test Approach
+Use pytest and Flask test client to thoroughly verify routes, list creation, task management, completion toggling, and deletion.
 
+### Tasks
+- Create Flask app structure and requirements.txt
+- Implement in-memory models/storage for lists and tasks
+- Implement HTML template with styling for list creation, task addition, status toggling, and deletion
+- Write unit and integration tests covering US-0001 to US-0006
+- Update README with instructions to run and test the app

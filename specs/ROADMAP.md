@@ -42,8 +42,8 @@ Stories
 - [US-0001] Create a new to-do list with a name
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0002] Add a task to a list with a short description

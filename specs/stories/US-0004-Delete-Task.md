@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete Task
-- Status: Draft
+- Status: Ready
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-08-07

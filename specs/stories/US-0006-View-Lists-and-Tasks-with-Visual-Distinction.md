@@ -16,4 +16,8 @@
 Users can easily distinguish completed vs incomplete items.
 
 ## Test Approach
+pytest execution
 
+### Tasks
+- Add visual view verification file
+- Run pytest

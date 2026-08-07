@@ -1,7 +1,6 @@
 import sys
 import os
 
-# Add root path and current directory to sys.path
 current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(current_dir)
 if parent_dir not in sys.path:
@@ -12,30 +11,32 @@ if current_dir not in sys.path:
 import pytest
 from app import app, lists
 
-@pytest.fixture
-def client():
-    app.config['TESTING'] = True
-    with app.test_client() as client:
-        lists.clear()
-        yield client
+@pytest.fixture(autouse=True)
+def run_around_tests():
+    lists.clear()
+    yield
 
-def test_index_empty(client):
+def test_index_empty():
+    client = app.test_client()
     response = client.get('/')
     assert response.status_code == 200
     assert b'My To-Do Lists' in response.data
 
-def test_create_list(client):
+def test_create_list():
+    client = app.test_client()
     response = client.post('/lists', data={'name': 'Groceries'}, follow_redirects=True)
     assert response.status_code == 200
     assert b'Groceries' in response.data
 
-def test_add_task_and_view(client):
+def test_add_task_and_view():
+    client = app.test_client()
     client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
     response = client.post('/lists/1/tasks', data={'text': 'Write unit tests'}, follow_redirects=True)
     assert response.status_code == 200
     assert b'Write unit tests' in response.data
 
-def test_toggle_and_delete_task(client):
+def test_toggle_and_delete_task():
+    client = app.test_client()
     client.post('/lists', data={'name': 'Personal'}, follow_redirects=True)
     client.post('/lists/1/tasks', data={'text': 'Buy milk'}, follow_redirects=True)
     
@@ -47,7 +48,8 @@ def test_toggle_and_delete_task(client):
     assert response.status_code == 200
     assert b'Buy milk' not in response.data
 
-def test_delete_list(client):
+def test_delete_list():
+    client = app.test_client()
     client.post('/lists', data={'name': 'Temp List'}, follow_redirects=True)
     response = client.post('/lists/1/delete', follow_redirects=True)
     assert response.status_code == 200

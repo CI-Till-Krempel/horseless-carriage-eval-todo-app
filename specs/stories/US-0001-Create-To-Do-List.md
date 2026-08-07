@@ -14,6 +14,7 @@
 
 ## Notes
 Users can organize tasks into named categories.
+- 🚫 BLOCKED (technical) - raised by QA: advance_story_stage('US-0001', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0001' Tested - 5 of 5 tests failed. Fix the failing tests before retrying.
 
 ## Test Approach
 Automated unit tests using pytest and Flask test client, verifying list creation, task addition, and viewing functionality.

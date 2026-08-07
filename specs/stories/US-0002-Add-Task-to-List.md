@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to List
-- Status: Draft
+- Status: Ready
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-08-07
@@ -16,4 +16,8 @@
 Users can record specific items needing action.
 
 ## Test Approach
+Covered by pytest suite in test_app.py.
 
+### Tasks
+- Add route/handler to add task to a specific list
+- Update UI form for adding tasks

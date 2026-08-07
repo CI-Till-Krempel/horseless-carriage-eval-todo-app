@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: View Lists and Tasks
-- Status: Draft
+- Status: Ready
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-08-07
@@ -16,4 +16,8 @@
 Users gain clear visibility into overall state and completed work.
 
 ## Test Approach
+Verified via pytest testing view output.
 
+### Tasks
+- Ensure data model tracks completed boolean per task
+- Render completed tasks with distinct CSS class in templates/index.html

@@ -16,4 +16,8 @@
 Users can delete lists along with their nested tasks.
 
 ## Test Approach
+pytest execution
 
+### Tasks
+- Add list deletion verification file
+- Run pytest

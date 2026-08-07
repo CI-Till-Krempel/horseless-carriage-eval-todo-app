@@ -69,9 +69,9 @@ Stories
   - [x] TESTED
   - [x] ACCEPTED
 - [US-0006] View Lists and Tasks with Visual Distinction
-  - [ ] DRAFT
-  - [ ] READY
-  - [ ] IMPLEMENTED
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

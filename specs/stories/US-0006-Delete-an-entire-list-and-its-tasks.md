@@ -2,12 +2,12 @@
 
 - Story ID: US-0006
 - Title: Delete an entire list and its tasks
-- Status: Draft
+- Status: Ready
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-08-07
 
-## As a <role>, I want <capability>, so that <benefit>.
+## As a user, I want to delete an entire list and its tasks so that I can remove completed or obsolete projects.
 
 ## Acceptance Criteria
 - Given a list and its tasks exist, When the user clicks delete on the list, Then the entire list and all its contained tasks are removed.

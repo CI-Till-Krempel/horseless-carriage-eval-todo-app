@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Web App</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 30px auto; padding: 0 20px; background: #f4f7f6; color: #333; }
+        h1 { color: #2c3e50; text-align: center; }
+        .card { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        form { display: flex; gap: 10px; margin-bottom: 10px; }
+        input[type="text"] { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 15px; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        .danger-btn { background: #e74c3c; }
+        .danger-btn:hover { background: #c0392b; }
+        ul { list-style: none; padding: 0; }
+        li { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee; }
+        .completed span { text-decoration: line-through; color: #888; }
+        .list-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #3498db; padding-bottom: 5px; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <h1>To-Do List Dashboard</h1>
+
+    <div class="card">
+        <h3>Create New To-Do List</h3>
+        <form action="/lists" method="POST">
+            <input type="text" name="name" placeholder="List Name..." required>
+            <button type="submit">Create List</button>
+        </form>
+    </div>
+
+    {% for list in lists %}
+    <div class="card">
+        <div class="list-header">
+            <h2>{{ list.name }}</h2>
+            <form action="/lists/{{ list.id }}/delete" method="POST" style="margin:0;">
+                <button type="submit" class="danger-btn">Delete List</button>
+            </form>
+        </div>
+
+        <form action="/lists/{{ list.id }}/tasks" method="POST">
+            <input type="text" name="text" placeholder="New Task Description..." required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <ul>
+            {% for task in list.tasks %}
+            <li class="{% if task.completed %}completed{% endif %}">
+                <form action="/lists/{{ list.id }}/tasks/{{ task.id }}/toggle" method="POST" style="display:inline; margin:0;">
+                    <button type="submit" style="background:none; border:none; color:#3498db; cursor:pointer; padding:0; font-size:1em;">
+                        [ {% if task.completed %}Completed{% else %}Mark Complete{% endif %} ]
+                    </button>
+                </form>
+                <span style="flex:1; margin-left:10px;">{{ task.text }}</span>
+                <form action="/lists/{{ list.id }}/tasks/{{ task.id }}/delete" method="POST" style="margin:0;">
+                    <button type="submit" class="danger-btn" style="padding: 4px 8px; font-size: 0.9em;">Delete</button>
+                </form>
+            </li>
+            {% else %}
+            <p style="color: #888; font-style: italic;">No tasks in this list yet.</p>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <p style="text-align: center; color: #7f8c8d;">No to-do lists created yet. Create one above to get started!</p>
+    {% endfor %}
+</body>
+</html>

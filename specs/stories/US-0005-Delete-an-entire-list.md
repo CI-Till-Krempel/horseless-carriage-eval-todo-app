@@ -16,4 +16,9 @@
 Allows removal of entire completed or abandoned collections.
 
 ## Test Approach
+Pytest test for list deletion.
 
+### Tasks
+- Add delete list route
+- Add delete list button in UI
+- Add test

@@ -16,4 +16,9 @@
 Provides immediate visual feedback on task completion status.
 
 ## Test Approach
+Pytest test for task toggling.
 
+### Tasks
+- Add toggle endpoint
+- Add toggle button in UI
+- Add tests

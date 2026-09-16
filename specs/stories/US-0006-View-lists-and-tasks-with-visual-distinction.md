@@ -16,4 +16,8 @@
 Gives an overview of all tasks across lists.
 
 ## Test Approach
+Pytest check for rendered HTML content.
 
+### Tasks
+- Update UI template with styling for completed items
+- Add test for visual distinction or view rendering

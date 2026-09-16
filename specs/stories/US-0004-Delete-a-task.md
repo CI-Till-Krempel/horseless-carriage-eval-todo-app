@@ -16,4 +16,9 @@
 Keeps task lists clean of obsolete items.
 
 ## Test Approach
+Pytest test for task deletion.
 
+### Tasks
+- Add delete task route
+- Add delete button in UI
+- Add test

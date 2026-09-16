@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create a new to-do list
-- Status: Ready
+- Status: Reviewed
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-16
@@ -16,4 +16,10 @@
 Enables users to start organizing work into distinct categories.
 
 ## Test Approach
+Write unit/integration tests using pytest and Flask test client.
 
+### Tasks
+- Create requirements.txt with Flask and pytest
+- Create app.py with routes for lists and tasks
+- Create HTML template with Tailwind CSS for UI
+- Add automated tests in test_app.py

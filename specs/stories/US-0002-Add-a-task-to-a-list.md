@@ -16,4 +16,9 @@
 Allows users to record specific action items within a list.
 
 ## Test Approach
+Pytest integration test for task creation.
 
+### Tasks
+- Add task endpoint in app.py
+- Add task form in index.html
+- Add tests for task creation

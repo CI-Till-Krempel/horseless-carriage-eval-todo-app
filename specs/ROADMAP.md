@@ -79,7 +79,7 @@ Stories
 
 ### v1.0.0
 Goals
-- Implement task and list deletion (US-0004 and US-0005).
+- Implement view lists and tasks with visual distinction (US-0006).
 Stories
 - [US-0002] Add a task to a list
   - [x] DRAFT
@@ -103,6 +103,13 @@ Stories
   - [x] TESTED
   - [x] ACCEPTED
 - [US-0005] Delete an entire list
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0006] View lists and tasks with visual distinction
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED

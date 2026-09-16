@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark task complete or incomplete
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-16

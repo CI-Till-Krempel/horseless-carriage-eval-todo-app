@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-2xl mx-auto bg-white rounded-lg shadow p-6">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800">My To-Do Lists</h1>
+
+        <!-- Create List Form -->
+        <form action="/lists" method="POST" class="mb-8 flex gap-2">
+            <input type="text" name="name" placeholder="New list name..." required
+                   class="flex-1 border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Create List</button>
+        </form>
+
+        <!-- Lists & Tasks -->
+        <div class="space-y-6">
+            {% for lst in lists %}
+            <div class="border rounded-lg p-4 bg-gray-50 shadow-sm">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold text-gray-700">{{ lst.name }}</h2>
+                    <form action="/lists/{{ lst.id }}/delete" method="POST" onsubmit="return confirm('Delete entire list?');">
+                        <button type="submit" class="text-red-500 hover:text-red-700 text-sm font-medium">Delete List</button>
+                    </form>
+                </div>
+
+                <!-- Add Task Form -->
+                <form action="/lists/{{ lst.id }}/tasks" method="POST" class="flex gap-2 mb-4">
+                    <input type="text" name="description" placeholder="New task description..." required
+                           class="flex-1 border rounded px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    <button type="submit" class="bg-green-500 text-white px-4 py-1 rounded text-sm hover:bg-green-600 transition">Add Task</button>
+                </form>
+
+                <!-- Tasks List -->
+                <ul class="space-y-2">
+                    {% for task in lst.tasks %}
+                    <li class="flex justify-between items-center bg-white p-2 rounded border">
+                        <div class="flex items-center gap-3">
+                            <form action="/tasks/{{ task.id }}/toggle" method="POST">
+                                <button type="submit" class="w-5 h-5 rounded border flex items-center justify-center {% if task.completed %}bg-blue-500 border-blue-500 text-white{% else %}border-gray-300 bg-white{% endif %}">
+                                    {% if task.completed %}✓{% endif %}
+                                </button>
+                            </form>
+                            <span class="{% if task.completed %}line-through text-gray-400 italic{% else %}text-gray-800{% endif %}">
+                                {{ task.description }}
+                            </span>
+                        </div>
+                        <form action="/tasks/{{ task.id }}/delete" method="POST">
+                            <button type="submit" class="text-red-400 hover:text-red-600 text-xs">Delete</button>
+                        </form>
+                    </li>
+                    {% else %}
+                    <li class="text-gray-400 text-sm italic">No tasks in this list yet.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% else %}
+            <p class="text-gray-500 text-center py-4">No to-do lists created yet. Create one above!</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

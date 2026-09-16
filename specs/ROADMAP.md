@@ -79,7 +79,7 @@ Stories
 
 ### v1.0.0
 Goals
-- Implement view lists and tasks with visual distinction (US-0006).
+- Polish, documentation, final end-to-end testing, and v1.0.0 release readiness.
 Stories
 - [US-0002] Add a task to a list
   - [x] DRAFT
@@ -113,9 +113,9 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 
 
 ## Task board (Kanban)

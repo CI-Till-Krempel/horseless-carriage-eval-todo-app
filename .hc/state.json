@@ -26,10 +26,14 @@
         "Draft",
         "Ready",
         "Implemented",
-        "Reviewed"
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Reviewed",
-      "version": "Backlog (unplanned)"
+      "status": "Accepted",
+      "version": "Backlog (unplanned)",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified US-0001 acceptance criteria: list creation works correctly via Flask app and UI."
     },
     {
       "title": "Add a task to a list",
@@ -43,12 +47,18 @@
       "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
       "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
       "type": "User Story",
-      "version": "Backlog (unplanned)",
+      "version": "v1.0.0",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Ready"
+      "status": "Accepted",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified US-0002 acceptance criteria: adding tasks to an existing list works correctly via UI and tests."
     },
     {
       "title": "Mark task complete or incomplete",
@@ -62,12 +72,13 @@
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can monitor my progress.",
       "epic_id": "EP-0001",
       "type": "User Story",
-      "version": "Backlog (unplanned)",
+      "version": "v1.0.0",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented"
       ],
-      "status": "Ready"
+      "status": "Implemented"
     },
     {
       "acceptance_criteria": [
@@ -125,6 +136,22 @@
         "Ready"
       ],
       "status": "Ready"
+    },
+    {
+      "title": "Ensure test fixtures explicitly reset module-level ID counters for in-memory stores before every test.",
+      "overview": "Ensure test fixtures explicitly reset module-level ID counters for in-memory stores before every test.",
+      "owner": "DevTeam",
+      "type": "Issue",
+      "id": "ISSUE-0001",
+      "priority": "Must"
+    },
+    {
+      "title": "Test suite fixture counter reset needed careful adjustment for ID uniqueness across runs.",
+      "overview": "Test suite fixture counter reset needed careful adjustment for ID uniqueness across runs.",
+      "owner": "DevTeam",
+      "type": "Issue",
+      "id": "ISSUE-0002",
+      "priority": "Must"
     }
   ],
   "definition_of_done": [
@@ -136,9 +163,9 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Implement Sprint 1: Core to-do list architecture, creation, and task addition.",
-  "sprint_number": 1,
-  "sprint_backlog_pr_sprint": 1,
+  "sprint_goal": "Implement Sprint 2: Add task creation and task completion toggle (US-0002 and US-0003).",
+  "sprint_number": 2,
+  "sprint_backlog_pr_sprint": 2,
   "sprint_backlog": [
     {
       "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
@@ -156,9 +183,11 @@
         "Draft",
         "Ready",
         "Implemented",
-        "Reviewed"
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Reviewed",
+      "status": "Accepted",
       "version": "Backlog (unplanned)",
       "approach": "Build a lightweight Flask web application with SQLite or in-memory persistence supporting list creation and task addition.",
       "risks_assumptions": [
@@ -180,7 +209,9 @@
         "Create app.py with routes for lists and tasks",
         "Create HTML template with Tailwind CSS for UI",
         "Add automated tests in test_app.py"
-      ]
+      ],
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified US-0001 acceptance criteria: list creation works correctly via Flask app and UI."
     },
     {
       "title": "Add a task to a list",
@@ -197,9 +228,13 @@
       "version": "Backlog (unplanned)",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Ready",
+      "status": "Accepted",
       "code_files": [
         "app.py",
         "templates/index.html",
@@ -218,7 +253,9 @@
         "Add task form in index.html",
         "Add tests for task creation"
       ],
-      "approach": "Extend app.py and index.html to allow adding tasks to specific lists."
+      "approach": "Extend app.py and index.html to allow adding tasks to specific lists.",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified US-0002 acceptance criteria: adding tasks to an existing list works correctly via UI and tests."
     },
     {
       "title": "Mark task complete or incomplete",
@@ -235,9 +272,10 @@
       "version": "Backlog (unplanned)",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented"
       ],
-      "status": "Ready",
+      "status": "Implemented",
       "code_files": [
         "app.py",
         "templates/index.html",
@@ -371,9 +409,37 @@
       ]
     }
   ],
-  "impediment_log": [],
-  "retro_actions": [],
-  "decision_log": [],
+  "impediment_log": [
+    {
+      "description": "Test suite fixture counter reset needed careful adjustment for ID uniqueness across runs.",
+      "owner": "DevTeam",
+      "status": "open",
+      "issue_id": "ISSUE-0002"
+    }
+  ],
+  "retro_actions": [
+    {
+      "action": "Ensure test fixtures explicitly reset module-level ID counters for in-memory stores before every test.",
+      "owner": "DevTeam",
+      "success_metric": "Zero test flakiness due to ID collisions in future sprints.",
+      "status": "open",
+      "issue_id": "ISSUE-0001"
+    }
+  ],
+  "decision_log": [
+    {
+      "title": "US-0002 marked Implemented without a new source touch",
+      "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
+      "rationale": "Task creation and completion toggle were already fully developed and tested as part of the solid foundation in app.py and templates/index.html during US-0001 implementation pass.",
+      "owner": "DevTeam"
+    },
+    {
+      "title": "US-0003 marked Implemented without a new source touch",
+      "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
+      "rationale": "Task completion toggling functionality and visual distinction were already fully implemented and tested in app.py, templates/index.html, and test_app.py during US-0001.",
+      "owner": "DevTeam"
+    }
+  ],
   "sprint_report": "",
   "budgets": {
     "total": 5000000,
@@ -382,13 +448,13 @@
     "current_usd_spend": 0.0
   },
   "token_usage": {
-    "total": 1084452,
+    "total": 1195259,
     "agents": {
-      "ScrumOrchestrator": 97031,
-      "ProductOwner": 384173,
-      "ScrumMaster": 27417,
-      "DevTeam": 495516,
-      "Architect": 80315
+      "ScrumMaster": 77622,
+      "ProductOwner": 279386,
+      "DevTeam": 491260,
+      "Architect": 128975,
+      "QA": 218016
     }
   },
   "story_estimates": {
@@ -397,10 +463,12 @@
       "actual": 110
     },
     "US-0002": {
-      "estimate": 100
+      "estimate": 100,
+      "actual": 80
     },
     "US-0003": {
-      "estimate": 80
+      "estimate": 80,
+      "actual": 70
     },
     "US-0004": {
       "estimate": 60
@@ -413,8 +481,8 @@
     }
   },
   "sprint_report_kpis": {},
-  "kpi_update_count": 0,
-  "kpi_baseline": 0,
+  "kpi_update_count": 1,
+  "kpi_baseline": 1,
   "backlog_scope_complete": false,
   "repo": {
     "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
@@ -428,7 +496,7 @@
     }
   ],
   "hc_version": "0.1.0",
-  "retro_baseline": 0,
+  "retro_baseline": 2,
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
@@ -446,14 +514,24 @@
     "requirements.txt",
     "app.py",
     "templates/index.html",
-    "test_app.py"
+    "test_app.py",
+    "specs/requirements/ISSUE-0001-Ensure-test-fixtures-explicitly-reset-module-level-ID-counters-for-in-memory-stores-before-every-test..md",
+    "specs/requirements/ISSUE-0002-Test-suite-fixture-counter-reset-needed-careful-adjustment-for-ID-uniqueness-across-runs..md",
+    "specs/reports/TRANSCRIPT-001.md",
+    "specs/reports/TRANSCRIPT-LATEST.md",
+    "specs/reports/SPRINT-REPORT-001.md",
+    "specs/reports/SPRINT-REPORT-LATEST.md"
   ],
-  "last_check_build": null,
-  "pr_review_calls": {
-    "Architect": 1
+  "last_check_build": {
+    "checked": "requirements.txt",
+    "passing": true
   },
-  "architect_review_baseline": 1,
-  "qa_review_baseline": 0,
+  "pr_review_calls": {
+    "Architect": 2,
+    "QA": 4
+  },
+  "architect_review_baseline": 2,
+  "qa_review_baseline": 4,
   "sprint_report_pending_release": false,
   "blocking_interactions": [],
   "budget_reset_since_last_sprint_start": false

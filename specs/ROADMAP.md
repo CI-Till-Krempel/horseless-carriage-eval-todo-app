@@ -79,19 +79,19 @@ Stories
 
 ### v1.0.0
 Goals
-- Implement task creation and task completion toggle (US-0002 and US-0003).
+- Implement task and list deletion (US-0004 and US-0005).
 Stories
-- [US-0002] Add a task to a list
+- [US-0004] Delete a task
   - [x] DRAFT
   - [x] READY
-  - [x] IMPLEMENTED
-  - [x] REVIEWED
-  - [x] TESTED
-  - [x] ACCEPTED
-- [US-0003] Mark task complete or incomplete
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0005] Delete an entire list
   - [x] DRAFT
   - [x] READY
-  - [x] IMPLEMENTED
+  - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

@@ -38,8 +38,8 @@ Stories
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0002] Add a task to a list
   - [x] DRAFT
   - [x] READY
@@ -79,19 +79,18 @@ Stories
 
 ### v1.0.0
 Goals
-- Deliver core to-do list application skeleton, create lists, and add tasks.
-
+- Implement task creation and task completion toggle (US-0002 and US-0003).
 Stories
-- [US-0001] US-0001
-  - [ ] DRAFT
-  - [ ] READY
+- [US-0002] Add a task to a list
+  - [x] DRAFT
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0002] US-0002
-  - [ ] DRAFT
-  - [ ] READY
+- [US-0003] Mark task complete or incomplete
+  - [x] DRAFT
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED

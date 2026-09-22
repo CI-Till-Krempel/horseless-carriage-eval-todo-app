@@ -288,6 +288,41 @@ Goals
 - Implement entire list and associated tasks deletion (US-0005) and view lists/tasks overview with visual distinction (US-0006) for final MVP release v1.4.0.
 
 Stories
+- [US-0001] Create To-Do List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0002] Add Task to List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0003] Mark Task Complete or Incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0004] Delete Task
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0005] Delete Entire List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0006] View Lists and Tasks Overview
   - [x] DRAFT
   - [x] READY

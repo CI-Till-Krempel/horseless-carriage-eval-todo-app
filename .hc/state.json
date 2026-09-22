@@ -32,7 +32,7 @@
         "Accepted"
       ],
       "status": "Accepted",
-      "version": "v1.1.0",
+      "version": "v1.2.0",
       "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified acceptance criteria: User can create a new to-do list with a name, add tasks, toggle completion, delete tasks, delete lists, and view overview. Automated tests and QA checks pass."
@@ -48,14 +48,19 @@
       "id": "US-0002",
       "priority": "P0",
       "type": "User Story",
-      "version": "v1.1.0",
+      "version": "v1.2.0",
       "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
       "stages_completed": [
         "Draft",
         "Ready",
-        "Implemented"
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Implemented"
+      "status": "Accepted",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified US-0002 acceptance criteria: Adding tasks to lists with proper text description and input validation. QA checks and tests pass."
     },
     {
       "title": "Mark Task Complete or Incomplete",
@@ -68,7 +73,7 @@
         "Given a task exists in a list, When the user clicks to toggle completion, Then the task status switches between complete and incomplete."
       ],
       "type": "User Story",
-      "version": "v1.1.0",
+      "version": "v1.2.0",
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
       "stages_completed": [
         "Draft",
@@ -87,7 +92,7 @@
       "description": "As a user, I want to delete a task so that I can remove unwanted or obsolete items.",
       "id": "US-0004",
       "type": "User Story",
-      "version": "v1.1.0",
+      "version": "v1.2.0",
       "user_story": "As a user, I want to delete a task so that I can remove unwanted or obsolete items.",
       "stages_completed": [
         "Draft",
@@ -106,7 +111,7 @@
       "id": "US-0005",
       "description": "As a user, I want to delete an entire list and its tasks so that I can clean up old lists.",
       "type": "User Story",
-      "version": "v1.1.0",
+      "version": "v1.2.0",
       "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up old lists.",
       "stages_completed": [
         "Draft",
@@ -125,7 +130,7 @@
       "epic_id": "EP-0001",
       "value_hypothesis": "Users get a clear visual summary of all lists and task states.",
       "type": "User Story",
-      "version": "v1.1.0",
+      "version": "v1.2.0",
       "user_story": "As a user, I want to see all my lists and tasks with completed tasks visually distinguished so that I have a clear overview.",
       "stages_completed": [
         "Draft",
@@ -148,6 +153,14 @@
       "type": "Issue",
       "id": "ISSUE-0002",
       "priority": "Must"
+    },
+    {
+      "title": "Ensure token usage is tracked per story and advance backlog items efficiently with proper validation checks.",
+      "overview": "Ensure token usage is tracked per story and advance backlog items efficiently with proper validation checks.",
+      "owner": "DevTeam",
+      "type": "Issue",
+      "id": "ISSUE-0003",
+      "priority": "Must"
     }
   ],
   "definition_of_done": [
@@ -159,9 +172,9 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Enhance To-Do List web application UI/UX polish, persistent storage robustness, and advanced view management for all user stories US-0002 through US-0006.",
-  "sprint_number": 2,
-  "sprint_backlog_pr_sprint": 2,
+  "sprint_goal": "Implement task completion toggling and task deletion user stories (US-0003 and US-0004) with comprehensive test coverage and UI polish.",
+  "sprint_number": 3,
+  "sprint_backlog_pr_sprint": 3,
   "sprint_backlog": [
     {
       "priority": "P0",
@@ -222,9 +235,12 @@
       "stages_completed": [
         "Draft",
         "Ready",
-        "Implemented"
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Implemented",
+      "status": "Accepted",
       "estimate": 40,
       "dod_checks": [
         "Task addition robustly implemented and tested"
@@ -238,7 +254,9 @@
         "tests/test_app.py"
       ],
       "test_approach": "Pytest unit tests for task addition edge cases.",
-      "approach": "Enhance add task UX and robust error handling in Flask and Jinja templates."
+      "approach": "Enhance add task UX and robust error handling in Flask and Jinja templates.",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified US-0002 acceptance criteria: Adding tasks to lists with proper text description and input validation. QA checks and tests pass."
     },
     {
       "title": "Mark Task Complete or Incomplete",
@@ -259,16 +277,17 @@
       ],
       "status": "Ready",
       "dod_checks": [
-        "Task completion toggle functional and tested"
+        "Task completion toggle robustly implemented and tested"
       ],
       "code_files": [
         "app.py",
-        "templates/index.html"
+        "templates/index.html",
+        "tests/test_app.py"
       ],
-      "approach": "Integrated into Flask/SQLite app in US-0001 implementation.",
-      "test_approach": "Pytest integration test.",
+      "approach": "Verify task completion toggle endpoint and frontend behavior in Flask / templates.",
+      "test_approach": "Pytest unit tests for task completion toggle.",
       "risks_assumptions": [
-        "Covered by US-0001 plan."
+        "Toggle state persists correctly in database."
       ],
       "estimate": 30
     },
@@ -385,6 +404,13 @@
       "success_metric": "100% of Sprint 1 stories (US-0001 through US-0006) successfully implemented, reviewed, tested, and accepted.",
       "status": "open",
       "issue_id": "ISSUE-0001"
+    },
+    {
+      "action": "Ensure token usage is tracked per story and advance backlog items efficiently with proper validation checks.",
+      "owner": "DevTeam",
+      "success_metric": "100% of Sprint 2 stories planned, implemented, reviewed, tested, and accepted.",
+      "status": "open",
+      "issue_id": "ISSUE-0003"
     }
   ],
   "decision_log": [
@@ -403,11 +429,11 @@
     "current_usd_spend": 0.0
   },
   "token_usage": {
-    "total": 787702,
+    "total": 706309,
     "agents": {
-      "ScrumMaster": 77094,
-      "ProductOwner": 346491,
-      "DevTeam": 364117
+      "ScrumMaster": 110044,
+      "ProductOwner": 296901,
+      "DevTeam": 299364
     }
   },
   "story_estimates": {
@@ -420,7 +446,8 @@
       "actual": 45
     },
     "US-0003": {
-      "estimate": 30
+      "estimate": 30,
+      "actual": 35
     },
     "US-0004": {
       "estimate": 30
@@ -433,8 +460,8 @@
     }
   },
   "sprint_report_kpis": {},
-  "kpi_update_count": 1,
-  "kpi_baseline": 1,
+  "kpi_update_count": 2,
+  "kpi_baseline": 2,
   "backlog_scope_complete": false,
   "repo": {
     "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
@@ -448,7 +475,7 @@
     }
   ],
   "hc_version": "0.1.0",
-  "retro_baseline": 2,
+  "retro_baseline": 3,
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
@@ -474,18 +501,21 @@
     "specs/reports/TRANSCRIPT-001.md",
     "specs/reports/TRANSCRIPT-LATEST.md",
     "specs/reports/SPRINT-REPORT-001.md",
-    "specs/reports/SPRINT-REPORT-LATEST.md"
+    "specs/reports/SPRINT-REPORT-LATEST.md",
+    "specs/requirements/ISSUE-0003-Ensure-token-usage-is-tracked-per-story-and-advance-backlog-items-efficiently-with-proper-validation-checks..md",
+    "specs/reports/TRANSCRIPT-002.md",
+    "specs/reports/SPRINT-REPORT-002.md"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true
   },
   "pr_review_calls": {
-    "Architect": 1,
-    "QA": 1
+    "Architect": 2,
+    "QA": 2
   },
-  "architect_review_baseline": 1,
-  "qa_review_baseline": 1,
+  "architect_review_baseline": 2,
+  "qa_review_baseline": 2,
   "sprint_report_pending_release": false,
   "blocking_interactions": [],
   "budget_reset_since_last_sprint_start": false

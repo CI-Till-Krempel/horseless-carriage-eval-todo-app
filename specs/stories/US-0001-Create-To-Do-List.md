@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-22
@@ -16,4 +16,4 @@
 Users can successfully initialize and view new named lists.
 
 ## Test Approach
-
+Pytest unit and integration tests covering list creation, task addition, completion toggling, task deletion, list deletion, and overview rendering.

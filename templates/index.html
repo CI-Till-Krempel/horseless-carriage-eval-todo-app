@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card create-list-card">
+    <h2>Create New To-Do List</h2>
+    <form action="{{ url_for('create_list') }}" method="POST">
+        <input type="text" name="name" placeholder="List Name" required>
+        <button type="submit" class="btn primary">Create List</button>
+    </form>
+</div>
+
+<div class="lists-container">
+    {% for todo_list in lists %}
+    <div class="card list-card">
+        <div class="list-header">
+            <h3>{{ todo_list.name }}</h3>
+            <form action="{{ url_for('delete_list', list_id=todo_list.id) }}" method="POST" style="display:inline;">
+                <button type="submit" class="btn danger small">Delete List</button>
+            </form>
+        </div>
+
+        <ul class="task-list">
+            {% for task in todo_list.tasks %}
+            <li class="task-item {% if task.completed %}completed{% else %}incomplete{% endif %}">
+                <form action="{{ url_for('toggle_task', task_id=task.id) }}" method="POST" style="display:inline;">
+                    <button type="submit" class="btn-toggle">
+                        {% if task.completed %}☑{% else %}☐{% endif %}
+                    </button>
+                </form>
+                <span class="task-desc {% if task.completed %}strikethrough{% endif %}">{{ task.description }}</span>
+                <form action="{{ url_for('delete_task', task_id=task.id) }}" method="POST" style="display:inline;">
+                    <button type="submit" class="btn danger xsmall">Delete</button>
+                </form>
+            </li>
+            {% else %}
+            <li class="empty-task">No tasks in this list yet.</li>
+            {% endfor %}
+        </ul>
+
+        <form action="{{ url_for('add_task', list_id=todo_list.id) }}" method="POST" class="add-task-form">
+            <input type="text" name="description" placeholder="New task description..." required>
+            <button type="submit" class="btn secondary small">Add Task</button>
+        </form>
+    </div>
+    {% else %}
+    <p class="no-lists">No to-do lists created yet. Create one above!</p>
+    {% endfor %}
+</div>
+{% endblock %}

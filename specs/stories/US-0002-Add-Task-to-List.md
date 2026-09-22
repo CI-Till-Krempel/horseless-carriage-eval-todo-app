@@ -16,4 +16,4 @@
 Users can add specific descriptive tasks to any created list.
 
 ## Test Approach
-Pytest integration test.
+Pytest unit tests for task addition edge cases.

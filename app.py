@@ -1,10 +1,11 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = 'eval-secret-key'
 db = SQLAlchemy(app)
 
 class TodoList(db.Model):
@@ -28,11 +29,13 @@ def index():
 
 @app.route('/list/create', methods=['POST'])
 def create_list():
-    name = request.form.get('name')
+    name = request.form.get('name', '').strip()
     if name:
         new_list = TodoList(name=name)
         db.session.add(new_list)
         db.session.commit()
+    else:
+        flash('List name cannot be empty.', 'error')
     return redirect(url_for('index'))
 
 @app.route('/list/<int:list_id>/delete', methods=['POST'])
@@ -44,11 +47,14 @@ def delete_list(list_id):
 
 @app.route('/list/<int:list_id>/task/add', methods=['POST'])
 def add_task(list_id):
-    description = request.form.get('description')
+    todo_list = TodoList.query.get_or_404(list_id)
+    description = request.form.get('description', '').strip()
     if description:
         task = Task(description=description, list_id=list_id, completed=False)
         db.session.add(task)
         db.session.commit()
+    else:
+        flash('Task description cannot be empty.', 'error')
     return redirect(url_for('index'))
 
 @app.route('/task/<int:task_id>/toggle', methods=['POST'])

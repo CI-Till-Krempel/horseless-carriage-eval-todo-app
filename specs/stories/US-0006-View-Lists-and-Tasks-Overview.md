@@ -2,7 +2,7 @@
 
 - Story ID: US-0006
 - Title: View Lists and Tasks Overview
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-22
@@ -16,4 +16,4 @@
 Users get a clear visual summary of all lists and task states.
 
 ## Test Approach
-Pytest integration test.
+Pytest unit test for overview rendering and visual classes.

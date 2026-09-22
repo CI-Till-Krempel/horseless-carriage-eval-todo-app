@@ -326,7 +326,7 @@ Stories
 - [US-0006] View Lists and Tasks Overview
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

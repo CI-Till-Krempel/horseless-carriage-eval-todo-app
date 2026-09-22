@@ -16,4 +16,4 @@
 Users get a clear visual summary of all lists and task states.
 
 ## Test Approach
-
+Pytest integration test.

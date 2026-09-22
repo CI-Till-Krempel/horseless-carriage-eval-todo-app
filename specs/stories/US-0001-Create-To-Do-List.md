@@ -16,4 +16,4 @@
 Users can successfully initialize and view new named lists.
 
 ## Test Approach
-
+Pytest unit and integration tests covering list creation, task addition, completion toggling, task deletion, list deletion, and overview rendering.

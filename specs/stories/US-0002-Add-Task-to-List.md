@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to List
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-22
@@ -16,4 +16,4 @@
 Users can add specific descriptive tasks to any created list.
 
 ## Test Approach
-Pytest integration test.
+Pytest unit tests for task addition edge cases.

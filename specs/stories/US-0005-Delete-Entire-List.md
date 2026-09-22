@@ -2,7 +2,7 @@
 
 - Story ID: US-0005
 - Title: Delete Entire List
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-22
@@ -16,4 +16,4 @@
 Users can clean up whole lists and associated tasks.
 
 ## Test Approach
-Pytest integration test.
+Pytest unit test for list cascade deletion.

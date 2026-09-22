@@ -320,9 +320,9 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0006] View Lists and Tasks Overview
   - [x] DRAFT
   - [x] READY

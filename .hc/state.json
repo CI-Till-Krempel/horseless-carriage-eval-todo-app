@@ -32,7 +32,7 @@
         "Accepted"
       ],
       "status": "Accepted",
-      "version": "v1.3.0",
+      "version": "v1.4.0",
       "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified acceptance criteria: User can create a new to-do list with a name, add tasks, toggle completion, delete tasks, delete lists, and view overview. Automated tests and QA checks pass."
@@ -48,7 +48,7 @@
       "id": "US-0002",
       "priority": "P0",
       "type": "User Story",
-      "version": "v1.3.0",
+      "version": "v1.4.0",
       "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
       "stages_completed": [
         "Draft",
@@ -73,7 +73,7 @@
         "Given a task exists in a list, When the user clicks to toggle completion, Then the task status switches between complete and incomplete."
       ],
       "type": "User Story",
-      "version": "v1.3.0",
+      "version": "v1.4.0",
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
       "stages_completed": [
         "Draft",
@@ -98,14 +98,19 @@
       "description": "As a user, I want to delete a task so that I can remove unwanted or obsolete items.",
       "id": "US-0004",
       "type": "User Story",
-      "version": "v1.3.0",
+      "version": "v1.4.0",
       "user_story": "As a user, I want to delete a task so that I can remove unwanted or obsolete items.",
       "stages_completed": [
         "Draft",
         "Ready",
-        "Implemented"
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Implemented"
+      "status": "Accepted",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified US-0004 acceptance criteria: Deleting a task removes it successfully. QA checks and tests pass."
     },
     {
       "priority": "P0",
@@ -118,7 +123,7 @@
       "id": "US-0005",
       "description": "As a user, I want to delete an entire list and its tasks so that I can clean up old lists.",
       "type": "User Story",
-      "version": "v1.3.0",
+      "version": "v1.4.0",
       "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up old lists.",
       "stages_completed": [
         "Draft",
@@ -137,7 +142,7 @@
       "epic_id": "EP-0001",
       "value_hypothesis": "Users get a clear visual summary of all lists and task states.",
       "type": "User Story",
-      "version": "v1.3.0",
+      "version": "v1.4.0",
       "user_story": "As a user, I want to see all my lists and tasks with completed tasks visually distinguished so that I have a clear overview.",
       "stages_completed": [
         "Draft",
@@ -176,6 +181,14 @@
       "type": "Issue",
       "id": "ISSUE-0004",
       "priority": "Must"
+    },
+    {
+      "title": "Ensure smooth branch management and PR merging for US-0004 and US-0005 in Sprint 4.",
+      "overview": "Ensure smooth branch management and PR merging for US-0004 and US-0005 in Sprint 4.",
+      "owner": "DevTeam",
+      "type": "Issue",
+      "id": "ISSUE-0005",
+      "priority": "Must"
     }
   ],
   "definition_of_done": [
@@ -187,9 +200,9 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Implement task deletion and list deletion user stories (US-0004 and US-0005) with rigorous test coverage and cascade validation.",
-  "sprint_number": 4,
-  "sprint_backlog_pr_sprint": 4,
+  "sprint_goal": "Implement entire list and associated tasks deletion (US-0005) and view lists/tasks overview with visual distinction (US-0006) for final MVP release v1.4.0.",
+  "sprint_number": 5,
+  "sprint_backlog_pr_sprint": 5,
   "sprint_backlog": [
     {
       "priority": "P0",
@@ -328,9 +341,12 @@
       "stages_completed": [
         "Draft",
         "Ready",
-        "Implemented"
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Implemented",
+      "status": "Accepted",
       "approach": "Verify task deletion feature and test coverage in Flask and test suite.",
       "estimate": 30,
       "risks_assumptions": [
@@ -343,7 +359,9 @@
       "code_files": [
         "app.py",
         "tests/test_app.py"
-      ]
+      ],
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified US-0004 acceptance criteria: Deleting a task removes it successfully. QA checks and tests pass."
     },
     {
       "priority": "P0",
@@ -365,16 +383,16 @@
       "status": "Ready",
       "code_files": [
         "app.py",
-        "templates/index.html"
+        "tests/test_app.py"
       ],
       "estimate": 30,
-      "test_approach": "Pytest integration test.",
-      "approach": "Integrated into Flask/SQLite app in US-0001 implementation with cascade deletion.",
+      "test_approach": "Pytest unit test for list cascade deletion.",
+      "approach": "Verify entire list and associated tasks deletion cascade and test suite coverage.",
       "dod_checks": [
-        "List deletion with cascade functional and tested"
+        "List deletion cascade verified and tested"
       ],
       "risks_assumptions": [
-        "Foreign key cascade enabled in SQLite."
+        "Cascade delete correctly configured on relationship."
       ]
     },
     {
@@ -440,6 +458,13 @@
       "success_metric": "US-0003 and US-0004 successfully advanced through all stages and accepted.",
       "status": "open",
       "issue_id": "ISSUE-0004"
+    },
+    {
+      "action": "Ensure smooth branch management and PR merging for US-0004 and US-0005 in Sprint 4.",
+      "owner": "DevTeam",
+      "success_metric": "US-0004 and US-0005 successfully accepted and verified.",
+      "status": "open",
+      "issue_id": "ISSUE-0005"
     }
   ],
   "decision_log": [
@@ -460,6 +485,12 @@
       "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
       "rationale": "Task deletion logic and tests were implemented in US-0001 (app.py and tests/test_app.py) and verified for US-0004.",
       "owner": "DevTeam"
+    },
+    {
+      "title": "Ready-backlog sufficiency target waived",
+      "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
+      "rationale": "The To-Do List Web App product backlog has precisely 6 core user stories (US-0001 through US-0006) covering the entire fixed PRD scope. All 6 stories have already been fully detailed and brought to Ready status across the project. There is no remaining unshaped scope.",
+      "owner": "ProductOwner"
     }
   ],
   "sprint_report": "",
@@ -470,11 +501,11 @@
     "current_usd_spend": 0.0
   },
   "token_usage": {
-    "total": 954167,
+    "total": 1228207,
     "agents": {
-      "ScrumMaster": 138648,
-      "ProductOwner": 368436,
-      "DevTeam": 447083
+      "ScrumMaster": 166868,
+      "ProductOwner": 615991,
+      "DevTeam": 445348
     }
   },
   "story_estimates": {
@@ -495,16 +526,17 @@
       "actual": 30
     },
     "US-0005": {
-      "estimate": 30
+      "estimate": 30,
+      "actual": 30
     },
     "US-0006": {
       "estimate": 30
     }
   },
   "sprint_report_kpis": {},
-  "kpi_update_count": 3,
-  "kpi_baseline": 3,
-  "backlog_scope_complete": false,
+  "kpi_update_count": 4,
+  "kpi_baseline": 4,
+  "backlog_scope_complete": true,
   "repo": {
     "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
     "local_path": "/app/eval-output/clone",
@@ -517,7 +549,7 @@
     }
   ],
   "hc_version": "0.1.0",
-  "retro_baseline": 4,
+  "retro_baseline": 5,
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
@@ -549,18 +581,21 @@
     "specs/reports/SPRINT-REPORT-002.md",
     "specs/requirements/ISSUE-0004-Maintain-rigorous-pipeline-execution-and-continuous-test-coverage-for-task-management-features-in-Sprint-3..md",
     "specs/reports/TRANSCRIPT-003.md",
-    "specs/reports/SPRINT-REPORT-003.md"
+    "specs/reports/SPRINT-REPORT-003.md",
+    "specs/requirements/ISSUE-0005-Ensure-smooth-branch-management-and-PR-merging-for-US-0004-and-US-0005-in-Sprint-4..md",
+    "specs/reports/TRANSCRIPT-004.md",
+    "specs/reports/SPRINT-REPORT-004.md"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true
   },
   "pr_review_calls": {
-    "Architect": 3,
-    "QA": 3
+    "Architect": 4,
+    "QA": 4
   },
-  "architect_review_baseline": 3,
-  "qa_review_baseline": 3,
+  "architect_review_baseline": 4,
+  "qa_review_baseline": 4,
   "sprint_report_pending_release": false,
   "blocking_interactions": [],
   "budget_reset_since_last_sprint_start": false

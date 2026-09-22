@@ -1,0 +1,368 @@
+# Product Roadmap
+
+Use this living roadmap to plan releases and track user stories across states. It doubles as a lightweight task board and a release planning tool.
+
+## How to use
+- Story IDs should match files in `specs/stories/` (e.g., `ST-001` corresponds to `specs/stories/ST-001-some-title.md`).
+- Move story references between states as work progresses.
+- Keep titles short; full details live in the story file.
+- For each planned version, list goals and the set of stories targeted for that release.
+- When a release is cut, freeze the section by adding the actual tag (e.g., `v0.1.0`) and dates.
+
+Legend
+- `[ST-###] Title` → a user story reference and its short title
+- Checkbox states: `- [ ]` To Do, `- [~]` In Progress (use `- [~]` to signal WIP), `- [R]` In Review, `- [x]` Done
+
+Tip: If you prefer standard checkboxes only, use the Kanban tables below and keep raw lists unchecked.
+
+---
+
+## Release plan (versions → stories)
+
+### v0.1 — MVP (target: YYYY-MM)
+Goals
+
+Stories:
+
+### v0.2 — Next iteration (target: YYYY-MM)
+Goals
+
+Stories
+
+### Backlog (unplanned)
+
+
+Stories
+- [ISSUE-0001] Maintain strict adherence to DOD and DOR across all stories, ensuring comprehensive test coverage for all CRUD and view requirements in Sprint 1.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0002] No architectural review PR approval tool permission for secondary reviewers on same repo without breaking GitHub personal access token restrictions, worked around via PR comment.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0003] Ensure token usage is tracked per story and advance backlog items efficiently with proper validation checks.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0004] Maintain rigorous pipeline execution and continuous test coverage for task management features in Sprint 3.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0005] Ensure smooth branch management and PR merging for US-0004 and US-0005 in Sprint 4.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+---
+
+### v1.0.0-MVP
+Goals
+- Deliver core To-Do List web application with ability to create lists, add/complete/delete tasks, delete lists, and view everything via a simple web UI.
+
+Stories
+- [US-0001] US-0001
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0002] US-0002
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0003] US-0003
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0004] US-0004
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0005] US-0005
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] US-0006
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v1.1.0
+Goals
+- Deliver core To-Do List web application with ability to create lists, add/complete/delete tasks, delete lists, and view everything via a simple web UI.
+- Enhance To-Do List web application UI/UX polish, persistent storage robustness, and advanced view management for all user stories US-0002 through US-0006.
+
+Stories
+- [US-0001] Create To-Do List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0002] Add Task to List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0003] Mark Task Complete or Incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0004] Delete Task
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0005] Delete Entire List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] View Lists and Tasks Overview
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v1.2.0
+Goals
+- Deliver core To-Do List web application with ability to create lists, add/complete/delete tasks, delete lists, and view everything via a simple web UI.
+- Enhance To-Do List web application UI/UX polish, persistent storage robustness, and advanced view management for all user stories US-0002 through US-0006.
+- Implement task completion toggling and task deletion user stories (US-0003 and US-0004) with comprehensive test coverage and UI polish.
+
+Stories
+- [US-0001] Create To-Do List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0002] Add Task to List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0003] Mark Task Complete or Incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0004] Delete Task
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0005] Delete Entire List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] View Lists and Tasks Overview
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v1.3.0
+Goals
+- Deliver core To-Do List web application with ability to create lists, add/complete/delete tasks, delete lists, and view everything via a simple web UI.
+- Enhance To-Do List web application UI/UX polish, persistent storage robustness, and advanced view management for all user stories US-0002 through US-0006.
+- Implement task completion toggling and task deletion user stories (US-0003 and US-0004) with comprehensive test coverage and UI polish.
+- Implement task deletion and list deletion user stories (US-0004 and US-0005) with rigorous test coverage and cascade validation.
+
+Stories
+- [US-0001] Create To-Do List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0002] Add Task to List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0003] Mark Task Complete or Incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0004] Delete Task
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0005] Delete Entire List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] View Lists and Tasks Overview
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v1.4.0
+Goals
+- Deliver core To-Do List web application with ability to create lists, add/complete/delete tasks, delete lists, and view everything via a simple web UI.
+- Enhance To-Do List web application UI/UX polish, persistent storage robustness, and advanced view management for all user stories US-0002 through US-0006.
+- Implement task completion toggling and task deletion user stories (US-0003 and US-0004) with comprehensive test coverage and UI polish.
+- Implement task deletion and list deletion user stories (US-0004 and US-0005) with rigorous test coverage and cascade validation.
+- Implement entire list and associated tasks deletion (US-0005) and view lists/tasks overview with visual distinction (US-0006) for final MVP release v1.4.0.
+
+Stories
+- [US-0001] Create To-Do List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0002] Add Task to List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0003] Mark Task Complete or Incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0004] Delete Task
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0005] Delete Entire List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0006] View Lists and Tasks Overview
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
+## Task board (Kanban)
+
+Use either the per-version boards below or one global board; duplicate as needed for each active version.
+
+### v0.1 Kanban
+
+| To Do | In Progress | In Review | Done |
+|------|-------------|-----------|------|
+
+Notes
+- Update this table in PRs alongside code changes.
+- Keep the board limited to the current sprint scope if you’re also running sprints.
+
+### v0.2 Kanban
+
+| To Do | In Progress | In Review | Done |
+|------|-------------|-----------|------|
+
+---
+
+## Cross-cutting initiatives (optional)
+Track broader themes/epics that span multiple versions. Link constituent stories.
+
+---
+
+## Release checklist (for when cutting a release)
+- [ ] All included stories are in `Done` and meet Definition of Done
+- [ ] Docs updated (stories, PRD/SRS, ADRs as needed)
+- [ ] Version/tag created (e.g., `v0.1.0`) and changelog drafted
+- [ ] Known issues captured and follow-ups added to backlog
+
+---
+
+## Index of story references
+Group story references by planned version for quick scanning.
+
+- v0.1
+- v0.2
+- Unplanned
+
+Replace placeholders with your actual story IDs and titles. Keep this file updated in the same PRs that move work forward.

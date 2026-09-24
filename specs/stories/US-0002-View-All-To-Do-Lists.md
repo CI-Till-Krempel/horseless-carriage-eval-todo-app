@@ -16,7 +16,7 @@
 Users can view all their created lists at a glance.
 
 ## Test Approach
-Tested via unittest in test_app.py.
+Run unit tests.
 
 ### Tasks
-- Verify list rendering logic in index template.
+- Verify template rendering for multiple lists.

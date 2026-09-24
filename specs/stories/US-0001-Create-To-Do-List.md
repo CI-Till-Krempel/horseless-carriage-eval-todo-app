@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Draft
+- Status: Ready
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-09-24
@@ -16,4 +16,4 @@
 
 
 ## Test Approach
-
+Pytest for unit and functional route tests.

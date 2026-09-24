@@ -20,7 +20,14 @@
       "priority": "Must",
       "type": "User Story",
       "id": "US-0001",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0001",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready"
     },
     {
       "epic_ref": "EP-0001",
@@ -32,7 +39,14 @@
       "user_story": "As a user, I want to add a task to a list with a short description so that I can track what needs to be done.",
       "type": "User Story",
       "id": "US-0002",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0002",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready"
     },
     {
       "acceptance_criteria": [
@@ -44,7 +58,14 @@
       "epic_ref": "EP-0001",
       "type": "User Story",
       "id": "US-0003",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0003",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready"
     },
     {
       "user_story": "As a user, I want to delete a task so that I can remove unwanted items.",
@@ -56,7 +77,14 @@
       "title": "Delete Task",
       "type": "User Story",
       "id": "US-0004",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0004",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready"
     },
     {
       "priority": "Must",
@@ -68,7 +96,14 @@
       "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete lists.",
       "type": "User Story",
       "id": "US-0005",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0005",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready"
     },
     {
       "title": "View Lists and Tasks",
@@ -80,7 +115,14 @@
       "user_story": "As a user, I want to see all my lists and tasks with completed tasks visually distinguished so that I have a clear overview.",
       "type": "User Story",
       "id": "US-0006",
-      "version": "v1.0.0"
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0006",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready"
     }
   ],
   "definition_of_done": [
@@ -92,12 +134,231 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "",
-  "sprint_number": 0,
-  "sprint_backlog_pr_sprint": 0,
-  "sprint_backlog": [],
+  "sprint_goal": "Implement Sprint 1 MVP To-Do List application core features (US-0001 to US-0006).",
+  "sprint_number": 1,
+  "sprint_backlog_pr_sprint": 1,
+  "sprint_backlog": [
+    {
+      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "title": "Create To-Do List",
+      "epic_ref": "EP-0001",
+      "acceptance_criteria": [
+        "Given the user is on the home page, When they enter a list name and click create, Then a new to-do list is created and displayed."
+      ],
+      "priority": "Must",
+      "type": "User Story",
+      "id": "US-0001",
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0001",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Use Flask with Python and an in-memory database/dictionary store with JSON file persistence backup for simplicity and reliability.",
+      "estimate": 1200,
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "requirements.txt",
+        "tests/test_app.py"
+      ],
+      "dod_checks": [
+        "Code implemented and working",
+        "Unit tests passing",
+        "CI green"
+      ],
+      "risks_assumptions": [
+        "Single-user in-memory/file storage is sufficient for MVP."
+      ],
+      "test_approach": "Pytest for unit and functional route tests."
+    },
+    {
+      "epic_ref": "EP-0001",
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user adds a task with a description, Then the task appears under that list."
+      ],
+      "priority": "Must",
+      "title": "Add Task to List",
+      "user_story": "As a user, I want to add a task to a list with a short description so that I can track what needs to be done.",
+      "type": "User Story",
+      "id": "US-0002",
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0002",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "estimate": 1000,
+      "approach": "Extend Flask application to allow adding tasks to specific lists.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "risks_assumptions": [
+        "Tasks are correctly associated with list IDs."
+      ],
+      "dod_checks": [
+        "Code implemented and working",
+        "Unit tests passing",
+        "CI green"
+      ],
+      "test_approach": "Pytest for task creation routes."
+    },
+    {
+      "acceptance_criteria": [
+        "Given a task in a list, When the user toggles its completion status, Then the task updates to show as complete or incomplete visually."
+      ],
+      "title": "Mark Task Complete or Incomplete",
+      "priority": "Must",
+      "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
+      "epic_ref": "EP-0001",
+      "type": "User Story",
+      "id": "US-0003",
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0003",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "test_approach": "Pytest route testing.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "estimate": 800,
+      "dod_checks": [
+        "Code implemented and working",
+        "Unit tests passing",
+        "CI green"
+      ],
+      "risks_assumptions": [
+        "Toggle state persists correctly in session store."
+      ],
+      "approach": "Add endpoint and UI toggle for marking tasks complete/incomplete."
+    },
+    {
+      "user_story": "As a user, I want to delete a task so that I can remove unwanted items.",
+      "priority": "Must",
+      "epic_ref": "EP-0001",
+      "acceptance_criteria": [
+        "Given a task in a list, When the user clicks delete on the task, Then the task is removed from the list."
+      ],
+      "title": "Delete Task",
+      "type": "User Story",
+      "id": "US-0004",
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0004",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "risks_assumptions": [
+        "Deleting task does not affect other tasks."
+      ],
+      "dod_checks": [
+        "Code implemented and working",
+        "Unit tests passing",
+        "CI green"
+      ],
+      "approach": "Implement task deletion route and button in UI.",
+      "estimate": 700,
+      "test_approach": "Pytest route testing."
+    },
+    {
+      "priority": "Must",
+      "epic_ref": "EP-0001",
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user deletes the list, Then the list and all its associated tasks are removed."
+      ],
+      "title": "Delete To-Do List",
+      "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete lists.",
+      "type": "User Story",
+      "id": "US-0005",
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0005",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "test_approach": "Pytest route testing.",
+      "estimate": 800,
+      "risks_assumptions": [
+        "Cascade deletion removes all tasks associated with the list."
+      ],
+      "dod_checks": [
+        "Code implemented and working",
+        "Unit tests passing",
+        "CI green"
+      ],
+      "approach": "Implement list deletion route and cascading task removal in Flask backend and UI.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ]
+    },
+    {
+      "title": "View Lists and Tasks",
+      "priority": "Must",
+      "acceptance_criteria": [
+        "Given multiple lists and tasks, When the user views the main application page, Then all lists and tasks are visible with completed tasks visually distinguished."
+      ],
+      "epic_ref": "EP-0001",
+      "user_story": "As a user, I want to see all my lists and tasks with completed tasks visually distinguished so that I have a clear overview.",
+      "type": "User Story",
+      "id": "US-0006",
+      "version": "v1.0.0",
+      "design_approved": true,
+      "design_approval_note": "Approved design for US-0006",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Ensure main view renders all lists and tasks clearly with visual styling for completed items.",
+      "test_approach": "Pytest HTML inspection.",
+      "risks_assumptions": [
+        "CSS styling adequately distinguishes completed tasks."
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "estimate": 800,
+      "dod_checks": [
+        "Code implemented and working",
+        "Unit tests passing",
+        "CI green"
+      ]
+    }
+  ],
   "impediment_log": [],
-  "retro_actions": [],
+  "retro_actions": [
+    {
+      "action": "Ensure all user stories are fully elaborated with concrete acceptance criteria before starting sprint planning.",
+      "owner": "ProductOwner",
+      "success_metric": "100% of sprint 1 stories had clear ACs on first pass without rework.",
+      "status": "open"
+    }
+  ],
   "decision_log": [
     {
       "title": "Ready-backlog sufficiency target waived",
@@ -110,16 +371,38 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.0354998
+    "current_usd_spend": 0.19895728000000001
   },
   "token_usage": {
-    "total": 274222,
+    "total": 1395429,
     "agents": {
       "ScrumOrchestrator": 99035,
-      "ProductOwner": 175187
+      "ProductOwner": 780077,
+      "ScrumMaster": 68573,
+      "DevTeam": 447744
     }
   },
-  "story_estimates": {},
+  "story_estimates": {
+    "US-0001": {
+      "estimate": 1200,
+      "actual": 300
+    },
+    "US-0002": {
+      "estimate": 1000
+    },
+    "US-0003": {
+      "estimate": 800
+    },
+    "US-0004": {
+      "estimate": 700
+    },
+    "US-0005": {
+      "estimate": 800
+    },
+    "US-0006": {
+      "estimate": 800
+    }
+  },
   "sprint_report_kpis": {},
   "kpi_update_count": 0,
   "kpi_baseline": 0,
@@ -150,7 +433,11 @@
     "specs/stories/US-0003-Mark-Task-Complete-or-Incomplete.md",
     "specs/stories/US-0004-Delete-Task.md",
     "specs/stories/US-0005-Delete-To-Do-List.md",
-    "specs/stories/US-0006-View-Lists-and-Tasks.md"
+    "specs/stories/US-0006-View-Lists-and-Tasks.md",
+    "requirements.txt",
+    "app.py",
+    "templates/index.html",
+    "tests/test_app.py"
   ],
   "last_check_build": null,
   "pr_review_calls": {},
@@ -159,6 +446,6 @@
   "qa_tested_baseline": 0,
   "sprint_report_pending_release": false,
   "blocking_interactions": [],
-  "budget_reset_since_last_sprint_start": true,
+  "budget_reset_since_last_sprint_start": false,
   "overclaim_rejection_counts": {}
 }

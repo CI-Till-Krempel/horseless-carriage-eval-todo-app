@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Create To-Do List
-- Status: Ready
+- Status: Tested
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-24

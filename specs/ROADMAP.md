@@ -35,23 +35,8 @@ Stories
 
 ### v1.0.0
 Goals
-- Establish foundational architecture and deliver initial list creation/viewing functionality.
-
+- Deliver view all lists (US-0002) and add task to a list (US-0003) functionality.
 Stories
-- [US-0001] Create a New To-Do List
-  - [x] DRAFT
-  - [x] READY
-  - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-0002] View All To-Do Lists
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 - [US-0003] Add Task to a List
   - [x] DRAFT
   - [x] READY

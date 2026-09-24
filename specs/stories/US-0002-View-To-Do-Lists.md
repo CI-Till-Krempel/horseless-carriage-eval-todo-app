@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: View To-Do Lists
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-24

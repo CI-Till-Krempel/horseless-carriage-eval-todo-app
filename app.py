@@ -1,10 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
+app.secret_key = 'supersecretkey'
 
 # In-memory storage for lists and tasks
-# lists structure: { list_id: {'id': list_id, 'name': name} }
-# tasks structure: { task_id: {'id': task_id, 'list_id': list_id, 'text': text, 'completed': bool} }
 todo_lists = {}
 tasks = {}
 list_counter = 1
@@ -27,7 +26,9 @@ def index():
 def create_list():
     global list_counter
     name = request.form.get('name', '').strip()
-    if name:
+    if not name:
+        flash('List name cannot be empty.', 'error')
+    else:
         todo_lists[list_counter] = {'id': list_counter, 'name': name}
         list_counter += 1
     return redirect(url_for('index'))
@@ -37,7 +38,6 @@ def delete_list(list_id):
     global todo_lists, tasks
     if list_id in todo_lists:
         del todo_lists[list_id]
-        # Delete all tasks associated with this list
         to_delete = [t_id for t_id, t in tasks.items() if t['list_id'] == list_id]
         for t_id in to_delete:
             del tasks[t_id]
@@ -47,7 +47,11 @@ def delete_list(list_id):
 def add_task(list_id):
     global task_counter
     text = request.form.get('text', '').strip()
-    if text and list_id in todo_lists:
+    if not text:
+        flash('Task description cannot be empty.', 'error')
+    elif list_id not in todo_lists:
+        flash('Target list does not exist.', 'error')
+    else:
         tasks[task_counter] = {
             'id': task_counter,
             'list_id': list_id,

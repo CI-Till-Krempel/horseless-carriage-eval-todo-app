@@ -16,4 +16,9 @@
 Preventing blank entries improves data quality and user experience.
 
 ## Test Approach
+Run pytest to verify validation error handling.
 
+### Tasks
+- Update app.py routes to check for non-empty trimmed strings and pass error messages
+- Update templates/index.html to display error feedback alerts
+- Add test cases in tests/test_app.py for empty submissions

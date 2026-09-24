@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: View To-Do Lists
-- Status: Draft
+- Status: Ready
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-24
@@ -16,4 +16,7 @@
 Users can see all their lists clearly in the web UI.
 
 ## Test Approach
+Pytest testing list display on home page.
 
+### Tasks
+- Verify index page lists all created lists

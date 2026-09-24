@@ -41,7 +41,7 @@ Stories
 - [US-0001] Initialize Project Repository and Basic Structure
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

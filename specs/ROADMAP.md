@@ -51,7 +51,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0003] Add Task to List
   - [x] DRAFT
   - [x] READY

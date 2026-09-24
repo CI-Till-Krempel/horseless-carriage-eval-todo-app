@@ -16,4 +16,9 @@
 Users can add tasks to specific lists.
 
 ## Test Approach
+Pytest client testing task addition.
 
+### Tasks
+- Update data model and routes in app.py
+- Update templates/index.html for task input
+- Add unit tests for adding tasks

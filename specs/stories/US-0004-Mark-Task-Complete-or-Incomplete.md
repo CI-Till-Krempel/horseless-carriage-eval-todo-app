@@ -16,4 +16,9 @@
 Users can toggle task completion status.
 
 ## Test Approach
+Pytest client testing task completion toggle.
 
+### Tasks
+- Add toggle route in app.py
+- Update template to include completion checkbox/toggle and visual styling
+- Add unit tests for toggling completion

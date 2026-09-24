@@ -55,6 +55,27 @@ Stories
   - [ ] ACCEPTED
 
 
+### v0.2.0
+Goals
+- Sprint 2: Task Management (Add tasks, mark complete/incomplete)
+
+Stories
+- [US-0003] Add Task to List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0004] Mark Task Complete or Incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

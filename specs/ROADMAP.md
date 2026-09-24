@@ -43,12 +43,12 @@ Stories
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

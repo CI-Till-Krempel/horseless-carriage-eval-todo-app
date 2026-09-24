@@ -35,7 +35,7 @@ Stories
 
 ### v1.0.0
 Goals
-- Deliver view all lists (US-0002) and add task to a list (US-0003) functionality.
+- Complete US-0002 (View All Lists) and US-0003 (Add Task to a List).
 Stories
 - [US-0003] Add Task to a List
   - [x] DRAFT

@@ -2,7 +2,7 @@
 
 - Story ID: US-0006
 - Title: View Lists and Tasks
-- Status: Draft
+- Status: Ready
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-09-24
@@ -16,4 +16,4 @@
 
 
 ## Test Approach
-
+Pytest HTML inspection.

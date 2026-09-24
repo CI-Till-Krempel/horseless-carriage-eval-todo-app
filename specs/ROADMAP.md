@@ -89,6 +89,26 @@ Stories
   - [ ] ACCEPTED
 
 
+### v1.1.0
+Goals
+
+Stories
+- [US-0008] Input Validation and Error Handling
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0009] UI Styling and Responsive Design Enhancement
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

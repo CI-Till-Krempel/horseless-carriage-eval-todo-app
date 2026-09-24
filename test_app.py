@@ -19,3 +19,26 @@ def test_create_list(client):
     assert b'Groceries' in response.data
     assert len(todo_lists) == 1
     assert todo_lists[0]['name'] == 'Groceries'
+
+def test_add_task_to_list(client):
+    client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
+    response = client.post('/lists/1/tasks', data={'content': 'Finish report'}, follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Finish report' in response.data
+    assert len(todo_lists[0]['tasks']) == 1
+    assert todo_lists[0]['tasks'][0]['content'] == 'Finish report'
+    assert todo_lists[0]['tasks'][0]['completed'] is False
+
+def test_toggle_task_completion(client):
+    client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
+    client.post('/lists/1/tasks', data={'content': 'Finish report'}, follow_redirects=True)
+    
+    # Toggle complete
+    response = client.post('/lists/1/tasks/1/toggle', follow_redirects=True)
+    assert response.status_code == 200
+    assert todo_lists[0]['tasks'][0]['completed'] is True
+    
+    # Toggle incomplete again
+    response = client.post('/lists/1/tasks/1/toggle', follow_redirects=True)
+    assert response.status_code == 200
+    assert todo_lists[0]['tasks'][0]['completed'] is False

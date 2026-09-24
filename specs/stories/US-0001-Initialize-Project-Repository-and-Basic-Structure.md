@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Initialize Project Repository and Basic Structure
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-24
@@ -16,4 +16,10 @@
 A structured project layout enables rapid feature development and testing.
 
 ## Test Approach
+Run pytest to verify app routes and basic CRUD functionality.
 
+### Tasks
+- Create requirements.txt
+- Create app.py with Flask routes
+- Create templates/index.html for UI
+- Create tests/test_app.py

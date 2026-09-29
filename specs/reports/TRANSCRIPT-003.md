@@ -7,6 +7,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## QA
+- 🔧 `gh_pr_comment(pr_id=274, body="**QA:** All tests in...")`
 
 Advancing story US-0001 stage to Tested.
 - 🔧 `advance_story_stage(stage="Tested", title_or_id="US-0001")`
@@ -343,4 +344,3 @@ Updating sprint report with Sprint 2 KPI calculations.
 - 🔧 `create_sprint_report(accomplishments=['Completed implemen..., summary="Sprint 2 delivered t...")`
 - 🔧 `create_sprint_report(summary="Sprint 2 progressed ...", accomplishments=['Initiated implemen...)`
 - 🔧 `create_sprint_report(accomplishments=['Conducted Sprint 2..., summary="Sprint 2 focused on ...")`
-- 🔧 `create_release_pr(title="Release v1.1.0 - Spr...", body="Release PR for Sprin...")`

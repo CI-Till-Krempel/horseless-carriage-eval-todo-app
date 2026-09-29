@@ -31,12 +31,28 @@ def test_toggle_task(client):
     client.post(f'/lists/{list_id}/tasks', data={'title': 'Buy milk'}, follow_redirects=True)
     task_id = todo_lists[list_id]['tasks'][0]['id']
     
-    # Toggle complete
     response = client.post(f'/lists/{list_id}/tasks/{task_id}/toggle', follow_redirects=True)
     assert response.status_code == 200
-    assert b'Mark Incomplete' in response.data
+    assert b'Incomplete' in response.data
     
-    # Toggle back to incomplete
     response = client.post(f'/lists/{list_id}/tasks/{task_id}/toggle', follow_redirects=True)
     assert response.status_code == 200
-    assert b'Mark Complete' in response.data
+    assert b'Complete' in response.data
+
+def test_delete_task(client):
+    client.post('/lists', data={'name': 'Errands'}, follow_redirects=True)
+    list_id = list(todo_lists.keys())[0]
+    client.post(f'/lists/{list_id}/tasks', data={'title': 'Pick up dry cleaning'}, follow_redirects=True)
+    task_id = todo_lists[list_id]['tasks'][0]['id']
+    
+    response = client.post(f'/lists/{list_id}/tasks/{task_id}/delete', follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Pick up dry cleaning' not in response.data
+
+def test_delete_list(client):
+    client.post('/lists', data={'name': 'Temporary List'}, follow_redirects=True)
+    list_id = list(todo_lists.keys())[0]
+    
+    response = client.post(f'/lists/{list_id}', follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Temporary List' not in response.data

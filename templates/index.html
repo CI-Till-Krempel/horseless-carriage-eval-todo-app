@@ -11,10 +11,13 @@
         input[type="text"] { flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
         button { padding: 8px 16px; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; }
         button:hover { background: #2980b9; }
+        .btn-danger { background: #e74c3c; }
+        .btn-danger:hover { background: #c0392b; }
         ul { list-style: none; padding: 0; }
         li { padding: 8px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
         .completed { text-decoration: line-through; color: #888; }
         .list-section { margin-bottom: 30px; border: 1px solid #ddd; padding: 15px; border-radius: 6px; }
+        .list-header { display: flex; justify-content: space-between; align-items: center; }
     </style>
 </head>
 <body>
@@ -28,7 +31,12 @@
 
         {% for list_id, lst in lists.items() %}
         <div class="list-section">
-            <h2>{{ lst.name }}</h2>
+            <div class="list-header">
+                <h2>{{ lst.name }}</h2>
+                <form action="/lists/{{ list_id }}" method="POST" style="margin:0;">
+                    <button type="submit" class="btn-danger">Delete List</button>
+                </form>
+            </div>
             
             <form action="/lists/{{ list_id }}/tasks" method="POST">
                 <input type="text" name="title" placeholder="New Task Description" required>
@@ -39,9 +47,14 @@
                 {% for task in lst.tasks %}
                 <li>
                     <span class="{% if task.completed %}completed{% endif %}">{{ task.title }}</span>
-                    <form action="/lists/{{ list_id }}/tasks/{{ task.id }}/toggle" method="POST" style="margin:0;">
-                        <button type="submit">{% if task.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}</button>
-                    </form>
+                    <div style="display:flex; gap:5px; margin:0;">
+                        <form action="/lists/{{ list_id }}/tasks/{{ task.id }}/toggle" method="POST" style="margin:0;">
+                            <button type="submit">{% if task.completed %}Incomplete{% else %}Complete{% endif %}</button>
+                        </form>
+                        <form action="/lists/{{ list_id }}/tasks/{{ task.id }}/delete" method="POST" style="margin:0;">
+                            <button type="submit" class="btn-danger">Delete</button>
+                        </form>
+                    </div>
                 </li>
                 {% endfor %}
             </ul>

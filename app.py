@@ -32,6 +32,12 @@ def create_list():
         }
     return redirect(url_for('index'))
 
+@app.route('/lists/<list_id>', methods=['POST'])
+def delete_list(list_id):
+    if list_id in todo_lists:
+        del todo_lists[list_id]
+    return redirect(url_for('index'))
+
 @app.route('/lists/<list_id>/tasks', methods=['POST'])
 def add_task(list_id):
     global task_counter
@@ -54,6 +60,12 @@ def toggle_task(list_id, task_id):
             if task['id'] == task_id:
                 task['completed'] = not task['completed']
                 break
+    return redirect(url_for('index'))
+
+@app.route('/lists/<list_id>/tasks/<task_id>/delete', methods=['POST'])
+def delete_task(list_id, task_id):
+    if list_id in todo_lists:
+        todo_lists[list_id]['tasks'] = [t for t in todo_lists[list_id]['tasks'] if t['id'] != task_id]
     return redirect(url_for('index'))
 
 if __name__ == '__main__':

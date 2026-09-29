@@ -56,6 +56,34 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
+### v1.1.0
+Goals
+- Deliver task deletion and list deletion functionality for the To-Do List Web App.
+
+Stories
+
+
+### v1.2.0
+Goals
+- Complete Sprint 4 tasks for the To-Do List Web App.
+
+Stories
+- [US-0005] Delete Entire List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0004] Delete Task
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

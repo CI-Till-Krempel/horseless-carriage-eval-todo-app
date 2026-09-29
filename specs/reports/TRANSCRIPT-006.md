@@ -7,6 +7,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## ScrumMaster
+- 🔧 `reset_sprint_budget()`
 - 🔧 `start_sprint(goal="Deliver deletion fea...")`
 - 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
 
@@ -365,4 +366,3 @@ Updating sprint report with Sprint 4 KPI calculations.
 
 ## ProductOwner
 - 🔧 `create_sprint_report(accomplishments=['Delivered US-0004 ..., summary="Sprint 4 successfull...")`
-- 🔧 `create_release_pr(title="Release v1.2.0 - Spr...", body="Release PR for Sprin...")`

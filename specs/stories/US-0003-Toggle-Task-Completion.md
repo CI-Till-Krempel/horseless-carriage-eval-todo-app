@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Toggle Task Completion
-- Status: Ready
+- Status: Implemented
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-09-29

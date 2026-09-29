@@ -8,6 +8,12 @@ todo_lists = {}
 list_counter = 1
 task_counter = 1
 
+def reset_store():
+    global todo_lists, list_counter, task_counter
+    todo_lists.clear()
+    list_counter = 1
+    task_counter = 1
+
 @app.route('/')
 def index():
     return render_template('index.html', lists=todo_lists)

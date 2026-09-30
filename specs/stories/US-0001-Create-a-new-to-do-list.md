@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create a new to-do list
-- Status: Implemented
+- Status: Reviewed
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-30
@@ -14,6 +14,7 @@
 
 ## Notes
 Users can start organizing work by creating named lists.
+- ⚠️ REVIEW DENIED at Tested by QA: check_build() fails because pip install cannot access PyPI due to network isolation (403 Filtered).
 
 ## Test Approach
 Pytest tests covering list creation, task addition, completion toggling, task deletion, and list deletion.

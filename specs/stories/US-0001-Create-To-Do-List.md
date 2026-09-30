@@ -14,7 +14,7 @@
 
 ## Notes
 Users can create lists to categorize tasks.
-- ⚠️ REVIEW DENIED at Tested by QA: pytest tests fail because flask is not installed in the python environment.
+- ⚠️ REVIEW DENIED at Tested by QA: check_build() failed because setup.py requires Flask which tries to fetch from PyPI and fails due to network proxy restrictions (403 Filtered).
 
 ## Test Approach
 pytest unit tests for list creation API/route.

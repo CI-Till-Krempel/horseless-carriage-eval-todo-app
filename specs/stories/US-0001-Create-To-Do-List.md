@@ -14,7 +14,7 @@
 
 ## Notes
 Users can create lists to categorize tasks.
-- ⚠️ REVIEW DENIED at Tested by QA: check_build() failed due to pip network proxy restriction (403 Filtered) preventing online installation of Flask and pytest.
+- ⚠️ REVIEW DENIED at Tested by QA: pytest cannot import Flask because Flask is not installed in the container's Python environment.
 
 ## Test Approach
 pytest unit tests for list creation API/route.

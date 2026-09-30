@@ -54,8 +54,8 @@ Stories
   - [x] TESTED
   - [x] ACCEPTED
 - [US-0003] Toggle Task Status
-  - [ ] DRAFT
-  - [ ] READY
+  - [x] DRAFT
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED

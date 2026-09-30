@@ -2,7 +2,7 @@
 
 - Story ID: US-006
 - Title: See all lists and tasks with visual distinction
-- Status: Ready
+- Status: Implemented
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-09-30
@@ -17,4 +17,4 @@ Provides a clear overview of all work items and their status.
 - Dependencies: ['US-001', 'US-002', 'US-003']
 
 ## Test Approach
-Verify UI elements and CSS classes via tests/inspection.
+Existing pytest suite covers visual distinction and overview.

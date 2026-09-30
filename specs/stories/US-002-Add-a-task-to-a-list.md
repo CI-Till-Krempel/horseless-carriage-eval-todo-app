@@ -17,4 +17,4 @@ Enables users to record actionable items within specific lists.
 - Dependencies: ['US-001']
 
 ## Test Approach
-
+Test task creation via Flask test client and ensure validation/error handling works.

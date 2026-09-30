@@ -18,4 +18,4 @@ Allows users to organize tasks into separate categories/lists.
 - Dependencies: ['None']
 
 ## Test Approach
-
+Write comprehensive unit and integration tests using pytest and Flask's test client covering list creation, task addition, completion toggle, task deletion, and list deletion.

@@ -17,4 +17,4 @@ Allows tracking progress on individual items.
 - Dependencies: ['US-002']
 
 ## Test Approach
-
+Test toggling status in unit tests.

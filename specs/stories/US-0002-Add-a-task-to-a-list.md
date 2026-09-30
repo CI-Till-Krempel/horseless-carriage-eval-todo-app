@@ -16,4 +16,7 @@
 Users can add specific tasks to lists.
 
 ## Test Approach
+Pytest tests in tests/test_todo.py
 
+### Tasks
+- Verify task addition functionality and tests

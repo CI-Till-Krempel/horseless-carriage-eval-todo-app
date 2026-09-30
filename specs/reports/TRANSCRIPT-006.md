@@ -2,11 +2,91 @@
 
 _This file may only hold a rolling window of the most recent transcript entries across the whole run (see TRANSCRIPT_MAX_ENTRIES), not necessarily this sprint's complete history. For the full, untruncated per-run record, see the session log: `/app/sessions/transcript-eval-0.1.0-run42.log`._
 
-## system
+## ScrumOrchestrator
+- 🔧 `init_scrum_state()`
+- 🔧 `create_litellm_virtual_key(agent_name="ProductOwner", max_budget=100, budget_duration="1m")`
+- 🔧 `create_litellm_virtual_key(max_budget=100, budget_duration="1m", agent_name="ScrumMaster")`
+- 🔧 `create_litellm_virtual_key(agent_name="DevTeam", budget_duration="1m", max_budget=100)`
+- 🔧 `create_litellm_virtual_key(agent_name="QA", max_budget=100, budget_duration="1m")`
+- 🔧 `create_litellm_virtual_key(agent_name="Architect", max_budget=100, budget_duration="1m")`
+- 🔧 `create_litellm_virtual_key(max_budget=100, budget_duration="1m", agent_name="QualityGuardian")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
 
-[2 earlier transcript entries omitted for token budget]
+## ProductOwner
+- 🔧 `upsert_prd(content="# Product Requiremen...", filename="PRD-Todo-App.md")`
+- 🔧 `transfer_to_agent(agent_name="Architect")`
+
+## Architect
+- 🔧 `upsert_architecture_vision(content="# Architecture Visio...")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `update_roadmap(version="v1.0.0", stories=['US-001', 'US-002',..., goals=['Establish Product ...)`
+- 🔧 `upsert_epic(epic={'id': 'EP-001', 'de...)`
+- 🔧 `upsert_story(story={'value_hypothesis':...)`
+- 🔧 `upsert_story(story={'priority': 'Must',...)`
+- 🔧 `upsert_story(story={'acceptance_criteri...)`
+- 🔧 `upsert_story(story={'value_hypothesis':...)`
+- 🔧 `upsert_story(story={'title': 'Delete an...)`
+- 🔧 `upsert_story(story={'title': 'See all l...)`
+- 🔧 `plan_backlog_item(title_or_id="US-001", priority="P0", version="v1.0.0")`
+- 🔧 `plan_backlog_item(priority="P0", version="v1.0.0", title_or_id="US-002")`
+- 🔧 `plan_backlog_item(version="v1.0.0", title_or_id="US-003", priority="P1")`
+- 🔧 `plan_backlog_item(version="v1.0.0", priority="P1", title_or_id="US-004")`
+- 🔧 `plan_backlog_item(title_or_id="US-005", version="v1.0.0", priority="P1")`
+- 🔧 `plan_backlog_item(title_or_id="US-006", version="v1.0.0", priority="P1")`
+- 🔧 `advance_story_stage(title_or_id="US-001", stage="Draft")`
+- 🔧 `advance_story_stage(stage="Ready", title_or_id="US-001")`
+- 🔧 `upsert_story(story={'user_story': 'As a...)`
+- 🔧 `advance_story_stage(title_or_id="US-001", stage="Ready")`
+- 🔧 `upsert_story(story={'version': 'v1.0.0'...)`
+- 🔧 `advance_story_stage(stage="Draft", title_or_id="US-002")`
+- 🔧 `advance_story_stage(stage="Ready", title_or_id="US-002")`
+- 🔧 `upsert_story(story={'user_story': 'As a...)`
+- 🔧 `advance_story_stage(title_or_id="US-003", stage="Draft")`
+- 🔧 `advance_story_stage(stage="Ready", title_or_id="US-003")`
+- 🔧 `upsert_story(story={'title': 'Delete a ...)`
+- 🔧 `advance_story_stage(stage="Draft", title_or_id="US-004")`
+- 🔧 `advance_story_stage(title_or_id="US-004", stage="Ready")`
+- 🔧 `upsert_story(story={'user_story': 'As a...)`
+- 🔧 `advance_story_stage(stage="Draft", title_or_id="US-005")`
+- 🔧 `advance_story_stage(stage="Ready", title_or_id="US-005")`
+- 🔧 `upsert_story(story={'id': 'US-006', 'ac...)`
+- 🔧 `advance_story_stage(stage="Draft", title_or_id="US-006")`
+- 🔧 `advance_story_stage(title_or_id="US-006", stage="Ready")`
+- 🔧 `create_sprint_backlog_pr(body="Sprint 1 Backlog con...", title="Sprint 1 Backlog - T...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `start_sprint(goal="Implement core to-do...")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_sprint_backlog_pr(body="Sprint 1 Backlog PR ...", title="Sprint 1 Backlog - T...")`
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
 
 ## DevTeam
+- 🔧 `plan_sprint_backlog_item(title_or_id="US-001", plan={'test_approach': "W...)`
+- 🔧 `plan_sprint_backlog_item(plan={'code_files': ['app..., title_or_id="US-002")`
+- 🔧 `plan_sprint_backlog_item(title_or_id="US-003", plan={'risks_assumptions'...)`
+- 🔧 `plan_sprint_backlog_item(plan={'code_files': ['app..., title_or_id="US-004")`
+- 🔧 `plan_sprint_backlog_item(title_or_id="US-005", plan={'code_files': ['app...)`
+- 🔧 `plan_sprint_backlog_item(plan={'risks_assumptions'..., title_or_id="US-006")`
+- 🔧 `start_feature_branch(slug="todo-app-implementat...", story_id="US-001")`
+- 🔧 `write_file(path="requirements.txt", content="Flask==3.0.2
+SQLAlch...", overwrite=True)`
+- 🔧 `write_file(path="app.py", overwrite=True, content="import os
+from flask...")`
+- 🔧 `write_file(overwrite=True, path="templates/index.html", content="<!DOCTYPE html>
+<htm...")`
+- 🔧 `write_file(overwrite=True, content="import os
+import pyt...", path="tests/test_app.py")`
+- 🔧 `git_push(branch="eval-0.1.0-run42/fea...", commit_message="feat: implement to-d...")`
+- 🔧 `log_story_tokens(title_or_id="US-001", actual_tokens=1200)`
+- 🔧 `advance_story_stage(title_or_id="US-001", stage="Implemented")`
+- 🔧 `git_push(branch="eval-0.1.0-run42/fea...", commit_message="chore: update roadma...")`
+- 🔧 `gh_pr_checks(watch=True)`
+- 🔧 `mark_pr_ready_for_review()`
 - 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
 
 ## ScrumOrchestrator
@@ -232,146 +312,3 @@ Transferring to ScrumOrchestrator for review and testing of US-003.
 
 ## ProductOwner
 - 🔧 `create_release_pr(body="Release PR for Sprin...", title="Sprint 2 Release (v1...")`
-
-Sprint 2 has been successfully completed and released!
-
-### Sprint 2 Summary & Deliverables:
-1. **Sprint Planning**:
-   - Started Sprint 2 and established backlog focus on US-002 and US-003.
-   - Published and merged Sprint Backlog PR (#312).
-
-2. **Story Implementation & Acceptance**:
-   - **US-002 (Add a task to a list)**: Mapped earlier work, logged token usage, reviewed, tested, accepted, and merged feature PR (#313).
-   - **US-003 (Mark a task as complete or incomplete)**: Mapped earlier work, logged token usage, reviewed, tested, accepted, and merged feature PR (#314).
-
-3. **Sprint Review & Release**:
-   - Generated Sprint 2 Review Report (`SPRINT-REPORT-003.md`).
-   - Opened Sprint 2 Release PR (`develop` $\rightarrow$ `main`, PR #315).
-- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
-
-## ScrumMaster
-- 🔧 `reset_sprint_budget()`
-- 🔧 `start_sprint(goal="Implement task delet...")`
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
-## ProductOwner
-- 🔧 `update_roadmap(stories=['US-004', 'US-005'], version="v1.2.0", goals=['Implement task del...)`
-- 🔧 `plan_backlog_item(title_or_id="US-004", priority="P0", version="v1.2.0")`
-- 🔧 `plan_backlog_item(version="v1.2.0", title_or_id="US-005", priority="P1")`
-- 🔧 `create_sprint_backlog_pr(title="Sprint 3 Backlog - D...", body="Sprint 3 Backlog: US...")`
-- 🔧 `transfer_to_agent(agent_name="DevTeam")`
-
-## DevTeam
-
-Planning US-004 implementation.
-- 🔧 `plan_sprint_backlog_item(title_or_id="US-004", plan={'approach': 'US-004...)`
-
-Planning US-005 implementation.
-- 🔧 `plan_sprint_backlog_item(plan={'estimate': 600, 'a..., title_or_id="US-005")`
-
-Starting feature branch for US-004.
-- 🔧 `start_feature_branch(slug="delete-task", story_id="US-004")`
-
-Logging tokens for US-004.
-- 🔧 `log_story_tokens(title_or_id="US-004", actual_tokens=500)`
-
-Advancing US-004 stage to Implemented.
-- 🔧 `advance_story_stage(implemented_via_earlier_work="Task deletion functi...", stage="Implemented", title_or_id="US-004")`
-
-Pushing roadmap updates for US-004 Implemented.
-- 🔧 `git_push(commit_message="chore: update roadma...", branch="eval-0.1.0-run42/fea...")`
-
-Checking PR checks for US-004.
-- 🔧 `gh_pr_checks(watch=True)`
-
-Marking US-004 PR as ready for review.
-- 🔧 `mark_pr_ready_for_review()`
-
-Transferring to ScrumOrchestrator for US-004 review and testing.
-- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
-
-## ScrumOrchestrator
-- 🔧 `transfer_to_agent(agent_name="Architect")`
-
-## Architect
-- 🔧 `gh_pr_comment(body="Architectural review...", pr_id=317)`
-- 🔧 `advance_story_stage(stage="Reviewed", title_or_id="US-004")`
-- 🔧 `transfer_to_agent(agent_name="QA")`
-
-## QA
-- 🔧 `check_build()`
-- 🔧 `gh_pr_comment(body="QA Test Review: Buil...", pr_id=317)`
-- 🔧 `advance_story_stage(stage="Tested", title_or_id="US-004")`
-- 🔧 `merge_story_pr(admin=False, pr_id=317)`
-- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
-
-## ScrumOrchestrator
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
-## ProductOwner
-- 🔧 `record_acceptance_check(note="Verified US-004 acce...", title_or_id="US-004")`
-- 🔧 `advance_story_stage(stage="Accepted", title_or_id="US-004")`
-- 🔧 `transfer_to_agent(agent_name="DevTeam")`
-
-## DevTeam
-
-Starting feature branch for US-005.
-- 🔧 `start_feature_branch(story_id="US-005", slug="delete-entire-list")`
-
-Logging tokens for US-005.
-- 🔧 `log_story_tokens(title_or_id="US-005", actual_tokens=500)`
-
-Advancing US-005 stage to Implemented.
-- 🔧 `advance_story_stage(stage="Implemented", implemented_via_earlier_work="List deletion functi...", title_or_id="US-005")`
-
-Pushing roadmap updates for US-005 Implemented.
-- 🔧 `git_push(branch="eval-0.1.0-run42/fea...", commit_message="chore: update roadma...")`
-
-Checking PR checks for US-005.
-- 🔧 `gh_pr_checks(watch=True)`
-
-Marking US-005 PR as ready for review.
-- 🔧 `mark_pr_ready_for_review()`
-
-Transferring to ScrumOrchestrator for US-005 review and testing.
-- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
-
-## ScrumOrchestrator
-- 🔧 `transfer_to_agent(agent_name="Architect")`
-
-## Architect
-- 🔧 `gh_pr_comment(body="Architectural review...", pr_id=318)`
-- 🔧 `advance_story_stage(title_or_id="US-005", stage="Reviewed")`
-- 🔧 `transfer_to_agent(agent_name="QA")`
-
-## QA
-- 🔧 `check_build()`
-- 🔧 `gh_pr_comment(pr_id=318, body="QA Test Review: Buil...")`
-- 🔧 `advance_story_stage(title_or_id="US-005", stage="Tested")`
-- 🔧 `merge_story_pr(pr_id=318, admin=False)`
-- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
-
-## ScrumOrchestrator
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
-## ProductOwner
-- 🔧 `record_acceptance_check(note="Verified US-005 acce...", title_or_id="US-005")`
-- 🔧 `advance_story_stage(stage="Accepted", title_or_id="US-005")`
-- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
-
-## ScrumMaster
-- 🔧 `add_retro_action(owner="DevTeam", success_metric="Maintained high velo...", action="Continue leveraging ...")`
-- 🔧 `record_human_approval(note="Sprint 3 release pre...", approval_type="release")`
-- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
-
-## ScrumOrchestrator
-- 🔧 `transfer_to_agent(agent_name="QualityGuardian")`
-
-## QualityGuardian
-- 🔧 `calculate_kpis()`
-- 🔧 `update_sprint_report(kpis={'security': {'vulne...)`
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
-## ProductOwner
-- 🔧 `create_sprint_report(accomplishments=['Created Sprint 3 B..., summary="Sprint 3 successfull...")`
-- 🔧 `create_release_pr(title="Sprint 3 Release (v1...", body="Release PR for Sprin...")`

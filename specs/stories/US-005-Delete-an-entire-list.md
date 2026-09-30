@@ -2,7 +2,7 @@
 
 - Story ID: US-005
 - Title: Delete an entire list
-- Status: Ready
+- Status: Accepted
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-09-30
@@ -17,4 +17,4 @@ Allows clearing entire categories no longer needed.
 - Dependencies: ['US-001']
 
 ## Test Approach
-Test list and associated task deletion in pytest.
+Existing pytest suite covers list deletion.

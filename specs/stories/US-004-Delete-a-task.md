@@ -2,7 +2,7 @@
 
 - Story ID: US-004
 - Title: Delete a task
-- Status: Ready
+- Status: Accepted
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-09-30
@@ -17,4 +17,4 @@ Allows removing obsolete or unwanted tasks.
 - Dependencies: ['US-002']
 
 ## Test Approach
-Test task deletion in pytest.
+Existing pytest suite covers task deletion.

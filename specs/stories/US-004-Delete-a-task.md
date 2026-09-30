@@ -2,7 +2,7 @@
 
 - Story ID: US-004
 - Title: Delete a task
-- Status: Implemented
+- Status: Accepted
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-09-30

@@ -4,4 +4,7 @@ setup(
     name="todo_app",
     version="1.0.0",
     packages=find_packages(),
+    install_requires=[
+        "flask",
+    ],
 )

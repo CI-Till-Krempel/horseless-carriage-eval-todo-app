@@ -7,6 +7,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## DevTeam
+- 🔧 `mark_pr_ready_for_review()`
 - 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
 
 ## ScrumOrchestrator
@@ -374,4 +375,3 @@ Transferring to ScrumOrchestrator for US-005 review and testing.
 
 ## ProductOwner
 - 🔧 `create_sprint_report(accomplishments=['Created Sprint 3 B..., summary="Sprint 3 successfull...")`
-- 🔧 `create_release_pr(title="Sprint 3 Release (v1...", body="Release PR for Sprin...")`

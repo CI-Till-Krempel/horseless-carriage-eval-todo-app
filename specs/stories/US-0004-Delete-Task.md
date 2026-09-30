@@ -2,12 +2,12 @@
 
 - Story ID: US-0004
 - Title: Delete Task
-- Status: Draft
-- Priority: P1
+- Status: Ready
+- Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-30
 
-## As a <role>, I want <capability>, so that <benefit>.
+## As a user, I want to delete a task so that I can remove unwanted items.
 
 ## Acceptance Criteria
 - Given a task in a list, When the user deletes the task, Then it is removed from the list.

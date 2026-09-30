@@ -14,7 +14,7 @@
 
 ## Notes
 Users can create lists to categorize tasks.
-- ⚠️ REVIEW DENIED at Tested by QA: check_build() failed because pip cannot install requirements due to network proxy restrictions in the container environment.
+- ⚠️ REVIEW DENIED at Tested by QA: check_build() failed because pip cannot install dependencies due to network access restrictions (proxy 403) in the environment.
 
 ## Test Approach
 pytest unit tests for list creation API/route.

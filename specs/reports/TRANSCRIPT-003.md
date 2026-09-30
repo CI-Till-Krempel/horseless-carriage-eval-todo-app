@@ -301,4 +301,3 @@ Transferring to ScrumOrchestrator for review and testing of US-003.
 
 ## ProductOwner
 - 🔧 `create_sprint_report(summary="Sprint 2 successfull...", accomplishments=['Created Sprint 2 B...)`
-- 🔧 `create_release_pr(body="Release PR for Sprin...", title="Sprint 2 Release (v1...")`

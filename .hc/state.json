@@ -201,6 +201,13 @@
       "type": "Issue",
       "id": "ISSUE-0004",
       "priority": "Must"
+    },
+    {
+      "title": "Conduct comprehensive final acceptance checks across all completed stories to ensure 100% feature coverage.",
+      "overview": "Conduct comprehensive final acceptance checks across all completed stories to ensure 100% feature coverage.",
+      "owner": "ProductOwner",
+      "type": "Issue",
+      "id": "ISSUE-0005"
     }
   ],
   "definition_of_done": [
@@ -555,17 +562,18 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 1.16896424
+    "current_usd_spend": -2.7755575615628914e-17
   },
   "token_usage": {
-    "total": 2856490,
+    "total": 3438615,
     "agents": {
-      "ScrumMaster": 376424,
-      "ProductOwner": 771756,
+      "ScrumMaster": 475021,
+      "ProductOwner": 875660,
       "DevTeam": 756255,
-      "ScrumOrchestrator": 197561,
+      "ScrumOrchestrator": 298053,
       "Architect": 282233,
-      "QA": 472261
+      "QA": 472261,
+      "QualityGuardian": 279132
     }
   },
   "story_estimates": {
@@ -594,8 +602,86 @@
       "actual": 500
     }
   },
-  "sprint_report_kpis": {},
-  "kpi_update_count": 3,
+  "sprint_report_kpis": {
+    "security": {
+      "vulnerability_scan_available": true,
+      "vulnerability_scan_results": {
+        "medium": 0,
+        "high": 1,
+        "low": 8,
+        "critical": 0
+      }
+    },
+    "team_effectiveness": {
+      "say_do_ratio": 1,
+      "commitment_reliability": 1
+    },
+    "prompt_context_usage": {
+      "ScrumMaster": {
+        "prompt_tokens": 3163,
+        "model": "scrum-eval-cheap",
+        "available": true,
+        "context_window_tokens": 1048576,
+        "usage_percent": 0.3
+      },
+      "ProductOwner": {
+        "prompt_tokens": 5317,
+        "available": true,
+        "usage_percent": 0.51,
+        "context_window_tokens": 1048576,
+        "model": "scrum-eval-cheap"
+      },
+      "QA": {
+        "context_window_tokens": 1048576,
+        "available": true,
+        "prompt_tokens": 2496,
+        "model": "scrum-eval-cheap",
+        "usage_percent": 0.24
+      },
+      "Architect": {
+        "available": true,
+        "context_window_tokens": 1048576,
+        "model": "scrum-eval-cheap",
+        "usage_percent": 0.3,
+        "prompt_tokens": 3163
+      },
+      "QualityGuardian": {
+        "model": "scrum-eval-cheap",
+        "available": true,
+        "prompt_tokens": 1637,
+        "usage_percent": 0.16,
+        "context_window_tokens": 1048576
+      },
+      "ScrumOrchestrator": {
+        "context_window_tokens": 1048576,
+        "model": "scrum-eval-cheap",
+        "available": true,
+        "prompt_tokens": 7561,
+        "usage_percent": 0.72
+      },
+      "DevTeam": {
+        "model": "scrum-eval-cheap",
+        "usage_percent": 0.37,
+        "available": true,
+        "context_window_tokens": 1048576,
+        "prompt_tokens": 3842
+      }
+    },
+    "result_quality": {
+      "defect_escape_rate_note": "not available - no defect/bug-lifecycle tracking exists yet",
+      "defect_escape_rate": null,
+      "customer_satisfaction": 4.5
+    },
+    "maintainability": {
+      "tests_run": 5,
+      "tests_failed": 0,
+      "test_coverage_available": true,
+      "code_complexity": 1.71428571428571,
+      "test_coverage": 0.99,
+      "code_complexity_available": true
+    }
+  },
+  "kpi_update_count": 4,
   "kpi_baseline": 3,
   "backlog_scope_complete": true,
   "repo": {
@@ -2535,6 +2621,54 @@
     {
       "role": "user",
       "content": "For context:[QA] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `record_acceptance_check` with parameters: {'title_or_id': 'US-006', 'note': 'Verified US-006 acceptance criteria: all lists and tasks are visible on the home page, with completed tasks clearly visually distinguished (strikethrough and muted text).'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `record_acceptance_check` tool returned result: {'status': 'ok', 'story_id': 'US-006', 'acceptance_check_count': 1}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'title_or_id': 'US-006', 'stage': 'Accepted'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-006', 'stage': 'Accepted', 'stages_completed': ['Draft', 'Ready', 'Implemented', 'Reviewed', 'Tested', 'Accepted'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-006-See-all-lists-and-tasks-with-visual-distinction.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.3.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `transfer_to_agent` with parameters: {'agent_name': 'ScrumMaster'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] called tool `add_retro_action` with parameters: {'owner': 'ProductOwner', 'success_metric': 'Complete product scope validated successfully by end of Sprint 4.', 'action': 'Conduct comprehensive final acceptance checks across all completed stories to ensure 100% feature coverage.'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] `add_retro_action` tool returned result: {'status': 'ok', 'retro_action': {'action': 'Conduct comprehensive final acceptance checks across all completed stories to ensure 100% feature coverage.', 'owner': 'ProductOwner', 'success_metric': 'Complete product scope validated successfully by end of Sprint 4.', 'status': 'open'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] called tool `record_human_approval` with parameters: {'note': 'Sprint 4 release pre-approved per evaluation instructions.', 'approval_type': 'release'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] `record_human_approval` tool returned result: {'status': 'ok', 'approval': {'type': 'release', 'note': 'Sprint 4 release pre-approved per evaluation instructions.'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] called tool `transfer_to_agent` with parameters: {'agent_name': 'ScrumOrchestrator'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] `transfer_to_agent` tool returned result: {'result': None}"
     }
   ],
   "hc_version": "0.1.0",

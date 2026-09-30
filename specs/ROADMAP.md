@@ -46,20 +46,6 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
-- [US-004] Delete a task
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-005] Delete an entire list
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 - [US-006] See all lists and tasks with visual distinction
   - [x] DRAFT
   - [x] READY
@@ -88,6 +74,27 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
+
+
+### v1.2.0
+Goals
+- Implement task deletion and list deletion (Sprint 3)
+
+Stories
+- [US-005] Delete an entire list
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-004] Delete a task
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 
 ## Task board (Kanban)

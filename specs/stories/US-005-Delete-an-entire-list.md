@@ -17,4 +17,4 @@ Allows clearing entire categories no longer needed.
 - Dependencies: ['US-001']
 
 ## Test Approach
-Test list and associated task deletion in pytest.
+Existing pytest suite covers list deletion.

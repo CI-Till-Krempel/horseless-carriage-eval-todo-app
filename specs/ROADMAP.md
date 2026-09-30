@@ -74,14 +74,14 @@ Goals
 - Implement task addition and completion toggling for to-do lists (Sprint 2)
 
 Stories
-- [US-003] Mark a task as complete or incomplete
+- [US-002] Add a task to a list
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-002] Add a task to a list
+- [US-003] Mark a task as complete or incomplete
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

@@ -104,6 +104,13 @@ Stories
   - [x] ACCEPTED
 
 
+### v1.4.0
+Goals
+- Final evaluation hardening, polish, and end-to-end verification (Sprint 5)
+
+Stories
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

@@ -2,7 +2,7 @@
 
 - Story ID: US-001
 - Title: Create a new to-do list
-- Status: Ready
+- Status: Reviewed
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-30
@@ -16,6 +16,7 @@
 ## Notes
 Allows users to organize tasks into separate categories/lists.
 - Dependencies: ['None']
+- ⚠️ REVIEW DENIED at Tested by QA: check_build() failed because requirements.txt specifies SQLAlchemy==3.1.1 which does not exist (SQLAlchemy versions jump from 2.x to 2.1.x, there is no 3.1.1 version).
 
 ## Test Approach
-
+Write comprehensive unit and integration tests using pytest and Flask's test client covering list creation, task addition, completion toggle, task deletion, and list deletion.

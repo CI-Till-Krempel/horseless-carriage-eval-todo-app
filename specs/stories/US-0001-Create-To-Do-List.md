@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Implemented
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-30
@@ -16,4 +16,4 @@
 Allows users to group and manage separate sets of tasks.
 
 ## Test Approach
-
+Pytest tests covering list creation, task addition, and viewing lists/tasks.

@@ -24,9 +24,10 @@
       "type": "User Story",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented"
       ],
-      "status": "Ready",
+      "status": "Implemented",
       "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks."
     },
     {
@@ -118,8 +119,112 @@
   ],
   "sprint_goal": "Build core to-do list and task management features (US-0001, US-0002, US-0006)",
   "sprint_number": 1,
-  "sprint_backlog_pr_sprint": 0,
-  "sprint_backlog": [],
+  "sprint_backlog_pr_sprint": 1,
+  "sprint_backlog": [
+    {
+      "title": "Create To-Do List",
+      "version": "v1.0.0",
+      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "acceptance_criteria": [
+        "Given the user is on the home page, When they enter a list name and click create, Then a new to-do list is created and displayed."
+      ],
+      "priority": "P0",
+      "id": "US-0001",
+      "epic_id": "EP-0001",
+      "value_hypothesis": "Allows users to group and manage separate sets of tasks.",
+      "type": "User Story",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented"
+      ],
+      "status": "Implemented",
+      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "dod_checks": [
+        "Automated tests written and passing",
+        "Code reviewed-ready",
+        "Tokens logged",
+        "advance_story_stage called"
+      ],
+      "risks_assumptions": [
+        "Using simple JSON file persistence for simplicity and reliability across requests."
+      ],
+      "approach": "Build a Flask web application with a simple in-memory/JSON persistence backend, Jinja2 HTML templates, and a clean web UI for managing to-do lists and tasks.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "requirements.txt",
+        "tests/test_app.py"
+      ],
+      "test_approach": "Pytest tests covering list creation, task addition, and viewing lists/tasks."
+    },
+    {
+      "version": "v1.0.0",
+      "id": "US-0002",
+      "description": "As a user, I want to add a task to a list with a short description so that I can track what needs to be done.",
+      "title": "Add Task to List",
+      "value_hypothesis": "Enables task tracking within specific lists.",
+      "acceptance_criteria": [
+        "Given an existing list, When the user adds a task description and submits, Then the task appears under that list."
+      ],
+      "priority": "P0",
+      "epic_id": "EP-0001",
+      "type": "User Story",
+      "user_story": "As a user, I want to add a task to a list with a short description so that I can track what needs to be done.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "risks_assumptions": [
+        "Tasks stored in the same JSON persistence layer as lists."
+      ],
+      "approach": "Add task creation endpoint and form in Flask + Jinja2 UI, linked to specific lists.",
+      "dod_checks": [
+        "Automated tests passing",
+        "Tokens logged"
+      ],
+      "test_approach": "Pytest test for adding tasks to a list."
+    },
+    {
+      "epic_id": "EP-0001",
+      "version": "v1.0.0",
+      "value_hypothesis": "Provides complete visibility into all items.",
+      "id": "US-0006",
+      "acceptance_criteria": [
+        "Given multiple lists and tasks, When the user views the main page, Then all lists and tasks are shown with completed tasks visually distinguished."
+      ],
+      "description": "As a user, I want to see all my lists and tasks with completed items visually distinguished so that I have a clear overview.",
+      "title": "View All Lists and Tasks",
+      "priority": "P0",
+      "type": "User Story",
+      "user_story": "As a user, I want to see all my lists and tasks with completed items visually distinguished so that I have a clear overview.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "risks_assumptions": [
+        "Simple CSS styling for completion distinction."
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "test_approach": "Pytest test verifying list and task overview rendering.",
+      "approach": "Display all lists and tasks on the home page with completed tasks visually distinguished via CSS/styling.",
+      "dod_checks": [
+        "Automated tests passing",
+        "Tokens logged"
+      ]
+    }
+  ],
   "impediment_log": [],
   "retro_actions": [],
   "decision_log": [],
@@ -127,17 +232,22 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.01407424
+    "current_usd_spend": 0.07242472999999999
   },
   "token_usage": {
-    "total": 487975,
+    "total": 867407,
     "agents": {
       "ScrumOrchestrator": 100166,
-      "ProductOwner": 371205,
-      "ScrumMaster": 16604
+      "ProductOwner": 413337,
+      "ScrumMaster": 33291,
+      "DevTeam": 320613
     }
   },
-  "story_estimates": {},
+  "story_estimates": {
+    "US-0001": {
+      "actual": 1200
+    }
+  },
   "sprint_report_kpis": {},
   "kpi_update_count": 0,
   "kpi_baseline": 0,
@@ -158,7 +268,7 @@
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 0,
+  "dev_touch_baseline": 4,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
     "specs/ROADMAP.md",
@@ -168,7 +278,11 @@
     "specs/stories/US-0003-Toggle-Task-Status.md",
     "specs/stories/US-0004-Delete-Task.md",
     "specs/stories/US-0005-Delete-List.md",
-    "specs/stories/US-0006-View-All-Lists-and-Tasks.md"
+    "specs/stories/US-0006-View-All-Lists-and-Tasks.md",
+    "requirements.txt",
+    "app.py",
+    "templates/index.html",
+    "tests/test_app.py"
   ],
   "last_check_build": null,
   "pr_review_calls": {},

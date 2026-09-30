@@ -16,4 +16,4 @@
 Provides complete visibility into all items.
 
 ## Test Approach
-
+Pytest test verifying list and task overview rendering.

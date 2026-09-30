@@ -16,4 +16,7 @@
 Users can add specific tasks to lists.
 
 ## Test Approach
+Covered by pytest in tests/test_todo.py
 
+### Tasks
+- Verify task addition route and UI in app.py and templates/index.html

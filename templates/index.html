@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Web App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="mb-4 text-center">To-Do Lists</h1>
+
+        <!-- Create List Form -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <form action="{{ url_for('create_list') }}" method="POST" class="row g-3">
+                    <div class="col-auto flex-grow-1">
+                        <input type="text" name="name" class="form-control" placeholder="New List Name..." required>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Create List</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Lists Display -->
+        {% for todo_list in lists %}
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header d-flex justify-content-between align-items-center bg-white">
+                <h3 class="h5 mb-0">{{ todo_list.name }}</h3>
+                <form action="{{ url_for('delete_list', list_id=todo_list.id) }}" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete List</button>
+                </form>
+            </div>
+            <div class="card-body">
+                <!-- Add Task Form -->
+                <form action="{{ url_for('add_task', list_id=todo_list.id) }}" method="POST" class="row g-2 mb-3">
+                    <div class="col">
+                        <input type="text" name="description" class="form-control form-control-sm" placeholder="New task description..." required>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-sm btn-secondary">Add Task</button>
+                    </div>
+                </form>
+
+                <!-- Tasks List -->
+                <ul class="list-group">
+                    {% for task in todo_list.tasks %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span class="{% if task.completed %}completed{% endif %}">{{ task.description }}</span>
+                        <div>
+                            <form action="{{ url_for('toggle_task', task_id=task.id) }}" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-sm {% if task.completed %}btn-outline-secondary{% else %}btn-outline-success{% %}">
+                                    {% if task.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}
+                                </button>
+                            </form>
+                            <form action="{{ url_for('delete_task', task_id=task.id) }}" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                            </form>
+                        </div>
+                    </li>
+                    {% else %}
+                    <li class="list-group-item text-muted">No tasks in this list yet.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% else %}
+        <div class="alert alert-info text-center">No to-do lists created yet. Create one above!</div>
+        {% endfor %}
+    </div>
+</body>
+</html>

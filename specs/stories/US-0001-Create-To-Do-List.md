@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Implemented
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-09-30
@@ -14,6 +14,7 @@
 
 ## Notes
 Users can create lists to categorize tasks.
+- ⚠️ REVIEW DENIED at Tested by QA: check_build() failed because pip cannot install requirements due to network proxy restrictions in the container environment.
 
 ## Test Approach
 pytest unit tests for list creation API/route.

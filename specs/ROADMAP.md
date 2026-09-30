@@ -98,7 +98,7 @@ Stories
 - [US-006] See all lists and tasks with visual distinction
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

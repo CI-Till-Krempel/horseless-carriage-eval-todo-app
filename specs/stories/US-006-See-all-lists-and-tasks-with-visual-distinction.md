@@ -2,7 +2,7 @@
 
 - Story ID: US-006
 - Title: See all lists and tasks with visual distinction
-- Status: Ready
+- Status: Implemented
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-09-30

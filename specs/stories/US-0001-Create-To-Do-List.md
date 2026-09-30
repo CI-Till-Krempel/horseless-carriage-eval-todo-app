@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-09-30
@@ -14,6 +14,7 @@
 
 ## Notes
 Users can create lists to categorize tasks.
+- ⚠️ REVIEW DENIED at Tested by QA: pytest test collection fails with ModuleNotFoundError: No module named 'flask' because Flask is not installed in the python environment.
 
 ## Test Approach
 pytest unit tests for list creation API/route.

@@ -145,8 +145,231 @@
   ],
   "sprint_goal": "Implement core to-do list management and web UI for the To-Do List application (US-001 through US-006).",
   "sprint_number": 1,
-  "sprint_backlog_pr_sprint": 0,
-  "sprint_backlog": [],
+  "sprint_backlog_pr_sprint": 1,
+  "sprint_backlog": [
+    {
+      "value_hypothesis": "Allows users to organize tasks into separate categories/lists.",
+      "title": "Create a new to-do list",
+      "id": "US-001",
+      "acceptance_criteria": [
+        "Given the app is running, When the user opens the home page, Then they see a form to create a new list and a list of existing lists.",
+        "Given the user enters a list name, When they submit the form, Then a new to-do list is created and displayed."
+      ],
+      "dependencies": [
+        "None"
+      ],
+      "priority": "P0",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "test_approach": "Write comprehensive unit and integration tests using pytest and Flask's test client covering list creation, task addition, completion toggle, task deletion, and list deletion.",
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Automated tests written and passing",
+        "Tokens logged",
+        "Advanced stage to Implemented"
+      ],
+      "estimate": 1500,
+      "risks_assumptions": [
+        "Assuming Flask + SQLite is sufficient and lightweight for session/process persistence and simple deployment.",
+        "Assuming Tailwind via CDN meets UI requirements without complex build steps."
+      ],
+      "approach": "Build a Flask application with SQLite persistence using SQLAlchemy. Create a clean, responsive single-page HTML/CSS UI using Tailwind CSS via CDN. Implement routes for managing lists and tasks, including creation, completion toggle, and deletion.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "requirements.txt",
+        "tests/test_app.py"
+      ]
+    },
+    {
+      "priority": "P0",
+      "value_hypothesis": "Enables users to record actionable items within specific lists.",
+      "id": "US-002",
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user enters a task description and submits, Then the task is added to that list."
+      ],
+      "dependencies": [
+        "US-001"
+      ],
+      "title": "Add a task to a list",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "test_approach": "Test task creation via Flask test client and ensure validation/error handling works.",
+      "estimate": 1000,
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Automated tests passing",
+        "Tokens logged"
+      ],
+      "approach": "Integrate US-002 into the Flask app and UI: add form and backend route to add tasks to specific lists.",
+      "risks_assumptions": [
+        "Relying on US-001 database schema and app structure."
+      ]
+    },
+    {
+      "acceptance_criteria": [
+        "Given a task in a list, When the user clicks the complete/incomplete toggle, Then its completion status updates visually and in storage."
+      ],
+      "id": "US-003",
+      "title": "Mark a task as complete or incomplete",
+      "value_hypothesis": "Allows tracking progress on individual items.",
+      "dependencies": [
+        "US-002"
+      ],
+      "priority": "P1",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "user_story": "As a user, I want to mark a task as complete or incomplete so that I can monitor task progress.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "risks_assumptions": [
+        "State persists correctly in SQLite."
+      ],
+      "test_approach": "Test toggling status in unit tests.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Tests passing",
+        "Tokens logged"
+      ],
+      "approach": "Implement completion toggle route and UI button/checkbox for tasks.",
+      "estimate": 800
+    },
+    {
+      "value_hypothesis": "Allows removing obsolete or unwanted tasks.",
+      "acceptance_criteria": [
+        "Given a task in a list, When the user clicks delete, Then the task is removed from the list."
+      ],
+      "dependencies": [
+        "US-002"
+      ],
+      "priority": "P1",
+      "id": "US-004",
+      "title": "Delete a task",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "user_story": "As a user, I want to delete a task so that I can remove tasks I no longer need.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "risks_assumptions": [
+        "Database cascade or explicit deletion handles tasks safely."
+      ],
+      "estimate": 600,
+      "test_approach": "Test task deletion in pytest.",
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Tests passing",
+        "Tokens logged"
+      ],
+      "approach": "Add delete task route and UI delete button."
+    },
+    {
+      "title": "Delete an entire list",
+      "value_hypothesis": "Allows clearing entire categories no longer needed.",
+      "id": "US-005",
+      "priority": "P1",
+      "acceptance_criteria": [
+        "Given an existing list with or without tasks, When the user clicks delete list, Then the list and all its contained tasks are removed."
+      ],
+      "dependencies": [
+        "US-001"
+      ],
+      "type": "User Story",
+      "version": "v1.0.0",
+      "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up lists I no longer use.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Tests passing",
+        "Tokens logged"
+      ],
+      "estimate": 600,
+      "test_approach": "Test list and associated task deletion in pytest.",
+      "approach": "Add delete list route and UI delete button with cascade deletion for tasks.",
+      "risks_assumptions": [
+        "Cascade delete configured in SQLAlchemy relationship."
+      ]
+    },
+    {
+      "title": "See all lists and tasks with visual distinction",
+      "value_hypothesis": "Provides a clear overview of all work items and their status.",
+      "id": "US-006",
+      "dependencies": [
+        "US-001",
+        "US-002",
+        "US-003"
+      ],
+      "acceptance_criteria": [
+        "Given multiple lists and tasks, When the user views the main page, Then all lists and tasks are visible, with completed tasks visually distinguished (e.g. struck-through)."
+      ],
+      "priority": "P1",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "user_story": "As a user, I want to see all my lists and tasks with completed tasks visually distinguished so that I can easily review my status.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "risks_assumptions": [
+        "CSS classes provide adequate visual distinction."
+      ],
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Tests passing",
+        "Tokens logged"
+      ],
+      "estimate": 600,
+      "approach": "Ensure UI clearly visually distinguishes completed tasks (e.g. line-through, opacity) and displays all lists and tasks cleanly.",
+      "test_approach": "Verify UI elements and CSS classes via tests/inspection.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ]
+    }
+  ],
   "impediment_log": [],
   "retro_actions": [],
   "decision_log": [],
@@ -154,18 +377,39 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.06628039
+    "current_usd_spend": 0.11120791999999999
   },
   "token_usage": {
-    "total": 859281,
+    "total": 1264966,
     "agents": {
       "ScrumOrchestrator": 100240,
-      "ProductOwner": 719839,
+      "ProductOwner": 768497,
       "Architect": 18956,
-      "ScrumMaster": 20246
+      "ScrumMaster": 40573,
+      "DevTeam": 336700
     }
   },
-  "story_estimates": {},
+  "story_estimates": {
+    "US-001": {
+      "estimate": 1500,
+      "actual": 1200
+    },
+    "US-002": {
+      "estimate": 1000
+    },
+    "US-003": {
+      "estimate": 800
+    },
+    "US-004": {
+      "estimate": 600
+    },
+    "US-005": {
+      "estimate": 600
+    },
+    "US-006": {
+      "estimate": 600
+    }
+  },
   "sprint_report_kpis": {},
   "kpi_update_count": 0,
   "kpi_baseline": 0,
@@ -197,7 +441,11 @@
     "specs/stories/US-003-Mark-a-task-as-complete-or-incomplete.md",
     "specs/stories/US-004-Delete-a-task.md",
     "specs/stories/US-005-Delete-an-entire-list.md",
-    "specs/stories/US-006-See-all-lists-and-tasks-with-visual-distinction.md"
+    "specs/stories/US-006-See-all-lists-and-tasks-with-visual-distinction.md",
+    "requirements.txt",
+    "app.py",
+    "templates/index.html",
+    "tests/test_app.py"
   ],
   "last_check_build": null,
   "pr_review_calls": {},

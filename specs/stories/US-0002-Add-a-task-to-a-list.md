@@ -14,6 +14,7 @@
 
 ## Notes
 Users can add specific tasks to lists.
+- ⚠️ REVIEW DENIED at Tested by QA: check_build() fails because pip install cannot access PyPI due to network isolation (403 Filtered).
 
 ## Test Approach
 Pytest tests in tests/test_todo.py

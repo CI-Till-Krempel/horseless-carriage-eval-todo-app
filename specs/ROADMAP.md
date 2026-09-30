@@ -46,13 +46,6 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
-- [US-006] See all lists and tasks with visual distinction
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 
 
 ### v1.1.0
@@ -89,6 +82,20 @@ Stories
   - [x] TESTED
   - [x] ACCEPTED
 - [US-005] Delete an entire list
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
+### v1.3.0
+Goals
+- Implement US-006 (See all lists and tasks with visual distinction) and final system verification (Sprint 4)
+
+Stories
+- [US-006] See all lists and tasks with visual distinction
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED

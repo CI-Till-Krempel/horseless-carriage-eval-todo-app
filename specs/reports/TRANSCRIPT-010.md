@@ -7,6 +7,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## DevTeam
+- 🔧 `plan_sprint_backlog_item(plan={'estimate': 1000, '..., title_or_id="US-002")`
 
 Planning sprint backlog item US-003 for implementation.
 - 🔧 `plan_sprint_backlog_item(title_or_id="US-003", plan={'dod_checks': ['Cod...)`
@@ -371,4 +372,3 @@ Transferring to ScrumOrchestrator for US-006 review and testing.
 
 ## ProductOwner
 - 🔧 `create_sprint_report(accomplishments=['Created Sprint 4 B..., summary="Sprint 4 successfull...")`
-- 🔧 `create_release_pr(body="Release PR for Sprin...", title="Sprint 4 Release (v1...")`

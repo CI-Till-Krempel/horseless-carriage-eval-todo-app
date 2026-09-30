@@ -44,22 +44,8 @@ Stories
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-002] Add a task to a list
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-003] Mark a task as complete or incomplete
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-004] Delete a task
   - [x] DRAFT
   - [x] READY
@@ -81,6 +67,27 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
+
+
+### v1.1.0
+Goals
+- Implement task addition and completion toggling for to-do lists (Sprint 2)
+
+Stories
+- [US-002] Add a task to a list
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-003] Mark a task as complete or incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 
 
 ## Task board (Kanban)

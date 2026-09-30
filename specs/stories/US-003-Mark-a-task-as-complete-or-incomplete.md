@@ -2,7 +2,7 @@
 
 - Story ID: US-003
 - Title: Mark a task as complete or incomplete
-- Status: Ready
+- Status: Accepted
 - Priority: P1
 - Owner: Scrum Team
 - Last Updated: 2026-09-30
@@ -17,4 +17,4 @@ Allows tracking progress on individual items.
 - Dependencies: ['US-002']
 
 ## Test Approach
-Test toggling status in unit tests.
+Existing pytest suite covers task completion toggle.

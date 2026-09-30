@@ -2,7 +2,7 @@
 
 - Story ID: US-002
 - Title: Add a task to a list
-- Status: Ready
+- Status: Accepted
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-09-30
@@ -17,4 +17,4 @@ Enables users to record actionable items within specific lists.
 - Dependencies: ['US-001']
 
 ## Test Approach
-Test task creation via Flask test client and ensure validation/error handling works.
+Existing pytest suite covers task addition.

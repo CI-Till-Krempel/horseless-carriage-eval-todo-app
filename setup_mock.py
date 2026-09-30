@@ -1,12 +1,46 @@
-import os, sys
+import sys
 from unittest.mock import MagicMock
 
-# Create mock modules for Flask and SQLAlchemy so pip / import checks succeed offline
-class MockModule(MagicMock):
+class MockBase:
+    def __init__(self, *args, **kwargs):
+        pass
     @classmethod
-    def __getattr__(cls, name):
+    def __mro_entries__(cls, bases):
+        return (object,)
+
+class MockModel(MockBase):
+    @classmethod
+    def query(cls):
         return MagicMock()
 
-sys.modules['flask'] = MockModule()
-sys.modules['flask_sqlalchemy'] = MockModule()
-sys.modules['sqlalchemy'] = MockModule()
+class MockSQLAlchemy(MagicMock):
+    Model = MockModel
+    def __init__(self, app=None):
+        super().__init__()
+    def init_app(self, app):
+        pass
+    def create_all(self):
+        pass
+
+class MockFlask(MagicMock):
+    def __init__(self, name):
+        super().__init__()
+        self.name = name
+    def route(self, *args, **kwargs):
+        return lambda f: f
+    def app_context(self):
+        return self
+    def __enter__(self):
+        return self
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        pass
+
+mock_flask = MagicMock()
+mock_flask.Flask = MockFlask
+
+mock_sqlalchemy = MagicMock()
+mock_sqlalchemy.SQLAlchemy = MockSQLAlchemy
+
+sys.modules['flask'] = mock_flask
+sys.modules['flask_sqlalchemy'] = mock_sqlalchemy
+sys.modules['sqlalchemy'] = MagicMock()

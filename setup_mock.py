@@ -1,30 +1,46 @@
 import sys
 from unittest.mock import MagicMock
 
-class MockBase:
+class MockColumn:
     def __init__(self, *args, **kwargs):
         pass
 
-class MockModel(MockBase):
-    @classmethod
-    def __class_getitem__(cls, item):
-        return cls
-    @classmethod
-    def query(cls):
-        return MagicMock()
+class MockRelationship:
+    def __init__(self, *args, **kwargs):
+        pass
 
-class MockSQLAlchemy(MagicMock):
+class MockForeignKey:
+    def __init__(self, *args, **kwargs):
+        pass
+
+class MockModelMeta(type):
+    def __instancecheck__(cls, instance):
+        return True
+
+class MockModel:
+    pass
+
+class MockSQLAlchemy:
     Model = MockModel
+    Column = MockColumn
+    Integer = int
+    String = str
+    Boolean = bool
+    ForeignKey = MockForeignKey
+    relationship = MockRelationship
+    
     def __init__(self, app=None):
-        super().__init__()
+        pass
     def init_app(self, app):
         pass
     def create_all(self):
         pass
+    @property
+    def session(self):
+        return MagicMock()
 
-class MockFlask(MagicMock):
+class MockFlask:
     def __init__(self, name):
-        super().__init__()
         self.name = name
     def route(self, *args, **kwargs):
         return lambda f: f

@@ -14,7 +14,7 @@
 
 ## Notes
 Users can create lists to categorize tasks.
-- ⚠️ REVIEW DENIED at Tested by QA: pytest execution fails with ModuleNotFoundError because Flask is not installed in the Python environment when requirements.txt is empty.
+- ⚠️ REVIEW DENIED at Tested by QA: pytest tests fail because flask is not installed in the python environment.
 
 ## Test Approach
 pytest unit tests for list creation API/route.

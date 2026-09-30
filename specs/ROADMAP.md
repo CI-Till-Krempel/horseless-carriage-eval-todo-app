@@ -81,14 +81,14 @@ Goals
 - Implement task deletion and list deletion (Sprint 3)
 
 Stories
-- [US-005] Delete an entire list
+- [US-004] Delete a task
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-004] Delete a task
+- [US-005] Delete an entire list
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

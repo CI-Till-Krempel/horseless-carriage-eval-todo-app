@@ -16,4 +16,4 @@
 Allows users to group and manage separate sets of tasks.
 
 ## Test Approach
-
+Pytest tests covering list creation, task addition, and viewing lists/tasks.

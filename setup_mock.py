@@ -1,13 +1,14 @@
 import sys
 from unittest.mock import MagicMock
 
-class MockModelMeta(type):
-    def __instancecheck__(cls, instance):
-        return True
-
-class MockModel(metaclass=MockModelMeta):
+class MockBase:
     def __init__(self, *args, **kwargs):
         pass
+
+class MockModel(MockBase):
+    @classmethod
+    def __class_getitem__(cls, item):
+        return cls
     @classmethod
     def query(cls):
         return MagicMock()

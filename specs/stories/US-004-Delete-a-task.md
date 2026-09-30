@@ -17,4 +17,4 @@ Allows removing obsolete or unwanted tasks.
 - Dependencies: ['US-002']
 
 ## Test Approach
-Test task deletion in pytest.
+Existing pytest suite covers task deletion.

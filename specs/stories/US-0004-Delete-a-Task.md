@@ -16,4 +16,7 @@
 Users can remove unwanted tasks from lists.
 
 ## Test Approach
+Run pytest.
 
+### Tasks
+- Add test for task deletion

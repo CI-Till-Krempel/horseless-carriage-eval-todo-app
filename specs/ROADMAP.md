@@ -63,10 +63,10 @@ Stories
 - [US-0004] Delete a Task
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0005] Delete an Entire List
   - [x] DRAFT
   - [x] READY
@@ -89,6 +89,20 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [ISSUE-0003] Keep test suites streamlined and aligned with template outputs to prevent intermittent test failures in test runner containers.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0004] Ensure test assertions for task toggling are fully covered by robust integration tests.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0005] Ensure task deletion test coverage is maintained across all upcoming sprint integrations.
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

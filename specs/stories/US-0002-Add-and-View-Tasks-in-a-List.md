@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add and View Tasks in a List
-- Status: Ready
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-01
@@ -17,4 +17,8 @@
 Users can add tasks to specific lists and see their status.
 
 ## Test Approach
+Run pytest using test client.
 
+### Tasks
+- Add unit test for adding and viewing tasks in list
+- Verify visual distinction of completed tasks

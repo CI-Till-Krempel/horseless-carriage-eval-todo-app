@@ -51,8 +51,8 @@ Stories
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY

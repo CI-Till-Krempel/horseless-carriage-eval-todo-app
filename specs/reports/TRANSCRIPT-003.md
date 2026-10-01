@@ -7,6 +7,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## ProductOwner
+- 🔧 `create_sprint_backlog_pr(title="Sprint 1 Backlog - C...", body="Sprint 1 backlog inc...")`
 - 🔧 `transfer_to_agent(agent_name="DevTeam")`
 
 ## DevTeam
@@ -364,4 +365,3 @@ Updating the sprint report with fresh KPI metrics.
 
 ## ProductOwner
 - 🔧 `create_sprint_report(accomplishments=['Completed Sprint 2..., summary="Sprint 2 successfull...")`
-- 🔧 `create_release_pr(title="Sprint 2 Release: To...", body="Release PR for Sprin...")`

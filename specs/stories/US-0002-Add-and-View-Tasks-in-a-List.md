@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add and View Tasks in a List
-- Status: Reviewed
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-01
@@ -15,7 +15,6 @@
 
 ## Notes
 Users can add tasks to specific lists and see their status.
-- ⚠️ REVIEW DENIED at Tested by QA: Pytest execution reports test failure on US-0002 test suite.
 
 ## Test Approach
 Run pytest using test client.

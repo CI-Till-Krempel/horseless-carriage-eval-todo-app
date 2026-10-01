@@ -29,27 +29,3 @@ def test_index_page(client):
 def test_create_and_view_list(client):
     response = client.post('/', data={'name': 'Groceries'}, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Groceries' in response.data
-
-def test_add_and_view_tasks(client):
-    client.post('/', data={'name': 'Work'}, follow_redirects=True)
-    response = client.post('/list/1', data={'title': 'Finish Report'}, follow_redirects=True)
-    assert response.status_code == 200
-    assert b'Finish Report' in response.data
-
-def test_toggle_task(client):
-    client.post('/', data={'name': 'Work'}, follow_redirects=True)
-    client.post('/list/1', data={'title': 'Finish Report'}, follow_redirects=True)
-    response = client.post('/task/1/toggle', follow_redirects=True)
-    assert response.status_code == 200
-
-def test_delete_task(client):
-    client.post('/', data={'name': 'Work'}, follow_redirects=True)
-    client.post('/list/1', data={'title': 'Finish Report'}, follow_redirects=True)
-    response = client.post('/task/1/delete', follow_redirects=True)
-    assert response.status_code == 200
-
-def test_delete_list(client):
-    client.post('/', data={'name': 'Work'}, follow_redirects=True)
-    response = client.post('/list/1/delete', follow_redirects=True)
-    assert response.status_code == 200

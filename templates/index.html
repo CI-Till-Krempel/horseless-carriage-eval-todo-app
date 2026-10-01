@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do Lists</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f9; color: #333; }
+        h1 { color: #2c3e50; }
+        form { margin-bottom: 20px; }
+        input[type="text"] { padding: 8px; width: 300px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 15px; background: #3498db; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #2980b9; }
+        ul { list-style: none; padding: 0; }
+        li { background: white; margin-bottom: 10px; padding: 15px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        a { text-decoration: none; color: #3498db; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+        .delete-btn { background: #e74c3c; }
+        .delete-btn:hover { background: #c0392b; }
+    </style>
+</head>
+<body>
+    <h1>My To-Do Lists</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="New List Name" required>
+        <button type="submit">Create List</button>
+    </form>
+    <ul>
+        {% for list in lists %}
+        <li>
+            <a href="{{ url_for('view_list', list_id=list.id) }}">{{ list.name }}</a>
+            <form action="{{ url_for('delete_list', list_id=list.id) }}" method="POST" style="margin:0;">
+                <button type="submit" class="delete-btn">Delete</button>
+            </form>
+        </li>
+        {% else %}
+        <li>No lists created yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

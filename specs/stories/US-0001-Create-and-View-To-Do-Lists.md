@@ -15,7 +15,7 @@
 
 ## Notes
 Users can successfully group tasks by creating distinct lists and viewing them.
-- ⚠️ REVIEW DENIED at Tested by QA: pytest test suite execution reports failing tests in the test runner container environment.
+- ⚠️ REVIEW DENIED at Tested by QA: Test execution still fails 4 tests in the test suite environment.
 
 ## Test Approach
 Use pytest and Flask test client to verify list creation and rendering.

@@ -6,17 +6,21 @@ from app import app, db, TodoList, Task
 
 @pytest.fixture
 def client():
-    db_fd, app.config['DATABASE'] = tempfile.mkstemp()
-    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{app.config['DATABASE']}"
+    db_fd, db_path = tempfile.mkstemp()
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
     app.config['TESTING'] = True
+    app.config['WTF_CSRF_ENABLED'] = False
 
+    with app.app_context():
+        db.create_all()
+        
     with app.test_client() as client:
-        with app.app_context():
-            db.create_all()
         yield client
 
+    with app.app_context():
+        db.drop_all()
     os.close(db_fd)
-    os.unlink(app.config['DATABASE'])
+    os.unlink(db_path)
 
 def test_index_page(client):
     response = client.get('/')
@@ -36,14 +40,12 @@ def test_add_and_view_tasks(client):
 def test_toggle_task(client):
     client.post('/', data={'name': 'Work'}, follow_redirects=True)
     client.post('/list/1', data={'title': 'Finish Report'}, follow_redirects=True)
-    
     response = client.post('/task/1/toggle', follow_redirects=True)
     assert response.status_code == 200
 
 def test_delete_task(client):
     client.post('/', data={'name': 'Work'}, follow_redirects=True)
     client.post('/list/1', data={'title': 'Finish Report'}, follow_redirects=True)
-    
     response = client.post('/task/1/delete', follow_redirects=True)
     assert response.status_code == 200
 

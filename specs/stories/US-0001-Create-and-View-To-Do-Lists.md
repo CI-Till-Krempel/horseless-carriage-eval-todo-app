@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create and View To-Do Lists
-- Status: Ready
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-01
@@ -15,6 +15,13 @@
 
 ## Notes
 Users can successfully group tasks by creating distinct lists and viewing them.
+- ⚠️ REVIEW DENIED at Tested by QA: Pytest test execution in the runner environment fails 4 tests due to test assertions/client post routing behavior.
 
 ## Test Approach
+Use pytest and Flask test client to verify list creation and rendering.
 
+### Tasks
+- Create requirements.txt with Flask and pytest
+- Create app.py with SQLAlchemy models for List and Task
+- Create home template for listing and creating lists
+- Write unit tests for list creation and viewing

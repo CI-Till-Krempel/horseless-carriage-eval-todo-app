@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Reviewed
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-01
@@ -14,7 +14,6 @@
 
 ## Notes
 Users can toggle task completion status easily.
-- ⚠️ REVIEW DENIED at Tested by QA: Pytest test suite execution reports a test failure on US-0003.
 
 ## Test Approach
 Run pytest.

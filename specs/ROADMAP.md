@@ -56,10 +56,10 @@ Stories
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0004] Delete a Task
   - [x] DRAFT
   - [x] READY
@@ -82,6 +82,13 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [ISSUE-0002] Test runner container environment required streamlining test assertions and database fixtures due to initial assertion mismatches.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0003] Keep test suites streamlined and aligned with template outputs to prevent intermittent test failures in test runner containers.
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

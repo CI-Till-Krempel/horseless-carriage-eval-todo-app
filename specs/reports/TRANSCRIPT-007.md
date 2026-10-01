@@ -6,6 +6,9 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
+## QA
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
 ## DevTeam
 - 🔧 `write_file(overwrite=True, content="import os
 import tem...", path="tests/test_app.py")`
@@ -361,4 +364,3 @@ Updating the sprint report with the calculated KPIs.
 
 ## ProductOwner
 - 🔧 `create_sprint_report(accomplishments=['Completed Sprint 3..., summary="Sprint 3 successfull...")`
-- 🔧 `create_release_pr(title="Sprint 3 Release: To...", body="Release PR for Sprin...")`

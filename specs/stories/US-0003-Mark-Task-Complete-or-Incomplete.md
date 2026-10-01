@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Ready
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-01
@@ -16,4 +16,7 @@
 Users can toggle task completion status easily.
 
 ## Test Approach
+Run pytest.
 
+### Tasks
+- Add test for task completion toggle

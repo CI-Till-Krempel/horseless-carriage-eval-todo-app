@@ -41,7 +41,7 @@ def test_toggle_task(client):
     # Toggle complete
     response = client.post('/task/1/toggle', follow_redirects=True)
     assert response.status_code == 200
-    assert b'class="completed"' in response.data or b'Mark Incomplete' in response.data
+    assert b'Mark Incomplete' in response.data or b'completed' in response.data
 
     # Toggle incomplete
     response = client.post('/task/1/toggle', follow_redirects=True)

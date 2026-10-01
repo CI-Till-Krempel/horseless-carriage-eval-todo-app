@@ -16,4 +16,7 @@
 Users can clean up outdated lists and their nested tasks.
 
 ## Test Approach
+Run pytest.
 
+### Tasks
+- Add test for list deletion

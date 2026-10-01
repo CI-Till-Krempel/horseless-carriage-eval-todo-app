@@ -56,8 +56,8 @@ Stories
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0004] Delete a Task

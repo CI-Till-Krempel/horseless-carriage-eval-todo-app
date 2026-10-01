@@ -30,7 +30,13 @@
         "Reviewed"
       ],
       "status": "Reviewed",
-      "user_story": "As a user, I want to create a new to-do list with a name and view all my lists so that I can organize my tasks into separate categories."
+      "user_story": "As a user, I want to create a new to-do list with a name and view all my lists so that I can organize my tasks into separate categories.",
+      "review_denial": {
+        "stage": "Tested",
+        "reason": "pytest runs failed with 4 test errors due to test suite assertions expecting specific string formats (e.g. b'class=\"completed\"' or task IDs) that do not match the HTML templates or test setup.",
+        "by": "QA",
+        "review_count_at_denial": 1
+      }
     },
     {
       "description": "As a user, I want to add tasks to a list and view them so that I can track what needs to be done.",
@@ -166,7 +172,13 @@
         "tests/test_app.py"
       ],
       "test_approach": "Use pytest and Flask test client to verify list creation and rendering.",
-      "estimate": 500
+      "estimate": 500,
+      "review_denial": {
+        "stage": "Tested",
+        "reason": "pytest runs failed with 4 test errors due to test suite assertions expecting specific string formats (e.g. b'class=\"completed\"' or task IDs) that do not match the HTML templates or test setup.",
+        "by": "QA",
+        "review_count_at_denial": 1
+      }
     }
   ],
   "impediment_log": [],
@@ -189,16 +201,17 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.11362594999999999
+    "current_usd_spend": 0.13975267
   },
   "token_usage": {
-    "total": 1488046,
+    "total": 1707439,
     "agents": {
-      "ScrumOrchestrator": 166118,
+      "ScrumOrchestrator": 199967,
       "ProductOwner": 697456,
       "Architect": 173708,
       "ScrumMaster": 40446,
-      "DevTeam": 410318
+      "DevTeam": 473935,
+      "QA": 121927
     }
   },
   "story_estimates": {
@@ -614,7 +627,7 @@
     },
     {
       "role": "user",
-      "content": "For context:[DevTeam] `log_story_tokens` tool returned result: {'status': 'ok', 'story_estimates': {'US-0001': {'estimate': 500, 'actual': 450}}}"
+      "content": "For context:[DevTeam] `log_story_tokens` tool returned result: {'status': 'ok', 'story_estimates': {'US-0001': {'estimate': 500, 'actual': 450}, 'US-0002': {'actual': 100}}}"
     },
     {
       "role": "user",
@@ -695,6 +708,30 @@
     {
       "role": "user",
       "content": "For context:[Architect] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `log_story_tokens` with parameters: {'actual_tokens': 100, 'title_or_id': 'US-0002'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `log_story_tokens` tool returned result: {'status': 'ok', 'story_estimates': {'US-0001': {'estimate': 500, 'actual': 450}, 'US-0002': {'actual': 100}}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `advance_story_stage` with parameters: {'title_or_id': 'US-0002', 'implemented_via_earlier_work': 'Covered by US-0001 implementation on PR #329', 'stage': 'Implemented'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `advance_story_stage` tool returned result: {'status': 'error', 'message': \"Cannot advance 'US-0002' to Implemented - the higher-priority story 'US-0001' must reach Accepted first. Development happens one story at a time, top to bottom, in backlog priority order - Draft/Ready grooming may run ahead of it.\"}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `transfer_to_agent` with parameters: {'agent_name': 'ScrumOrchestrator'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `transfer_to_agent` tool returned result: {'result': None}"
     }
   ],
   "hc_version": "0.1.0",
@@ -719,9 +756,14 @@
     "templates/list.html",
     "tests/test_app.py"
   ],
-  "last_check_build": null,
+  "last_check_build": {
+    "checked": "requirements.txt",
+    "passing": true,
+    "manifest_write_count_at_check": 1
+  },
   "pr_review_calls": {
-    "Architect": 1
+    "Architect": 1,
+    "QA": 1
   },
   "architect_review_baseline": 1,
   "qa_review_baseline": 0,

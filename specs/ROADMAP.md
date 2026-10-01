@@ -88,6 +88,13 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
+- [ISSUE-0003] Keep test suites streamlined and aligned with template outputs to prevent intermittent test failures in test runner containers.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 
 ## Task board (Kanban)

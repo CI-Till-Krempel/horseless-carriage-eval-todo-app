@@ -16,4 +16,7 @@
 Users can toggle task completion status easily.
 
 ## Test Approach
+Run pytest.
 
+### Tasks
+- Add test for task completion toggle

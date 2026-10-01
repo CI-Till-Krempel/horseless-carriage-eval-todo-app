@@ -17,4 +17,10 @@
 Users can successfully group tasks by creating distinct lists and viewing them.
 
 ## Test Approach
+Use pytest and Flask test client to verify list creation and rendering.
 
+### Tasks
+- Create requirements.txt with Flask and pytest
+- Create app.py with SQLAlchemy models for List and Task
+- Create home template for listing and creating lists
+- Write unit tests for list creation and viewing

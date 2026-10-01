@@ -65,8 +65,8 @@ Stories
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0005] Delete an Entire List
   - [x] DRAFT
   - [x] READY
@@ -96,6 +96,13 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [ISSUE-0004] Ensure test assertions for task toggling are fully covered by robust integration tests.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0005] Ensure task deletion test coverage is maintained across all upcoming sprint integrations.
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

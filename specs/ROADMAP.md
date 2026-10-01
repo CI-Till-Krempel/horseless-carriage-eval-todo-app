@@ -95,6 +95,13 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
+- [ISSUE-0004] Ensure test assertions for task toggling are fully covered by robust integration tests.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 
 ## Task board (Kanban)

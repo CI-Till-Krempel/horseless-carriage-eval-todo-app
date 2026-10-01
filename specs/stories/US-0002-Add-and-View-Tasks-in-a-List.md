@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add and View Tasks in a List
-- Status: Ready
+- Status: Implemented
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-01

@@ -49,7 +49,7 @@ Stories
 - [US-0002] Add and View Tasks in a List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

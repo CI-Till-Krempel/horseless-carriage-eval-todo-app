@@ -72,9 +72,9 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 ---
 
 ### v1.0.0
@@ -86,10 +86,17 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [ISSUE-0002] Maintain rigorous story sequencing and ensure all planned stories have acceptance checks recorded promptly
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [ISSUE-0002] Maintain rigorous story sequencing and ensure all planned stories have acceptance checks recorded promptly
+- [ISSUE-0003] Keep feature branches synchronized with develop to prevent integration delays
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

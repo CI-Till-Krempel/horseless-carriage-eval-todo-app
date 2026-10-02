@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Reviewed
 - Priority: P0
 - Owner: Scrum Team
 - Last Updated: 2026-10-02
@@ -16,4 +16,4 @@
 Allows users to start organizing their tasks into distinct lists.
 
 ## Test Approach
-
+pytest for unit and integration testing

@@ -16,4 +16,4 @@
 Provides a comprehensive dashboard view of all lists and task states.
 
 ## Test Approach
-
+Covered in test_app.py

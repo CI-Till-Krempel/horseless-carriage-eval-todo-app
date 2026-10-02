@@ -6,21 +6,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## QA
-
-I am transferring to ProductOwner so they can accept US-0001 and proceed with subsequent stories.
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
 ## ProductOwner
-- 🔧 `record_acceptance_check(title_or_id="US-0001", note="Verified that the To...")`
-
-I am advancing US-0001 to Accepted stage.
-- 🔧 `advance_story_stage(title_or_id="US-0001", stage="Accepted")`
-
-I am recording the acceptance check for US-0002.
-- 🔧 `record_acceptance_check(title_or_id="US-0002", note="US-0002 implemented ...")`
-
-I am advancing US-0002 through its remaining stages.
 - 🔧 `advance_story_stage(stage="Implemented", title_or_id="US-0002", implemented_via_earlier_work="US-0001")`
 
 I am transferring to DevTeam to complete US-0002.
@@ -352,3 +338,18 @@ I am recording human approval for the release of Sprint 2.
 
 I am creating the release PR for Sprint 2.
 - 🔧 `create_release_pr(title="Sprint 2 Release", body="Sprint 2 release: US...")`
+
+I am integrating open changes to commit local database files.
+- 🔧 `integrate_open_changes()`
+
+I am transferring to DevTeam to commit uncommitted local files.
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `git_push(branch="eval-0.1.0-run44/dev...", commit_message="chore: commit local ...")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+
+I am creating the release PR for Sprint 2.
+- 🔧 `create_release_pr(body="Sprint 2 release: US...", title="Sprint 2 Release")`

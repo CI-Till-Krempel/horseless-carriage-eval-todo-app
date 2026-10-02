@@ -50,7 +50,7 @@ Stories
 - [US-0003] Mark Task Complete/Incomplete
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

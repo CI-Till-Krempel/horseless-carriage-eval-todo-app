@@ -72,9 +72,9 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 ---
 
 ### v1.0.0
@@ -82,6 +82,13 @@ Goals
 - Deliver a working To-Do List web application satisfying all 6 core functional requirements.
 
 Stories
+- [ISSUE-0001] Ensure test runner and dependencies are fully configured upfront in conftest.py/pytest.ini for new projects
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [ISSUE-0002] Maintain rigorous story sequencing and ensure all planned stories have acceptance checks recorded promptly
   - [x] DRAFT
   - [x] READY
@@ -89,7 +96,7 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [ISSUE-0001] Ensure test runner and dependencies are fully configured upfront in conftest.py/pytest.ini for new projects
+- [ISSUE-0003] Keep feature branches synchronized with develop to prevent integration delays
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

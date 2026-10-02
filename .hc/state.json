@@ -169,16 +169,20 @@
       "priority": "P2",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Ready",
+      "status": "Accepted",
       "version": "v1.0.0",
       "acceptance_criteria": [
         "Given a new project with conftest.py and pytest.ini, When pytest is run, Then all tests run successfully without import errors."
       ],
       "description": "Ensure test runner and dependencies are fully configured upfront in conftest.py/pytest.ini for new projects",
-      "acceptance_check_count": 2,
-      "acceptance_check_note": "ISSUE-0001 test setup verified and accepted."
+      "acceptance_check_count": 3,
+      "acceptance_check_note": "Verified acceptance criteria for ISSUE-0001."
     },
     {
       "title": "Maintain rigorous story sequencing and ensure all planned stories have acceptance checks recorded promptly",
@@ -204,7 +208,17 @@
       "owner": "DevTeam",
       "type": "Issue",
       "id": "ISSUE-0003",
-      "priority": "Must"
+      "priority": "P2",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "version": "v1.0.0",
+      "description": "Keep feature branches synchronized with develop to prevent integration delays",
+      "acceptance_criteria": [
+        "Given active feature branches, When new changes merge into develop, Then feature branches are synchronized to prevent integration conflicts."
+      ]
     }
   ],
   "definition_of_done": [
@@ -216,9 +230,9 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Implement list deletion and dashboard visual distinction (US-0005 and US-0006)",
-  "sprint_number": 3,
-  "sprint_backlog_pr_sprint": 3,
+  "sprint_goal": "Harden and refine to-do list application functionality and documentation",
+  "sprint_number": 4,
+  "sprint_backlog_pr_sprint": 4,
   "sprint_backlog": [
     {
       "value_hypothesis": "Allows users to start organizing their tasks into distinct lists.",
@@ -487,9 +501,13 @@
       "priority": "Must",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Ready",
+      "status": "Accepted",
       "version": "v1.0.0",
       "acceptance_criteria": [
         "Given a new project with conftest.py and pytest.ini, When pytest is run, Then all tests run successfully without import errors."
@@ -511,8 +529,41 @@
       "risks_assumptions": [
         "Already completed in previous sprint work."
       ],
-      "acceptance_check_count": 2,
-      "acceptance_check_note": "ISSUE-0001 test setup verified and accepted."
+      "acceptance_check_count": 3,
+      "acceptance_check_note": "Verified acceptance criteria for ISSUE-0001."
+    },
+    {
+      "title": "Keep feature branches synchronized with develop to prevent integration delays",
+      "overview": "Keep feature branches synchronized with develop to prevent integration delays",
+      "owner": "DevTeam",
+      "type": "Issue",
+      "id": "ISSUE-0003",
+      "priority": "P2",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "version": "v1.0.0",
+      "description": "Keep feature branches synchronized with develop to prevent integration delays",
+      "acceptance_criteria": [
+        "Given active feature branches, When new changes merge into develop, Then feature branches are synchronized to prevent integration conflicts."
+      ],
+      "approach": "Ensure feature branches stay synchronized with develop using git rebase/merge.",
+      "estimate": 100,
+      "test_approach": "git status / sync check",
+      "risks_assumptions": [
+        "Standard git workflow practices."
+      ],
+      "tasks": [
+        "Document branch synchronization in README.md"
+      ],
+      "dod_checks": [
+        "Feature branch synchronization process documented and followed"
+      ],
+      "code_files": [
+        "README.md"
+      ]
     }
   ],
   "impediment_log": [],
@@ -566,19 +617,34 @@
       "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
       "rationale": "Implemented via app.py and templates/index.html in Sprint 1",
       "owner": "DevTeam"
+    },
+    {
+      "title": "ISSUE-0001 marked Implemented without a new source touch",
+      "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
+      "rationale": "Resolved via conftest.py and pytest.ini setup in Sprint 1",
+      "owner": "DevTeam"
+    },
+    {
+      "title": "Ready-backlog sufficiency target waived",
+      "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
+      "rationale": "All core functional requirements and evaluation scope items (US-0001 through US-0006) have been fully implemented, tested, and accepted across Sprints 1-3. Sprint 4 focuses purely on hardening, documentation refinement, and quality assurance.",
+      "owner": "ProductOwner"
     }
   ],
   "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 100,
-    "current_usd_spend": 0.3680285000000001
+    "current_usd_spend": 0.6585699000000002
   },
   "token_usage": {
-    "total": 459112,
+    "total": 5013797,
     "agents": {
-      "ScrumMaster": 342599,
-      "ProductOwner": 116513
+      "ScrumMaster": 585536,
+      "ProductOwner": 1953396,
+      "DevTeam": 1316015,
+      "QA": 809252,
+      "Architect": 349598
     }
   },
   "story_estimates": {
@@ -609,12 +675,15 @@
     "ISSUE-0001": {
       "estimate": 100,
       "actual": 50
+    },
+    "ISSUE-0003": {
+      "estimate": 100
     }
   },
   "sprint_report_kpis": {},
   "kpi_update_count": 3,
   "kpi_baseline": 3,
-  "backlog_scope_complete": false,
+  "backlog_scope_complete": true,
   "repo": {
     "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
     "local_path": "/app/eval-output/clone",
@@ -688,7 +757,8 @@
     "specs/reports/SPRINT-REPORT-003.md",
     "specs/requirements/ISSUE-0003-Keep-feature-branches-synchronized-with-develop-to-prevent-integration-delays.md",
     "specs/reports/TRANSCRIPT-003.md",
-    "specs/reports/SPRINT-REPORT-004.md"
+    "specs/reports/SPRINT-REPORT-004.md",
+    "README.md"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -696,13 +766,13 @@
     "manifest_write_count_at_check": 2
   },
   "pr_review_calls": {
-    "Architect": 6,
-    "QA": 6
+    "Architect": 7,
+    "QA": 7
   },
-  "architect_review_baseline": 6,
-  "qa_review_baseline": 6,
+  "architect_review_baseline": 7,
+  "qa_review_baseline": 7,
   "qa_tested_baseline": 6,
-  "sprint_report_pending_release": true,
+  "sprint_report_pending_release": false,
   "blocking_interactions": [
     {
       "id": 1,
@@ -732,7 +802,7 @@
       "resolved_at": null
     }
   ],
-  "budget_reset_since_last_sprint_start": true,
+  "budget_reset_since_last_sprint_start": false,
   "overclaim_rejection_counts": {},
   "general_blockers": [],
   "steering_proposal_count": 0,

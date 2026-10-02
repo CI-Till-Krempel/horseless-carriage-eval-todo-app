@@ -64,14 +64,14 @@ Stories
 - [US-0005] Delete List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0006] View Lists and Tasks with Visual Distinction
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
@@ -82,6 +82,13 @@ Goals
 - Deliver a working To-Do List web application satisfying all 6 core functional requirements.
 
 Stories
+- [ISSUE-0002] Maintain rigorous story sequencing and ensure all planned stories have acceptance checks recorded promptly
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [ISSUE-0001] Ensure test runner and dependencies are fully configured upfront in conftest.py/pytest.ini for new projects
   - [x] DRAFT
   - [x] READY

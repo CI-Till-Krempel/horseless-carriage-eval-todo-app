@@ -44,9 +44,9 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0003] Mark Task Complete/Incomplete
   - [x] DRAFT
   - [x] READY
@@ -82,6 +82,13 @@ Goals
 - Deliver a working To-Do List web application satisfying all 6 core functional requirements.
 
 Stories
+- [ISSUE-0001] Ensure test runner and dependencies are fully configured upfront in conftest.py/pytest.ini for new projects
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 
 ## Task board (Kanban)

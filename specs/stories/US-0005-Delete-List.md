@@ -16,4 +16,4 @@
 Allows users to delete entire lists and their contents at once.
 
 ## Test Approach
-
+Covered in test_app.py

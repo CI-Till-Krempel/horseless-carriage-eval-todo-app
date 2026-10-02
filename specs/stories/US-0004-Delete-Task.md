@@ -16,4 +16,4 @@
 Allows users to clean up their lists by removing tasks.
 
 ## Test Approach
-
+Covered in test_app.py

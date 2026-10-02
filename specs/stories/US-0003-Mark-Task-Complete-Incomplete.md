@@ -16,4 +16,4 @@
 Helps users distinguish between finished and unfinished tasks.
 
 ## Test Approach
-
+Covered in test_app.py

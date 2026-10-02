@@ -82,6 +82,13 @@ Goals
 - Deliver a working To-Do List web application satisfying all 6 core functional requirements.
 
 Stories
+- [ISSUE-0002] Maintain rigorous story sequencing and ensure all planned stories have acceptance checks recorded promptly
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [ISSUE-0001] Ensure test runner and dependencies are fully configured upfront in conftest.py/pytest.ini for new projects
   - [x] DRAFT
   - [x] READY

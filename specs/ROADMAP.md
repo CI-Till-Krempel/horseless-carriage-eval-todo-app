@@ -47,8 +47,8 @@ Stories
 - [US-0002] Add a Task to a List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0003] Mark Task Complete or Incomplete

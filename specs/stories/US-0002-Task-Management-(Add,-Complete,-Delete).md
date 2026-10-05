@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Task Management (Add, Complete, Delete)
-- Status: Implemented
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-05

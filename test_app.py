@@ -1,5 +1,7 @@
+import sys
 import os
-import tempfile
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
 import pytest
 from app import create_app
 from models import db, TodoList, Task

@@ -40,6 +40,13 @@ Goals
 - Establish project vision, PRD, architecture, and implement core list and task creation/management functionality for the MVP.
 
 Stories
+- [US-0003] Delete To-Do List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0001] Create and View To-Do Lists
   - [x] DRAFT
   - [x] READY
@@ -52,8 +59,8 @@ Stories
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [ISSUE-0002] US-0001 tests experienced test isolation/fixture failures requiring repeated stabilization.
   - [ ] DRAFT
   - [ ] READY
@@ -64,13 +71,6 @@ Stories
 - [ISSUE-0001] Ensure robust test database isolation and fixture cleanup before marking stories Tested.
   - [ ] DRAFT
   - [ ] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-0003] Delete To-Do List
-  - [x] DRAFT
-  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED

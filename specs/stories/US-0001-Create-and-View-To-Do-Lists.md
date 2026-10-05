@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create and View To-Do Lists
-- Status: Reviewed
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-05

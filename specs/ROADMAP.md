@@ -45,8 +45,8 @@ Stories
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0002] Task Management (Add, Complete, Delete)
   - [x] DRAFT
   - [x] READY

@@ -31,6 +31,36 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
+- [ISSUE-0002] Ensure pythonpath and pytest configuration are established early in project setup.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0004] US-0001 test suite collection loop preventing progression to Tested and Accepted stages.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0001] Implement a standard pytest-compatible test suite structure in the repository root so coverage is correctly parsed during QA verification.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0003] Maintain continuous test suite alignment across all sprints to ensure smooth release generation.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### v1.0.0

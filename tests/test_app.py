@@ -8,7 +8,6 @@ def client():
     db_fd, app.config["DATABASE"] = tempfile.mkstemp()
     app.config["TESTING"] = True
     
-    # Use temporary database
     global DB_NAME
     original_db = DB_NAME
     DB_NAME = app.config["DATABASE"]
@@ -44,7 +43,8 @@ def test_task_management(client):
     # Toggle complete
     response = client.post("/tasks/1/toggle", follow_redirects=True)
     assert response.status_code == 200
-    assert b"Mark Incomplete" in response.data or b"completed" in response.data
+    # After toggling, the button text changes to "Mark Incomplete"
+    assert b"Mark Incomplete" in response.data
     
     # Delete task
     response = client.post("/tasks/1/delete", follow_redirects=True)

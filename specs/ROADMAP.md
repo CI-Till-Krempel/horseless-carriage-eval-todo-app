@@ -43,8 +43,8 @@ Stories
 - [US-0001] Create and View To-Do Lists
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0002] Task Management (Add, Complete, Delete)

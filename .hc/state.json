@@ -32,8 +32,9 @@
       ],
       "status": "Reviewed",
       "user_story": "As a single user, I want to create a new to-do list with a name so that I can organize my tasks.",
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Re-verifying US-0001 acceptance criteria to ensure Accepted status is fully recorded."
+      "acceptance_check_count": 2,
+      "acceptance_check_note": "Re-verifying US-0001 acceptance criteria to ensure Accepted status registers.",
+      "blocked": null
     },
     {
       "value_hypothesis": "Users can add tasks to specific lists.",
@@ -52,9 +53,7 @@
         "Draft",
         "Ready"
       ],
-      "status": "Ready",
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified US-0002 acceptance criteria: Users can add a task to a list with a short text description and see it in the list view."
+      "status": "Ready"
     },
     {
       "description": "As a single user, I want to mark a task as complete or incomplete so that I can track my progress.",
@@ -142,19 +141,27 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Complete remaining MVP stories US-0002 through US-0006 with robust test coverage and release increment.",
-  "sprint_number": 2,
-  "sprint_backlog_pr_sprint": 2,
+  "sprint_goal": "Complete feature development and testing for US-0002 through US-0006 and create release PR.",
+  "sprint_number": 3,
+  "sprint_backlog_pr_sprint": 3,
   "sprint_backlog": [],
-  "impediment_log": [],
-  "retro_actions": [
+  "impediment_log": [
     {
-      "action": "Ensure clean test paths and robust python module installation across all feature branches before test execution.",
+      "description": "US-0001 test suite collection loop preventing progression to Tested and Accepted stages.",
       "owner": "DevTeam",
-      "success_metric": "Tests collect and pass cleanly on the first run without import errors.",
       "status": "open",
       "category": "technical",
-      "sprint_number": 2
+      "sprint_number": 3
+    }
+  ],
+  "retro_actions": [
+    {
+      "action": "Implement a standard pytest-compatible test suite structure in the repository root so coverage is correctly parsed during QA verification.",
+      "owner": "DevTeam",
+      "success_metric": "Pytest runs successfully with coverage summary output parsed on all tested stories.",
+      "status": "open",
+      "category": "technical",
+      "sprint_number": 3
     }
   ],
   "decision_log": [
@@ -169,21 +176,21 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.67805505
+    "current_usd_spend": 1.01539739
   },
   "token_usage": {
-    "total": 5272849,
+    "total": 5006996,
     "agents": {
-      "ScrumMaster": 262517,
-      "ProductOwner": 617781,
-      "DevTeam": 2340496,
-      "QA": 1662833,
-      "Architect": 389222
+      "ScrumMaster": 412818,
+      "ProductOwner": 667535,
+      "DevTeam": 2084595,
+      "QA": 1202370,
+      "Architect": 639678
     }
   },
   "story_estimates": {
     "US-0001": {
-      "actual": 100
+      "actual": 50
     }
   },
   "sprint_report_kpis": {},
@@ -207,7 +214,7 @@
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
   "dev_touch_baseline": 0,
-  "unadvanced_write_nudge_baseline": 3,
+  "unadvanced_write_nudge_baseline": 2,
   "sprint_files_touched": [
     "specs/requirements/PRD-TodoList-MVP.md",
     "specs/ROADMAP.md",
@@ -220,9 +227,8 @@
     "specs/stories/US-0004-Delete-a-Task.md",
     "specs/stories/US-0005-Delete-an-Entire-List.md",
     "specs/stories/US-0006-View-All-Lists-and-Tasks-with-Visual-Distinction.md",
-    "tests/test_placeholder.py",
-    "tests/test_todo_unit.py",
-    "tests/test_direct.py"
+    "test_main.py",
+    "pytest.ini"
   ],
   "last_check_build": {
     "checked": null,
@@ -242,10 +248,19 @@
   "blocking_interactions": [
     {
       "id": 1,
+      "kind": "blocked_story",
+      "summary": "'US-0001' is BLOCKED (technical): advance_story_stage('US-0001', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0001' Tested - running the test suite found no tests actually ran (no tests collected). A story can't be Tested with an empty or unrunnable test suite.",
+      "detail": "Raised by QA. Resolve via Architect's resolve_story_blocker('US-0001', resolution).",
+      "created_at": "2026-10-05T13:54:30.259611+00:00",
+      "resolved": true,
+      "resolved_at": "2026-10-05T13:54:37.298382+00:00"
+    },
+    {
+      "id": 2,
       "kind": "critical_error",
-      "summary": "🚫 [TOKEN BUDGET EXCEEDED] Sprint token limit (5,000,000) reached. Current usage: 5,042,464. Agent execution halted.",
+      "summary": "🚫 [TOKEN BUDGET EXCEEDED] Sprint token limit (5,000,000) reached. Current usage: 5,006,996. Agent execution halted.",
       "detail": "To resume immediately: raise SPRINT_TOKEN_BUDGET in .env and restart the agent container. To let this sprint close out as-is: no action needed - the team has a small grace allowance left to finish the sprint report and release PR; check list_blocking_interactions() or this log for confirmation once it does.",
-      "created_at": "2026-10-05T13:52:53.198222+00:00",
+      "created_at": "2026-10-05T13:55:17.487389+00:00",
       "resolved": false,
       "resolved_at": null
     }

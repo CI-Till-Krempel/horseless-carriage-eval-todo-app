@@ -51,9 +51,43 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v0.2.0
+Goals
+
+Stories
+- [US-0003] Mark a task as complete or incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [x] TESTED
-  - [x] ACCEPTED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0004] Delete a task
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0005] Delete an entire list
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0001] Establish collaborative architectural alignment before story implementation
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 
 ## Task board (Kanban)

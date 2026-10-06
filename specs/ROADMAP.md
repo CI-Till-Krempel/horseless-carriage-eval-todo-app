@@ -61,6 +61,13 @@ Goals
 - Task completion toggling, task deletion, and list deletion
 
 Stories
+- [ISSUE-0001] Establish collaborative architectural alignment before story implementation
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0003] Mark a task as complete or incomplete
   - [x] DRAFT
   - [x] READY

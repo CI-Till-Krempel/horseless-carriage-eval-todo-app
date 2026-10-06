@@ -14,7 +14,7 @@
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: Test suite reports 3 failing tests when running pytest.
+- ⚠️ REVIEW DENIED at Tested by QA: Test suite still reports failing tests when running pytest.
 
 ## Test Approach
 

@@ -51,9 +51,9 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [x] REVIEWED
-  - [x] TESTED
-  - [x] ACCEPTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 
 ### v0.2.0

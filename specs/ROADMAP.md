@@ -97,6 +97,13 @@ Goals
 Stories
 
 
+### v0.4.0
+Goals
+- UX polish, robust task management, and preparation for final release
+
+Stories
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

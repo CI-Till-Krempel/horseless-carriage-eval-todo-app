@@ -104,6 +104,13 @@ Goals
 Stories
 
 
+### v0.5.0
+Goals
+- Final delivery, end-to-end polish, and v1.0 release preparation
+
+Stories
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

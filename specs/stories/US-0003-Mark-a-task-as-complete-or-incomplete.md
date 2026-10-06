@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark a task as complete or incomplete
-- Status: Ready
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-06
@@ -14,6 +14,7 @@
 
 ## Notes
 
+- ⚠️ REVIEW DENIED at Tested by QA: Test suite reports 3 failing tests when running pytest.
 
 ## Test Approach
 

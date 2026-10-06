@@ -90,6 +90,13 @@ Stories
   - [ ] ACCEPTED
 
 
+### v0.3.0
+Goals
+- Task completion toggling, task deletion, list deletion completion and UX polish
+
+Stories
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

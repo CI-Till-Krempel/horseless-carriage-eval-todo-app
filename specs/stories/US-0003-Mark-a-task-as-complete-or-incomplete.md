@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark a task as complete or incomplete
-- Status: Ready
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-06

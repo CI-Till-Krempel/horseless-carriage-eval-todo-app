@@ -71,7 +71,7 @@ Stories
 - [US-0004] Delete a task
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

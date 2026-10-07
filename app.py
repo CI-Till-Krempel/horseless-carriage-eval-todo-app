@@ -25,6 +25,12 @@ def create_list():
         next_list_id += 1
     return redirect(url_for('index'))
 
+@app.route('/lists/<int:list_id>/delete', methods=['POST'])
+def delete_list(list_id):
+    global lists_store
+    lists_store = [lst for lst in lists_store if lst['id'] != list_id]
+    return redirect(url_for('index'))
+
 @app.route('/lists/<int:list_id>/tasks', methods=['POST'])
 def add_task(list_id):
     global next_task_id
@@ -40,6 +46,14 @@ def add_task(list_id):
                 lst['tasks'].append(new_task)
                 next_task_id += 1
                 break
+    return redirect(url_for('index'))
+
+@app.route('/lists/<int:list_id>/tasks/<int:task_id>/delete', methods=['POST'])
+def delete_task(list_id, task_id):
+    for lst in lists_store:
+        if lst['id'] == list_id:
+            lst['tasks'] = [t for t in lst['tasks'] if t['id'] != task_id]
+            break
     return redirect(url_for('index'))
 
 if __name__ == '__main__':

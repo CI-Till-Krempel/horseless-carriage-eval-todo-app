@@ -26,3 +26,16 @@ def test_add_task(client):
     response = client.post('/lists/1/tasks', data={'title': 'Finish report'}, follow_redirects=True)
     assert response.status_code == 200
     assert b'Finish report' in response.data
+
+def test_delete_task(client):
+    client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
+    client.post('/lists/1/tasks', data={'title': 'Finish report'}, follow_redirects=True)
+    response = client.post('/lists/1/tasks/1/delete', follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Finish report' not in response.data
+
+def test_delete_list(client):
+    client.post('/lists', data={'name': 'Temporary'}, follow_redirects=True)
+    response = client.post('/lists/1/delete', follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Temporary' not in response.data

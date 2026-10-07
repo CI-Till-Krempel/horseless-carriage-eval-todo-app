@@ -6,20 +6,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## QA
-
-I am advancing the story stage for US-0001 to Tested.
-- 🔧 `advance_story_stage(stage="Tested", title_or_id="US-0001")`
-
-I am updating the test file to fix the fixture syntax error.
-
-I am transferring control to DevTeam to update the test file syntax.
-- 🔧 `transfer_to_agent(agent_name="DevTeam")`
-
 ## DevTeam
-- 🔧 `write_file(path="tests/test_todo.py", overwrite=True, content="import os
-import pyt...")`
-- 🔧 `git_push(branch="eval-0.1.0-run48/fea...", commit_message="fix: correct test fi...")`
 - 🔧 `transfer_to_agent(agent_name="QA")`
 
 ## QA
@@ -381,3 +368,14 @@ I am transferring back to ScrumOrchestrator to finalize Sprint 3.
 - 🔧 `create_sprint_report(accomplishments=['Completed Sprint 3..., summary="Sprint 3 completed s...")`
 - 🔧 `record_human_approval(note="Sprint 3 release pre...", approval_type="release")`
 - 🔧 `create_release_pr(title="Sprint 3 Release: To...", body="Release PR for Sprin...")`
+- 🔧 `integrate_open_changes()`
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `delete_file(path=".coverage")`
+- 🔧 `delete_file(path="instance/todo.db")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(body="Release PR for Sprin...", title="Sprint 3 Release: To...")`

@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Add Task to List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-07
@@ -16,4 +16,4 @@
 Allows adding tasks to lists.
 
 ## Test Approach
-
+Verify via pytest.

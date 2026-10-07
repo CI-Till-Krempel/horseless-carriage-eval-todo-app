@@ -16,4 +16,10 @@
 Allows users to organize tasks into separate lists.
 
 ## Test Approach
+Pytest unit tests verifying list/task creation, completion, and deletion.
 
+### Tasks
+- Create Flask app and SQLite models
+- Implement HTML templates with Jinja2
+- Implement CRUD routes for lists and tasks
+- Add automated pytest test suite

@@ -16,4 +16,7 @@
 Allows users to clean up obsolete tasks.
 
 ## Test Approach
+Pytest verification.
 
+### Tasks
+- Add task deletion route

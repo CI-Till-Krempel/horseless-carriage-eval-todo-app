@@ -16,4 +16,7 @@
 Allows users to remove entire unneeded categories of tasks.
 
 ## Test Approach
+Pytest verification.
 
+### Tasks
+- Add list deletion route

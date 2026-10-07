@@ -16,4 +16,7 @@
 Provides comprehensive visibility into task states.
 
 ## Test Approach
+Pytest verification.
 
+### Tasks
+- Add CSS classes for completed task styling

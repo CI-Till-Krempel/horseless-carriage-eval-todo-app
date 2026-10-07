@@ -49,9 +49,9 @@ Stories
 - [US-0001] Create To-Do List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0003] Add Task to List
   - [x] DRAFT

@@ -94,6 +94,20 @@ Stories
   - [ ] ACCEPTED
 
 
+### v1.2.0
+Goals
+- Refine task filtering, add search capabilities, and ensure robust error handling for Sprint 3.
+
+Stories
+- [US-0007] Search Tasks
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

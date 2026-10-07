@@ -1,0 +1,15 @@
+# Retro Items
+
+## Improve test fixture isolation and maintain robust test suites across sprints
+- Kind: Retro Action
+- Category: technical
+- Owner: DevTeam
+- Status: open
+- Success Metric: All pytest tests pass cleanly and consistently on every feature branch
+
+## Ensure orderly advancement of stories through the pipeline to prevent backlog blocking in multi-sprint features
+- Kind: Retro Action
+- Category: technical
+- Owner: ProductOwner
+- Status: open
+- Success Metric: All stories advance through stages sequentially without blocking subsequent sprint planning

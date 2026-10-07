@@ -47,11 +47,18 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
+- [ISSUE-0003] Verify robust error handling and input validation across all app routes
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### v1.0.0
 Goals
-- Refine To-Do List Web App robustness, improve error handling, and validate test coverage across all features.
+- Finalize To-Do List Web App MVP deployment guide, polish user experience, verify end-to-end user journey, and execute final release.
 Stories
 - [US-0001] Create To-Do List
   - [x] DRAFT

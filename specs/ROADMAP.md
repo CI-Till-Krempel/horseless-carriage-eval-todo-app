@@ -47,15 +47,15 @@ Stories
 - [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0003] Toggle Task Completion
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0004] Delete Task
@@ -78,14 +78,14 @@ Stories
 Goals
 - Enhance UI/UX styling, filter tasks by status, and add search/filtering capabilities for Sprint 2.
 Stories
-- [US-0006] Filter Tasks by Status
+- [ISSUE-0001] Maintain automated test coverage and seamless pipeline execution for upcoming feature sprints
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [ISSUE-0001] Maintain automated test coverage and seamless pipeline execution for upcoming feature sprints
+- [US-0006] Filter Tasks by Status
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

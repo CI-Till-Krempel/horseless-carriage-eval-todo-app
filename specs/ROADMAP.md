@@ -44,7 +44,7 @@ Stories
 
 ### v1.0.0
 Goals
-- Enhance To-Do List Web App UI/UX, add input validation, polish task management responsiveness, and expand automated test coverage.
+- Expand To-Do List Web App feature completeness, enhance test coverage, and polish task interactions.
 Stories
 - [US-0001] Create To-Do List
   - [x] DRAFT

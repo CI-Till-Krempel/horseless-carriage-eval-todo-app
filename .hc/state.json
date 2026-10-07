@@ -1,14 +1,16 @@
 {
   "version": "1.0.0",
-  "product_vision": "",
+  "product_vision": "Build a simple to-do list web application where a single user can create lists, add tasks, mark tasks complete/incomplete, delete tasks, delete lists, and see all lists and tasks with visual distinction for completed tasks. - Establish PRD, Roadmap, Epics, and User Stories for the To-Do List Web App. - Set up initial project structure and foundational features.",
   "product_goals": [],
-  "architecture_vision": "",
+  "architecture_vision": "# Architecture Vision: To-Do List Web App (MVP)\n\n## Target System Shape\nA lightweight, single-process web application designed for a single user with no authentication requirement. The architecture emphasizes simplicity, minimal dependencies, and rapid deliverability across a 5-sprint budget.\n\n## Key Quality Attributes\n- **Simplicity & Maintainability**: Clean, readable code structure following standard web framework conventions.\n- **Reliability & Responsiveness**: Immediate in-process state updates with a responsive, intuitive user interface.\n- **Extensibility**: Modular design allowing core entity separation (Lists vs. Tasks).\n\n## Tech-Stack Guardrails\n- **Backend**: Python (Flask or FastAPI) or a similarly lightweight framework allowing fast implementation and reliable local execution.\n- **Frontend**: Server-rendered HTML (e.g., Jinja2 templates) with vanilla CSS/JS or a lightweight component setup to ensure a working web UI without complex bundling overhead.\n- **Persistence**: In-memory store or simple file-based/embedded SQLite database ensuring data survives page interactions during the session.\n\n## Major Components & Boundaries\n1. **Web UI Layer**: Renders lists and tasks, provides forms for creating lists/tasks, and interactive controls for completion and deletion.\n2. **Application Core / Service Layer**: Encapsulates business logic for managing lists, tasks, completion states, and cascade deletions.\n3. **Data / Storage Layer**: Handles entity persistence and retrieval.",
   "product_backlog": [
     {
       "title": "Core To-Do Management",
       "description": "Core functionality for managing to-do lists and tasks.",
       "type": "Epic",
-      "id": "EP-0001"
+      "id": "EP-0001",
+      "status": "Draft",
+      "priority": "Must"
     },
     {
       "acceptance_criteria": [
@@ -27,7 +29,7 @@
         "Implemented",
         "Reviewed"
       ],
-      "status": "Reviewed",
+      "status": "Accepted",
       "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks."
     },
     {
@@ -119,6 +121,41 @@
         "Ready"
       ],
       "status": "Ready"
+    },
+    {
+      "id": "ISSUE-0001",
+      "type": "Issue",
+      "title": "Ensure pytest test execution cleanly outputs coverage summaries to support QA stage advancement smoothly",
+      "status": "Ready",
+      "priority": "Must",
+      "description": "Ensure pytest test execution cleanly outputs coverage summaries to support QA stage advancement smoothly.",
+      "acceptance_criteria": [
+        "Given pytest runs, When test execution completes, Then pytest outputs a valid coverage summary."
+      ],
+      "user_story": "As a developer, I want pytest to output coverage summaries so that QA stage checks succeed without warnings.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "version": "Backlog (unplanned)"
+    },
+    {
+      "value_hypothesis": "Improves user experience and visual appeal.",
+      "priority": "Must",
+      "acceptance_criteria": [
+        "Given the user is on the to-do list page, When they view the interface, Then they see a polished, modern responsive UI with clear buttons and typography."
+      ],
+      "title": "UI/UX Polish and Responsive Layout",
+      "description": "As a user, I want a polished and responsive user interface so that the application is pleasant and easy to use.",
+      "version": "v1.0.0",
+      "type": "User Story",
+      "id": "US-0007",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "user_story": "As a user, I want a polished and responsive user interface so that the application is pleasant and easy to use."
     }
   ],
   "definition_of_done": [
@@ -130,8 +167,8 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Build MVP To-Do List Web App core features: create list, add task, complete/incomplete, delete task, delete list, and view with visual distinction.",
-  "sprint_number": 1,
+  "sprint_goal": "Enhance To-Do List Web App UI/UX, add input validation, polish task management responsiveness, and expand automated test coverage.",
+  "sprint_number": 2,
   "sprint_backlog_pr_sprint": 1,
   "sprint_backlog": [
     {
@@ -355,23 +392,26 @@
       "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
       "rationale": "All required evaluation scope items are fully detailed as user stories and ready.",
       "owner": "ProductOwner"
+    },
+    {
+      "title": "Ready-backlog sufficiency target waived",
+      "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
+      "rationale": "Sprint 2 scope consists of UI polish and UX enhancements on top of delivered MVP stories.",
+      "owner": "ProductOwner"
     }
   ],
   "sprint_report": "",
   "budgets": {
     "total": 5000000,
-    "total_usd": 15.0,
-    "current_usd_spend": 0.20298859
+    "total_usd": 50,
+    "current_usd_spend": 0.39534759999999997
   },
   "token_usage": {
-    "total": 2444556,
+    "total": 937300,
     "agents": {
-      "ScrumOrchestrator": 123405,
-      "ProductOwner": 692076,
-      "ScrumMaster": 82998,
-      "DevTeam": 1147838,
-      "Architect": 261339,
-      "QA": 136900
+      "ScrumMaster": 223024,
+      "DevTeam": 113826,
+      "ProductOwner": 600450
     }
   },
   "story_estimates": {
@@ -752,6 +792,10 @@
     {
       "type": "sprint",
       "note": "Pre-approved for fixed evaluation scenario sprint 1."
+    },
+    {
+      "type": "sprint",
+      "note": "Pre-approved for fixed evaluation scenario sprint 2."
     }
   ],
   "sprint_approval_baseline": 0,
@@ -772,7 +816,9 @@
     "requirements.txt",
     "app.py",
     "templates/index.html",
-    "tests/test_todo.py"
+    "tests/test_todo.py",
+    "specs/stories/US-0007-UI-UX-Polish-and-Responsive-Layout.md",
+    "specs/requirements/ISSUE-0001-Ensure-pytest-test-execution-cleanly-outputs-coverage-summaries-to-support-QA-stage-advancement-smoothly.md"
   ],
   "last_check_build": null,
   "last_pr_checks": {

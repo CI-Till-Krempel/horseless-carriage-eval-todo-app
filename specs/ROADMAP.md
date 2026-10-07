@@ -36,7 +36,6 @@ Stories
 ### v1.0.0
 Goals
 - Establish project baseline, setup web app framework, and implement core list creation and task management features for Sprint 1.
-
 Stories
 - [US-0001] Create To-Do List
   - [x] DRAFT

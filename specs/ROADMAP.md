@@ -44,9 +44,7 @@ Stories
 
 ### v1.0.0
 Goals
-- Establish PRD, architecture vision, and MVP core planning for To-Do List Web App
-- Implement list creation and task management stories for Sprint 1
-
+- Implement MVP core features: Create To-Do List and Add Task to List
 Stories
 - [US-0001] Create To-Do List
   - [x] DRAFT

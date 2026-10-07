@@ -43,13 +43,13 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0003] Toggle Task Completion
   - [x] DRAFT
@@ -66,6 +66,26 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0005] Delete List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v1.1.0
+Goals
+
+Stories
+- [ISSUE-0001] Maintain automated test coverage and seamless pipeline execution for upcoming feature sprints
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] Filter Tasks by Status
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

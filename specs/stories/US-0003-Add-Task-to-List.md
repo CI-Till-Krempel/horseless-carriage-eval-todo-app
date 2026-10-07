@@ -16,4 +16,4 @@
 Allows adding tasks to lists.
 
 ## Test Approach
-Verify via pytest.
+Verify via pytest and Flask test client.

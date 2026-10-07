@@ -17,4 +17,4 @@
 Enables users to start organizing their work into separate lists.
 
 ## Test Approach
-
+Use pytest and Flask test client to verify list creation and task addition.

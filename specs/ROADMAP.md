@@ -33,7 +33,7 @@ Stories
 
 
 Stories
-- [ISSUE-0001] Ensure rigorous test fixture ID isolation before implementing stories to prevent state leakage between tests.
+- [ISSUE-0001] 
   - [ ] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED
@@ -44,9 +44,9 @@ Stories
 
 ### v1.0.0
 Goals
-- Implement MVP core features: Create To-Do List and Add Task to List
+- Finalize To-Do List Web App MVP with full visual distinction of completed tasks and polish
 Stories
-- [US-0004] See Lists and Tasks with Visual Distinction
+- [US-0004] Visual Distinction of Completed Tasks
   - [x] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED

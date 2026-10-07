@@ -40,11 +40,18 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
+- [ISSUE-0002] Ensure feature expansion stories are properly staged and verified each sprint
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### v1.0.0
 Goals
-- Expand To-Do List Web App feature completeness, enhance test coverage, and polish task interactions.
+- Refine To-Do List Web App robustness, improve error handling, and validate test coverage across all features.
 Stories
 - [US-0001] Create To-Do List
   - [x] DRAFT

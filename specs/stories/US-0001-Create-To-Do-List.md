@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-07
@@ -16,4 +16,10 @@
 Allows users to organize tasks into separate lists.
 
 ## Test Approach
+Pytest unit tests verifying list/task creation, completion, and deletion.
 
+### Tasks
+- Create Flask app and SQLite models
+- Implement HTML templates with Jinja2
+- Implement CRUD routes for lists and tasks
+- Add automated pytest test suite

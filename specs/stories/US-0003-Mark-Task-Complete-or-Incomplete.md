@@ -16,4 +16,7 @@
 Provides visual and state progress tracking for tasks.
 
 ## Test Approach
+Pytest verification.
 
+### Tasks
+- Add task toggle route

@@ -16,4 +16,7 @@
 Enables users to populate lists with actionable tasks.
 
 ## Test Approach
+Pytest verification.
 
+### Tasks
+- Add task creation route and form

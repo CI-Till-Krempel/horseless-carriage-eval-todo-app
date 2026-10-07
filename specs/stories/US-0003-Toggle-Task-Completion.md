@@ -14,6 +14,7 @@
 
 ## Notes
 Users can toggle task status and see visual distinction for completed tasks.
+- 🚫 BLOCKED (technical) - raised by QA: advance_story_stage('US-0003', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0003' Tested - 1 of 5 tests failed. Fix the failing tests before retrying.
 
 ## Test Approach
 

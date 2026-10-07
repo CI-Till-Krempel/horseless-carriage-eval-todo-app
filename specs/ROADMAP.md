@@ -33,13 +33,6 @@ Stories
 
 
 Stories
-- [US-0002] 
-  - [ ] DRAFT
-  - [ ] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 ---
 
 ### v1.0.0
@@ -53,7 +46,14 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
-- [US-0003] Add Task to List
+- [US-0002] Add Task to List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0003] Delete Task
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED

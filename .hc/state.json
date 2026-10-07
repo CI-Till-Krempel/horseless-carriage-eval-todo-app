@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "product_vision": "Build a simple to-do list web application. A single user should be able to create lists, add tasks, mark tasks complete/incomplete, delete tasks, delete lists, and view everything cleanly in a working web UI. - Product Vision & Architecture setup. - Core backend/frontend setup for creating to-do lists and adding tasks.",
   "product_goals": [],
-  "architecture_vision": "",
+  "architecture_vision": "# Architecture Vision: To-Do List Web App\n\n## Target System Shape\nA lightweight, single-process web application providing an intuitive user interface for managing to-do lists and tasks. Designed for simplicity, ease of local execution, and zero external infrastructure dependencies for MVP.\n\n## Key Quality Attributes\n- **Simplicity & Usability:** Clean, responsive UI with immediate feedback for list and task interactions.\n- **Maintainability:** Modular separation of concerns between backend routing/persistence and frontend rendering.\n- **Testability:** High test coverage for core list and task operations using automated testing frameworks.\n\n## Tech-Stack Guardrails\n- **Backend:** Python with Flask (or FastAPI/LiteStar) for rapid, robust API and template rendering.\n- **Frontend:** HTML5, CSS (e.g., Tailwind or vanilla CSS), and lightweight JS for dynamic updates.\n- **Persistence:** In-memory store with optional lightweight file backing (JSON/SQLite) for session continuity.\n\n## Major Components & Boundaries\n1. **Web UI Layer:** Renders lists, tasks, and handles user interactions (forms, completion toggles, deletions).\n2. **Application / API Service:** Handles business logic for list creation, task association, completion status, and deletions.\n3. **Data Access / Storage Layer:** Encapsulates entity state and persistence mechanisms.",
   "product_backlog": [
     {
       "title": "Epic 1: Core App & List Management",
@@ -40,18 +40,18 @@
     },
     {
       "acceptance_criteria": [
-        "Given a list, When the user adds a task, Then the task is displayed under that list."
+        "Given a created list, When the user adds a short text description and submits, Then the task is added to that list."
       ],
       "description": "As a user, I want to add a task to a list so that I can track work items.",
       "priority": "Must",
       "epic_id": "EP-0001",
       "value_hypothesis": "Allows adding tasks to lists.",
       "title": "Add Task to List",
-      "user_story": "As a user, I want to add a task to a list so that I can track work items.",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
       "type": "User Story",
-      "id": "US-0003",
+      "id": "US-0002",
       "version": "v1.0.0",
-      "status": "Accepted",
+      "status": "Draft",
       "stages_completed": [
         "Draft",
         "Ready",
@@ -62,6 +62,20 @@
       ],
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified task addition feature meets all acceptance criteria and passes automated tests."
+    },
+    {
+      "title": "Delete Task",
+      "epic_id": "EP-0001",
+      "acceptance_criteria": [
+        "Given a task list, When the user clicks delete on a task, Then the task is removed from the list."
+      ],
+      "user_story": "As a user, I want to delete a task so that I can remove unwanted items from my list.",
+      "description": "As a user, I want to delete a task so that I can remove unwanted items from my list.",
+      "priority": "Must",
+      "value_hypothesis": "Allows users to clean up completed or unnecessary tasks.",
+      "type": "User Story",
+      "id": "US-0003",
+      "version": "v1.0.0"
     }
   ],
   "definition_of_done": [
@@ -148,20 +162,21 @@
         "Tested",
         "Accepted"
       ],
-      "test_approach": "Verify via pytest.",
-      "approach": "Leverage the existing Flask app routes and add-task functionality implemented in US-0001, ensuring robust verification and tests.",
+      "test_approach": "Verify via pytest and Flask test client.",
+      "approach": "Add a delete task route to Flask backend and a delete button in templates/index.html, along with corresponding unit tests.",
       "dod_checks": [
         "Automated tests passing",
         "Actual tokens logged"
       ],
       "risks_assumptions": [
-        "US-0003 core implementation was completed alongside US-0001."
+        "In-memory storage handling for deletions is straightforward."
       ],
       "task_checklist": [
-        "Verify task addition route",
-        "Run automated tests"
+        "Add delete task route in app.py",
+        "Add delete button in templates/index.html",
+        "Add unit test for deleting tasks"
       ],
-      "estimate": 10000,
+      "estimate": 12000,
       "code_files": [
         "app.py",
         "templates/index.html",
@@ -188,22 +203,28 @@
       "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
       "rationale": "Initial Sprint 1 scope of To-Do List MVP is fully defined with list creation and task addition.",
       "owner": "ProductOwner"
+    },
+    {
+      "title": "Ready-backlog sufficiency target waived",
+      "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
+      "rationale": "Sprint 3 scope focuses on deleting tasks (US-0003).",
+      "owner": "ProductOwner"
     }
   ],
   "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.32964459
+    "current_usd_spend": 0.64887509
   },
   "token_usage": {
-    "total": 3932279,
+    "total": 5287135,
     "agents": {
       "ScrumOrchestrator": 315380,
-      "ProductOwner": 718173,
+      "ProductOwner": 1345997,
       "Architect": 318077,
       "ScrumMaster": 254239,
-      "DevTeam": 1542774,
+      "DevTeam": 2269806,
       "QA": 783636
     }
   },
@@ -213,8 +234,8 @@
       "actual": 12000
     },
     "US-0003": {
-      "estimate": 10000,
-      "actual": 8000
+      "estimate": 12000,
+      "actual": 10000
     }
   },
   "sprint_report_kpis": {
@@ -1263,7 +1284,8 @@
     "tests/test_app.py",
     ".coverage",
     "__pycache__/app.cpython-311.pyc",
-    "tests/__pycache__/test_app.cpython-311-pytest-8.0.0.pyc"
+    "tests/__pycache__/test_app.cpython-311-pytest-8.0.0.pyc",
+    "specs/stories/US-0003-Delete-Task.md"
   ],
   "last_check_build": {
     "checked": "requirements.txt",

@@ -46,6 +46,13 @@ Stories
 Goals
 - Implement MVP core features: Create To-Do List and Add Task to List
 Stories
+- [US-0004] See Lists and Tasks with Visual Distinction
+  - [x] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0001] Create To-Do List
   - [x] DRAFT
   - [x] READY

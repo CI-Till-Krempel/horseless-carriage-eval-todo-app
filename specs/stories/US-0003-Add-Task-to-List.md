@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Add Task to List
-- Status: Tested
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-07

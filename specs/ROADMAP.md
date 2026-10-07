@@ -74,6 +74,26 @@ Stories
   - [ ] ACCEPTED
 
 
+### v1.1.0
+Goals
+- Enhance UI/UX styling, filter tasks by status, and add search/filtering capabilities for Sprint 2.
+Stories
+- [US-0006] Filter Tasks by Status
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0001] Maintain automated test coverage and seamless pipeline execution for upcoming feature sprints
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

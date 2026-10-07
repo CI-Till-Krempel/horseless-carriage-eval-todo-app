@@ -31,19 +31,28 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
+- [ISSUE-0001] Ensure pytest test execution cleanly outputs coverage summaries to support QA stage advancement smoothly
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### v1.0.0
 Goals
-- Establish MVP product vision, epics, and stories for the To-Do List Web App.
+- Enhance To-Do List Web App UI/UX, add input validation, polish task management responsiveness, and expand automated test coverage.
 Stories
 - [US-0001] Create To-Do List
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [x] TESTED
-  - [x] ACCEPTED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY
@@ -73,6 +82,13 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] View Lists and Tasks with Visual Distinction
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0007] UI/UX Polish and Responsive Layout
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

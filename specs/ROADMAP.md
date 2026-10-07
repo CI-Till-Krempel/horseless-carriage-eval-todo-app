@@ -33,7 +33,7 @@ Stories
 
 
 Stories
-- [US-0002] 
+- [ISSUE-0001] Ensure rigorous test fixture ID isolation before implementing stories to prevent state leakage between tests.
   - [ ] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED
@@ -53,13 +53,20 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
-- [US-0003] Add Task to List
+- [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0003] Delete Task
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 
 
 ## Task board (Kanban)

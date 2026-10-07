@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6">
+        <h1 class="text-3xl font-bold mb-6 text-gray-800">My To-Do Lists</h1>
+
+        <!-- Create List Form -->
+        <form action="/lists" method="POST" class="mb-8 flex gap-2">
+            <input type="text" name="name" placeholder="New list name..." required
+                   class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Create List</button>
+        </form>
+
+        <!-- Lists Display -->
+        <div class="space-y-6">
+            {% for lst in lists %}
+            <div class="border rounded-lg p-4 bg-gray-50">
+                <h2 class="text-xl font-semibold mb-3 text-gray-700">{{ lst.name }}</h2>
+
+                <!-- Task List -->
+                <ul class="space-y-2 mb-4">
+                    {% for task in lst.tasks %}
+                    <li class="flex items-center justify-between bg-white px-3 py-2 rounded border">
+                        <span class="text-gray-800">{{ task.title }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <!-- Add Task Form -->
+                <form action="/lists/{{ lst.id }}/tasks" method="POST" class="flex gap-2">
+                    <input type="text" name="title" placeholder="New task description..." required
+                           class="flex-1 px-3 py-1 text-sm border rounded focus:outline-none focus:ring-1 focus:ring-blue-500">
+                    <button type="submit" class="bg-green-600 text-white px-4 py-1 text-sm rounded hover:bg-green-700 transition">Add Task</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -38,20 +38,6 @@ Goals
 - Deliver core To-Do List web application MVP functionality.
 
 Stories
-- [US-0005] Delete List
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-0004] Delete Task
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 - [US-0001] Create To-Do List
   - [x] DRAFT
   - [x] READY
@@ -73,6 +59,20 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
+- [US-0004] Delete Task
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0005] Delete List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 
 ## Task board (Kanban)

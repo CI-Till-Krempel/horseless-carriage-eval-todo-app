@@ -16,4 +16,7 @@
 Allows removal of obsolete lists.
 
 ## Test Approach
+Run pytest on test_todo.py covering list deletion.
 
+### Tasks
+- Verify list deletion route, cascade delete, and tests

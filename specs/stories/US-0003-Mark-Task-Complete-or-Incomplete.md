@@ -16,4 +16,7 @@
 Provides clear visual feedback on task progress.
 
 ## Test Approach
+Run pytest on test_todo.py covering task completion toggling.
 
+### Tasks
+- Verify completion toggle route, view logic, and tests

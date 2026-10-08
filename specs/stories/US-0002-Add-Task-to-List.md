@@ -16,4 +16,7 @@
 Enables task tracking within specific lists.
 
 ## Test Approach
+Verify pytest tests for task addition.
 
+### Tasks
+- Verify task addition implementation and tests

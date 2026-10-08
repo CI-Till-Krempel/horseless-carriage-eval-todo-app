@@ -16,4 +16,7 @@
 Keeps lists clean and relevant.
 
 ## Test Approach
+Run pytest on test_todo.py covering task deletion.
 
+### Tasks
+- Verify task deletion route, cascade, and tests

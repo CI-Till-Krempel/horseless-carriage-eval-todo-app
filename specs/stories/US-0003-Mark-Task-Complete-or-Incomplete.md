@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-08
@@ -16,4 +16,7 @@
 Provides clear visual feedback on task progress.
 
 ## Test Approach
+Run pytest on test_todo.py covering task completion toggling.
 
+### Tasks
+- Verify completion toggle route, view logic, and tests

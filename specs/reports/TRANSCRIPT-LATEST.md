@@ -7,7 +7,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## QA
-- 🔧 `merge_story_pr(pr_id=437)`
 - 🔧 `transfer_to_agent(agent_name="ProductOwner")`
 
 ## ProductOwner
@@ -352,3 +351,4 @@ Updating sprint report with KPI metrics for Sprint 3.
 
 Creating the sprint report for Sprint 3.
 - 🔧 `create_sprint_report(accomplishments=['Successfully deliv..., summary="Sprint 3 successfull...")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`

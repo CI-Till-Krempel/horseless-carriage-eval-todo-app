@@ -2,7 +2,7 @@
 
 - Story ID: US-0005
 - Title: Delete List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-08
@@ -16,4 +16,7 @@
 Allows removal of obsolete lists.
 
 ## Test Approach
+Run pytest on test_todo.py covering list deletion.
 
+### Tasks
+- Verify list deletion route, cascade delete, and tests

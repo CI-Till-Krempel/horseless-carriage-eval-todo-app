@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete Task
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-08
@@ -16,4 +16,7 @@
 Keeps lists clean and relevant.
 
 ## Test Approach
+Run pytest on test_todo.py covering task deletion.
 
+### Tasks
+- Verify task deletion route, cascade, and tests

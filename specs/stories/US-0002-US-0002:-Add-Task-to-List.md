@@ -16,4 +16,9 @@
 Users can add descriptive tasks to their to-do lists.
 
 ## Test Approach
+Use pytest and Flask test client to verify adding tasks to lists.
 
+### Tasks
+- Add task form to templates/index.html
+- Verify route handling in app.py
+- Add unit tests for adding tasks

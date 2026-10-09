@@ -16,4 +16,9 @@
 
 
 ## Test Approach
+Pytest for backend and route verification.
 
+### Tasks
+- Initialize Flask project and dependencies
+- Implement list creation and routing
+- Add unit tests

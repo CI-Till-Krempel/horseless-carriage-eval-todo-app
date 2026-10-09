@@ -16,4 +16,9 @@
 
 
 ## Test Approach
+Pytest verification of task toggle endpoint.
 
+### Tasks
+- Add toggle route in Flask
+- Update template for visual distinction
+- Add unit tests for completion toggle

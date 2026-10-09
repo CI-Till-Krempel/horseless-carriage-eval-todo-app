@@ -16,4 +16,9 @@
 
 
 ## Test Approach
+Pytest for task creation verification.
 
+### Tasks
+- Add task model and database table
+- Implement task creation route and form
+- Add tests for task creation

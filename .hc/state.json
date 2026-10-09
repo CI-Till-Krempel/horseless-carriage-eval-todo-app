@@ -99,10 +99,173 @@
   ],
   "sprint_goal": "Deliver core to-do list web application features (lists, tasks, completion, deletion, UI).",
   "sprint_number": 1,
-  "sprint_backlog_pr_sprint": 0,
-  "planning_output_commit_count": 0,
-  "sprint_backlog_pr_content_baseline": 0,
-  "sprint_backlog": [],
+  "sprint_backlog_pr_sprint": 1,
+  "planning_output_commit_count": 2,
+  "sprint_backlog_pr_content_baseline": 2,
+  "sprint_backlog": [
+    {
+      "acceptance_criteria": [
+        "Given the home page is open, When the user enters a name for a new list and clicks create, Then a new to-do list is created and displayed."
+      ],
+      "id": "US-0001",
+      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "epic_id": "EP-0001",
+      "priority": "Must",
+      "title": "Create a new to-do list",
+      "type": "User Story",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "version": "Backlog (unplanned)",
+      "test_approach": "Pytest for backend and route verification.",
+      "risks_assumptions": [
+        "Simple embedded SQLite keeps state intact within test process."
+      ],
+      "dod_checks": [
+        "Automated tests pass",
+        "Code reviewed-ready",
+        "Tokens logged"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "requirements.txt",
+        "tests/test_app.py"
+      ],
+      "approach": "Implement Flask app with SQLite persistence for lists and tasks, and a basic HTML UI.",
+      "estimate": 500,
+      "tasks": [
+        "Initialize Flask project and dependencies",
+        "Implement list creation and routing",
+        "Add unit tests"
+      ]
+    },
+    {
+      "depends_on": [
+        "US-0001"
+      ],
+      "title": "Add a task to a list",
+      "acceptance_criteria": [
+        "Given a to-do list exists, When the user enters a short text description and adds it to the list, Then the task appears under that list."
+      ],
+      "epic_id": "EP-0001",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "priority": "Must",
+      "id": "US-0002",
+      "type": "User Story",
+      "version": "Backlog (unplanned)",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "tasks": [
+        "Add task model and database table",
+        "Implement task creation route and form",
+        "Add tests for task creation"
+      ],
+      "estimate": 500,
+      "dod_checks": [
+        "Automated tests pass",
+        "Code reviewed-ready",
+        "Tokens logged"
+      ],
+      "risks_assumptions": [
+        "Foreign key constraints in SQLite for tasks belonging to lists."
+      ],
+      "approach": "Add task addition capability to lists in Flask app.",
+      "test_approach": "Pytest for task creation verification.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ]
+    },
+    {
+      "title": "Mark task complete or incomplete",
+      "id": "US-0003",
+      "depends_on": [
+        "US-0002"
+      ],
+      "user_story": "As a user, I want to mark a task as complete or incomplete so that I can see progress.",
+      "epic_id": "EP-0001",
+      "priority": "Must",
+      "acceptance_criteria": [
+        "Given a task exists in a list, When the user clicks complete/incomplete, Then the task status toggles and is visually distinguished."
+      ],
+      "type": "User Story",
+      "version": "Backlog (unplanned)",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "tasks": [
+        "Add toggle route in Flask",
+        "Update template for visual distinction",
+        "Add unit tests for completion toggle"
+      ],
+      "test_approach": "Pytest verification of task toggle endpoint.",
+      "risks_assumptions": [
+        "CSS class for completed tasks."
+      ],
+      "estimate": 400,
+      "approach": "Implement task toggle route and visual styling for completed tasks in UI.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "dod_checks": [
+        "Automated tests pass",
+        "Code reviewed-ready",
+        "Tokens logged"
+      ]
+    },
+    {
+      "priority": "Must",
+      "id": "US-0004",
+      "title": "Delete tasks and lists",
+      "user_story": "As a user, I want to delete tasks or entire lists so that I can keep my workspace clean.",
+      "acceptance_criteria": [
+        "Given tasks and lists exist, When the user clicks delete on a task or list, Then the item is removed from the application."
+      ],
+      "depends_on": [
+        "US-0003"
+      ],
+      "epic_id": "EP-0001",
+      "type": "User Story",
+      "version": "Backlog (unplanned)",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "risks_assumptions": [
+        "Cascade delete for tasks when list is deleted."
+      ],
+      "estimate": 400,
+      "tasks": [
+        "Implement delete task and delete list routes",
+        "Add delete buttons to UI",
+        "Add unit tests for deletion"
+      ],
+      "approach": "Implement deletion endpoints and UI buttons for tasks and lists.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "dod_checks": [
+        "Automated tests pass",
+        "Code reviewed-ready",
+        "Tokens logged"
+      ],
+      "test_approach": "Pytest verification of deletion endpoints."
+    }
+  ],
   "impediment_log": [],
   "retro_actions": [],
   "decision_log": [],
@@ -110,17 +273,34 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.02380831
+    "current_usd_spend": 0.13107839
   },
   "token_usage": {
-    "total": 315539,
+    "total": 1434057,
     "agents": {
       "ScrumOrchestrator": 24954,
-      "ProductOwner": 271570,
-      "ScrumMaster": 19015
+      "ProductOwner": 366847,
+      "ScrumMaster": 80880,
+      "DevTeam": 699007,
+      "Architect": 116476,
+      "QA": 145893
     }
   },
-  "story_estimates": {},
+  "story_estimates": {
+    "US-0001": {
+      "estimate": 500,
+      "actual": 450
+    },
+    "US-0002": {
+      "estimate": 500
+    },
+    "US-0003": {
+      "estimate": 400
+    },
+    "US-0004": {
+      "estimate": 400
+    }
+  },
   "sprint_report_kpis": {},
   "kpi_update_count": 0,
   "kpi_baseline": 0,
@@ -154,12 +334,24 @@
     "specs/stories/US-0001-Create-a-new-to-do-list.md",
     "specs/stories/US-0002-Add-a-task-to-a-list.md",
     "specs/stories/US-0003-Mark-task-complete-or-incomplete.md",
-    "specs/stories/US-0004-Delete-tasks-and-lists.md"
+    "specs/stories/US-0004-Delete-tasks-and-lists.md",
+    "specs/architecture/ARCHITECTURE-VISION.md",
+    "requirements.txt",
+    "app.py",
+    "templates/index.html",
+    "tests/test_app.py"
   ],
   "last_check_build": null,
-  "last_pr_checks": null,
+  "last_pr_checks": {
+    "passing": true,
+    "git_push_count_at_check": 0
+  },
   "git_push_count": 0,
-  "pr_review_calls": {},
+  "pr_review_calls": {
+    "DevTeam": 1,
+    "Architect": 1,
+    "QA": 1
+  },
   "architect_review_baseline": 0,
   "qa_review_baseline": 0,
   "qa_tested_baseline": 0,

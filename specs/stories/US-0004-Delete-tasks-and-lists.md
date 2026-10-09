@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete tasks and lists
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-09

@@ -1,0 +1,1 @@
+# Scrum Master Customization\n\nEnsure proactive tracking and cleanup of temporary cache files and build artifacts prior to branch switching and PR creation.\n

@@ -1,0 +1,1 @@
+# ScrumMaster Customization\n\nEnsure release PR merging and status validation are strictly monitored before sprint transition.

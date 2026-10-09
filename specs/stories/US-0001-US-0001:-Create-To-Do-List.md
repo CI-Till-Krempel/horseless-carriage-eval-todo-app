@@ -14,6 +14,7 @@
 
 ## Notes
 Users can successfully create and view multiple named to-do lists.
+- ⚠️ REVIEW DENIED at Tested by QA: check_build failed because requirements.txt specifies apex==0.1 which does not exist on PyPI. Please remove apex==0.1 from requirements.txt.
 
 ## Test Approach
 Write pytest unit tests using Flask test client to verify list creation and rendering.

@@ -57,9 +57,12 @@
       "version": "v1.0",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready"
+      "status": "Tested"
     },
     {
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
@@ -150,7 +153,7 @@
   "sprint_goal": "Build core to-do list backend and web UI supporting list creation, tasks, and completion tracking.",
   "sprint_number": 1,
   "sprint_backlog_pr_sprint": 1,
-  "planning_output_commit_count": 4,
+  "planning_output_commit_count": 7,
   "sprint_backlog_pr_content_baseline": 1,
   "sprint_backlog": [
     {
@@ -200,6 +203,50 @@
       "review_denial": null,
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified list creation functionality and test coverage."
+    },
+    {
+      "id": "US-0002",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.",
+      "title": "US-0002: Add Task to List",
+      "priority": "Must",
+      "acceptance_criteria": [
+        "Given an existing list, When the user adds a task with a description, Then the task appears within that list."
+      ],
+      "value_hypothesis": "Users can add descriptive tasks to their to-do lists.",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.",
+      "epic_id": "EP-0001",
+      "type": "User Story",
+      "version": "v1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
+      ],
+      "status": "Tested",
+      "approach": "Add a form to each list card on the home page to submit new task descriptions via POST /lists/<list_id>/tasks.",
+      "risks_and_assumptions": [
+        "Assuming list IDs are correctly routed in the template."
+      ],
+      "test_approach": "Use pytest and Flask test client to verify adding tasks to lists.",
+      "code_files": [
+        "app.py",
+        "models.py",
+        "templates/index.html",
+        "test_app.py"
+      ],
+      "dod_checks": [
+        "Task description input works",
+        "Tasks are displayed inside their respective list",
+        "Automated tests pass"
+      ],
+      "tasks": [
+        "Add task form to templates/index.html",
+        "Verify route handling in app.py",
+        "Add unit tests for adding tasks"
+      ],
+      "estimate": 1000
     }
   ],
   "impediment_log": [],
@@ -216,23 +263,27 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.21253829999999999
+    "current_usd_spend": 0.29900054
   },
   "token_usage": {
-    "total": 2485723,
+    "total": 3397373,
     "agents": {
       "ScrumOrchestrator": 24954,
-      "ProductOwner": 810793,
+      "ProductOwner": 857300,
       "ScrumMaster": 234302,
-      "DevTeam": 854960,
-      "Architect": 219884,
-      "QA": 340830
+      "DevTeam": 1430934,
+      "Architect": 363348,
+      "QA": 486535
     }
   },
   "story_estimates": {
     "US-0001": {
       "estimate": 1500,
       "actual": 1200
+    },
+    "US-0002": {
+      "estimate": 1000,
+      "actual": 800
     }
   },
   "sprint_report_kpis": null,
@@ -264,7 +315,7 @@
   ],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 5,
+  "dev_touch_baseline": 9,
   "unadvanced_write_nudge_baseline": 0,
   "sprint_files_touched": [
     "specs/requirements/PRD-TodoList-MVP.md",
@@ -282,7 +333,11 @@
     "app.py",
     "templates/index.html",
     "requirements.txt",
-    "test_app.py"
+    "test_app.py",
+    ".coverage",
+    "__pycache__/app.cpython-311.pyc",
+    "__pycache__/models.cpython-311.pyc",
+    "__pycache__/test_app.cpython-311-pytest-8.0.0.pyc"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -297,11 +352,11 @@
   "pr_review_calls": {
     "ScrumMaster": 3,
     "DevTeam": 1,
-    "Architect": 2,
-    "QA": 3
+    "Architect": 3,
+    "QA": 4
   },
-  "architect_review_baseline": 2,
-  "qa_review_baseline": 3,
+  "architect_review_baseline": 3,
+  "qa_review_baseline": 4,
   "qa_tested_baseline": 0,
   "sprint_backlog_engagement_baseline": {},
   "sprint_report_pending_release": false,

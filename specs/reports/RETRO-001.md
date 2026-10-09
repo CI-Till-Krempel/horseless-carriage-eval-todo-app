@@ -1,9 +1,9 @@
 # Retro Items
 
-## Optimize token budget allocation and monitor burn rates closely to prevent mid-sprint budget exhaustion.
+## Refine token budget monitoring and task scoping for Sprint 3 to prevent premature token exhaustion.
 - Kind: Retro Action
 - Category: technical
 - Owner: DevTeam
 - Status: open
-- Success Metric: Sprint completes all planned stories within the token budget.
-- Filed As: ISSUE-0001
+- Success Metric: Sprint 3 tasks complete successfully within budget limits.
+- Filed As: ISSUE-0002

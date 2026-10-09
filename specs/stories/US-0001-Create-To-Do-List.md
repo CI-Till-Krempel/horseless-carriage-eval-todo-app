@@ -16,4 +16,14 @@
 Users can create lists to categorize their tasks.
 
 ## Test Approach
+Write pytest test suite covering list creation, task addition, completion toggling, deletion of tasks and lists, and overview rendering.
 
+### Tasks
+- Initialize Flask app and SQLAlchemy models
+- Implement list creation (US-0001)
+- Implement task addition (US-0002)
+- Implement task completion toggle (US-0003)
+- Implement task deletion (US-0004)
+- Implement list deletion (US-0005)
+- Implement overview page (US-0006)
+- Write tests and verify build

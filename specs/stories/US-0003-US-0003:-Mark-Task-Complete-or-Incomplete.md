@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: US-0003: Mark Task Complete or Incomplete
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-09
@@ -16,4 +16,9 @@
 Users can easily toggle task status and visually see completion.
 
 ## Test Approach
+Use pytest and Flask test client to verify task completion toggling.
 
+### Tasks
+- Add toggle route in app.py
+- Add toggle button in templates/index.html
+- Add unit tests for toggling task completion

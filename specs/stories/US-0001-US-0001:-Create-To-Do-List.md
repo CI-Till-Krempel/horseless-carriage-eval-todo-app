@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: US-0001: Create To-Do List
-- Status: Tested
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-09

@@ -14,6 +14,7 @@
 
 ## Notes
 
+- ⚠️ REVIEW DENIED at Tested by QA: flask_sqlalchemy is required in app.py but missing from requirements.txt, causing ModuleNotFoundError during test execution.
 
 ## Test Approach
 Pytest for backend and route verification.

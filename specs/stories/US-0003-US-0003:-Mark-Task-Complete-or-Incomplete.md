@@ -16,4 +16,9 @@
 Users can easily toggle task status and visually see completion.
 
 ## Test Approach
+Use pytest and Flask test client to verify task completion toggling.
 
+### Tasks
+- Add toggle route in app.py
+- Add toggle button in templates/index.html
+- Add unit tests for toggling task completion

@@ -16,4 +16,9 @@
 
 
 ## Test Approach
+Pytest verification of deletion endpoints.
 
+### Tasks
+- Implement delete task and delete list routes
+- Add delete buttons to UI
+- Add unit tests for deletion

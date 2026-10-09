@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: US-0001: Create To-Do List
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-09
@@ -14,7 +14,6 @@
 
 ## Notes
 Users can successfully create and view multiple named to-do lists.
-- ⚠️ REVIEW DENIED at Tested by QA: check_build failed because requirements.txt specifies apex==0.1 which does not exist on PyPI. Please remove apex==0.1 from requirements.txt.
 
 ## Test Approach
 Write pytest unit tests using Flask test client to verify list creation and rendering.

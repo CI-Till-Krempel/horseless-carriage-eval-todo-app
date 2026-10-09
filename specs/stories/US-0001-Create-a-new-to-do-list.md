@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create a new to-do list
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-09
@@ -14,7 +14,6 @@
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: flask_sqlalchemy is required in app.py but missing from requirements.txt, causing ModuleNotFoundError during test execution.
 
 ## Test Approach
 Pytest for backend and route verification.

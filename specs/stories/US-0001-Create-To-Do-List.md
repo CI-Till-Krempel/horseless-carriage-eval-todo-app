@@ -14,6 +14,7 @@
 
 ## Notes
 Users can create lists to categorize their tasks.
+- ⚠️ REVIEW DENIED at Tested by QA: check_build failed because SQLAlchemy==3.1.1 does not exist in PyPI (max version is 2.x). Please fix requirements.txt to use a valid SQLAlchemy version (e.g. 2.0.25).
 
 ## Test Approach
 Write pytest test suite covering list creation, task addition, completion toggling, deletion of tasks and lists, and overview rendering.

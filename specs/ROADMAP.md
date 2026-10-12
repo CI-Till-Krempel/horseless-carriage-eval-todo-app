@@ -43,7 +43,7 @@ Stories
 - [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
@@ -71,6 +71,13 @@ Stories
 - [US-0006] View All Lists and Tasks
   - [x] DRAFT
   - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0001] Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates
+  - [ ] DRAFT
+  - [ ] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED

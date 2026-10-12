@@ -35,7 +35,7 @@ Stories
 
 ### v0.1.0
 Goals
-- Build core to-do list web application MVP
+- Build core to-do list web application MVP (US-0001 through US-0005)
 Stories
 - [US-0001] Create To-Do List
   - [x] DRAFT

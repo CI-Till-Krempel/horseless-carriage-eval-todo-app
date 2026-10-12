@@ -16,4 +16,7 @@
 Users can add descriptive tasks to specific lists.
 
 ## Test Approach
+Tested via pytest integration tests.
 
+### Tasks
+- Implement task addition endpoint and UI form

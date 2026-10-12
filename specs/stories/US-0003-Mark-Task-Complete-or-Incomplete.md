@@ -16,4 +16,7 @@
 Users can toggle task completion status with visual feedback.
 
 ## Test Approach
+Tested via pytest integration tests.
 
+### Tasks
+- Implement task completion toggle endpoint and visual distinction

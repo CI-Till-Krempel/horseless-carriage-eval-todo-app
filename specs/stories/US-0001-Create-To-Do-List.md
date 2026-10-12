@@ -16,4 +16,9 @@
 Users can successfully create and view named to-do lists via the web UI.
 
 ## Test Approach
+Run pytest on test suite covering all CRUD operations.
 
+### Tasks
+- Create Flask app and in-memory data store
+- Implement templates and static UI
+- Write unit and integration tests via pytest

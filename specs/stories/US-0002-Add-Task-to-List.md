@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to List
-- Status: Ready
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-12
@@ -16,4 +16,10 @@
 Enables users to record items to accomplish within a specific list.
 
 ## Test Approach
+Add unit tests for adding tasks to an existing list.
 
+### Tasks
+- Update todo_lists data structure for tasks
+- Implement add_task route
+- Add task input form in index.html
+- Write pytest tests for task addition

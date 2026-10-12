@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "product_vision": "",
+  "product_vision": "Build a simple to-do list web application. A single user should be able to: 1. Create a new to-do list with a name. 2. Add a task to a list, with a short text description. 3. Mark a task as complete or incomplete. 4. Delete a task. 5. Delete an entire list (and its tasks). 6. See all their lists and, within a list, all its tasks, with completed tasks visually distinguished from incomplete ones. - Single user, no authentication. - Simple in-memory or file-based persistence for the session/process.",
   "product_goals": [],
   "architecture_vision": "",
   "product_backlog": [
@@ -8,7 +8,9 @@
       "description": "Core backend and web UI for managing to-do lists and tasks",
       "title": "To-Do App Core Functionality",
       "id": "EP-0001",
-      "type": "Epic"
+      "type": "Epic",
+      "status": "Draft",
+      "priority": "Must"
     },
     {
       "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
@@ -30,7 +32,7 @@
         "Accepted"
       ],
       "status": "Accepted",
-      "version": "Backlog (unplanned)",
+      "version": "v0.1",
       "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
       "blocked": null,
       "acceptance_check_count": 1,
@@ -51,9 +53,15 @@
       "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Ready"
+      "status": "Accepted",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified task addition functionality works correctly via the Flask app and test suite."
     },
     {
       "value_hypothesis": "Provides feedback on task completion status.",
@@ -130,6 +138,17 @@
         "Ready"
       ],
       "status": "Ready"
+    },
+    {
+      "title": "Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates",
+      "overview": "Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates.",
+      "owner": "DevTeam",
+      "type": "Issue",
+      "id": "ISSUE-0001",
+      "priority": "Should",
+      "status": "Draft",
+      "description": "Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates.",
+      "version": "Backlog (unplanned)"
     }
   ],
   "definition_of_done": [
@@ -141,11 +160,11 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Build core To-Do List Web App MVP functionality including list and task management web UI",
-  "sprint_number": 1,
-  "sprint_backlog_pr_sprint": 1,
-  "planning_output_commit_count": 5,
-  "sprint_backlog_pr_content_baseline": 2,
+  "sprint_goal": "Implement task addition functionality (US-0002) for the To-Do List Web App MVP",
+  "sprint_number": 2,
+  "sprint_backlog_pr_sprint": 2,
+  "planning_output_commit_count": 11,
+  "sprint_backlog_pr_content_baseline": 8,
   "sprint_backlog": [
     {
       "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
@@ -194,15 +213,78 @@
       ],
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified list creation functionality works correctly via the Flask web UI and automated test suite."
+    },
+    {
+      "epic_id": "EP-0001",
+      "value_hypothesis": "Enables users to record items to accomplish within a specific list.",
+      "title": "Add Task to List",
+      "id": "US-0002",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user adds a task with a text description, Then the task appears under that list."
+      ],
+      "priority": "Must",
+      "type": "User Story",
+      "version": "Backlog (unplanned)",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
+      ],
+      "status": "Accepted",
+      "dod_checks": [
+        "Code written and reviewed-ready",
+        "Automated tests written and passing",
+        "Tokens logged"
+      ],
+      "approach": "Update todo_lists to store list of task dicts and add task addition route and UI form.",
+      "estimate": 1000,
+      "test_approach": "Add unit tests for adding tasks to an existing list.",
+      "tasks": [
+        "Update todo_lists data structure for tasks",
+        "Implement add_task route",
+        "Add task input form in index.html",
+        "Write pytest tests for task addition"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "risks_assumptions": [
+        "In-memory storage resets on restart, acceptable for MVP."
+      ],
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified task addition functionality works correctly via the Flask app and test suite."
     }
   ],
   "impediment_log": [],
-  "retro_actions": [],
+  "retro_actions": [
+    {
+      "action": "Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates.",
+      "owner": "DevTeam",
+      "success_metric": "All planned stories have estimates and clear plans before coding starts.",
+      "status": "open",
+      "category": "technical",
+      "sprint_number": 1,
+      "issue_id": "ISSUE-0001"
+    }
+  ],
   "decision_log": [
     {
       "title": "Ready-backlog sufficiency target waived",
       "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
       "rationale": "All 6 user stories representing the complete MVP scope of the To-Do List Web App have been defined and marked Ready.",
+      "owner": "ProductOwner"
+    },
+    {
+      "title": "Ready-backlog sufficiency target waived",
+      "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
+      "rationale": "Remaining MVP stories (US-0002 through US-0006) are already defined and ready for development.",
       "owner": "ProductOwner"
     }
   ],
@@ -210,28 +292,31 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.17896222
+    "current_usd_spend": 0.40505165
   },
   "token_usage": {
-    "total": 2068937,
+    "total": 2021368,
     "agents": {
-      "ScrumOrchestrator": 105735,
-      "ProductOwner": 732737,
-      "ScrumMaster": 120451,
-      "DevTeam": 666611,
-      "Architect": 250916,
-      "QA": 192487
+      "ScrumMaster": 44464,
+      "ProductOwner": 297873,
+      "DevTeam": 1016582,
+      "Architect": 323716,
+      "QA": 338733
     }
   },
   "story_estimates": {
     "US-0001": {
       "estimate": 1000,
       "actual": 450
+    },
+    "US-0002": {
+      "estimate": 1000,
+      "actual": 500
     }
   },
-  "sprint_report_kpis": null,
-  "kpi_update_count": 0,
-  "kpi_baseline": 0,
+  "sprint_report_kpis": {},
+  "kpi_update_count": 1,
+  "kpi_baseline": 1,
   "backlog_scope_complete": true,
   "repo": {
     "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
@@ -249,11 +334,11 @@
     }
   ],
   "hc_version": "0.1.0",
-  "retro_baseline": 0,
+  "retro_baseline": 1,
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 4,
+  "dev_touch_baseline": 7,
   "unadvanced_write_nudge_baseline": 0,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
@@ -268,7 +353,17 @@
     "requirements.txt",
     "app.py",
     "templates/index.html",
-    "tests/test_app.py"
+    "tests/test_app.py",
+    "specs/requirements/ISSUE-0001-Ensure-early-alignment-between-Product-Owner-and-DevTeam-on-initial-story-scope-and-estimates..md",
+    "specs/reports/TRANSCRIPT-001.md",
+    "specs/reports/TRANSCRIPT-LATEST.md",
+    "specs/reports/SPRINT-REPORT-001.md",
+    "specs/reports/SPRINT-REPORT-LATEST.md",
+    "specs/reports/RETRO-001.md",
+    "specs/requirements/ISSUE-0001-Ensure-early-alignment-between-Product-Owner-and-DevTeam-on-initial-story-scope-and-estimates.md",
+    ".coverage",
+    "__pycache__/app.cpython-311.pyc",
+    "tests/__pycache__/test_app.cpython-311-pytest-9.1.1.pyc"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -281,14 +376,18 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
+    "Architect": 4,
+    "QA": 4,
+    "DevTeam": 2
+  },
+  "architect_review_baseline": 4,
+  "qa_review_baseline": 4,
+  "qa_tested_baseline": 1,
+  "sprint_backlog_engagement_baseline": {
     "Architect": 2,
     "QA": 2,
     "DevTeam": 1
   },
-  "architect_review_baseline": 2,
-  "qa_review_baseline": 2,
-  "qa_tested_baseline": 0,
-  "sprint_backlog_engagement_baseline": {},
   "sprint_report_pending_release": false,
   "blocking_interactions": [
     {
@@ -307,6 +406,10 @@
   "steering_baseline": 0,
   "steering_proposals": [],
   "blocked_story_ids_as_of_last_report": [],
-  "accepted_count_baseline": 0,
-  "version_goals": {}
+  "accepted_count_baseline": 1,
+  "version_goals": {
+    "v0.1": [
+      "Implement task addition functionality (US-0002) for the To-Do List Web App MVP"
+    ]
+  }
 }

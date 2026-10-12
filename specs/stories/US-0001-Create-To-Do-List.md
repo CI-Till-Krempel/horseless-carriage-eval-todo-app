@@ -14,6 +14,7 @@
 
 ## Notes
 Users can successfully create and view named to-do lists via the web UI.
+- ⚠️ REVIEW DENIED at Tested by QA: 3 of 6 tests failed during test suite execution.
 
 ## Test Approach
 Run pytest on test suite covering all CRUD operations.

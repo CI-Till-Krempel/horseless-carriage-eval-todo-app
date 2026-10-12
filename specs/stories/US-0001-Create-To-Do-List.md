@@ -14,6 +14,7 @@
 
 ## Notes
 Allows users to organize tasks into separate named lists.
+- 🚫 BLOCKED (technical) - raised by ScrumMaster: ScrumMaster and DevTeam bounced transfer_to_agent 3x with no progress - 🔁 [TRANSFER LOOP DETECTED] ScrumMaster and DevTeam have handed off to each other 3 times in a row with no other tool call in between - refusing this transfer. Stop transferring and actually call a tool that makes progress (e.g. the mandatory step you're both routing around), or explain the blocker instead of handing off again.
 
 ## Test Approach
 

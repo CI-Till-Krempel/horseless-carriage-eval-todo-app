@@ -45,3 +45,26 @@ def test_delete_task(client):
     assert response.status_code == 200
     assert len(todo_lists['Personal']) == 0
     assert b'Gym' not in response.data
+
+def test_delete_entire_list(client):
+    client.post('/lists', data={'list_name': 'Temporary'}, follow_redirects=True)
+    client.post('/lists/Temporary/tasks', data={'task_description': 'Temp task'}, follow_redirects=True)
+    assert 'Temporary' in todo_lists
+
+    response = client.post('/lists/Temporary/delete', follow_redirects=True)
+    assert response.status_code == 200
+    assert 'Temporary' not in todo_lists
+    assert b'Temporary' not in response.data
+
+def test_view_all_lists_and_tasks(client):
+    client.post('/lists', data={'list_name': 'ListA'}, follow_redirects=True)
+    client.post('/lists/ListA/tasks', data={'task_description': 'TaskA1'}, follow_redirects=True)
+    client.post('/lists', data={'list_name': 'ListB'}, follow_redirects=True)
+    client.post('/lists/ListB/tasks', data={'task_description': 'TaskB1'}, follow_redirects=True)
+
+    response = client.get('/')
+    assert response.status_code == 200
+    assert b'ListA' in response.data
+    assert b'TaskA1' in response.data
+    assert b'ListB' in response.data
+    assert b'TaskB1' in response.data

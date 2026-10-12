@@ -16,4 +16,7 @@
 Users can delete individual tasks from a list.
 
 ## Test Approach
+Tested via pytest integration tests.
 
+### Tasks
+- Implement task deletion endpoint and UI button

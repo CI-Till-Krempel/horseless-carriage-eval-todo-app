@@ -16,4 +16,7 @@
 Users can delete entire lists along with all nested tasks.
 
 ## Test Approach
+Tested via pytest integration tests.
 
+### Tasks
+- Implement list deletion endpoint and UI button

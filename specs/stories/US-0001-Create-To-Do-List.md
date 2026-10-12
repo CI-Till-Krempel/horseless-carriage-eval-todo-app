@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-12
@@ -16,4 +16,9 @@
 Users can successfully create and view named to-do lists via the web UI.
 
 ## Test Approach
+Run pytest on test suite covering all CRUD operations.
 
+### Tasks
+- Create Flask app and in-memory data store
+- Implement templates and static UI
+- Write unit and integration tests via pytest

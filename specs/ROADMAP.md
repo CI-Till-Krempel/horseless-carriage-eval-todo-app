@@ -22,8 +22,16 @@ Tip: If you prefer standard checkboxes only, use the Kanban tables below and kee
 ### v0.1 — MVP (target: YYYY-MM)
 Goals
 - Implement task addition functionality (US-0002) for the To-Do List Web App MVP
+- Implement task completion toggle functionality (US-0003) for the To-Do List Web App MVP
 Stories
 - [US-0001] Create To-Do List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
@@ -40,19 +48,12 @@ Stories
 
 
 Stories
-- [US-0002] Add Task to List
+- [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [x] ACCEPTED
-- [US-0003] Mark Task Complete or Incomplete
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0004] Delete Task
   - [x] DRAFT
@@ -71,6 +72,13 @@ Stories
 - [US-0006] View All Lists and Tasks
   - [x] DRAFT
   - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0002] Maintain continuous review of backlog items and ensure smooth handoffs between planning and implementation
+  - [ ] DRAFT
+  - [ ] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED

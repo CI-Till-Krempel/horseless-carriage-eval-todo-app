@@ -36,6 +36,12 @@ def test_toggle_task(client):
     assert response.status_code == 200
     assert todo_lists['Chores'][0]['completed'] is True
 
-    response = client.post('/lists/Chores/tasks/0/toggle', follow_redirects=True)
+def test_delete_task(client):
+    client.post('/lists', data={'list_name': 'Personal'}, follow_redirects=True)
+    client.post('/lists/Personal/tasks', data={'task_description': 'Gym'}, follow_redirects=True)
+    assert len(todo_lists['Personal']) == 1
+
+    response = client.post('/lists/Personal/tasks/0/delete', follow_redirects=True)
     assert response.status_code == 200
-    assert todo_lists['Chores'][0]['completed'] is False
+    assert len(todo_lists['Personal']) == 0
+    assert b'Gym' not in response.data

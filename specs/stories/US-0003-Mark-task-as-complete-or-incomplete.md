@@ -16,4 +16,9 @@
 Users can toggle task status and see visual distinction.
 
 ## Test Approach
+Pytest testing of task status toggling.
 
+### Tasks
+- Add toggle task completion endpoint
+- Update UI with complete/incomplete toggle action and styling
+- Add automated test for task toggling

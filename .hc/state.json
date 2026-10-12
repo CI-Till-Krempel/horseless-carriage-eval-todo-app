@@ -26,9 +26,12 @@
       "version": "v1.0-MVP",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready"
+      "status": "Tested"
     },
     {
       "priority": "Must",
@@ -130,10 +133,224 @@
   ],
   "sprint_goal": "Deliver core to-do list MVP functionality: create lists, add/complete/delete tasks, delete lists, and render a clean web UI.",
   "sprint_number": 1,
-  "sprint_backlog_pr_sprint": 0,
-  "planning_output_commit_count": 0,
-  "sprint_backlog_pr_content_baseline": 0,
-  "sprint_backlog": [],
+  "sprint_backlog_pr_sprint": 1,
+  "planning_output_commit_count": 3,
+  "sprint_backlog_pr_content_baseline": 1,
+  "sprint_backlog": [
+    {
+      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "title": "Create a new to-do list",
+      "priority": "Must",
+      "value_hypothesis": "Users can successfully initialize and view separate to-do lists.",
+      "acceptance_criteria": [
+        "Given the app is running, When the user submits a new list name, Then a new to-do list is created and displayed."
+      ],
+      "id": "US-0001",
+      "depends_on": [],
+      "epic_id": "EP-0001",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
+      ],
+      "status": "Tested",
+      "estimate": 50000,
+      "test_approach": "Pytest testing of Flask endpoints and HTML output.",
+      "approach": "Implement a lightweight Flask web application with a simple HTML/CSS/JS frontend and in-memory or SQLite storage for lists and tasks, starting with US-0001 (create a new to-do list).",
+      "tasks": [
+        "Initialize Flask app and setup routing",
+        "Create HTML frontend with form for list creation",
+        "Implement backend API for creating lists",
+        "Write unit/integration tests for list creation"
+      ],
+      "dod_checks": [
+        "Automated tests pass",
+        "UI works end-to-end for creating a list"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "requirements.txt",
+        "tests/test_app.py"
+      ],
+      "risks_assumptions": [
+        "In-memory or simple SQLite storage is sufficient for MVP session persistence."
+      ]
+    },
+    {
+      "priority": "Must",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user adds a task with a text description, Then the task appears within that list."
+      ],
+      "depends_on": [
+        "US-0001"
+      ],
+      "title": "Add a task to a list",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "value_hypothesis": "Users can successfully record tasks under specific lists.",
+      "epic_id": "EP-0001",
+      "id": "US-0002",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Extend Flask application to support adding tasks to a specified list via API and UI.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "test_approach": "Pytest tests verifying task addition to lists.",
+      "tasks": [
+        "Add task creation endpoint in Flask",
+        "Update UI to display and add tasks under lists",
+        "Add automated tests for task creation"
+      ],
+      "estimate": 40000,
+      "dod_checks": [
+        "Automated tests pass",
+        "UI allows adding tasks to a list"
+      ],
+      "risks_assumptions": [
+        "Task creation relies on valid list ID."
+      ]
+    },
+    {
+      "id": "US-0003",
+      "value_hypothesis": "Users can toggle task status and see visual distinction.",
+      "acceptance_criteria": [
+        "Given an existing task, When the user marks it as complete or incomplete, Then its visual status updates accordingly."
+      ],
+      "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track progress.",
+      "epic_id": "EP-0001",
+      "description": "As a user, I want to mark a task as complete or incomplete so that I can track progress.",
+      "title": "Mark task as complete or incomplete",
+      "depends_on": [
+        "US-0002"
+      ],
+      "priority": "Must",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "risks_assumptions": [
+        "CSS styling handles visual distinction clearly."
+      ],
+      "test_approach": "Pytest testing of task status toggling.",
+      "estimate": 30000,
+      "dod_checks": [
+        "Automated tests pass",
+        "UI reflects completed vs incomplete task states visually"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "approach": "Add toggle completion endpoint and UI styling/buttons to mark tasks complete or incomplete with visual distinction.",
+      "tasks": [
+        "Add toggle task completion endpoint",
+        "Update UI with complete/incomplete toggle action and styling",
+        "Add automated test for task toggling"
+      ]
+    },
+    {
+      "description": "As a user, I want to delete a task so that I can remove items I no longer need.",
+      "id": "US-0004",
+      "depends_on": [
+        "US-0002"
+      ],
+      "epic_id": "EP-0001",
+      "value_hypothesis": "Users can remove unwanted tasks cleanly.",
+      "title": "Delete a task",
+      "acceptance_criteria": [
+        "Given an existing task, When the user deletes the task, Then it is removed from the list."
+      ],
+      "priority": "Must",
+      "user_story": "As a user, I want to delete a task so that I can remove items I no longer need.",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "risks_assumptions": [
+        "Task ID is unique and valid for deletion."
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "dod_checks": [
+        "Automated tests pass",
+        "UI deletes tasks successfully"
+      ],
+      "tasks": [
+        "Add delete task endpoint",
+        "Update UI with delete task buttons and handlers",
+        "Add automated test for task deletion"
+      ],
+      "test_approach": "Pytest testing of task deletion endpoint.",
+      "estimate": 30000,
+      "approach": "Add delete task endpoint and UI delete buttons."
+    },
+    {
+      "depends_on": [
+        "US-0001"
+      ],
+      "description": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.",
+      "priority": "Must",
+      "value_hypothesis": "Users can delete lists and cascade delete their tasks.",
+      "id": "US-0005",
+      "acceptance_criteria": [
+        "Given an existing list with tasks, When the user deletes the list, Then the list and all its contained tasks are removed."
+      ],
+      "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.",
+      "epic_id": "EP-0001",
+      "title": "Delete an entire list",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "tasks": [
+        "Add delete list endpoint with task cascade",
+        "Update UI with delete list buttons",
+        "Add automated test for list deletion"
+      ],
+      "estimate": 30000,
+      "approach": "Add delete list endpoint with cascade deletion of associated tasks and UI delete list button.",
+      "test_approach": "Pytest testing of list and cascade task deletion.",
+      "risks_assumptions": [
+        "Cascade deletion correctly cleans up all tasks belonging to the list."
+      ],
+      "dod_checks": [
+        "Automated tests pass",
+        "UI deletes lists and tasks successfully"
+      ]
+    }
+  ],
   "impediment_log": [],
   "retro_actions": [],
   "decision_log": [
@@ -154,18 +371,38 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.02737145
+    "current_usd_spend": 0.17058155999999997
   },
   "token_usage": {
-    "total": 559388,
+    "total": 1990852,
     "agents": {
       "ScrumOrchestrator": 101806,
-      "ProductOwner": 404714,
-      "Architect": 32018,
-      "ScrumMaster": 20850
+      "ProductOwner": 446279,
+      "Architect": 200454,
+      "ScrumMaster": 41780,
+      "DevTeam": 916912,
+      "QA": 283621
     }
   },
-  "story_estimates": {},
+  "story_estimates": {
+    "US-0001": {
+      "estimate": 50000,
+      "actual": 12000
+    },
+    "US-0002": {
+      "estimate": 40000,
+      "actual": 8000
+    },
+    "US-0003": {
+      "estimate": 30000
+    },
+    "US-0004": {
+      "estimate": 30000
+    },
+    "US-0005": {
+      "estimate": 30000
+    }
+  },
   "sprint_report_kpis": null,
   "kpi_update_count": 0,
   "kpi_baseline": 0,
@@ -190,7 +427,7 @@
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 0,
+  "dev_touch_baseline": 4,
   "unadvanced_write_nudge_baseline": 0,
   "sprint_files_touched": [
     "specs/requirements/PRD-ToDo-MVP.md",
@@ -201,14 +438,29 @@
     "specs/stories/US-0002-Add-a-task-to-a-list.md",
     "specs/stories/US-0003-Mark-task-as-complete-or-incomplete.md",
     "specs/stories/US-0004-Delete-a-task.md",
-    "specs/stories/US-0005-Delete-an-entire-list.md"
+    "specs/stories/US-0005-Delete-an-entire-list.md",
+    "requirements.txt",
+    "app.py",
+    "templates/index.html",
+    "tests/test_app.py"
   ],
-  "last_check_build": null,
-  "last_pr_checks": null,
+  "last_check_build": {
+    "checked": "requirements.txt",
+    "passing": true,
+    "manifest_write_count_at_check": 1
+  },
+  "last_pr_checks": {
+    "passing": true,
+    "git_push_count_at_check": 0
+  },
   "git_push_count": 0,
-  "pr_review_calls": {},
-  "architect_review_baseline": 0,
-  "qa_review_baseline": 0,
+  "pr_review_calls": {
+    "Architect": 2,
+    "DevTeam": 1,
+    "QA": 2
+  },
+  "architect_review_baseline": 2,
+  "qa_review_baseline": 2,
   "qa_tested_baseline": 0,
   "sprint_backlog_engagement_baseline": {},
   "sprint_report_pending_release": false,

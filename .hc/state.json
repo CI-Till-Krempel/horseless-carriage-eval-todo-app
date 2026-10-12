@@ -74,7 +74,7 @@
         "Given a task in a list, When the user clicks complete/incomplete, Then its status toggles and is visually distinguished."
       ],
       "type": "User Story",
-      "version": "Backlog (unplanned)",
+      "version": "v0.1",
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
       "stages_completed": [
         "Draft",
@@ -103,9 +103,15 @@
       "user_story": "As a user, I want to delete a task so that I can remove unwanted items.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Ready"
+      "status": "Accepted",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified task deletion functionality works correctly via the Flask app and test suite."
     },
     {
       "acceptance_criteria": [
@@ -146,12 +152,14 @@
       "status": "Ready"
     },
     {
-      "title": "Ensure test suites comprehensively cover new feature interactions and UI state changes.",
+      "title": "Ensure test suites comprehensively cover new feature interactions and UI state changes",
       "overview": "Ensure test suites comprehensively cover new feature interactions and UI state changes.",
       "owner": "QA",
       "type": "Issue",
       "id": "ISSUE-0003",
-      "priority": "Must"
+      "priority": "Should",
+      "description": "Ensure test suites comprehensively cover new feature interactions and UI state changes.",
+      "version": "Backlog (unplanned)"
     },
     {
       "title": "Maintain continuous review of backlog items and ensure smooth handoffs between planning and implementation",
@@ -161,7 +169,8 @@
       "id": "ISSUE-0002",
       "priority": "Should",
       "description": "Maintain continuous review of backlog items and ensure smooth handoffs between planning and implementation.",
-      "version": "Backlog (unplanned)"
+      "version": "Backlog (unplanned)",
+      "status": "Draft"
     },
     {
       "title": "Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates",
@@ -184,11 +193,11 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Implement task completion toggle functionality (US-0003) for the To-Do List Web App MVP",
-  "sprint_number": 3,
-  "sprint_backlog_pr_sprint": 3,
-  "planning_output_commit_count": 21,
-  "sprint_backlog_pr_content_baseline": 15,
+  "sprint_goal": "Implement task deletion functionality (US-0004) for the To-Do List Web App MVP",
+  "sprint_number": 4,
+  "sprint_backlog_pr_sprint": 4,
+  "planning_output_commit_count": 26,
+  "sprint_backlog_pr_content_baseline": 22,
   "sprint_backlog": [
     {
       "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
@@ -330,6 +339,52 @@
       "approach": "Add toggle route for tasks in app.py, style completed tasks in templates/index.html, and write unit tests.",
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified task completion toggle functionality works correctly via the Flask app and test suite."
+    },
+    {
+      "title": "Delete Task",
+      "acceptance_criteria": [
+        "Given a task, When the user clicks delete, Then the task is removed from the list."
+      ],
+      "epic_id": "EP-0001",
+      "priority": "Must",
+      "description": "As a user, I want to delete a task so that I can remove unwanted items.",
+      "value_hypothesis": "Allows cleanup of unwanted or obsolete tasks.",
+      "id": "US-0004",
+      "type": "User Story",
+      "version": "Backlog (unplanned)",
+      "user_story": "As a user, I want to delete a task so that I can remove unwanted items.",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
+      ],
+      "status": "Accepted",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "dod_checks": [
+        "Code written and reviewed-ready",
+        "Automated tests written and passing",
+        "Tokens logged"
+      ],
+      "tasks": [
+        "Implement delete_task route in app.py",
+        "Add delete task button/form in templates/index.html",
+        "Write pytest test for task deletion"
+      ],
+      "test_approach": "Test deleting a task from an existing list and verifying removal.",
+      "risks_assumptions": [
+        "Index-based deletion is reliable for in-memory list storage."
+      ],
+      "approach": "Implement delete task route in app.py, add delete button in templates/index.html, and add unit test.",
+      "estimate": 1000,
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified task deletion functionality works correctly via the Flask app and test suite."
     }
   ],
   "impediment_log": [],
@@ -360,6 +415,14 @@
       "category": "technical",
       "sprint_number": 3,
       "issue_id": "ISSUE-0003"
+    },
+    {
+      "action": "Ensure robust handling of base branch updates during concurrent PR merges.",
+      "owner": "QA",
+      "success_metric": "Smooth PR merges without base branch conflict warnings.",
+      "status": "open",
+      "category": "technical",
+      "sprint_number": 4
     }
   ],
   "decision_log": [
@@ -380,22 +443,28 @@
       "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
       "rationale": "Remaining MVP stories (US-0003 through US-0006) are defined and ready.",
       "owner": "ProductOwner"
+    },
+    {
+      "title": "Ready-backlog sufficiency target waived",
+      "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
+      "rationale": "Remaining MVP stories (US-0004 through US-0006) are defined and ready.",
+      "owner": "ProductOwner"
     }
   ],
-  "sprint_report": "# Sprint Review Report\n\n**Generated by Horseless Carriage v0.1.0** (Interaction Level: EVAL)\n\n## Summary\nSprint 3 was successfully completed with the implementation and acceptance of US-0003 (Mark Task Complete or Incomplete). All quality checks, tests, retrospectives, and KPIs have been successfully finalized.\n\n## Accomplishments\n- Successfully planned and executed Sprint 3 for the To-Do List Web App MVP\n- Delivered US-0003 (Mark Task Complete or Incomplete) with toggle routes and visual strike-through styling\n- Maintained 97% test coverage and 1.0 Say/Do ratio\n\n## Budget and Usage\n- USD Budget (LiteLLM): $15.00\n- Actual USD Spend (LiteLLM): $0.76\n- Process Overhead: 20.0%\n\n### Per-Agent Token Usage\n  - ScrumMaster: 391822\n  - ProductOwner: 505935\n  - DevTeam: 1670739\n  - Architect: 474031\n  - QA: 490298\n\n## Sprint Length Feedback\n- Tokens used: 3,532,825 / 5,000,000 (71%)\n- Stories: 3/3 completed this sprint\n- All planned stories were completed within budget - no sprint-length change suggested.\n\n## Open Questions for Stakeholder (Blockers)\nNo stories are currently blocked.\n\n## Retrospective Actions (including efficiency improvements)\n- Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates. (Owner: DevTeam, Status: open, Category: technical, filed as ISSUE-0001)\n- Maintain continuous review of backlog items and ensure smooth handoffs between planning and implementation. (Owner: DevTeam, Status: open, Category: technical, filed as ISSUE-0002)\n- Ensure test suites comprehensively cover new feature interactions and UI state changes. (Owner: QA, Status: open, Category: technical, filed as ISSUE-0003)\n\n## Impediments\nNo impediments logged.\n\n## Story Estimates vs Actual Tokens\n- US-0001: estimate=1000, actual=450\n- US-0002: estimate=1000, actual=500\n- US-0003: estimate=1000, actual=480\n\n## KPI Dashboard\n- Say-Do Ratio: 1\n- Commitment Reliability: not available (not available - no estimate-accuracy tracking exists yet)\n- Defect Escape Rate: not available (not available - no defect/bug-lifecycle tracking exists yet)\n- Customer Satisfaction: not available (not available - no user/customer satisfaction survey exists yet)\n- Test Coverage: 0.97 (2 run, 0 failed)\n- Code Complexity: 2.4\n- Security Scan: {'high': 1, 'low': 5, 'medium': 0, 'critical': 0}\n\n### Per-Agent Prompt Context Usage\n  - Architect (scrum-eval-cheap): 3,308 / 1,048,576 tokens (0.32%)\n  - ScrumMaster (scrum-eval-cheap): 5,905 / 1,048,576 tokens (0.56%)\n  - DevTeam (scrum-eval-cheap): 4,676 / 1,048,576 tokens (0.45%)\n  - ProductOwner (scrum-eval-cheap): 5,615 / 1,048,576 tokens (0.54%)\n  - QA (scrum-eval-cheap): 2,642 / 1,048,576 tokens (0.25%)\n  - ScrumOrchestrator (scrum-eval-cheap): 7,751 / 1,048,576 tokens (0.74%)\n\n## Conversation Transcript\nFull transcript (201 entries) written to `specs/reports/TRANSCRIPT-002.md` (also mirrored at `specs/reports/TRANSCRIPT-LATEST.md`).\n\nMost recent contribution per agent:\n- **system**: [2 earlier transcript entries omitted for token budget]\n- **QA**: transfer_to_agent(agent_name=\"ProductOwner\")\n- **DevTeam**: transfer_to_agent(agent_name=\"Architect\")\n- **Architect**: transfer_to_agent(agent_name=\"QA\")\n- **ProductOwner**: transfer_to_agent(agent_name=\"ScrumMaster\")\n- **ScrumMaster**: create_sprint_report(accomplishments=['Successfully plann..., summary=\"Sprint 3 was success...\")\n",
+  "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.75912645
+    "current_usd_spend": 1.14693122
   },
   "token_usage": {
-    "total": 3702022,
+    "total": 4426597,
     "agents": {
-      "ScrumMaster": 475850,
-      "ProductOwner": 591104,
-      "DevTeam": 1670739,
-      "Architect": 474031,
-      "QA": 490298
+      "ScrumMaster": 189364,
+      "ProductOwner": 662114,
+      "DevTeam": 2202435,
+      "Architect": 629977,
+      "QA": 742707
     }
   },
   "story_estimates": {
@@ -410,82 +479,13 @@
     "US-0003": {
       "estimate": 1000,
       "actual": 480
+    },
+    "US-0004": {
+      "estimate": 1000,
+      "actual": 490
     }
   },
-  "sprint_report_kpis": {
-    "maintainability": {
-      "tests_run": 2,
-      "test_coverage_available": true,
-      "code_complexity": 2.4,
-      "tests_failed": 0,
-      "code_complexity_available": true,
-      "test_coverage": 0.97
-    },
-    "security": {
-      "vulnerability_scan_available": true,
-      "vulnerability_scan_results": {
-        "high": 1,
-        "low": 5,
-        "medium": 0,
-        "critical": 0
-      }
-    },
-    "result_quality": {
-      "customer_satisfaction_note": "not available - no user/customer satisfaction survey exists yet",
-      "customer_satisfaction": null,
-      "defect_escape_rate": null,
-      "defect_escape_rate_note": "not available - no defect/bug-lifecycle tracking exists yet"
-    },
-    "prompt_context_usage": {
-      "Architect": {
-        "available": true,
-        "usage_percent": 0.32,
-        "model": "scrum-eval-cheap",
-        "context_window_tokens": 1048576,
-        "prompt_tokens": 3308
-      },
-      "ScrumMaster": {
-        "available": true,
-        "context_window_tokens": 1048576,
-        "model": "scrum-eval-cheap",
-        "usage_percent": 0.56,
-        "prompt_tokens": 5905
-      },
-      "DevTeam": {
-        "context_window_tokens": 1048576,
-        "available": true,
-        "usage_percent": 0.45,
-        "model": "scrum-eval-cheap",
-        "prompt_tokens": 4676
-      },
-      "ProductOwner": {
-        "available": true,
-        "prompt_tokens": 5615,
-        "context_window_tokens": 1048576,
-        "usage_percent": 0.54,
-        "model": "scrum-eval-cheap"
-      },
-      "QA": {
-        "usage_percent": 0.25,
-        "available": true,
-        "prompt_tokens": 2642,
-        "model": "scrum-eval-cheap",
-        "context_window_tokens": 1048576
-      },
-      "ScrumOrchestrator": {
-        "usage_percent": 0.74,
-        "prompt_tokens": 7751,
-        "model": "scrum-eval-cheap",
-        "context_window_tokens": 1048576,
-        "available": true
-      }
-    },
-    "team_effectiveness": {
-      "commitment_reliability": null,
-      "say_do_ratio": 1,
-      "commitment_reliability_note": "not available - no estimate-accuracy tracking exists yet"
-    }
-  },
+  "sprint_report_kpis": {},
   "kpi_update_count": 3,
   "kpi_baseline": 3,
   "backlog_scope_complete": true,
@@ -509,7 +509,7 @@
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 8,
+  "dev_touch_baseline": 9,
   "unadvanced_write_nudge_baseline": 0,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
@@ -541,7 +541,9 @@
     "specs/requirements/ISSUE-0003-Ensure-test-suites-comprehensively-cover-new-feature-interactions-and-UI-state-changes..md",
     "specs/reports/TRANSCRIPT-002.md",
     "specs/reports/SPRINT-REPORT-002.md",
-    "specs/reports/RETRO-002.md"
+    "specs/reports/RETRO-002.md",
+    "specs/requirements/ISSUE-0003-Ensure-test-suites-comprehensively-cover-new-feature-interactions-and-UI-state-changes.md",
+    "us0004_notes.txt"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -554,17 +556,17 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
+    "Architect": 8,
+    "QA": 8,
+    "DevTeam": 4
+  },
+  "architect_review_baseline": 8,
+  "qa_review_baseline": 8,
+  "qa_tested_baseline": 3,
+  "sprint_backlog_engagement_baseline": {
     "Architect": 6,
     "QA": 6,
     "DevTeam": 3
-  },
-  "architect_review_baseline": 6,
-  "qa_review_baseline": 6,
-  "qa_tested_baseline": 3,
-  "sprint_backlog_engagement_baseline": {
-    "Architect": 4,
-    "QA": 4,
-    "DevTeam": 2
   },
   "sprint_report_pending_release": false,
   "blocking_interactions": [
@@ -588,7 +590,8 @@
   "version_goals": {
     "v0.1": [
       "Implement task addition functionality (US-0002) for the To-Do List Web App MVP",
-      "Implement task completion toggle functionality (US-0003) for the To-Do List Web App MVP"
+      "Implement task completion toggle functionality (US-0003) for the To-Do List Web App MVP",
+      "Implement task deletion functionality (US-0004) for the To-Do List Web App MVP"
     ]
   }
 }

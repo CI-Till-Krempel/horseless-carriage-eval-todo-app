@@ -53,7 +53,7 @@ Stories
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [ ] TESTED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0004] Delete Task
   - [x] DRAFT

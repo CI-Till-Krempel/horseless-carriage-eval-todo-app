@@ -26,8 +26,29 @@ Stories:
 
 ### v0.2 — Next iteration (target: YYYY-MM)
 Goals
-
+- Enhance To-Do List Web App with robust error handling, UI polish, and persistent storage.
 Stories
+- [ISSUE-0001] Ensure all team members check branch and PR IDs before running git merge commands to avoid unnecessary CLI warnings.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] Persistent storage across application restarts
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0007] Robust error handling and validation
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 ### Backlog (unplanned)
 

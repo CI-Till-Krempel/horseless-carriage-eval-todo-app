@@ -8,143 +8,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 ## QA
 
-I am transferring control back to DevTeam so they can start implementing the first story.
-- 🔧 `transfer_to_agent(agent_name="DevTeam")`
-
-## DevTeam
-- 🔧 `gh_pr_comments(pr_id=475)`
-- 🔧 `gh_pr_comment(pr_id=475, body="**DevTeam:** DevTeam...")`
-- 🔧 `start_feature_branch(story_id="US-0001", slug="create-todo-list")`
-- 🔧 `plan_sprint_backlog_item(plan={'dod_checks': ['Cod..., title_or_id="US-0001")`
-- 🔧 `start_feature_branch(story_id="US-0001", slug="create-todo-list")`
-- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
-- 🔧 `transfer_to_agent(agent_name="Architect")`
-
-## Architect
-
-Reviewing the technical blocker on US-0001 caused by the previous transfer loop between ScrumMaster and DevTeam. As Architect, I am resolving this technical blocker so DevTeam can proceed.
-- 🔧 `resolve_story_blocker(resolution="Resolved transfer lo...", title_or_id="US-0001")`
-- 🔧 `transfer_to_agent(agent_name="DevTeam")`
-
-## DevTeam
-- 🔧 `start_feature_branch(slug="create-todo-list", story_id="US-0001")`
-- 🔧 `write_file(content="flask
-pytest
-", path="requirements.txt")`
-- 🔧 `write_file(content="from flask import Fl...", path="app.py")`
-- 🔧 `write_file(content="<!DOCTYPE html>
-<htm...", path="templates/index.html")`
-- 🔧 `write_file(content="import pytest
-from a...", path="tests/test_app.py")`
-- 🔧 `git_push(commit_message="feat: implement list...", branch="eval-0.1.0-run57/fea...")`
-- 🔧 `gh_pr_checks(watch=True)`
-- 🔧 `log_story_tokens(actual_tokens=450, title_or_id="US-0001")`
-- 🔧 `advance_story_stage(title_or_id="US-0001", stage="Implemented")`
-- 🔧 `mark_pr_ready_for_review()`
-- 🔧 `transfer_to_agent(agent_name="Architect")`
-
-## Architect
-- 🔧 `gh_pr_comments(pr_id=476)`
-- 🔧 `gh_pr_review(pr_id=476, body="**Architect:** Code ...", event="APPROVE")`
-- 🔧 `gh_pr_comment(body="**Architect:** Code ...", pr_id=476)`
-- 🔧 `advance_story_stage(stage="Reviewed", title_or_id="US-0001")`
-- 🔧 `transfer_to_agent(agent_name="QA")`
-
-## QA
-
-Checking the build dependencies and test execution for US-0001.
-- 🔧 `check_build()`
-
-Leaving a QA review comment on PR 476.
-- 🔧 `gh_pr_comment(body="**QA:** Build check ...", pr_id=476)`
-
-Advancing US-0001 to Tested and merging the PR.
-- 🔧 `advance_story_stage(title_or_id="US-0001", stage="Tested")`
-
-Merging US-0001 PR into develop.
-- 🔧 `merge_story_pr(pr_id=476)`
-
-Transferring control to ProductOwner for acceptance of US-0001.
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
-## ProductOwner
-
-Verifying acceptance criteria for US-0001 (Create To-Do List).
-- 🔧 `record_acceptance_check(note="Verified list creati...", title_or_id="US-0001")`
-
-Advancing US-0001 to Accepted.
-- 🔧 `advance_story_stage(stage="Accepted", title_or_id="US-0001")`
-- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
-
-## ScrumMaster
-
-I am adding a retrospective action item for process improvement.
-- 🔧 `add_retro_action(action="Ensure early alignme...", priority="normal", success_metric="All planned stories ...", category="technical", owner="DevTeam")`
-
-I am calculating the sprint KPIs for the sprint report dashboard.
-- 🔧 `calculate_kpis()`
-
-I am updating the sprint report with the calculated KPI dashboard.
-- 🔧 `update_sprint_report(kpis={'result_quality': {...)`
-
-I am generating the sprint report summarizing accomplishments, KPIs, and retrospectives.
-- 🔧 `create_sprint_report(summary="Sprint 1 was success...", accomplishments=['Successfully plann...)`
-
-I am creating the release pull request to close out Sprint 1.
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
-## ProductOwner
-- 🔧 `create_release_pr(body="Sprint 1 release PR ...", title="Sprint 1 Release - T...")`
-- 🔧 `gh_release_create(tag="v0.1.0", notes="Sprint 1 release of ...", title="To-Do List MVP v0.1....")`
-
-Sprint 1 has successfully concluded! 
-
-### Sprint 1 Summary & Accomplishments
-- **Sprint Goal & Scope:** Established the product vision, roadmap, Epics (`EP-0001`), and MVP User Stories (`US-0001` through `US-0006`) for the To-Do List Web App.
-- **Story Delivered:** Successfully implemented, reviewed, tested, and accepted **US-0001 (Create To-Do List)** with a clean Flask backend, HTML UI, and automated test suite (`tests/test_app.py`).
-- **Quality & Metrics:** Achieved 97% test coverage, a 1.0 Say/Do ratio, and successfully passed all security and build validation checks (`check_build()`).
-- **Sprint Close & Release:**
-  - Completed the Scrum Master retrospective and logged action items (`ISSUE-0001`).
-  - Generated the Sprint Review Report (`specs/reports/SPRINT-REPORT-001.md`).
-  - Opened the release Pull Request from `develop` to `main` (`#477`).
-- 🔧 `init_scrum_state()`
-- 🔧 `list_docs()`
-- 🔧 `advance_story_stage(stage="Ready", title_or_id="US-0002")`
-- 🔧 `declare_backlog_scope_complete(justification="Remaining MVP storie...")`
-- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
-
-## ScrumMaster
-
-I am starting Sprint 2 to implement task addition (`US-0002`).
-- 🔧 `start_sprint(goal="Implement task addit...")`
-
-I am transferring to Product Owner to create the sprint backlog PR for Sprint 2.
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
-## ProductOwner
-- 🔧 `create_sprint_backlog_pr(title="Sprint 2 Backlog - A...", body="Sprint 2 backlog for...")`
-- 🔧 `upsert_issue(issue={'title': 'Ensure ea...)`
-- 🔧 `create_sprint_backlog_pr(body="Sprint 2 backlog for...", title="Sprint 2 Backlog - A...")`
-- 🔧 `transfer_to_agent(agent_name="DevTeam")`
-
-## DevTeam
-- 🔧 `gh_pr_comments(pr_id=478)`
-- 🔧 `transfer_to_agent(agent_name="Architect")`
-
-## Architect
-- 🔧 `gh_pr_comments(pr_id=478)`
-- 🔧 `gh_pr_comment(body="**Architect:** Archi...", pr_id=478)`
-- 🔧 `transfer_to_agent(agent_name="DevTeam")`
-
-## DevTeam
-- 🔧 `gh_pr_comments(pr_id=478)`
-- 🔧 `transfer_to_agent(agent_name="QA")`
-
-## QA
-
-I am leaving my QA quality sign-off on the Sprint 2 Backlog PR so that development can begin.
-- 🔧 `gh_pr_comment(pr_id=478, body="**QA:** Quality sign...")`
-
 I am transferring control back to DevTeam to implement US-0002.
 - 🔧 `transfer_to_agent(agent_name="DevTeam")`
 
@@ -342,3 +205,134 @@ I am updating the sprint report with KPI data for Sprint 3.
 
 I am generating the sprint report for Sprint 3.
 - 🔧 `create_sprint_report(accomplishments=['Successfully plann..., summary="Sprint 3 was success...")`
+
+I am transferring to Product Owner to create the release PR for Sprint 3.
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(title="Sprint 3 Release - T...", body="Sprint 3 release PR ...")`
+- 🔧 `gh_release_create(notes="Sprint 3 release of ...", tag="v0.3.0", title="To-Do List MVP v0.3....")`
+
+Sprint 3 has successfully concluded!
+
+### Sprint 3 Summary & Accomplishments
+- **Sprint Goal & Scope:** Implemented and delivered **US-0003 (Mark Task Complete or Incomplete)**.
+- **Development & Testing:** Added task completion toggle route handlers in `app.py`, visual strike-through styling in `templates/index.html`, and comprehensive unit tests in `tests/test_app.py`.
+- **Quality & Metrics:** Maintained 97% test coverage, a 1.0 Say/Do ratio, and successfully passed all build and code review gates.
+- **Sprint Close & Release:**
+  - Completed Scrum Master retrospective and logged new action items (`ISSUE-0003`).
+  - Generated the Sprint Review Report (`specs/reports/SPRINT-REPORT-002.md`).
+  - Opened and merged the release Pull Request from `develop` to `main` (`#483`) and published GitHub release `v0.3.0`.
+- 🔧 `init_scrum_state()`
+- 🔧 `list_docs()`
+- 🔧 `advance_story_stage(title_or_id="US-0004", stage="Ready")`
+- 🔧 `declare_backlog_scope_complete(justification="Remaining MVP storie...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+
+I am starting Sprint 4 to implement task deletion (`US-0004`).
+- 🔧 `start_sprint(goal="Implement task delet...")`
+
+I am transferring to Product Owner to create the sprint backlog PR for Sprint 4.
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_sprint_backlog_pr(body="Sprint 4 backlog for...", title="Sprint 4 Backlog - D...")`
+- 🔧 `upsert_issue(issue={'priority': 'Should...)`
+- 🔧 `create_sprint_backlog_pr(title="Sprint 4 Backlog - D...", body="Sprint 4 backlog for...")`
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `gh_pr_comments(pr_id=484)`
+- 🔧 `transfer_to_agent(agent_name="Architect")`
+
+## Architect
+- 🔧 `gh_pr_comments(pr_id=484)`
+- 🔧 `gh_pr_comment(pr_id=484, body="**Architect:** Archi...")`
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `gh_pr_comments(pr_id=484)`
+- 🔧 `transfer_to_agent(agent_name="QA")`
+
+## QA
+
+I am leaving my QA quality sign-off on the Sprint 4 Backlog PR.
+- 🔧 `gh_pr_comment(pr_id=484, body="**QA:** Quality sign...")`
+
+I am transferring control back to DevTeam to implement US-0004.
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `gh_pr_comments(pr_id=484)`
+- 🔧 `gh_pr_comment(body="**DevTeam:** DevTeam...", pr_id=484)`
+- 🔧 `plan_sprint_backlog_item(title_or_id="US-0004", plan={'code_files': ['app...)`
+- 🔧 `start_feature_branch(slug="delete-task", story_id="US-0004")`
+- 🔧 `delete_file(path=".coverage")`
+- 🔧 `delete_file(path="__pycache__/app.cpyt...")`
+- 🔧 `delete_file(path="tests/__pycache__/te...")`
+- 🔧 `write_file(overwrite=True, path="app.py", content="from flask import Fl...")`
+- 🔧 `write_file(path="templates/index.html", overwrite=True, content="<!DOCTYPE html>
+<htm...")`
+- 🔧 `write_file(path="tests/test_app.py", overwrite=True, content="import pytest
+from a...")`
+- 🔧 `git_push(branch="eval-0.1.0-run57/fea...", commit_message="feat: implement dele...")`
+- 🔧 `gh_pr_checks(watch=True)`
+- 🔧 `log_story_tokens(actual_tokens=490, title_or_id="US-0004")`
+- 🔧 `advance_story_stage(title_or_id="US-0004", stage="Implemented")`
+- 🔧 `write_file(content="# US-0004 Implementa...", path="us0004_notes.txt")`
+- 🔧 `git_push(commit_message="chore: add US-0004 i...", branch="eval-0.1.0-run57/fea...")`
+- 🔧 `gh_pr_checks(watch=True)`
+- 🔧 `advance_story_stage(title_or_id="US-0004", stage="Implemented")`
+- 🔧 `mark_pr_ready_for_review()`
+- 🔧 `transfer_to_agent(agent_name="Architect")`
+
+## Architect
+- 🔧 `gh_pr_comments(pr_id=485)`
+- 🔧 `gh_pr_comment(body="**Architect:** Code ...", pr_id=485)`
+- 🔧 `advance_story_stage(stage="Reviewed", title_or_id="US-0004")`
+- 🔧 `transfer_to_agent(agent_name="QA")`
+
+## QA
+
+Checking build and dependencies for US-0004.
+- 🔧 `check_build()`
+
+Leaving a QA review comment on PR 485.
+- 🔧 `gh_pr_comment(pr_id=485, body="**QA:** Build check ...")`
+
+Advancing US-0004 to Tested stage.
+- 🔧 `advance_story_stage(title_or_id="US-0004", stage="Tested")`
+
+Merging PR 485 into develop.
+- 🔧 `merge_story_pr(pr_id=485)`
+
+Retrying merge for PR 485.
+- 🔧 `merge_story_pr(pr_id=485)`
+
+Transferring control to ProductOwner for acceptance of US-0004.
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+
+Verifying acceptance criteria for US-0004 (Delete Task).
+- 🔧 `record_acceptance_check(title_or_id="US-0004", note="Verified task deleti...")`
+
+Advancing US-0004 to Accepted.
+- 🔧 `advance_story_stage(stage="Accepted", title_or_id="US-0004")`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+
+I am adding a retrospective action item for Sprint 4.
+- 🔧 `add_retro_action(success_metric="Smooth PR merges wit...", category="technical", priority="normal", action="Ensure robust handli...", owner="QA")`
+
+I am calculating the sprint KPIs for Sprint 4.
+- 🔧 `calculate_kpis()`
+
+I am updating the sprint report with KPI data for Sprint 4.
+- 🔧 `update_sprint_report(kpis={'result_quality': {...)`
+
+I am generating the sprint report for Sprint 4.
+- 🔧 `create_sprint_report(summary="Sprint 4 was success...", accomplishments=['Successfully plann...)`

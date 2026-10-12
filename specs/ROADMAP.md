@@ -51,7 +51,7 @@ Stories
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
@@ -72,6 +72,13 @@ Stories
 - [US-0006] View All Lists and Tasks
   - [x] DRAFT
   - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0002] Maintain continuous review of backlog items and ensure smooth handoffs between planning and implementation
+  - [ ] DRAFT
+  - [ ] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED

@@ -67,7 +67,7 @@ Stories
 - [US-0005] Delete Entire List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
@@ -78,7 +78,7 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [ISSUE-0004] Ensure robust handling of base branch updates during concurrent PR merges.
+- [ISSUE-0004] Ensure robust handling of base branch updates during concurrent PR merges
   - [ ] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED

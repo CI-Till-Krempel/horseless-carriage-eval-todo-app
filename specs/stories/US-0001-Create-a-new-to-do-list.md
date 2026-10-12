@@ -16,4 +16,10 @@
 Users can successfully initialize and view separate to-do lists.
 
 ## Test Approach
+Pytest testing of Flask endpoints and HTML output.
 
+### Tasks
+- Initialize Flask app and setup routing
+- Create HTML frontend with form for list creation
+- Implement backend API for creating lists
+- Write unit/integration tests for list creation

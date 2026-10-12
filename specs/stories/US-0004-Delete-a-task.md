@@ -16,4 +16,9 @@
 Users can remove unwanted tasks cleanly.
 
 ## Test Approach
+Pytest testing of task deletion endpoint.
 
+### Tasks
+- Add delete task endpoint
+- Update UI with delete task buttons and handlers
+- Add automated test for task deletion

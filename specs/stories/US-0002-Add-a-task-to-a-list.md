@@ -16,4 +16,9 @@
 Users can successfully record tasks under specific lists.
 
 ## Test Approach
+Pytest tests verifying task addition to lists.
 
+### Tasks
+- Add task creation endpoint in Flask
+- Update UI to display and add tasks under lists
+- Add automated tests for task creation

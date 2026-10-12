@@ -16,4 +16,9 @@
 Users can delete lists and cascade delete their tasks.
 
 ## Test Approach
+Pytest testing of list and cascade task deletion.
 
+### Tasks
+- Add delete list endpoint with task cascade
+- Update UI with delete list buttons
+- Add automated test for list deletion

@@ -99,7 +99,7 @@
       "value_hypothesis": "Allows cleanup of unwanted or obsolete tasks.",
       "id": "US-0004",
       "type": "User Story",
-      "version": "Backlog (unplanned)",
+      "version": "v0.1",
       "user_story": "As a user, I want to delete a task so that I can remove unwanted items.",
       "stages_completed": [
         "Draft",
@@ -128,9 +128,12 @@
       "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up when a list is no longer needed.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready"
+      "status": "Tested"
     },
     {
       "id": "US-0006",
@@ -152,13 +155,14 @@
       "status": "Ready"
     },
     {
-      "title": "Ensure robust handling of base branch updates during concurrent PR merges.",
+      "title": "Ensure robust handling of base branch updates during concurrent PR merges",
       "overview": "Ensure robust handling of base branch updates during concurrent PR merges.",
       "owner": "QA",
       "type": "Issue",
       "id": "ISSUE-0004",
-      "priority": "Must",
-      "version": "Backlog (unplanned)"
+      "priority": "Should",
+      "version": "Backlog (unplanned)",
+      "description": "Ensure robust handling of base branch updates during concurrent PR merges."
     },
     {
       "title": "Ensure test suites comprehensively cover new feature interactions and UI state changes",
@@ -203,11 +207,11 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Implement task deletion functionality (US-0004) for the To-Do List Web App MVP",
-  "sprint_number": 4,
-  "sprint_backlog_pr_sprint": 4,
-  "planning_output_commit_count": 28,
-  "sprint_backlog_pr_content_baseline": 22,
+  "sprint_goal": "Implement list deletion (US-0005) and viewing all lists/tasks (US-0006) to finalize the To-Do List Web App MVP",
+  "sprint_number": 5,
+  "sprint_backlog_pr_sprint": 5,
+  "planning_output_commit_count": 32,
+  "sprint_backlog_pr_content_baseline": 30,
   "sprint_backlog": [
     {
       "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
@@ -395,6 +399,88 @@
       "estimate": 1000,
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified task deletion functionality works correctly via the Flask app and test suite."
+    },
+    {
+      "acceptance_criteria": [
+        "Given an entire list with tasks, When the user clicks delete list, Then the list and all its tasks are deleted."
+      ],
+      "title": "Delete Entire List",
+      "id": "US-0005",
+      "value_hypothesis": "Allows removal of entire completed or unneeded project lists.",
+      "epic_id": "EP-0001",
+      "priority": "Must",
+      "description": "As a user, I want to delete an entire list and its tasks so that I can clean up when a list is no longer needed.",
+      "type": "User Story",
+      "version": "Backlog (unplanned)",
+      "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up when a list is no longer needed.",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
+      ],
+      "status": "Tested",
+      "test_approach": "Test deleting an entire list and verifying all lists and tasks are correctly displayed.",
+      "approach": "Implement delete list route in app.py, add delete list button in templates/index.html, and add unit test covering both US-0005 and US-0006.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "estimate": 1000,
+      "risks_assumptions": [
+        "List deletion removes the list key from dictionary along with all tasks."
+      ],
+      "dod_checks": [
+        "Code written and reviewed-ready",
+        "Automated tests written and passing",
+        "Tokens logged"
+      ],
+      "tasks": [
+        "Implement delete_list route in app.py",
+        "Add delete list button in templates/index.html",
+        "Write pytest test for list deletion and full view dashboard"
+      ]
+    },
+    {
+      "id": "US-0006",
+      "acceptance_criteria": [
+        "Given the user opens the web app, When they view the main view, Then all lists and their respective tasks are shown with completed tasks visually distinct."
+      ],
+      "title": "View All Lists and Tasks",
+      "priority": "Must",
+      "epic_id": "EP-0001",
+      "value_hypothesis": "Provides a clear dashboard view of all lists and tasks.",
+      "description": "As a user, I want to see all my lists and their tasks with completed tasks visually distinguished so that I have a clear overview.",
+      "type": "User Story",
+      "version": "Backlog (unplanned)",
+      "user_story": "As a user, I want to see all my lists and their tasks with completed tasks visually distinguished so that I have a clear overview.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "dod_checks": [
+        "Code written and reviewed-ready",
+        "Automated tests written and passing",
+        "Tokens logged"
+      ],
+      "approach": "Verify view all lists and tasks dashboard via index route and existing template rendering.",
+      "tasks": [
+        "Verify index route displays all lists and tasks",
+        "Write comprehensive unit test for viewing multiple lists and tasks with completed/incomplete distinction"
+      ],
+      "estimate": 1000,
+      "test_approach": "Test rendering of multiple lists with mixed task completion statuses.",
+      "risks_assumptions": [
+        "Dashboard view is fully covered by index route rendering todo_lists dictionary."
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ]
     }
   ],
   "impediment_log": [],
@@ -468,20 +554,20 @@
       "owner": "ProductOwner"
     }
   ],
-  "sprint_report": "# Sprint Review Report\n\n**Generated by Horseless Carriage v0.1.0** (Interaction Level: EVAL)\n\n## Summary\nSprint 4 was successfully completed with the implementation and acceptance of US-0004 (Delete Task). All quality checks, tests, retrospectives, and KPIs have been successfully finalized.\n\n## Accomplishments\n- Successfully planned and executed Sprint 4 for the To-Do List Web App MVP\n- Delivered US-0004 (Delete Task) with deletion routes, UI buttons, and unit tests\n- Maintained 97% test coverage and 1.0 Say/Do ratio\n\n## Budget and Usage\n- USD Budget (LiteLLM): $15.00\n- Actual USD Spend (LiteLLM): $1.25\n- Process Overhead: 20.0%\n\n### Per-Agent Token Usage\n  - ScrumMaster: 501279\n  - ProductOwner: 662114\n  - DevTeam: 2202435\n  - Architect: 629977\n  - QA: 742707\n\n## Sprint Length Feedback\n- Tokens used: 4,738,512 / 5,000,000 (95%)\n- Stories: 4/4 completed this sprint\n- All planned stories were completed within budget - no sprint-length change suggested.\n\n## Open Questions for Stakeholder (Blockers)\nNo stories are currently blocked.\n\n## Retrospective Actions (including efficiency improvements)\n- Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates. (Owner: DevTeam, Status: open, Category: technical, filed as ISSUE-0001)\n- Maintain continuous review of backlog items and ensure smooth handoffs between planning and implementation. (Owner: DevTeam, Status: open, Category: technical, filed as ISSUE-0002)\n- Ensure test suites comprehensively cover new feature interactions and UI state changes. (Owner: QA, Status: open, Category: technical, filed as ISSUE-0003)\n- Ensure robust handling of base branch updates during concurrent PR merges. (Owner: QA, Status: open, Category: technical, filed as ISSUE-0004)\n\n## Impediments\nNo impediments logged.\n\n## Story Estimates vs Actual Tokens\n- US-0001: estimate=1000, actual=450\n- US-0002: estimate=1000, actual=500\n- US-0003: estimate=1000, actual=480\n- US-0004: estimate=1000, actual=490\n\n## KPI Dashboard\n- Say-Do Ratio: 1\n- Commitment Reliability: not available (not available - no estimate-accuracy tracking exists yet)\n- Defect Escape Rate: not available (not available - no defect/bug-lifecycle tracking exists yet)\n- Customer Satisfaction: not available (not available - no user/customer satisfaction survey exists yet)\n- Test Coverage: 0.97 (2 run, 0 failed)\n- Code Complexity: 2.4\n- Security Scan: {'critical': 0, 'low': 5, 'medium': 0, 'high': 1}\n\n### Per-Agent Prompt Context Usage\n  - ScrumMaster (scrum-eval-cheap): 5,905 / 1,048,576 tokens (0.56%)\n  - DevTeam (scrum-eval-cheap): 4,676 / 1,048,576 tokens (0.45%)\n  - ScrumOrchestrator (scrum-eval-cheap): 7,751 / 1,048,576 tokens (0.74%)\n  - Architect (scrum-eval-cheap): 3,308 / 1,048,576 tokens (0.32%)\n  - QA (scrum-eval-cheap): 2,642 / 1,048,576 tokens (0.25%)\n  - ProductOwner (scrum-eval-cheap): 5,615 / 1,048,576 tokens (0.54%)\n\n## Conversation Transcript\nFull transcript (201 entries) written to `specs/reports/TRANSCRIPT-003.md` (also mirrored at `specs/reports/TRANSCRIPT-LATEST.md`).\n\nMost recent contribution per agent:\n- **system**: [2 earlier transcript entries omitted for token budget]\n- **QA**: transfer_to_agent(agent_name=\"ProductOwner\")\n- **DevTeam**: transfer_to_agent(agent_name=\"Architect\")\n- **Architect**: transfer_to_agent(agent_name=\"QA\")\n- **ProductOwner**: transfer_to_agent(agent_name=\"ScrumMaster\")\n- **ScrumMaster**: create_sprint_report(summary=\"Sprint 4 was success...\", accomplishments=['Successfully plann...)\n",
+  "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 1.27104713
+    "current_usd_spend": 1.66648247
   },
   "token_usage": {
-    "total": 5714847,
+    "total": 4565673,
     "agents": {
-      "ScrumMaster": 607258,
-      "ProductOwner": 1532470,
-      "DevTeam": 2202435,
-      "Architect": 629977,
-      "QA": 742707
+      "ScrumMaster": 108542,
+      "ProductOwner": 443019,
+      "DevTeam": 2649124,
+      "Architect": 794398,
+      "QA": 570590
     }
   },
   "story_estimates": {
@@ -500,82 +586,16 @@
     "US-0004": {
       "estimate": 1000,
       "actual": 490
+    },
+    "US-0005": {
+      "estimate": 1000,
+      "actual": 490
+    },
+    "US-0006": {
+      "estimate": 1000
     }
   },
-  "sprint_report_kpis": {
-    "result_quality": {
-      "customer_satisfaction": null,
-      "customer_satisfaction_note": "not available - no user/customer satisfaction survey exists yet",
-      "defect_escape_rate": null,
-      "defect_escape_rate_note": "not available - no defect/bug-lifecycle tracking exists yet"
-    },
-    "security": {
-      "vulnerability_scan_available": true,
-      "vulnerability_scan_results": {
-        "critical": 0,
-        "low": 5,
-        "medium": 0,
-        "high": 1
-      }
-    },
-    "prompt_context_usage": {
-      "ScrumMaster": {
-        "available": true,
-        "context_window_tokens": 1048576,
-        "usage_percent": 0.56,
-        "prompt_tokens": 5905,
-        "model": "scrum-eval-cheap"
-      },
-      "DevTeam": {
-        "available": true,
-        "usage_percent": 0.45,
-        "context_window_tokens": 1048576,
-        "model": "scrum-eval-cheap",
-        "prompt_tokens": 4676
-      },
-      "ScrumOrchestrator": {
-        "model": "scrum-eval-cheap",
-        "prompt_tokens": 7751,
-        "context_window_tokens": 1048576,
-        "available": true,
-        "usage_percent": 0.74
-      },
-      "Architect": {
-        "context_window_tokens": 1048576,
-        "usage_percent": 0.32,
-        "available": true,
-        "model": "scrum-eval-cheap",
-        "prompt_tokens": 3308
-      },
-      "QA": {
-        "model": "scrum-eval-cheap",
-        "usage_percent": 0.25,
-        "context_window_tokens": 1048576,
-        "available": true,
-        "prompt_tokens": 2642
-      },
-      "ProductOwner": {
-        "context_window_tokens": 1048576,
-        "usage_percent": 0.54,
-        "prompt_tokens": 5615,
-        "model": "scrum-eval-cheap",
-        "available": true
-      }
-    },
-    "maintainability": {
-      "test_coverage": 0.97,
-      "code_complexity_available": true,
-      "tests_failed": 0,
-      "code_complexity": 2.4,
-      "tests_run": 2,
-      "test_coverage_available": true
-    },
-    "team_effectiveness": {
-      "commitment_reliability_note": "not available - no estimate-accuracy tracking exists yet",
-      "commitment_reliability": null,
-      "say_do_ratio": 1
-    }
-  },
+  "sprint_report_kpis": {},
   "kpi_update_count": 4,
   "kpi_baseline": 4,
   "backlog_scope_complete": true,
@@ -599,7 +619,7 @@
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 9,
+  "dev_touch_baseline": 10,
   "unadvanced_write_nudge_baseline": 0,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
@@ -637,7 +657,9 @@
     "specs/requirements/ISSUE-0004-Ensure-robust-handling-of-base-branch-updates-during-concurrent-PR-merges..md",
     "specs/reports/TRANSCRIPT-003.md",
     "specs/reports/SPRINT-REPORT-003.md",
-    "specs/reports/RETRO-003.md"
+    "specs/reports/RETRO-003.md",
+    "specs/requirements/ISSUE-0004-Ensure-robust-handling-of-base-branch-updates-during-concurrent-PR-merges.md",
+    "us0005_notes.txt"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -650,17 +672,17 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
+    "Architect": 10,
+    "QA": 10,
+    "DevTeam": 5
+  },
+  "architect_review_baseline": 10,
+  "qa_review_baseline": 10,
+  "qa_tested_baseline": 4,
+  "sprint_backlog_engagement_baseline": {
     "Architect": 8,
     "QA": 8,
     "DevTeam": 4
-  },
-  "architect_review_baseline": 8,
-  "qa_review_baseline": 8,
-  "qa_tested_baseline": 4,
-  "sprint_backlog_engagement_baseline": {
-    "Architect": 6,
-    "QA": 6,
-    "DevTeam": 3
   },
   "sprint_report_pending_release": false,
   "blocking_interactions": [
@@ -685,7 +707,8 @@
     "v0.1": [
       "Implement task addition functionality (US-0002) for the To-Do List Web App MVP",
       "Implement task completion toggle functionality (US-0003) for the To-Do List Web App MVP",
-      "Implement task deletion functionality (US-0004) for the To-Do List Web App MVP"
+      "Implement task deletion functionality (US-0004) for the To-Do List Web App MVP",
+      "Implement list deletion (US-0005) and viewing all lists/tasks (US-0006) to finalize the To-Do List Web App MVP"
     ]
   }
 }

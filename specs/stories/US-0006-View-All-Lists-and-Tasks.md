@@ -16,4 +16,8 @@
 Provides a clear dashboard view of all lists and tasks.
 
 ## Test Approach
+Test rendering of multiple lists with mixed task completion statuses.
 
+### Tasks
+- Verify index route displays all lists and tasks
+- Write comprehensive unit test for viewing multiple lists and tasks with completed/incomplete distinction

@@ -2,7 +2,7 @@
 
 - Story ID: US-0005
 - Title: Delete Entire List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-12
@@ -16,4 +16,9 @@
 Allows removal of entire completed or unneeded project lists.
 
 ## Test Approach
+Test deleting an entire list and verifying all lists and tasks are correctly displayed.
 
+### Tasks
+- Implement delete_list route in app.py
+- Add delete list button in templates/index.html
+- Write pytest test for list deletion and full view dashboard

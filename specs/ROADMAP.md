@@ -77,6 +77,13 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
+- [ISSUE-0004] Ensure robust handling of base branch updates during concurrent PR merges.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [ISSUE-0003] Ensure test suites comprehensively cover new feature interactions and UI state changes
   - [ ] DRAFT
   - [ ] READY

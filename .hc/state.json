@@ -74,7 +74,7 @@
         "Given a task in a list, When the user clicks complete/incomplete, Then its status toggles and is visually distinguished."
       ],
       "type": "User Story",
-      "version": "Backlog (unplanned)",
+      "version": "v0.1",
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
       "stages_completed": [
         "Draft",
@@ -103,9 +103,12 @@
       "user_story": "As a user, I want to delete a task so that I can remove unwanted items.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready"
+      "status": "Tested"
     },
     {
       "acceptance_criteria": [
@@ -152,7 +155,8 @@
       "type": "Issue",
       "id": "ISSUE-0003",
       "priority": "Should",
-      "description": "Ensure test suites comprehensively cover new feature interactions and UI state changes."
+      "description": "Ensure test suites comprehensively cover new feature interactions and UI state changes.",
+      "version": "Backlog (unplanned)"
     },
     {
       "title": "Maintain continuous review of backlog items and ensure smooth handoffs between planning and implementation",
@@ -188,9 +192,9 @@
   ],
   "sprint_goal": "Implement task deletion functionality (US-0004) for the To-Do List Web App MVP",
   "sprint_number": 4,
-  "sprint_backlog_pr_sprint": 3,
-  "planning_output_commit_count": 21,
-  "sprint_backlog_pr_content_baseline": 15,
+  "sprint_backlog_pr_sprint": 4,
+  "planning_output_commit_count": 24,
+  "sprint_backlog_pr_content_baseline": 22,
   "sprint_backlog": [
     {
       "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
@@ -332,6 +336,49 @@
       "approach": "Add toggle route for tasks in app.py, style completed tasks in templates/index.html, and write unit tests.",
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified task completion toggle functionality works correctly via the Flask app and test suite."
+    },
+    {
+      "title": "Delete Task",
+      "acceptance_criteria": [
+        "Given a task, When the user clicks delete, Then the task is removed from the list."
+      ],
+      "epic_id": "EP-0001",
+      "priority": "Must",
+      "description": "As a user, I want to delete a task so that I can remove unwanted items.",
+      "value_hypothesis": "Allows cleanup of unwanted or obsolete tasks.",
+      "id": "US-0004",
+      "type": "User Story",
+      "version": "Backlog (unplanned)",
+      "user_story": "As a user, I want to delete a task so that I can remove unwanted items.",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
+      ],
+      "status": "Tested",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "dod_checks": [
+        "Code written and reviewed-ready",
+        "Automated tests written and passing",
+        "Tokens logged"
+      ],
+      "tasks": [
+        "Implement delete_task route in app.py",
+        "Add delete task button/form in templates/index.html",
+        "Write pytest test for task deletion"
+      ],
+      "test_approach": "Test deleting a task from an existing list and verifying removal.",
+      "risks_assumptions": [
+        "Index-based deletion is reliable for in-memory list storage."
+      ],
+      "approach": "Implement delete task route in app.py, add delete button in templates/index.html, and add unit test.",
+      "estimate": 1000
     }
   ],
   "impediment_log": [],
@@ -394,13 +441,16 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.82850425
+    "current_usd_spend": 1.1322413699999998
   },
   "token_usage": {
-    "total": 261635,
+    "total": 3724290,
     "agents": {
       "ScrumMaster": 86388,
-      "ProductOwner": 175247
+      "ProductOwner": 352458,
+      "DevTeam": 2202435,
+      "Architect": 629977,
+      "QA": 453032
     }
   },
   "story_estimates": {
@@ -415,6 +465,10 @@
     "US-0003": {
       "estimate": 1000,
       "actual": 480
+    },
+    "US-0004": {
+      "estimate": 1000,
+      "actual": 490
     }
   },
   "sprint_report_kpis": {},
@@ -441,7 +495,7 @@
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 8,
+  "dev_touch_baseline": 9,
   "unadvanced_write_nudge_baseline": 0,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
@@ -473,7 +527,9 @@
     "specs/requirements/ISSUE-0003-Ensure-test-suites-comprehensively-cover-new-feature-interactions-and-UI-state-changes..md",
     "specs/reports/TRANSCRIPT-002.md",
     "specs/reports/SPRINT-REPORT-002.md",
-    "specs/reports/RETRO-002.md"
+    "specs/reports/RETRO-002.md",
+    "specs/requirements/ISSUE-0003-Ensure-test-suites-comprehensively-cover-new-feature-interactions-and-UI-state-changes.md",
+    "us0004_notes.txt"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -486,17 +542,17 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
+    "Architect": 8,
+    "QA": 8,
+    "DevTeam": 4
+  },
+  "architect_review_baseline": 8,
+  "qa_review_baseline": 8,
+  "qa_tested_baseline": 3,
+  "sprint_backlog_engagement_baseline": {
     "Architect": 6,
     "QA": 6,
     "DevTeam": 3
-  },
-  "architect_review_baseline": 6,
-  "qa_review_baseline": 6,
-  "qa_tested_baseline": 3,
-  "sprint_backlog_engagement_baseline": {
-    "Architect": 4,
-    "QA": 4,
-    "DevTeam": 2
   },
   "sprint_report_pending_release": false,
   "blocking_interactions": [
@@ -520,7 +576,8 @@
   "version_goals": {
     "v0.1": [
       "Implement task addition functionality (US-0002) for the To-Do List Web App MVP",
-      "Implement task completion toggle functionality (US-0003) for the To-Do List Web App MVP"
+      "Implement task completion toggle functionality (US-0003) for the To-Do List Web App MVP",
+      "Implement task deletion functionality (US-0004) for the To-Do List Web App MVP"
     ]
   }
 }

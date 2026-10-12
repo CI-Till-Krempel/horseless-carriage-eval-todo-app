@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete Task
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-12
@@ -16,4 +16,9 @@
 Allows cleanup of unwanted or obsolete tasks.
 
 ## Test Approach
+Test deleting a task from an existing list and verifying removal.
 
+### Tasks
+- Implement delete_task route in app.py
+- Add delete task button/form in templates/index.html
+- Write pytest test for task deletion

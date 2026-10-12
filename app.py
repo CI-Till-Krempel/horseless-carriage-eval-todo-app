@@ -30,5 +30,11 @@ def toggle_task(list_name, task_index):
         task['completed'] = not task['completed']
     return redirect(url_for('index'))
 
+@app.route('/lists/<list_name>/tasks/<int:task_index>/delete', methods=['POST'])
+def delete_task(list_name, task_index):
+    if list_name in todo_lists and 0 <= task_index < len(todo_lists[list_name]):
+        todo_lists[list_name].pop(task_index)
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True)

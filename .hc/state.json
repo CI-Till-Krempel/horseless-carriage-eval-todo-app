@@ -1,0 +1,557 @@
+{
+  "version": "1.0.0",
+  "product_vision": "Build a simple, intuitive to-do list web application that allows a single user to manage lists and tasks efficiently with a clean web UI. - Single user, no authentication. - Web UI accessible locally. - Backend/Frontend architecture chosen for simplicity and reliability.",
+  "product_goals": [],
+  "architecture_vision": "# Architecture Vision: To-Do List Web App\n\n## Target System Shape\nA lightweight, monolithic web application comprising a minimal Python backend (e.g., Flask or FastAPI) and a responsive HTML/CSS/JS frontend served directly by the backend.\n\n## Key Quality Attributes\n- **Simplicity & Maintainability**: Minimal dependencies, easy to run locally with a single command.\n- **Reliability**: Robust in-memory or simple file-based persistence (e.g., JSON or SQLite) to ensure state survives page reloads during a session.\n- **Usability**: Clean, intuitive single-page or multi-page web UI satisfying all user interaction requirements without complex client-side build pipelines.\n\n## Tech-Stack Guardrails\n- **Language**: Python 3.x for the backend server.\n- **Web Framework**: Flask or FastAPI (lightweight, rapid development).\n- **Frontend**: Vanilla JavaScript, HTML5, and CSS (with optional CSS framework like Tailwind CSS via CDN if needed for styling) to avoid complex node_modules build steps.\n- **Persistence**: SQLite or simple JSON file storage for local persistence.\n\n## Major Components and Boundaries\n1. **Web Server / Routing Layer**: Handles HTTP requests, serves static files, and routes API endpoints.\n2. **Domain/Service Layer**: Manages business logic for lists and tasks (creation, completion, deletion).\n3. **Data Access Layer**: Abstracts persistence (SQLite/JSON file).\n4. **Frontend UI**: Renders lists and tasks, handles user interactions and API calls via Fetch API.",
+  "product_backlog": [
+    {
+      "description": "Core Epic to deliver the foundational to-do list web app features (lists, tasks, persistence, and UI).",
+      "id": "EP-0001",
+      "title": "To-Do List Core MVP",
+      "type": "Epic",
+      "status": "Draft",
+      "priority": "Must"
+    },
+    {
+      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "title": "Create a new to-do list",
+      "priority": "Must",
+      "value_hypothesis": "Users can successfully initialize and view separate to-do lists.",
+      "acceptance_criteria": [
+        "Given the app is running, When the user submits a new list name, Then a new to-do list is created and displayed."
+      ],
+      "id": "US-0001",
+      "depends_on": [],
+      "epic_id": "EP-0001",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
+      ],
+      "status": "Accepted",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified that US-0001 acceptance criteria are fully met: users can create new to-do lists and view them correctly in the web UI."
+    },
+    {
+      "priority": "Must",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user adds a task with a text description, Then the task appears within that list."
+      ],
+      "depends_on": [
+        "US-0001"
+      ],
+      "title": "Add a task to a list",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "value_hypothesis": "Users can successfully record tasks under specific lists.",
+      "epic_id": "EP-0001",
+      "id": "US-0002",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
+      ],
+      "status": "Accepted",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified acceptance criteria for US-0002: users can successfully add tasks to lists and see them displayed correctly."
+    },
+    {
+      "id": "US-0003",
+      "value_hypothesis": "Users can toggle task status and see visual distinction.",
+      "acceptance_criteria": [
+        "Given an existing task, When the user marks it as complete or incomplete, Then its visual status updates accordingly."
+      ],
+      "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track progress.",
+      "epic_id": "EP-0001",
+      "description": "As a user, I want to mark a task as complete or incomplete so that I can track progress.",
+      "title": "Mark task as complete or incomplete",
+      "depends_on": [
+        "US-0002"
+      ],
+      "priority": "Must",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready"
+    },
+    {
+      "description": "As a user, I want to delete a task so that I can remove items I no longer need.",
+      "id": "US-0004",
+      "depends_on": [
+        "US-0002"
+      ],
+      "epic_id": "EP-0001",
+      "value_hypothesis": "Users can remove unwanted tasks cleanly.",
+      "title": "Delete a task",
+      "acceptance_criteria": [
+        "Given an existing task, When the user deletes the task, Then it is removed from the list."
+      ],
+      "priority": "Must",
+      "user_story": "As a user, I want to delete a task so that I can remove items I no longer need.",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready"
+    },
+    {
+      "depends_on": [
+        "US-0001"
+      ],
+      "description": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.",
+      "priority": "Must",
+      "value_hypothesis": "Users can delete lists and cascade delete their tasks.",
+      "id": "US-0005",
+      "acceptance_criteria": [
+        "Given an existing list with tasks, When the user deletes the list, Then the list and all its contained tasks are removed."
+      ],
+      "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.",
+      "epic_id": "EP-0001",
+      "title": "Delete an entire list",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready"
+    },
+    {
+      "description": "Epic for robustness, file persistence, and enhanced UI polish for the To-Do List Web App.",
+      "title": "Robustness and Persistence",
+      "id": "EP-0002",
+      "type": "Epic"
+    },
+    {
+      "description": "As a user, I want my lists and tasks to persist across application restarts so that I do not lose data.",
+      "acceptance_criteria": [
+        "Given the app is running, When lists and tasks are modified, Then state is automatically saved to a local storage file (JSON/SQLite) so data persists across application restarts."
+      ],
+      "depends_on": [],
+      "title": "Persistent storage across application restarts",
+      "user_story": "As a user, I want my lists and tasks to persist across application restarts so that I do not lose data.",
+      "epic_id": "EP-0002",
+      "value_hypothesis": "Data survives application restart.",
+      "id": "US-0006",
+      "priority": "Must",
+      "type": "User Story",
+      "version": "v0.2",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready"
+    },
+    {
+      "id": "ISSUE-0001",
+      "type": "Issue",
+      "title": "Ensure all team members check branch and PR IDs before running git merge commands to avoid unnecessary CLI warnings.",
+      "status": "Draft",
+      "priority": "Should",
+      "version": "v0.2"
+    },
+    {
+      "id": "US-0007",
+      "title": "Robust error handling and validation",
+      "epic_id": "EP-0002",
+      "user_story": "As a user, I want clear error handling for invalid operations so that I understand what went wrong.",
+      "description": "As a user, I want clear error handling for invalid operations so that I understand what went wrong.",
+      "acceptance_criteria": [
+        "Given invalid input or missing list/task ID, When submitted, Then the application displays clear error messages rather than failing ungracefully."
+      ],
+      "depends_on": [
+        "US-0006"
+      ],
+      "priority": "Should",
+      "value_hypothesis": "Users receive friendly error messages on bad input.",
+      "type": "User Story",
+      "version": "v0.2",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready"
+    }
+  ],
+  "definition_of_done": [
+    "Code reviewed",
+    "Automated tests passing",
+    "Acceptance criteria met",
+    "No critical security issues",
+    "Docs updated if needed",
+    "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
+    "Actual tokens spent logged via log_story_tokens"
+  ],
+  "sprint_goal": "Enhance To-Do List Web App with robust error handling, UI polish, and persistent storage.",
+  "sprint_number": 2,
+  "sprint_backlog_pr_sprint": 1,
+  "planning_output_commit_count": 6,
+  "sprint_backlog_pr_content_baseline": 1,
+  "sprint_backlog": [
+    {
+      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "title": "Create a new to-do list",
+      "priority": "Must",
+      "value_hypothesis": "Users can successfully initialize and view separate to-do lists.",
+      "acceptance_criteria": [
+        "Given the app is running, When the user submits a new list name, Then a new to-do list is created and displayed."
+      ],
+      "id": "US-0001",
+      "depends_on": [],
+      "epic_id": "EP-0001",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
+      ],
+      "status": "Accepted",
+      "estimate": 50000,
+      "test_approach": "Pytest testing of Flask endpoints and HTML output.",
+      "approach": "Implement a lightweight Flask web application with a simple HTML/CSS/JS frontend and in-memory or SQLite storage for lists and tasks, starting with US-0001 (create a new to-do list).",
+      "tasks": [
+        "Initialize Flask app and setup routing",
+        "Create HTML frontend with form for list creation",
+        "Implement backend API for creating lists",
+        "Write unit/integration tests for list creation"
+      ],
+      "dod_checks": [
+        "Automated tests pass",
+        "UI works end-to-end for creating a list"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "requirements.txt",
+        "tests/test_app.py"
+      ],
+      "risks_assumptions": [
+        "In-memory or simple SQLite storage is sufficient for MVP session persistence."
+      ],
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified that US-0001 acceptance criteria are fully met: users can create new to-do lists and view them correctly in the web UI."
+    },
+    {
+      "priority": "Must",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user adds a task with a text description, Then the task appears within that list."
+      ],
+      "depends_on": [
+        "US-0001"
+      ],
+      "title": "Add a task to a list",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "value_hypothesis": "Users can successfully record tasks under specific lists.",
+      "epic_id": "EP-0001",
+      "id": "US-0002",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
+      ],
+      "status": "Accepted",
+      "approach": "Extend Flask application to support adding tasks to a specified list via API and UI.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "test_approach": "Pytest tests verifying task addition to lists.",
+      "tasks": [
+        "Add task creation endpoint in Flask",
+        "Update UI to display and add tasks under lists",
+        "Add automated tests for task creation"
+      ],
+      "estimate": 40000,
+      "dod_checks": [
+        "Automated tests pass",
+        "UI allows adding tasks to a list"
+      ],
+      "risks_assumptions": [
+        "Task creation relies on valid list ID."
+      ],
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified acceptance criteria for US-0002: users can successfully add tasks to lists and see them displayed correctly."
+    },
+    {
+      "id": "US-0003",
+      "value_hypothesis": "Users can toggle task status and see visual distinction.",
+      "acceptance_criteria": [
+        "Given an existing task, When the user marks it as complete or incomplete, Then its visual status updates accordingly."
+      ],
+      "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track progress.",
+      "epic_id": "EP-0001",
+      "description": "As a user, I want to mark a task as complete or incomplete so that I can track progress.",
+      "title": "Mark task as complete or incomplete",
+      "depends_on": [
+        "US-0002"
+      ],
+      "priority": "Must",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "risks_assumptions": [
+        "CSS styling handles visual distinction clearly."
+      ],
+      "test_approach": "Pytest testing of task status toggling.",
+      "estimate": 30000,
+      "dod_checks": [
+        "Automated tests pass",
+        "UI reflects completed vs incomplete task states visually"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "approach": "Add toggle completion endpoint and UI styling/buttons to mark tasks complete or incomplete with visual distinction.",
+      "tasks": [
+        "Add toggle task completion endpoint",
+        "Update UI with complete/incomplete toggle action and styling",
+        "Add automated test for task toggling"
+      ]
+    },
+    {
+      "description": "As a user, I want to delete a task so that I can remove items I no longer need.",
+      "id": "US-0004",
+      "depends_on": [
+        "US-0002"
+      ],
+      "epic_id": "EP-0001",
+      "value_hypothesis": "Users can remove unwanted tasks cleanly.",
+      "title": "Delete a task",
+      "acceptance_criteria": [
+        "Given an existing task, When the user deletes the task, Then it is removed from the list."
+      ],
+      "priority": "Must",
+      "user_story": "As a user, I want to delete a task so that I can remove items I no longer need.",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "risks_assumptions": [
+        "Task ID is unique and valid for deletion."
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "dod_checks": [
+        "Automated tests pass",
+        "UI deletes tasks successfully"
+      ],
+      "tasks": [
+        "Add delete task endpoint",
+        "Update UI with delete task buttons and handlers",
+        "Add automated test for task deletion"
+      ],
+      "test_approach": "Pytest testing of task deletion endpoint.",
+      "estimate": 30000,
+      "approach": "Add delete task endpoint and UI delete buttons."
+    },
+    {
+      "depends_on": [
+        "US-0001"
+      ],
+      "description": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.",
+      "priority": "Must",
+      "value_hypothesis": "Users can delete lists and cascade delete their tasks.",
+      "id": "US-0005",
+      "acceptance_criteria": [
+        "Given an existing list with tasks, When the user deletes the list, Then the list and all its contained tasks are removed."
+      ],
+      "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.",
+      "epic_id": "EP-0001",
+      "title": "Delete an entire list",
+      "type": "User Story",
+      "version": "v1.0-MVP",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "tasks": [
+        "Add delete list endpoint with task cascade",
+        "Update UI with delete list buttons",
+        "Add automated test for list deletion"
+      ],
+      "estimate": 30000,
+      "approach": "Add delete list endpoint with cascade deletion of associated tasks and UI delete list button.",
+      "test_approach": "Pytest testing of list and cascade task deletion.",
+      "risks_assumptions": [
+        "Cascade deletion correctly cleans up all tasks belonging to the list."
+      ],
+      "dod_checks": [
+        "Automated tests pass",
+        "UI deletes lists and tasks successfully"
+      ]
+    }
+  ],
+  "impediment_log": [],
+  "retro_actions": [],
+  "decision_log": [
+    {
+      "title": "Approve Product Requirements Document",
+      "decision": "Adopt PRD-ToDo-MVP.md as the core product requirements for the To-Do List Web App.",
+      "rationale": "Defines clear requirements matching the fixed evaluation product vision without scope creep.",
+      "owner": "ProductOwner"
+    },
+    {
+      "title": "Initial Architecture Vision for To-Do List Web App",
+      "decision": "Establish the initial architecture vision using a Python lightweight web stack (Flask/FastAPI + SQLite/JSON file persistence + Vanilla JS frontend).",
+      "rationale": "Aligns perfectly with the product vision and simplicity constraints, ensuring easy local running and low complexity.",
+      "owner": "Architect"
+    },
+    {
+      "title": "US-0002 marked Implemented without a new source touch",
+      "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
+      "rationale": "US-0002 was implemented together with US-0001 in app.py, templates/index.html, and tested in tests/test_app.py during the initial implementation pass.",
+      "owner": "DevTeam"
+    }
+  ],
+  "sprint_report": "",
+  "budgets": {
+    "total": 5000000,
+    "total_usd": 15.0,
+    "current_usd_spend": 0.5447981399999999
+  },
+  "token_usage": {
+    "total": 865635,
+    "agents": {
+      "ScrumMaster": 64797,
+      "ProductOwner": 800838
+    }
+  },
+  "story_estimates": {
+    "US-0001": {
+      "estimate": 50000,
+      "actual": 12000
+    },
+    "US-0002": {
+      "estimate": 40000,
+      "actual": 8000
+    },
+    "US-0003": {
+      "estimate": 30000
+    },
+    "US-0004": {
+      "estimate": 30000
+    },
+    "US-0005": {
+      "estimate": 30000
+    }
+  },
+  "sprint_report_kpis": {},
+  "kpi_update_count": 0,
+  "kpi_baseline": 0,
+  "backlog_scope_complete": false,
+  "repo": {
+    "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
+    "local_path": "/app/eval-output/clone",
+    "default_branch": "eval/0.1.0-run56/main"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "\n[SPRINT PHASE: Conceptual Work] The Ready backlog isn't deep enough yet - groom it (upsert_prd/upsert_epic/upsert_story, then advance_story_stage(..., 'Ready')) until it is. Starting a sprint, publishing a Sprint Backlog PR, or implementation work don't belong in this phase yet.\n"
+    },
+    {
+      "role": "user",
+      "content": "This is sprint 1 of a fixed 5-sprint evaluation run. You are already fully configured (repo, branch, GitHub auth, and budgets are all pre-set via environment variables) - do not ask me any setup questions.\n\nBefore delegating any work to any specialist agent, you MUST first call init_scrum_state, then call create_litellm_virtual_key exactly these 5 times, using these exact agent_name values (these are the literal internal agent names, not display names - using any other spelling, e.g. with spaces, will not match and that agent will be blocked from running):\n- create_litellm_virtual_key(agent_name=\"ProductOwner\", ...)\n- create_litellm_virtual_key(agent_name=\"ScrumMaster\", ...)\n- create_litellm_virtual_key(agent_name=\"DevTeam\", ...)\n- create_litellm_virtual_key(agent_name=\"QA\", ...)\n- create_litellm_virtual_key(agent_name=\"Architect\", ...)\n\nEvery specialist agent is hard-blocked in code from making any LLM call at all until a virtual key exists under its exact agent_name - delegating to one before its key exists wastes the delegation entirely, it does not queue or retry. Do this once, up front, then proceed.\n\nThe product vision for this entire evaluation, verbatim, is:\n\n# Fixed Evaluation Scenario: To-Do List Web App\n\n> **Do not edit this file to \"make the eval easier\" or to match whatever the team\n> produced.** Its entire value is being byte-identical across runs, so results are\n> comparable across Horseless Carriage versions over time. If the scenario itself\n> needs to change, that's a deliberate decision with its own commit message\n> explaining why — never a silent drift.\n\nThis is the fixed input fed verbatim to the agent team as the product vision for\nevery automated team-performance evaluation run (see `RELEASE.md` \"Team performance\nevaluation\" and `agents/scrum_team/scripts/run_eval.py`). It is intentionally small\nenough to be fully deliverable within a 5-sprint, small-budget run, while still\nrequiring real design decisions (state persistence, list vs. item modeling,\nbasic UI) that differentiate a good team performance from a mediocre one.\n\n## Product Vision\n\nBuild a simple to-do list web application. A single user should be able to:\n\n1. Create a new to-do list with a name.\n2. Add a task to a list, with a short text description.\n3. Mark a task as complete or incomplete.\n4. Delete a task.\n5. Delete an entire list (and its tasks).\n6. See all their lists and, within a list, all its tasks, with completed tasks\n   visually distinguished from incomplete ones.\n\n## Constraints (deliberately narrow, to keep this deliverable in 5 sprints)\n\n- **Single user, no authentication.** Do not build login/accounts — out of scope.\n- **No persistence requirement beyond the current session/process is assumed** unless\n  the team's own design calls for it — persistence approach (in-memory, file, or a\n  simple embedded DB) is a legitimate design decision for the team to make and\n  justify, not a hidden requirement.\n- **A working web UI is required** — the deliverable is something a person could\n  open in a browser and actually use, not just a backend API with no way to\n  interact with it.\n- **No specific language/framework is mandated.** The team should choose something\n  it can deliver completely and correctly within budget, and should say why.\n\n## Explicitly out of scope (do not let these creep in)\n\n- Multiple users, sharing, or permissions.\n- Due dates, reminders, priorities, tags, or sub-tasks.\n- Mobile app, offline support, or real-time sync.\n- Any deployment/hosting beyond running locally.\n\n## What \"done\" looks like after 5 sprints\n\nA person can clone the repo, follow the README, run the app, and actually create a\nlist, add a few tasks, mark one complete, delete one, and delete a list — end to\nend, without reading any code first.\n\n\nTreat the sprint goal and backlog for this sprint as pre-approved by me (the human) - do not wait for further approval messages, proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) for this sprint's increment. Do not ask me anything else during this sprint - make reasonable decisions yourself and note them as assumptions in the sprint report."
+    }
+  ],
+  "hc_version": "0.1.0",
+  "retro_baseline": 0,
+  "human_approvals": [],
+  "sprint_approval_baseline": 0,
+  "release_approval_baseline": 0,
+  "dev_touch_baseline": 4,
+  "unadvanced_write_nudge_baseline": 0,
+  "sprint_files_touched": [
+    "specs/requirements/PRD-ToDo-MVP.md",
+    "specs/architecture/ARCHITECTURE-VISION.md",
+    "specs/ROADMAP.md",
+    "specs/stories/EP-0001-To-Do-List-Core-MVP.md",
+    "specs/stories/US-0001-Create-a-new-to-do-list.md",
+    "specs/stories/US-0002-Add-a-task-to-a-list.md",
+    "specs/stories/US-0003-Mark-task-as-complete-or-incomplete.md",
+    "specs/stories/US-0004-Delete-a-task.md",
+    "specs/stories/US-0005-Delete-an-entire-list.md",
+    "requirements.txt",
+    "app.py",
+    "templates/index.html",
+    "tests/test_app.py",
+    "specs/stories/EP-0002-Robustness-and-Persistence.md",
+    "specs/stories/US-0006-Persistent-storage-across-application-restarts.md",
+    "specs/stories/US-0007-Robust-error-handling-and-validation.md"
+  ],
+  "last_check_build": {
+    "checked": "requirements.txt",
+    "passing": true,
+    "manifest_write_count_at_check": 1
+  },
+  "last_pr_checks": {
+    "passing": true,
+    "git_push_count_at_check": 0
+  },
+  "git_push_count": 0,
+  "pr_review_calls": {
+    "Architect": 3,
+    "DevTeam": 1,
+    "QA": 3
+  },
+  "architect_review_baseline": 3,
+  "qa_review_baseline": 3,
+  "qa_tested_baseline": 0,
+  "sprint_backlog_engagement_baseline": {},
+  "sprint_report_pending_release": false,
+  "blocking_interactions": [],
+  "overclaim_rejection_counts": {},
+  "general_blockers": [],
+  "steering_proposal_count": 0,
+  "steering_baseline": 0,
+  "steering_proposals": [],
+  "blocked_story_ids_as_of_last_report": [],
+  "accepted_count_baseline": 0,
+  "version_goals": {}
+}

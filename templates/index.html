@@ -11,8 +11,19 @@
         <button type="submit">Create List</button>
     </form>
     <ul>
-        {% for name in todo_lists %}
-            <li><strong>{{ name }}</strong></li>
+        {% for name, tasks in todo_lists.items() %}
+            <li>
+                <strong>{{ name }}</strong>
+                <form action="/lists/{{ name }}/tasks" method="POST" style="display:inline; margin-left: 10px;">
+                    <input type="text" name="task_description" placeholder="New Task Description" required>
+                    <button type="submit">Add Task</button>
+                </form>
+                <ul>
+                    {% for task in tasks %}
+                        <li>{{ task.description }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
         {% endfor %}
     </ul>
 </body>

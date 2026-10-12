@@ -16,4 +16,9 @@
 Allows cleanup of unwanted or obsolete tasks.
 
 ## Test Approach
+Test deleting a task from an existing list and verifying removal.
 
+### Tasks
+- Implement delete_task route in app.py
+- Add delete task button/form in templates/index.html
+- Write pytest test for task deletion

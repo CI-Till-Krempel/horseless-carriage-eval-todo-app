@@ -24,6 +24,7 @@ Goals
 - Implement task addition functionality (US-0002) for the To-Do List Web App MVP
 - Implement task completion toggle functionality (US-0003) for the To-Do List Web App MVP
 - Implement task deletion functionality (US-0004) for the To-Do List Web App MVP
+- Implement list deletion (US-0005) and viewing all lists/tasks (US-0006) to finalize the To-Do List Web App MVP
 Stories
 - [US-0001] Create To-Do List
   - [x] DRAFT
@@ -46,6 +47,13 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
+- [US-0004] Delete Task
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 
 ### v0.2 — Next iteration (target: YYYY-MM)
 Goals
@@ -56,13 +64,6 @@ Stories
 
 
 Stories
-- [US-0004] Delete Task
-  - [x] DRAFT
-  - [x] READY
-  - [x] IMPLEMENTED
-  - [x] REVIEWED
-  - [x] TESTED
-  - [x] ACCEPTED
 - [US-0005] Delete Entire List
   - [x] DRAFT
   - [x] READY

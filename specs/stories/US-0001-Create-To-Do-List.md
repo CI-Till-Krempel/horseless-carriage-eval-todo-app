@@ -16,4 +16,9 @@
 Users can successfully create and view multiple to-do lists.
 
 ## Test Approach
+Use pytest and Flask test client to verify list creation.
 
+### Tasks
+- Create Flask app with list store
+- Create index page to view and create lists
+- Add automated tests

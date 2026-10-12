@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "product_vision": "",
+  "product_vision": "Build a simple to-do list web application. A single user should be able to: 1. Create a new to-do list with a name. 2. Add a task to a list, with a short text description. 3. Mark a task as complete or incomplete. 4. Delete a task. 5. Delete an entire list (and its tasks). 6. See all their lists and, within a list, all its tasks, with completed tasks visually distinguished from incomplete ones. - Single user, no authentication. - Simple in-memory or file-based persistence for the session/process.",
   "product_goals": [],
   "architecture_vision": "",
   "product_backlog": [
@@ -8,7 +8,9 @@
       "description": "Core backend and web UI for managing to-do lists and tasks",
       "title": "To-Do App Core Functionality",
       "id": "EP-0001",
-      "type": "Epic"
+      "type": "Epic",
+      "status": "Draft",
+      "priority": "Must"
     },
     {
       "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
@@ -30,7 +32,7 @@
         "Accepted"
       ],
       "status": "Accepted",
-      "version": "Backlog (unplanned)",
+      "version": "v0.1",
       "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
       "blocked": null,
       "acceptance_check_count": 1,
@@ -51,9 +53,15 @@
       "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Ready"
+      "status": "Accepted",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified task addition functionality works correctly via the Flask app and test suite."
     },
     {
       "value_hypothesis": "Provides feedback on task completion status.",
@@ -132,12 +140,15 @@
       "status": "Ready"
     },
     {
-      "title": "Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates.",
+      "title": "Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates",
       "overview": "Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates.",
       "owner": "DevTeam",
       "type": "Issue",
       "id": "ISSUE-0001",
-      "priority": "Must"
+      "priority": "Should",
+      "status": "Draft",
+      "description": "Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates.",
+      "version": "Backlog (unplanned)"
     }
   ],
   "definition_of_done": [
@@ -149,11 +160,11 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Build core To-Do List Web App MVP functionality including list and task management web UI",
-  "sprint_number": 1,
-  "sprint_backlog_pr_sprint": 1,
-  "planning_output_commit_count": 7,
-  "sprint_backlog_pr_content_baseline": 2,
+  "sprint_goal": "Implement task addition functionality (US-0002) for the To-Do List Web App MVP",
+  "sprint_number": 2,
+  "sprint_backlog_pr_sprint": 2,
+  "planning_output_commit_count": 12,
+  "sprint_backlog_pr_content_baseline": 8,
   "sprint_backlog": [
     {
       "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
@@ -202,6 +213,53 @@
       ],
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified list creation functionality works correctly via the Flask web UI and automated test suite."
+    },
+    {
+      "epic_id": "EP-0001",
+      "value_hypothesis": "Enables users to record items to accomplish within a specific list.",
+      "title": "Add Task to List",
+      "id": "US-0002",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user adds a task with a text description, Then the task appears under that list."
+      ],
+      "priority": "Must",
+      "type": "User Story",
+      "version": "Backlog (unplanned)",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
+      ],
+      "status": "Accepted",
+      "dod_checks": [
+        "Code written and reviewed-ready",
+        "Automated tests written and passing",
+        "Tokens logged"
+      ],
+      "approach": "Update todo_lists to store list of task dicts and add task addition route and UI form.",
+      "estimate": 1000,
+      "test_approach": "Add unit tests for adding tasks to an existing list.",
+      "tasks": [
+        "Update todo_lists data structure for tasks",
+        "Implement add_task route",
+        "Add task input form in index.html",
+        "Write pytest tests for task addition"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "risks_assumptions": [
+        "In-memory storage resets on restart, acceptable for MVP."
+      ],
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified task addition functionality works correctly via the Flask app and test suite."
     }
   ],
   "impediment_log": [],
@@ -214,6 +272,14 @@
       "category": "technical",
       "sprint_number": 1,
       "issue_id": "ISSUE-0001"
+    },
+    {
+      "action": "Maintain continuous review of backlog items and ensure smooth handoffs between planning and implementation.",
+      "owner": "DevTeam",
+      "success_metric": "All sprint tasks planned and executed without friction.",
+      "status": "open",
+      "category": "technical",
+      "sprint_number": 2
     }
   ],
   "decision_log": [
@@ -222,105 +288,41 @@
       "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
       "rationale": "All 6 user stories representing the complete MVP scope of the To-Do List Web App have been defined and marked Ready.",
       "owner": "ProductOwner"
+    },
+    {
+      "title": "Ready-backlog sufficiency target waived",
+      "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
+      "rationale": "Remaining MVP stories (US-0002 through US-0006) are already defined and ready for development.",
+      "owner": "ProductOwner"
     }
   ],
-  "sprint_report": "# Sprint Review Report\n\n**Generated by Horseless Carriage v0.1.0** (Interaction Level: EVAL)\n\n## Summary\nSprint 1 was successfully completed with the core setup of the To-Do List Web App MVP and implementation of list creation (US-0001). All required sprint reviews, KPIs, and retrospective actions have been logged and finalized.\n\n## Accomplishments\n- Successfully planned and executed Sprint 1 for the To-Do List Web App MVP\n- Delivered US-0001 (Create To-Do List) with a complete Flask app, HTML UI, and automated Pytest test suite\n- Achieved a 1.0 Say/Do ratio and 97% test coverage\n\n## Budget and Usage\n- USD Budget (LiteLLM): $15.00\n- Actual USD Spend (LiteLLM): $0.18\n- Process Overhead: 20.0%\n\n### Per-Agent Token Usage\n  - ScrumOrchestrator: 105735\n  - ProductOwner: 771391\n  - ScrumMaster: 279922\n  - DevTeam: 666611\n  - Architect: 250916\n  - QA: 192487\n\n## Sprint Length Feedback\n- Tokens used: 2,267,062 / 5,000,000 (45%)\n- Stories: 1/1 completed this sprint\n- All planned stories were completed within budget - no sprint-length change suggested.\n\n## Open Questions for Stakeholder (Blockers)\nNo stories are currently blocked.\n\n## Retrospective Actions (including efficiency improvements)\n- Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates. (Owner: DevTeam, Status: open, Category: technical, filed as ISSUE-0001)\n\n## Impediments\nNo impediments logged.\n\n## Story Estimates vs Actual Tokens\n- US-0001: estimate=1000, actual=450\n\n## KPI Dashboard\n- Say-Do Ratio: 1\n- Commitment Reliability: not available (not available - no estimate-accuracy tracking exists yet)\n- Defect Escape Rate: not available (not available - no defect/bug-lifecycle tracking exists yet)\n- Customer Satisfaction: not available (not available - no user/customer satisfaction survey exists year)\n- Test Coverage: 0.97 (2 run, 0 failed)\n- Code Complexity: 2.4\n- Security Scan: {'medium': 0, 'high': 1, 'critical': 0, 'low': 5}\n\n### Per-Agent Prompt Context Usage\n  - ScrumOrchestrator (scrum-eval-cheap): 7,751 / 1,048,576 tokens (0.74%)\n  - DevTeam (scrum-eval-cheap): 4,676 / 1,048,576 tokens (0.45%)\n  - Architect (scrum-eval-cheap): 3,308 / 1,048,576 tokens (0.32%)\n  - ScrumMaster (scrum-eval-cheap): 5,905 / 1,048,576 tokens (0.56%)\n  - ProductOwner (scrum-eval-cheap): 5,615 / 1,048,576 tokens (0.54%)\n  - QA (scrum-eval-cheap): 2,642 / 1,048,576 tokens (0.25%)\n\n## Conversation Transcript\nFull transcript (111 entries) written to `specs/reports/TRANSCRIPT-001.md` (also mirrored at `specs/reports/TRANSCRIPT-LATEST.md`).\n\nMost recent contribution per agent:\n- **ScrumOrchestrator**: transfer_to_agent(agent_name=\"ProductOwner\")\n- **ProductOwner**: transfer_to_agent(agent_name=\"ScrumMaster\")\n- **ScrumMaster**: create_sprint_report(summary=\"Sprint 1 was success...\", accomplishments=['Successfully plann...)\n- **DevTeam**: transfer_to_agent(agent_name=\"Architect\")\n- **Architect**: transfer_to_agent(agent_name=\"QA\")\n- **QA**: transfer_to_agent(agent_name=\"ProductOwner\")\n",
+  "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.21720938
+    "current_usd_spend": 0.42571817
   },
   "token_usage": {
-    "total": 2393576,
+    "total": 2140218,
     "agents": {
-      "ScrumOrchestrator": 105735,
-      "ProductOwner": 813756,
-      "ScrumMaster": 364071,
-      "DevTeam": 666611,
-      "Architect": 250916,
-      "QA": 192487
+      "ScrumMaster": 103856,
+      "ProductOwner": 357331,
+      "DevTeam": 1016582,
+      "Architect": 323716,
+      "QA": 338733
     }
   },
   "story_estimates": {
     "US-0001": {
       "estimate": 1000,
       "actual": 450
+    },
+    "US-0002": {
+      "estimate": 1000,
+      "actual": 500
     }
   },
-  "sprint_report_kpis": {
-    "result_quality": {
-      "defect_escape_rate": null,
-      "customer_satisfaction_note": "not available - no user/customer satisfaction survey exists year",
-      "customer_satisfaction": null,
-      "defect_escape_rate_note": "not available - no defect/bug-lifecycle tracking exists yet"
-    },
-    "security": {
-      "vulnerability_scan_results": {
-        "medium": 0,
-        "high": 1,
-        "critical": 0,
-        "low": 5
-      },
-      "vulnerability_scan_available": true
-    },
-    "maintainability": {
-      "tests_run": 2,
-      "code_complexity_available": true,
-      "tests_failed": 0,
-      "test_coverage_available": true,
-      "test_coverage": 0.97,
-      "code_complexity": 2.4
-    },
-    "team_effectiveness": {
-      "commitment_reliability": null,
-      "commitment_reliability_note": "not available - no estimate-accuracy tracking exists yet",
-      "say_do_ratio": 1
-    },
-    "prompt_context_usage": {
-      "ScrumOrchestrator": {
-        "usage_percent": 0.74,
-        "context_window_tokens": 1048576,
-        "model": "scrum-eval-cheap",
-        "prompt_tokens": 7751,
-        "available": true
-      },
-      "DevTeam": {
-        "prompt_tokens": 4676,
-        "usage_percent": 0.45,
-        "model": "scrum-eval-cheap",
-        "context_window_tokens": 1048576,
-        "available": true
-      },
-      "Architect": {
-        "available": true,
-        "prompt_tokens": 3308,
-        "context_window_tokens": 1048576,
-        "usage_percent": 0.32,
-        "model": "scrum-eval-cheap"
-      },
-      "ScrumMaster": {
-        "usage_percent": 0.56,
-        "model": "scrum-eval-cheap",
-        "context_window_tokens": 1048576,
-        "available": true,
-        "prompt_tokens": 5905
-      },
-      "ProductOwner": {
-        "model": "scrum-eval-cheap",
-        "prompt_tokens": 5615,
-        "usage_percent": 0.54,
-        "context_window_tokens": 1048576,
-        "available": true
-      },
-      "QA": {
-        "model": "scrum-eval-cheap",
-        "prompt_tokens": 2642,
-        "available": true,
-        "context_window_tokens": 1048576,
-        "usage_percent": 0.25
-      }
-    }
-  },
+  "sprint_report_kpis": {},
   "kpi_update_count": 1,
   "kpi_baseline": 1,
   "backlog_scope_complete": true,
@@ -344,7 +346,7 @@
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 4,
+  "dev_touch_baseline": 7,
   "unadvanced_write_nudge_baseline": 0,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
@@ -365,7 +367,11 @@
     "specs/reports/TRANSCRIPT-LATEST.md",
     "specs/reports/SPRINT-REPORT-001.md",
     "specs/reports/SPRINT-REPORT-LATEST.md",
-    "specs/reports/RETRO-001.md"
+    "specs/reports/RETRO-001.md",
+    "specs/requirements/ISSUE-0001-Ensure-early-alignment-between-Product-Owner-and-DevTeam-on-initial-story-scope-and-estimates.md",
+    ".coverage",
+    "__pycache__/app.cpython-311.pyc",
+    "tests/__pycache__/test_app.cpython-311-pytest-9.1.1.pyc"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -378,14 +384,18 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
+    "Architect": 4,
+    "QA": 4,
+    "DevTeam": 2
+  },
+  "architect_review_baseline": 4,
+  "qa_review_baseline": 4,
+  "qa_tested_baseline": 1,
+  "sprint_backlog_engagement_baseline": {
     "Architect": 2,
     "QA": 2,
     "DevTeam": 1
   },
-  "architect_review_baseline": 2,
-  "qa_review_baseline": 2,
-  "qa_tested_baseline": 1,
-  "sprint_backlog_engagement_baseline": {},
   "sprint_report_pending_release": false,
   "blocking_interactions": [
     {
@@ -405,5 +415,9 @@
   "steering_proposals": [],
   "blocked_story_ids_as_of_last_report": [],
   "accepted_count_baseline": 1,
-  "version_goals": {}
+  "version_goals": {
+    "v0.1": [
+      "Implement task addition functionality (US-0002) for the To-Do List Web App MVP"
+    ]
+  }
 }

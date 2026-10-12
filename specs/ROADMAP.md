@@ -21,8 +21,15 @@ Tip: If you prefer standard checkboxes only, use the Kanban tables below and kee
 
 ### v0.1 — MVP (target: YYYY-MM)
 Goals
-
-Stories:
+- Implement task addition functionality (US-0002) for the To-Do List Web App MVP
+Stories
+- [US-0001] Create To-Do List
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 
 ### v0.2 — Next iteration (target: YYYY-MM)
 Goals
@@ -33,13 +40,6 @@ Stories
 
 
 Stories
-- [US-0001] Create To-Do List
-  - [x] DRAFT
-  - [x] READY
-  - [x] IMPLEMENTED
-  - [x] REVIEWED
-  - [x] TESTED
-  - [x] ACCEPTED
 - [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY

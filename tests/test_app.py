@@ -2,7 +2,6 @@ import pytest
 from app import app, lists_db, tasks_db
 
 @pytest.fixture
-pyt_client = app.test_client
 def client():
     lists_db.clear()
     tasks_db.clear()

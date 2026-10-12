@@ -23,20 +23,15 @@
       "type": "User Story",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready",
+      "status": "Tested",
       "version": "Backlog (unplanned)",
       "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
-      "blocked": {
-        "question": "ScrumMaster and DevTeam bounced transfer_to_agent 3x with no progress - 🔁 [TRANSFER LOOP DETECTED] ScrumMaster and DevTeam have handed off to each other 3 times in a row with no other tool call in between - refusing this transfer. Stop transferring and actually call a tool that makes progress (e.g. the mandatory step you're both routing around), or explain the blocker instead of handing off again.",
-        "category": "technical",
-        "raised_by": "ScrumMaster",
-        "raised_at_stage": "Ready",
-        "escalated_to_user": false,
-        "blocking_interaction_id": 1,
-        "mechanically_detected": true
-      }
+      "blocked": null
     },
     {
       "epic_id": "EP-0001",
@@ -145,10 +140,56 @@
   ],
   "sprint_goal": "Build core To-Do List Web App MVP functionality including list and task management web UI",
   "sprint_number": 1,
-  "sprint_backlog_pr_sprint": 0,
-  "planning_output_commit_count": 1,
-  "sprint_backlog_pr_content_baseline": 0,
-  "sprint_backlog": [],
+  "sprint_backlog_pr_sprint": 1,
+  "planning_output_commit_count": 4,
+  "sprint_backlog_pr_content_baseline": 2,
+  "sprint_backlog": [
+    {
+      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "id": "US-0001",
+      "epic_id": "EP-0001",
+      "priority": "Must",
+      "value_hypothesis": "Allows users to organize tasks into separate named lists.",
+      "title": "Create To-Do List",
+      "acceptance_criteria": [
+        "Given the user is on the home page, When they enter a list name and click create, Then a new to-do list is created and displayed."
+      ],
+      "type": "User Story",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
+      ],
+      "status": "Tested",
+      "version": "Backlog (unplanned)",
+      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "blocked": null,
+      "dod_checks": [
+        "Code written and reviewed-ready",
+        "Automated tests written and passing",
+        "Tokens logged"
+      ],
+      "test_approach": "Pytest and Flask test client testing list creation.",
+      "estimate": 1000,
+      "approach": "Build Flask application with SQLite / in-memory list storage and web UI for creating lists.",
+      "タsks": [
+        "Set up Flask app structure",
+        "Implement list creation endpoint/route",
+        "Add HTML form for list creation",
+        "Write tests for list creation"
+      ],
+      "risks_assumptions": [
+        "Assumes Flask is lightweight and sufficient for MVP."
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "requirements.txt"
+      ]
+    }
+  ],
   "impediment_log": [],
   "retro_actions": [],
   "decision_log": [
@@ -163,18 +204,25 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.0478458
+    "current_usd_spend": 0.16064592
   },
   "token_usage": {
-    "total": 851312,
+    "total": 1931399,
     "agents": {
       "ScrumOrchestrator": 105735,
-      "ProductOwner": 607975,
-      "ScrumMaster": 71390,
-      "DevTeam": 66212
+      "ProductOwner": 657796,
+      "ScrumMaster": 120451,
+      "DevTeam": 666611,
+      "Architect": 250916,
+      "QA": 129890
     }
   },
-  "story_estimates": {},
+  "story_estimates": {
+    "US-0001": {
+      "estimate": 1000,
+      "actual": 450
+    }
+  },
   "sprint_report_kpis": null,
   "kpi_update_count": 0,
   "kpi_baseline": 0,
@@ -199,7 +247,7 @@
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 0,
+  "dev_touch_baseline": 4,
   "unadvanced_write_nudge_baseline": 0,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
@@ -210,14 +258,29 @@
     "specs/stories/US-0003-Mark-Task-Complete-or-Incomplete.md",
     "specs/stories/US-0004-Delete-Task.md",
     "specs/stories/US-0005-Delete-Entire-List.md",
-    "specs/stories/US-0006-View-All-Lists-and-Tasks.md"
+    "specs/stories/US-0006-View-All-Lists-and-Tasks.md",
+    "requirements.txt",
+    "app.py",
+    "templates/index.html",
+    "tests/test_app.py"
   ],
-  "last_check_build": null,
-  "last_pr_checks": null,
+  "last_check_build": {
+    "checked": "requirements.txt",
+    "passing": true,
+    "manifest_write_count_at_check": 1
+  },
+  "last_pr_checks": {
+    "passing": true,
+    "git_push_count_at_check": 0
+  },
   "git_push_count": 0,
-  "pr_review_calls": {},
-  "architect_review_baseline": 0,
-  "qa_review_baseline": 0,
+  "pr_review_calls": {
+    "Architect": 2,
+    "QA": 2,
+    "DevTeam": 1
+  },
+  "architect_review_baseline": 2,
+  "qa_review_baseline": 2,
   "qa_tested_baseline": 0,
   "sprint_backlog_engagement_baseline": {},
   "sprint_report_pending_release": false,
@@ -228,8 +291,8 @@
       "summary": "'US-0001' is BLOCKED (technical): ScrumMaster and DevTeam bounced transfer_to_agent 3x with no progress - 🔁 [TRANSFER LOOP DETECTED] ScrumMaster and DevTeam have handed off to each other 3 times in a row with no other tool call in between - refusing this transfer. Stop transferring and actually call a tool that makes progress (e.g. the mandatory step you're both routing around), or explain the blocker instead of handing off again.",
       "detail": "Raised by ScrumMaster. Resolve via Architect's resolve_story_blocker('US-0001', resolution).",
       "created_at": "2026-10-12T08:35:02.036405+00:00",
-      "resolved": false,
-      "resolved_at": null
+      "resolved": true,
+      "resolved_at": "2026-10-12T08:35:33.623000+00:00"
     }
   ],
   "overclaim_rejection_counts": {},

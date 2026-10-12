@@ -16,4 +16,9 @@
 Users receive friendly error messages on bad input.
 
 ## Test Approach
+Pytest verification of error status codes and responses.
 
+### Tasks
+- Add validation checks for empty inputs and missing IDs
+- Add error banners/flash messages in index.html
+- Add unit tests for error handling

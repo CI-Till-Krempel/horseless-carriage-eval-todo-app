@@ -14,6 +14,7 @@
 
 ## Notes
 Users can delete lists and cascade delete their tasks.
+- 🚫 BLOCKED (product) - raised by DevTeam: US-0005 is marked as Ready in the roadmap and specs, but the system workflow checks consider US-0005 unaccepted, preventing US-0006 from starting. How should we proceed with completing or re-verifying US-0005?
 
 ## Test Approach
 Pytest testing of list and cascade task deletion.

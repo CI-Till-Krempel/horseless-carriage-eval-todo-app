@@ -56,8 +56,7 @@ Stories
 
 ### v1.0-MVP
 Goals
-- Establish MVP core functionality: create lists, add/complete/delete tasks, delete lists, and render a clean web UI.
-
+- Enhance To-Do List Web App with robust error handling, UI polish, and persistent storage.
 Stories
 - [US-0001] Create a new to-do list
   - [x] DRAFT

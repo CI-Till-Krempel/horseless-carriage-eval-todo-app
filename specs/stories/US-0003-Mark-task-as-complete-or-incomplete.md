@@ -14,6 +14,7 @@
 
 ## Notes
 Users can toggle task status and see visual distinction.
+- 🚫 BLOCKED (technical) - raised by DevTeam: DevTeam and ProductOwner bounced transfer_to_agent 6x with no progress - 🔁 [TRANSFER LOOP DETECTED] 6 transfer_to_agent hops in a row with no other tool call in between (most recently DevTeam -> ProductOwner) - refusing this transfer. This looks like an unproductive rotation between roles rather than a direct two-agent ping-pong. Stop transferring and actually call a tool that makes progress, or explain the blocker in plain text instead.
 
 ## Test Approach
 Pytest testing of task status toggling.

@@ -74,7 +74,7 @@
         "Given a task in a list, When the user clicks complete/incomplete, Then its status toggles and is visually distinguished."
       ],
       "type": "User Story",
-      "version": "Backlog (unplanned)",
+      "version": "v0.1",
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
       "stages_completed": [
         "Draft",
@@ -103,9 +103,15 @@
       "user_story": "As a user, I want to delete a task so that I can remove unwanted items.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Ready"
+      "status": "Accepted",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified task deletion functionality works correctly via the Flask app and test suite."
     },
     {
       "acceptance_criteria": [
@@ -146,6 +152,16 @@
       "status": "Ready"
     },
     {
+      "title": "Ensure test suites comprehensively cover new feature interactions and UI state changes",
+      "overview": "Ensure test suites comprehensively cover new feature interactions and UI state changes.",
+      "owner": "QA",
+      "type": "Issue",
+      "id": "ISSUE-0003",
+      "priority": "Should",
+      "description": "Ensure test suites comprehensively cover new feature interactions and UI state changes.",
+      "version": "Backlog (unplanned)"
+    },
+    {
       "title": "Maintain continuous review of backlog items and ensure smooth handoffs between planning and implementation",
       "overview": "Maintain continuous review of backlog items and ensure smooth handoffs between planning and implementation.",
       "owner": "DevTeam",
@@ -153,7 +169,8 @@
       "id": "ISSUE-0002",
       "priority": "Should",
       "description": "Maintain continuous review of backlog items and ensure smooth handoffs between planning and implementation.",
-      "version": "Backlog (unplanned)"
+      "version": "Backlog (unplanned)",
+      "status": "Draft"
     },
     {
       "title": "Ensure early alignment between Product Owner and DevTeam on initial story scope and estimates",
@@ -176,11 +193,11 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Implement task completion toggle functionality (US-0003) for the To-Do List Web App MVP",
-  "sprint_number": 3,
-  "sprint_backlog_pr_sprint": 3,
-  "planning_output_commit_count": 18,
-  "sprint_backlog_pr_content_baseline": 15,
+  "sprint_goal": "Implement task deletion functionality (US-0004) for the To-Do List Web App MVP",
+  "sprint_number": 4,
+  "sprint_backlog_pr_sprint": 4,
+  "planning_output_commit_count": 25,
+  "sprint_backlog_pr_content_baseline": 22,
   "sprint_backlog": [
     {
       "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
@@ -322,6 +339,52 @@
       "approach": "Add toggle route for tasks in app.py, style completed tasks in templates/index.html, and write unit tests.",
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified task completion toggle functionality works correctly via the Flask app and test suite."
+    },
+    {
+      "title": "Delete Task",
+      "acceptance_criteria": [
+        "Given a task, When the user clicks delete, Then the task is removed from the list."
+      ],
+      "epic_id": "EP-0001",
+      "priority": "Must",
+      "description": "As a user, I want to delete a task so that I can remove unwanted items.",
+      "value_hypothesis": "Allows cleanup of unwanted or obsolete tasks.",
+      "id": "US-0004",
+      "type": "User Story",
+      "version": "Backlog (unplanned)",
+      "user_story": "As a user, I want to delete a task so that I can remove unwanted items.",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
+      ],
+      "status": "Accepted",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "dod_checks": [
+        "Code written and reviewed-ready",
+        "Automated tests written and passing",
+        "Tokens logged"
+      ],
+      "tasks": [
+        "Implement delete_task route in app.py",
+        "Add delete task button/form in templates/index.html",
+        "Write pytest test for task deletion"
+      ],
+      "test_approach": "Test deleting a task from an existing list and verifying removal.",
+      "risks_assumptions": [
+        "Index-based deletion is reliable for in-memory list storage."
+      ],
+      "approach": "Implement delete task route in app.py, add delete button in templates/index.html, and add unit test.",
+      "estimate": 1000,
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified task deletion functionality works correctly via the Flask app and test suite."
     }
   ],
   "impediment_log": [],
@@ -343,6 +406,15 @@
       "category": "technical",
       "sprint_number": 2,
       "issue_id": "ISSUE-0002"
+    },
+    {
+      "action": "Ensure test suites comprehensively cover new feature interactions and UI state changes.",
+      "owner": "QA",
+      "success_metric": "100% test coverage for all new task state toggling endpoints.",
+      "status": "open",
+      "category": "technical",
+      "sprint_number": 3,
+      "issue_id": "ISSUE-0003"
     }
   ],
   "decision_log": [
@@ -363,22 +435,28 @@
       "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
       "rationale": "Remaining MVP stories (US-0003 through US-0006) are defined and ready.",
       "owner": "ProductOwner"
+    },
+    {
+      "title": "Ready-backlog sufficiency target waived",
+      "decision": "Declared backlog scope complete via declare_backlog_scope_complete",
+      "rationale": "Remaining MVP stories (US-0004 through US-0006) are defined and ready.",
+      "owner": "ProductOwner"
     }
   ],
   "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.73276942
+    "current_usd_spend": 1.14693122
   },
   "token_usage": {
-    "total": 3123991,
+    "total": 4219660,
     "agents": {
-      "ScrumMaster": 64567,
-      "ProductOwner": 424356,
-      "DevTeam": 1670739,
-      "Architect": 474031,
-      "QA": 490298
+      "ScrumMaster": 86388,
+      "ProductOwner": 558153,
+      "DevTeam": 2202435,
+      "Architect": 629977,
+      "QA": 742707
     }
   },
   "story_estimates": {
@@ -393,11 +471,15 @@
     "US-0003": {
       "estimate": 1000,
       "actual": 480
+    },
+    "US-0004": {
+      "estimate": 1000,
+      "actual": 490
     }
   },
   "sprint_report_kpis": {},
-  "kpi_update_count": 2,
-  "kpi_baseline": 2,
+  "kpi_update_count": 3,
+  "kpi_baseline": 3,
   "backlog_scope_complete": true,
   "repo": {
     "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
@@ -415,11 +497,11 @@
     }
   ],
   "hc_version": "0.1.0",
-  "retro_baseline": 2,
+  "retro_baseline": 3,
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 8,
+  "dev_touch_baseline": 9,
   "unadvanced_write_nudge_baseline": 0,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
@@ -447,7 +529,13 @@
     "tests/__pycache__/test_app.cpython-311-pytest-9.1.1.pyc",
     "specs/requirements/ISSUE-0002-Maintain-continuous-review-of-backlog-items-and-ensure-smooth-handoffs-between-planning-and-implementation..md",
     "specs/requirements/ISSUE-0002-Maintain-continuous-review-of-backlog-items-and-ensure-smooth-handoffs-between-planning-and-implementation.md",
-    "us0003_notes.txt"
+    "us0003_notes.txt",
+    "specs/requirements/ISSUE-0003-Ensure-test-suites-comprehensively-cover-new-feature-interactions-and-UI-state-changes..md",
+    "specs/reports/TRANSCRIPT-002.md",
+    "specs/reports/SPRINT-REPORT-002.md",
+    "specs/reports/RETRO-002.md",
+    "specs/requirements/ISSUE-0003-Ensure-test-suites-comprehensively-cover-new-feature-interactions-and-UI-state-changes.md",
+    "us0004_notes.txt"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -460,17 +548,17 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
+    "Architect": 8,
+    "QA": 8,
+    "DevTeam": 4
+  },
+  "architect_review_baseline": 8,
+  "qa_review_baseline": 8,
+  "qa_tested_baseline": 3,
+  "sprint_backlog_engagement_baseline": {
     "Architect": 6,
     "QA": 6,
     "DevTeam": 3
-  },
-  "architect_review_baseline": 6,
-  "qa_review_baseline": 6,
-  "qa_tested_baseline": 2,
-  "sprint_backlog_engagement_baseline": {
-    "Architect": 4,
-    "QA": 4,
-    "DevTeam": 2
   },
   "sprint_report_pending_release": false,
   "blocking_interactions": [
@@ -490,11 +578,12 @@
   "steering_baseline": 0,
   "steering_proposals": [],
   "blocked_story_ids_as_of_last_report": [],
-  "accepted_count_baseline": 2,
+  "accepted_count_baseline": 3,
   "version_goals": {
     "v0.1": [
       "Implement task addition functionality (US-0002) for the To-Do List Web App MVP",
-      "Implement task completion toggle functionality (US-0003) for the To-Do List Web App MVP"
+      "Implement task completion toggle functionality (US-0003) for the To-Do List Web App MVP",
+      "Implement task deletion functionality (US-0004) for the To-Do List Web App MVP"
     ]
   }
 }

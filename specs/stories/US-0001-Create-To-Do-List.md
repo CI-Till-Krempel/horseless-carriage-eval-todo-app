@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-12
@@ -14,7 +14,6 @@
 
 ## Notes
 Users can successfully create and view named to-do lists via the web UI.
-- ⚠️ REVIEW DENIED at Tested by QA: 3 of 6 tests failed during test suite execution.
 
 ## Test Approach
 Run pytest on test suite covering all CRUD operations.

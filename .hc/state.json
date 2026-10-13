@@ -107,9 +107,15 @@
       "user_story": "As a user, I want to delete a task so that I can remove items I no longer need.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Ready"
+      "status": "Accepted",
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified acceptance criteria for US-0004: Users can delete a task successfully."
     },
     {
       "title": "Delete an entire list",
@@ -150,20 +156,22 @@
       "status": "Ready"
     },
     {
-      "title": "Improve test fixture database isolation and test reliability across all stories",
-      "overview": "Improve test fixture database isolation and test reliability across all stories",
-      "owner": "DevTeam",
-      "type": "Issue",
-      "id": "ISSUE-0001",
-      "priority": "Must"
-    },
-    {
       "title": "Ensure sprint backlog PR review comments are fully collected before feature development starts",
       "overview": "Ensure sprint backlog PR review comments are fully collected before feature development starts",
       "owner": "DevTeam",
       "type": "Issue",
       "id": "ISSUE-0002",
-      "priority": "Must"
+      "priority": "Should",
+      "version": "Backlog (unplanned)"
+    },
+    {
+      "title": "Improve test fixture database isolation and test reliability across all stories",
+      "overview": "Improve test fixture database isolation and test reliability across all stories",
+      "owner": "DevTeam",
+      "type": "Issue",
+      "id": "ISSUE-0001",
+      "priority": "Should",
+      "version": "Backlog (unplanned)"
     }
   ],
   "definition_of_done": [
@@ -175,11 +183,11 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Implement US-0002 (Add a task to a list) and US-0003 (Mark task complete or incomplete).",
-  "sprint_number": 2,
-  "sprint_backlog_pr_sprint": 2,
-  "planning_output_commit_count": 14,
-  "sprint_backlog_pr_content_baseline": 6,
+  "sprint_goal": "Implement US-0004 (Delete a task) and US-0005 (Delete an entire list).",
+  "sprint_number": 3,
+  "sprint_backlog_pr_sprint": 3,
+  "planning_output_commit_count": 20,
+  "sprint_backlog_pr_content_baseline": 15,
   "sprint_backlog": [
     {
       "title": "Create a new to-do list",
@@ -317,6 +325,88 @@
       "test_approach": "Run pytest unit tests.",
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified acceptance criteria for US-0003: Users can mark tasks as complete or incomplete with visual distinction."
+    },
+    {
+      "priority": "Must",
+      "acceptance_criteria": [
+        "Given a task exists in a list, When the user deletes the task, Then the task is removed from the list."
+      ],
+      "id": "US-0004",
+      "title": "Delete a task",
+      "value_hypothesis": "Users can successfully remove unwanted tasks.",
+      "description": "As a user, I want to delete a task so that I can remove items I no longer need.",
+      "epic_id": "EP-0002",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "user_story": "As a user, I want to delete a task so that I can remove items I no longer need.",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
+      ],
+      "status": "Accepted",
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Automated tests passing",
+        "Tokens logged"
+      ],
+      "test_approach": "Run pytest.",
+      "risks_assumptions": [
+        "Task deletion route and test already implemented and passing."
+      ],
+      "approach": "Verify US-0004 (Delete a task) implementation and ensure feature branch and PR workflow.",
+      "tasks": [
+        "Verify US-0004 branch, PR, and tests"
+      ],
+      "estimate": 2000,
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified acceptance criteria for US-0004: Users can delete a task successfully."
+    },
+    {
+      "title": "Delete an entire list",
+      "priority": "Must",
+      "id": "US-0005",
+      "value_hypothesis": "Users can delete lists along with their nested tasks.",
+      "acceptance_criteria": [
+        "Given a to-do list with tasks exists, When the user deletes the list, Then the list and all its associated tasks are removed."
+      ],
+      "description": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.",
+      "epic_id": "EP-0001",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Verify US-0005 (Delete an entire list) implementation and ensure feature branch and PR workflow.",
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Automated tests passing",
+        "Tokens logged"
+      ],
+      "estimate": 2000,
+      "risks_assumptions": [
+        "List deletion route and cascade deletion of tasks already implemented and tested."
+      ],
+      "test_approach": "Run pytest.",
+      "tasks": [
+        "Verify US-0005 branch, PR, and tests"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ]
     }
   ],
   "impediment_log": [],
@@ -346,22 +436,28 @@
       "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
       "rationale": "Task completion toggle implementation and tests already landed in app.py and test_app.py during US-0001 work.",
       "owner": "DevTeam"
+    },
+    {
+      "title": "US-0004 marked Implemented without a new source touch",
+      "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
+      "rationale": "Task deletion implementation and tests already landed in app.py and test_app.py during US-0001 work.",
+      "owner": "DevTeam"
     }
   ],
-  "sprint_report": "# Sprint Review Report\n\n**Generated by Horseless Carriage v0.1.0** (Interaction Level: EVAL)\n\n## Summary\nSprint 2 successfully delivered task addition and completion toggling features, maintaining robust test coverage and architectural alignment.\n\n## Accomplishments\n- Successfully completed Sprint 2 implementing US-0002 (Add a task to a list) and US-0003 (Mark task complete or incomplete).\n- All user stories fully tested with 99% test coverage and 100% say/do ratio.\n\n## Budget and Usage\n- USD Budget (LiteLLM): $15.00\n- Actual USD Spend (LiteLLM): $0.09\n- Process Overhead: 20.0%\n\n### Per-Agent Token Usage\n  - ScrumMaster: 438013\n  - ProductOwner: 649998\n  - DevTeam: 2340570\n  - Architect: 724521\n  - QA: 910087\n\n## Sprint Length Feedback\n- Tokens used: 5,063,189 / 5,000,000 (101%)\n- Stories: 3/3 completed this sprint\n- All planned stories were completed within budget - no sprint-length change suggested.\n\n## Open Questions for Stakeholder (Blockers)\nNo stories are currently blocked.\n\n## Retrospective Actions (including efficiency improvements)\n- Improve test fixture database isolation and test reliability across all stories (Owner: DevTeam, Status: open, Category: technical, filed as ISSUE-0001)\n- Ensure sprint backlog PR review comments are fully collected before feature development starts (Owner: DevTeam, Status: open, Category: technical, filed as ISSUE-0002)\n\n## Impediments\nNo impediments logged.\n\n## Story Estimates vs Actual Tokens\n- US-0001: estimate=5000, actual=4500\n- US-0002: estimate=2000, actual=2100\n- US-0003: estimate=2500, actual=2400\n\n## KPI Dashboard\n- Say-Do Ratio: 1\n- Commitment Reliability: not available (not available - no estimate-accuracy tracking exists yet)\n- Defect Escape Rate: not available (not available - no defect/bug-lifecycle tracking exists yet)\n- Customer Satisfaction: not available (not available - no user/customer satisfaction survey exists yet)\n- Test Coverage: 0.99 (5 run, 0 failed)\n- Code Complexity: 1.86666666666667\n- Security Scan: {'critical': 0, 'low': 11, 'high': 1, 'medium': 0}\n\n### Per-Agent Prompt Context Usage\n  - DevTeam (scrum-eval-cheap): 4,676 / 1,048,576 tokens (0.45%)\n  - ScrumMaster (scrum-eval-cheap): 5,905 / 1,048,576 tokens (0.56%)\n  - ProductOwner (scrum-eval-cheap): 5,615 / 1,048,576 tokens (0.54%)\n  - QA (scrum-eval-cheap): 2,642 / 1,048,576 tokens (0.25%)\n  - Architect (scrum-eval-cheap): 3,308 / 1,048,576 tokens (0.32%)\n  - ScrumOrchestrator (scrum-eval-cheap): 7,751 / 1,048,576 tokens (0.74%)\n\n## Conversation Transcript\nFull transcript (201 entries) written to `specs/reports/TRANSCRIPT-002.md` (also mirrored at `specs/reports/TRANSCRIPT-LATEST.md`).\n\nMost recent contribution per agent:\n- **system**: [2 earlier transcript entries omitted for token budget]\n- **QA**: transfer_to_agent(agent_name=\"ProductOwner\")\n- **DevTeam**: transfer_to_agent(agent_name=\"Architect\")\n- **Architect**: transfer_to_agent(agent_name=\"QA\")\n- **ScrumMaster**: create_sprint_report(summary=\"Sprint 2 successfull...\", accomplishments=['Successfully compl...)\n- **ProductOwner**: transfer_to_agent(agent_name=\"ScrumMaster\")\n",
+  "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.14422505
+    "current_usd_spend": 0.53074111
   },
   "token_usage": {
-    "total": 5898569,
+    "total": 3891666,
     "agents": {
-      "ScrumMaster": 817530,
-      "ProductOwner": 840738,
-      "DevTeam": 2340570,
-      "Architect": 724521,
-      "QA": 1175210
+      "ScrumMaster": 95988,
+      "ProductOwner": 812885,
+      "DevTeam": 1791372,
+      "Architect": 493624,
+      "QA": 697797
     }
   },
   "story_estimates": {
@@ -376,82 +472,16 @@
     "US-0003": {
       "estimate": 2500,
       "actual": 2400
+    },
+    "US-0004": {
+      "estimate": 2000,
+      "actual": 1950
+    },
+    "US-0005": {
+      "estimate": 2000
     }
   },
-  "sprint_report_kpis": {
-    "result_quality": {
-      "defect_escape_rate_note": "not available - no defect/bug-lifecycle tracking exists yet",
-      "defect_escape_rate": null,
-      "customer_satisfaction_note": "not available - no user/customer satisfaction survey exists yet",
-      "customer_satisfaction": null
-    },
-    "security": {
-      "vulnerability_scan_available": true,
-      "vulnerability_scan_results": {
-        "critical": 0,
-        "low": 11,
-        "high": 1,
-        "medium": 0
-      }
-    },
-    "team_effectiveness": {
-      "commitment_reliability_note": "not available - no estimate-accuracy tracking exists yet",
-      "commitment_reliability": null,
-      "say_do_ratio": 1
-    },
-    "maintainability": {
-      "test_coverage": 0.99,
-      "code_complexity": 1.86666666666667,
-      "tests_failed": 0,
-      "tests_run": 5,
-      "code_complexity_available": true,
-      "test_coverage_available": true
-    },
-    "prompt_context_usage": {
-      "DevTeam": {
-        "available": true,
-        "usage_percent": 0.45,
-        "context_window_tokens": 1048576,
-        "model": "scrum-eval-cheap",
-        "prompt_tokens": 4676
-      },
-      "ScrumMaster": {
-        "model": "scrum-eval-cheap",
-        "available": true,
-        "usage_percent": 0.56,
-        "context_window_tokens": 1048576,
-        "prompt_tokens": 5905
-      },
-      "ProductOwner": {
-        "model": "scrum-eval-cheap",
-        "usage_percent": 0.54,
-        "available": true,
-        "prompt_tokens": 5615,
-        "context_window_tokens": 1048576
-      },
-      "QA": {
-        "usage_percent": 0.25,
-        "available": true,
-        "model": "scrum-eval-cheap",
-        "prompt_tokens": 2642,
-        "context_window_tokens": 1048576
-      },
-      "Architect": {
-        "prompt_tokens": 3308,
-        "model": "scrum-eval-cheap",
-        "available": true,
-        "context_window_tokens": 1048576,
-        "usage_percent": 0.32
-      },
-      "ScrumOrchestrator": {
-        "model": "scrum-eval-cheap",
-        "prompt_tokens": 7751,
-        "context_window_tokens": 1048576,
-        "available": true,
-        "usage_percent": 0.74
-      }
-    }
-  },
+  "sprint_report_kpis": {},
   "kpi_update_count": 1,
   "kpi_baseline": 1,
   "backlog_scope_complete": false,
@@ -831,7 +861,8 @@
     "specs/reports/TRANSCRIPT-LATEST.md",
     "specs/reports/SPRINT-REPORT-002.md",
     "specs/reports/SPRINT-REPORT-LATEST.md",
-    "specs/reports/RETRO-002.md"
+    "specs/reports/RETRO-002.md",
+    "specs/reports/BACKLOG-PR-3.md"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -844,17 +875,17 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
+    "DevTeam": 4,
+    "Architect": 8,
+    "QA": 12
+  },
+  "architect_review_baseline": 8,
+  "qa_review_baseline": 12,
+  "qa_tested_baseline": 3,
+  "sprint_backlog_engagement_baseline": {
     "DevTeam": 3,
     "Architect": 6,
     "QA": 10
-  },
-  "architect_review_baseline": 6,
-  "qa_review_baseline": 10,
-  "qa_tested_baseline": 3,
-  "sprint_backlog_engagement_baseline": {
-    "DevTeam": 2,
-    "Architect": 3,
-    "QA": 7
   },
   "sprint_report_pending_release": false,
   "blocking_interactions": [

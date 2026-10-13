@@ -132,9 +132,11 @@
       "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed"
       ],
-      "status": "Ready"
+      "status": "Reviewed"
     },
     {
       "epic_id": "EP-0001",
@@ -154,6 +156,14 @@
         "Ready"
       ],
       "status": "Ready"
+    },
+    {
+      "title": "Optimize token efficiency and model prompting across future sprints",
+      "overview": "Optimize token efficiency and model prompting across future sprints",
+      "owner": "ScrumMaster",
+      "type": "Issue",
+      "id": "ISSUE-0003",
+      "priority": "Must"
     },
     {
       "title": "Ensure sprint backlog PR review comments are fully collected before feature development starts",
@@ -183,10 +193,10 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Implement US-0004 (Delete a task) and US-0005 (Delete an entire list).",
-  "sprint_number": 3,
+  "sprint_goal": "Complete US-0005 (Delete an entire list) and US-0006 (View all lists and tasks).",
+  "sprint_number": 4,
   "sprint_backlog_pr_sprint": 3,
-  "planning_output_commit_count": 19,
+  "planning_output_commit_count": 25,
   "sprint_backlog_pr_content_baseline": 15,
   "sprint_backlog": [
     {
@@ -369,6 +379,46 @@
       ],
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified acceptance criteria for US-0004: Users can delete a task successfully."
+    },
+    {
+      "title": "Delete an entire list",
+      "priority": "Must",
+      "id": "US-0005",
+      "value_hypothesis": "Users can delete lists along with their nested tasks.",
+      "acceptance_criteria": [
+        "Given a to-do list with tasks exists, When the user deletes the list, Then the list and all its associated tasks are removed."
+      ],
+      "description": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.",
+      "epic_id": "EP-0001",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed"
+      ],
+      "status": "Reviewed",
+      "approach": "Verify US-0005 (Delete an entire list) implementation and ensure feature branch and PR workflow.",
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Automated tests passing",
+        "Tokens logged"
+      ],
+      "estimate": 2000,
+      "risks_assumptions": [
+        "List deletion route and cascade deletion of tasks already implemented and tested."
+      ],
+      "test_approach": "Run pytest.",
+      "tasks": [
+        "Verify US-0005 branch, PR, and tests"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ]
     }
   ],
   "impediment_log": [],
@@ -390,6 +440,15 @@
       "category": "technical",
       "sprint_number": 2,
       "issue_id": "ISSUE-0002"
+    },
+    {
+      "action": "Optimize token efficiency and model prompting across future sprints",
+      "owner": "ScrumMaster",
+      "success_metric": "Token usage stays within allocated sprint budget",
+      "status": "open",
+      "category": "technical",
+      "sprint_number": 3,
+      "issue_id": "ISSUE-0003"
     }
   ],
   "decision_log": [
@@ -404,23 +463,23 @@
       "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
       "rationale": "Task deletion implementation and tests already landed in app.py and test_app.py during US-0001 work.",
       "owner": "DevTeam"
+    },
+    {
+      "title": "US-0005 marked Implemented without a new source touch",
+      "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
+      "rationale": "List deletion implementation and cascade delete tests already landed in app.py and test_app.py during US-0001 work.",
+      "owner": "DevTeam"
     }
   ],
   "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.53074111
+    "current_usd_spend": 0.8117985299999999
   },
   "token_usage": {
-    "total": 3672101,
-    "agents": {
-      "ScrumMaster": 95988,
-      "ProductOwner": 702124,
-      "DevTeam": 1682568,
-      "Architect": 493624,
-      "QA": 697797
-    }
+    "total": 0,
+    "agents": {}
   },
   "story_estimates": {
     "US-0001": {
@@ -438,11 +497,15 @@
     "US-0004": {
       "estimate": 2000,
       "actual": 1950
+    },
+    "US-0005": {
+      "estimate": 2000,
+      "actual": 1900
     }
   },
   "sprint_report_kpis": {},
-  "kpi_update_count": 1,
-  "kpi_baseline": 1,
+  "kpi_update_count": 2,
+  "kpi_baseline": 2,
   "backlog_scope_complete": false,
   "repo": {
     "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
@@ -780,7 +843,7 @@
     }
   ],
   "hc_version": "0.1.0",
-  "retro_baseline": 2,
+  "retro_baseline": 3,
   "human_approvals": [
     {
       "type": "release",
@@ -789,6 +852,10 @@
     {
       "type": "release",
       "note": "Sprint 2 release pre-approved per evaluation instructions."
+    },
+    {
+      "type": "release",
+      "note": "Sprint 3 release pre-approved per evaluation instructions."
     }
   ],
   "sprint_approval_baseline": 0,
@@ -821,7 +888,11 @@
     "specs/reports/SPRINT-REPORT-002.md",
     "specs/reports/SPRINT-REPORT-LATEST.md",
     "specs/reports/RETRO-002.md",
-    "specs/reports/BACKLOG-PR-3.md"
+    "specs/reports/BACKLOG-PR-3.md",
+    "specs/requirements/ISSUE-0003-Optimize-token-efficiency-and-model-prompting-across-future-sprints.md",
+    "specs/reports/TRANSCRIPT-003.md",
+    "specs/reports/SPRINT-REPORT-003.md",
+    "specs/reports/RETRO-003.md"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -835,12 +906,12 @@
   "git_push_count": 0,
   "pr_review_calls": {
     "DevTeam": 4,
-    "Architect": 8,
+    "Architect": 9,
     "QA": 12
   },
-  "architect_review_baseline": 8,
+  "architect_review_baseline": 9,
   "qa_review_baseline": 12,
-  "qa_tested_baseline": 3,
+  "qa_tested_baseline": 4,
   "sprint_backlog_engagement_baseline": {
     "DevTeam": 3,
     "Architect": 6,
@@ -856,6 +927,15 @@
       "created_at": "2026-10-13T14:58:26.044968+00:00",
       "resolved": true,
       "resolved_at": "2026-10-13T15:00:18.882992+00:00"
+    },
+    {
+      "id": 2,
+      "kind": "critical_error",
+      "summary": "🚫 [TOKEN BUDGET EXCEEDED] Sprint token limit (5,000,000) reached. Current usage: 5,021,013. Agent execution halted.",
+      "detail": "To resume immediately: raise SPRINT_TOKEN_BUDGET in .env and restart the agent container. To let this sprint close out as-is: no action needed - Scrum Master's own ritual budget lets it close the sprint out (retro/KPIs/report) regardless, and Product Owner has a small grace allowance left to finish the release PR; check list_blocking_interactions() or this log for confirmation once it does.",
+      "created_at": "2026-10-13T15:08:52.538107+00:00",
+      "resolved": false,
+      "resolved_at": null
     }
   ],
   "overclaim_rejection_counts": {},
@@ -864,6 +944,6 @@
   "steering_baseline": 0,
   "steering_proposals": [],
   "blocked_story_ids_as_of_last_report": [],
-  "accepted_count_baseline": 3,
+  "accepted_count_baseline": 4,
   "version_goals": {}
 }

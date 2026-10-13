@@ -45,7 +45,7 @@ def test_add_and_complete_task(client):
     # Toggle complete
     response = client.post(f'/tasks/{task_id}/toggle', follow_redirects=True)
     assert response.status_code == 200
-    assert b'completed' in response.data or b'Mark Incomplete' in response.data
+    assert b'Mark Incomplete' in response.data or b'completed' in response.data
 
     # Delete task
     response = client.post(f'/tasks/{task_id}/delete', follow_redirects=True)

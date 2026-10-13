@@ -16,4 +16,7 @@
 Tasks can be successfully added to lists.
 
 ## Test Approach
+Add pytest test for adding a task to a list.
 
+### Tasks
+- Implement POST /lists/<list_id>/tasks route

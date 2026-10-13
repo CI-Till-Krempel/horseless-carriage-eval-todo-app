@@ -16,4 +16,8 @@
 Users can view and interact with lists and tasks through a web browser.
 
 ## Test Approach
+Add pytest test verifying home page renders lists and tasks correctly.
 
+### Tasks
+- Implement GET / route rendering lists and tasks
+- Style completed tasks visually (e.g. strikethrough/muted)

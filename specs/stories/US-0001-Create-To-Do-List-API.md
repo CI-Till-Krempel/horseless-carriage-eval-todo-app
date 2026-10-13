@@ -16,4 +16,10 @@
 Users can successfully create distinct lists.
 
 ## Test Approach
+Write pytest tests covering all CRUD operations on lists and tasks, and test the web UI routes.
 
+### Tasks
+- Set up Flask app and SQLite database model for lists and tasks
+- Implement API endpoints and UI routes for all 6 stories (US-0001 to US-0006)
+- Write comprehensive pytest unit/integration tests
+- Verify app is fully working and meets DoD

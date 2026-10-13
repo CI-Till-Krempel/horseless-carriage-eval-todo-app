@@ -16,4 +16,7 @@
 Tasks can be marked complete/incomplete.
 
 ## Test Approach
+Add pytest test for toggling task completion.
 
+### Tasks
+- Implement POST /tasks/<task_id>/toggle route

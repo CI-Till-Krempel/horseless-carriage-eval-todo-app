@@ -16,4 +16,7 @@
 Tasks can be deleted successfully.
 
 ## Test Approach
+Add pytest test for deleting a task.
 
+### Tasks
+- Implement POST /tasks/<task_id>/delete route

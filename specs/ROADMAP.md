@@ -38,13 +38,6 @@ Goals
 - Deliver MVP To-Do List Web App covering list creation, task management, completion, deletion, and basic web UI.
 
 Stories
-- [US-0002] Add Task to List API
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 - [US-0003] Toggle Task Completion API
   - [x] DRAFT
   - [x] READY
@@ -52,14 +45,21 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0001] Create To-Do List API
+- [US-0004] Delete Task API
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0004] Delete Task API
+- [US-0002] Add Task to List API
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0001] Create To-Do List API
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

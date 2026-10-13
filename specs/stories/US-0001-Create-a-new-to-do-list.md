@@ -16,4 +16,10 @@
 Users can successfully create and view multiple named to-do lists.
 
 ## Test Approach
+Write automated pytest tests validating list creation and web endpoints using Flask test client.
 
+### Tasks
+- Set up Flask application skeleton and requirements.txt
+- Create SQLAlchemy models for List and Task
+- Implement route and template for creating and viewing to-do lists
+- Write pytest unit tests for list creation

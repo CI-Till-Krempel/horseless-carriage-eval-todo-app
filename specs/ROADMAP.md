@@ -80,7 +80,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0005] Delete an entire list
   - [x] DRAFT
   - [x] READY

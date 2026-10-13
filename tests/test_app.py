@@ -6,8 +6,8 @@ from app import app, db, TodoList, Task
 
 @pytest.fixture
 def client():
-    db_fd, app.config['DATABASE'] = tempfile.mkstemp()
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + app.config['DATABASE']
+    db_fd, db_path = tempfile.mkstemp()
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + db_path
     app.config['TESTING'] = True
 
     with app.test_client() as client:
@@ -16,7 +16,7 @@ def client():
         yield client
 
     os.close(db_fd)
-    os.unlink(app.config['DATABASE'])
+    os.unlink(db_path)
 
 def test_index_empty(client):
     response = client.get('/')

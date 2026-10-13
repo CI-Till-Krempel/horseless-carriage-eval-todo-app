@@ -30,10 +30,14 @@
       "version": "v1.0.0",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready",
-      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks."
+      "status": "Tested",
+      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "blocked": null
     },
     {
       "id": "US-0002",
@@ -50,9 +54,11 @@
       "user_story": "As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed"
       ],
-      "status": "Ready"
+      "status": "Reviewed"
     },
     {
       "value_hypothesis": "Users can toggle task completion status and see visual distinction.",
@@ -142,10 +148,95 @@
   ],
   "sprint_goal": "Implement the To-Do List Web App MVP core features including list and task management, completion status, deletion, and overview UI.",
   "sprint_number": 1,
-  "sprint_backlog_pr_sprint": 0,
-  "planning_output_commit_count": 0,
-  "sprint_backlog_pr_content_baseline": 0,
-  "sprint_backlog": [],
+  "sprint_backlog_pr_sprint": 1,
+  "planning_output_commit_count": 4,
+  "sprint_backlog_pr_content_baseline": 2,
+  "sprint_backlog": [
+    {
+      "title": "Create a new to-do list",
+      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "acceptance_criteria": [
+        "Given the user is on the home page, When they enter a list name and click create, Then a new to-do list is created and displayed."
+      ],
+      "value_hypothesis": "Users can successfully create and view multiple named to-do lists.",
+      "id": "US-0001",
+      "epic_id": "EP-0001",
+      "priority": "Must",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
+      ],
+      "status": "Tested",
+      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "estimate": 5000,
+      "approach": "Build a lightweight Python Flask application with an in-memory/SQLite store using Flask and SQLAlchemy, with Jinja2 HTML templates for the UI. Implement US-0001 (Create a new to-do list).",
+      "tasks": [
+        "Set up Flask application skeleton and requirements.txt",
+        "Create SQLAlchemy models for List and Task",
+        "Implement route and template for creating and viewing to-do lists",
+        "Write pytest unit tests for list creation"
+      ],
+      "test_approach": "Write automated pytest tests validating list creation and web endpoints using Flask test client.",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "requirements.txt",
+        "tests/test_app.py"
+      ],
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Automated tests passing",
+        "Tokens logged"
+      ],
+      "risks_assumptions": [
+        "Single process in-memory/SQLite storage is sufficient for MVP session persistence."
+      ],
+      "blocked": null
+    },
+    {
+      "id": "US-0002",
+      "epic_id": "EP-0002",
+      "title": "Add a task to a list",
+      "acceptance_criteria": [
+        "Given a to-do list exists, When the user adds a task with a description, Then the task appears under that list."
+      ],
+      "description": "As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.",
+      "priority": "Must",
+      "value_hypothesis": "Users can add tasks with descriptions to their lists.",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed"
+      ],
+      "status": "Reviewed",
+      "tasks": [
+        "Verify US-0002 implementation and tests in test_app.py"
+      ],
+      "test_approach": "Run pytest via CI / local test check.",
+      "approach": "Add task creation feature under US-0002, leveraging code already implemented in app.py.",
+      "risks_assumptions": [
+        "Task creation route and form already implemented in app.py and verified via pytest."
+      ],
+      "code_files": [
+        "app.py"
+      ],
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Automated tests passing",
+        "Tokens logged"
+      ],
+      "estimate": 3000
+    }
+  ],
   "impediment_log": [],
   "retro_actions": [],
   "decision_log": [],
@@ -153,17 +244,29 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.04151648
+    "current_usd_spend": 0.36164352
   },
   "token_usage": {
-    "total": 729138,
+    "total": 4857835,
     "agents": {
-      "ScrumOrchestrator": 88315,
-      "ProductOwner": 617341,
-      "ScrumMaster": 23482
+      "ScrumOrchestrator": 110970,
+      "ProductOwner": 667506,
+      "ScrumMaster": 174227,
+      "DevTeam": 2063843,
+      "Architect": 440770,
+      "QA": 1400519
     }
   },
-  "story_estimates": {},
+  "story_estimates": {
+    "US-0001": {
+      "estimate": 5000,
+      "actual": 4500
+    },
+    "US-0002": {
+      "estimate": 3000,
+      "actual": 2500
+    }
+  },
   "sprint_report_kpis": null,
   "kpi_update_count": 0,
   "kpi_baseline": 0,
@@ -176,11 +279,331 @@
   "messages": [
     {
       "role": "system",
-      "content": "\n[SPRINT PHASE: Conceptual Work] The Ready backlog isn't deep enough yet - groom it (upsert_prd/upsert_epic/upsert_story, then advance_story_stage(..., 'Ready')) until it is. Starting a sprint, publishing a Sprint Backlog PR, or implementation work don't belong in this phase yet.\n"
+      "content": "\n[SPRINT PHASE: Plan & Start Sprint] The Ready backlog is deep enough - Scrum Master calls start_sprint(goal) if that hasn't happened yet this sprint, then Product Owner publishes it via create_sprint_backlog_pr(). More backlog grooming belongs here only for a specific, stated reason, not as a default.\n"
     },
     {
       "role": "user",
       "content": "This is sprint 1 of a fixed 5-sprint evaluation run. You are already fully configured (repo, branch, GitHub auth, and budgets are all pre-set via environment variables) - do not ask me any setup questions.\n\nBefore delegating any work to any specialist agent, you MUST first call init_scrum_state, then call create_litellm_virtual_key exactly these 5 times, using these exact agent_name values (these are the literal internal agent names, not display names - using any other spelling, e.g. with spaces, will not match and that agent will be blocked from running):\n- create_litellm_virtual_key(agent_name=\"ProductOwner\", ...)\n- create_litellm_virtual_key(agent_name=\"ScrumMaster\", ...)\n- create_litellm_virtual_key(agent_name=\"DevTeam\", ...)\n- create_litellm_virtual_key(agent_name=\"QA\", ...)\n- create_litellm_virtual_key(agent_name=\"Architect\", ...)\n\nEvery specialist agent is hard-blocked in code from making any LLM call at all until a virtual key exists under its exact agent_name - delegating to one before its key exists wastes the delegation entirely, it does not queue or retry. Do this once, up front, then proceed.\n\nThe product vision for this entire evaluation, verbatim, is:\n\n# Fixed Evaluation Scenario: To-Do List Web App\n\n> **Do not edit this file to \"make the eval easier\" or to match whatever the team\n> produced.** Its entire value is being byte-identical across runs, so results are\n> comparable across Horseless Carriage versions over time. If the scenario itself\n> needs to change, that's a deliberate decision with its own commit message\n> explaining why — never a silent drift.\n\nThis is the fixed input fed verbatim to the agent team as the product vision for\nevery automated team-performance evaluation run (see `RELEASE.md` \"Team performance\nevaluation\" and `agents/scrum_team/scripts/run_eval.py`). It is intentionally small\nenough to be fully deliverable within a 5-sprint, small-budget run, while still\nrequiring real design decisions (state persistence, list vs. item modeling,\nbasic UI) that differentiate a good team performance from a mediocre one.\n\n## Product Vision\n\nBuild a simple to-do list web application. A single user should be able to:\n\n1. Create a new to-do list with a name.\n2. Add a task to a list, with a short text description.\n3. Mark a task as complete or incomplete.\n4. Delete a task.\n5. Delete an entire list (and its tasks).\n6. See all their lists and, within a list, all its tasks, with completed tasks\n   visually distinguished from incomplete ones.\n\n## Constraints (deliberately narrow, to keep this deliverable in 5 sprints)\n\n- **Single user, no authentication.** Do not build login/accounts — out of scope.\n- **No persistence requirement beyond the current session/process is assumed** unless\n  the team's own design calls for it — persistence approach (in-memory, file, or a\n  simple embedded DB) is a legitimate design decision for the team to make and\n  justify, not a hidden requirement.\n- **A working web UI is required** — the deliverable is something a person could\n  open in a browser and actually use, not just a backend API with no way to\n  interact with it.\n- **No specific language/framework is mandated.** The team should choose something\n  it can deliver completely and correctly within budget, and should say why.\n\n## Explicitly out of scope (do not let these creep in)\n\n- Multiple users, sharing, or permissions.\n- Due dates, reminders, priorities, tags, or sub-tasks.\n- Mobile app, offline support, or real-time sync.\n- Any deployment/hosting beyond running locally.\n\n## What \"done\" looks like after 5 sprints\n\nA person can clone the repo, follow the README, run the app, and actually create a\nlist, add a few tasks, mark one complete, delete one, and delete a list — end to\nend, without reading any code first.\n\n\nTreat the sprint goal and backlog for this sprint as pre-approved by me (the human) - do not wait for further approval messages, proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) for this sprint's increment. Do not ask me anything else during this sprint - make reasonable decisions yourself and note them as assumptions in the sprint report."
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `list_docs` with parameters: {}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `list_docs` tool returned result: {'status': 'ok', 'files': {'specs': [], 'spec-templates': ['spec-templates/DOR.md', 'spec-templates/DOD.md', 'spec-templates/README.md', 'spec-templates/ROADMAP.md', 'spec-templates/announcements/ANNOUNCEMENT-v0.1.0.md', 'spec-templates/announcements/TEMPLATE-ANNOUNCEMENT.md', 'spec-templates/announcements/README.md', 'spec-templates/stories/TEMPLATE-EPIC.md', 'spec-templates/stories/TEMPLATE-USER-STORY.md', 'spec-templates/stories/README.md', 'spec-templates/requirements/TEMPLATE-SRS.md', 'spec-templates/requirements/TEMPLATE-PRD.md', 'spec-templates/requirements/TEMPLATE-ISSUE.md', 'spec-templates/requirements/README.md', 'spec-templates/reports/TEMPLATE-RETRO-ITEM.md', 'spec-templates/reports/TEMPLATE-STEERING-PROPOSAL.md', 'spec-templates/reports/README.md', 'spec-templates/product-docs/TEMPLATE-USER-GUIDE.md', 'spec-templates/product-docs/README.md', 'spec-templates/implementation-plans/TEMPLATE-IMPLEMENTATION-PLAN.md', 'spec-templates/implementation-plans/README.md', 'spec-templates/architecture/TEMPLATE-ADR.md', 'spec-templates/architecture/TEMPLATE-ARCHITECTURE-VISION.md', 'spec-templates/architecture/README.md', 'spec-templates/workflows/TEMPLATE-AGENT-WORKFLOW.md', 'spec-templates/workflows/README.md']}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_prd` with parameters: {'filename': 'PRD-Todo-MVP.md', 'content': '# Product Requirements Document (PRD): To-Do List Web App MVP\\n\\n## Introduction & Goal\\nBuild a simple to-do list web application as specified by the product vision, allowing a single user to manage lists and tasks in a clean, working web UI.\\n\\n## Scope & Requirements\\n1. Create a new to-do list with a name.\\n2. Add a task to a list, with a short text description.\\n3. Mark a task as complete or incomplete.\\n4. Delete a task.\\n5. Delete an entire list (and its tasks).\\n6. See all their lists and, within a list, all its tasks, with completed tasks visually distinguished.\\n\\n## Out of Scope\\n- Authentication / Multiple users.\\n- Persistent database beyond session/process storage unless implemented simply (e.g., local file/in-memory).\\n- Mobile app, offline support, real-time sync.\\n'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_prd` tool returned result: {'status': 'ok', 'path': '/app/eval-output/clone/specs/requirements/PRD-Todo-MVP.md', 'overwrote_existing_content': False}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `update_roadmap` with parameters: {'goals': ['Deliver To-Do List Web App MVP over 5 sprints'], 'stories': [], 'version': 'v1.0.0'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `update_roadmap` tool returned result: {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_epic` with parameters: {'epic': {'id': 'EP-0001', 'title': 'List Management', 'description': 'Core data structures and list management features'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_epic` tool returned result: {'status': 'ok', 'updated': False, 'item': {'id': 'EP-0001', 'title': 'List Management', 'description': 'Core data structures and list management features', 'type': 'Epic'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/EP-0001-List-Management.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_epic` with parameters: {'epic': {'description': 'Task creation, completion, and deletion features', 'title': 'Task Management', 'id': 'EP-0002'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_epic` tool returned result: {'status': 'ok', 'updated': False, 'item': {'description': 'Task creation, completion, and deletion features', 'title': 'Task Management', 'id': 'EP-0002', 'type': 'Epic'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/EP-0002-Task-Management.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'title': 'Create a new to-do list', 'description': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.', 'acceptance_criteria': ['Given the user is on the home page, When they enter a list name and click create, Then a new to-do list is created and displayed.'], 'value_hypothesis': 'Users can successfully create and view multiple named to-do lists.', 'id': 'US-0001', 'epic_id': 'EP-0001', 'priority': 'Must'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'title': 'Create a new to-do list', 'description': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.', 'acceptance_criteria': ['Given the user is on the home page, When they enter a list name and click create, Then a new to-do list is created and displayed.'], 'value_hypothesis': 'Users can successfully create and view multiple named to-do lists.', 'id': 'US-0001', 'epic_id': 'EP-0001', 'priority': 'Must', 'type': 'User Story', 'version': 'v1.0.0'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0001-Create-a-new-to-do-list.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'id': 'US-0002', 'epic_id': 'EP-0002', 'title': 'Add a task to a list', 'acceptance_criteria': ['Given a to-do list exists, When the user adds a task with a description, Then the task appears under that list.'], 'description': 'As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.', 'priority': 'Must', 'value_hypothesis': 'Users can add tasks with descriptions to their lists.'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'id': 'US-0002', 'epic_id': 'EP-0002', 'title': 'Add a task to a list', 'acceptance_criteria': ['Given a to-do list exists, When the user adds a task with a description, Then the task appears under that list.'], 'description': 'As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.', 'priority': 'Must', 'value_hypothesis': 'Users can add tasks with descriptions to their lists.', 'type': 'User Story', 'version': 'v1.0.0'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0002-Add-a-task-to-a-list.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'value_hypothesis': 'Users can toggle task completion status and see visual distinction.', 'acceptance_criteria': ['Given a task exists in a list, When the user marks the task as complete, Then its status changes to completed and it is visually distinguished.'], 'title': 'Mark task complete or incomplete', 'epic_id': 'EP-0002', 'description': 'As a user, I want to mark a task as complete or incomplete so that I can track my progress.', 'priority': 'Must', 'id': 'US-0003'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'value_hypothesis': 'Users can toggle task completion status and see visual distinction.', 'acceptance_criteria': ['Given a task exists in a list, When the user marks the task as complete, Then its status changes to completed and it is visually distinguished.'], 'title': 'Mark task complete or incomplete', 'epic_id': 'EP-0002', 'description': 'As a user, I want to mark a task as complete or incomplete so that I can track my progress.', 'priority': 'Must', 'id': 'US-0003', 'type': 'User Story', 'version': 'v1.0.0'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0003-Mark-ta***REDACTED-KEY***.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'priority': 'Must', 'acceptance_criteria': ['Given a task exists in a list, When the user deletes the task, Then the task is removed from the list.'], 'id': 'US-0004', 'title': 'Delete a task', 'value_hypothesis': 'Users can successfully remove unwanted tasks.', 'description': 'As a user, I want to delete a task so that I can remove items I no longer need.', 'epic_id': 'EP-0002'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'priority': 'Must', 'acceptance_criteria': ['Given a task exists in a list, When the user deletes the task, Then the task is removed from the list.'], 'id': 'US-0004', 'title': 'Delete a task', 'value_hypothesis': 'Users can successfully remove unwanted tasks.', 'description': 'As a user, I want to delete a task so that I can remove items I no longer need.', 'epic_id': 'EP-0002', 'type': 'User Story', 'version': 'v1.0.0'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0004-Delete-a-task.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'title': 'Delete an entire list', 'priority': 'Must', 'id': 'US-0005', 'value_hypothesis': 'Users can delete lists along with their nested tasks.', 'acceptance_criteria': ['Given a to-do list with tasks exists, When the user deletes the list, Then the list and all its associated tasks are removed.'], 'description': 'As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.', 'epic_id': 'EP-0001'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'title': 'Delete an entire list', 'priority': 'Must', 'id': 'US-0005', 'value_hypothesis': 'Users can delete lists along with their nested tasks.', 'acceptance_criteria': ['Given a to-do list with tasks exists, When the user deletes the list, Then the list and all its associated tasks are removed.'], 'description': 'As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.', 'epic_id': 'EP-0001', 'type': 'User Story', 'version': 'v1.0.0'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0005-Delete-an-entire-list.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'epic_id': 'EP-0001', 'acceptance_criteria': ['Given the user has created lists and tasks, When they view the main page, Then all lists and their tasks are displayed clearly, with completed tasks visually distinguished.'], 'value_hypothesis': 'Users can view their lists and tasks overview with clear status differentiation.', 'id': 'US-0006', 'title': 'View all lists and tasks', 'description': 'As a user, I want to see all my lists and their tasks with completed tasks visually distinguished so that I have a complete view of my work.', 'priority': 'Must'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': False, 'item': {'epic_id': 'EP-0001', 'acceptance_criteria': ['Given the user has created lists and tasks, When they view the main page, Then all lists and their tasks are displayed clearly, with completed tasks visually distinguished.'], 'value_hypothesis': 'Users can view their lists and tasks overview with clear status differentiation.', 'id': 'US-0006', 'title': 'View all lists and tasks', 'description': 'As a user, I want to see all my lists and their tasks with completed tasks visually distinguished so that I have a complete view of my work.', 'priority': 'Must', 'type': 'User Story', 'version': 'v1.0.0'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0006-View-all-lists-and-tasks.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `update_roadmap` with parameters: {'goals': ['Deliver To-Do List Web App MVP over 5 sprints'], 'version': 'v1.0.0', 'stories': ['US-0001', 'US-0002', 'US-0003', 'US-0004', 'US-0005', 'US-0006']}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `update_roadmap` tool returned result: {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'stage': 'Draft', 'title_or_id': 'US-0001'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-0001', 'stage': 'Draft', 'stages_completed': ['Draft'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0001-Create-a-new-to-do-list.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'stage': 'Ready', 'title_or_id': 'US-0001'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'error', 'message': \"'US-0001' is recorded as Ready in state, but syncing specs/ROADMAP.md and/or the story file failed - see story_markdown/roadmap_sync for details. Retry so the roadmap actually reflects this.\", 'story_id': 'US-0001', 'stage': 'Ready', 'stages_completed': ['Draft', 'Ready'], 'story_markdown': {'status': 'error', 'message': \"Fails Definition of Ready/Done (see spec-templates/DOR.md, DOD.md) for status 'Ready' - not written: user_story is missing, still the template placeholder, or has every slot left blank. Fix the content and retry.\", 'issues': ['user_story is missing, still the template placeholder, or has every slot left blank']}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'priority': 'Must', 'title': 'Create a new to-do list', 'value_hypothesis': 'Users can successfully create and view multiple named to-do lists.', 'description': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.', 'user_story': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.', 'acceptance_criteria': ['Given the user is on the home page, When they enter a list name and click create, Then a new to-do list is created and displayed.'], 'epic_id': 'EP-0001', 'id': 'US-0001'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': True, 'item': {'title': 'Create a new to-do list', 'description': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.', 'acceptance_criteria': ['Given the user is on the home page, When they enter a list name and click create, Then a new to-do list is created and displayed.'], 'value_hypothesis': 'Users can successfully create and view multiple named to-do lists.', 'id': 'US-0001', 'epic_id': 'EP-0001', 'priority': 'Must', 'type': 'User Story', 'version': 'v1.0.0', 'stages_completed': ['Draft', 'Ready'], 'status': 'Ready', 'user_story': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0001-Create-a-new-to-do-list.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'title_or_id': 'US-0001', 'stage': 'Ready'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': 'US-0001 already marked Ready.', 'stages_completed': ['Draft', 'Ready']}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'value_hypothesis': 'Users can add tasks with descriptions to their lists.', 'epic_id': 'EP-0002', 'description': 'As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.', 'priority': 'Must', 'user_story': 'As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.', 'title': 'Add a task to a list', 'acceptance_criteria': ['Given a to-do list exists, When the user adds a task with a description, Then the task appears under that list.'], 'id': 'US-0002'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': True, 'item': {'id': 'US-0002', 'epic_id': 'EP-0002', 'title': 'Add a task to a list', 'acceptance_criteria': ['Given a to-do list exists, When the user adds a task with a description, Then the task appears under that list.'], 'description': 'As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.', 'priority': 'Must', 'value_hypothesis': 'Users can add tasks with descriptions to their lists.', 'type': 'User Story', 'version': 'v1.0.0', 'user_story': 'As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0002-Add-a-task-to-a-list.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'stage': 'Draft', 'title_or_id': 'US-0002'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-0002', 'stage': 'Draft', 'stages_completed': ['Draft'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0002-Add-a-task-to-a-list.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'stage': 'Ready', 'title_or_id': 'US-0002'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-0002', 'stage': 'Ready', 'stages_completed': ['Draft', 'Ready'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0002-Add-a-task-to-a-list.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'value_hypothesis': 'Users can toggle task completion status and see visual distinction.', 'id': 'US-0003', 'user_story': 'As a user, I want to mark a task as complete or incomplete so that I can track my progress.', 'priority': 'Must', 'title': 'Mark task complete or incomplete', 'description': 'As a user, I want to mark a task as complete or incomplete so that I can track my progress.', 'epic_id': 'EP-0002', 'acceptance_criteria': ['Given a task exists in a list, When the user marks the task as complete, Then its status changes to completed and it is visually distinguished.']}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': True, 'item': {'value_hypothesis': 'Users can toggle task completion status and see visual distinction.', 'acceptance_criteria': ['Given a task exists in a list, When the user marks the task as complete, Then its status changes to completed and it is visually distinguished.'], 'title': 'Mark task complete or incomplete', 'epic_id': 'EP-0002', 'description': 'As a user, I want to mark a task as complete or incomplete so that I can track my progress.', 'priority': 'Must', 'id': 'US-0003', 'type': 'User Story', 'version': 'v1.0.0', 'user_story': 'As a user, I want to mark a task as complete or incomplete so that I can track my progress.'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0003-Mark-ta***REDACTED-KEY***.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'stage': 'Draft', 'title_or_id': 'US-0003'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-0003', 'stage': 'Draft', 'stages_completed': ['Draft'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0003-Mark-ta***REDACTED-KEY***.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'stage': 'Ready', 'title_or_id': 'US-0003'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-0003', 'stage': 'Ready', 'stages_completed': ['Draft', 'Ready'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0003-Mark-ta***REDACTED-KEY***.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'epic_id': 'EP-0002', 'value_hypothesis': 'Users can successfully remove unwanted tasks.', 'id': 'US-0004', 'description': 'As a user, I want to delete a task so that I can remove items I no longer need.', 'priority': 'Must', 'user_story': 'As a user, I want to delete a task so that I can remove items I no longer need.', 'title': 'Delete a task', 'acceptance_criteria': ['Given a task exists in a list, When the user deletes the task, Then the task is removed from the list.']}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': True, 'item': {'priority': 'Must', 'acceptance_criteria': ['Given a task exists in a list, When the user deletes the task, Then the task is removed from the list.'], 'id': 'US-0004', 'title': 'Delete a task', 'value_hypothesis': 'Users can successfully remove unwanted tasks.', 'description': 'As a user, I want to delete a task so that I can remove items I no longer need.', 'epic_id': 'EP-0002', 'type': 'User Story', 'version': 'v1.0.0', 'user_story': 'As a user, I want to delete a task so that I can remove items I no longer need.'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0004-Delete-a-task.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'stage': 'Draft', 'title_or_id': 'US-0004'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-0004', 'stage': 'Draft', 'stages_completed': ['Draft'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0004-Delete-a-task.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'stage': 'Ready', 'title_or_id': 'US-0004'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-0004', 'stage': 'Ready', 'stages_completed': ['Draft', 'Ready'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0004-Delete-a-task.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'id': 'US-0005', 'value_hypothesis': 'Users can delete lists along with their nested tasks.', 'user_story': 'As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.', 'title': 'Delete an entire list', 'description': 'As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.', 'epic_id': 'EP-0001', 'priority': 'Must', 'acceptance_criteria': ['Given a to-do list with tasks exists, When the user deletes the list, Then the list and all its associated tasks are removed.']}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': True, 'item': {'title': 'Delete an entire list', 'priority': 'Must', 'id': 'US-0005', 'value_hypothesis': 'Users can delete lists along with their nested tasks.', 'acceptance_criteria': ['Given a to-do list with tasks exists, When the user deletes the list, Then the list and all its associated tasks are removed.'], 'description': 'As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.', 'epic_id': 'EP-0001', 'type': 'User Story', 'version': 'v1.0.0', 'user_story': 'As a user, I want to delete an entire list and its tasks so that I can clean up obsolete projects.'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0005-Delete-an-entire-list.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'stage': 'Draft', 'title_or_id': 'US-0005'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-0005', 'stage': 'Draft', 'stages_completed': ['Draft'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0005-Delete-an-entire-list.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'title_or_id': 'US-0005', 'stage': 'Ready'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-0005', 'stage': 'Ready', 'stages_completed': ['Draft', 'Ready'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0005-Delete-an-entire-list.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `upsert_story` with parameters: {'story': {'epic_id': 'EP-0001', 'description': 'As a user, I want to see all my lists and their tasks with completed tasks visually distinguished so that I have a complete view of my work.', 'id': 'US-0006', 'user_story': 'As a user, I want to see all my lists and their tasks with completed tasks visually distinguished so that I have a complete view of my work.', 'title': 'View all lists and tasks', 'acceptance_criteria': ['Given the user has created lists and tasks, When they view the main page, Then all lists and their tasks are displayed clearly, with completed tasks visually distinguished.'], 'value_hypothesis': 'Users can view their lists and tasks overview with clear status differentiation.', 'priority': 'Must'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `upsert_story` tool returned result: {'status': 'ok', 'updated': True, 'item': {'epic_id': 'EP-0001', 'acceptance_criteria': ['Given the user has created lists and tasks, When they view the main page, Then all lists and their tasks are displayed clearly, with completed tasks visually distinguished.'], 'value_hypothesis': 'Users can view their lists and tasks overview with clear status differentiation.', 'id': 'US-0006', 'title': 'View all lists and tasks', 'description': 'As a user, I want to see all my lists and their tasks with completed tasks visually distinguished so that I have a complete view of my work.', 'priority': 'Must', 'type': 'User Story', 'version': 'v1.0.0', 'user_story': 'As a user, I want to see all my lists and their tasks with completed tasks visually distinguished so that I have a complete view of my work.'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0006-View-all-lists-and-tasks.md'}, 'duplicate_warning': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'title_or_id': 'US-0006', 'stage': 'Draft'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-0006', 'stage': 'Draft', 'stages_completed': ['Draft'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0006-View-all-lists-and-tasks.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `advance_story_stage` with parameters: {'stage': 'Ready', 'title_or_id': 'US-0006'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `advance_story_stage` tool returned result: {'status': 'ok', 'message': None, 'story_id': 'US-0006', 'stage': 'Ready', 'stages_completed': ['Draft', 'Ready'], 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0006-View-all-lists-and-tasks.md'}, 'roadmap_sync': {'status': 'ok', 'message': 'Roadmap updated for v1.0.0'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `transfer_to_agent` with parameters: {'agent_name': 'ScrumMaster'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] called tool `start_sprint` with parameters: {'goal': 'Implement the To-Do List Web App MVP core features including list and task management, completion status, deletion, and overview UI.'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] `start_sprint` tool returned result: {'status': 'ok', 'sprint_goal': 'Implement the To-Do List Web App MVP core features including list and task management, completion status, deletion, and overview UI.', 'sprint_number': 1}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] called tool `transfer_to_agent` with parameters: {'agent_name': 'DevTeam'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `list_docs` with parameters: {}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `list_docs` tool returned result: {'status': 'ok', 'files': {'specs': ['specs/ROADMAP.md', 'specs/stories/US-0001-Create-a-new-to-do-list.md', 'specs/stories/US-0003-Mark-ta***REDACTED-KEY***.md', 'specs/stories/US-0004-Delete-a-task.md', 'specs/stories/EP-0001-List-Management.md', 'specs/stories/US-0006-View-all-lists-and-tasks.md', 'specs/stories/US-0002-Add-a-task-to-a-list.md', 'specs/stories/EP-0002-Task-Management.md', 'specs/stories/US-0005-Delete-an-entire-list.md', 'specs/requirements/PRD-Todo-MVP.md'], 'spec-templates': ['spec-templates/DOR.md', 'spec-templates/DOD.md', 'spec-templates/README.md', 'spec-templates/ROADMAP.md', 'spec-templates/announcements/ANNOUNCEMENT-v0.1.0.md', 'spec-templates/announcements/TEMPLATE-ANNOUNCEMENT.md', 'spec-templates/announcements/README.md', 'spec-templates/stories/TEMPLATE-EPIC.md', 'spec-templates/stories/TEMPLATE-USER-STORY.md', 'spec-templates/stories/README.md', 'spec-templates/requirements/TEMPLATE-SRS.md', 'spec-templates/requirements/TEMPLATE-PRD.md', 'spec-templates/requirements/TEMPLATE-ISSUE.md', 'spec-templates/requirements/README.md', 'spec-templates/reports/TEMPLATE-RETRO-ITEM.md', 'spec-templates/reports/TEMPLATE-STEERING-PROPOSAL.md', 'spec-templates/reports/README.md', 'spec-templates/product-docs/TEMPLATE-USER-GUIDE.md', 'spec-templates/product-docs/README.md', 'spec-templates/implementation-plans/TEMPLATE-IMPLEMENTATION-PLAN.md', 'spec-templates/implementation-plans/README.md', 'spec-templates/architecture/TEMPLATE-ADR.md', 'spec-templates/architecture/TEMPLATE-ARCHITECTURE-VISION.md', 'spec-templates/architecture/README.md', 'spec-templates/workflows/TEMPLATE-AGENT-WORKFLOW.md', 'spec-templates/workflows/README.md']}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `gh_pr_comments` with parameters: {}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `gh_pr_comments` tool returned result: {'status': 'error', 'returncode': 1, 'stdout': '', 'stderr': 'no pull requests found for branch \"eval/0.1.0-run62/develop\"', 'cmd': ['gh', 'pr', 'view', '--json', 'comments,reviews']}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `transfer_to_agent` with parameters: {'agent_name': 'Architect'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[Architect] called tool `upsert_architecture_vision` with parameters: {'content': '# Architecture Vision: To-Do List Web App MVP\\n\\n## Target System Shape\\nA lightweight, single-process web application built with Python (Flask or FastAPI) and a simple embedded SQLite database or JSON file store, rendering a server-side HTML UI (or simple SPA/templates) for managing to-do lists and tasks.\\n\\n## Key Quality Attributes\\n- **Simplicity & Maintainability:** Minimal dependencies, clear separation of concerns (routes, models/storage, UI).\\n- **Usability:** Clean, intuitive browser-based UI meeting all functional requirements out of the box.\\n- **Reliability:** Simple robust data handling suitable for a single-session local web app.\\n\\n## Tech-Stack Guardrails\\n- **Language:** Python 3.x\\n- **Web Framework:** Flask or FastAPI\\n- **Data Persistence:** SQLite via SQLAlchemy / SQLModel or JSON file storage\\n- **UI:** HTML/CSS templates (Jinja2) or lightweight frontend rendering\\n\\n## Major Components & Boundaries\\n1. **Data Layer / Models:** Defines lists and tasks schemas, persistence logic.\\n2. **Web Controller / Routes:** Handles HTTP requests for creating, updating, and deleting lists and tasks.\\n3. **Frontend Views:** Jinja templates providing a clean HTML user interface.\\n'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[Architect] `upsert_architecture_vision` tool returned result: {'status': 'ok', 'path': '/app/eval-output/clone/specs/architecture/ARCHITECTURE-VISION.md', 'overwrote_existing_content': False}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[Architect] called tool `transfer_to_agent` with parameters: {'agent_name': 'DevTeam'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[Architect] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `transfer_to_agent` with parameters: {'agent_name': 'ScrumOrchestrator'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `transfer_to_agent` tool returned result: {'result': None}"
     }
   ],
   "hc_version": "0.1.0",
@@ -188,8 +611,8 @@
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 0,
-  "unadvanced_write_nudge_baseline": 0,
+  "dev_touch_baseline": 6,
+  "unadvanced_write_nudge_baseline": 6,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-MVP.md",
     "specs/ROADMAP.md",
@@ -200,18 +623,46 @@
     "specs/stories/US-0003-Mark-task-complete-or-incomplete.md",
     "specs/stories/US-0004-Delete-a-task.md",
     "specs/stories/US-0005-Delete-an-entire-list.md",
-    "specs/stories/US-0006-View-all-lists-and-tasks.md"
+    "specs/stories/US-0006-View-all-lists-and-tasks.md",
+    "specs/architecture/ARCHITECTURE-VISION.md",
+    "requirements.txt",
+    "app.py",
+    "templates/index.html",
+    "tests/test_app.py",
+    "tests/test_run.py",
+    "run_tests.py"
   ],
-  "last_check_build": null,
-  "last_pr_checks": null,
+  "last_check_build": {
+    "checked": "requirements.txt",
+    "passing": true,
+    "manifest_write_count_at_check": 1
+  },
+  "last_pr_checks": {
+    "passing": true,
+    "git_push_count_at_check": 0
+  },
   "git_push_count": 0,
-  "pr_review_calls": {},
-  "architect_review_baseline": 0,
-  "qa_review_baseline": 0,
+  "pr_review_calls": {
+    "DevTeam": 2,
+    "Architect": 3,
+    "QA": 7
+  },
+  "architect_review_baseline": 3,
+  "qa_review_baseline": 7,
   "qa_tested_baseline": 0,
   "sprint_backlog_engagement_baseline": {},
   "sprint_report_pending_release": false,
-  "blocking_interactions": [],
+  "blocking_interactions": [
+    {
+      "id": 1,
+      "kind": "blocked_story",
+      "summary": "'US-0001' is BLOCKED (technical): advance_story_stage('US-0001', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0001' Tested - 1 of 4 tests failed. Fix the failing tests before retrying.",
+      "detail": "Raised by QA. Resolve via Architect's resolve_story_blocker('US-0001', resolution).",
+      "created_at": "2026-10-13T14:58:26.044968+00:00",
+      "resolved": true,
+      "resolved_at": "2026-10-13T15:00:18.882992+00:00"
+    }
+  ],
   "overclaim_rejection_counts": {},
   "general_blockers": [],
   "steering_proposal_count": 0,

@@ -16,4 +16,7 @@
 Users can delete lists along with their nested tasks.
 
 ## Test Approach
+Run pytest.
 
+### Tasks
+- Verify US-0005 branch, PR, and tests

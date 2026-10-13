@@ -16,7 +16,7 @@
 Users can add tasks with descriptions to their lists.
 
 ## Test Approach
-Run pytest via CI / local test check.
+Run pytest.
 
 ### Tasks
-- Verify US-0002 implementation and tests in test_app.py
+- Verify feature branch and PR for US-0002

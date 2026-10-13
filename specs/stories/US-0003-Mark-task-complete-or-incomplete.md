@@ -16,4 +16,7 @@
 Users can toggle task completion status and see visual distinction.
 
 ## Test Approach
+Run pytest unit tests.
 
+### Tasks
+- Verify feature branch and PR for US-0003

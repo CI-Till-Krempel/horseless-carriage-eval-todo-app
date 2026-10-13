@@ -14,6 +14,7 @@
 
 ## Notes
 Users can successfully create and view multiple named to-do lists.
+- 🚫 BLOCKED (technical) - raised by QA: advance_story_stage('US-0001', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0001' Tested - 1 of 4 tests failed. Fix the failing tests before retrying.
 
 ## Test Approach
 Write automated pytest tests validating list creation and web endpoints using Flask test client.

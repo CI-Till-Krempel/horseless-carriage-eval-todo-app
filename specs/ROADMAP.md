@@ -33,7 +33,7 @@ Stories
 
 
 Stories
-- [ISSUE-0001] Improve test fixture database isolation and test reliability across all stories
+- [ISSUE-0003] Optimize token efficiency and model prompting across future sprints
   - [ ] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED
@@ -41,6 +41,13 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [ISSUE-0002] Ensure sprint backlog PR review comments are fully collected before feature development starts
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0001] Improve test fixture database isolation and test reliability across all stories
   - [ ] DRAFT
   - [ ] READY
   - [ ] IMPLEMENTED
@@ -84,9 +91,9 @@ Stories
 - [US-0005] Delete an entire list
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0006] View all lists and tasks
   - [x] DRAFT

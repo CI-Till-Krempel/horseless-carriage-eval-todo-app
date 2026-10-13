@@ -2,14 +2,9 @@
 
 _This file may only hold a rolling window of the most recent transcript entries across the whole run (see TRANSCRIPT_MAX_ENTRIES), not necessarily this sprint's complete history. For the full, untruncated per-run record, see the session log: `/app/sessions/transcript-eval-0.1.0-run61.log`._
 
-## ScrumOrchestrator
-- 🔧 `init_scrum_state()`
-- 🔧 `create_litellm_virtual_key(max_budget=100, budget_duration="1m", agent_name="ProductOwner")`
-- 🔧 `create_litellm_virtual_key(budget_duration="1m", agent_name="ScrumMaster", max_budget=100)`
-- 🔧 `create_litellm_virtual_key(agent_name="DevTeam", max_budget=100, budget_duration="1m")`
-- 🔧 `create_litellm_virtual_key(budget_duration="1m", agent_name="QA", max_budget=100)`
-- 🔧 `create_litellm_virtual_key(max_budget=100, budget_duration="1m", agent_name="Architect")`
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+## system
+
+[2 earlier transcript entries omitted for token budget]
 
 ## ProductOwner
 - 🔧 `init_scrum_state()`
@@ -285,3 +280,49 @@ I am transferring to DevTeam so they can advance US-0002.
 - 🔧 `propose_steering_change(new_content="# ScrumMaster Identi...", role="ScrumMaster", rationale="Address sprint 2 ret...")`
 - 🔧 `create_sprint_report(accomplishments=['Planned Sprint 2 b..., summary="Sprint 2 planned and...")`
 - 🔧 `create_sprint_report(summary="Sprint 2 completed s...", accomplishments=['Planned Sprint 2 b...)`
+- 🔧 `record_human_approval(approval_type="release", note="Pre-approved release...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+- 🔧 `init_scrum_state(force=True)`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+
+I am starting Sprint 3 to advance and deliver task creation and list management stories.
+- 🔧 `start_sprint(goal="Advance and deliver ...")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_sprint_backlog_pr(body="Sprint 3 backlog fea...", title="Sprint 3 Backlog")`
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `log_story_tokens(actual_tokens=1500, title_or_id="US-0002")`
+- 🔧 `gh_pr_checks()`
+- 🔧 `gh_pr_status()`
+- 🔧 `git_push(branch="eval-0.1.0-run61/dev...", commit_message="chore: ensure workin...")`
+- 🔧 `start_feature_branch(slug="US-0002-add-task-to-...", story_id="US-0002")`
+- 🔧 `plan_sprint_backlog_item(plan={'test_approach': 'T..., title_or_id="US-0002")`
+- 🔧 `start_feature_branch(story_id="US-0002", slug="US-0002-add-task-to-...")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `add_retro_action(owner="ScrumMaster", success_metric="No feature branching...", action="Ensure US-0001 is fu...", priority="normal", category="steering")`
+- 🔧 `calculate_kpis()`
+- 🔧 `update_sprint_report(kpis={'security': {'vulne...)`
+- 🔧 `propose_steering_change(role="ScrumMaster", rationale="Address sprint 3 ret...", new_content="# ScrumMaster Identi...")`
+- 🔧 `create_sprint_report(accomplishments=['Planned Sprint 3 b..., summary="Sprint 3 planned tas...")`
+- 🔧 `record_human_approval(note="Pre-approved release...", approval_type="release")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `record_human_approval(approval_type="release", note="Human approval for S...")`
+- 🔧 `create_release_pr(title="[eval-0.1.0-run61] S...", body="Release PR for Sprin...")`

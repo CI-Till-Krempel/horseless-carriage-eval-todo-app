@@ -16,4 +16,7 @@
 Tasks can be successfully added to lists.
 
 ## Test Approach
+Test adding tasks via API and UI.
 
+### Tasks
+- Implement task creation

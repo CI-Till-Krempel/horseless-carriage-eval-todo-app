@@ -2,7 +2,7 @@
 
 - Story ID: US-0005
 - Title: Delete an entire list
-- Status: Ready
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-13
@@ -16,4 +16,7 @@
 Users can delete lists along with their nested tasks.
 
 ## Test Approach
+Run pytest.
 
+### Tasks
+- Verify US-0005 branch, PR, and tests

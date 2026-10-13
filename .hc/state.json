@@ -82,9 +82,12 @@
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready"
+      "status": "Tested"
     },
     {
       "priority": "Must",
@@ -156,7 +159,7 @@
   "sprint_goal": "Implement US-0002 (Add a task to a list) and US-0003 (Mark task complete or incomplete).",
   "sprint_number": 2,
   "sprint_backlog_pr_sprint": 2,
-  "planning_output_commit_count": 8,
+  "planning_output_commit_count": 11,
   "sprint_backlog_pr_content_baseline": 6,
   "sprint_backlog": [
     {
@@ -251,6 +254,47 @@
       "estimate": 2000,
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified US-0002 acceptance criteria: Users can add tasks with descriptions to their lists."
+    },
+    {
+      "value_hypothesis": "Users can toggle task completion status and see visual distinction.",
+      "acceptance_criteria": [
+        "Given a task exists in a list, When the user marks the task as complete, Then its status changes to completed and it is visually distinguished."
+      ],
+      "title": "Mark task complete or incomplete",
+      "epic_id": "EP-0002",
+      "description": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
+      "priority": "Must",
+      "id": "US-0003",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
+      ],
+      "status": "Tested",
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "tasks": [
+        "Verify feature branch and PR for US-0003"
+      ],
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Automated tests passing",
+        "Tokens logged"
+      ],
+      "risks_assumptions": [
+        "Task completion toggle already implemented in app.py and verified via pytest."
+      ],
+      "estimate": 2500,
+      "approach": "Verify US-0003 implementation (Mark task complete or incomplete) and ensure feature branch and PR workflow.",
+      "test_approach": "Run pytest unit tests."
     }
   ],
   "impediment_log": [],
@@ -264,21 +308,28 @@
       "sprint_number": 1
     }
   ],
-  "decision_log": [],
+  "decision_log": [
+    {
+      "title": "US-0003 marked Implemented without a new source touch",
+      "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
+      "rationale": "Task completion toggle implementation and tests already landed in app.py and test_app.py during US-0001 work.",
+      "owner": "DevTeam"
+    }
+  ],
   "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.67452338
+    "current_usd_spend": 0.81356616
   },
   "token_usage": {
-    "total": 3028331,
+    "total": 4254388,
     "agents": {
       "ScrumMaster": 68247,
-      "ProductOwner": 296669,
-      "DevTeam": 1686355,
-      "Architect": 479673,
-      "QA": 497387
+      "ProductOwner": 377989,
+      "DevTeam": 2340570,
+      "Architect": 724521,
+      "QA": 743061
     }
   },
   "story_estimates": {
@@ -289,6 +340,10 @@
     "US-0002": {
       "estimate": 2000,
       "actual": 2100
+    },
+    "US-0003": {
+      "estimate": 2500,
+      "actual": 2400
     }
   },
   "sprint_report_kpis": {},
@@ -669,11 +724,11 @@
   "git_push_count": 0,
   "pr_review_calls": {
     "DevTeam": 3,
-    "Architect": 5,
-    "QA": 9
+    "Architect": 6,
+    "QA": 10
   },
-  "architect_review_baseline": 3,
-  "qa_review_baseline": 9,
+  "architect_review_baseline": 6,
+  "qa_review_baseline": 10,
   "qa_tested_baseline": 0,
   "sprint_backlog_engagement_baseline": {
     "DevTeam": 2,

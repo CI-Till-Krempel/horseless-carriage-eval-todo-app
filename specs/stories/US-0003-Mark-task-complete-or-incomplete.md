@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark task complete or incomplete
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-13
@@ -16,4 +16,7 @@
 Users can toggle task completion status and see visual distinction.
 
 ## Test Approach
+Run pytest unit tests.
 
+### Tasks
+- Verify feature branch and PR for US-0003

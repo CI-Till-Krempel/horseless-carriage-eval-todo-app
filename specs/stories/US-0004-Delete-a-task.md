@@ -16,4 +16,7 @@
 Users can successfully remove unwanted tasks.
 
 ## Test Approach
+Run pytest.
 
+### Tasks
+- Verify US-0004 branch, PR, and tests

@@ -31,6 +31,22 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
+- [ISSUE-0001] Improve test fixture database isolation and test reliability across all stories
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0002] Ensure sprint backlog PR review comments are fully collected before feature development starts
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### v1.0.0
@@ -61,10 +77,10 @@ Stories
 - [US-0004] Delete a task
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0005] Delete an entire list
   - [x] DRAFT
   - [x] READY

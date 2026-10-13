@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete a task
-- Status: Ready
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-13
@@ -16,4 +16,7 @@
 Users can successfully remove unwanted tasks.
 
 ## Test Approach
+Run pytest.
 
+### Tasks
+- Verify US-0004 branch, PR, and tests

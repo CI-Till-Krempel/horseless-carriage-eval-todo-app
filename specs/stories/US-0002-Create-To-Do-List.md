@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Create To-Do List
-- Status: Ready
+- Status: Implemented
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-14
@@ -16,4 +16,8 @@
 Users can successfully create lists.
 
 ## Test Approach
+pytest unit tests for listing and creation.
 
+### Tasks
+- Add POST /lists route
+- Add list form in templates/index.html

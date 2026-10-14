@@ -58,7 +58,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0004] Toggle Task Completion
   - [x] DRAFT
   - [x] READY

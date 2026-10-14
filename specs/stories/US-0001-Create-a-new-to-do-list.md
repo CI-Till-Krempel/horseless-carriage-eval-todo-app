@@ -16,4 +16,10 @@
 Users can successfully create and view named to-do lists.
 
 ## Test Approach
+Pytest unit tests verifying list creation API and database persistence.
 
+### Tasks
+- Initialize Flask app structure
+- Create database model and migration/init
+- Implement list creation route
+- Write pytest tests

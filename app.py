@@ -8,11 +8,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 class TodoList(db.Model):
+    __tablename__ = 'todolist'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     tasks = db.relationship('Task', backref='todolist', cascade='all, delete-orphan', lazy=True)
 
 class Task(db.Model):
+    __tablename__ = 'task'
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String(200), nullable=False)
     completed = db.Column(db.Boolean, default=False)

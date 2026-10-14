@@ -14,7 +14,7 @@
 
 ## Notes
 Users can toggle task completion.
-- ⚠️ REVIEW DENIED at Tested by QA: 2 of 6 tests failed during pytest execution.
+- ⚠️ REVIEW DENIED at Tested by QA: 2 of 4 tests failed during test suite execution.
 
 ## Test Approach
 pytest test_todo.py

@@ -1,7 +1,7 @@
 import pytest
 from app import app, db, TodoList, Task
 
-@pytest.fixture
+@pytest.fixture(autouse=True)
 def client():
     app.config['TESTING'] = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'

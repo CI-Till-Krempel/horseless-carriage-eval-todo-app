@@ -7,7 +7,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## ProductOwner
-- 🔧 `advance_story_stage(title_or_id="US-0005", stage="Draft")`
 - 🔧 `advance_story_stage(stage="Ready", title_or_id="US-0005")`
 - 🔧 `upsert_story(story={'user_story': 'As a...)`
 - 🔧 `advance_story_stage(title_or_id="US-0006", stage="Draft")`
@@ -372,3 +371,4 @@ Transferring control to ScrumOrchestrator to start Sprint 2.
 
 I am generating the sprint report for Sprint 1.
 - 🔧 `create_sprint_report(summary="Sprint 1 successfull...", accomplishments=['Successfully set u...)`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`

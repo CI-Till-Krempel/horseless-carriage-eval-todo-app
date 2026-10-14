@@ -190,3 +190,39 @@ I am going to transfer to ScrumOrchestrator to finalize the release PR.
 
 ## ProductOwner
 - 🔧 `create_release_pr(body="Sprint 2 release con...", title="Sprint 2 Release")`
+
+I am going to transfer to ScrumOrchestrator to conclude the sprint close sequence.declarations:default_api:transfer_to_agent{agent_name:ScrumOrchestrator}
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `get_budget_status()`
+- 🔧 `calculate_kpis()`
+- 🔧 `add_retro_action(owner="DevTeam", priority="normal", category="technical", success_metric="100% test pass rate ...", action="Ensure thorough revi...")`
+- 🔧 `update_sprint_report(kpis={'prompt_context_usa...)`
+- 🔧 `create_sprint_report(accomplishments=['Successfully compl..., summary="Sprint 3 was success...")`
+- 🔧 `gh_pr_status()`
+
+I have successfully completed the sprint close sequence for Sprint 3. The retrospective was conducted, KPIs calculated and reported, the sprint review report generated, and all sprint activities wrapped up successfully.
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `get_budget_status()`
+- 🔧 `start_sprint(goal="Complete sprint 4 re...")`
+- 🔧 `start_sprint(goal="Complete sprint 4 re...")`
+- 🔧 `add_retro_action(owner="ScrumMaster", success_metric="Release PR successfu...", category="technical", action="Improve release PR a...")`
+- 🔧 `calculate_kpis()`
+- 🔧 `update_sprint_report(kpis={'maintainability': ...)`
+- 🔧 `create_sprint_report(summary="Sprint retrospective...", accomplishments=['Successfully compl...)`
+- 🔧 `propose_steering_change(rationale="Retrospective findin...", role="ScrumMaster", new_content="# ScrumMaster Identi...")`
+- 🔧 `create_sprint_report(accomplishments=['Successfully compl..., summary="Sprint retrospective...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(title="Sprint 4 Release PR", body="Release PR for Sprin...")`

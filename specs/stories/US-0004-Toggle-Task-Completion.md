@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Toggle Task Completion
-- Status: Implemented
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-14

@@ -16,4 +16,8 @@
 Users can add tasks to lists.
 
 ## Test Approach
+Test via pytest.
 
+### Tasks
+- Add POST /lists/<list_id>/tasks route
+- Add task form in templates/index.html

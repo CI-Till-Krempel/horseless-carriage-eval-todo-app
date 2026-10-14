@@ -14,6 +14,13 @@
 
 ## Notes
 Allows users to organize tasks effectively.
+- 🚫 BLOCKED (technical) - raised by ScrumOrchestrator: ScrumOrchestrator and DevTeam bounced transfer_to_agent 6x with no progress - 🔁 [TRANSFER LOOP DETECTED] 6 transfer_to_agent hops in a row with no other tool call in between (most recently ScrumOrchestrator -> DevTeam) - refusing this transfer. This looks like an unproductive rotation between roles rather than a direct two-agent ping-pong. Stop transferring and actually call a tool that makes progress, or explain the blocker in plain text instead.
 
 ## Test Approach
+Write pytest tests for list creation and view endpoints.
 
+### Tasks
+- Set up Flask app and routes
+- Implement list creation logic
+- Create HTML template for UI
+- Add unit tests with pytest

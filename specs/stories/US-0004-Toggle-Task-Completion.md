@@ -14,6 +14,7 @@
 
 ## Notes
 Users can toggle task completion.
+- ⚠️ REVIEW DENIED at Tested by QA: SQLAlchemy foreign key error during test collection: Task table references todolist table before todolist is defined or table order/relationships need adjustment.
 
 ## Test Approach
 pytest test_todo.py

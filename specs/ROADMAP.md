@@ -51,8 +51,8 @@ Stories
 
 ### v1.0.0
 Goals
-- Build the To-Do List Web App MVP in 5 sprints
-
+- Implement the planned sprint backlog stories for sprint 3
+- Complete final iteration and release features for sprint 5
 Stories
 - [US-0001] Project Initialization and Structure
   - [x] DRAFT

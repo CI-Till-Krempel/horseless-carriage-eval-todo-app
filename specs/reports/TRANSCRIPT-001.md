@@ -190,3 +190,15 @@ I am going to transfer to ScrumOrchestrator to finalize the release PR.
 
 ## ProductOwner
 - 🔧 `create_release_pr(body="Sprint 2 release con...", title="Sprint 2 Release")`
+
+I am going to transfer to ScrumOrchestrator to conclude the sprint close sequence.declarations:default_api:transfer_to_agent{agent_name:ScrumOrchestrator}
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `get_budget_status()`
+- 🔧 `calculate_kpis()`
+- 🔧 `add_retro_action(owner="DevTeam", priority="normal", category="technical", success_metric="100% test pass rate ...", action="Ensure thorough revi...")`
+- 🔧 `update_sprint_report(kpis={'prompt_context_usa...)`
+- 🔧 `create_sprint_report(accomplishments=['Successfully compl..., summary="Sprint 3 was success...")`

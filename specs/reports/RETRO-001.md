@@ -15,3 +15,11 @@
 - Status: open
 - Success Metric: Zero rejected sprint report attempts due to missing retro actions
 - Filed As: ISSUE-0002
+
+## Ensure thorough review of automated test execution before sprint closure to maintain high test coverage and detect any lingering edge cases.
+- Kind: Retro Action
+- Category: technical
+- Owner: DevTeam
+- Status: open
+- Success Metric: 100% test pass rate with all edge cases covered before release.
+- Filed As: ISSUE-0003

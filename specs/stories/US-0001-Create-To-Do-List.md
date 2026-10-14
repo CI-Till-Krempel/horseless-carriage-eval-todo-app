@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Implemented
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-14
@@ -16,4 +16,10 @@
 Users can successfully create and view named lists.
 
 ## Test Approach
+Pytest unit tests for the Flask route and database persistence.
 
+### Tasks
+- Set up Flask app structure and requirements.txt
+- Implement database models and schema for lists
+- Implement route for creating a to-do list
+- Write automated test for list creation

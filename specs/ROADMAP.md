@@ -40,21 +40,14 @@ Goals
 - Build core To-Do List web application with ability to create lists, add/complete/delete tasks, delete lists, and view everything cleanly in a web UI.
 
 Stories
-- [US-0006] View Lists and Tasks UI
+- [US-0001] Create To-Do List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0005] Delete List
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-0004] Delete Task
+- [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED
@@ -68,14 +61,21 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0002] Add Task to List
+- [US-0004] Delete Task
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0001] Create To-Do List
+- [US-0005] Delete List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] View Lists and Tasks UI
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

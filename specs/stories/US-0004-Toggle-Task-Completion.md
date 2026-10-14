@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Toggle Task Completion
-- Status: Ready
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-14
@@ -14,9 +14,10 @@
 
 ## Notes
 Users can toggle task completion.
+- ⚠️ REVIEW DENIED at Tested by QA: 2 of 4 tests failed during test suite execution.
 
 ## Test Approach
-Test via pytest.
+pytest test_todo.py
 
 ### Tasks
 - Add toggle route

@@ -16,4 +16,8 @@
 Users can toggle task completion.
 
 ## Test Approach
+Test via pytest.
 
+### Tasks
+- Add toggle route
+- Add CSS class for completed tasks

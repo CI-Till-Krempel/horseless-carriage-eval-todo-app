@@ -16,4 +16,8 @@
 Users can delete tasks.
 
 ## Test Approach
+Test via pytest.
 
+### Tasks
+- Add delete task route
+- Add delete button in template

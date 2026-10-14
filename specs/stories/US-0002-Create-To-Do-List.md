@@ -16,4 +16,8 @@
 Users can successfully create lists.
 
 ## Test Approach
+Test via pytest.
 
+### Tasks
+- Add POST /lists route
+- Add list form in templates/index.html

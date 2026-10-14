@@ -30,9 +30,11 @@
       "version": "v1.0.0",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented"
       ],
-      "status": "Ready"
+      "status": "Implemented",
+      "blocked": null
     },
     {
       "description": "Create a new to-do list with a name",
@@ -136,10 +138,235 @@
   ],
   "sprint_goal": "Initialize project structure and set up core infrastructure for the To-Do List Web App",
   "sprint_number": 1,
-  "sprint_backlog_pr_sprint": 0,
-  "planning_output_commit_count": 0,
-  "sprint_backlog_pr_content_baseline": 0,
-  "sprint_backlog": [],
+  "sprint_backlog_pr_sprint": 1,
+  "planning_output_commit_count": 1,
+  "sprint_backlog_pr_content_baseline": 1,
+  "sprint_backlog": [
+    {
+      "title": "Project Initialization and Structure",
+      "priority": "Must",
+      "user_story": "As a developer, I want to initialize the project structure so that we have a solid foundation for building the web app.",
+      "value_hypothesis": "Project has a clean structure ready for development.",
+      "acceptance_criteria": [
+        "Given the project repository is initialized, When checking the project files, Then a basic project structure with README and requirements exists."
+      ],
+      "description": "Initialize project structure and basic dependencies",
+      "type": "User Story",
+      "id": "US-0001",
+      "version": "v1.0.0",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented"
+      ],
+      "status": "Implemented",
+      "risks_assumptions": [
+        "Assuming Python/Flask is suitable for a simple web UI application."
+      ],
+      "test_approach": "Use pytest to verify the Flask application can be imported and responds to requests.",
+      "dod_checks": [
+        "Basic project structure exists",
+        "Dependencies declared in requirements.txt",
+        "Tests pass successfully"
+      ],
+      "code_files": [
+        "app.py",
+        "requirements.txt",
+        "README.md",
+        "tests/test_app.py"
+      ],
+      "sources": [],
+      "estimate": 200,
+      "approach": "Initialize standard Python project structure with Flask, requirements.txt, pytest, and a basic README.md for the To-Do List Web App.",
+      "tasks": [
+        "Create requirements.txt with flask and pytest",
+        "Create basic app.py with a home route",
+        "Create README.md with run instructions",
+        "Create tests/test_app.py to verify application startup"
+      ],
+      "blocked": null
+    },
+    {
+      "description": "Create a new to-do list with a name",
+      "priority": "Must",
+      "acceptance_criteria": [
+        "Given the user opens the web app, When they submit a new list name, Then a new to-do list is created and displayed."
+      ],
+      "value_hypothesis": "Users can successfully create lists.",
+      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "title": "Create To-Do List",
+      "type": "User Story",
+      "id": "US-0002",
+      "version": "v1.0.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "code_files": [
+        "app.py",
+        "templates/index.html"
+      ],
+      "risks_assumptions": [
+        "In-memory storage is sufficient for session persistence."
+      ],
+      "tasks": [
+        "Add POST /lists route",
+        "Add list form in templates/index.html"
+      ],
+      "estimate": 100,
+      "sources": [],
+      "dod_checks": [
+        "List creation works and displays"
+      ],
+      "test_approach": "Test via pytest.",
+      "approach": "Implement list creation endpoint and form in Flask."
+    },
+    {
+      "priority": "Must",
+      "value_hypothesis": "Users can add tasks to lists.",
+      "description": "Add a task to a list with description",
+      "title": "Add Task to List",
+      "user_story": "As a user, I want to add a task with a description to a list so that I can track what needs to be done.",
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user adds a task with a text description, Then the task appears within that list."
+      ],
+      "type": "User Story",
+      "id": "US-0003",
+      "version": "v1.0.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "risks_assumptions": [
+        "In-memory storage."
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html"
+      ],
+      "dod_checks": [
+        "Task creation works and displays inside list"
+      ],
+      "tasks": [
+        "Add POST /lists/<list_id>/tasks route",
+        "Add task form in templates/index.html"
+      ],
+      "estimate": 100,
+      "sources": [],
+      "test_approach": "Test via pytest.",
+      "approach": "Implement task creation endpoint and form under a list."
+    },
+    {
+      "value_hypothesis": "Users can toggle task completion.",
+      "title": "Toggle Task Completion",
+      "acceptance_criteria": [
+        "Given a task exists in a list, When the user marks it as complete or incomplete, Then its status updates and is visually distinguished."
+      ],
+      "description": "Mark task as complete or incomplete",
+      "priority": "Must",
+      "user_story": "As a user, I want to mark a task as complete or incomplete so that I can see my progress.",
+      "type": "User Story",
+      "id": "US-0004",
+      "version": "v1.0.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "estimate": 100,
+      "code_files": [
+        "app.py",
+        "templates/index.html"
+      ],
+      "sources": [],
+      "tasks": [
+        "Add toggle route",
+        "Add CSS class for completed tasks"
+      ],
+      "risks_assumptions": [
+        "None"
+      ],
+      "approach": "Implement task toggle endpoint and visual distinction for completed tasks.",
+      "dod_checks": [
+        "Toggle task completion works and visually distinguishes completed tasks"
+      ],
+      "test_approach": "Test via pytest."
+    },
+    {
+      "value_hypothesis": "Users can delete tasks.",
+      "description": "Delete a task from a list",
+      "title": "Delete Task",
+      "priority": "Must",
+      "user_story": "As a user, I want to delete a task so that I can remove items I no longer need.",
+      "acceptance_criteria": [
+        "Given a task exists in a list, When the user clicks delete on the task, Then the task is removed from the list."
+      ],
+      "type": "User Story",
+      "id": "US-0005",
+      "version": "v1.0.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "dod_checks": [
+        "Task deletion works"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html"
+      ],
+      "estimate": 50,
+      "approach": "Implement task deletion endpoint and button.",
+      "test_approach": "Test via pytest.",
+      "risks_assumptions": [
+        "None"
+      ],
+      "tasks": [
+        "Add delete task route",
+        "Add delete button in template"
+      ],
+      "sources": []
+    },
+    {
+      "description": "Delete an entire list and its tasks",
+      "priority": "Must",
+      "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete lists.",
+      "value_hypothesis": "Users can delete lists and associated tasks.",
+      "acceptance_criteria": [
+        "Given a to-do list with or without tasks exists, When the user deletes the list, Then the list and all its tasks are removed."
+      ],
+      "title": "Delete List",
+      "type": "User Story",
+      "id": "US-0006",
+      "version": "v1.0.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "estimate": 50,
+      "code_files": [
+        "app.py",
+        "templates/index.html"
+      ],
+      "tasks": [
+        "Add delete list route",
+        "Add delete list button in template"
+      ],
+      "dod_checks": [
+        "List and tasks deletion works"
+      ],
+      "risks_assumptions": [
+        "None"
+      ],
+      "test_approach": "Test via pytest.",
+      "sources": [],
+      "approach": "Implement list deletion endpoint and button."
+    }
+  ],
   "impediment_log": [],
   "retro_actions": [],
   "decision_log": [],
@@ -147,17 +374,40 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.03941767
+    "current_usd_spend": 0.26695524
   },
   "token_usage": {
-    "total": 637212,
+    "total": 3576591,
     "agents": {
       "ScrumOrchestrator": 87907,
-      "ProductOwner": 528071,
-      "ScrumMaster": 21234
+      "ProductOwner": 860061,
+      "ScrumMaster": 145960,
+      "DevTeam": 2220372,
+      "Architect": 141180,
+      "QA": 121111
     }
   },
-  "story_estimates": {},
+  "story_estimates": {
+    "US-0001": {
+      "estimate": 200,
+      "actual": 150
+    },
+    "US-0002": {
+      "estimate": 100
+    },
+    "US-0003": {
+      "estimate": 100
+    },
+    "US-0004": {
+      "estimate": 100
+    },
+    "US-0005": {
+      "estimate": 50
+    },
+    "US-0006": {
+      "estimate": 50
+    }
+  },
   "sprint_report_kpis": null,
   "kpi_update_count": 0,
   "kpi_baseline": 0,
@@ -182,8 +432,8 @@
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 0,
-  "unadvanced_write_nudge_baseline": 0,
+  "dev_touch_baseline": 5,
+  "unadvanced_write_nudge_baseline": 5,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
     "specs/ROADMAP.md",
@@ -194,10 +444,19 @@
     "specs/stories/US-0003-Add-Task-to-List.md",
     "specs/stories/US-0004-Toggle-Task-Completion.md",
     "specs/stories/US-0005-Delete-Task.md",
-    "specs/stories/US-0006-Delete-List.md"
+    "specs/stories/US-0006-Delete-List.md",
+    "specs/SPRINT-1-REVIEW.md",
+    "requirements.txt",
+    "README.md",
+    "app.py",
+    "templates/index.html",
+    "tests/test_app.py"
   ],
   "last_check_build": null,
-  "last_pr_checks": null,
+  "last_pr_checks": {
+    "passing": true,
+    "git_push_count_at_check": 0
+  },
   "git_push_count": 0,
   "pr_review_calls": {},
   "architect_review_baseline": 0,
@@ -205,7 +464,80 @@
   "qa_tested_baseline": 0,
   "sprint_backlog_engagement_baseline": {},
   "sprint_report_pending_release": false,
-  "blocking_interactions": [],
+  "blocking_interactions": [
+    {
+      "id": 1,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Initialize standard Python project structure with Flask, requirements.txt, pytest, and a basic README.md for the To-Do List Web App.\", \"code_files\": [\"app.py\", \"requirements.txt\", \"README.md\", \"tests/test_app.py\"], \"dod_checks\": [\"Basic project structure exists\", \"Dependencies declared in requirements.txt\", \"Tests pass successfully\"], \"estimate\": 200, \"risks_assumptions\": [\"Assuming Python/Flask is suitable for a simple web UI application.\"], \"sources\": [], \"tasks\": [\"Create requirements.txt with flask and pytest\", \"Create basic app.py with a home route\", \"Create README.md with run instructions\", \"Create tests/test_app.py to verify application startup\"], \"test_approach\": \"Use pytest to verify the Flask application can be imported and responds to requests.\"}, \"title_or_id\": \"US-0001\"}",
+      "created_at": "2026-10-14T12:47:33.357322+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 2,
+      "kind": "stalled",
+      "summary": "ProductOwner overrode the 'Development'-phase gate to call create_sprint_backlog_pr after being refused once.",
+      "detail": "args: {}",
+      "created_at": "2026-10-14T12:48:08.234860+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 3,
+      "kind": "blocked_story",
+      "summary": "'US-0001' is BLOCKED (product): ProductOwner and ScrumOrchestrator bounced transfer_to_agent 6x with no progress - 🔁 [TRANSFER LOOP DETECTED] 6 transfer_to_agent hops in a row with no other tool call in between (most recently ProductOwner -> ScrumOrchestrator) - refusing this transfer. This looks like an unproductive rotation between roles rather than a direct two-agent ping-pong. Stop transferring and actually call a tool that makes progress, or explain the blocker in plain text instead.",
+      "detail": "Raised by ProductOwner. Resolve via ProductOwner's resolve_story_blocker('US-0001', resolution).",
+      "created_at": "2026-10-14T12:48:32.080331+00:00",
+      "resolved": true,
+      "resolved_at": "2026-10-14T12:49:29.105343+00:00"
+    },
+    {
+      "id": 4,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Implement list creation endpoint and form in Flask.\", \"code_files\": [\"app.py\", \"templates/index.html\"], \"dod_checks\": [\"List creation works and displays\"], \"estimate\": 100, \"risks_assumptions\": [\"In-memory storage is sufficient for session persistence.\"], \"sources\": [], \"tasks\": [\"Add POST /lists route\", \"Add list form in templates/index.html\"], \"test_approach\": \"Test via pytest.\"}, \"title_or_id\": \"US-0002\"}",
+      "created_at": "2026-10-14T12:48:54.690746+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 5,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Implement task creation endpoint and form under a list.\", \"code_files\": [\"app.py\", \"templates/index.html\"], \"dod_checks\": [\"Task creation works and displays inside list\"], \"estimate\": 100, \"risks_assumptions\": [\"In-memory storage.\"], \"sources\": [], \"tasks\": [\"Add POST /lists/<list_id>/tasks route\", \"Add task form in templates/index.html\"], \"test_approach\": \"Test via pytest.\"}, \"title_or_id\": \"US-0003\"}",
+      "created_at": "2026-10-14T12:48:58.703866+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 6,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Implement task toggle endpoint and visual distinction for completed tasks.\", \"code_files\": [\"app.py\", \"templates/index.html\"], \"dod_checks\": [\"Toggle task completion works and visually distinguishes completed tasks\"], \"estimate\": 100, \"risks_assumptions\": [\"None\"], \"sources\": [], \"tasks\": [\"Add toggle route\", \"Add CSS class for completed tasks\"], \"test_approach\": \"Test via pytest.\"}, \"title_or_id\": \"US-0004\"}",
+      "created_at": "2026-10-14T12:49:01.319904+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 7,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Implement task deletion endpoint and button.\", \"code_files\": [\"app.py\", \"templates/index.html\"], \"dod_checks\": [\"Task deletion works\"], \"estimate\": 50, \"risks_assumptions\": [\"None\"], \"sources\": [], \"tasks\": [\"Add delete task route\", \"Add delete button in template\"], \"test_approach\": \"Test via pytest.\"}, \"title_or_id\": \"US-0005\"}",
+      "created_at": "2026-10-14T12:49:04.224399+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 8,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Implement list deletion endpoint and button.\", \"code_files\": [\"app.py\", \"templates/index.html\"], \"dod_checks\": [\"List and tasks deletion works\"], \"estimate\": 50, \"risks_assumptions\": [\"None\"], \"sources\": [], \"tasks\": [\"Add delete list route\", \"Add delete list button in template\"], \"test_approach\": \"Test via pytest.\"}, \"title_or_id\": \"US-0006\"}",
+      "created_at": "2026-10-14T12:49:07.153184+00:00",
+      "resolved": false,
+      "resolved_at": null
+    }
+  ],
   "overclaim_rejection_counts": {},
   "general_blockers": [],
   "steering_proposal_count": 0,

@@ -16,4 +16,8 @@
 Users can delete lists and associated tasks.
 
 ## Test Approach
+Test via pytest.
 
+### Tasks
+- Add delete list route
+- Add delete list button in template

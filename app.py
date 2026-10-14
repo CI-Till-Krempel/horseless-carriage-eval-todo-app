@@ -2,8 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# In-memory database for lists and tasks
-lists = []
+lists = {}
 
 @app.route('/')
 def index():
@@ -11,9 +10,9 @@ def index():
 
 @app.route('/lists', methods=['POST'])
 def create_list():
-    title = request.form.get('title')
-    if title:
-        lists.append({'id': len(lists) + 1, 'title': title, 'tasks': []})
+    name = request.form.get('name')
+    if name:
+        lists[name] = []
     return redirect(url_for('index'))
 
 if __name__ == '__main__':

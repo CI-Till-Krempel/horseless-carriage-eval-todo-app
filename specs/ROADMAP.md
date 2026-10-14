@@ -41,7 +41,7 @@ Stories
 - [US-0001] Project Initialization and Structure
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

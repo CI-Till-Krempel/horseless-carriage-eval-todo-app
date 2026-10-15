@@ -14,3 +14,11 @@
 - Status: open
 - Success Metric: 100% test coverage maintained with zero regressions.
 - Filed As: ISSUE-0001
+
+## Maintain high test coverage and monitor vulnerability scan results proactively during development.
+- Kind: Retro Action
+- Category: technical
+- Owner: DevTeam
+- Status: open
+- Success Metric: Test coverage remains above 95% and high vulnerabilities are addressed before code review.
+- Filed As: ISSUE-0002

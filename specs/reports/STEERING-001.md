@@ -16,17 +16,33 @@ Addressing retrospective action item to ensure strict adherence to pre-implement
 
 ```
 
-## ScrumMaster
+## ProductOwner
 - Proposed By: ScrumMaster
-- Pull Request: https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/574
+- Pull Request: https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/576
 
 ### Rationale
-Resolving open steering-category retro findings with a proper steering change proposal as required by the sprint close sequence.
+Addressing the open steering finding from our retrospective to maintain rigorous backlog refinement standards.
 
 ### Proposed Content
 ```
-# ScrumMaster Identity Customization
+# Product Owner Customization
 
-- Emphasize proactive review of steering findings and timely execution of steering change proposals before sprint close.
+Ensure all backlog items and acceptance criteria are thoroughly refined and clearly documented prior to sprint planning.
+
+```
+
+## DevTeam
+- Proposed By: ScrumMaster
+- Pull Request: https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/577
+
+### Rationale
+Ensures that DevTeam actively reviews PRs and maintains test coverage and security standards as identified in the retrospective improvement proposals.
+
+### Proposed Content
+```
+# DevTeam Identity & Customization
+
+- Actively participate in sprint backlog planning and provide timely reviews and comments on PRs.
+- Proactively monitor test coverage and address high vulnerabilities during feature implementation.
 
 ```

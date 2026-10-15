@@ -308,3 +308,31 @@ Sprint 1 has been successfully planned, developed, reviewed, tested, accepted, a
 
 ## ProductOwner
 - 🔧 `create_release_pr(title="Sprint 2 Release", body="Sprint 2 release con...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+
+Sprint 2 review, retrospective, KPI calculation, sprint report generation, and release PR creation have all been successfully completed! 
+
+- **Retrospective actions and steering proposals** were logged and handled.
+- **Sprint KPIs and report** (`specs/reports/SPRINT-REPORT-001.md`) were generated.
+- **Release PR** (`https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/575`) was successfully created.
+- 🔧 `load_state_from_repo()`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `calculate_kpis()`
+
+I am going to add a retrospective action item to capture our team improvement focus for the next sprint.
+
+I am going to calculate and update the sprint report with our latest KPIs.
+- 🔧 `update_sprint_report(kpis={'team_effectiveness...)`
+
+I am going to generate the final sprint report summarizing our accomplishments and metrics.
+- 🔧 `create_sprint_report(accomplishments=['Successfully compl..., summary="Sprint 3 was execute...")`
+
+I am going to propose a steering change to address the open steering finding for the Product Owner role.
+- 🔧 `propose_steering_change(rationale="Addressing the open ...", role="ProductOwner", new_content="# Product Owner Cust...")`
+
+I am going to generate the final sprint report now that the steering proposal has been submitted.
+- 🔧 `create_sprint_report(accomplishments=['Successfully compl..., summary="Sprint 3 was execute...")`

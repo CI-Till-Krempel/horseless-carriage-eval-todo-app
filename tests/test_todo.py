@@ -4,19 +4,24 @@ import pytest
 
 from app import app, db, TodoList, Task
 
-@pytest.fixture
-def client():
-    db_fd, app.config['DATABASE'] = tempfile.mkstemp()
-    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{app.config['DATABASE']}"
+@pytest.fixture(autouse=True)
+def app_context():
+    db_fd, db_path = tempfile.mkstemp()
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{db_path}"
     app.config['TESTING'] = True
 
-    with app.test_client() as client:
-        with app.app_context():
-            db.create_all()
-        yield client
+    with app.app_context():
+        db.create_all()
+        yield
+        db.session.remove()
+        db.drop_all()
 
     os.close(db_fd)
-    os.unlink(app.config['DATABASE'])
+    os.unlink(db_path)
+
+@pytest.fixture
+def client():
+    return app.test_client()
 
 def test_index(client):
     rv = client.get('/')

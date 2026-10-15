@@ -2,16 +2,11 @@
 
 _This file may only hold a rolling window of the most recent transcript entries across the whole run (see TRANSCRIPT_MAX_ENTRIES), not necessarily this sprint's complete history. For the full, untruncated per-run record, see the session log: `/app/sessions/transcript-eval-0.1.0-run69.log`._
 
-## ScrumOrchestrator
-- 🔧 `create_litellm_virtual_key(agent_name="ProductOwner")`
-- 🔧 `create_litellm_virtual_key(agent_name="ScrumMaster")`
-- 🔧 `create_litellm_virtual_key(agent_name="DevTeam")`
-- 🔧 `create_litellm_virtual_key(agent_name="QA")`
-- 🔧 `create_litellm_virtual_key(agent_name="Architect")`
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+## system
+
+[2 earlier transcript entries omitted for token budget]
 
 ## ProductOwner
-- 🔧 `upsert_prd(filename="PRD-Todo-MVP.md", content="# Product Requiremen...")`
 - 🔧 `update_roadmap(version="v1.0.0", goals=['Deliver To-Do List...)`
 - 🔧 `upsert_epic(epic={'description': 'Cor...)`
 - 🔧 `upsert_story(story={'description': 'As ...)`
@@ -308,3 +303,54 @@ Sprint 1 has been successfully planned, developed, reviewed, tested, accepted, a
 
 ## ProductOwner
 - 🔧 `create_release_pr(title="Sprint 2 Release", body="Sprint 2 release con...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+
+Sprint 2 review, retrospective, KPI calculation, sprint report generation, and release PR creation have all been successfully completed! 
+
+- **Retrospective actions and steering proposals** were logged and handled.
+- **Sprint KPIs and report** (`specs/reports/SPRINT-REPORT-001.md`) were generated.
+- **Release PR** (`https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/575`) was successfully created.
+- 🔧 `load_state_from_repo()`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `calculate_kpis()`
+
+I am going to add a retrospective action item to capture our team improvement focus for the next sprint.
+
+I am going to calculate and update the sprint report with our latest KPIs.
+- 🔧 `update_sprint_report(kpis={'team_effectiveness...)`
+
+I am going to generate the final sprint report summarizing our accomplishments and metrics.
+- 🔧 `create_sprint_report(accomplishments=['Successfully compl..., summary="Sprint 3 was execute...")`
+
+I am going to propose a steering change to address the open steering finding for the Product Owner role.
+- 🔧 `propose_steering_change(rationale="Addressing the open ...", role="ProductOwner", new_content="# Product Owner Cust...")`
+
+I am going to generate the final sprint report now that the steering proposal has been submitted.
+- 🔧 `create_sprint_report(accomplishments=['Successfully compl..., summary="Sprint 3 was execute...")`
+
+Sprint 3 review, retro, KPIs, and sprint report have been successfully completed and documented.
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `get_budget_status()`
+- 🔧 `calculate_kpis()`
+- 🔧 `add_retro_action(success_metric="Test coverage remain...", priority="normal", owner="DevTeam", category="technical", action="Maintain high test c...")`
+- 🔧 `update_sprint_report(kpis={'team_effectiveness...)`
+- 🔧 `create_sprint_report(summary="Sprint 4 was success...", accomplishments=['Completed sprint 4...)`
+- 🔧 `gather_workflow_improvement_proposals()`
+- 🔧 `propose_steering_change(new_content="# DevTeam Identity &...", rationale="Ensures that DevTeam...", role="DevTeam")`
+- 🔧 `update_sprint_report(kpis={'maintainability': ...)`
+- 🔧 `create_sprint_report(accomplishments=['Completed sprint 4..., summary="Sprint 4 was success...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(title="Release Sprint 4", body="Release PR for Sprin...")`

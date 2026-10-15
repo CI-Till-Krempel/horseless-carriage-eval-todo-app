@@ -1,0 +1,1 @@
+DevTeam must explicitly review and address high-priority vulnerability scan findings before marking any sprint stories as fully completed.

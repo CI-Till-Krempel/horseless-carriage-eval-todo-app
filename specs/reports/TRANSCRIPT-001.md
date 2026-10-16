@@ -193,3 +193,38 @@ I am checking the status of pull requests to ensure our release preparation is a
 
 ## ProductOwner
 - 🔧 `create_release_pr(body="Release v0.2.0 - Spr...", title="Release v0.2.0 - Spr...")`
+- 🔧 `gh_release_create(tag="v0.2.0", notes="Release v0.2.0 - Spr...", title="Release v0.2.0")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+
+1. **Current understanding / assumptions**: Sprint 2 close-out activities are complete, including the retrospective, KPI calculation, sprint report generation, and release pull request creation (`#584`).
+2. **Missing settings and Setup status**: None. Setup is fully configured and operational.
+3. **Artifacts updated**: 
+   - Sprint Report (`specs/reports/SPRINT-REPORT-001.md`)
+   - Retrospective Action Items (`ISSUE-0001`, `ISSUE-0002`)
+   - Release Pull Request (`#584`)
+4. **Next actions**: Sprint 2 is successfully closed out and released. Ready to transition into subsequent planning or wrap up session per evaluation requirements.
+- 🔧 `load_state_from_repo()`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+
+I am calculating the sprint KPIs to include in the sprint report.
+- 🔧 `calculate_kpis()`
+
+I am adding a retrospective action item to capture improvement goals for the next sprint.
+- 🔧 `add_retro_action(owner="QA", category="technical", action="Enhance test coverag...", success_metric="100% test transparen...", priority="normal")`
+
+I am updating the sprint report with the calculated KPIs.
+- 🔧 `update_sprint_report(kpis={'result_quality': {...)`
+
+I am creating the sprint report to conclude the sprint.
+- 🔧 `create_sprint_report(summary="Sprint 3 was execute...", accomplishments=['Successfully compl...)`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(title="Sprint 3 Release (de...", body="Release PR for Sprin...")`

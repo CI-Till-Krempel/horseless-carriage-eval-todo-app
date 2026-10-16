@@ -15,3 +15,11 @@
 - Status: open
 - Success Metric: Zero unreviewed high vulnerabilities at sprint close.
 - Filed As: ISSUE-0002
+
+## Enhance test coverage reporting granularity and ensure automated checks are monitored consistently across all team roles.
+- Kind: Retro Action
+- Category: technical
+- Owner: QA
+- Status: open
+- Success Metric: 100% test transparency and active monitoring on all PRs
+- Filed As: ISSUE-0003

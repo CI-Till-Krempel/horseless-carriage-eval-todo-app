@@ -35,8 +35,7 @@ Stories
 
 ### v0.1.0
 Goals
-- Deliver core To-Do List web application functionality supporting list and task management.
-
+- Complete Sprint 4 review, retro, KPIs, and release process.
 Stories
 - [US-0001] Create a To-Do List
   - [x] DRAFT
@@ -74,6 +73,27 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] View All Lists and Tasks
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0004] Maintain robust automated test coverage and clean PR reviews for all upcoming story implementations.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0002] Ensure continuous monitoring of vulnerability scan results during development to address high findings early.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0003] Enhance test coverage reporting granularity and ensure automated checks are monitored consistently across all team roles.
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

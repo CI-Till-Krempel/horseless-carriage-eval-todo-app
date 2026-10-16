@@ -7,13 +7,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## ProductOwner
-- 🔧 `advance_story_stage(title_or_id="ISSUE-0002", stage="Ready")`
-- 🔧 `upsert_issue(issue={'priority': 'Must',...)`
-- 🔧 `advance_story_stage(title_or_id="ISSUE-0003", stage="Draft")`
-- 🔧 `upsert_issue(issue={'title': 'Enhance t...)`
-- 🔧 `advance_story_stage(stage="Ready", title_or_id="ISSUE-0003")`
-- 🔧 `advance_story_stage(title_or_id="ISSUE-0004", stage="Draft")`
-- 🔧 `upsert_issue(issue={'priority': 'Must',...)`
 - 🔧 `advance_story_stage(title_or_id="ISSUE-0004", stage="Ready")`
 - 🔧 `create_sprint_backlog_pr(body="Sprint backlog PR fo...", title="Sprint Backlog #4")`
 - 🔧 `transfer_to_agent(agent_name="DevTeam")`
@@ -358,3 +351,16 @@ I am generating the final sprint report to conclude Sprint 5.
 
 I am creating the sprint report to conclude Sprint 5.
 - 🔧 `create_sprint_report(accomplishments=['Successfully compl..., summary="Sprint 5 successfull...")`
+- 🔧 `transfer_to_agent(agent_name="QA")`
+
+## QA
+- 🔧 `check_build()`
+- 🔧 `check_build()`
+- 🔧 `gh_pr_comment(body="QA final sign-off co...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(body="Release PR for the f...", title="Release v0.1.0 - Fin...")`

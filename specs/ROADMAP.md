@@ -80,6 +80,27 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
+- [ISSUE-0004] Maintain robust automated test coverage and clean PR reviews for all upcoming story implementations.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0002] Ensure continuous monitoring of vulnerability scan results during development to address high findings early.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [ISSUE-0003] Enhance test coverage reporting granularity and ensure automated checks are monitored consistently across all team roles.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [EP-0001] To-Do List Core Management
   - [ ] DRAFT
   - [ ] READY

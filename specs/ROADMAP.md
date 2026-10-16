@@ -35,8 +35,7 @@ Stories
 
 ### v0.1.0
 Goals
-- Deliver core To-Do List web application functionality supporting list and task management.
-
+- Complete Sprint 4 review, retro, KPIs, and release process.
 Stories
 - [US-0001] Create a To-Do List
   - [x] DRAFT

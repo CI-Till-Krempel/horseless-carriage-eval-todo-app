@@ -31,3 +31,10 @@
 - Status: open
 - Success Metric: 100% test pass rate on all sprint deliverables
 - Filed As: ISSUE-0004
+
+## Ensure all sprint deliverables and close-out steps are completed systematically in the final sprint.
+- Kind: Retro Action
+- Category: technical
+- Owner: ScrumMaster
+- Status: open
+- Success Metric: 100% completion of sprint report and release PR.

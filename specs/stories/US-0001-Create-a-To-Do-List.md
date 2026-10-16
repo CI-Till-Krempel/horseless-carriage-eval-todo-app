@@ -16,4 +16,4 @@
 Users can create named lists to organize tasks.
 
 ## Test Approach
-
+pytest for unit and integration testing of Flask routes.

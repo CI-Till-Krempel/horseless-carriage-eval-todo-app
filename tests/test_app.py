@@ -17,3 +17,9 @@ def test_create_list(client):
     rv = client.post('/lists', data={'name': 'Groceries'}, follow_redirects=True)
     assert rv.status_code == 200
     assert b'Groceries' in rv.data
+
+def test_add_task(client):
+    client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
+    rv = client.post('/lists/1/tasks', data={'title': 'Finish report'}, follow_redirects=True)
+    assert rv.status_code == 200
+    assert b'Finish report' in rv.data

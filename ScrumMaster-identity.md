@@ -1,0 +1,1 @@
+Ensure full cross-functional participation and sign-off on sprint backlog PRs.

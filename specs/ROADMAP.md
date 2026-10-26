@@ -37,16 +37,15 @@ Stories
 
 ### v1.0
 Goals
-- Deliver To-Do List Web App MVP with core list and task management features across 5 sprints.
-
+- Implement Sprint 2 backlog stories and deliver the next increment
 Stories
 - [US-0001] US-01: Create To-Do List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0002] US-02: Add Task to List
   - [x] DRAFT
   - [x] READY
@@ -76,6 +75,20 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] US-06: View Lists and Tasks with Status Distinction
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [SPEC-ISSUE-0002] Handle sprint backlog PR absence during start_sprint for team feedback gate
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [SPEC-ISSUE-0001] Investigate sprint backlog PR feedback gate interaction with auto-merged sprint backlogs
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

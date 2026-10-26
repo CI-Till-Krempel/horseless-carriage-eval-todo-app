@@ -14,6 +14,7 @@
 
 ## Notes
 
+- ⚠️ REVIEW DENIED at Tested by QA: pytest execution failed: tests/test_app.py has a failing test or assertion error.
 
 ## Test Approach
 Pytest with Flask test client

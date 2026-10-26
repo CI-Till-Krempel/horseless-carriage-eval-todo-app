@@ -16,4 +16,8 @@
 Enables the user to start organizing their tasks into named categories.
 
 ## Test Approach
+Pytest for backend routes and HTML response verification.
 
+### Tasks
+- Create Flask app structure
+- Implement list creation route/UI

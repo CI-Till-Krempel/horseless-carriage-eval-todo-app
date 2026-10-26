@@ -40,6 +40,20 @@ Goals
 - Deliver To-Do List Web App MVP with core list and task management features across 5 sprints.
 
 Stories
+- [SPEC-ISSUE-0002] Handle sprint backlog PR absence during start_sprint for team feedback gate
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [SPEC-ISSUE-0001] Investigate sprint backlog PR feedback gate interaction with auto-merged sprint backlogs
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0001] US-01: Create To-Do List
   - [x] DRAFT
   - [x] READY

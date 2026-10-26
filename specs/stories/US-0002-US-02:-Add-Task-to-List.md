@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: US-02: Add Task to List
-- Status: Ready
+- Status: Implemented
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-26
@@ -16,4 +16,9 @@
 
 
 ## Test Approach
+Pytest with Flask test client
 
+### Tasks
+- Add task route
+- Update template
+- Add unit test

@@ -14,6 +14,7 @@
 
 ## Notes
 
+- ⚠️ REVIEW DENIED at Tested by QA: check_build failed: itsdangerous==2.1.7 could not be found. Please update requirements.txt with a valid version of itsdangerous.
 
 ## Test Approach
 Pytest with Flask test client

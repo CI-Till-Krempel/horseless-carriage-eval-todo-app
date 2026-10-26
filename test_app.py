@@ -1,14 +1,17 @@
 import pytest
 from app import app, lists
 
+@pytest.fixture(autouse=True)
+def clear_lists():
+    lists.clear()
+    import app as app_module
+    app_module.next_list_id = 1
+    app_module.next_task_id = 1
+
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
     with app.test_client() as client:
-        lists.clear()
-        import app as app_module
-        app_module.next_list_id = 1
-        app_module.next_task_id = 1
         yield client
 
 def test_index(client):

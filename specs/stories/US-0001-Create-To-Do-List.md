@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Implemented
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-26
@@ -14,6 +14,7 @@
 
 ## Notes
 Enables the user to start organizing their tasks into named categories.
+- 🚫 BLOCKED (technical) - raised by QA: advance_story_stage('US-0001', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0001' Tested - 6 of 6 tests failed. Fix the failing tests before retrying.
 
 ## Test Approach
 Pytest for backend routes and HTML response verification.

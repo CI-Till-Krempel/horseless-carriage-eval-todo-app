@@ -16,4 +16,9 @@
 
 
 ## Test Approach
+pytest with Flask test client
 
+### Tasks
+- Create Flask application stub
+- Implement create list endpoint/UI
+- Add tests

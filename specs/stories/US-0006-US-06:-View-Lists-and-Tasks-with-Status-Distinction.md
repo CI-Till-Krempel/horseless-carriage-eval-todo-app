@@ -16,4 +16,7 @@
 
 
 ## Test Approach
+pytest
 
+### Tasks
+- CSS styling for completed tasks

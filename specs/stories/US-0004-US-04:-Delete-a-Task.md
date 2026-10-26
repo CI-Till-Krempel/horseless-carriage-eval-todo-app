@@ -16,4 +16,7 @@
 
 
 ## Test Approach
+pytest
 
+### Tasks
+- Delete task route

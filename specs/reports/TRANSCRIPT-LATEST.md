@@ -6,28 +6,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## DevTeam
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
-## ProductOwner
-- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
-
-## ScrumMaster
-- 🔧 `add_impediment(description="Sprint backlog PR wa...", category="technical", owner="ScrumMaster", priority="high")`
-- 🔧 `add_retro_action(category="technical", owner="ScrumMaster", action="Investigate how spri...", priority="normal", success_metric="Sprint backlog feedb...")`
-- 🔧 `calculate_kpis()`
-- 🔧 `update_sprint_report(kpis={'maintainability': ...)`
-- 🔧 `create_sprint_report(summary="Sprint 1 focused on ...", accomplishments=['Successfully plann...)`
-- 🔧 `gh_pr_status()`
-- 🔧 `transfer_to_agent(agent_name="DevTeam")`
-
-## DevTeam
-- 🔧 `git_push(commit_message="chore: push sprint 1...", branch="develop")`
-- 🔧 `git_push(branch="develop", commit_message="chore: push sprint 1...")`
-
-Sprint 1 review, retrospective, and sprint report generation have been successfully completed. All planning artifacts, requirements (PRD, Epics, Stories US-01 through US-06), architectural vision, sprint report, and retrospective actions have been updated, committed, and pushed.
-- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
-
 ## ScrumOrchestrator
 - 🔧 `transfer_to_agent(agent_name="ProductOwner")`
 
@@ -330,3 +308,25 @@ I am transferring to Scrum Master to run the sprint retrospective.
 - 🔧 `add_retro_action(success_metric="Zero failed test cyc...", category="technical", priority="normal", owner="DevTeam", action="Ensure unit tests ar...")`
 - 🔧 `calculate_kpis()`
 - 🔧 `update_sprint_report(kpis={'maintainability': ...)`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `calculate_kpis()`
+
+I am updating the sprint report with the latest KPI calculations.
+- 🔧 `update_sprint_report(kpis={'maintainability': ...)`
+- 🔧 `create_sprint_report(accomplishments=['Calculated KPI met..., summary="Sprint 3 was success...")`
+- 🔧 `propose_steering_change(new_content="Ensure unit tests ar...", role="DevTeam", rationale="Retrospective findin...")`
+- 🔧 `propose_steering_change(rationale="Process discipline i...", role="ProductOwner", new_content="Ensure all sprint ba...")`
+- 🔧 `propose_steering_change(new_content="Ensure full cross-fu...", role="ScrumMaster", rationale="Improve team engagem...")`
+- 🔧 `create_sprint_report(summary="Sprint 3 concluded s...", accomplishments=['Calculated and upd...)`
+- 🔧 `record_human_approval(approval_type="release", note="Sprint 3 release app...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(body="Release PR for Sprin...", title="Release v0.3.0 - Spr...")`

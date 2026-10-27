@@ -3,7 +3,7 @@ import tempfile
 import pytest
 
 from app import app
-from database import init_db, get_db, DATABASE
+import database
 
 @pytest.fixture
 def client():
@@ -11,7 +11,6 @@ def client():
     app.config['TESTING'] = True
     
     # Override database path for testing
-    import database
     database.DATABASE = app.config['DATABASE']
     database.init_db()
 

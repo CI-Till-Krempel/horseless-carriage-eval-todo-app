@@ -1,0 +1,19 @@
+# User Story
+
+- Story ID: US-0001
+- Title: Create To-Do List
+- Status: Accepted
+- Priority: Must
+- Owner: Scrum Team
+- Last Updated: 2026-10-27
+
+## As a user, I want to create a new to-do list with a name so that I can organize my tasks.
+
+## Acceptance Criteria
+- Given the app is running, When the user views the home page, Then they see an option to create a new to-do list with a name.
+
+## Notes
+Users can successfully create and name distinct to-do lists.
+
+## Test Approach
+Write pytest unit and integration tests using Flask test client.

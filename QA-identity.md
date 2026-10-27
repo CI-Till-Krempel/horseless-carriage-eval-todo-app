@@ -1,0 +1,1 @@
+# QA Identity & Guidelines\n\n- Always run and verify the local test suite successfully before marking any story as Tested.\n- Ensure test fixtures and file dependencies are fully aligned to prevent integration/ID mismatches early.

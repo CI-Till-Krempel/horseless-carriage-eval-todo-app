@@ -74,7 +74,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0006] View All Lists and Tasks
   - [x] DRAFT
   - [x] READY

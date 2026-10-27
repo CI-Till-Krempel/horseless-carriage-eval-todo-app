@@ -35,8 +35,7 @@ Stories
 
 ### v1.0.0
 Goals
-- Deliver core to-do list web application covering lists, tasks, completion, and deletion with a working UI.
-
+- Complete the remaining sprint goals, evaluate KPIs, and perform release and retrospective for Sprint 4.
 Stories
 - [US-0001] Create a new to-do list
   - [x] DRAFT

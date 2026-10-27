@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: US-02: Add Task to List
-- Status: Ready
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-26
@@ -14,6 +14,13 @@
 
 ## Notes
 
+- ⚠️ REVIEW DENIED at Tested by QA: pytest execution failed: tests/test_app.py has a failing test or assertion error.
+- 🚫 BLOCKED (technical) - raised by QA: advance_story_stage('US-0002', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0002' Tested - 1 of 3 tests failed. Fix the failing tests before retrying.
 
 ## Test Approach
+Pytest with Flask test client
 
+### Tasks
+- Add task route
+- Update template
+- Add unit test

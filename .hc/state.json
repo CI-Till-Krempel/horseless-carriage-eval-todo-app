@@ -46,10 +46,31 @@
       "type": "User Story",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed"
       ],
-      "status": "Ready",
-      "version": "v1.0"
+      "status": "Reviewed",
+      "version": "v1.0",
+      "review_denial": {
+        "stage": "Tested",
+        "reason": "pytest execution failed: tests/test_app.py has a failing test or assertion error.",
+        "by": "QA",
+        "review_count_at_denial": 4
+      },
+      "blocked": {
+        "question": "advance_story_stage('US-0002', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0002' Tested - 1 of 3 tests failed. Fix the failing tests before retrying.",
+        "category": "technical",
+        "raised_by": "QA",
+        "raised_at_stage": "Reviewed",
+        "escalated_to_user": false,
+        "blocking_interaction_id": 13,
+        "mechanical_recheck": {
+          "kind": "tested_stage_failure",
+          "stage": "Tested",
+          "test_run_count_at_block": 5
+        }
+      }
     },
     {
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
@@ -166,7 +187,7 @@
   "sprint_goal": "Implement Sprint 2 backlog stories and deliver the next increment",
   "sprint_number": 2,
   "sprint_backlog_pr_sprint": 2,
-  "planning_output_commit_count": 7,
+  "planning_output_commit_count": 10,
   "sprint_backlog_pr_content_baseline": 4,
   "sprint_backlog": [
     {
@@ -229,26 +250,55 @@
       "type": "User Story",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed"
       ],
-      "status": "Ready",
+      "status": "Reviewed",
       "version": "v1.0",
-      "test_approach": "pytest",
-      "approach": "Add task creation support to backend and frontend.",
+      "test_approach": "Pytest with Flask test client",
+      "approach": "Added task endpoint and form in templates with corresponding unit test.",
       "risks": [
         "None"
       ],
       "task_approach": "Add add_task route and UI form.",
-      "estimate": 1500,
+      "estimate": 1200,
       "tasks": [
-        "Add backend route for adding tasks",
-        "Update UI to show add task form"
+        "Add task route",
+        "Update template",
+        "Add unit test"
       ],
       "dod_checks": [
         "Code reviewed-ready",
-        "Automated tests passing",
-        "Tokens logged"
-      ]
+        "Automated tests written and passing"
+      ],
+      "risks_assumptions": [
+        "None"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ],
+      "review_denial": {
+        "stage": "Tested",
+        "reason": "pytest execution failed: tests/test_app.py has a failing test or assertion error.",
+        "by": "QA",
+        "review_count_at_denial": 4
+      },
+      "blocked": {
+        "question": "advance_story_stage('US-0002', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0002' Tested - 1 of 3 tests failed. Fix the failing tests before retrying.",
+        "category": "technical",
+        "raised_by": "QA",
+        "raised_at_stage": "Reviewed",
+        "escalated_to_user": false,
+        "blocking_interaction_id": 13,
+        "mechanical_recheck": {
+          "kind": "tested_stage_failure",
+          "stage": "Tested",
+          "test_run_count_at_block": 5
+        }
+      }
     },
     {
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
@@ -401,16 +451,16 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.41424656
+    "current_usd_spend": 0.61370914
   },
   "token_usage": {
-    "total": 2070381,
+    "total": 5068099,
     "agents": {
       "ScrumMaster": 37299,
-      "ProductOwner": 345278,
-      "DevTeam": 1113536,
-      "QA": 357789,
-      "Architect": 194390,
+      "ProductOwner": 387521,
+      "DevTeam": 2460759,
+      "QA": 1424550,
+      "Architect": 735881,
       "ScrumOrchestrator": 22089
     }
   },
@@ -420,7 +470,8 @@
       "actual": 800
     },
     "US-0002": {
-      "estimate": 1500
+      "estimate": 1200,
+      "actual": 900
     },
     "US-0003": {
       "estimate": 1000
@@ -752,7 +803,7 @@
   ],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 4,
+  "dev_touch_baseline": 5,
   "unadvanced_write_nudge_baseline": 0,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-MVP.md",
@@ -777,7 +828,8 @@
     "app.py",
     "templates/index.html",
     "tests/test_app.py",
-    "requirements.txt"
+    "requirements.txt",
+    "us_0002_impl.txt"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -790,11 +842,11 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
-    "DevTeam": 4,
-    "QA": 3,
-    "Architect": 2
+    "DevTeam": 6,
+    "QA": 7,
+    "Architect": 3
   },
-  "architect_review_baseline": 2,
+  "architect_review_baseline": 3,
   "qa_review_baseline": 3,
   "qa_tested_baseline": 0,
   "sprint_backlog_engagement_baseline": {},
@@ -896,6 +948,24 @@
       "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
       "detail": "args: {\"plan\": {\"approach\": \"Implemented Flask application with index route and create_list route, supporting HTML template and unit tests.\", \"code_files\": [\"app.py\", \"templates/index.html\", \"tests/test_app.py\"], \"dod_checks\": [\"Code reviewed-ready\", \"Automated tests written and passing\"], \"estimate\": 1000, \"risks_assumptions\": [\"None\"], \"tasks\": [\"Create Flask app\", \"Add template\", \"Add pytest tests\"], \"test_approach\": \"Pytest with Flask test client\"}, \"title_or_id\": \"US-0001\"}",
       "created_at": "2026-10-26T10:10:11.860898+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 12,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Added task endpoint and form in templates with corresponding unit test.\", \"code_files\": [\"app.py\", \"templates/index.html\", \"tests/test_app.py\"], \"dod_checks\": [\"Code reviewed-ready\", \"Automated tests written and passing\"], \"estimate\": 1200, \"risks_assumptions\": [\"None\"], \"tasks\": [\"Add task route\", \"Update template\", \"Add unit test\"], \"test_approach\": \"Pytest with Flask test client\"}, \"title_or_id\": \"US-0002\"}",
+      "created_at": "2026-10-26T10:11:46.753136+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 13,
+      "kind": "blocked_story",
+      "summary": "'US-0002' is BLOCKED (technical): advance_story_stage('US-0002', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0002' Tested - 1 of 3 tests failed. Fix the failing tests before retrying.",
+      "detail": "Raised by QA. Resolve via Architect's resolve_story_blocker('US-0002', resolution).",
+      "created_at": "2026-10-26T10:13:03.054660+00:00",
       "resolved": false,
       "resolved_at": null
     }

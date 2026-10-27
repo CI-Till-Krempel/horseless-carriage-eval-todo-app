@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create a new to-do list
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-27
@@ -14,7 +14,6 @@
 
 ## Notes
 Users can successfully create and name a new to-do list.
-- ⚠️ REVIEW DENIED at Tested by QA: test_delete_task and test_delete_list still fail because the response data contains the deleted item text.
 
 ## Test Approach
 Pytest with Flask test client testing list creation and display.

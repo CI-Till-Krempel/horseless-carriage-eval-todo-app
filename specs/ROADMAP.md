@@ -67,7 +67,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0005] Delete List and Tasks
   - [x] DRAFT
   - [x] READY

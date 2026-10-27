@@ -46,24 +46,26 @@ def add_task(list_id):
 
 @app.route('/tasks/<int:task_id>/toggle', methods=['POST'])
 def toggle_task(task_id):
-    task = Task.query.get_or_404(task_id)
-    task.completed = not task.completed
-    db.session.commit()
+    task = db.session.get(Task, task_id)
+    if task:
+        task.completed = not task.completed
+        db.session.commit()
     return redirect(url_for('index'))
 
 @app.route('/tasks/<int:task_id>/delete', methods=['POST'])
 def delete_task(task_id):
-    task = Task.query.get_or_404(task_id)
-    db.session.add(task) # ensuring session scope
-    db.session.delete(task)
-    db.session.commit()
+    task = db.session.get(Task, task_id)
+    if task:
+        db.session.delete(task)
+        db.session.commit()
     return redirect(url_for('index'))
 
 @app.route('/lists/<int:list_id>/delete', methods=['POST'])
 def delete_list(list_id):
-    todo_list = TodoList.query.get_or_404(list_id)
-    db.session.delete(todo_list)
-    db.session.commit()
+    todo_list = db.session.get(TodoList, list_id)
+    if todo_list:
+        db.session.delete(todo_list)
+        db.session.commit()
     return redirect(url_for('index'))
 
 if __name__ == '__main__':

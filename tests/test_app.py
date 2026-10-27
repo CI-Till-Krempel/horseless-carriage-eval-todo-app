@@ -54,7 +54,7 @@ def test_toggle_task(client):
     assert response.status_code == 200
 
     with app.app_context():
-        task = Task.query.get(task_id)
+        task = db.session.get(Task, task_id)
         assert task.completed is True
 
 def test_delete_task(client):

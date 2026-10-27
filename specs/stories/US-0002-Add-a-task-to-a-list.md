@@ -16,4 +16,8 @@
 Users can add tasks with descriptions to any created list.
 
 ## Test Approach
+Pytest test_add_task.
 
+### Tasks
+- Add task route and UI form
+- Automated test for adding tasks

@@ -19,5 +19,5 @@ Users can view all lists and tasks with clear visual status.
 pytest
 
 ### Tasks
-- Implement view endpoint/logic
-- Add tests
+- Implement view endpoint/logic for lists and tasks
+- Add tests for viewing all lists and tasks

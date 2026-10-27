@@ -185,55 +185,222 @@
   ],
   "sprint_goal": "Implement and verify user stories for sprint 3 to continue product development",
   "sprint_number": 3,
-  "sprint_backlog_pr_sprint": 0,
+  "sprint_backlog_pr_sprint": 3,
   "sprint_backlog_pr_opened": true,
-  "planning_output_commit_count": 12,
-  "sprint_backlog_pr_content_baseline": 7,
+  "planning_output_commit_count": 13,
+  "sprint_backlog_pr_content_baseline": 13,
   "sprint_backlog": [
     {
+      "title": "Ensure QA checks test suite run locally before marking Tested to catch integration/ID mismatches early",
+      "overview": "Ensure QA checks test suite run locally before marking Tested to catch integration/ID mismatches early.",
+      "owner": "QA",
+      "type": "Issue",
+      "id": "SPEC-ISSUE-0002",
       "priority": "Must",
       "acceptance_criteria": [
-        "Given a to-do list exists, When the user adds a task with a short text description, Then the task appears under that list."
+        "- Given the test suite is about to be marked Tested by QA, When QA runs the test suite locally, Then any integration or ID mismatches are caught before approval."
       ],
-      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
-      "id": "US-0002",
+      "description": "Ensure QA checks test suite run locally before marking Tested to catch integration/ID mismatches early.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "version": "v0.3.0",
+      "estimate": 1000,
+      "dod_checks": [
+        "Test suite runs locally before marking Tested."
+      ],
+      "risks_assumptions": [
+        "Assumes local test runner is available."
+      ],
+      "code_files": [
+        "tests/test_qa_check.py"
+      ],
+      "approach": "Update QA checking scripts/instructions or workflow guidance to ensure tests run locally before marking Tested.",
+      "test_approach": "Pytest verification of QA test running script/functionality.",
+      "tasks": [
+        "Write test confirming QA local test execution requirement",
+        "Verify test passes"
+      ]
+    },
+    {
+      "title": "Ensure QA checks test suite run locally before marking Tested",
+      "overview": "Ensure QA checks test suite run locally before marking Tested to catch integration/ID mismatches early.",
+      "owner": "QA",
+      "type": "Issue",
+      "id": "SPEC-ISSUE-0001",
+      "priority": "Must",
+      "acceptance_criteria": [
+        "Given a test suite exists, when QA checks the stories, then QA runs the local test suite and verifies it passes before marking Tested."
+      ],
+      "description": "Ensure QA checks test suite run locally before marking Tested to catch integration/ID mismatches early.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "version": "v1.0.0",
+      "risks_assumptions": [
+        "None"
+      ],
+      "dod_checks": [
+        "Local test run check is implemented and tested."
+      ],
+      "approach": "Implement local test suite verification requirement for QA.",
+      "test_approach": "pytest",
+      "code_files": [
+        "tests/test_qa_local_check.py"
+      ],
+      "estimate": 500,
+      "tasks": [
+        "Create test file",
+        "Run tests"
+      ]
+    },
+    {
+      "id": "US-0006",
+      "acceptance_criteria": [
+        "Given multiple lists and tasks exist, When the user views the main view, Then they see all their lists and all tasks within each list, with completed tasks visually distinguished."
+      ],
+      "title": "View All Lists and Tasks",
+      "value_hypothesis": "Users can view all lists and tasks with clear visual status.",
+      "description": "As a user, I want to see all my lists and all their tasks with completed tasks visually distinguished so that I have a clear overview.",
       "epic_id": "EP-0001",
-      "title": "Add Task to List",
-      "value_hypothesis": "Users can add descriptive tasks to any created list.",
+      "priority": "Must",
       "type": "User Story",
       "version": "v1.0.0",
       "stages_completed": [
         "Draft",
-        "Ready",
-        "Implemented",
-        "Reviewed",
-        "Tested",
-        "Accepted"
+        "Ready"
       ],
-      "status": "Accepted",
-      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
-      "dod_checks": [
-        "Automated tests written and passing",
-        "Tokens logged"
-      ],
+      "status": "Ready",
+      "user_story": "As a user, I want to see all my lists and all their tasks with completed tasks visually distinguished so that I have a clear overview.",
+      "approach": "Implement view all lists and tasks feature in app.py with visual distinction.",
+      "estimate": 800,
       "code_files": [
         "app.py",
-        "templates/index.html",
-        "tests/test_app.py"
+        "tests/test_todo.py"
       ],
-      "estimate": 1200,
       "tasks": [
-        "Update app.py to handle adding tasks to lists",
-        "Update index.html to display task input form per list",
-        "Add unit tests for adding tasks in test_app.py"
+        "Implement view endpoint/logic",
+        "Add tests"
       ],
-      "test_approach": "Add pytest test cases verifying adding tasks to lists via Flask test client.",
-      "approach": "Implement adding tasks to to-do lists in Flask backend and HTML frontend template.",
+      "dod_checks": [
+        "View all lists and tasks implemented and verified."
+      ],
+      "test_approach": "pytest",
       "risks_assumptions": [
-        "Assume in-memory storage structure from US-0001 can be easily extended with tasks."
+        "UI or API endpoint supports viewing all lists and tasks."
+      ]
+    },
+    {
+      "value_hypothesis": "Users can delete lists along with all associated tasks.",
+      "title": "Delete List and Tasks",
+      "priority": "Must",
+      "id": "US-0005",
+      "epic_id": "EP-0001",
+      "acceptance_criteria": [
+        "Given an entire list with tasks exists, When the user deletes the list, Then the list and all its contained tasks are removed."
       ],
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified acceptance criteria for US-0002: Adding tasks to to-do lists works correctly."
+      "description": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete lists.",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "user_story": "As a user, I want to delete an entire list and its tasks so that I can clean up obsolete lists.",
+      "tasks": [
+        "Add delete list route/function",
+        "Add tests"
+      ],
+      "risks_assumptions": [
+        "Cascading deletion works correctly."
+      ],
+      "approach": "Implement delete list functionality in app.py.",
+      "estimate": 700,
+      "code_files": [
+        "app.py",
+        "tests/test_todo.py"
+      ],
+      "dod_checks": [
+        "Delete list and tasks implemented and verified."
+      ],
+      "test_approach": "pytest"
+    },
+    {
+      "title": "Delete Task",
+      "priority": "Must",
+      "value_hypothesis": "Users can delete specific tasks from a list.",
+      "acceptance_criteria": [
+        "Given a task exists in a list, When the user deletes the task, Then the task is removed from the list."
+      ],
+      "id": "US-0004",
+      "epic_id": "EP-0001",
+      "description": "As a user, I want to delete a task so that I can remove unwanted items.",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "user_story": "As a user, I want to delete a task so that I can remove unwanted items.",
+      "code_files": [
+        "app.py",
+        "tests/test_todo.py"
+      ],
+      "dod_checks": [
+        "Delete task implemented and verified."
+      ],
+      "tasks": [
+        "Add delete task endpoint",
+        "Add tests"
+      ],
+      "estimate": 600,
+      "approach": "Implement delete task feature in app.py.",
+      "test_approach": "pytest",
+      "risks_assumptions": [
+        "Task ID uniquely identifies task."
+      ]
+    },
+    {
+      "id": "US-0003",
+      "acceptance_criteria": [
+        "Given a task exists in a list, When the user marks the task as complete or incomplete, Then its completion status updates and it is visually distinguished."
+      ],
+      "value_hypothesis": "Users can toggle task status and see visual distinction.",
+      "title": "Mark Task Complete or Incomplete",
+      "epic_id": "EP-0001",
+      "description": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
+      "priority": "Must",
+      "type": "User Story",
+      "version": "v1.0.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
+      "dod_checks": [
+        "Mark task complete/incomplete implemented and tested."
+      ],
+      "tasks": [
+        "Add toggle endpoint",
+        "Add tests"
+      ],
+      "approach": "Implement toggle complete/incomplete for tasks in app.py.",
+      "estimate": 500,
+      "risks_assumptions": [
+        "Task state updates correctly."
+      ],
+      "test_approach": "pytest",
+      "code_files": [
+        "app.py",
+        "tests/test_todo.py"
+      ]
     }
   ],
   "impediment_log": [],
@@ -269,13 +436,16 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.43908633999999996
+    "current_usd_spend": 0.52896015
   },
   "token_usage": {
-    "total": 135813,
+    "total": 1150717,
     "agents": {
       "ScrumMaster": 13807,
-      "ProductOwner": 122006
+      "ProductOwner": 156211,
+      "DevTeam": 869005,
+      "Architect": 68985,
+      "QA": 42709
     }
   },
   "story_estimates": {
@@ -286,6 +456,24 @@
     "US-0002": {
       "estimate": 1200,
       "actual": 400
+    },
+    "SPEC-ISSUE-0002": {
+      "estimate": 1000
+    },
+    "SPEC-ISSUE-0001": {
+      "estimate": 500
+    },
+    "US-0006": {
+      "estimate": 800
+    },
+    "US-0005": {
+      "estimate": 700
+    },
+    "US-0004": {
+      "estimate": 600
+    },
+    "US-0003": {
+      "estimate": 500
     }
   },
   "sprint_report_kpis": {},
@@ -361,7 +549,8 @@
     "specs/reports/SPRINT-REPORT-002.md",
     "specs/reports/RETRO-002.md",
     "specs/reports/STEERING-002.md",
-    "specs/requirements/SPEC-ISSUE-0002-Ensure-QA-checks-test-suite-run-locally-before-marking-Tested-to-catch-integration-ID-mismatches-early.md"
+    "specs/requirements/SPEC-ISSUE-0002-Ensure-QA-checks-test-suite-run-locally-before-marking-Tested-to-catch-integration-ID-mismatches-early.md",
+    "tests/test_todo.py"
   ],
   "last_check_build": {
     "checked": "requirements.txt",
@@ -374,16 +563,17 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
-    "Architect": 4,
-    "QA": 5,
-    "DevTeam": 1
+    "Architect": 5,
+    "QA": 6,
+    "DevTeam": 2
   },
   "architect_review_baseline": 4,
   "qa_review_baseline": 5,
   "qa_tested_baseline": 2,
   "sprint_backlog_engagement_baseline": {
-    "Architect": 2,
-    "QA": 3
+    "Architect": 4,
+    "QA": 5,
+    "DevTeam": 1
   },
   "sprint_report_pending_release": false,
   "blocking_interactions": [
@@ -402,6 +592,69 @@
       "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
       "detail": "args: {\"plan\": {\"approach\": \"Implement adding tasks to to-do lists in Flask backend and HTML frontend template.\", \"code_files\": [\"app.py\", \"templates/index.html\", \"tests/test_app.py\"], \"dod_checks\": [\"Automated tests written and passing\", \"Tokens logged\"], \"estimate\": 1200, \"risks_assumptions\": [\"Assume in-memory storage structure from US-0001 can be easily extended with tasks.\"], \"tasks\": [\"Update app.py to handle adding tasks to lists\", \"Update index.html to display task input form per list\", \"Add unit tests for adding tasks in test_app.py\"], \"test_approach\": \"Add pytest test cases verifying adding tasks to lists via Flask test client.\"}, \"title_or_id\": \"US-0002\"}",
       "created_at": "2026-10-27T15:50:41.938089+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 3,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Update QA checking scripts/instructions or workflow guidance to ensure tests run locally before marking Tested.\", \"code_files\": [\"tests/test_qa_check.py\"], \"dod_checks\": [\"Test suite runs locally before marking Tested.\"], \"estimate\": 1000, \"risks_assumptions\": [\"Assumes local test runner is available.\"], \"tasks\": [\"Write test confirming QA local test execution requirement\", \"Verify test passes\"], \"test_approach\": \"Pytest verification of QA test running script/functionality.\"}, \"title_or_id\": \"SPEC-ISSUE-0002\"}",
+      "created_at": "2026-10-27T15:53:28.927179+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 4,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Implement local test suite verification requirement for QA.\", \"code_files\": [\"tests/test_qa_local_check.py\"], \"dod_checks\": [\"Local test run check is implemented and tested.\"], \"estimate\": 500, \"risks_assumptions\": [\"None\"], \"tasks\": [\"Create test file\", \"Run tests\"], \"test_approach\": \"pytest\"}, \"title_or_id\": \"SPEC-ISSUE-0001\"}",
+      "created_at": "2026-10-27T15:53:34.309189+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 5,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Implement view all lists and tasks feature in app.py with visual distinction.\", \"code_files\": [\"app.py\", \"tests/test_todo.py\"], \"dod_checks\": [\"View all lists and tasks implemented and verified.\"], \"estimate\": 800, \"risks_assumptions\": [\"UI or API endpoint supports viewing all lists and tasks.\"], \"tasks\": [\"Implement view endpoint/logic\", \"Add tests\"], \"test_approach\": \"pytest\"}, \"title_or_id\": \"US-0006\"}",
+      "created_at": "2026-10-27T15:53:39.210536+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 6,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Implement delete list functionality in app.py.\", \"code_files\": [\"app.py\", \"tests/test_todo.py\"], \"dod_checks\": [\"Delete list and tasks implemented and verified.\"], \"estimate\": 700, \"risks_assumptions\": [\"Cascading deletion works correctly.\"], \"tasks\": [\"Add delete list route/function\", \"Add tests\"], \"test_approach\": \"pytest\"}, \"title_or_id\": \"US-0005\"}",
+      "created_at": "2026-10-27T15:53:43.537033+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 7,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Implement delete task feature in app.py.\", \"code_files\": [\"app.py\", \"tests/test_todo.py\"], \"dod_checks\": [\"Delete task implemented and verified.\"], \"estimate\": 600, \"risks_assumptions\": [\"Task ID uniquely identifies task.\"], \"tasks\": [\"Add delete task endpoint\", \"Add tests\"], \"test_approach\": \"pytest\"}, \"title_or_id\": \"US-0004\"}",
+      "created_at": "2026-10-27T15:53:47.792426+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 8,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Implement toggle complete/incomplete for tasks in app.py.\", \"code_files\": [\"app.py\", \"tests/test_todo.py\"], \"dod_checks\": [\"Mark task complete/incomplete implemented and tested.\"], \"estimate\": 500, \"risks_assumptions\": [\"Task state updates correctly.\"], \"tasks\": [\"Add toggle endpoint\", \"Add tests\"], \"test_approach\": \"pytest\"}, \"title_or_id\": \"US-0003\"}",
+      "created_at": "2026-10-27T15:53:53.332290+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 9,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Implement toggle complete/incomplete for tasks in app.py.\", \"code_files\": [\"app.py\", \"tests/test_todo.py\"], \"dod_checks\": [\"Mark task complete/incomplete implemented and tested.\"], \"estimate\": 500, \"risks_assumptions\": [\"Task state updates correctly.\"], \"tasks\": [\"Add toggle endpoint\", \"Add tests\"], \"test_approach\": \"pytest\"}, \"title_or_id\": \"US-0003\"}",
+      "created_at": "2026-10-27T15:54:24.512674+00:00",
       "resolved": false,
       "resolved_at": null
     }

@@ -2,24 +2,11 @@
 
 _This file may only hold a rolling window of the most recent transcript entries across the whole run (see TRANSCRIPT_MAX_ENTRIES), not necessarily this sprint's complete history. For the full, untruncated per-run record, see the session log: `/app/sessions/transcript-eval-0.1.0-run73.log`._
 
-## ScrumOrchestrator
-- 🔧 `create_litellm_virtual_key(budget_duration="1m", agent_name="ProductOwner", max_budget=10)`
-- 🔧 `create_litellm_virtual_key(agent_name="ScrumMaster", max_budget=10, budget_duration="1m")`
-- 🔧 `create_litellm_virtual_key(budget_duration="1m", agent_name="DevTeam", max_budget=10)`
-- 🔧 `create_litellm_virtual_key(budget_duration="1m", agent_name="QA", max_budget=10)`
-- 🔧 `create_litellm_virtual_key(agent_name="Architect", max_budget=10, budget_duration="1m")`
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+## system
+
+[2 earlier transcript entries omitted for token budget]
 
 ## ProductOwner
-- 🔧 `upsert_prd(content="# Product Requiremen...", filename="PRD-Todo-App.md")`
-- 🔧 `update_roadmap(stories=[], goals=['Deliver core to-do..., version="v1.0.0")`
-- 🔧 `upsert_epic(epic={'title': 'Core To-D...)`
-- 🔧 `upsert_story(story={'priority': 'Must',...)`
-- 🔧 `upsert_story(story={'acceptance_criteri...)`
-- 🔧 `upsert_story(story={'acceptance_criteri...)`
-- 🔧 `upsert_story(story={'description': 'As ...)`
-- 🔧 `upsert_story(story={'priority': 'Must',...)`
-- 🔧 `upsert_story(story={'title': 'View all ...)`
 - 🔧 `update_roadmap(version="v1.0.0", stories=['US-0001', 'US-0002...)`
 - 🔧 `plan_backlog_item(version="v1.0.0", title_or_id="US-0001", priority="Must")`
 - 🔧 `plan_backlog_item(priority="Must", title_or_id="US-0002", version="v1.0.0")`
@@ -300,3 +287,45 @@ I have successfully completed the sprint close sequence, created the sprint revi
 
 ## ProductOwner
 - 🔧 `create_release_pr(title="Sprint 2 Release PR", body="Sprint 2 release PR ...")`
+- 🔧 `gh_release_create(title="v0.2.0", tag="v0.2.0", notes="Release v0.2.0 corre...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+
+1) **Current understanding / assumptions**: The Scrum Master has completed the sprint retrospective, updated the KPIs, and generated the sprint review report. Product Owner has successfully created the release PR (`#606`) to merge `develop` into `main`. An attempt to create GitHub release `v0.2.0` failed because the tag already exists, but the core sprint close sequence (retro, KPIs, sprint report, and release PR) is successfully finished.
+2) **Missing settings & Setup status**: Repository configuration, budgets, and GitHub connection are fully operational.
+3) **Artifacts updated**: 
+   - Sprint review report generated and stored under `specs/reports/SPRINT-REPORT-001.md`.
+   - Retro actions and impediments logged and filed.
+   - Release PR `#606` created.
+4) **Next actions**: Sprint 2 close sequence is successfully complete. Ready to proceed to the next iteration or conclude per instructions.
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+
+I am going to check the current budget status to verify our headroom before we proceed with the sprint close-რივი and retrospective.
+- 🔧 `get_budget_status()`
+
+I am going to calculate the quality KPIs for the sprint to include in the sprint report.
+- 🔧 `calculate_kpis()`
+
+I am going to add a retrospective impediment for tracking technical debt and process improvement.
+- 🔧 `add_impediment(priority="normal", description="High priority vulner...", owner="Architect", category="technical")`
+
+I am going to add a retro action item to ensure proactive security vulnerability triage.
+- 🔧 `add_retro_action(priority="normal", success_metric="Zero unreviewed high...", category="technical", owner="Architect", action="Review high priority...")`
+
+I am going to update the sprint report with the calculated quality KPIs.
+- 🔧 `update_sprint_report(kpis={'maintainability': ...)`
+
+I am going to generate the sprint report summarizing accomplishments and KPI metrics.
+- 🔧 `create_sprint_report(accomplishments=['Completed all plan..., summary="Sprint 3 successfull...")`
+
+I am going to transfer to ScrumOrchestrator to finalize the release PR as part of the sprint close sequence.
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(title="Sprint 3 Release PR", body="Sprint 3 successfull...")`

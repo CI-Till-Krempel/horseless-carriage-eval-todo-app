@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-27
@@ -16,4 +16,4 @@
 Users can successfully create and name distinct to-do lists.
 
 ## Test Approach
-
+Write pytest unit and integration tests using Flask test client.

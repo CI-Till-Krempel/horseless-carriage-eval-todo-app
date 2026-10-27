@@ -16,4 +16,10 @@
 Users can successfully create and name a new to-do list.
 
 ## Test Approach
+Pytest with Flask test client testing list creation and display.
 
+### Tasks
+- Initialize Flask app and database models
+- Implement list creation route and form
+- Create frontend template for viewing and creating lists
+- Write automated tests for list creation

@@ -1,22 +1,25 @@
 # User Story
 
-- Story ID: US-XXXX
-- Title: <short story title>
-- Status: Draft | Ready | In Progress | Done | Rejected
-- Priority: Must | Should | Could | Won't
-- Owner: <name>
-- Last Updated: <YYYY-MM-DD>
+- Story ID: US-0001
+- Title: Create a new to-do list
+- Status: Implemented
+- Priority: Must
+- Owner: Scrum Team
+- Last Updated: 2026-10-27
 
 ## As a <role>, I want <capability>, so that <benefit>.
 
 ## Acceptance Criteria
-- Given/When/Then scenarios
-- Edge cases
+- Given the user is on the home page, When they submit a new list name, Then a new to-do list is created and displayed.
 
 ## Notes
-- Design/technical notes
-- Links to requirements (PRD/SRS) and ADRs
+
 
 ## Test Approach
-- Unit/integration/e2e considerations
-- Data/setup needs
+Pytest covering list creation and views via Flask test client.
+
+### Tasks
+- Create requirements.txt with Flask and pytest
+- Create app.py with Flask application setup and routes
+- Create index.html template for to-do lists
+- Create pytest unit tests in tests/test_app.py

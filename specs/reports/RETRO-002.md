@@ -32,6 +32,14 @@
 - Success Metric: All planned stories reach Ready state and clear DoR checks before implementation starts.
 - Filed As: SPEC-ISSUE-0006
 
+## Perform periodic dependency and vulnerability audits on a bi-weekly basis to address low and high security findings.
+- Kind: Retro Action
+- Category: technical
+- Owner: Architect
+- Status: open
+- Success Metric: Zero high-severity vulnerabilities remaining in the scan report.
+- Filed As: SPEC-ISSUE-0007
+
 ## Initial DoR template checks required explicit recreation of story files during development.
 - Kind: Impediment
 - Category: technical

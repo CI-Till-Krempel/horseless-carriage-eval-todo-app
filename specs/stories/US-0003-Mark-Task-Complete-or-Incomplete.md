@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-27
@@ -14,7 +14,6 @@
 
 ## Notes
 Users can toggle task status and see visual distinction.
-- ⚠️ REVIEW DENIED at Tested by QA: Test collection failed due to ImportError: cannot import name 'lists_db' from 'app'. Please fix the test imports and failing tests.
 
 ## Test Approach
 pytest

@@ -78,7 +78,7 @@ Stories
 - [US-0006] View All Lists and Tasks
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

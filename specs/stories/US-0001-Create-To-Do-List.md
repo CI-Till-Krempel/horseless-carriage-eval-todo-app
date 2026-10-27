@@ -14,6 +14,7 @@
 
 ## Notes
 Users can successfully create and name distinct to-do lists.
+- ⚠️ REVIEW DENIED at Tested by QA: Automated tests failed during the test suite run: 2 tests failed (test_add_task and test_delete_list) due to list ID counter incrementing behavior/index assumptions in tests.
 
 ## Test Approach
 Write pytest unit and integration tests using Flask test client.

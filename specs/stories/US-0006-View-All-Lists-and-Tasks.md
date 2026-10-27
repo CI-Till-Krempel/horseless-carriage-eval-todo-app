@@ -14,6 +14,7 @@
 
 ## Notes
 Users can view all lists and tasks with clear visual status.
+- ⚠️ REVIEW DENIED at Tested by QA: Test suite run failed with test_delete_list failing in tests/test_todo.py.
 
 ## Test Approach
 pytest

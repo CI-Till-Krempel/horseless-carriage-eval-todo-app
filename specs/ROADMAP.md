@@ -91,6 +91,19 @@ Stories
   - [ ] ACCEPTED
 
 
+### v0.3.0
+Goals
+
+Stories
+- [SPEC-ISSUE-0002] Ensure QA checks test suite run locally before marking Tested to catch integration/ID mismatches early
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

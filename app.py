@@ -1,37 +1,34 @@
-import os
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-# In-memory data store for lists and tasks
-# Lists: { list_id: {'id': list_id, 'name': name, 'tasks': [ { 'id': task_id, 'text': text, 'done': False }, ... ] } }
-lists_db = {}
-next_list_id = 1
-next_task_id = 1
+# In-memory database for demo
+lists = {}
 
 @app.route('/')
 def index():
-    return render_template('index.html', lists=list(lists_db.values()))
+    return render_template('index.html', lists=lists)
 
-@app.route('/lists', methods=['POST'])
+@app.route('/create_list', methods=['POST'])
 def create_list():
-    global next_list_id
-    name = request.form.get('name', '').strip()
-    if name:
-        list_id = str(next_list_id)
-        next_list_id += 1
-        lists_db[list_id] = {'id': list_id, 'name': name, 'tasks': []}
+    title = request.form.get('title')
+    if title:
+        lists[title] = []
     return redirect(url_for('index'))
 
-@app.route('/lists/<list_id>/tasks', methods=['POST'])
-def add_task(list_id):
-    global next_task_id
-    text = request.form.get('text', '').strip()
-    if text and list_id in lists_db:
-        task_id = str(next_task_id)
-        next_task_id += 1
-        lists_db[list_id]['tasks'].append({'id': task_id, 'text': text, 'done': False})
+@app.route('/add_task/<list_name>', methods=['POST'])
+def add_task(list_name):
+    task_content = request.form.get('task')
+    if list_name in lists and task_content:
+        lists[list_name].append({'task': task_content, 'completed': False})
+    return redirect(url_for('index'))
+
+@app.route('/toggle_task/<list_name>/<int:task_index>', methods=['POST'])
+def toggle_task(list_name, task_index):
+    if list_name in lists and 0 <= task_index < len(lists[list_name]):
+        current = lists[list_name][task_index]['completed']
+        lists[list_name][task_index]['completed'] = not current
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True)

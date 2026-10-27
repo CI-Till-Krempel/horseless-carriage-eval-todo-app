@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-27
@@ -16,4 +16,8 @@
 Users can toggle task status and see visual distinction.
 
 ## Test Approach
+pytest
 
+### Tasks
+- Add toggle endpoint
+- Add tests

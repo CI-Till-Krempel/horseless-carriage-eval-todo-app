@@ -31,6 +31,8 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
 ---
 
 ### v1.0.0
@@ -38,6 +40,13 @@ Goals
 - Deliver core to-do list and task management web app MVP.
 
 Stories
+- [SPEC-ISSUE-0001] Improve test assertions for deletion flows to avoid false positives with generic list names
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0001] Create a new to-do list
   - [x] DRAFT
   - [x] READY

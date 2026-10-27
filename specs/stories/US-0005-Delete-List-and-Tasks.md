@@ -16,4 +16,8 @@
 Users can delete lists along with all associated tasks.
 
 ## Test Approach
+pytest
 
+### Tasks
+- Add delete list route/function
+- Add tests

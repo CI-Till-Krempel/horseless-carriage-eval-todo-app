@@ -17,4 +17,8 @@ Ensure QA checks test suite run locally before marking Tested to catch integrati
 
 
 ## Test Approach
+Pytest verification of QA test running script/functionality.
 
+### Tasks
+- Write test confirming QA local test execution requirement
+- Verify test passes

@@ -16,4 +16,8 @@
 Users can toggle task status and see visual distinction.
 
 ## Test Approach
+pytest
 
+### Tasks
+- Add toggle endpoint
+- Add tests

@@ -16,4 +16,8 @@
 Users can view all lists and tasks with clear visual status.
 
 ## Test Approach
+pytest
 
+### Tasks
+- Implement view endpoint/logic
+- Add tests

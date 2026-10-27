@@ -17,4 +17,8 @@ Ensure QA checks test suite run locally before marking Tested to catch integrati
 
 
 ## Test Approach
+pytest
 
+### Tasks
+- Create test file
+- Run tests

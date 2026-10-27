@@ -16,4 +16,8 @@
 Users can delete specific tasks from a list.
 
 ## Test Approach
+pytest
 
+### Tasks
+- Add delete task endpoint
+- Add tests

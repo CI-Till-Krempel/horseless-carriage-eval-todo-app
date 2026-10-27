@@ -16,4 +16,10 @@
 Users can organize their tasks into distinct named lists.
 
 ## Test Approach
+Unit test with pytest.
 
+### Tasks
+- Create requirements.txt
+- Create database.py
+- Create app.py
+- Create templates/index.html

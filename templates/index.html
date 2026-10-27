@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List Web App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; color: #333; }
+        h1 { color: #2c3e50; }
+        .list-container { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .completed { text-decoration: line-through; color: #888; }
+        form { margin-top: 10px; }
+        button { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>To-Do Lists</h1>
+    
+    <div class="list-container">
+        <h3>Create a New List</h3>
+        <form action="/lists" method="POST">
+            <input type="text" name="name" placeholder="List Name" required>
+            <button type="submit">Create List</button>
+        </form>
+    </div>
+
+    {% for lst in lists %}
+    <div class="list-container">
+        <h2>{{ lst.name }}</h2>
+        <form action="/lists/{{ lst.id }}/delete" method="POST" style="display:inline;">
+            <button type="submit" style="background-color: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px;">Delete List</button>
+        </form>
+
+        <ul>
+            {% for task in lst.tasks %}
+            <li>
+                <span class="{% if task.completed %}completed{% endif %}">{{ task.description }}</span>
+                <form action="/tasks/{{ task.id }}/toggle" method="POST" style="display:inline;">
+                    <button type="submit">{% if task.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}</button>
+                </form>
+                <form action="/tasks/{{ task.id }}/delete" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <form action="/lists/{{ lst.id }}/tasks" method="POST">
+            <input type="text" name="description" placeholder="New Task Description" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+    {% endfor %}
+</body>
+</html>

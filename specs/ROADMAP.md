@@ -40,13 +40,6 @@ Goals
 - Deliver To-Do List Web App MVP with full core functionality (lists, tasks, completion, deletion, web UI).
 
 Stories
-- [SPEC-ISSUE-0001] Ensure QA checks test suite run locally before marking Tested
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 - [US-0001] Create To-Do List
   - [x] DRAFT
   - [x] READY
@@ -57,9 +50,9 @@ Stories
 - [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
@@ -83,6 +76,13 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] View All Lists and Tasks
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [SPEC-ISSUE-0001] Ensure QA checks test suite run locally before marking Tested
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

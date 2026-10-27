@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-27
@@ -16,4 +16,9 @@
 Users can add descriptive tasks to any created list.
 
 ## Test Approach
+Add pytest test cases verifying adding tasks to lists via Flask test client.
 
+### Tasks
+- Update app.py to handle adding tasks to lists
+- Update index.html to display task input form per list
+- Add unit tests for adding tasks in test_app.py

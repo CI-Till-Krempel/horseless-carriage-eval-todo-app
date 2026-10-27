@@ -1,0 +1,1 @@
+# QA Role Customization\n\n- Always run the local test suite and verify 100% passing results before marking any user story as Tested.

@@ -31,6 +31,8 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
 ---
 
 ### v1.0.0
@@ -38,6 +40,13 @@ Goals
 - Deliver To-Do List Web App MVP with full core functionality (lists, tasks, completion, deletion, web UI).
 
 Stories
+- [SPEC-ISSUE-0001] Ensure QA checks test suite run locally before marking Tested
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0001] Create To-Do List
   - [x] DRAFT
   - [x] READY

@@ -190,17 +190,17 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.06649722999999999
+    "current_usd_spend": 0.08682421000000001
   },
   "token_usage": {
-    "total": 1596663,
+    "total": 2097162,
     "agents": {
-      "ScrumOrchestrator": 142801,
-      "ProductOwner": 868914,
-      "ScrumMaster": 133243,
-      "DevTeam": 341686,
-      "Architect": 68691,
-      "QA": 41328
+      "ScrumOrchestrator": 174140,
+      "ProductOwner": 900917,
+      "ScrumMaster": 198935,
+      "DevTeam": 583566,
+      "Architect": 122539,
+      "QA": 117065
     }
   },
   "story_estimates": {
@@ -681,6 +681,182 @@
     {
       "role": "user",
       "content": "For context:[DevTeam] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] said: Starting feature branch for US-0001.[DevTeam] called tool `start_feature_branch` with parameters: {'story_id': 'US-0001', 'slug': 'create-a-new-to-do-list'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `start_feature_branch` tool returned result: {'status': 'error', 'message': \"Cannot start work on 'US-0001' - it hasn't been planned into this sprint yet. Call plan_sprint_backlog_item('US-0001', plan) first (estimate, approach, etc.) so the sprint backlog actually reflects what the team committed to, then retry.\"}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `transfer_to_agent` with parameters: {'agent_name': 'ProductOwner'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `plan_backlog_item` with parameters: {'title_or_id': 'US-0001', 'version': 'v0.1.0', 'priority': 'Must'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `plan_backlog_item` tool returned result: {'status': 'error', 'message': \"plan_backlog_item does not belong in the current phase ('Development'). This sprint's Sprint Backlog is published - implement/review/test/accept its stories. New backlog grooming or re-planning belongs in Conceptual Work/Plan & Start Sprint, not here. If this genuinely needs to happen now, call plan_backlog_item again with the exact same arguments - that immediate retry will be let through and logged as an explicit override, instead of staying permanently blocked.\"}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `plan_backlog_item` with parameters: {'title_or_id': 'US-0001', 'priority': 'Must', 'version': 'v0.1.0'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `plan_backlog_item` tool returned result: {'status': 'ok', 'updates': [{'type': 'priority', 'result': {'status': 'ok', 'item': {'epic_id': 'EP-0001', 'priority': 'Must', 'acceptance_criteria': ['Given the user is on the main page, When they enter a name for a new list and submit, Then a new to-do list is created and displayed in the UI.'], 'title': 'Create a new to-do list', 'value_hypothesis': 'Users can organize their tasks into distinct named lists.', 'id': 'US-0001', 'description': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.', 'type': 'User Story', 'stages_completed': ['Draft', 'Ready'], 'status': 'Ready', 'version': 'v0.1.0', 'user_story': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.'}}}, {'type': 'roadmap', 'result': {'status': 'ok', 'message': 'Roadmap updated for v0.1.0'}}]}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `transfer_to_agent` with parameters: {'agent_name': 'DevTeam'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] said: Planning US-0001 implementation details.[DevTeam] called tool `plan_sprint_backlog_item` with parameters: {'title_or_id': 'US-0001', 'plan': {'approach': 'Implement Flask application with SQLite backend and simple HTML/CSS frontend.', 'dod_checks': ['Flask app runs', 'Database initialized', 'UI supports list creation'], 'test_approach': 'Unit test with pytest.', 'estimate': 20, 'risks_assumptions': ['Assume Flask and SQLite are sufficient for local evaluation.'], 'code_files': ['app.py', 'database.py', 'templates/index.html', 'requirements.txt'], 'tasks': ['Create requirements.txt', 'Create database.py', 'Create app.py', 'Create templates/index.html']}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `plan_sprint_backlog_item` tool returned result: {'status': 'error', 'message': \"plan_sprint_backlog_item does not belong in the current phase ('Development'). This sprint's Sprint Backlog is published - implement/review/test/accept its stories. New backlog grooming or re-planning belongs in Conceptual Work/Plan & Start Sprint, not here. If this genuinely needs to happen now, call plan_sprint_backlog_item again with the exact same arguments - that immediate retry will be let through and logged as an explicit override, instead of staying permanently blocked.\"}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] said: Retrying plan for US-0001 with explicit override.[DevTeam] called tool `plan_sprint_backlog_item` with parameters: {'title_or_id': 'US-0001', 'plan': {'estimate': 20, 'risks_assumptions': ['Assume Flask and SQLite are sufficient for local evaluation.'], 'dod_checks': ['Flask app runs', 'Database initialized', 'UI supports list creation'], 'code_files': ['app.py', 'database.py', 'templates/index.html', 'requirements.txt'], 'tasks': ['Create requirements.txt', 'Create database.py', 'Create app.py', 'Create templates/index.html'], 'test_approach': 'Unit test with pytest.', 'approach': 'Implement Flask application with SQLite backend and simple HTML/CSS frontend.'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `plan_sprint_backlog_item` tool returned result: {'status': 'ok', 'updated': True, 'item': {'epic_id': 'EP-0001', 'priority': 'Must', 'acceptance_criteria': ['Given the user is on the main page, When they enter a name for a new list and submit, Then a new to-do list is created and displayed in the UI.'], 'title': 'Create a new to-do list', 'value_hypothesis': 'Users can organize their tasks into distinct named lists.', 'id': 'US-0001', 'description': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.', 'type': 'User Story', 'stages_completed': ['Draft', 'Ready'], 'status': 'Ready', 'version': 'v0.1.0', 'user_story': 'As a user, I want to create a new to-do list with a name so that I can organize my tasks.', 'estimate': 20, 'risks_assumptions': ['Assume Flask and SQLite are sufficient for local evaluation.'], 'dod_checks': ['Flask app runs', 'Database initialized', 'UI supports list creation'], 'code_files': ['app.py', 'database.py', 'templates/index.html', 'requirements.txt'], 'tasks': ['Create requirements.txt', 'Create database.py', 'Create app.py', 'Create templates/index.html'], 'test_approach': 'Unit test with pytest.', 'approach': 'Implement Flask application with SQLite backend and simple HTML/CSS frontend.'}, 'story_markdown': {'status': 'ok', 'path': '/app/eval-output/clone/specs/stories/US-0001-Create-a-new-to-do-list.md'}}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] said: Starting feature branch for US-0001.[DevTeam] called tool `start_feature_branch` with parameters: {'story_id': 'US-0001', 'slug': 'create-a-new-to-do-list'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `start_feature_branch` tool returned result: {'status': 'error', 'message': \"Cannot start work on 'US-0001' - Architect, DevTeam, QA have not yet left a gh_pr_comment/gh_pr_review on this sprint's Sprint Backlog PR. The team gives feedback and commits to the backlog Product Owner proposed before implementation begins - have each missing role leave real feedback (even an explicit sign-off) on it first.\"}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `transfer_to_agent` with parameters: {'agent_name': 'Architect'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[Architect] said: Leaving architectural sign-off comment on the Sprint Backlog PR.[Architect] called tool `gh_pr_comment` with parameters: {'body': '**Architect:** Architecture Vision and technical stack (Flask + SQLite + simple HTML/CSS) approved for Sprint 1. Ready to proceed with implementation.'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[Architect] `gh_pr_comment` tool returned result: {'status': 'error', 'returncode': 1, 'stdout': '', 'stderr': 'no pull requests found for branch \"sprint-backlog/1\"', 'cmd': ['gh', 'pr', 'comment', '--body', '**Architect:** **Architect:** Architecture Vision and technical stack (Flask + SQLite + simple HTML/CSS) approved for Sprint 1. Ready to proceed with implementation.'], 'message': 'no pull requests found for branch \"sprint-backlog/1\"'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[Architect] called tool `transfer_to_agent` with parameters: {'agent_name': 'DevTeam'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[Architect] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `transfer_to_agent` with parameters: {'agent_name': 'QA'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[QA] said: Checking the Sprint Backlog PR status and leaving our required QA sign-off comment.[QA] called tool `gh_pr_status` with parameters: {}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[QA] `gh_pr_status` tool returned result: {'status': 'error', 'message': \"Tool 'gh_pr_status' is not available to QA - it is not in this role's tool list, so this call cannot be made. Check the tools listed in your own system instruction and use one of those instead; if this genuinely requires a capability only another role has, use transfer_to_agent to hand off to that role rather than trying to call its tools directly.\"}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[QA] said: Leaving QA sign-off comment on the Sprint Backlog PR.[QA] called tool `gh_pr_comment` with parameters: {'body': '**QA:** Test strategy approved for Sprint 1. Ready for implementation and testing.'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[QA] `gh_pr_comment` tool returned result: {'status': 'error', 'returncode': 1, 'stdout': '', 'stderr': 'no pull requests found for branch \"sprint-backlog/1\"', 'cmd': ['gh', 'pr', 'comment', '--body', '**QA:** **QA:** Test strategy approved for Sprint 1. Ready for implementation and testing.'], 'message': 'no pull requests found for branch \"sprint-backlog/1\"'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[QA] said: Transferring back to DevTeam to proceed with the story.[QA] called tool `transfer_to_agent` with parameters: {'agent_name': 'DevTeam'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[QA] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `gh_pr_status` with parameters: {}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `gh_pr_status` tool returned result: {'status': 'ok', 'returncode': 0, 'stdout': 'Relevant pull requests in CI-Till-Krempel/horseless-carriage-eval-todo-app\\n\\nCurrent branch\\n  There is no pull request associated with [sprint-backlog/1]\\n\\nCreated by you\\n  #618  [eval-0.1.0-run74] Evaluation run overview - DO... [eval/0.1.0-run74/main]\\n  #612  [eval-0.1.0-run73] Evaluation run overview - DO... [eval/0.1.0-run73/main]\\n  #603  [eval-0.1.0-run72] Evaluation run overview - DO... [eval/0.1.0-run72/main]\\n  #601  [eval-0.1.0-run72] Sprint Backlog #1 [eval-0.1.0-run72/feature/US-0001-create-to-do-list]\\n  #600  [eval-0.1.0-run71] Evaluation run overview - DO... [eval/0.1.0-run71/main]\\n  #597  [eval-0.1.0-run71] Steering proposal: ScrumMast... [eval-0.1.0-run71/steering/scrummaster-identity-20261026101410]\\n  #596  [eval-0.1.0-run71] Steering proposal: ProductOw... [eval-0.1.0-run71/steering/productowner-identity-20261026101405]\\n  #595  [eval-0.1.0-run71] Steering proposal: DevTeam-i... [eval-0.1.0-run71/steering/devteam-identity-20261026101400]\\n  #593  [eval-0.1.0-run71] US-0002: add-task-to-list [eval-0.1.0-run71/feature/US-0002-add-task-to-list]\\n  #589  [eval-0.1.0-run70] Evaluation run overview - DO... [eval/0.1.0-run70/main]\\n  And 124 more\\n\\nRequesting a code review from you\\n  You have no pull requests to review', 'stderr': '', 'cmd': ['gh', 'pr', 'status']}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `transfer_to_agent` with parameters: {'agent_name': 'ProductOwner'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] called tool `transfer_to_agent` with parameters: {'agent_name': 'ScrumMaster'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ProductOwner] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] called tool `gh_pr_status` with parameters: {}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] `gh_pr_status` tool returned result: {'status': 'ok', 'returncode': 0, 'stdout': 'Relevant pull requests in CI-Till-Krempel/horseless-carriage-eval-todo-app\\n\\nCurrent branch\\n  There is no pull request associated with [sprint-backlog/1]\\n\\nCreated by you\\n  #618  [eval-0.1.0-run74] Evaluation run overview - DO... [eval/0.1.0-run74/main]\\n  #612  [eval-0.1.0-run73] Evaluation run overview - DO... [eval/0.1.0-run73/main]\\n  #603  [eval-0.1.0-run72] Evaluation run overview - DO... [eval/0.1.0-run72/main]\\n  #601  [eval-0.1.0-run72] Sprint Backlog #1 [eval-0.1.0-run72/feature/US-0001-create-to-do-list]\\n  #600  [eval-0.1.0-run71] Evaluation run overview - DO... [eval/0.1.0-run71/main]\\n  #597  [eval-0.1.0-run71] Steering proposal: ScrumMast... [eval-0.1.0-run71/steering/scrummaster-identity-20261026101410]\\n  #596  [eval-0.1.0-run71] Steering proposal: ProductOw... [eval-0.1.0-run71/steering/productowner-identity-20261026101405]\\n  #595  [eval-0.1.0-run71] Steering proposal: DevTeam-i... [eval-0.1.0-run71/steering/devteam-identity-20261026101400]\\n  #593  [eval-0.1.0-run71] US-0002: add-task-to-list [eval-0.1.0-run71/feature/US-0002-add-task-to-list]\\n  #589  [eval-0.1.0-run70] Evaluation run overview - DO... [eval/0.1.0-run70/main]\\n  And 124 more\\n\\nRequesting a code review from you\\n  You have no pull requests to review', 'stderr': '', 'cmd': ['gh', 'pr', 'status']}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] called tool `transfer_to_agent` with parameters: {'agent_name': 'DevTeam'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[ScrumMaster] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] said: Starting feature branch for US-0001.[DevTeam] called tool `start_feature_branch` with parameters: {'story_id': 'US-0001', 'slug': 'create-a-new-to-do-list'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `start_feature_branch` tool returned result: {'status': 'error', 'message': \"Cannot start work on 'US-0001' - Architect, DevTeam, QA have not yet left a gh_pr_comment/gh_pr_review on this sprint's Sprint Backlog PR. The team gives feedback and commits to the backlog Product Owner proposed before implementation begins - have each missing role leave real feedback (even an explicit sign-off) on it first.\"}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `transfer_to_agent` with parameters: {'agent_name': 'ScrumOrchestrator'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `transfer_to_agent` tool returned result: {'result': None}"
     }
   ],
   "hc_version": "0.1.0",
@@ -727,6 +903,15 @@
       "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
       "detail": "args: {\"plan\": {\"approach\": \"Implement Flask application with SQLite backend and simple HTML/CSS frontend.\", \"code_files\": [\"app.py\", \"database.py\", \"templates/index.html\", \"requirements.txt\"], \"dod_checks\": [\"Flask app runs\", \"Database initialized\", \"UI supports list creation\"], \"estimate\": 20, \"risks_assumptions\": [\"Assume Flask and SQLite are sufficient for local evaluation.\"], \"tasks\": [\"Create requirements.txt\", \"Create database.py\", \"Create app.py\", \"Create templates/index.html\"], \"test_approach\": \"Unit test with pytest.\"}, \"title_or_id\": \"US-0001\"}",
       "created_at": "2026-10-27T11:44:00.225807+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 3,
+      "kind": "blocked_story",
+      "summary": "'US-0001' is BLOCKED (technical): Sprint Backlog PR was auto-merged on creation because planning output was committed directly to develop, so there is no open PR for Architect and QA to leave comments on, blocking start_feature_branch due to missing comments. How can we proceed?",
+      "detail": "Raised by DevTeam. Resolve via Architect's resolve_story_blocker('US-0001', resolution).",
+      "created_at": "2026-10-27T11:44:19.751715+00:00",
       "resolved": false,
       "resolved_at": null
     }

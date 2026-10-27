@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete Task
-- Status: Ready
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-27
@@ -16,4 +16,8 @@
 Users can delete specific tasks from a list.
 
 ## Test Approach
+pytest
 
+### Tasks
+- Add delete task endpoint
+- Add tests

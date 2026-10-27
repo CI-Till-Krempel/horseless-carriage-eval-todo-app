@@ -57,24 +57,24 @@ Stories
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0004] Delete Task
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0005] Delete List and Tasks
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0006] View All Lists and Tasks
   - [x] DRAFT
   - [x] READY
@@ -83,6 +83,19 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [SPEC-ISSUE-0001] Ensure QA checks test suite run locally before marking Tested
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v0.3.0
+Goals
+
+Stories
+- [SPEC-ISSUE-0002] Ensure QA checks test suite run locally before marking Tested to catch integration/ID mismatches early
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

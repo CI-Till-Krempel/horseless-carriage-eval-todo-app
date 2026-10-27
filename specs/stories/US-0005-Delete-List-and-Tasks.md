@@ -2,7 +2,7 @@
 
 - Story ID: US-0005
 - Title: Delete List and Tasks
-- Status: Ready
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-27
@@ -16,4 +16,8 @@
 Users can delete lists along with all associated tasks.
 
 ## Test Approach
+pytest
 
+### Tasks
+- Add delete list route/function
+- Add tests

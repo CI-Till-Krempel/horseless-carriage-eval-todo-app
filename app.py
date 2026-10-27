@@ -16,6 +16,12 @@ def create_list():
         lists[title] = []
     return redirect(url_for('index'))
 
+@app.route('/delete_list/<list_name>', methods=['POST'])
+def delete_list(list_name):
+    if list_name in lists:
+        del lists[list_name]
+    return redirect(url_for('index'))
+
 @app.route('/add_task/<list_name>', methods=['POST'])
 def add_task(list_name):
     task_content = request.form.get('task')

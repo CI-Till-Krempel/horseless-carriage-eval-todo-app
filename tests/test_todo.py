@@ -7,12 +7,13 @@ def client():
     with app.test_client() as client:
         yield client
 
-def test_delete_task(client):
+def test_delete_list(client):
     lists.clear()
     client.post('/create_list', data={'title': 'Work'})
     client.post('/add_task/Work', data={'task': 'Finish report'})
+    assert 'Work' in lists
     assert len(lists['Work']) == 1
     
-    response = client.post('/delete_task/Work/0', follow_redirects=True)
+    response = client.post('/delete_list/Work', follow_redirects=True)
     assert response.status_code == 200
-    assert len(lists['Work']) == 0
+    assert 'Work' not in lists

@@ -71,9 +71,9 @@ Stories
 - [US-0005] Delete List and Tasks
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0006] View All Lists and Tasks
   - [x] DRAFT

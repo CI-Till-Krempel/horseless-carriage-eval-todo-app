@@ -41,12 +41,12 @@ def test_add_task(client):
 def test_toggle_task(client):
     client.post('/lists', data={'name': 'Chores'}, follow_redirects=True)
     with app.app_context():
-        lst = TodoList.query.first()
+        lst = TodoList.query.filter_by(name='Chores').first()
         list_id = lst.id
     client.post(f'/lists/{list_id}/tasks', data={'description': 'Clean room'}, follow_redirects=True)
     
     with app.app_context():
-        task = Task.query.first()
+        task = Task.query.filter_by(description='Clean room').first()
         task_id = task.id
         assert task.completed is False
 

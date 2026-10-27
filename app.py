@@ -32,6 +32,7 @@ def toggle_task(list_name, task_index):
 
 @app.route('/delete_task/<list_name>/<int:task_index>', methods=['POST'])
 def delete_task(list_name, task_index):
+    """Delete a task from a list."""
     if list_name in lists and 0 <= task_index < len(lists[list_name]):
         lists[list_name].pop(task_index)
     return redirect(url_for('index'))

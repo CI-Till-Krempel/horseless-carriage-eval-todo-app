@@ -104,6 +104,19 @@ Stories
   - [ ] ACCEPTED
 
 
+### v0.4.0
+Goals
+
+Stories
+- [SPEC-ISSUE-0003] Ensure QA and Dev team run local test suite prior to review to prevent import/ID mismatches
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

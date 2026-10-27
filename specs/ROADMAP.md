@@ -31,6 +31,8 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
 ---
 
 ### v1.0.0
@@ -48,10 +50,10 @@ Stories
 - [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
@@ -74,6 +76,13 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] View All Lists and Tasks
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [SPEC-ISSUE-0001] Ensure QA checks test suite run locally before marking Tested
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

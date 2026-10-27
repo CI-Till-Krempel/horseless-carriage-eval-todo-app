@@ -78,10 +78,10 @@ Stories
 - [US-0006] View All Lists and Tasks
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [SPEC-ISSUE-0001] Ensure QA checks test suite run locally before marking Tested
   - [x] DRAFT
   - [x] READY
@@ -96,6 +96,19 @@ Goals
 
 Stories
 - [SPEC-ISSUE-0002] Ensure QA checks test suite run locally before marking Tested to catch integration/ID mismatches early
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v0.4.0
+Goals
+
+Stories
+- [SPEC-ISSUE-0003] Ensure QA and Dev team run local test suite prior to review to prevent import/ID mismatches
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

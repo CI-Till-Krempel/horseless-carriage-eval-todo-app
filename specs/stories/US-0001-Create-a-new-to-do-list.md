@@ -14,7 +14,7 @@
 
 ## Notes
 Users can successfully create and name a new to-do list.
-- ⚠️ REVIEW DENIED at Tested by QA: Two unit tests failed (test_delete_task and test_delete_list) because task/list deletion endpoints did not remove the items from the rendered page output or session properly.
+- ⚠️ REVIEW DENIED at Tested by QA: test_delete_task and test_delete_list still fail because the response data contains the deleted item text.
 
 ## Test Approach
 Pytest with Flask test client testing list creation and display.

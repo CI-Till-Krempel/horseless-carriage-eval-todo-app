@@ -58,26 +58,26 @@ def test_toggle_task(client):
         assert task.completed is True
 
 def test_delete_task(client):
-    client.post('/lists', data={'name': 'Chores'}, follow_redirects=True)
+    client.post('/lists', data={'name': 'UniqueListName'}, follow_redirects=True)
     with app.app_context():
-        lst = TodoList.query.first()
+        lst = TodoList.query.filter_by(name='UniqueListName').first()
         list_id = lst.id
-    client.post(f'/lists/{list_id}/tasks', data={'description': 'Trash'}, follow_redirects=True)
+    client.post(f'/lists/{list_id}/tasks', data={'description': 'UniqueTaskName'}, follow_redirects=True)
     
     with app.app_context():
-        task = Task.query.first()
+        task = Task.query.filter_by(description='UniqueTaskName').first()
         task_id = task.id
 
     response = client.post(f'/tasks/{task_id}/delete', follow_redirects=True)
     assert response.status_code == 200
-    assert b'Trash' not in response.data
+    assert b'UniqueTaskName' not in response.data
 
 def test_delete_list(client):
-    client.post('/lists', data={'name': 'Temp List'}, follow_redirects=True)
+    client.post('/lists', data={'name': 'DeletableList'}, follow_redirects=True)
     with app.app_context():
-        lst = TodoList.query.first()
+        lst = TodoList.query.filter_by(name='DeletableList').first()
         list_id = lst.id
 
     response = client.post(f'/lists/{list_id}/delete', follow_redirects=True)
     assert response.status_code == 200
-    assert b'Temp List' not in response.data
+    assert b'DeletableList' not in response.data

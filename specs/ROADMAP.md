@@ -81,7 +81,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [SPEC-ISSUE-0001] Ensure QA checks test suite run locally before marking Tested
   - [x] DRAFT
   - [x] READY

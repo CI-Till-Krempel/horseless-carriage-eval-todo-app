@@ -2,7 +2,7 @@
 
 - Story ID: US-0006
 - Title: View All Lists and Tasks
-- Status: Tested
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-27

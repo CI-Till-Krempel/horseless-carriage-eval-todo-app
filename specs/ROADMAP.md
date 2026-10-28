@@ -44,12 +44,6 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
-- [US-0002] Add a task to a list with a short text description
-  - [ ] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 
 
 ### v1.1.0
@@ -71,6 +65,19 @@ Goals
 
 Stories
 - [US-0003] Mark a task as complete or incomplete
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+
+
+### v1.3.0
+Goals
+- Enable deletion of tasks and entire lists with their contained tasks.
+
+Stories
+- [US-0004] Delete tasks and entire lists
   - [x] READY
   - [x] IMPLEMENTED
   - [ ] REVIEWED

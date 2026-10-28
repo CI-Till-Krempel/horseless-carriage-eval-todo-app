@@ -15,16 +15,20 @@
         button { padding: 10px 20px; font-size: 16px; background: #3498db; color: white; border: none; border-radius: 0 4px 4px 0; cursor: pointer; }
         button:hover { background: #2980b9; }
         .list-card { background: #ecf0f1; padding: 15px; margin-bottom: 15px; border-radius: 6px; }
-        .list-card h3 { margin-top: 0; }
+        .list-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .list-header h3 { margin: 0; }
         ul { list-style: none; padding: 0; }
         li { padding: 8px; background: white; margin-bottom: 6px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #ddd; }
         li.completed span { text-decoration: line-through; color: #888; }
+        .task-actions { display: flex; gap: 5px; }
         .task-form { margin-top: 10px; margin-bottom: 0; }
         .task-form input[type="text"] { font-size: 14px; padding: 8px; }
         .task-form button { font-size: 14px; padding: 8px 15px; background: #2ecc71; }
         .task-form button:hover { background: #27ae60; }
         .toggle-btn { background: #f39c12; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
         .toggle-btn:hover { background: #d35400; }
+        .delete-btn { background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+        .delete-btn:hover { background: #c0392b; }
     </style>
 </head>
 <body>
@@ -48,18 +52,28 @@
         {% if lists %}
             {% for lst in lists %}
                 <div class="list-card">
-                    <h3>{{ lst.name }}</h3>
+                    <div class="list-header">
+                        <h3>{{ lst.name }}</h3>
+                        <form action="{{ url_for('delete_list', list_id=lst.id) }}" method="POST" style="margin: 0;">
+                            <button type="submit" class="delete-btn">Delete List</button>
+                        </form>
+                    </div>
                     
                     {% if lst.tasks %}
                         <ul>
                             {% for task in lst.tasks %}
                                 <li class="{% if task.completed %}completed{% endif %}">
                                     <span>{{ task.description }}</span>
-                                    <form action="{{ url_for('toggle_task', list_id=lst.id, task_id=task.id) }}" method="POST" style="margin: 0;">
-                                        <button type="submit" class="toggle-btn">
-                                            {% if task.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}
-                                        </button>
-                                    </form>
+                                    <div class="task-actions">
+                                        <form action="{{ url_for('toggle_task', list_id=lst.id, task_id=task.id) }}" method="POST" style="margin: 0;">
+                                            <button type="submit" class="toggle-btn">
+                                                {% if task.completed %}Incomplete{% else %}Complete{% endif %}
+                                            </button>
+                                        </form>
+                                        <form action="{{ url_for('delete_task', list_id=lst.id, task_id=task.id) }}" method="POST" style="margin: 0;">
+                                            <button type="submit" class="delete-btn">Delete</button>
+                                        </form>
+                                    </div>
                                 </li>
                             {% endfor %}
                         </ul>

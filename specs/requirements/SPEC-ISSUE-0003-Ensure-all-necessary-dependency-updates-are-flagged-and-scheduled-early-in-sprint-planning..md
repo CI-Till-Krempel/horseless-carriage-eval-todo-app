@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0003
 - Title: Ensure all necessary dependency updates are flagged and scheduled early in sprint planning.
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-10-29

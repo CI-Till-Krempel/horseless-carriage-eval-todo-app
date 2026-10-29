@@ -33,6 +33,13 @@ Stories
 
 
 Stories
+- [SPEC-ISSUE-0001] Story stage tracking sync for US-0002 required transition validation across branches.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 ---
 
 ### v1.0.0

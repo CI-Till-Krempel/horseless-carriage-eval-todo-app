@@ -1,0 +1,1 @@
+Ensure all required Python packages and dependencies (such as Flask-SQLAlchemy) are explicitly added to requirements.txt before any build check or test execution.

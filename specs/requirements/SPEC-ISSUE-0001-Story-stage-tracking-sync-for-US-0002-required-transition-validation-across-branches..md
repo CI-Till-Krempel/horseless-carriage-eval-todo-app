@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0001
 - Title: Story stage tracking sync for US-0002 required transition validation across branches.
-- Status: Draft
+- Status: Ready
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-10-29
@@ -11,7 +11,7 @@
 Story stage tracking sync for US-0002 required transition validation across branches.
 
 ## Acceptance Criteria
-
+- Given a task story US-0002, When its stage transition occurs, Then state tracking synchronizes correctly across branches and validates transitions.
 
 ## Notes
 

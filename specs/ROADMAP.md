@@ -64,7 +64,7 @@ Stories
 - [SPEC-ISSUE-0002] Ensure all dependencies like Flask-SQLAlchemy are explicitly declared in requirements.txt before test execution.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

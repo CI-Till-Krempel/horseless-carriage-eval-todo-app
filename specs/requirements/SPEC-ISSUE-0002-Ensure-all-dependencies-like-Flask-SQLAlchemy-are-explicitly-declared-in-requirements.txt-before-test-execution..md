@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0002
 - Title: Ensure all dependencies like Flask-SQLAlchemy are explicitly declared in requirements.txt before test execution.
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-10-29
@@ -17,4 +17,7 @@ Ensure all dependencies like Flask-SQLAlchemy are explicitly declared in require
 
 
 ## Test Approach
+Verify dependencies install successfully.
 
+### Tasks
+- Check requirements.txt and add Flask-SQLAlchemy if missing.

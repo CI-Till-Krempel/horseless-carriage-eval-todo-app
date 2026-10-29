@@ -15,7 +15,7 @@ Story stage tracking sync for US-0002 required transition validation across bran
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: Test collection failed due to file import mismatch between /app/eval-output/clone/test_app.py and /app/eval-output/clone/tests/test_app.py. Please clean up duplicate test files or fix imports.
+- ⚠️ REVIEW DENIED at Tested by QA: Unit tests test_toggle_and_delete_task and test_delete_list failed because global list/task state was not correctly reset or deleted by the routes during direct test fixture manipulation.
 
 ## Test Approach
 

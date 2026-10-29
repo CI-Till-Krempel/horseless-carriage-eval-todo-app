@@ -17,4 +17,7 @@ Ensure all dependencies like Flask-SQLAlchemy are explicitly declared in require
 
 
 ## Test Approach
+Verify dependencies install successfully.
 
+### Tasks
+- Check requirements.txt and add Flask-SQLAlchemy if missing.

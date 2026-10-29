@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0001
 - Title: Story stage tracking sync for US-0002 required transition validation across branches.
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-10-29
@@ -15,7 +15,6 @@ Story stage tracking sync for US-0002 required transition validation across bran
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: Unit tests test_toggle_and_delete_task and test_delete_list failed because global list/task state was not correctly reset or deleted by the routes during direct test fixture manipulation.
 
 ## Test Approach
 

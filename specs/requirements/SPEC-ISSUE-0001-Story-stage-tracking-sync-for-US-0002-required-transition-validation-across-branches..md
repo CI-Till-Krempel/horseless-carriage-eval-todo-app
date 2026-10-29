@@ -15,6 +15,7 @@ Story stage tracking sync for US-0002 required transition validation across bran
 
 ## Notes
 
+- ⚠️ REVIEW DENIED at Tested by QA: Test collection failed due to file import mismatch between /app/eval-output/clone/test_app.py and /app/eval-output/clone/tests/test_app.py. Please clean up duplicate test files or fix imports.
 
 ## Test Approach
 

@@ -16,4 +16,4 @@
 Users can successfully create and view new lists.
 
 ## Test Approach
-
+Write unit/integration tests using pytest and Flask test client.

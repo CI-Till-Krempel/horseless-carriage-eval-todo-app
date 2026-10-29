@@ -43,9 +43,9 @@ Stories
 - [SPEC-ISSUE-0003] Ensure all necessary dependency updates are flagged and scheduled early in sprint planning.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 ---
 

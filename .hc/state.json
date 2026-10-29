@@ -123,9 +123,12 @@
       "priority": "Must",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready",
+      "status": "Tested",
       "version": "Backlog (unplanned)",
       "description": "Ensure all necessary dependency updates are flagged and scheduled early in sprint planning.",
       "user_story": "As a Scrum team member, I want dependency updates flagged and scheduled early so that we avoid late build breakages.",
@@ -217,49 +220,46 @@
   ],
   "sprint_goal": "Complete final product implementation, testing, and release for Sprint 5.",
   "sprint_number": 5,
-  "sprint_backlog_pr_sprint": 0,
+  "sprint_backlog_pr_sprint": 5,
   "sprint_backlog_pr_opened": true,
-  "planning_output_commit_count": 23,
-  "sprint_backlog_pr_content_baseline": 18,
+  "planning_output_commit_count": 26,
+  "sprint_backlog_pr_content_baseline": 24,
   "sprint_backlog": [
     {
-      "title": "Ensure all dependencies like Flask-SQLAlchemy are explicitly declared in requirements.txt before test execution.",
-      "overview": "Ensure all dependencies like Flask-SQLAlchemy are explicitly declared in requirements.txt before test execution.",
+      "title": "Ensure all necessary dependency updates are flagged and scheduled early in sprint planning.",
+      "overview": "Ensure all necessary dependency updates are flagged and scheduled early in sprint planning.",
       "owner": "DevTeam",
       "type": "Issue",
-      "id": "SPEC-ISSUE-0002",
+      "id": "SPEC-ISSUE-0003",
       "priority": "Must",
-      "version": "v1.0.0",
       "stages_completed": [
         "Draft",
         "Ready",
         "Implemented",
         "Reviewed",
-        "Tested",
-        "Accepted"
+        "Tested"
       ],
-      "status": "Accepted",
+      "status": "Tested",
+      "version": "Backlog (unplanned)",
+      "description": "Ensure all necessary dependency updates are flagged and scheduled early in sprint planning.",
+      "user_story": "As a Scrum team member, I want dependency updates flagged and scheduled early so that we avoid late build breakages.",
       "acceptance_criteria": [
-        "Given the requirements.txt file, When dependencies are checked, Then Flask-SQLAlchemy and other required packages are explicitly listed."
+        "Given the retro/impediment log flags a dependency update, When planning starts, Then it is scheduled early in the sprint planning backlog."
       ],
-      "description": "Ensure all dependencies like Flask-SQLAlchemy are explicitly declared in requirements.txt before test execution.",
-      "tasks": [
-        "Check requirements.txt and add Flask-SQLAlchemy if missing."
-      ],
-      "approach": "Verify requirements.txt contains all necessary project dependencies including Flask and Flask-SQLAlchemy.",
-      "test_approach": "Verify dependencies install successfully.",
       "dod_checks": [
-        "requirements.txt includes all required packages and dependencies explicitly."
+        "Verified dependency review and planning process guidelines."
       ],
+      "risks_and_assumptions": "None",
+      "approach": "Spike item for dependency planning.",
       "code_files": [
-        "requirements.txt"
+        "specs/requirements/SPEC-ISSUE-0003-Ensure-all-necessary-dependency-updates-are-flagged-and-scheduled-early-in-sprint-planning..md"
       ],
-      "estimate": 100,
-      "risks_assumptions": [
-        "Assumes existing requirements.txt might be missing explicit Flask-SQLAlchemy entry."
+      "tasks": [
+        "Review dependencies"
       ],
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified requirements.txt explicitly declares Flask-SQLAlchemy and other required dependencies."
+      "test_approach": "N/A",
+      "estimate": 1000,
+      "spike": true
     }
   ],
   "impediment_log": [
@@ -320,13 +320,16 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.95962094
+    "current_usd_spend": 1.0493123
   },
   "token_usage": {
-    "total": 88264,
+    "total": 926625,
     "agents": {
       "ScrumMaster": 14342,
-      "ProductOwner": 73922
+      "ProductOwner": 106412,
+      "DevTeam": 524984,
+      "Architect": 156054,
+      "QA": 124833
     }
   },
   "story_estimates": {
@@ -345,6 +348,10 @@
     "SPEC-ISSUE-0002": {
       "estimate": 100,
       "actual": 80
+    },
+    "SPEC-ISSUE-0003": {
+      "estimate": 1000,
+      "actual": 1200
     }
   },
   "sprint_report_kpis": {},
@@ -417,7 +424,8 @@
     "specs/reports/TRANSCRIPT-004.md",
     "specs/reports/SPRINT-REPORT-004.md",
     "specs/reports/RETRO-004.md",
-    "specs/reports/STEERING-004.md"
+    "specs/reports/STEERING-004.md",
+    "specs/requirements/dependency-review-notes.md"
   ],
   "source_content_change_count": 16,
   "last_check_build": {
@@ -431,12 +439,12 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
-    "Architect": 7,
-    "QA": 13,
-    "DevTeam": 2
+    "Architect": 9,
+    "QA": 15,
+    "DevTeam": 3
   },
-  "architect_review_baseline": 7,
-  "qa_review_baseline": 13,
+  "architect_review_baseline": 9,
+  "qa_review_baseline": 15,
   "qa_tested_baseline": 4,
   "content_loss_warnings": [
     {
@@ -447,9 +455,9 @@
   ],
   "content_loss_acknowledged_baseline": 1,
   "sprint_backlog_engagement_baseline": {
-    "Architect": 5,
-    "QA": 11,
-    "DevTeam": 1
+    "Architect": 7,
+    "QA": 13,
+    "DevTeam": 2
   },
   "sprint_report_pending_release": false,
   "blocking_interactions": [
@@ -513,6 +521,24 @@
       "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
       "detail": "args: {\"plan\": {\"approach\": \"Verify requirements.txt contains all necessary project dependencies including Flask and Flask-SQLAlchemy.\", \"code_files\": [\"requirements.txt\"], \"dod_checks\": [\"requirements.txt includes all required packages and dependencies explicitly.\"], \"estimate\": 100, \"risks_assumptions\": [\"Assumes existing requirements.txt might be missing explicit Flask-SQLAlchemy entry.\"], \"tasks\": [\"Check requirements.txt and add Flask-SQLAlchemy if missing.\"], \"test_approach\": \"Verify dependencies install successfully.\"}, \"title_or_id\": \"SPEC-ISSUE-0002\"}",
       "created_at": "2026-10-29T16:53:33.534728+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 8,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Address SPEC-ISSUE-0003 as a process/spike/documentation issue or verify dependency updates.\", \"code_files\": [\"specs/requirements/SPEC-ISSUE-0003-Ensure-all-necessary-dependency-updates-are-flagged-and-scheduled-early-in-sprint-planning..md\"], \"dod_checks\": [\"Verified dependency review and planning process guidelines.\"], \"estimate\": 10000, \"risks_and_assumptions\": \"None\", \"tasks\": [\"Review dependencies and ensure requirements.txt is up to date\", \"Confirm readiness\"], \"test_approach\": \"Verify dependencies and requirements.txt\"}, \"title_or_id\": \"SPEC-ISSUE-0003\"}",
+      "created_at": "2026-10-29T16:55:57.087282+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 9,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Development'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Spike item for dependency planning.\", \"code_files\": [\"specs/requirements/SPEC-ISSUE-0003-Ensure-all-necessary-dependency-updates-are-flagged-and-scheduled-early-in-sprint-planning..md\"], \"dod_checks\": [\"Verified dependency review and planning process guidelines.\"], \"estimate\": 1000, \"risks_and_assumptions\": \"None\", \"spike\": true, \"tasks\": [\"Review dependencies\"], \"test_approach\": \"N/A\"}, \"title_or_id\": \"SPEC-ISSUE-0003\"}",
+      "created_at": "2026-10-29T16:56:41.983671+00:00",
       "resolved": false,
       "resolved_at": null
     }

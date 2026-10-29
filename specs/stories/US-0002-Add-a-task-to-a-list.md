@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add a task to a list
-- Status: Ready
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-29
@@ -16,4 +16,10 @@
 Users can successfully add tasks to existing lists.
 
 ## Test Approach
+Write pytest unit and integration tests for adding tasks to a list.
 
+### Tasks
+- Verify US-0001 base app and models
+- Add task creation endpoint/logic
+- Write tests for adding tasks
+- Verify CI checks

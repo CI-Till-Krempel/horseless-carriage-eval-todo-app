@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0002
 - Title: Sprint budget or iteration boundary reached with US-0003, US-0004, US-0005 remaining.
-- Status: Draft
+- Status: Ready
 - Priority: Must
 - Owner: ScrumMaster
 - Last Updated: 2026-10-30
@@ -11,7 +11,7 @@
 Sprint budget or iteration boundary reached with US-0003, US-0004, US-0005 remaining.
 
 ## Acceptance Criteria
-
+- Given remaining stories at sprint close, When reviewing sprint boundary, Then they are cleanly re-planned for the next sprint.
 
 ## Notes
 

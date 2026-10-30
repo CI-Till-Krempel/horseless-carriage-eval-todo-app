@@ -31,6 +31,15 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
+- [SPEC-ISSUE-0003] Ensure stories and issues are planned accurately with realistic estimates and tracked cleanly through the workflow stages.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### v1.0.0

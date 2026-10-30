@@ -17,4 +17,8 @@ Sprint budget or iteration boundary reached with US-0003, US-0004, US-0005 remai
 
 
 ## Test Approach
+Verify sprint planning documentation.
 
+### Tasks
+- Review sprint boundary issue
+- Confirm handling of US-0003, US-0004, US-0005

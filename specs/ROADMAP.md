@@ -39,7 +39,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0002] Add a task to a list
   - [x] DRAFT
   - [x] READY

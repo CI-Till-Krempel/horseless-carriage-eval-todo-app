@@ -58,7 +58,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [SPEC-ISSUE-0001] Ensure all planned stories are fully developed and accepted within sprint timebox or cleanly scoped.
   - [x] DRAFT
   - [x] READY

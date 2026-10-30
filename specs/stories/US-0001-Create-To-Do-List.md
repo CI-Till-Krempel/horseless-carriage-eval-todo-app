@@ -16,4 +16,9 @@
 Users can successfully initiate and view new task lists.
 
 ## Test Approach
+Pytest with Flask test client.
 
+### Tasks
+- Create Flask application structure
+- Implement list creation route and template
+- Write unit tests for list creation

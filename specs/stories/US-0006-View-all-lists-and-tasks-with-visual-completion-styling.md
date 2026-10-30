@@ -2,7 +2,7 @@
 
 - Story ID: US-0006
 - Title: View all lists and tasks with visual completion styling
-- Status: Draft
+- Status: Ready
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-30

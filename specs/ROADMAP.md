@@ -21,8 +21,15 @@ Tip: If you prefer standard checkboxes only, use the Kanban tables below and kee
 
 ### v0.1 — MVP (target: YYYY-MM)
 Goals
-
-Stories:
+- Implement US-0007 and US-0008 to enhance To-Do application functionality as outlined in the roadmap.
+Stories
+- [US-0007] View task summary counts per list
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [ ] ACCEPTED
 
 ### v0.2 — Next iteration (target: YYYY-MM)
 Goals
@@ -39,15 +46,36 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0002] Add a task to a list
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0003] Mark a task as complete or incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [SPEC-ISSUE-0002] GitHub pull request review API prevents authors from self-approving PRs when acting across roles in automated runs.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [SPEC-ISSUE-0001] Use PR review comments instead of PR approvals for role sign-offs when running automated multi-agent PR workflows.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0008] Clear all completed tasks
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED
@@ -55,22 +83,22 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0004] Delete a task
-  - [ ] DRAFT
-  - [ ] READY
+  - [x] DRAFT
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0005] Delete an entire list
-  - [ ] DRAFT
-  - [ ] READY
+  - [x] DRAFT
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] View all lists and tasks with visual completion styling
-  - [ ] DRAFT
-  - [ ] READY
+  - [x] DRAFT
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED

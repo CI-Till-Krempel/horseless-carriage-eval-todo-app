@@ -9,20 +9,25 @@ Scrum Master's own `create_sprint_report` call never ran this sprint, for a reas
 - US-0001 Create a new to-do list: Draft, Ready, Implemented, Reviewed, Tested, Accepted
 - US-0002 Add a task to a list: Draft, Ready, Implemented, Reviewed, Tested, Accepted
 - US-0003 Mark a task as complete or incomplete: Draft, Ready, Implemented, Reviewed, Tested, Accepted
-- US-0004 Delete a task: not started
-- US-0005 Delete an entire list: not started
-- US-0006 View all lists and tasks with visual completion styling: not started
+- SPEC-ISSUE-0002 GitHub pull request review API prevents authors from self-approving PRs when acting across roles in automated runs.: Draft, Ready, Implemented, Reviewed, Tested, Accepted
+- SPEC-ISSUE-0001 Use PR review comments instead of PR approvals for role sign-offs when running automated multi-agent PR workflows.: Draft, Ready, Implemented, Reviewed, Tested, Accepted
+- US-0007 View task summary counts per list: Draft, Ready, Implemented, Reviewed, Tested, Accepted
+- US-0008 Clear all completed tasks: Draft, Ready
+- US-0004 Delete a task: Draft, Ready
+- US-0005 Delete an entire list: Draft, Ready
+- US-0006 View all lists and tasks with visual completion styling: Draft, Ready
 
 ## Budget and Usage
-- Token usage: 4,888,656 / 5000000
+- Token usage: 5,166,226 / 5000000
 - USD Budget: $15.00
-- Actual USD Spend: $0.49
+- Actual USD Spend: $1.01
 
 ## Open Questions for Stakeholder (Blockers)
 No stories are currently blocked.
 
 ## Retrospective Actions Logged So Far
 - Use PR review comments instead of PR approvals for role sign-offs when running automated multi-agent PR workflows. (Owner: DevTeam, Status: open, Category: technical)
+- Ensure timely review and feedback on sprint backlog and PRs by all assigned roles. (Owner: ScrumMaster, Status: open, Category: technical)
 
 ## Impediments Logged So Far
 - GitHub pull request review API prevents authors from self-approving PRs when acting across roles in automated runs. (Owner: Architect, Status: open, Category: technical)

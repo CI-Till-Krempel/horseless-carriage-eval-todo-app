@@ -17,4 +17,7 @@ Maintain disciplined backlog planning and ensure all issues are tracked cleanly 
 
 
 ## Test Approach
+Verify issue tracking adherence
 
+### Tasks
+- Review issue spec and ensure compliance

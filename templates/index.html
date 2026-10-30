@@ -17,6 +17,17 @@
     {% for list_id, lst in todos.items() %}
         <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
             <h3>{{ lst.name }}</h3>
+            
+            <ul>
+                {% for task in lst.tasks %}
+                    <li>{{ task.text }}</li>
+                {% endfor %}
+            </ul>
+
+            <form action="/lists/{{ lst.id }}/tasks" method="POST">
+                <input type="text" name="text" placeholder="New Task Description" required>
+                <button type="submit">Add Task</button>
+            </form>
         </div>
     {% endfor %}
 </body>

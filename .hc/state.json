@@ -175,9 +175,12 @@
       "user_story": "As a developer, I want to address SPEC-ISSUE-0003 so that the sprint backlog can be published.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready",
+      "status": "Tested",
       "version": "v0.1 — MVP (target: YYYY-MM)"
     },
     {
@@ -273,131 +276,46 @@
   ],
   "sprint_goal": "Implement core features and complete remaining backlog items for sprint 5",
   "sprint_number": 3,
-  "sprint_backlog_pr_sprint": 0,
+  "sprint_backlog_pr_sprint": 3,
   "sprint_backlog_pr_opened": true,
-  "planning_output_commit_count": 25,
-  "sprint_backlog_pr_content_baseline": 10,
+  "planning_output_commit_count": 28,
+  "sprint_backlog_pr_content_baseline": 26,
   "sprint_backlog": [
     {
-      "acceptance_criteria": [
-        "Given the user is viewing the list of to-do lists, When they look at the list details, Then they see a count of total tasks and completed tasks for each list."
-      ],
-      "title": "View task summary counts per list",
-      "id": "US-0007",
-      "description": "As a user, I want to see a summary count of tasks and completed tasks for each list on the main view so that I can track progress at a glance.",
+      "title": "Address SPEC-ISSUE-0003 retro-filed issue",
+      "overview": "Ensure timely review and feedback on sprint backlog and PRs by all assigned roles.",
+      "owner": "ScrumMaster",
+      "type": "Issue",
+      "id": "SPEC-ISSUE-0003",
       "priority": "Must",
-      "type": "User Story",
+      "acceptance_criteria": [
+        "Given a retro-filed issue exists, when it is promoted to Ready, then it can be processed."
+      ],
+      "description": "Address retro-filed issue SPEC-ISSUE-0003.",
+      "user_story": "As a developer, I want to address SPEC-ISSUE-0003 so that the sprint backlog can be published.",
       "stages_completed": [
         "Draft",
         "Ready",
         "Implemented",
         "Reviewed",
-        "Tested",
-        "Accepted"
+        "Tested"
       ],
-      "status": "Accepted",
-      "version": "Backlog (unplanned)",
-      "user_story": "As a user, I want to see a summary count of tasks and completed tasks for each list on the main view so that I can track progress at a glance.",
-      "dod_checks": [
-        "Automated tests written and passing",
-        "Code reviewed-ready",
-        "Actual tokens logged"
-      ],
+      "status": "Tested",
+      "version": "v0.1 — MVP (target: YYYY-MM)",
       "code_files": [
-        "app.py",
-        "templates/index.html",
-        "tests/test_todo.py"
+        "specs/requirements/SPEC-ISSUE-0003-Address-SPEC-ISSUE-0003-retro-filed-issue.md"
       ],
-      "risks_assumptions": [
-        "Assuming SQLAlchemy models for TodoList and Task exist or can be updated with summary count properties/queries."
-      ],
-      "tasks": [
-        "Update or create app.py with task count queries/properties",
-        "Update templates/index.html to display task summary counts",
-        "Write unit and integration tests for summary counts"
-      ],
-      "approach": "Implement US-0007: View task summary counts per list by calculating total and completed tasks for each list and displaying them on the main view.",
-      "test_approach": "pytest unit tests verifying task counts per list.",
-      "estimate": 1500,
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified task summary counts per list (US-0007) acceptance criteria and tests."
-    },
-    {
-      "title": "Use PR review comments instead of PR approvals for role sign-offs when running automated multi-agent PR workflows.",
-      "overview": "Use PR review comments instead of PR approvals for role sign-offs when running automated multi-agent PR workflows.",
-      "owner": "DevTeam",
-      "type": "Issue",
-      "id": "SPEC-ISSUE-0001",
-      "priority": "Must",
-      "version": "Backlog (unplanned)",
-      "stages_completed": [
-        "Draft",
-        "Ready",
-        "Implemented",
-        "Reviewed",
-        "Tested",
-        "Accepted"
-      ],
-      "status": "Accepted",
-      "acceptance_criteria": [
-        "Given automated multi-agent PR workflows are running, When roles sign off on a PR, Then they use PR review comments instead of PR approvals."
-      ],
-      "user_story": "As an automated agent runner, I want PR review comments used for role sign-offs so that GitHub API permission limitations do not block PR merging.",
-      "description": "Use PR review comments instead of PR approvals for role sign-offs when running automated multi-agent PR workflows.",
-      "estimate": 100,
-      "approach": "Ensure PR review comments are used for role sign-offs. Since this is an architectural/process process issue handled by agent configuration and tools, log decision and document approach.",
-      "risks_assumptions": [
-        "No code changes required as multi-agent PR workflows already utilize comments."
-      ],
-      "tasks": [
-        "Log decision regarding PR review comments sign-off"
-      ],
-      "test_approach": "Verify multi-agent PR comment sign-off workflow.",
-      "code_files": [],
+      "estimate": 50,
       "dod_checks": [
-        "Decision logged",
-        "Documented"
+        "Documented and verified."
       ],
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified SPEC-ISSUE-0001 implementation and workflow process integration."
-    },
-    {
-      "title": "GitHub pull request review API prevents authors from self-approving PRs when acting across roles in automated runs.",
-      "overview": "GitHub pull request review API prevents authors from self-approving PRs when acting across roles in automated runs.",
-      "owner": "Architect",
-      "type": "Issue",
-      "id": "SPEC-ISSUE-0002",
-      "priority": "Must",
-      "version": "Backlog (unplanned)",
-      "stages_completed": [
-        "Draft",
-        "Ready",
-        "Implemented",
-        "Reviewed",
-        "Tested",
-        "Accepted"
-      ],
-      "status": "Accepted",
-      "user_story": "As a Scrum team in an automated run, I want PR review mechanisms to handle cross-role execution so PRs are not blocked.",
-      "acceptance_criteria": [
-        "Given an automated run where agents act across roles, When a PR is reviewed, Then authorization checks do not prevent merging due to author self-approval limitations."
-      ],
-      "description": "GitHub pull request review API prevents authors from self-approving PRs when acting across roles in automated runs.",
-      "estimate": 100,
-      "dod_checks": [
-        "Decision logged"
-      ],
-      "approach": "Address GitHub pull request review API author self-approval limitation by utilizing PR comments for review sign-offs as per SPEC-ISSUE-0001.",
-      "risks_assumptions": [
-        "Addressed via PR comment workflow."
-      ],
-      "test_approach": "Confirm PR comment sign-offs work correctly.",
+      "test_approach": "Review issue documentation.",
+      "risks_assumptions": [],
+      "approach": "Address SPEC-ISSUE-0003 as a spike story.",
       "tasks": [
-        "Log decision for SPEC-ISSUE-0002"
+        "Verify issue details and close out."
       ],
-      "code_files": [],
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified SPEC-ISSUE-0002 resolution approach and cross-role sign-off comments."
+      "spike": true
     }
   ],
   "impediment_log": [
@@ -472,13 +390,16 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 1.10285155
+    "current_usd_spend": 1.21921477
   },
   "token_usage": {
-    "total": 165443,
+    "total": 1057417,
     "agents": {
       "ScrumMaster": 14121,
-      "ProductOwner": 151322
+      "ProductOwner": 189657,
+      "DevTeam": 555734,
+      "Architect": 175824,
+      "QA": 122081
     }
   },
   "story_estimates": {
@@ -503,6 +424,10 @@
     "SPEC-ISSUE-0002": {
       "estimate": 100,
       "actual": 110
+    },
+    "SPEC-ISSUE-0003": {
+      "estimate": 50,
+      "actual": 10
     }
   },
   "sprint_report_kpis": {},
@@ -560,7 +485,8 @@
     "specs/stories/US-0007-View-task-summary-counts-per-list.md",
     "specs/stories/US-0008-Clear-all-completed-tasks.md",
     "specs/requirements/SPEC-ISSUE-0003-Ensure-timely-review-and-feedback-on-sprint-backlog-and-PRs-by-all-assigned-roles..md",
-    "specs/requirements/SPEC-ISSUE-0003-Address-SPEC-ISSUE-0003-retro-filed-issue.md"
+    "specs/requirements/SPEC-ISSUE-0003-Address-SPEC-ISSUE-0003-retro-filed-issue.md",
+    "specs/requirements/SPEC-ISSUE-0003-resolution.md"
   ],
   "source_content_change_count": 7,
   "last_check_build": {
@@ -574,12 +500,12 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
-    "DevTeam": 3,
-    "QA": 8,
-    "Architect": 8
+    "DevTeam": 5,
+    "QA": 10,
+    "Architect": 10
   },
-  "architect_review_baseline": 8,
-  "qa_review_baseline": 8,
+  "architect_review_baseline": 10,
+  "qa_review_baseline": 10,
   "qa_tested_baseline": 6,
   "content_loss_warnings": [
     {
@@ -590,9 +516,9 @@
   ],
   "content_loss_acknowledged_baseline": 1,
   "sprint_backlog_engagement_baseline": {
-    "DevTeam": 2,
-    "QA": 4,
-    "Architect": 4
+    "DevTeam": 3,
+    "QA": 8,
+    "Architect": 8
   },
   "sprint_report_pending_release": false,
   "blocking_interactions": [

@@ -39,15 +39,29 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0002] Add a task to a list
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0003] Mark a task as complete or incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [SPEC-ISSUE-0002] GitHub pull request review API prevents authors from self-approving PRs when acting across roles in automated runs.
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0003] Mark a task as complete or incomplete
+- [SPEC-ISSUE-0001] Use PR review comments instead of PR approvals for role sign-offs when running automated multi-agent PR workflows.
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED
@@ -71,6 +85,20 @@ Stories
 - [US-0006] View all lists and tasks with visual completion styling
   - [ ] DRAFT
   - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0007] View task summary counts per list
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0008] Clear all completed tasks
+  - [x] DRAFT
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED

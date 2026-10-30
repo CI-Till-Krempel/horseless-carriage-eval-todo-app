@@ -17,4 +17,7 @@ Ensure timely review and feedback on sprint backlog and PRs by all assigned role
 
 
 ## Test Approach
+Review issue documentation.
 
+### Tasks
+- Verify issue details and close out.

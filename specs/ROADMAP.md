@@ -65,7 +65,7 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
+  - [x] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [SPEC-ISSUE-0001] Use PR review comments instead of PR approvals for role sign-offs when running automated multi-agent PR workflows.

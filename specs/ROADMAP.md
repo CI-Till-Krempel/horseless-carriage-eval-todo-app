@@ -54,13 +54,6 @@ Goals
 - Deliver To-Do List Web App MVP (Lists, Tasks, Completion, Deletion, Web UI) across 5 sprints.
 
 Stories
-- [SPEC-ISSUE-0005] Ensure backlog issues are proactively reviewed and scheduled prior to sprint planning.
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 - [US-0001] Create To-Do List
   - [x] DRAFT
   - [x] READY
@@ -89,6 +82,13 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
+- [SPEC-ISSUE-0005] Ensure backlog issues are proactively reviewed and scheduled prior to sprint planning.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0003] Toggle Task Completion
   - [x] DRAFT
   - [x] READY

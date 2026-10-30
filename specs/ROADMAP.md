@@ -43,7 +43,7 @@ Stories
 - [SPEC-ISSUE-0004] Maintain disciplined backlog planning and ensure all issues are tracked cleanly through workflow stages.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

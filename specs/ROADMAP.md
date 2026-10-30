@@ -26,9 +26,9 @@ Stories
 - [US-0007] View task summary counts per list
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 
 ### v0.2 — Next iteration (target: YYYY-MM)

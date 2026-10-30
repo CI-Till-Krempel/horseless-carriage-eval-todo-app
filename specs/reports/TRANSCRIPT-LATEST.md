@@ -6,21 +6,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## ScrumOrchestrator
-
-Setting up virtual keys for specialist agents and transferring to Product Owner to begin conceptual work and backlog grooming.
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
 ## ProductOwner
-- 🔧 `list_docs()`
-- 🔧 `upsert_prd(content="# Product Requiremen...", filename="PRD-Todo-App.md")`
-- 🔧 `update_roadmap(version="v0.1.0", goals=['Establish product ..., stories=['US-0001', 'US-0002...)`
-- 🔧 `upsert_epic(epic={'title': 'Core To-D...)`
-- 🔧 `upsert_story(story={'title': 'Create a ...)`
-- 🔧 `upsert_story(story={'priority': 'Must',...)`
-- 🔧 `upsert_story(story={'value_hypothesis':...)`
-- 🔧 `upsert_story(story={'depends_on': ['US-...)`
-- 🔧 `upsert_story(story={'depends_on': ['US-...)`
 - 🔧 `upsert_story(story={'depends_on': ['US-...)`
 - 🔧 `advance_story_stage(stage="Draft", title_or_id="US-0001")`
 - 🔧 `advance_story_stage(stage="Ready", title_or_id="US-0001")`
@@ -355,3 +341,29 @@ I am transferring back to ScrumOrchestrator.
 ## ProductOwner
 - 🔧 `record_acceptance_check(title_or_id="US-0003", note="Verified acceptance ...")`
 - 🔧 `advance_story_stage(stage="Accepted", title_or_id="US-0003")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `calculate_kpis()`
+
+I am now updating the sprint report with the calculated KPIs to record team effectiveness, result quality, maintainability, and security metrics for this sprint.
+- 🔧 `update_sprint_report(kpis={'result_quality': {...)`
+
+I am now adding a retrospective action item to continuously review code quality and security scan results.
+
+I am now generating the sprint report to summarize accomplishments, KPIs, and review findings for Sprint 2.
+- 🔧 `create_sprint_report(summary="Sprint 2 was success...", accomplishments=['Successfully compl...)`
+
+I have successfully completed the sprint close sequence:
+1. Calculated and verified KPIs (Say/Do ratio 1.0, 99% test coverage, and code complexity).
+2. Updated the sprint report with metrics, accomplishments, and team performance data.
+3. Generated the comprehensive Sprint Review Report (`specs/reports/SPRINT-REPORT-002.md`).
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(body="Release PR for Sprin...", title="Release Sprint 2")`

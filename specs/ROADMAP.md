@@ -52,6 +52,20 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
+- [SPEC-ISSUE-0002] Sprint budget or iteration boundary reached with US-0003, US-0004, US-0005 remaining.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [SPEC-ISSUE-0001] Ensure all planned stories are fully developed and accepted within sprint timebox or cleanly scoped.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0003] Toggle Task Completion
   - [x] DRAFT
   - [x] READY

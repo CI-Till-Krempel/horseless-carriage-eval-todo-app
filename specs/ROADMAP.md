@@ -36,7 +36,7 @@ Stories
 - [SPEC-ISSUE-0003] Ensure stories and issues are planned accurately with realistic estimates and tracked cleanly through the workflow stages.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0002
 - Title: GitHub pull request review API prevents authors from self-approving PRs when acting across roles in automated runs.
-- Status: Tested
+- Status: Accepted
 - Priority: Must
 - Owner: Architect
 - Last Updated: 2026-10-30

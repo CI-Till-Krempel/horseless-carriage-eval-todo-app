@@ -23,6 +23,27 @@ Tip: If you prefer standard checkboxes only, use the Kanban tables below and kee
 Goals
 - Implement US-0007 and US-0008 to enhance To-Do application functionality as outlined in the roadmap.
 Stories
+- [SPEC-ISSUE-0003] Address SPEC-ISSUE-0003 retro-filed issue
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0008] Clear all completed tasks
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0004] Delete a task
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0007] View task summary counts per list
   - [x] DRAFT
   - [x] READY
@@ -75,20 +96,6 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
-- [US-0008] Clear all completed tasks
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-0004] Delete a task
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 - [US-0005] Delete an entire list
   - [x] DRAFT
   - [x] READY

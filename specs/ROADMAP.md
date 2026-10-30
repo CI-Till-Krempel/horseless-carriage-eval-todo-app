@@ -55,7 +55,7 @@ Stories
 - [SPEC-ISSUE-0002] Sprint budget or iteration boundary reached with US-0003, US-0004, US-0005 remaining.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

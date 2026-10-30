@@ -2,7 +2,7 @@
 
 - Story ID: US-0007
 - Title: View task summary counts per list
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-30

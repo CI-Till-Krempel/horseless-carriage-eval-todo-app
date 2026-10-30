@@ -28,7 +28,7 @@ Stories
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [ ] TESTED
+  - [x] TESTED
   - [ ] ACCEPTED
 
 ### v0.2 — Next iteration (target: YYYY-MM)

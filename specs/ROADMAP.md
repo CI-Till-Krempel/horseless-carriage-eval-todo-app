@@ -64,7 +64,7 @@ Stories
 - [SPEC-ISSUE-0002] GitHub pull request review API prevents authors from self-approving PRs when acting across roles in automated runs.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
@@ -75,14 +75,14 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0004] Delete a task
+- [US-0008] Clear all completed tasks
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0008] Clear all completed tasks
+- [US-0004] Delete a task
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

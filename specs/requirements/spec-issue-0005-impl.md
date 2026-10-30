@@ -1,0 +1,1 @@
+# SPEC-ISSUE-0005 Implementation Plan & Notes\n\n- Reviewed backlog items proactively before sprint planning.\n- Ensured all Must-priority issues are scheduled or updated.\n

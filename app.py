@@ -25,5 +25,18 @@ def create_list():
         list_id_counter += 1
     return redirect(url_for('index'))
 
+@app.route('/lists/<int:list_id>/tasks', methods=['POST'])
+def add_task(list_id):
+    global task_id_counter
+    text = request.form.get('text')
+    if list_id in todos and text:
+        todos[list_id]['tasks'].append({
+            'id': task_id_counter,
+            'text': text,
+            'completed': False
+        })
+        task_id_counter += 1
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True)

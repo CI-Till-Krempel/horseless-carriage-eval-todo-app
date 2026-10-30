@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0004
 - Title: Maintain disciplined backlog planning and ensure all issues are tracked cleanly through workflow stages.
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-10-30

@@ -29,7 +29,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 
 ### v0.2 — Next iteration (target: YYYY-MM)
 Goals

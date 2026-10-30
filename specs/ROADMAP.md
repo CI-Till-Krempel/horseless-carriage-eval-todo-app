@@ -74,7 +74,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0008] Clear all completed tasks
   - [x] DRAFT
   - [x] READY

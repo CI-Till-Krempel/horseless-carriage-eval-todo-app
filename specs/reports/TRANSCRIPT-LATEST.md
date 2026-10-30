@@ -7,16 +7,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## DevTeam
-- 🔧 `read_doc(path="specs/stories/US-000...")`
-
-I am checking git status or directory contents via read_doc or running list_docs to see the source files.
-- 🔧 `read_doc(path="specs/stories/US-000...")`
-
-I am checking the sprint backlog PR requirements by reading recent reports.
-- 🔧 `read_doc(path="specs/reports/SPRINT...")`
-
-I am reading the app.py implementation file to check the current to-do application codebase.
-- 🔧 `read_doc(path="app.py")`
 
 I am checking list_docs or other specs/reports to see if app.py is mentioned or if we can find files. Wait, read_doc can only read within specs/ or spec-templates/. Let's list files or check if there are other files in specs/. Wait, we have tool calls. Let's check what tools we have to read non-spec files, or if read_doc is the only reader. Wait, read_doc only reads spec-templates/ or specs/. But wait, how do we read app.py? Wait, can we use read_doc? The error says `Access denied. Path 'app.py' must be within 'spec-templates/' or 'specs/'.` But wait, DevTeam needs to write code files via write_file. Let's write `app.py` or inspect if it exists. Wait, let's check if app.py exists by trying to write or checking list_docs. Wait, list_docs only lists specs/ and spec-templates/. Let's create our implementation plan for US-0007.
 - 🔧 `plan_sprint_backlog_item(plan={'risks_assumptions'..., title_or_id="US-0007")`
@@ -326,3 +316,18 @@ I am adding a retrospective action item to improve process efficiency and team c
 
 I am updating the sprint report with the latest KPI calculations.
 - 🔧 `update_sprint_report(kpis={'customer_satisfact...)`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `calculate_kpis()`
+- 🔧 `update_sprint_report(kpis={'prompt_context_usa...)`
+- 🔧 `create_sprint_report(summary="Sprint 4 concluded s...", accomplishments=['Successfully compl...)`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(title="Release Sprint 4", body="Sprint 4 release PR ...")`

@@ -16,4 +16,9 @@
 Users can populate lists with specific tasks.
 
 ## Test Approach
+Pytest with Flask test client.
 
+### Tasks
+- Add POST /lists/<list_id>/tasks route
+- Update HTML template to include task input form under each list
+- Write unit test for adding tasks

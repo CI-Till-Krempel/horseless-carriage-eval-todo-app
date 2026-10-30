@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-10-30
@@ -16,4 +16,9 @@
 Users can successfully initiate and view new task lists.
 
 ## Test Approach
+Pytest with Flask test client.
 
+### Tasks
+- Create Flask application structure
+- Implement list creation route and template
+- Write unit tests for list creation

@@ -82,6 +82,13 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
+- [SPEC-ISSUE-0005] Ensure backlog issues are proactively reviewed and scheduled prior to sprint planning.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0003] Toggle Task Completion
   - [x] DRAFT
   - [x] READY

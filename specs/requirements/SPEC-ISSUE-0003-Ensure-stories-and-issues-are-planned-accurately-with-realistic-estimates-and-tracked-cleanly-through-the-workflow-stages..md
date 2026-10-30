@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0003
 - Title: Ensure stories and issues are planned accurately with realistic estimates and tracked cleanly through the workflow stages.
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-10-30

@@ -17,4 +17,7 @@ GitHub pull request review API prevents authors from self-approving PRs when act
 
 
 ## Test Approach
+Confirm PR comment sign-offs work correctly.
 
+### Tasks
+- Log decision for SPEC-ISSUE-0002

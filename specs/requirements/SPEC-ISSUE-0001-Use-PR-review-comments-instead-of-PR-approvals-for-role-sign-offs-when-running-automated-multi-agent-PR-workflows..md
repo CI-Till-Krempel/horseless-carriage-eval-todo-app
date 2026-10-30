@@ -17,4 +17,7 @@ Use PR review comments instead of PR approvals for role sign-offs when running a
 
 
 ## Test Approach
+Verify multi-agent PR comment sign-off workflow.
 
+### Tasks
+- Log decision regarding PR review comments sign-off

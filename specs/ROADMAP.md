@@ -23,10 +23,17 @@ Tip: If you prefer standard checkboxes only, use the Kanban tables below and kee
 Goals
 - Implement US-0007 and US-0008 to enhance To-Do application functionality as outlined in the roadmap.
 Stories
+- [US-0007] View task summary counts per list
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [SPEC-ISSUE-0003] Address SPEC-ISSUE-0003 retro-filed issue
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
@@ -44,13 +51,6 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0007] View task summary counts per list
-  - [x] DRAFT
-  - [x] READY
-  - [x] IMPLEMENTED
-  - [x] REVIEWED
-  - [x] TESTED
-  - [x] ACCEPTED
 
 ### v0.2 — Next iteration (target: YYYY-MM)
 Goals

@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0005
 - Title: Ensure backlog issues are proactively reviewed and scheduled prior to sprint planning.
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: ProductOwner
 - Last Updated: 2026-10-30

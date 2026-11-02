@@ -16,4 +16,9 @@
 
 
 ## Test Approach
+Write unit tests using pytest and Flask test client.
 
+### Tasks
+- Add toggle route in app.py
+- Add UI toggle button/checkbox
+- Add tests for task completion toggle

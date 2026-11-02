@@ -17,4 +17,4 @@ Maintain rigorous test isolation and ensure all test fixtures properly reset app
 
 
 ## Test Approach
-
+Write pytest unit tests verifying state does not leak between test functions.

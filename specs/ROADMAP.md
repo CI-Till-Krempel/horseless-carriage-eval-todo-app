@@ -50,7 +50,7 @@ Stories
 - [SPEC-ISSUE-0003] Maintain rigorous test isolation and ensure all test fixtures properly reset app state.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

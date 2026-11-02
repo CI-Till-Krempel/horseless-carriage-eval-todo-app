@@ -5,8 +5,6 @@ app = Flask(__name__)
 # In-memory database for Sprint 1 MVP
 lists = []
 tasks = []
-list_counter = 0
-task_counter = 0
 
 @app.route('/')
 def index():
@@ -14,21 +12,17 @@ def index():
 
 @app.route('/lists', methods=['POST'])
 def create_list():
-    global list_counter
     name = request.form.get('name')
     if name:
-        list_counter += 1
-        list_id = list_counter
+        list_id = (max([l['id'] for l in lists]) + 1) if lists else 1
         lists.append({'id': list_id, 'name': name})
     return redirect(url_for('index'))
 
 @app.route('/lists/<int:list_id>/tasks', methods=['POST'])
 def add_task(list_id):
-    global task_counter
     description = request.form.get('description')
     if description:
-        task_counter += 1
-        task_id = task_counter
+        task_id = (max([t['id'] for t in tasks]) + 1) if tasks else 1
         tasks.append({'id': task_id, 'list_id': list_id, 'description': description, 'completed': False})
     return redirect(url_for('index'))
 

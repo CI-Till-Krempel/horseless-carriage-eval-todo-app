@@ -2,7 +2,7 @@
 
 - Story ID: US-0005
 - Title: Delete List
-- Status: Draft
+- Status: Ready
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-02

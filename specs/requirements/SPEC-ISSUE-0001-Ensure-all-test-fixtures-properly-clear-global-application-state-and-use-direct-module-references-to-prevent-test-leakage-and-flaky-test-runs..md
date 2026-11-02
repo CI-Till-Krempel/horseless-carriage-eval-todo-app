@@ -17,4 +17,4 @@ Ensure all test fixtures properly clear global application state and use direct 
 
 
 ## Test Approach
-
+Run pytest to confirm fixture behavior

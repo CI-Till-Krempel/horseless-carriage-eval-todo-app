@@ -17,4 +17,7 @@ Ensure all team members engage on PRs early to maintain review cadence.
 
 
 ## Test Approach
+Manual/automated check of PR reviews and comments.
 
+### Tasks
+- Verify all team member engagement on sprint backlog PR

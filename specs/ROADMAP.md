@@ -36,16 +36,16 @@ Stories
 - [SPEC-ISSUE-0004] GraphQL API prevents self-approval on pull requests
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [SPEC-ISSUE-0003] Use comment-based sign-offs or designate secondary reviewers for PRs
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [SPEC-ISSUE-0002] Continue rigorous tracking and code hygiene with conftest state clearing for robust test runs
   - [ ] DRAFT

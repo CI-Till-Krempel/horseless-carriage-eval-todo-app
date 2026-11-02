@@ -14,7 +14,7 @@
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: Test failure in test_app.py: test_create_list failed because form field name 'name' was expected by an earlier test file whereas app.py expects 'title'.
+- ⚠️ REVIEW DENIED at Tested by QA: Test failure in tests/test_todo.py: test_add_task failed because task addition does not display the added task description correctly in the rendered HTML or list ID routing mismatch.
 
 ## Test Approach
 Pytest unit/integration tests for adding a task to a list.

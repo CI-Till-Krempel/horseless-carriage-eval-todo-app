@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 # In-memory database for lists and tasks
-# lists: dict mapping list_id -> {"id": list_id, "title": title, "tasks": [ {"id": task_id, "description": desc, "completed": False} ] }
 lists = {}
 list_counter = 1
 task_counter = 1
@@ -17,7 +16,8 @@ def create_list():
     global list_counter
     title = request.form.get('title')
     if title:
-        lists[str(list_counter)] = {"id": str(list_counter), "title": title, "tasks": []}
+        lid = str(list_counter)
+        lists[lid] = {"id": lid, "title": title, "tasks": []}
         list_counter += 1
     return redirect(url_for('index'))
 

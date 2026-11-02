@@ -16,4 +16,9 @@
 
 
 ## Test Approach
+Write pytest test cases checking task status toggle behavior.
 
+### Tasks
+- Add route for toggling task completion status
+- Update frontend template to include toggle button/checkbox
+- Add unit/integration test for toggling task status

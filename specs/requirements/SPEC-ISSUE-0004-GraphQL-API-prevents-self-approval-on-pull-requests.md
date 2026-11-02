@@ -1,20 +1,10 @@
-# Issue
+# SPEC-ISSUE-0004: GraphQL API prevents self-approval on pull requests
 
-- Issue ID: SPEC-ISSUE-0004
-- Title: GraphQL API prevents self-approval on pull requests
-- Status: Ready
-- Priority: Must
+- Status: Implemented
 - Owner: ScrumMaster
-- Last Updated: 2026-11-02
 
-## Overview
+## Description
 GraphQL API prevents self-approval on pull requests, requiring comment overrides or admin merges.
 
-## Acceptance Criteria
-- Given the GraphQL API prevents self-approval, When an impediment occurs, Then alternative methods or reviews are used.
-
-## Notes
-
-
-## Test Approach
-
+## Resolution
+Documented that comment-based sign-offs and human approval records via `record_human_approval` are used when self-approval restrictions are encountered.

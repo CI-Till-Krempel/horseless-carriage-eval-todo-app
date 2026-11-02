@@ -36,7 +36,7 @@ Stories
 - [SPEC-ISSUE-0004] GraphQL API prevents self-approval on pull requests
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

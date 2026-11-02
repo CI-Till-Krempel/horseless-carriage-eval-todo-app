@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to List
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-02
@@ -14,7 +14,6 @@
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: Test failure in tests/test_todo.py: test_add_task fails because the lists dictionary in app.py is not reset or cleared between test requests in client fixture, causing list ID mismatch or empty task list.
 
 ## Test Approach
 Pytest unit/integration tests for adding a task to a list.

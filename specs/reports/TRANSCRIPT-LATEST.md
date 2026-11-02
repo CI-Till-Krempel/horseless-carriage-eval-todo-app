@@ -7,13 +7,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## ProductOwner
-- 🔧 `upsert_story(story={'title': 'Add Task ...)`
-- 🔧 `upsert_story(story={'acceptance_criteri...)`
-- 🔧 `upsert_story(story={'description': 'As ...)`
-- 🔧 `upsert_story(story={'priority': 'Must',...)`
-- 🔧 `upsert_story(story={'id': 'US-0006', 'u...)`
-- 🔧 `advance_story_stage(stage="Draft", title_or_id="US-0002")`
-- 🔧 `advance_story_stage(stage="Draft", title_or_id="US-0003")`
 - 🔧 `advance_story_stage(stage="Draft", title_or_id="US-0004")`
 - 🔧 `advance_story_stage(title_or_id="US-0005", stage="Draft")`
 - 🔧 `advance_story_stage(title_or_id="US-0006", stage="Draft")`
@@ -345,3 +338,18 @@ I am transferring to ScrumMaster to complete the sprint review and release.
 
 I am advancing US-0002 to Implemented.
 - 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `calculate_kpis()`
+- 🔧 `update_sprint_report(kpis={'prompt_context_usa...)`
+- 🔧 `create_sprint_report(summary="Sprint 2 was success...", accomplishments=['Completed Sprint 2...)`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(body="Sprint 2 release con...", title="Sprint 2 Release PR")`

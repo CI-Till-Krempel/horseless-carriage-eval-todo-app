@@ -47,35 +47,35 @@ Stories
   - [ ] ACCEPTED
 - [US-0002] Add Task to List
   - [x] DRAFT
-  - [ ] READY
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
-  - [ ] READY
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0004] Delete Task
   - [x] DRAFT
-  - [ ] READY
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0005] Delete List
   - [x] DRAFT
-  - [ ] READY
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] View All Lists and Tasks
   - [x] DRAFT
-  - [ ] READY
+  - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED

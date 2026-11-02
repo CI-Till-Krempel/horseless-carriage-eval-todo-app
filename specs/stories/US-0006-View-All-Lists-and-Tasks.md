@@ -2,7 +2,7 @@
 
 - Story ID: US-0006
 - Title: View All Lists and Tasks
-- Status: Draft
+- Status: Ready
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-02

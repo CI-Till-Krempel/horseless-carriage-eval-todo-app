@@ -83,6 +83,14 @@
       "acceptance_check_note": "Verified acceptance criteria for US-0002 (Add Task to List)."
     },
     {
+      "title": "Ensure test fixtures reset app module counters properly on creation to avoid test isolation failures.",
+      "overview": "Ensure test fixtures reset app module counters properly on creation to avoid test isolation failures.",
+      "owner": "DevTeam",
+      "type": "Issue",
+      "id": "SPEC-ISSUE-0002",
+      "priority": "Must"
+    },
+    {
       "description": "As a user, I want to mark a task as complete or incomplete so that I can track progress.",
       "title": "Mark Task Complete or Incomplete",
       "acceptance_criteria": [
@@ -160,11 +168,11 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Implement core features and bug fixes for sprint 2",
-  "sprint_number": 2,
-  "sprint_backlog_pr_sprint": 2,
+  "sprint_goal": "Continue implementing core functionality and improving test coverage based on the roadmap",
+  "sprint_number": 3,
+  "sprint_backlog_pr_sprint": 0,
   "sprint_backlog_pr_opened": true,
-  "planning_output_commit_count": 15,
+  "planning_output_commit_count": 18,
   "sprint_backlog_pr_content_baseline": 7,
   "sprint_backlog": [
     {
@@ -259,6 +267,16 @@
       "sprint_number": 1,
       "recurs_since_sprint": null,
       "issue_id": "SPEC-ISSUE-0001"
+    },
+    {
+      "action": "Ensure test fixtures reset app module counters properly on creation to avoid test isolation failures.",
+      "owner": "DevTeam",
+      "success_metric": "Zero test isolation or fixture counter mismatch failures in future sprints.",
+      "status": "open",
+      "category": "technical",
+      "sprint_number": 2,
+      "recurs_since_sprint": null,
+      "issue_id": "SPEC-ISSUE-0002"
     }
   ],
   "decision_log": [
@@ -273,17 +291,11 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.5336310799999999
+    "current_usd_spend": 0.6221934600000001
   },
   "token_usage": {
-    "total": 5069150,
-    "agents": {
-      "ScrumMaster": 14117,
-      "ProductOwner": 371809,
-      "DevTeam": 2460441,
-      "Architect": 1096026,
-      "QA": 1126757
-    }
+    "total": 0,
+    "agents": {}
   },
   "story_estimates": {
     "US-0001": {
@@ -300,8 +312,8 @@
     }
   },
   "sprint_report_kpis": {},
-  "kpi_update_count": 1,
-  "kpi_baseline": 1,
+  "kpi_update_count": 2,
+  "kpi_baseline": 2,
   "backlog_scope_complete": false,
   "repo": {
     "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
@@ -319,12 +331,21 @@
     },
     {
       "role": "user",
-      "content": "This is sprint 2 of 5. Continue the product vision from before - check the existing repo content (specs/, code, .hc/state.json) before planning, so you build on what's already there rather than repeating or contradicting it. As before: the sprint goal and backlog are pre-approved. Start by calling start_sprint(goal) to officially kick off this sprint - it mechanically resets the sprint's own token/event budget, so skipping it leaves this sprint silently running on whatever budget the previous sprint already spent. Then proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) without waiting for further approval. Do not ask me anything else during this sprint."
+      "content": "This is sprint 3 of 5. Continue the product vision from before - check the existing repo content (specs/, code, .hc/state.json) before planning, so you build on what's already there rather than repeating or contradicting it. As before: the sprint goal and backlog are pre-approved. Start by calling start_sprint(goal) to officially kick off this sprint - it mechanically resets the sprint's own token/event budget, so skipping it leaves this sprint silently running on whatever budget the previous sprint already spent. Then proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) without waiting for further approval. Do not ask me anything else during this sprint."
     }
   ],
   "hc_version": "0.1.0",
-  "retro_baseline": 1,
-  "human_approvals": [],
+  "retro_baseline": 2,
+  "human_approvals": [
+    {
+      "type": "release",
+      "note": "Approved release PR for sprint 2 increment."
+    },
+    {
+      "type": "release",
+      "note": "Approved sprint 2 release PR."
+    }
+  ],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
   "dev_touch_baseline": 7,
@@ -349,7 +370,11 @@
     "specs/reports/SPRINT-REPORT-001.md",
     "specs/reports/SPRINT-REPORT-LATEST.md",
     "specs/reports/RETRO-001.md",
-    "tests/test_todo.py"
+    "tests/test_todo.py",
+    "specs/requirements/SPEC-ISSUE-0002-Ensure-test-fixtures-reset-app-module-counters-properly-on-creation-to-avoid-test-isolation-failures..md",
+    "specs/reports/TRANSCRIPT-002.md",
+    "specs/reports/SPRINT-REPORT-002.md",
+    "specs/reports/RETRO-002.md"
   ],
   "source_content_change_count": 12,
   "last_check_build": {
@@ -369,7 +394,7 @@
   },
   "architect_review_baseline": 7,
   "qa_review_baseline": 13,
-  "qa_tested_baseline": 1,
+  "qa_tested_baseline": 3,
   "content_loss_warnings": [],
   "content_loss_acknowledged_baseline": 0,
   "sprint_backlog_engagement_baseline": {
@@ -377,7 +402,17 @@
     "QA": 2
   },
   "sprint_report_pending_release": false,
-  "blocking_interactions": [],
+  "blocking_interactions": [
+    {
+      "id": 1,
+      "kind": "critical_error",
+      "summary": "🚫 [TOKEN BUDGET EXCEEDED] Sprint token limit (5,000,000) reached. Current usage: 5,259,860. Agent execution halted.",
+      "detail": "To resume immediately: raise SPRINT_TOKEN_BUDGET in .env and restart the agent container. To let this sprint close out as-is: no action needed - Scrum Master's own ritual budget lets it close the sprint out (retro/KPIs/report) regardless, and Product Owner has a small grace allowance left to finish the release PR; check list_blocking_interactions() or this log for confirmation once it does.",
+      "created_at": "2026-11-02T09:06:43.578286+00:00",
+      "resolved": false,
+      "resolved_at": null
+    }
+  ],
   "overclaim_rejection_counts": {},
   "general_blockers": [],
   "steering_proposal_count": 0,
@@ -386,6 +421,6 @@
   "framework_change_proposal_count": 0,
   "framework_change_proposals": [],
   "blocked_story_ids_as_of_last_report": [],
-  "accepted_count_baseline": 1,
+  "accepted_count_baseline": 3,
   "version_goals": {}
 }

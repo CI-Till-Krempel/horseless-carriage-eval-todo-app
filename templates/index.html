@@ -2,20 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>To-Do List Web App</title>
+    <title>To-Do App</title>
 </head>
 <body>
-    <h1>To-Do Lists</h1>
+    <h1>To-Do App</h1>
+    
+    <h2>Create New List</h2>
     <form action="/lists" method="POST">
-        <input type="text" name="name" placeholder="New List Name" required>
+        <input type="text" name="title" placeholder="List Title" required>
         <button type="submit">Create List</button>
     </form>
-    <ul>
-        {% for list_name in lists %}
-            <li>
-                <strong>{{ list_name }}</strong>
-            </li>
-        {% endfor %}
-    </ul>
+
+    <h2>Lists</h2>
+    {% for lst in lists %}
+        <div>
+            <h3>{{ lst.title }}</h3>
+            <form action="/lists/{{ lst.id }}/tasks" method="POST">
+                <input type="text" name="description" placeholder="Task description" required>
+                <button type="submit">Add Task</button>
+            </form>
+            <ul>
+                {% for task in lst.tasks %}
+                    <li>{{ task.description }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
 </body>
 </html>

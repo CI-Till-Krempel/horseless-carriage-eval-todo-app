@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0001
 - Title: Ensure all team members engage on PRs early to maintain review cadence.
-- Status: Implemented
+- Status: Reviewed
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-02

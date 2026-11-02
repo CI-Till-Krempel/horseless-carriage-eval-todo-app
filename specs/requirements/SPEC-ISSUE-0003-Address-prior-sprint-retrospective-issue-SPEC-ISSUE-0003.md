@@ -17,4 +17,8 @@ Ensure all test requirements and path configurations are established early in th
 
 
 ## Test Approach
+Run pytest to verify proper path resolution and execution.
 
+### Tasks
+- Configure pytest / sys.path correctly in conftest.py
+- Add a test covering the configuration

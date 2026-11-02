@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0002
 - Title: Ensure test modules correctly set python path and avoid stub tests during story implementation.
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-02
@@ -17,4 +17,8 @@ Ensure test modules correctly set python path and avoid stub tests during story 
 
 
 ## Test Approach
+Run pytest and check execution status
 
+### Tasks
+- Update test setup/conftest or test files to include source path
+- Verify pytest passes without import errors or stub failures

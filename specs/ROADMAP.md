@@ -101,9 +101,9 @@ Stories
 - [SPEC-ISSUE-0002] Ensure test modules correctly set python path and avoid stub tests during story implementation.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 
 

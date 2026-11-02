@@ -16,4 +16,9 @@
 
 
 ## Test Approach
+Pytest integration tests for task creation
 
+### Tasks
+- Implement task addition route/logic
+- Add unit and integration tests
+- Verify CI checks passing

@@ -57,9 +57,9 @@ Stories
 - [SPEC-ISSUE-0004] Maintain early PR engagement and review cadence across all team members on sprint backlog items.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 ---
 

@@ -81,6 +81,19 @@ Stories
   - [ ] ACCEPTED
 
 
+### 2.0.0
+Goals
+
+Stories
+- [SPEC-ISSUE-0001] Streamline feature branching and PR creation workflow for initial stories.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

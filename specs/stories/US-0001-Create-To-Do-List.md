@@ -14,7 +14,7 @@
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: Tests test_delete_task and test_delete_list still fail because route parameters in test requests (e.g. /lists/1/tasks or /lists/1/delete) use hardcoded ID 1, whereas the auto-incrementing ID counters continue incrementing across requests without resetting per test, leading to 404 or non-matching IDs on deletion routes.
+- ⚠️ REVIEW DENIED at Tested by QA: Tests test_delete_task and test_delete_list still fail because global lists and tasks lists are not cleared between test functions in tests/test_app.py (or test client requests don't clear app-level state), causing leftover tasks/lists from prior tests to interfere with assertions.
 
 ## Test Approach
 Use pytest and Flask test client to verify list creation endpoint and UI rendering.

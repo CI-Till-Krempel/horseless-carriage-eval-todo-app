@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0003
 - Title: Address prior sprint retrospective issue SPEC-ISSUE-0003
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-02
@@ -17,4 +17,8 @@ Ensure all test requirements and path configurations are established early in th
 
 
 ## Test Approach
+Run pytest to verify proper path resolution and execution.
 
+### Tasks
+- Configure pytest / sys.path correctly in conftest.py
+- Add a test covering the configuration

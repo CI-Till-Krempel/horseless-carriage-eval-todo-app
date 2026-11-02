@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-02
@@ -16,4 +16,8 @@
 
 
 ## Test Approach
+Pytest unit/integration tests for adding a task to a list.
 
+### Tasks
+- Write backend/frontend code for adding tasks
+- Write tests for adding tasks

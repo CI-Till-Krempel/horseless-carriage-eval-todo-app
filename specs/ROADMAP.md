@@ -48,9 +48,9 @@ Stories
 - [SPEC-ISSUE-0001] Ensure all test fixtures properly clear global application state and use direct module references to prevent test leakage and flaky test runs.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0002] Add Task to List
   - [x] DRAFT

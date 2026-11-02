@@ -21,7 +21,7 @@ def create_list():
 
 @app.route('/lists/<int:list_id>/tasks', methods=['POST'])
 def add_task(list_id):
-    content = request.form.get('content')
+    content = request.form.get('content') or request.form.get('description')
     if content:
         task_id = len(tasks) + 1
         tasks.append({'id': task_id, 'list_id': list_id, 'content': content, 'completed': False})
@@ -67,7 +67,7 @@ def api_tasks(list_id):
     global tasks
     if request.method == 'POST':
         data = request.get_json() or {}
-        content = data.get('content')
+        content = data.get('content') or data.get('description')
         if not content:
             return jsonify({'error': 'Content is required'}), 400
         task_id = len(tasks) + 1

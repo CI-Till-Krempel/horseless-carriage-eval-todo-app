@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Ready
+- Status: Implemented
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-02
@@ -16,4 +16,9 @@
 
 
 ## Test Approach
+Write pytest test cases checking task status toggle behavior.
 
+### Tasks
+- Add route for toggling task completion status
+- Update frontend template to include toggle button/checkbox
+- Add unit/integration test for toggling task status

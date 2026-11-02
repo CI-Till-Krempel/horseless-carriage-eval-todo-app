@@ -17,4 +17,8 @@ Ensure test fixtures reset app module counters properly on creation to avoid tes
 
 
 ## Test Approach
+Run pytest to ensure test isolation holds
 
+### Tasks
+- Inspect app module state initialization and test fixtures
+- Update fixture creation to reset internal counters

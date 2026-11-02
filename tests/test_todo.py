@@ -1,11 +1,14 @@
 import pytest
 from app import app, lists
+import app as app_module
 
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
     with app.test_client() as client:
         lists.clear()
+        app_module.list_counter = 1
+        app_module.task_counter = 1
         yield client
 
 def test_create_list(client):

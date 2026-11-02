@@ -14,7 +14,7 @@
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: Test failure in tests/test_todo.py: test_add_task fails because the template does not render tasks for the list or the list ID doesn't match the URL parameter.
+- ⚠️ REVIEW DENIED at Tested by QA: Test failure in tests/test_todo.py: test_add_task fails because the lists dictionary in app.py is not reset or cleared between test requests in client fixture, causing list ID mismatch or empty task list.
 
 ## Test Approach
 Pytest unit/integration tests for adding a task to a list.

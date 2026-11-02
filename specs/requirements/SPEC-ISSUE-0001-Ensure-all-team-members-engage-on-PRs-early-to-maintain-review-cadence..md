@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0001
 - Title: Ensure all team members engage on PRs early to maintain review cadence.
-- Status: Draft
+- Status: Ready
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-02
@@ -11,7 +11,7 @@
 Ensure all team members engage on PRs early to maintain review cadence.
 
 ## Acceptance Criteria
-
+- - Given a PR is opened, When team members review it, Then all team members engage on PRs early to maintain review cadence.
 
 ## Notes
 

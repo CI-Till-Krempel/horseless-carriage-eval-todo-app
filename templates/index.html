@@ -3,30 +3,41 @@
 <head>
     <meta charset="utf-8">
     <title>To-Do App</title>
+    <style>
+        .completed { text-decoration: line-through; color: gray; }
+    </style>
 </head>
 <body>
-    <h1>To-Do App</h1>
+    <h1>To-Do Lists</h1>
     
-    <h2>Create New List</h2>
-    <form action="/lists" method="POST">
-        <input type="text" name="title" placeholder="List Title" required>
+    <form action="/list" method="POST">
+        <input type="text" name="name" placeholder="New List Name" required>
         <button type="submit">Create List</button>
     </form>
 
-    <h2>Lists</h2>
-    {% for lst in lists %}
-        <div>
-            <h3>{{ lst.title }}</h3>
-            <form action="/lists/{{ lst.id }}/tasks" method="POST">
-                <input type="text" name="description" placeholder="Task description" required>
+    <ul>
+    {% for list_id, lst in lists.items() %}
+        <li>
+            <strong>{{ lst.name }}</strong>
+            <form action="/task" method="POST" style="display:inline;">
+                <input type="hidden" name="list_id" value="{{ list_id }}">
+                <input type="text" name="title" placeholder="New Task" required>
                 <button type="submit">Add Task</button>
             </form>
             <ul>
-                {% for task in lst.tasks %}
-                    <li>{{ task.description }}</li>
-                {% endfor %}
+            {% for task_id, task in tasks.items() %}
+                {% if task.list_id == list_id %}
+                    <li>
+                        <form action="/task/{{ task_id }}/toggle" method="POST" style="display:inline;">
+                            <button type="submit">{% if task.completed %}Incomplete{% else %}Complete{% endif %}</button>
+                        </form>
+                        <span class="{% if task.completed %}completed{% endif %}">{{ task.title }}</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
             </ul>
-        </div>
+        </li>
     {% endfor %}
+    </ul>
 </body>
 </html>

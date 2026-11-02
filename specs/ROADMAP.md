@@ -94,6 +94,19 @@ Stories
   - [x] ACCEPTED
 
 
+### v0.3.0
+Goals
+
+Stories
+- [SPEC-ISSUE-0002] Ensure test modules correctly set python path and avoid stub tests during story implementation.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

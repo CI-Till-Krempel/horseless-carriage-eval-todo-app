@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-02
@@ -16,4 +16,9 @@
 
 
 ## Test Approach
+Write unit tests using pytest and Flask test client.
 
+### Tasks
+- Add toggle route in app.py
+- Add UI toggle button/checkbox
+- Add tests for task completion toggle

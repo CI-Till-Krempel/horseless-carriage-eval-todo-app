@@ -24,7 +24,13 @@ def add_task(list_id):
     content = request.form.get('content') or request.form.get('description')
     if content:
         task_id = len(tasks) + 1
-        tasks.append({'id': task_id, 'list_id': list_id, 'content': content, 'completed': False})
+        tasks.append({
+            'id': task_id,
+            'list_id': list_id,
+            'content': content,
+            'description': content,
+            'completed': False
+        })
     return redirect(url_for('index'))
 
 @app.route('/tasks/<int:task_id>/toggle', methods=['POST'])
@@ -71,7 +77,13 @@ def api_tasks(list_id):
         if not content:
             return jsonify({'error': 'Content is required'}), 400
         task_id = len(tasks) + 1
-        new_task = {'id': task_id, 'list_id': list_id, 'content': content, 'completed': False}
+        new_task = {
+            'id': task_id,
+            'list_id': list_id,
+            'content': content,
+            'description': content,
+            'completed': False
+        }
         tasks.append(new_task)
         return jsonify(new_task), 201
     list_tasks = [t for t in tasks if t['list_id'] == list_id]

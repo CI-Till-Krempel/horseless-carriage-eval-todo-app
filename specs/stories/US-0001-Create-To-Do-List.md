@@ -16,4 +16,4 @@
 
 
 ## Test Approach
-
+Use pytest and Flask test client to verify list creation endpoint and UI rendering.

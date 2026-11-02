@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0002
 - Title: Ensure test fixtures reset app module counters properly on creation to avoid test isolation failures.
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-02
@@ -17,4 +17,8 @@ Ensure test fixtures reset app module counters properly on creation to avoid tes
 
 
 ## Test Approach
+Run pytest to ensure test isolation holds
 
+### Tasks
+- Inspect app module state initialization and test fixtures
+- Update fixture creation to reset internal counters

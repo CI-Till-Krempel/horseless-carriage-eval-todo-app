@@ -95,9 +95,12 @@
       "description": "Ensure test fixtures reset app module counters properly on creation to avoid test isolation failures.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready",
+      "status": "Tested",
       "version": "Backlog (unplanned)"
     },
     {
@@ -180,90 +183,47 @@
   ],
   "sprint_goal": "Continue implementing core functionality and improving test coverage based on the roadmap",
   "sprint_number": 3,
-  "sprint_backlog_pr_sprint": 0,
+  "sprint_backlog_pr_sprint": 3,
   "sprint_backlog_pr_opened": true,
-  "planning_output_commit_count": 18,
-  "sprint_backlog_pr_content_baseline": 7,
+  "planning_output_commit_count": 21,
+  "sprint_backlog_pr_content_baseline": 19,
   "sprint_backlog": [
     {
-      "id": "US-0002",
-      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
-      "title": "Add Task to List",
-      "priority": "Must",
-      "acceptance_criteria": [
-        "Given a to-do list exists, When the user adds a task with a description, Then the task appears within that list."
-      ],
-      "type": "User Story",
-      "version": "v1.0.0",
-      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
-      "stages_completed": [
-        "Draft",
-        "Ready",
-        "Implemented",
-        "Reviewed",
-        "Tested",
-        "Accepted"
-      ],
-      "status": "Accepted",
-      "approach": "Implement task addition functionality in the application backend/frontend, adhering to US-0002 requirements.",
-      "dod_checks": [
-        "Automated tests passing",
-        "Code reviewed-ready"
-      ],
-      "risks_assumptions": [
-        "Assumes existing code structure from US-0001."
-      ],
-      "tasks": [
-        "Write backend/frontend code for adding tasks",
-        "Write tests for adding tasks"
-      ],
-      "code_files": [
-        "app.py",
-        "tests/test_todo.py"
-      ],
-      "estimate": 100,
-      "test_approach": "Pytest unit/integration tests for adding a task to a list.",
-      "review_denial": null,
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified acceptance criteria for US-0002 (Add Task to List)."
-    },
-    {
-      "title": "Ensure all team members engage on PRs early to maintain review cadence.",
-      "overview": "Ensure all team members engage on PRs early to maintain review cadence.",
+      "title": "Ensure test fixtures reset app module counters properly on creation to avoid test isolation failures.",
+      "overview": "Ensure test fixtures reset app module counters properly on creation to avoid test isolation failures.",
       "owner": "DevTeam",
       "type": "Issue",
-      "id": "SPEC-ISSUE-0001",
+      "id": "SPEC-ISSUE-0002",
       "priority": "Must",
+      "acceptance_criteria": [
+        "- Given test fixtures are created, When they are initialized, Then app module counters reset properly on creation to avoid test isolation failures."
+      ],
+      "description": "Ensure test fixtures reset app module counters properly on creation to avoid test isolation failures.",
       "stages_completed": [
         "Draft",
         "Ready",
         "Implemented",
         "Reviewed",
-        "Tested",
-        "Accepted"
+        "Tested"
       ],
-      "status": "Accepted",
+      "status": "Tested",
       "version": "Backlog (unplanned)",
-      "user_story": "As a team member, I want all team members to engage on PRs early so that we maintain a solid review cadence.",
-      "description": "Ensure all team members engage on PRs early to maintain review cadence.",
-      "acceptance_criteria": [
-        "- Given a PR is opened, When team members review it, Then all team members engage on PRs early to maintain review cadence."
-      ],
-      "dod_checks": [
-        "Issue reviewed and addressed"
-      ],
-      "test_approach": "Manual/automated check of PR reviews and comments.",
-      "risks_assumptions": [
-        "Process issue requiring team engagement sign-off."
-      ],
-      "estimate": 10,
       "tasks": [
-        "Verify all team member engagement on sprint backlog PR"
+        "Inspect app module state initialization and test fixtures",
+        "Update fixture creation to reset internal counters"
       ],
-      "approach": "Address review engagement process finding by documenting adherence and commenting on PRs.",
-      "code_files": [],
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified SPEC-ISSUE-0001 acceptance criteria and team engagement process."
+      "test_approach": "Run pytest to ensure test isolation holds",
+      "approach": "Reset app module counters correctly in test fixtures to prevent test isolation failures.",
+      "dod_checks": [
+        "Test fixtures reset counters correctly",
+        "All tests pass without isolation issues"
+      ],
+      "risks": "None",
+      "code_files": [
+        "tests/conftest.py",
+        "app.py"
+      ],
+      "estimate": 50
     }
   ],
   "impediment_log": [],
@@ -301,13 +261,16 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.6221934600000001
+    "current_usd_spend": 0.72006083
   },
   "token_usage": {
-    "total": 223080,
+    "total": 1107517,
     "agents": {
       "ScrumMaster": 14140,
-      "ProductOwner": 208940
+      "ProductOwner": 249575,
+      "DevTeam": 488622,
+      "Architect": 194275,
+      "QA": 160905
     }
   },
   "story_estimates": {
@@ -322,6 +285,10 @@
     "SPEC-ISSUE-0001": {
       "estimate": 10,
       "actual": 50
+    },
+    "SPEC-ISSUE-0002": {
+      "estimate": 50,
+      "actual": 30
     }
   },
   "sprint_report_kpis": {},
@@ -361,7 +328,7 @@
   ],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 7,
+  "dev_touch_baseline": 13,
   "unadvanced_write_nudge_baseline": 12,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
@@ -387,9 +354,10 @@
     "specs/requirements/SPEC-ISSUE-0002-Ensure-test-fixtures-reset-app-module-counters-properly-on-creation-to-avoid-test-isolation-failures..md",
     "specs/reports/TRANSCRIPT-002.md",
     "specs/reports/SPRINT-REPORT-002.md",
-    "specs/reports/RETRO-002.md"
+    "specs/reports/RETRO-002.md",
+    "tests/conftest.py"
   ],
-  "source_content_change_count": 12,
+  "source_content_change_count": 13,
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true,
@@ -401,18 +369,19 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
-    "Architect": 11,
-    "QA": 13,
-    "DevTeam": 1
+    "Architect": 14,
+    "QA": 16,
+    "DevTeam": 2
   },
-  "architect_review_baseline": 7,
-  "qa_review_baseline": 13,
+  "architect_review_baseline": 14,
+  "qa_review_baseline": 16,
   "qa_tested_baseline": 3,
   "content_loss_warnings": [],
   "content_loss_acknowledged_baseline": 0,
   "sprint_backlog_engagement_baseline": {
-    "Architect": 2,
-    "QA": 2
+    "Architect": 11,
+    "QA": 13,
+    "DevTeam": 1
   },
   "sprint_report_pending_release": false,
   "blocking_interactions": [

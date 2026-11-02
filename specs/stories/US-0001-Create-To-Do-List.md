@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-02
@@ -16,4 +16,4 @@
 
 
 ## Test Approach
-
+Use pytest and Flask test client to verify list creation endpoint and UI rendering.

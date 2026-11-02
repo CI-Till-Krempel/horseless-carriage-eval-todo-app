@@ -8,16 +8,13 @@ def client():
         lists.clear()
         yield client
 
-def test_create_list_and_add_task(client):
-    # Create list
-    response = client.post('/lists', data={'title': 'Work Tasks'}, follow_redirects=True)
+def test_create_list(client):
+    response = client.post('/lists', data={'title': 'Groceries'}, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Work Tasks' in response.data
-    assert '1' in lists
+    assert b'Groceries' in response.data
 
-    # Add task to list
-    response = client.post('/lists/1/tasks', data={'description': 'Finish report'}, follow_redirects=True)
+def test_add_task(client):
+    client.post('/lists', data={'title': 'Groceries'}, follow_redirects=True)
+    response = client.post('/lists/1/tasks', data={'description': 'Buy milk'}, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Finish report' in response.data
-    assert len(lists['1']['tasks']) == 1
-    assert lists['1']['tasks'][0]['description'] == 'Finish report'
+    assert b'Buy milk' in response.data

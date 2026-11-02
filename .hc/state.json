@@ -30,9 +30,9 @@
       "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
       "review_denial": {
         "stage": "Tested",
-        "reason": "Tests test_delete_task and test_delete_list still fail because global lists and tasks lists are not cleared between test functions in tests/test_app.py (or test client requests don't clear app-level state), causing leftover tasks/lists from prior tests to interfere with assertions.",
+        "reason": "Tests test_delete_task and test_delete_list still fail because when calling client.post with follow_redirects=True or standard test client requests, importing lists and tasks from app module references the global list object in test_app.py which may not reflect the app context state if app is reloaded or if multiple test clients/modules are used. Specifically, len(tasks) is 1 after deletion because tasks list in test scope was bound at import time.",
         "by": "QA",
-        "review_count_at_denial": 7
+        "review_count_at_denial": 9
       }
     },
     {
@@ -179,9 +179,9 @@
       "approach": "Build a lightweight Flask application with an in-memory/JSON store and a simple HTML/CSS/JS frontend to handle list creation.",
       "review_denial": {
         "stage": "Tested",
-        "reason": "Tests test_delete_task and test_delete_list still fail because global lists and tasks lists are not cleared between test functions in tests/test_app.py (or test client requests don't clear app-level state), causing leftover tasks/lists from prior tests to interfere with assertions.",
+        "reason": "Tests test_delete_task and test_delete_list still fail because when calling client.post with follow_redirects=True or standard test client requests, importing lists and tasks from app module references the global list object in test_app.py which may not reflect the app context state if app is reloaded or if multiple test clients/modules are used. Specifically, len(tasks) is 1 after deletion because tasks list in test scope was bound at import time.",
         "by": "QA",
-        "review_count_at_denial": 7
+        "review_count_at_denial": 9
       }
     }
   ],
@@ -192,17 +192,17 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.23711866
+    "current_usd_spend": 0.25158271
   },
   "token_usage": {
-    "total": 3043654,
+    "total": 3599170,
     "agents": {
       "ScrumOrchestrator": 90920,
       "ProductOwner": 740941,
       "ScrumMaster": 67088,
-      "DevTeam": 1245707,
+      "DevTeam": 1608974,
       "Architect": 348946,
-      "QA": 550052
+      "QA": 742301
     }
   },
   "story_estimates": {
@@ -236,7 +236,7 @@
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
   "dev_touch_baseline": 4,
-  "unadvanced_write_nudge_baseline": 8,
+  "unadvanced_write_nudge_baseline": 9,
   "sprint_files_touched": [
     "specs/requirements/PRD-TodoApp.md",
     "specs/stories/EP-0001-Core-To-Do-List-and-Task-Management-MVP.md",
@@ -253,7 +253,7 @@
     "templates/index.html",
     "tests/test_app.py"
   ],
-  "source_content_change_count": 8,
+  "source_content_change_count": 9,
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true,
@@ -267,7 +267,7 @@
   "pr_review_calls": {
     "DevTeam": 1,
     "Architect": 4,
-    "QA": 7
+    "QA": 9
   },
   "architect_review_baseline": 3,
   "qa_review_baseline": 0,

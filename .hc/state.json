@@ -30,9 +30,9 @@
       "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
       "review_denial": {
         "stage": "Tested",
-        "reason": "Tests test_delete_task and test_delete_list failed during QA test run. In app.py, task IDs and list IDs are auto-incrementing globally across the app lifecycle rather than resetting per test or matching the expected test IDs, causing task/list deletion assertions to fail.",
+        "reason": "Tests test_delete_task and test_delete_list still fail because route parameters in test requests (e.g. /lists/1/tasks or /lists/1/delete) use hardcoded ID 1, whereas the auto-incrementing ID counters continue incrementing across requests without resetting per test, leading to 404 or non-matching IDs on deletion routes.",
         "by": "QA",
-        "review_count_at_denial": 2
+        "review_count_at_denial": 5
       }
     },
     {
@@ -179,9 +179,9 @@
       "approach": "Build a lightweight Flask application with an in-memory/JSON store and a simple HTML/CSS/JS frontend to handle list creation.",
       "review_denial": {
         "stage": "Tested",
-        "reason": "Tests test_delete_task and test_delete_list failed during QA test run. In app.py, task IDs and list IDs are auto-incrementing globally across the app lifecycle rather than resetting per test or matching the expected test IDs, causing task/list deletion assertions to fail.",
+        "reason": "Tests test_delete_task and test_delete_list still fail because route parameters in test requests (e.g. /lists/1/tasks or /lists/1/delete) use hardcoded ID 1, whereas the auto-incrementing ID counters continue incrementing across requests without resetting per test, leading to 404 or non-matching IDs on deletion routes.",
         "by": "QA",
-        "review_count_at_denial": 2
+        "review_count_at_denial": 5
       }
     }
   ],
@@ -192,17 +192,17 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.16451585000000002
+    "current_usd_spend": 0.1968857
   },
   "token_usage": {
-    "total": 1818982,
+    "total": 2364382,
     "agents": {
       "ScrumOrchestrator": 90920,
       "ProductOwner": 740941,
       "ScrumMaster": 67088,
-      "DevTeam": 552432,
+      "DevTeam": 874606,
       "Architect": 212583,
-      "QA": 155018
+      "QA": 378244
     }
   },
   "story_estimates": {
@@ -236,7 +236,7 @@
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
   "dev_touch_baseline": 4,
-  "unadvanced_write_nudge_baseline": 0,
+  "unadvanced_write_nudge_baseline": 6,
   "sprint_files_touched": [
     "specs/requirements/PRD-TodoApp.md",
     "specs/stories/EP-0001-Core-To-Do-List-and-Task-Management-MVP.md",
@@ -253,7 +253,7 @@
     "templates/index.html",
     "tests/test_app.py"
   ],
-  "source_content_change_count": 4,
+  "source_content_change_count": 6,
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true,
@@ -267,7 +267,7 @@
   "pr_review_calls": {
     "DevTeam": 1,
     "Architect": 3,
-    "QA": 2
+    "QA": 5
   },
   "architect_review_baseline": 3,
   "qa_review_baseline": 0,

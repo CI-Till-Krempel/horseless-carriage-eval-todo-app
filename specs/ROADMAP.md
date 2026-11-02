@@ -36,7 +36,7 @@ Stories
 - [SPEC-ISSUE-0001] Ensure all team members engage on PRs early to maintain review cadence.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

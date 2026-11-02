@@ -1,0 +1,1 @@
+# DevTeam Identity Customization\n\n- Always engage early on all sprint backlog PRs to maintain a robust review cadence.\n- Ensure strict test isolation and proper fixture resetting in all unit and integration tests.

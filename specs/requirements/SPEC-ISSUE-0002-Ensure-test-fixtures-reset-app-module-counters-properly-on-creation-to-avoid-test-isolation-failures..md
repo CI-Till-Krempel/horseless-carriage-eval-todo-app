@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0002
 - Title: Ensure test fixtures reset app module counters properly on creation to avoid test isolation failures.
-- Status: Ready
+- Status: Implemented
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-02

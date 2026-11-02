@@ -147,9 +147,30 @@
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can monitor my progress.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed"
       ],
-      "status": "Ready"
+      "status": "Reviewed",
+      "review_denial": {
+        "stage": "Tested",
+        "reason": "Test suite still fails: tests/test_app.py raises AttributeError because it accesses flask_app.lists which does not exist in app.py.",
+        "by": "QA",
+        "review_count_at_denial": 24
+      },
+      "blocked": {
+        "question": "advance_story_stage('US-0003', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0003' Tested - posting the review via gh_pr_review failed: failed to create review: GraphQL: Review Can not approve your own pull request (addPullRequestReview)",
+        "category": "technical",
+        "raised_by": "QA",
+        "raised_at_stage": "Reviewed",
+        "escalated_to_user": false,
+        "blocking_interaction_id": 4,
+        "mechanical_recheck": {
+          "kind": "tested_stage_failure",
+          "stage": "Tested",
+          "test_run_count_at_block": 20
+        }
+      }
     },
     {
       "title": "Delete Task",
@@ -225,7 +246,7 @@
   "sprint_number": 4,
   "sprint_backlog_pr_sprint": 4,
   "sprint_backlog_pr_opened": true,
-  "planning_output_commit_count": 26,
+  "planning_output_commit_count": 29,
   "sprint_backlog_pr_content_baseline": 21,
   "sprint_backlog": [
     {
@@ -241,9 +262,11 @@
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can monitor my progress.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed"
       ],
-      "status": "Ready",
+      "status": "Reviewed",
       "test_approach": "Write pytest test cases checking task status toggle behavior.",
       "approach": "Implement backend endpoint for marking tasks complete/incomplete and update UI templates and tests.",
       "code_files": [
@@ -263,7 +286,26 @@
       "estimate": 1200,
       "risks_assumptions": [
         "Assuming Flask app structure is already established from US-0001/US-0002."
-      ]
+      ],
+      "review_denial": {
+        "stage": "Tested",
+        "reason": "Test suite still fails: tests/test_app.py raises AttributeError because it accesses flask_app.lists which does not exist in app.py.",
+        "by": "QA",
+        "review_count_at_denial": 24
+      },
+      "blocked": {
+        "question": "advance_story_stage('US-0003', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0003' Tested - posting the review via gh_pr_review failed: failed to create review: GraphQL: Review Can not approve your own pull request (addPullRequestReview)",
+        "category": "technical",
+        "raised_by": "QA",
+        "raised_at_stage": "Reviewed",
+        "escalated_to_user": false,
+        "blocking_interaction_id": 4,
+        "mechanical_recheck": {
+          "kind": "tested_stage_failure",
+          "stage": "Tested",
+          "test_run_count_at_block": 20
+        }
+      }
     },
     {
       "title": "Use comment-based sign-offs or designate secondary reviewers for PRs",
@@ -407,16 +449,16 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.12740158000000007
+    "current_usd_spend": 0.34259618000000003
   },
   "token_usage": {
-    "total": 2631523,
+    "total": 5523552,
     "agents": {
-      "ScrumMaster": 177577,
-      "ProductOwner": 468601,
-      "DevTeam": 1267406,
-      "QA": 434734,
-      "Architect": 283205
+      "ScrumMaster": 520412,
+      "ProductOwner": 518214,
+      "DevTeam": 2680275,
+      "QA": 1166198,
+      "Architect": 638453
     }
   },
   "story_estimates": {
@@ -433,7 +475,8 @@
       "actual": 1000
     },
     "US-0003": {
-      "estimate": 1200
+      "estimate": 1200,
+      "actual": 1100
     },
     "SPEC-ISSUE-0003": {
       "estimate": 500,
@@ -477,12 +520,16 @@
     {
       "type": "sprint",
       "note": "Approved sprint backlog and review sign-offs to unblock team development"
+    },
+    {
+      "type": "sprint",
+      "note": "Human approval recorded to bypass self-approval PR restriction for US-0003"
     }
   ],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 21,
-  "unadvanced_write_nudge_baseline": 21,
+  "dev_touch_baseline": 24,
+  "unadvanced_write_nudge_baseline": 25,
   "sprint_files_touched": [
     "specs/requirements/PRD-TodoApp.md",
     "specs/stories/EP-0001-Core-To-Do-List-and-Task-Management-MVP.md",
@@ -516,7 +563,7 @@
     "specs/requirements/SPEC-ISSUE-0003-Use-comment-based-sign-offs-or-designate-secondary-reviewers-for-PRs.md",
     "specs/requirements/SPEC-ISSUE-0004-GraphQL-API-prevents-self-approval-on-pull-requests.md"
   ],
-  "source_content_change_count": 21,
+  "source_content_change_count": 25,
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true,
@@ -529,11 +576,11 @@
   "git_push_count": 0,
   "pr_review_calls": {
     "DevTeam": 5,
-    "Architect": 14,
-    "QA": 21,
+    "Architect": 16,
+    "QA": 25,
     "ScrumMaster": 1
   },
-  "architect_review_baseline": 14,
+  "architect_review_baseline": 16,
   "qa_review_baseline": 21,
   "qa_tested_baseline": 3,
   "content_loss_warnings": [
@@ -541,6 +588,21 @@
       "path": "app.py",
       "previous_definition_count": 12,
       "new_definition_count": 6
+    },
+    {
+      "path": "app.py",
+      "previous_definition_count": 16,
+      "new_definition_count": 8
+    },
+    {
+      "path": "tests/test_todo.py",
+      "previous_definition_count": 5,
+      "new_definition_count": 2
+    },
+    {
+      "path": "tests/test_app.py",
+      "previous_definition_count": 14,
+      "new_definition_count": 7
     }
   ],
   "content_loss_acknowledged_baseline": 1,
@@ -575,6 +637,15 @@
       "summary": "Architect and DevTeam bounced transfer_to_agent 3x with no progress.",
       "detail": "🔁 [TRANSFER LOOP DETECTED] Architect and DevTeam have handed off to each other 3 times in a row with no other tool call in between - refusing this transfer. Stop transferring and actually call a tool that makes progress (e.g. the mandatory step you're both routing around), or explain the blocker instead of handing off again.",
       "created_at": "2026-11-02T13:37:03.394901+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 4,
+      "kind": "blocked_story",
+      "summary": "'US-0003' is BLOCKED (technical): advance_story_stage('US-0003', 'Tested') has been rejected 3 times in a row for the same reason - most recently: Cannot mark 'US-0003' Tested - posting the review via gh_pr_review failed: failed to create review: GraphQL: Review Can not approve your own pull request (addPullRequestReview)",
+      "detail": "Raised by QA. Resolve via Architect's resolve_story_blocker('US-0003', resolution).",
+      "created_at": "2026-11-02T13:42:16.584153+00:00",
       "resolved": false,
       "resolved_at": null
     }

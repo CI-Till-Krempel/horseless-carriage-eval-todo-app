@@ -42,9 +42,12 @@
       "priority": "Must",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready",
+      "status": "Tested",
       "version": "Backlog (unplanned)",
       "user_story": "As a team member, I want all team members to engage on PRs early so that we maintain a solid review cadence.",
       "description": "Ensure all team members engage on PRs early to maintain review cadence.",
@@ -149,53 +152,80 @@
   ],
   "sprint_goal": "Implement core features and bug fixes for sprint 2",
   "sprint_number": 2,
-  "sprint_backlog_pr_sprint": 0,
-  "sprint_backlog_pr_opened": false,
-  "planning_output_commit_count": 6,
-  "sprint_backlog_pr_content_baseline": 1,
+  "sprint_backlog_pr_sprint": 2,
+  "sprint_backlog_pr_opened": true,
+  "planning_output_commit_count": 9,
+  "sprint_backlog_pr_content_baseline": 7,
   "sprint_backlog": [
     {
-      "acceptance_criteria": [
-        "Given the user is on the home page, When they enter a list name and click create, Then a new to-do list is created and displayed."
-      ],
-      "id": "US-0001",
-      "title": "Create To-Do List",
+      "id": "US-0002",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "title": "Add Task to List",
       "priority": "Must",
-      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
+      "acceptance_criteria": [
+        "Given a to-do list exists, When the user adds a task with a description, Then the task appears within that list."
+      ],
       "type": "User Story",
       "version": "v1.0.0",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Implement task addition functionality in the application backend/frontend, adhering to US-0002 requirements.",
+      "dod_checks": [
+        "Automated tests passing",
+        "Code reviewed-ready"
+      ],
+      "risks_assumptions": [
+        "Assumes existing code structure from US-0001."
+      ],
+      "tasks": [
+        "Write backend/frontend code for adding tasks",
+        "Write tests for adding tasks"
+      ],
+      "code_files": [
+        "app.py",
+        "tests/test_todo.py"
+      ],
+      "estimate": 100,
+      "test_approach": "Pytest unit/integration tests for adding a task to a list."
+    },
+    {
+      "title": "Ensure all team members engage on PRs early to maintain review cadence.",
+      "overview": "Ensure all team members engage on PRs early to maintain review cadence.",
+      "owner": "DevTeam",
+      "type": "Issue",
+      "id": "SPEC-ISSUE-0001",
+      "priority": "Must",
       "stages_completed": [
         "Draft",
         "Ready",
         "Implemented",
         "Reviewed",
-        "Tested",
-        "Accepted"
+        "Tested"
       ],
-      "status": "Accepted",
-      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
-      "タsks": [
-        "Create Flask application structure",
-        "Implement list creation route",
-        "Add unit tests"
+      "status": "Tested",
+      "version": "Backlog (unplanned)",
+      "user_story": "As a team member, I want all team members to engage on PRs early so that we maintain a solid review cadence.",
+      "description": "Ensure all team members engage on PRs early to maintain review cadence.",
+      "acceptance_criteria": [
+        "- Given a PR is opened, When team members review it, Then all team members engage on PRs early to maintain review cadence."
       ],
-      "approach": "Implement a simple Flask web application with an in-memory database to manage to-do lists and tasks, along with HTML templates for the UI.",
-      "risks_assumptions": [
-        "In-memory state is sufficient for single-session MVP requirements."
-      ],
-      "code_files": [
-        "app.py",
-        "templates/index.html",
-        "requirements.txt"
-      ],
-      "test_approach": "Write pytest tests for creating lists and verifying them in the app.",
-      "estimate": 1200,
       "dod_checks": [
-        "Automated tests passing",
-        "Code reviewed and clean"
+        "Issue reviewed and addressed"
       ],
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified list creation works correctly via web UI and automated test suite."
+      "test_approach": "Manual/automated check of PR reviews and comments.",
+      "risks_assumptions": [
+        "Process issue requiring team engagement sign-off."
+      ],
+      "estimate": 10,
+      "tasks": [
+        "Verify all team member engagement on sprint backlog PR"
+      ],
+      "approach": "Address review engagement process finding by documenting adherence and commenting on PRs.",
+      "code_files": []
     }
   ],
   "impediment_log": [],
@@ -211,24 +241,41 @@
       "issue_id": "SPEC-ISSUE-0001"
     }
   ],
-  "decision_log": [],
+  "decision_log": [
+    {
+      "title": "SPEC-ISSUE-0001 marked Implemented without a new source touch",
+      "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
+      "rationale": "Process issue resolved via PR engagement documentation.",
+      "owner": "DevTeam"
+    }
+  ],
   "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.18624081000000003
+    "current_usd_spend": 0.26270595
   },
   "token_usage": {
-    "total": 125624,
+    "total": 779108,
     "agents": {
       "ScrumMaster": 14117,
-      "ProductOwner": 111507
+      "ProductOwner": 147275,
+      "DevTeam": 352318,
+      "Architect": 163469,
+      "QA": 101929
     }
   },
   "story_estimates": {
     "US-0001": {
       "estimate": 1200,
       "actual": 1000
+    },
+    "US-0002": {
+      "estimate": 100
+    },
+    "SPEC-ISSUE-0001": {
+      "estimate": 10,
+      "actual": 50
     }
   },
   "sprint_report_kpis": {},
@@ -294,15 +341,19 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
-    "Architect": 2,
-    "QA": 2
+    "Architect": 5,
+    "QA": 4,
+    "DevTeam": 1
   },
-  "architect_review_baseline": 2,
-  "qa_review_baseline": 2,
+  "architect_review_baseline": 5,
+  "qa_review_baseline": 4,
   "qa_tested_baseline": 1,
   "content_loss_warnings": [],
   "content_loss_acknowledged_baseline": 0,
-  "sprint_backlog_engagement_baseline": {},
+  "sprint_backlog_engagement_baseline": {
+    "Architect": 2,
+    "QA": 2
+  },
   "sprint_report_pending_release": false,
   "blocking_interactions": [],
   "overclaim_rejection_counts": {},

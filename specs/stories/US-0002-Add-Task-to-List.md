@@ -16,4 +16,8 @@
 
 
 ## Test Approach
+Pytest unit/integration tests for adding a task to a list.
 
+### Tasks
+- Write backend/frontend code for adding tasks
+- Write tests for adding tasks

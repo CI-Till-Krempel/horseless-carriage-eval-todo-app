@@ -31,6 +31,15 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
+- [SPEC-ISSUE-0003] Address prior sprint retrospective issue SPEC-ISSUE-0003
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### 1.0.0

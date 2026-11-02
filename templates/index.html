@@ -1,47 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>To-Do List App</title>
+    <meta charset="utf-8">
+    <title>To-Do App</title>
 </head>
 <body>
     <h1>To-Do Lists</h1>
-    
     <form action="/lists" method="POST">
-        <input type="text" name="name" placeholder="New List Name" required>
+        <input type="text" name="title" placeholder="New List Title" required>
         <button type="submit">Create List</button>
     </form>
 
-    <ul>
-        {% for lst in lists %}
-        <li>
-            <strong>{{ lst.name }}</strong>
-            <form action="/lists/{{ lst.id }}/delete" method="POST" style="display:inline;">
-                <button type="submit">Delete List</button>
-            </form>
-
-            <form action="/lists/{{ lst.id }}/tasks" method="POST">
-                <input type="text" name="content" placeholder="New Task Description" required>
+    {% for list_id, l in lists.items() %}
+        <div>
+            <h2>{{ l.title }}</h2>
+            <form action="/lists/{{ list_id }}/tasks" method="POST">
+                <input type="text" name="content" placeholder="New Task" required>
                 <button type="submit">Add Task</button>
             </form>
-
             <ul>
-                {% for task in tasks %}
-                    {% if task.list_id == lst.id %}
-                    <li>
-                        <span style="{% if task.completed %}text-decoration: line-through;{% endif %}">{{ task.content }}</span>
-                        <form action="/tasks/{{ task.id }}/toggle" method="POST" style="display:inline;">
-                            <button type="submit">Toggle</button>
-                        </form>
-                        <form action="/tasks/{{ task.id }}/delete" method="POST" style="display:inline;">
-                            <button type="submit">Delete</button>
-                        </form>
-                    </li>
+                {% for task_id, t in tasks.items() %}
+                    {% if t.list_id == list_id %}
+                        <li>
+                            <form action="/tasks/{{ task_id }}/toggle" method="POST" style="display:inline;">
+                                <button type="submit">
+                                    {% if t.completed %}Incomplete{% else %}Complete{% endif %}
+                                </button>
+                            </form>
+                            <span style="{% if t.completed %}text-decoration: line-through; color: gray;{% endif %}">
+                                {{ t.content }}
+                            </span>
+                        </li>
                     {% endif %}
                 {% endfor %}
             </ul>
-        </li>
-        {% endfor %}
-    </ul>
+        </div>
+    {% endfor %}
 </body>
 </html>

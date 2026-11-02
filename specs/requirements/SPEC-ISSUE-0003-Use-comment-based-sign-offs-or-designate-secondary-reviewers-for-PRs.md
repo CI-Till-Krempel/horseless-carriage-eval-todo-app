@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0003
 - Title: Use comment-based sign-offs or designate secondary reviewers for PRs
-- Status: Implemented
+- Status: Reviewed
 - Priority: Must
 - Owner: Architect
 - Last Updated: 2026-11-02

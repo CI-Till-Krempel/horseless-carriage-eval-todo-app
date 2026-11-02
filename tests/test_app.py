@@ -4,9 +4,12 @@ from app import app, lists, tasks
 @pytest.fixture
 def client():
     app.config['TESTING'] = True
+    import app as app_module
+    app_module.lists.clear()
+    app_module.tasks.clear()
+    app_module.list_counter = 0
+    app_module.task_counter = 0
     with app.test_client() as client:
-        lists.clear()
-        tasks.clear()
         yield client
 
 def test_create_list(client):

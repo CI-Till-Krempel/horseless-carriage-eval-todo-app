@@ -14,6 +14,7 @@
 
 ## Notes
 
+- ⚠️ REVIEW DENIED at Tested by QA: Tests test_delete_task and test_delete_list failed during QA test run. In app.py, task IDs and list IDs are auto-incrementing globally across the app lifecycle rather than resetting per test or matching the expected test IDs, causing task/list deletion assertions to fail.
 
 ## Test Approach
 Use pytest and Flask test client to verify list creation endpoint and UI rendering.

@@ -14,7 +14,7 @@
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: Tests test_delete_task and test_delete_list still fail because global lists and tasks lists are not cleared between test functions in tests/test_app.py (or test client requests don't clear app-level state), causing leftover tasks/lists from prior tests to interfere with assertions.
+- ⚠️ REVIEW DENIED at Tested by QA: Tests test_delete_task and test_delete_list still fail because when calling client.post with follow_redirects=True or standard test client requests, importing lists and tasks from app module references the global list object in test_app.py which may not reflect the app context state if app is reloaded or if multiple test clients/modules are used. Specifically, len(tasks) is 1 after deletion because tasks list in test scope was bound at import time.
 
 ## Test Approach
 Use pytest and Flask test client to verify list creation endpoint and UI rendering.

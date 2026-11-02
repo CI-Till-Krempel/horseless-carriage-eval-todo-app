@@ -27,6 +27,27 @@ def add_task(list_id):
         tasks.append({'id': task_id, 'list_id': list_id, 'content': content, 'completed': False})
     return redirect(url_for('index'))
 
+@app.route('/tasks/<int:task_id>/toggle', methods=['POST'])
+def toggle_task(task_id):
+    for task in tasks:
+        if task['id'] == task_id:
+            task['completed'] = not task['completed']
+            break
+    return redirect(url_for('index'))
+
+@app.route('/tasks/<int:task_id>/delete', methods=['POST'])
+def delete_task(task_id):
+    global tasks
+    tasks = [t for t in tasks if t['id'] != task_id]
+    return redirect(url_for('index'))
+
+@app.route('/lists/<int:list_id>/delete', methods=['POST'])
+def delete_list(list_id):
+    global lists, tasks
+    lists = [l for l in lists if l['id'] != list_id]
+    tasks = [t for t in tasks if t['list_id'] != list_id]
+    return redirect(url_for('index'))
+
 @app.route('/api/lists', methods=['GET', 'POST'])
 def api_lists():
     global lists

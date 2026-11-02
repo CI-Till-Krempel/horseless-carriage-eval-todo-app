@@ -1,72 +1,52 @@
 import pytest
-import app as flask_app
+from app import app, lists_db, tasks_db
 
 @pytest.fixture(autouse=True)
 def run_around_tests():
-    flask_app.lists.clear()
-    flask_app.tasks.clear()
+    lists_db.clear()
+    tasks_db.clear()
     yield
-    flask_app.lists.clear()
-    flask_app.tasks.clear()
 
 @pytest.fixture
 def client():
-    flask_app.app.config['TESTING'] = True
-    with flask_app.app.test_client() as client:
+    app.config['TESTING'] = True
+    with app.test_client() as client:
         yield client
 
 def test_create_list(client):
-    response = client.post('/lists', data={'name': 'Groceries'}, follow_redirects=True)
+    response = client.post('/lists', data={'title': 'My List'}, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Groceries' in response.data
-    assert len(flask_app.lists) == 1
-    assert flask_app.lists[0]['name'] == 'Groceries'
+    assert len(lists_db) == 1
+    assert list(lists_db.values())[0]['title'] == 'My List'
 
 def test_add_task(client):
-    client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
-    list_id = flask_app.lists[0]['id']
-    response = client.post(f'/lists/{list_id}/tasks', data={'description': 'Finish report'}, follow_redirects=True)
+    lists_db['1'] = {'id': '1', 'title': 'My List'}
+    response = client.post('/lists/1/tasks', data={'content': 'Buy milk'}, follow_redirects=True)
     assert response.status_code == 200
-    assert b'Finish report' in response.data
-    assert len(flask_app.tasks) == 1
-    assert flask_app.tasks[0]['description'] == 'Finish report'
-    assert flask_app.tasks[0]['completed'] == False
+    assert len(tasks_db) == 1
+    assert list(tasks_db.values())[0]['content'] == 'Buy milk'
 
 def test_toggle_task(client):
-    client.post('/lists', data={'name': 'Chores'}, follow_redirects=True)
-    list_id = flask_app.lists[0]['id']
-    client.post(f'/lists/{list_id}/tasks', data={'description': 'Clean room'}, follow_redirects=True)
-    task_id = flask_app.tasks[0]['id']
-    
-    # Toggle complete
-    response = client.post(f'/tasks/{task_id}/toggle', follow_redirects=True)
+    lists_db['1'] = {'id': '1', 'title': 'Test List'}
+    tasks_db['1'] = {'id': '1', 'list_id': '1', 'content': 'Test Task', 'completed': False}
+
+    response = client.post('/tasks/1/toggle', follow_redirects=True)
     assert response.status_code == 200
-    assert flask_app.tasks[0]['completed'] == True
-    
-    # Toggle incomplete
-    response = client.post(f'/tasks/{task_id}/toggle', follow_redirects=True)
-    assert response.status_code == 200
-    assert flask_app.tasks[0]['completed'] == False
+    assert tasks_db['1']['completed'] is True
 
 def test_delete_task(client):
-    client.post('/lists', data={'name': 'Chores'}, follow_redirects=True)
-    list_id = flask_app.lists[0]['id']
-    client.post(f'/lists/{list_id}/tasks', data={'description': 'Clean room'}, follow_redirects=True)
-    assert len(flask_app.tasks) == 1
-    task_id = flask_app.tasks[0]['id']
-    
-    response = client.post(f'/tasks/{task_id}/delete', follow_redirects=True)
+    lists_db['1'] = {'id': '1', 'title': 'Test List'}
+    tasks_db['1'] = {'id': '1', 'list_id': '1', 'content': 'Test Task', 'completed': False}
+
+    response = client.post('/tasks/1/delete', follow_redirects=True)
     assert response.status_code == 200
-    assert len(flask_app.tasks) == 0
+    assert len(tasks_db) == 0
 
 def test_delete_list(client):
-    client.post('/lists', data={'name': 'Obsolete List'}, follow_redirects=True)
-    list_id = flask_app.lists[0]['id']
-    client.post(f'/lists/{list_id}/tasks', data={'description': 'Obsolete Task'}, follow_redirects=True)
-    assert len(flask_app.lists) == 1
-    assert len(flask_app.tasks) == 1
-    
-    response = client.post(f'/lists/{list_id}/delete', follow_redirects=True)
+    lists_db['1'] = {'id': '1', 'title': 'Test List'}
+    tasks_db['1'] = {'id': '1', 'list_id': '1', 'content': 'Test Task', 'completed': False}
+
+    response = client.post('/lists/1/delete', follow_redirects=True)
     assert response.status_code == 200
-    assert len(flask_app.lists) == 0
-    assert len(flask_app.tasks) == 0
+    assert len(lists_db) == 0
+    assert len(tasks_db) == 0

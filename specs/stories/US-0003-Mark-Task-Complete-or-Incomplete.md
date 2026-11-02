@@ -14,7 +14,7 @@
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: Test suite failures: tests/test_app.py fails during setup because it expects 'app.lists' (or 'flask_app.lists') which does not exist in app.py (app.py uses lists_db and tasks_db).
+- ⚠️ REVIEW DENIED at Tested by QA: Test suite still fails: tests/test_app.py raises AttributeError because it accesses flask_app.lists which does not exist in app.py.
 
 ## Test Approach
 Write pytest test cases checking task status toggle behavior.

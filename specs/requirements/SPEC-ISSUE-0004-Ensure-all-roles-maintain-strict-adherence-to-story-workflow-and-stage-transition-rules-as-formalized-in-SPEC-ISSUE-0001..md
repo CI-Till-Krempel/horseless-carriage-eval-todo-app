@@ -17,4 +17,7 @@ Ensure all roles maintain strict adherence to story workflow and stage transitio
 
 
 ## Test Approach
+Verify via tests.
 
+### Tasks
+- Check workflow rules

@@ -51,5 +51,12 @@ def toggle_task(task_id):
     db.session.commit()
     return redirect(url_for('index'))
 
+@app.route('/task/<int:task_id>/delete', methods=['POST'])
+def delete_task(task_id):
+    task = Task.query.get_or_404(task_id)
+    db.session.delete(task)
+    db.session.commit()
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True)

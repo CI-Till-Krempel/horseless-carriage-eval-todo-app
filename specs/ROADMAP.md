@@ -33,6 +33,13 @@ Stories
 
 
 Stories
+- [SPEC-ISSUE-0002] Ensure strict adherence to story workflow and stage transition rules.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### v1.0.0

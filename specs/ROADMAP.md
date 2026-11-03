@@ -98,6 +98,26 @@ Stories
   - [ ] ACCEPTED
 
 
+### 1.0
+Goals
+
+Stories
+- [SPEC-ISSUE-0004] Ensure all roles maintain strict adherence to story workflow and stage transition rules as formalized in SPEC-ISSUE-0001.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [SPEC-ISSUE-0003] Enforce rigorous workflow stage verification before story advancement to prevent process gaps.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

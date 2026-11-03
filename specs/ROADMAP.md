@@ -40,21 +40,14 @@ Goals
 - Deliver a complete, single-user to-do list web application over 5 sprints.
 
 Stories
-- [US-0006] View Lists and Tasks with Visual Status
+- [US-0001] Create a New To-Do List
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
-- [US-0005] Delete an Entire List
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-0004] Delete a Task
+- [US-0002] Add Task to a List
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED
@@ -68,14 +61,21 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0002] Add Task to a List
+- [US-0004] Delete a Task
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0001] Create a New To-Do List
+- [US-0005] Delete an Entire List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] View Lists and Tasks with Visual Status
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

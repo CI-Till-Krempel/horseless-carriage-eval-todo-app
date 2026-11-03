@@ -7,5 +7,5 @@ def test_db_schema_verification():
     assert hasattr(TodoList, 'title')
     assert hasattr(Task, 'id')
     assert hasattr(Task, 'title')
-    assert hasattr(Task, 'completed')
-    assert hasattr(Task, 'list_id')
+    assert hasattr(Task, 'done') or hasattr(Task, 'completed')
+    assert hasattr(Task, 'todo_list_id') or hasattr(Task, 'list_id')

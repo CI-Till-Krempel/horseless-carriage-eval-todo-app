@@ -44,9 +44,22 @@ Stories
 
 ### v1.0.0
 Goals
-- Deliver a complete, single-user to-do list web application over 5 sprints.
-
+- Continue implementing and refining features for the product based on existing roadmap and specs
 Stories
+- [US-0005] Delete an Entire List
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0006] View Lists and Tasks with Visual Status
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0001] Create a New To-Do List
   - [x] DRAFT
   - [x] READY
@@ -89,33 +102,12 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0005] Delete an Entire List
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-0006] View Lists and Tasks with Visual Status
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 
 
 ### 1.0
 Goals
-
+- Continue implementing and refining features for the product based on existing roadmap and specs
 Stories
-- [SPEC-ISSUE-0004] Ensure all roles maintain strict adherence to story workflow and stage transition rules as formalized in SPEC-ISSUE-0001.
-  - [x] DRAFT
-  - [x] READY
-  - [x] IMPLEMENTED
-  - [x] REVIEWED
-  - [x] TESTED
-  - [x] ACCEPTED
 - [SPEC-ISSUE-0003] Enforce rigorous workflow stage verification before story advancement to prevent process gaps.
   - [x] DRAFT
   - [x] READY
@@ -123,6 +115,13 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
+- [SPEC-ISSUE-0004] Ensure all roles maintain strict adherence to story workflow and stage transition rules as formalized in SPEC-ISSUE-0001.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 
 
 ## Task board (Kanban)

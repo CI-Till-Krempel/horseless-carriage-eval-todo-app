@@ -82,6 +82,13 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
+- [SPEC-ISSUE-0005] Verify database schema model fields against existing tests and tables before implementation to prevent OperationalErrors.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0005] Delete an Entire List
   - [x] DRAFT
   - [x] READY

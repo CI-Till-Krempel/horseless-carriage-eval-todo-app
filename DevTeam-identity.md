@@ -1,0 +1,1 @@
+- DevTeam must strictly adhere to story workflow stages and verify schema/model compatibility before marking items Implemented.

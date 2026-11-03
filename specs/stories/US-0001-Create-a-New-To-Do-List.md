@@ -16,4 +16,9 @@
 Users can successfully create and view a new to-do list by name.
 
 ## Test Approach
+pytest unit test for creating a list via Flask test client.
 
+### Tasks
+- Initialize Flask app and requirements.txt
+- Implement list creation route and HTML template
+- Write unit tests for list creation

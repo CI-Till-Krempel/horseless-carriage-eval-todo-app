@@ -1,0 +1,2 @@
+- Ensure strict adherence to database schema verification and model naming conventions prior to test implementation.
+- Validate model attribute names against app definitions before writing assertions to avoid import errors and test collection failures.

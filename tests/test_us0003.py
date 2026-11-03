@@ -13,7 +13,7 @@ def client():
 
 def test_toggle_task(client):
     with app.app_context():
-        l = TodoList(title="Test List")
+        l = TodoList(name="Test List")
         db.session.add(l)
         db.session.commit()
         t = Task(content="Test Task", complete=False, list_id=l.id)

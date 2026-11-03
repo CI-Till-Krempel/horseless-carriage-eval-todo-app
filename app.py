@@ -9,7 +9,7 @@ db = SQLAlchemy(app)
 
 class TodoList(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
     tasks = db.relationship('Task', backref='todo_list', lazy=True, cascade='all, delete-orphan')
 
 class Task(db.Model):
@@ -30,7 +30,7 @@ def index():
 def add_list():
     title = request.form.get('title')
     if title:
-        new_list = TodoList(title=title)
+        new_list = TodoList(name=title)
         db.session.add(new_list)
         db.session.commit()
     return redirect(url_for('index'))

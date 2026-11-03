@@ -16,4 +16,9 @@
 Users can successfully add tasks with descriptions to existing lists.
 
 ## Test Approach
+Write pytest for adding tasks to lists and test UI submission.
 
+### Tasks
+- Add POST route for tasks
+- Update UI to submit task description
+- Add tests for adding task

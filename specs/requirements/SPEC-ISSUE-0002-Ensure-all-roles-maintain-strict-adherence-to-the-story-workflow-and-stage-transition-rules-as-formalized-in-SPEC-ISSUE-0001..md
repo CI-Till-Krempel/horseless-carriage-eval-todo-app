@@ -1,0 +1,20 @@
+# Issue
+
+- Issue ID: SPEC-ISSUE-0002
+- Title: Ensure all roles maintain strict adherence to the story workflow and stage transition rules as formalized in SPEC-ISSUE-0001.
+- Status: Draft
+- Priority: Must
+- Owner: DevTeam
+- Last Updated: 2026-11-03
+
+## Overview
+Ensure all roles maintain strict adherence to the story workflow and stage transition rules as formalized in SPEC-ISSUE-0001.
+
+## Acceptance Criteria
+
+
+## Notes
+
+
+## Test Approach
+

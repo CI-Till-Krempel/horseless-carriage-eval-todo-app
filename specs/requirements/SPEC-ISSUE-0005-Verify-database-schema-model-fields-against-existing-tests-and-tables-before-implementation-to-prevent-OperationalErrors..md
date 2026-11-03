@@ -15,6 +15,7 @@ Verify database schema model fields against existing tests and tables before imp
 
 ## Notes
 
+- ⚠️ REVIEW DENIED at Tested by QA: Test failed to import UserList from app.py: ImportError: cannot import name 'UserList' from 'app'. Please update the model names or app exports to correctly expose UserList.
 
 ## Test Approach
 Pytest verification

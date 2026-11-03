@@ -14,7 +14,7 @@
 
 ## Notes
 Users can toggle task completion states easily.
-- ⚠️ REVIEW DENIED at Tested by QA: Database schema tests failed: sqlalchemy.exc.OperationalError: table todo_list has no column named title. Please fix the database models/migrations/schema setup so tables are created correctly.
+- ⚠️ REVIEW DENIED at Tested by QA: Test failure in tests/test_todo.py::test_add_task_to_list: AttributeError: 'NoneType' object has no attribute 'id'. Please ensure app.py route handlers and legacy tests are fully compatible with the TodoList model schema.
 
 ## Test Approach
 Verify via pytest.

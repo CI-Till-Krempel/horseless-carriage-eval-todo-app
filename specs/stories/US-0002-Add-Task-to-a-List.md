@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to a List
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-03
@@ -14,7 +14,6 @@
 
 ## Notes
 Users can successfully add tasks with descriptions to existing lists.
-- ⚠️ REVIEW DENIED at Tested by QA: Test suite failure: test_app.py fails to import lists_store from app because app.py was refactored to use Flask-SQLAlchemy without lists_store.
 
 ## Test Approach
 Write pytest for adding tasks to lists and test UI submission.

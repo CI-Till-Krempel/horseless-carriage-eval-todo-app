@@ -78,9 +78,9 @@ Stories
 - [US-0004] Delete a Task
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0005] Delete an Entire List
   - [x] DRAFT

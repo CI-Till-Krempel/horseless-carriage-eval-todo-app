@@ -15,7 +15,7 @@ Verify database schema model fields against existing tests and tables before imp
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: Test failed during assertion in test_db_schema_verification: one or more attributes tested on TodoList or Task did not match model definition. Please update test assertions to match actual model fields in app.py.
+- ⚠️ REVIEW DENIED at Tested by QA: Test failed in test_schema_verification.py: assertion error during attribute verification. Please ensure the assertions correctly match the attributes defined on TodoList and Task models.
 
 ## Test Approach
 Pytest verification

@@ -14,6 +14,7 @@
 
 ## Notes
 Users can successfully add tasks with descriptions to existing lists.
+- ⚠️ REVIEW DENIED at Tested by QA: Build check or test suite execution failed: ModuleNotFoundError: No module named 'flask_sqlalchemy' because flask_sqlalchemy is missing from requirements.txt.
 
 ## Test Approach
 Write pytest for adding tasks to lists and test UI submission.

@@ -16,4 +16,7 @@
 Users can delete lists and all contained tasks cleanly.
 
 ## Test Approach
+Verify via pytest.
 
+### Tasks
+- Implement delete list

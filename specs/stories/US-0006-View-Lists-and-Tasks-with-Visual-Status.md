@@ -16,4 +16,7 @@
 Users can clearly distinguish completed versus incomplete tasks in the UI.
 
 ## Test Approach
+Verify via pytest.
 
+### Tasks
+- Implement view

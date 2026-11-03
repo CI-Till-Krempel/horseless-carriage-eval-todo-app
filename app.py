@@ -14,8 +14,8 @@ class TodoList(db.Model):
 
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    description = db.Column(db.String(200), nullable=False)
-    completed = db.Column(db.Boolean, default=False, nullable=False)
+    content = db.Column(db.String(200), nullable=False)
+    complete = db.Column(db.Boolean, default=False, nullable=False)
     list_id = db.Column(db.Integer, db.ForeignKey('todo_list.id'), nullable=False)
 
 with app.app_context():
@@ -26,23 +26,29 @@ def index():
     lists = TodoList.query.all()
     return render_template('index.html', lists=lists)
 
-@app.route('/lists', methods=['POST'])
-def create_list():
-    name = request.form.get('name')
-    if name:
-        new_list = TodoList(name=name)
+@app.route('/list', methods=['POST'])
+def add_list():
+    title = request.form.get('title')
+    if title:
+        new_list = TodoList(name=title)
         db.session.add(new_list)
         db.session.commit()
     return redirect(url_for('index'))
 
-@app.route('/lists/<int:list_id>/tasks', methods=['POST'])
+@app.route('/list/<int:list_id>/task', methods=['POST'])
 def add_task(list_id):
-    description = request.form.get('description')
-    todo_list = TodoList.query.get_or_404(list_id)
-    if description:
-        task = Task(description=description, todo_list=todo_list)
-        db.session.add(task)
+    content = request.form.get('content')
+    if content:
+        new_task = Task(content=content, list_id=list_id, complete=False)
+        db.session.add(new_task)
         db.session.commit()
+    return redirect(url_for('index'))
+
+@app.route('/task/<int:task_id>/toggle', methods=['POST'])
+def toggle_task(task_id):
+    task = Task.query.get_or_404(task_id)
+    task.complete = not task.complete
+    db.session.commit()
     return redirect(url_for('index'))
 
 if __name__ == '__main__':

@@ -16,4 +16,7 @@
 Users can delete unwanted tasks successfully.
 
 ## Test Approach
+Verify via pytest.
 
+### Tasks
+- Implement delete task

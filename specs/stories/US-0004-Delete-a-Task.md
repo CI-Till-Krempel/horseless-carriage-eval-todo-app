@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete a Task
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-03

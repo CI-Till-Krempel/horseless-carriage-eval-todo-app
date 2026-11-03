@@ -72,10 +72,17 @@
       "id": "US-0002",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested",
+        "Accepted"
       ],
-      "status": "Ready",
-      "version": "v1.0.0"
+      "status": "Accepted",
+      "version": "v1.0.0",
+      "review_denial": null,
+      "acceptance_check_count": 1,
+      "acceptance_check_note": "Verified acceptance criteria for US-0002: User can successfully add a task with a description to an existing list, and tasks are displayed correctly in the UI."
     },
     {
       "user_story": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
@@ -148,6 +155,25 @@
       ],
       "status": "Ready",
       "version": "v1.0.0"
+    },
+    {
+      "title": "Ensure strict adherence to story workflow and stage transition rules.",
+      "overview": "Ensure all roles maintain strict adherence to the story workflow and stage transition rules as formalized in SPEC-ISSUE-0001.",
+      "owner": "DevTeam",
+      "type": "Issue",
+      "id": "SPEC-ISSUE-0002",
+      "priority": "Must",
+      "description": "Ensure all roles maintain strict adherence to the story workflow and stage transition rules as formalized in SPEC-ISSUE-0001.",
+      "acceptance_criteria": [
+        "Given a retro-filed issue, When the team reviews the workflow policy, Then ensure compliance across all stages."
+      ],
+      "user_story": "As a Scrum team member, I want to adhere strictly to the story workflow so that we maintain quality and avoid process gaps.",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "version": "Backlog (unplanned)"
     }
   ],
   "definition_of_done": [
@@ -159,21 +185,24 @@
     "specs/ROADMAP.md updated via update_roadmap to reflect this story's completed status",
     "Actual tokens spent logged via log_story_tokens"
   ],
-  "sprint_goal": "Continue product development and implement planned backlog stories for sprint 2.",
-  "sprint_number": 2,
-  "sprint_backlog_pr_sprint": 2,
+  "sprint_goal": "Implement core user management and robust API error handling to enhance system reliability.",
+  "sprint_number": 3,
+  "sprint_backlog_pr_sprint": 3,
   "sprint_backlog_pr_opened": true,
-  "planning_output_commit_count": 10,
-  "sprint_backlog_pr_content_baseline": 7,
+  "planning_output_commit_count": 17,
+  "sprint_backlog_pr_content_baseline": 14,
   "sprint_backlog": [
     {
-      "title": "Maintain clear communication and adherence to the story workflow across all roles.",
-      "overview": "Maintain clear communication and adherence to the story workflow across all roles.",
-      "owner": "DevTeam",
-      "type": "Issue",
-      "id": "SPEC-ISSUE-0001",
+      "title": "Add Task to a List",
+      "value_hypothesis": "Users can successfully add tasks with descriptions to existing lists.",
       "priority": "Must",
-      "version": "v1.0.0",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user enters a task description and clicks add, Then the task is added to that list."
+      ],
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "type": "User Story",
+      "id": "US-0002",
       "stages_completed": [
         "Draft",
         "Ready",
@@ -183,24 +212,30 @@
         "Accepted"
       ],
       "status": "Accepted",
-      "description": "Maintain clear communication and adherence to the story workflow across all roles.",
-      "user_story": "As a team member, I want clear workflow adherence so that no process steps are skipped.",
-      "acceptance_criteria": [
-        "- Given the team is working on stories, When a story stage transition or workflow event occurs, Then all roles strictly follow the defined story workflow and stage order."
-      ],
-      "risks_assumptions": "None.",
-      "code_files": [],
-      "estimate": 1000,
+      "version": "v1.0.0",
+      "test_approach": "Write pytest for adding tasks to lists and test UI submission.",
       "dod_checks": [
-        "Verify workflow adherence policy is documented and followed."
+        "Automated tests pass",
+        "Code reviewed",
+        "Tokens logged"
       ],
-      "test_approach": "Verify via process audit and adherence checks.",
+      "approach": "Implement adding tasks to an existing list via backend API and update UI form accordingly.",
       "tasks": [
-        "Verify workflow guidelines and document compliance checks."
+        "Add POST route for tasks",
+        "Update UI to submit task description",
+        "Add tests for adding task"
       ],
-      "approach": "Ensure rigorous tracking and adherence to the story workflow across all stage transitions.",
+      "estimate": 150000,
+      "code_files": [
+        "app.py",
+        "templates/index.html"
+      ],
+      "risks_assumptions": [
+        "Existing database schema supports task association with lists."
+      ],
+      "review_denial": null,
       "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified acceptance criteria for SPEC-ISSUE-0001: workflow policy document is created and adherence is enforced."
+      "acceptance_check_note": "Verified acceptance criteria for US-0002: User can successfully add a task with a description to an existing list, and tasks are displayed correctly in the UI."
     }
   ],
   "impediment_log": [],
@@ -214,6 +249,16 @@
       "sprint_number": 1,
       "recurs_since_sprint": null,
       "issue_id": "SPEC-ISSUE-0001"
+    },
+    {
+      "action": "Ensure all roles maintain strict adherence to the story workflow and stage transition rules as formalized in SPEC-ISSUE-0001.",
+      "owner": "DevTeam",
+      "success_metric": "100% adherence to story workflow stages without process gaps in future sprints.",
+      "status": "open",
+      "category": "technical",
+      "sprint_number": 2,
+      "recurs_since_sprint": 1,
+      "issue_id": "SPEC-ISSUE-0002"
     }
   ],
   "decision_log": [
@@ -228,16 +273,16 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.21049884999999996
+    "current_usd_spend": 0.4203282399999999
   },
   "token_usage": {
-    "total": 988371,
+    "total": 2002171,
     "agents": {
-      "ScrumMaster": 14504,
-      "ProductOwner": 244437,
-      "DevTeam": 467983,
-      "Architect": 106189,
-      "QA": 155258
+      "ScrumMaster": 14462,
+      "ProductOwner": 349098,
+      "DevTeam": 946547,
+      "Architect": 252302,
+      "QA": 439762
     }
   },
   "story_estimates": {
@@ -247,11 +292,15 @@
     "SPEC-ISSUE-0001": {
       "estimate": 1000,
       "actual": 500
+    },
+    "US-0002": {
+      "estimate": 150000,
+      "actual": 120000
     }
   },
   "sprint_report_kpis": {},
-  "kpi_update_count": 1,
-  "kpi_baseline": 1,
+  "kpi_update_count": 2,
+  "kpi_baseline": 2,
   "backlog_scope_complete": false,
   "repo": {
     "url": "git@github.com:CI-Till-Krempel/horseless-carriage-eval-todo-app.git",
@@ -269,16 +318,16 @@
     },
     {
       "role": "user",
-      "content": "This is sprint 2 of 5. Continue the product vision from before - check the existing repo content (specs/, code, .hc/state.json) before planning, so you build on what's already there rather than repeating or contradicting it. As before: the sprint goal and backlog are pre-approved. Start by calling start_sprint(goal) to officially kick off this sprint - it mechanically resets the sprint's own token/event budget, so skipping it leaves this sprint silently running on whatever budget the previous sprint already spent. Then proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) without waiting for further approval. Do not ask me anything else during this sprint."
+      "content": "This is sprint 3 of 5. Continue the product vision from before - check the existing repo content (specs/, code, .hc/state.json) before planning, so you build on what's already there rather than repeating or contradicting it. As before: the sprint goal and backlog are pre-approved. Start by calling start_sprint(goal) to officially kick off this sprint - it mechanically resets the sprint's own token/event budget, so skipping it leaves this sprint silently running on whatever budget the previous sprint already spent. Then proceed directly through planning, development, PR creation, CI verification, sprint review (create_sprint_report), and the release PR (create_release_pr) without waiting for further approval. Do not ask me anything else during this sprint."
     }
   ],
   "hc_version": "0.1.0",
-  "retro_baseline": 1,
+  "retro_baseline": 2,
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 4,
-  "unadvanced_write_nudge_baseline": 0,
+  "dev_touch_baseline": 7,
+  "unadvanced_write_nudge_baseline": 9,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
     "specs/ROADMAP.md",
@@ -299,13 +348,19 @@
     "specs/reports/SPRINT-REPORT-001.md",
     "specs/reports/SPRINT-REPORT-LATEST.md",
     "specs/reports/RETRO-001.md",
-    "specs/requirements/workflow-policy.md"
+    "specs/requirements/workflow-policy.md",
+    "specs/requirements/SPEC-ISSUE-0002-Ensure-all-roles-maintain-strict-adherence-to-the-story-workflow-and-stage-transition-rules-as-formalized-in-SPEC-ISSUE-0001..md",
+    "specs/reports/TRANSCRIPT-002.md",
+    "specs/reports/SPRINT-REPORT-002.md",
+    "specs/reports/RETRO-002.md",
+    "specs/requirements/SPEC-ISSUE-0002-Ensure-strict-adherence-to-story-workflow-and-stage-transition-rules..md",
+    "tests/test_todo.py"
   ],
-  "source_content_change_count": 4,
+  "source_content_change_count": 9,
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true,
-    "manifest_write_count_at_check": 1
+    "manifest_write_count_at_check": 2
   },
   "last_pr_checks": {
     "passing": true,
@@ -313,18 +368,19 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
-    "Architect": 3,
-    "QA": 3,
-    "DevTeam": 1
+    "Architect": 5,
+    "QA": 9,
+    "DevTeam": 2
   },
-  "architect_review_baseline": 3,
-  "qa_review_baseline": 3,
-  "qa_tested_baseline": 1,
+  "architect_review_baseline": 5,
+  "qa_review_baseline": 9,
+  "qa_tested_baseline": 2,
   "content_loss_warnings": [],
   "content_loss_acknowledged_baseline": 0,
   "sprint_backlog_engagement_baseline": {
-    "Architect": 1,
-    "QA": 1
+    "Architect": 3,
+    "QA": 3,
+    "DevTeam": 1
   },
   "sprint_report_pending_release": false,
   "blocking_interactions": [],
@@ -336,6 +392,6 @@
   "framework_change_proposal_count": 0,
   "framework_change_proposals": [],
   "blocked_story_ids_as_of_last_report": [],
-  "accepted_count_baseline": 1,
+  "accepted_count_baseline": 2,
   "version_goals": {}
 }

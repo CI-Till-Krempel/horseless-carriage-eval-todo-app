@@ -15,7 +15,7 @@ Verify database schema model fields against existing tests and tables before imp
 
 ## Notes
 
-- ⚠️ REVIEW DENIED at Tested by QA: Test failed to import ToDoList from app.py: ImportError: cannot import name 'ToDoList' from 'app'. Please verify the actual model class name in app.py (e.g. List or TodoList) and update the test import.
+- ⚠️ REVIEW DENIED at Tested by QA: Test failed with ImportError: cannot import name 'UserList' from 'app'. The app module does not export UserList under that name. Please check app.py model definitions and correct the import in tests/test_schema_verification.py.
 
 ## Test Approach
 Pytest verification

@@ -50,9 +50,9 @@ Stories
 - [SPEC-ISSUE-0001] Maintain clear communication and adherence to the story workflow across all roles.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0002] Add Task to a List
   - [x] DRAFT

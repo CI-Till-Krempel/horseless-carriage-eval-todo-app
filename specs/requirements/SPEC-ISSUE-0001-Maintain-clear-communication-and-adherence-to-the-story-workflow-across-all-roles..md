@@ -17,4 +17,7 @@ Maintain clear communication and adherence to the story workflow across all role
 
 
 ## Test Approach
+Verify via process audit and adherence checks.
 
+### Tasks
+- Verify workflow guidelines and document compliance checks.

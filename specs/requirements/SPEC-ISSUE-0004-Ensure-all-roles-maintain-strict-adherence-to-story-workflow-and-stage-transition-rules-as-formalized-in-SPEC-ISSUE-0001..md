@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0004
 - Title: Ensure all roles maintain strict adherence to story workflow and stage transition rules as formalized in SPEC-ISSUE-0001.
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-03

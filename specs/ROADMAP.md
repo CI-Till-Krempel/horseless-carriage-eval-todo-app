@@ -71,17 +71,17 @@ Stories
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0004] Delete a Task
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0005] Delete an Entire List
   - [x] DRAFT
   - [x] READY
@@ -90,6 +90,26 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] View Lists and Tasks with Visual Status
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### 1.0
+Goals
+
+Stories
+- [SPEC-ISSUE-0004] Ensure all roles maintain strict adherence to story workflow and stage transition rules as formalized in SPEC-ISSUE-0001.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [SPEC-ISSUE-0003] Enforce rigorous workflow stage verification before story advancement to prevent process gaps.
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

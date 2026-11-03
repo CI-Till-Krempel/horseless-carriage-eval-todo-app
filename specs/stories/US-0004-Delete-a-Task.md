@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete a Task
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-03
@@ -16,4 +16,7 @@
 Users can delete unwanted tasks successfully.
 
 ## Test Approach
+Verify via pytest.
 
+### Tasks
+- Implement delete task

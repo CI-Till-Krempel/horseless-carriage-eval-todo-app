@@ -16,4 +16,8 @@
 Users can toggle task completion states easily.
 
 ## Test Approach
+Verify via pytest.
 
+### Tasks
+- Add task completion route
+- Add tests

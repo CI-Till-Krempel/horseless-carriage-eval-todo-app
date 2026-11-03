@@ -105,9 +105,9 @@ Stories
 - [SPEC-ISSUE-0004] Ensure all roles maintain strict adherence to story workflow and stage transition rules as formalized in SPEC-ISSUE-0001.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [SPEC-ISSUE-0003] Enforce rigorous workflow stage verification before story advancement to prevent process gaps.
   - [x] DRAFT

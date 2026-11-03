@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-03
@@ -14,7 +14,6 @@
 
 ## Notes
 Users can toggle task completion states easily.
-- ⚠️ REVIEW DENIED at Tested by QA: Test failure in tests/test_todo.py::test_add_task_to_list: AttributeError: 'NoneType' object has no attribute 'id'. Please ensure app.py route handlers and legacy tests are fully compatible with the TodoList model schema.
 
 ## Test Approach
 Verify via pytest.

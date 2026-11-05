@@ -54,7 +54,7 @@ Stories
 - [SPEC-ISSUE-0001] Ensure Dev Team and QA align on API response types (JSON vs redirect) during story planning to avoid review iteration delays.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

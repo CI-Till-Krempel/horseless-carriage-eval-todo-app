@@ -17,4 +17,7 @@ Maintain rigorous review participation and CI checks for all upcoming stories.
 
 
 ## Test Approach
+Run pytest and check PR checks.
 
+### Tasks
+- Verify test configurations and CI workflows

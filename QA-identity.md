@@ -1,0 +1,1 @@
+## QA Customization - Test Fixture Setup\n- Ensure test fixtures are thoroughly verified for API content-type negotiation (JSON vs redirect) prior to feature implementation in every sprint.

@@ -41,3 +41,14 @@ def test_delete_task(client):
     response = client.post(f'/tasks/{task_id}/delete', follow_redirects=True)
     assert response.status_code == 200
     assert len(todo_lists[list_id]['tasks']) == 0
+
+def test_delete_list(client):
+    response = client.post('/lists', data={'title': 'Test List'}, follow_redirects=True)
+    list_id = list(todo_lists.keys())[0]
+
+    response = client.post(f'/lists/{list_id}/tasks', data={'description': 'Test Task'}, follow_redirects=True)
+    assert len(todo_lists) == 1
+
+    response = client.post(f'/lists/{list_id}/delete', follow_redirects=True)
+    assert response.status_code == 200
+    assert len(todo_lists) == 0

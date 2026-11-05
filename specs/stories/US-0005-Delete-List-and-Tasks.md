@@ -2,7 +2,7 @@
 
 - Story ID: US-0005
 - Title: Delete List and Tasks
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-05
@@ -16,4 +16,4 @@
 Enables bulk removal of entire categories of work.
 
 ## Test Approach
-
+Pytest tests for deleting lists.

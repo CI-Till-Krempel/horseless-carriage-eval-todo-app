@@ -1,0 +1,1 @@
+Ensure Dev Team and QA align on API response types (JSON vs redirect) during story planning and implementation to prevent review rework.

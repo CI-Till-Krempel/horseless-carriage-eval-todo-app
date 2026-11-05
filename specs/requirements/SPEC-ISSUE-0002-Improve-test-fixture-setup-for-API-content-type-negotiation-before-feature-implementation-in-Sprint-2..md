@@ -17,4 +17,7 @@ Improve test fixture setup for API content-type negotiation before feature imple
 
 
 ## Test Approach
+Run tests with updated fixtures
 
+### Tasks
+- Update test fixtures for content-type negotiation

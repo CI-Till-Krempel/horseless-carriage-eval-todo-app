@@ -33,6 +33,13 @@ Stories
 
 
 Stories
+- [SPEC-ISSUE-0004] Maintain rigorous review participation and CI checks for all upcoming stories.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [SPEC-ISSUE-0003] Ensure continued alignment between Dev Team and QA on API response types during story planning and test fixture setup.
   - [x] DRAFT
   - [x] READY

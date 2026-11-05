@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0004
 - Title: Maintain rigorous review participation and CI checks for all upcoming stories.
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-05
@@ -17,4 +17,7 @@ Maintain rigorous review participation and CI checks for all upcoming stories.
 
 
 ## Test Approach
+Run pytest and check PR checks.
 
+### Tasks
+- Verify test configurations and CI workflows

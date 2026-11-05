@@ -43,7 +43,21 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
+- [SPEC-ISSUE-0002] Improve test fixture setup for API content-type negotiation before feature implementation in Sprint 2.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [SPEC-ISSUE-0001] Ensure Dev Team and QA align on API response types (JSON vs redirect) during story planning to avoid review iteration delays.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0002] Add Task to List
   - [x] DRAFT
   - [x] READY

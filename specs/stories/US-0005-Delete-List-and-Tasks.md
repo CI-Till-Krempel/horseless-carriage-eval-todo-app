@@ -16,4 +16,4 @@
 Enables bulk removal of entire categories of work.
 
 ## Test Approach
-
+Pytest tests for deleting lists.

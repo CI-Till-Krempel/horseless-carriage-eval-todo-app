@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-05
@@ -16,4 +16,4 @@
 Provides feedback on task completion status.
 
 ## Test Approach
-
+Pytest tests for task completion toggling.

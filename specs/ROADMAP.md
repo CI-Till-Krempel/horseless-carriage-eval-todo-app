@@ -38,7 +38,7 @@ Stories
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [ ] TESTED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [SPEC-ISSUE-0003] Ensure continued alignment between Dev Team and QA on API response types during story planning and test fixture setup.
   - [x] DRAFT

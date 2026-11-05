@@ -17,4 +17,7 @@ Ensure Dev Team and QA align on API response types (JSON vs redirect) during sto
 
 
 ## Test Approach
+Verify API response type in tests
 
+### Tasks
+- Document JSON response type agreement

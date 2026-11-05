@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0002
 - Title: Improve test fixture setup for API content-type negotiation before feature implementation in Sprint 2.
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: QA
 - Last Updated: 2026-11-05
@@ -17,4 +17,7 @@ Improve test fixture setup for API content-type negotiation before feature imple
 
 
 ## Test Approach
+Run tests with updated fixtures
 
+### Tasks
+- Update test fixtures for content-type negotiation

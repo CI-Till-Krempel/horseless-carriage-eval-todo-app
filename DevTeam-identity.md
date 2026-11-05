@@ -1,0 +1,1 @@
+DevTeam must proactively collaborate with QA and Architect on API response types and maintain rigorous review participation and CI checks for all upcoming stories.

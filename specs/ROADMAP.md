@@ -47,7 +47,7 @@ Stories
 - [SPEC-ISSUE-0002] Improve test fixture setup for API content-type negotiation before feature implementation in Sprint 2.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

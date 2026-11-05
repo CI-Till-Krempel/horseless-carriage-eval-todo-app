@@ -24,10 +24,10 @@
 - Success Metric: Zero review iteration delays due to content-type mismatches.
 - Filed As: SPEC-ISSUE-0003
 
-## Ensure all stories are successfully planned and implemented before budget limits are reached
+## Maintain rigorous review participation and CI checks for all upcoming stories.
 - Kind: Retro Action
 - Category: technical
 - Owner: DevTeam
 - Status: open
-- Success Metric: Complete sprint backlog items within budget constraints
+- Success Metric: 100% of sprint stories reviewed and passing CI without regression.
 - Filed As: SPEC-ISSUE-0004

@@ -26,14 +26,12 @@ Recurring finding from Sprint 1 and Sprint 2 regarding test fixture setup for co
 
 ## DevTeam
 - Proposed By: ScrumMaster
-- Pull Request: https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/787
+- Pull Request: https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/789
 
 ### Rationale
-Recurring technical/process gaps between Dev Team and QA regarding API response types and fixture setup require proactive alignment during planning.
+Recurring retro finding: Dev Team and QA need consistent alignment on API response types before finalizing story code to avoid test mismatches.
 
 ### Proposed Content
 ```
-# DevTeam Customization
-
-- Ensure Dev Team and QA explicitly align on API response types (JSON vs redirect) during story planning and test fixture setup before starting implementation.
+Ensure Dev Team and QA align on API response types (JSON vs redirect) during story planning and implementation to prevent review rework.
 ```

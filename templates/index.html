@@ -15,7 +15,12 @@
     <ul>
         {% for list in lists %}
             <li>
-                <h2>{{ list.title }}</h2>
+                <h2>
+                    {{ list.title }}
+                    <form action="/lists/{{ list.id }}/delete" method="POST" style="display:inline;">
+                        <button type="submit">Delete List</button>
+                    </form>
+                </h2>
                 <form action="/lists/{{ list.id }}/tasks" method="POST">
                     <input type="text" name="description" placeholder="New Task Description" required>
                     <button type="submit">Add Task</button>

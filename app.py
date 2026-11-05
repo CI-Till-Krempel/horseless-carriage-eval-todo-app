@@ -32,6 +32,19 @@ def create_list():
         return jsonify(todo_lists[list_id]), 201
     return redirect(url_for('index'))
 
+@app.route('/lists/<int:list_id>/delete', methods=['POST'])
+def delete_list(list_id):
+    if list_id not in todo_lists:
+        if request.is_json or request.headers.get('Accept') == 'application/json':
+            return jsonify({'error': 'List not found'}), 404
+        return redirect(url_for('index'))
+        
+    del todo_lists[list_id]
+    
+    if request.is_json or request.headers.get('Accept') == 'application/json':
+        return jsonify({'success': True}), 200
+    return redirect(url_for('index'))
+
 @app.route('/lists/<int:list_id>/tasks', methods=['POST'])
 def add_task(list_id):
     global next_task_id

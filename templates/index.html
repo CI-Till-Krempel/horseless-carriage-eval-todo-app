@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>To-Do App</title>
+</head>
+<body>
+    <h1>To-Do Lists</h1>
+    
+    <form action="/lists" method="POST">
+        <input type="text" name="title" placeholder="New List Title" required>
+        <button type="submit">Create List</button>
+    </form>
+
+    <ul>
+        {% for list in lists %}
+            <li>
+                <h2>
+                    {{ list.title }}
+                    <form action="/lists/{{ list.id }}/delete" method="POST" style="display:inline;">
+                        <button type="submit">Delete List</button>
+                    </form>
+                </h2>
+                <form action="/lists/{{ list.id }}/tasks" method="POST">
+                    <input type="text" name="description" placeholder="New Task Description" required>
+                    <button type="submit">Add Task</button>
+                </form>
+                <ul>
+                    {% for task in list.tasks %}
+                        <li>
+                            <form action="/tasks/{{ task.id }}/toggle" method="POST" style="display:inline;">
+                                <button type="submit">
+                                    {% if task.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}
+                                </button>
+                            </form>
+                            <span style="{% if task.completed %}text-decoration: line-through; color: gray;{% endif %}">
+                                {{ task.description }}
+                            </span>
+                            <form action="/tasks/{{ task.id }}/delete" method="POST" style="display:inline;">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

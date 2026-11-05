@@ -5,8 +5,6 @@ app = Flask(__name__)
 # In-memory database stores
 lists_db = {}
 tasks_db = {}
-# lists_db: { list_id: { "id": list_id, "name": list_name } }
-# tasks_db: { task_id: { "id": task_id, "list_id": list_id, "description": desc, "completed": bool } }
 
 next_list_id = 1
 next_task_id = 1
@@ -74,8 +72,12 @@ def toggle_task(task_id):
 
 @app.route('/tasks/<task_id>/delete', methods=['POST'])
 def delete_task(task_id):
-    if task_id in tasks_db:
-        del tasks_db[task_id]
+    if task_id not in tasks_db:
+        if request.is_json:
+            return jsonify({'error': 'Task not found'}), 404
+        return redirect(url_for('index'))
+
+    del tasks_db[task_id]
     
     if request.is_json:
         return jsonify({'success': True}), 200
@@ -83,12 +85,16 @@ def delete_task(task_id):
 
 @app.route('/lists/<list_id>/delete', methods=['POST'])
 def delete_list(list_id):
-    if list_id in lists_db:
-        del lists_db[list_id]
-        # Cascade delete associated tasks
-        to_delete = [tid for tid, t in tasks_db.items() if t['list_id'] == list_id]
-        for tid in to_delete:
-            del tasks_db[tid]
+    if list_id not in lists_db:
+        if request.is_json:
+            return jsonify({'error': 'List not found'}), 404
+        return redirect(url_for('index'))
+
+    del lists_db[list_id]
+    # Cascade delete associated tasks
+    to_delete = [tid for tid, t in tasks_db.items() if t['list_id'] == list_id]
+    for tid in to_delete:
+        del tasks_db[tid]
             
     if request.is_json:
         return jsonify({'success': True}), 200

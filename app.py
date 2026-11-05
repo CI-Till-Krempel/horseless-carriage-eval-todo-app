@@ -9,6 +9,9 @@ tasks_db = {}
 next_list_id = 1
 next_task_id = 1
 
+def wants_json():
+    return request.is_json or (request.headers.get('Content-Type') == 'application/json') or ('application/json' in request.accept_mimetypes.best)
+
 @app.route('/')
 def index():
     return render_template('index.html', lists=lists_db.values(), tasks=tasks_db.values())
@@ -18,7 +21,7 @@ def create_list():
     global next_list_id
     name = request.form.get('name') or (request.json and request.json.get('name'))
     if not name:
-        if request.is_json:
+        if wants_json():
             return jsonify({'error': 'Name is required'}), 400
         return redirect(url_for('index'))
     
@@ -26,7 +29,7 @@ def create_list():
     next_list_id += 1
     lists_db[list_id] = {'id': list_id, 'name': name}
     
-    if request.is_json:
+    if wants_json():
         return jsonify(lists_db[list_id]), 201
     return redirect(url_for('index'))
 
@@ -34,13 +37,13 @@ def create_list():
 def add_task(list_id):
     global next_task_id
     if list_id not in lists_db:
-        if request.is_json:
+        if wants_json():
             return jsonify({'error': 'List not found'}), 404
         return redirect(url_for('index'))
     
     description = request.form.get('description') or (request.json and request.json.get('description'))
     if not description:
-        if request.is_json:
+        if wants_json():
             return jsonify({'error': 'Description is required'}), 400
         return redirect(url_for('index'))
     
@@ -53,40 +56,40 @@ def add_task(list_id):
         'completed': False
     }
     
-    if request.is_json:
+    if wants_json():
         return jsonify(tasks_db[task_id]), 201
     return redirect(url_for('index'))
 
 @app.route('/tasks/<task_id>/toggle', methods=['POST'])
 def toggle_task(task_id):
     if task_id not in tasks_db:
-        if request.is_json:
+        if wants_json():
             return jsonify({'error': 'Task not found'}), 404
         return redirect(url_for('index'))
     
     tasks_db[task_id]['completed'] = not tasks_db[task_id]['completed']
     
-    if request.is_json:
+    if wants_json():
         return jsonify(tasks_db[task_id]), 200
     return redirect(url_for('index'))
 
 @app.route('/tasks/<task_id>/delete', methods=['POST'])
 def delete_task(task_id):
     if task_id not in tasks_db:
-        if request.is_json:
+        if wants_json():
             return jsonify({'error': 'Task not found'}), 404
         return redirect(url_for('index'))
 
     del tasks_db[task_id]
     
-    if request.is_json:
+    if wants_json():
         return jsonify({'success': True}), 200
     return redirect(url_for('index'))
 
 @app.route('/lists/<list_id>/delete', methods=['POST'])
 def delete_list(list_id):
     if list_id not in lists_db:
-        if request.is_json:
+        if wants_json():
             return jsonify({'error': 'List not found'}), 404
         return redirect(url_for('index'))
 
@@ -96,7 +99,7 @@ def delete_list(list_id):
     for tid in to_delete:
         del tasks_db[tid]
             
-    if request.is_json:
+    if wants_json():
         return jsonify({'success': True}), 200
     return redirect(url_for('index'))
 

@@ -14,6 +14,7 @@
 
 ## Notes
 Enables basic organization of tasks into named lists.
+- ⚠️ REVIEW DENIED at Tested by QA: pytest unit tests test_toggle_task, test_delete_task, and test_delete_list_cascade are failing with status 302 instead of 200. The delete and toggle endpoints in app.py need to properly inspect request.is_json or Content-Type headers to return jsonify responses when called with JSON.
 
 ## Test Approach
 Write pytest unit/integration tests covering list creation via HTTP requests.

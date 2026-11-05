@@ -94,7 +94,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0006] View Lists and Tasks UI
   - [x] DRAFT
   - [x] READY

@@ -1,0 +1,1 @@
+## DevTeam Customization - API Response Alignment\n- Always align with QA and Architect during story planning on API response types (JSON vs redirect) to prevent review iteration delays and ensure clean test fixture setup.

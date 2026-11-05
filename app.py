@@ -81,5 +81,24 @@ def toggle_task(task_id):
         return jsonify(found_task), 200
     return redirect(url_for('index'))
 
+@app.route('/tasks/<int:task_id>/delete', methods=['POST'])
+def delete_task(task_id):
+    deleted = False
+    for lst in todo_lists.values():
+        initial_len = len(lst['tasks'])
+        lst['tasks'] = [t for t in lst['tasks'] if t['id'] != task_id]
+        if len(lst['tasks']) < initial_len:
+            deleted = True
+            break
+            
+    if not deleted:
+        if request.is_json or request.headers.get('Accept') == 'application/json':
+            return jsonify({'error': 'Task not found'}), 404
+        return redirect(url_for('index'))
+        
+    if request.is_json or request.headers.get('Accept') == 'application/json':
+        return jsonify({'success': True}), 200
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True)

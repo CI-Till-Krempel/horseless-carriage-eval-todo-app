@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-05
@@ -16,4 +16,9 @@
 Enables basic organization of tasks into named lists.
 
 ## Test Approach
+Write pytest unit/integration tests covering list creation via HTTP requests.
 
+### Tasks
+- Create Flask app structure
+- Implement list creation endpoint and UI
+- Write pytest tests for list creation

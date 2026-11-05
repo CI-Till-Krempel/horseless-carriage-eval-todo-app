@@ -110,9 +110,12 @@
       "version": "v0.1.0",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready",
+      "status": "Tested",
       "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done."
     },
     {
@@ -235,82 +238,82 @@
   ],
   "sprint_goal": "Implement core user stories and maintain quality standards for sprint 3",
   "sprint_number": 3,
-  "sprint_backlog_pr_sprint": 0,
+  "sprint_backlog_pr_sprint": 3,
   "sprint_backlog_pr_opened": true,
-  "planning_output_commit_count": 16,
-  "sprint_backlog_pr_content_baseline": 7,
+  "planning_output_commit_count": 19,
+  "sprint_backlog_pr_content_baseline": 17,
   "sprint_backlog": [
     {
-      "title": "Ensure Dev Team and QA align on API response types (JSON vs redirect) during story planning to avoid review iteration delays.",
-      "overview": "Ensure Dev Team and QA align on API response types (JSON vs redirect) during story planning to avoid review iteration delays.",
+      "title": "Ensure continued alignment between Dev Team and QA on API response types during story planning and test fixture setup.",
+      "overview": "Ensure continued alignment between Dev Team and QA on API response types during story planning and test fixture setup.",
       "owner": "DevTeam",
       "type": "Issue",
-      "id": "SPEC-ISSUE-0001",
+      "id": "SPEC-ISSUE-0003",
       "priority": "Must",
-      "version": "v0.1.0",
+      "acceptance_criteria": [
+        "Given a planned story or test fixture, When Dev Team and QA review response types and test setups, Then both parties agree on expected JSON vs redirect responses and fixture formats before implementation begins."
+      ],
+      "description": "Ensure continued alignment between Dev Team and QA on API response types during story planning and test fixture setup.",
       "stages_completed": [
         "Draft",
-        "Ready",
-        "Implemented",
-        "Reviewed",
-        "Tested",
-        "Accepted"
+        "Ready"
       ],
-      "status": "Accepted",
-      "acceptance_criteria": [
-        "Given Dev Team and QA are planning story execution, When API endpoints are designed, Then both agree on JSON vs redirect responses to avoid review iteration delays."
-      ],
+      "status": "Ready",
+      "version": "Backlog (unplanned)",
+      "code_files": [],
+      "estimate": 50,
       "risks_assumptions": [
         "None"
       ],
-      "tasks": [
-        "Document JSON response type agreement"
-      ],
       "dod_checks": [
-        "JSON response format agreed and documented"
+        "API response types documented and agreed upon"
       ],
-      "test_approach": "Verify API response type in tests",
-      "code_files": [],
-      "estimate": 10,
-      "approach": "Ensure API responses use JSON consistently to prevent iteration delays.",
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified API response types alignment agreement is documented and understood."
+      "タasks": [
+        "Document expected API response types in specs/architecture/api-response-agreement.md"
+      ],
+      "approach": "Review and document API response types (JSON vs redirects) to maintain alignment between Dev Team and QA.",
+      "test_approach": "Verify documentation exists and covers JSON and redirect response types."
     },
     {
-      "title": "Improve test fixture setup for API content-type negotiation before feature implementation in Sprint 2.",
-      "overview": "Improve test fixture setup for API content-type negotiation before feature implementation in Sprint 2.",
-      "owner": "QA",
-      "type": "Issue",
-      "id": "SPEC-ISSUE-0002",
+      "depends_on": [
+        "US-0001"
+      ],
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user enters a task description and adds it to the list, Then the task appears under that list."
+      ],
+      "value_hypothesis": "Allows users to populate lists with actionable tasks.",
       "priority": "Must",
+      "epic_id": "EP-0001",
+      "id": "US-0002",
+      "title": "Add Task to List",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "type": "User Story",
       "version": "v0.1.0",
       "stages_completed": [
         "Draft",
         "Ready",
         "Implemented",
         "Reviewed",
-        "Tested",
-        "Accepted"
+        "Tested"
       ],
-      "status": "Accepted",
-      "acceptance_criteria": [
-        "Given test fixtures are set up for Sprint 2, When API content-type negotiation tests run, Then fixtures correctly handle JSON vs redirect content types."
-      ],
+      "status": "Tested",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
+      "test_approach": "Pytest tests for adding tasks.",
+      "estimate": 100,
       "dod_checks": [
-        "Test fixtures handle JSON vs redirect properly"
+        "Task addition works via API and UI"
       ],
       "risks_assumptions": [
         "None"
       ],
-      "test_approach": "Run tests with updated fixtures",
-      "tasks": [
-        "Update test fixtures for content-type negotiation"
+      "タasks": [
+        "Add POST /lists/<id>/tasks route",
+        "Add UI form for adding tasks"
       ],
-      "code_files": [],
-      "estimate": 10,
-      "approach": "Improve test fixtures for API content-type negotiation.",
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified test fixtures successfully set up for API content-type negotiation (JSON vs redirect)."
+      "approach": "Implement POST endpoint for adding tasks to lists and UI support.",
+      "code_files": [
+        "app.py"
+      ]
     }
   ],
   "impediment_log": [],
@@ -352,19 +355,28 @@
       "decision": "Accepted via implemented_via_earlier_work instead of requiring a new write_file call",
       "rationale": "Covered by architectural agreement and API design alignment documents and fixtures",
       "owner": "DevTeam"
+    },
+    {
+      "title": "US-0002: content-loss warning(s) acknowledged at Tested",
+      "decision": "Accepted via content_loss_acknowledgment instead of restoring the prior content",
+      "rationale": "Refactored app.py to streamline routes for lists and tasks, removing redundant helper definitions while retaining all required functionality.",
+      "owner": "QA"
     }
   ],
   "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.65114465
+    "current_usd_spend": 0.08737025999999995
   },
   "token_usage": {
-    "total": 187523,
+    "total": 1371034,
     "agents": {
       "ScrumMaster": 14306,
-      "ProductOwner": 173217
+      "ProductOwner": 212458,
+      "DevTeam": 763938,
+      "Architect": 131788,
+      "QA": 248544
     }
   },
   "story_estimates": {
@@ -379,6 +391,13 @@
     "SPEC-ISSUE-0002": {
       "estimate": 10,
       "actual": 120
+    },
+    "SPEC-ISSUE-0003": {
+      "estimate": 50
+    },
+    "US-0002": {
+      "estimate": 100,
+      "actual": 45
     }
   },
   "sprint_report_kpis": {},
@@ -418,8 +437,8 @@
   ],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 7,
-  "unadvanced_write_nudge_baseline": 6,
+  "dev_touch_baseline": 10,
+  "unadvanced_write_nudge_baseline": 11,
   "sprint_files_touched": [
     "specs/requirements/PRD-Todo-App.md",
     "specs/architecture/ARCHITECTURE-VISION.md",
@@ -449,9 +468,10 @@
     "specs/reports/TRANSCRIPT-002.md",
     "specs/reports/SPRINT-REPORT-002.md",
     "specs/reports/RETRO-002.md",
-    "specs/reports/STEERING-002.md"
+    "specs/reports/STEERING-002.md",
+    "tests/test_app.py"
   ],
-  "source_content_change_count": 7,
+  "source_content_change_count": 11,
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true,
@@ -463,18 +483,25 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
+    "Architect": 6,
+    "QA": 11,
+    "DevTeam": 2
+  },
+  "architect_review_baseline": 6,
+  "qa_review_baseline": 11,
+  "qa_tested_baseline": 3,
+  "content_loss_warnings": [
+    {
+      "path": "app.py",
+      "previous_definition_count": 13,
+      "new_definition_count": 6
+    }
+  ],
+  "content_loss_acknowledged_baseline": 1,
+  "sprint_backlog_engagement_baseline": {
     "Architect": 4,
     "QA": 7,
     "DevTeam": 1
-  },
-  "architect_review_baseline": 4,
-  "qa_review_baseline": 7,
-  "qa_tested_baseline": 3,
-  "content_loss_warnings": [],
-  "content_loss_acknowledged_baseline": 0,
-  "sprint_backlog_engagement_baseline": {
-    "Architect": 1,
-    "QA": 4
   },
   "sprint_report_pending_release": false,
   "blocking_interactions": [],

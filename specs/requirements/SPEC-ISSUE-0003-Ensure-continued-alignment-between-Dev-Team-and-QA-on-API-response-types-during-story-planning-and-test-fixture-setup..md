@@ -17,4 +17,4 @@ Ensure continued alignment between Dev Team and QA on API response types during 
 
 
 ## Test Approach
-
+Verify documentation exists and covers JSON and redirect response types.

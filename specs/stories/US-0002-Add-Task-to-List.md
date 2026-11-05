@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-05
@@ -16,4 +16,4 @@
 Allows users to populate lists with actionable tasks.
 
 ## Test Approach
-
+Pytest tests for adding tasks.

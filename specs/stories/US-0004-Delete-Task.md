@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete Task
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-05
@@ -16,4 +16,4 @@
 Allows cleaning up outdated or erroneous tasks.
 
 ## Test Approach
-
+Pytest tests for task deletion.

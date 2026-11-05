@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify
 app = Flask(__name__)
 
 # In-memory storage for lists and tasks
-# lists: dict mapping list_id (int) -> dict with 'id', 'title', 'tasks' (list of dicts)
 todo_lists = {}
 next_list_id = 1
 next_task_id = 1
@@ -58,6 +57,28 @@ def add_task(list_id):
     
     if request.is_json or request.headers.get('Accept') == 'application/json':
         return jsonify(task), 201
+    return redirect(url_for('index'))
+
+@app.route('/tasks/<int:task_id>/toggle', methods=['POST'])
+def toggle_task(task_id):
+    found_task = None
+    for lst in todo_lists.values():
+        for task in lst['tasks']:
+            if task['id'] == task_id:
+                found_task = task
+                break
+        if found_task:
+            break
+            
+    if not found_task:
+        if request.is_json or request.headers.get('Accept') == 'application/json':
+            return jsonify({'error': 'Task not found'}), 404
+        return redirect(url_for('index'))
+        
+    found_task['completed'] = not found_task['completed']
+    
+    if request.is_json or request.headers.get('Accept') == 'application/json':
+        return jsonify(found_task), 200
     return redirect(url_for('index'))
 
 if __name__ == '__main__':

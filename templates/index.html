@@ -22,7 +22,16 @@
                 </form>
                 <ul>
                     {% for task in list.tasks %}
-                        <li>{{ task.description }}</li>
+                        <li>
+                            <form action="/tasks/{{ task.id }}/toggle" method="POST" style="display:inline;">
+                                <button type="submit">
+                                    {% if task.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}
+                                </button>
+                            </form>
+                            <span style="{% if task.completed %}text-decoration: line-through; color: gray;{% endif %}">
+                                {{ task.description }}
+                            </span>
+                        </li>
                     {% endfor %}
                 </ul>
             </li>

@@ -1,0 +1,24 @@
+# Retro Items
+
+## Ensure requirements.txt dependencies are included from the start of story implementation to avoid test collection errors during QA testing.
+- Kind: Retro Action
+- Category: technical
+- Owner: DevTeam
+- Status: open
+- Success Metric: Zero build failures due to missing dependencies in future sprints.
+- Filed As: SPEC-ISSUE-0001
+
+## Ensure requirements.txt dependencies are maintained continuously alongside development.
+- Kind: Retro Action
+- Category: technical
+- Owner: DevTeam
+- Status: open
+- Success Metric: Zero missing dependency errors during testing phases.
+- Filed As: SPEC-ISSUE-0002
+
+## Maintain requirements.txt continuously alongside any package or dependency updates to ensure build stability and prevent test collection failures.
+- Kind: Retro Action
+- Category: technical
+- Owner: DevTeam
+- Status: open
+- Success Metric: Zero missing dependency issues during test execution in subsequent sprints.

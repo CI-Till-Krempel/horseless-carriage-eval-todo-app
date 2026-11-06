@@ -16,4 +16,8 @@
 Provides overview and navigation for all stored tasks.
 
 ## Test Approach
+Test viewing lists and tasks.
 
+### Tasks
+- Create route to view lists and tasks
+- Add template view

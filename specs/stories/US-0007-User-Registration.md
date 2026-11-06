@@ -17,4 +17,9 @@
 Users can create unique accounts securely.
 
 ## Test Approach
+Test registration flow with valid and duplicate usernames.
 
+### Tasks
+- Add User model
+- Add registration route and template
+- Update requirements.txt

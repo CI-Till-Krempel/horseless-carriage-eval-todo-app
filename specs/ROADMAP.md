@@ -55,7 +55,7 @@ Stories
 - [SPEC-ISSUE-0001] Ensure requirements.txt dependencies are included from the start of story implementation to avoid test collection errors during QA testing.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

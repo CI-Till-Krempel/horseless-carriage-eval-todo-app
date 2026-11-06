@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-06
@@ -16,4 +16,9 @@
 Enables users to break down their lists into actionable tasks.
 
 ## Test Approach
+Write pytest test verifying task addition to an existing list.
 
+### Tasks
+- Add task addition endpoint in app.py
+- Update index.html to display task form and tasks per list
+- Write unit test for adding tasks

@@ -2,7 +2,7 @@
 
 - Story ID: US-0007
 - Title: User Registration
-- Status: Implemented
+- Status: Reviewed
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-06

@@ -26,11 +26,48 @@ Stories:
 
 ### v0.2 — Next iteration (target: YYYY-MM)
 Goals
-
+- Deliver user authentication and authorization features.
 Stories
+- [US-0007] User Registration
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0008] User Login
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0009] User Logout
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0010] Route and Data Authorization
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 ### Backlog (unplanned)
 
+
+Stories
+- [SPEC-ISSUE-0002] Ensure requirements.txt dependencies are maintained continuously alongside development.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### v0.1.0

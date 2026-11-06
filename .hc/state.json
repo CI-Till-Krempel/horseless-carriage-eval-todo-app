@@ -69,9 +69,12 @@
       "version": "v0.1.0",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready",
+      "status": "Tested",
       "acceptance_criteria": [
         "Given new dependencies are needed, When code is written, Then requirements.txt is updated immediately from the start of story implementation."
       ]
@@ -158,100 +161,45 @@
   ],
   "sprint_goal": "Implement the core product features and ensure robust test coverage for the release.",
   "sprint_number": 2,
-  "sprint_backlog_pr_sprint": 0,
-  "sprint_backlog_pr_opened": false,
-  "planning_output_commit_count": 10,
-  "sprint_backlog_pr_content_baseline": 1,
+  "sprint_backlog_pr_sprint": 2,
+  "sprint_backlog_pr_opened": true,
+  "planning_output_commit_count": 13,
+  "sprint_backlog_pr_content_baseline": 11,
   "sprint_backlog": [
     {
-      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
-      "epic_id": "EP-0001",
-      "title": "Create To-Do List",
-      "value_hypothesis": "Allows users to organize tasks into separate topical lists.",
+      "title": "Ensure requirements.txt dependencies are included from the start of story implementation to avoid test collection errors during QA testing.",
+      "overview": "Ensure requirements.txt dependencies are included from the start of story implementation to avoid test collection errors during QA testing.",
+      "owner": "DevTeam",
+      "type": "Issue",
+      "id": "SPEC-ISSUE-0001",
       "priority": "Must",
-      "acceptance_criteria": [
-        "Given the user is on the main page, When they enter a list name and submit, Then a new to-do list is created and displayed."
-      ],
-      "type": "User Story",
-      "id": "US-0001",
       "version": "v0.1.0",
       "stages_completed": [
         "Draft",
         "Ready",
         "Implemented",
         "Reviewed",
-        "Tested",
-        "Accepted"
+        "Tested"
       ],
-      "status": "Accepted",
-      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
-      "risks_assumptions": [
-        "In-memory storage is sufficient for MVP session scope."
-      ],
-      "estimate": 5000,
-      "dod_checks": [
-        "Code reviewed-ready",
-        "Automated tests written and passing",
-        "Tokens logged"
-      ],
-      "test_approach": "Write pytest unit tests for the list creation endpoint and verify with pytest.",
-      "code_files": [
-        "app.py",
-        "templates/index.html"
-      ],
-      "tasks": [
-        "Create Flask app structure",
-        "Add list creation route and HTML form",
-        "Write unit test for list creation"
-      ],
-      "approach": "Build a simple Flask web application with an in-memory database structure (or simple SQLite storage) supporting list creation.",
-      "review_denial": null,
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified that US-0001 acceptance criteria are met: creating a list via form works and displays correctly."
-    },
-    {
-      "title": "Add Task to List",
-      "priority": "Must",
+      "status": "Tested",
       "acceptance_criteria": [
-        "Given an existing to-do list, When the user enters a task description and clicks add, Then the task is added to that list."
+        "Given new dependencies are needed, When code is written, Then requirements.txt is updated immediately from the start of story implementation."
       ],
-      "value_hypothesis": "Enables users to break down their lists into actionable tasks.",
-      "user_story": "As a user, I want to add a task to a list with a short text description so that I can track what needs to be done.",
-      "id": "US-0002",
-      "type": "User Story",
-      "version": "v0.1.0",
-      "stages_completed": [
-        "Draft",
-        "Ready",
-        "Implemented",
-        "Reviewed",
-        "Tested",
-        "Accepted"
-      ],
-      "status": "Accepted",
-      "estimate": 4000,
-      "risks_assumptions": [
-        "In-memory storage dictionary is sufficient for tasks per list."
-      ],
-      "approach": "Add a route to accept tasks for a given list ID and update the HTML template to show tasks within each list with an add-task form.",
-      "test_approach": "Write pytest test verifying task addition to an existing list.",
-      "tasks": [
-        "Add task addition endpoint in app.py",
-        "Update index.html to display task form and tasks per list",
-        "Write unit test for adding tasks"
-      ],
+      "approach": "Ensure requirements.txt has all necessary dependencies upfront.",
       "code_files": [
-        "app.py",
-        "templates/index.html",
-        "tests/test_todo.py"
+        "requirements.txt"
       ],
       "dod_checks": [
-        "Code reviewed-ready",
-        "Automated tests written and passing",
-        "Tokens logged"
+        "Dependencies included in requirements.txt"
       ],
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified that US-0002 acceptance criteria are met: adding tasks to an existing list works correctly and displays them under the list."
+      "risks_assumptions": [
+        "None"
+      ],
+      "test_approach": "Verify requirements install correctly.",
+      "estimate": 10,
+      "tasks": [
+        "Update requirements.txt"
+      ]
     }
   ],
   "impediment_log": [],
@@ -272,13 +220,16 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.33790152999999995
+    "current_usd_spend": 0.4033234499999999
   },
   "token_usage": {
-    "total": 203202,
+    "total": 771492,
     "agents": {
       "ScrumMaster": 15059,
-      "ProductOwner": 188143
+      "ProductOwner": 226869,
+      "DevTeam": 351362,
+      "Architect": 82845,
+      "QA": 95357
     }
   },
   "story_estimates": {
@@ -289,6 +240,10 @@
     "US-0002": {
       "estimate": 4000,
       "actual": 3200
+    },
+    "SPEC-ISSUE-0001": {
+      "estimate": 10,
+      "actual": 100
     }
   },
   "sprint_report_kpis": {},
@@ -319,7 +274,7 @@
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 7,
+  "dev_touch_baseline": 8,
   "unadvanced_write_nudge_baseline": 4,
   "sprint_files_touched": [
     "specs/requirements/PRD-TodoList-MVP.md",
@@ -343,11 +298,11 @@
     "specs/reports/SPRINT-REPORT-LATEST.md",
     "specs/reports/RETRO-001.md"
   ],
-  "source_content_change_count": 7,
+  "source_content_change_count": 8,
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true,
-    "manifest_write_count_at_check": 1
+    "manifest_write_count_at_check": 2
   },
   "last_pr_checks": {
     "passing": true,
@@ -355,15 +310,19 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
-    "Architect": 2,
-    "QA": 4
+    "Architect": 4,
+    "QA": 6,
+    "DevTeam": 1
   },
-  "architect_review_baseline": 2,
-  "qa_review_baseline": 4,
+  "architect_review_baseline": 4,
+  "qa_review_baseline": 6,
   "qa_tested_baseline": 2,
   "content_loss_warnings": [],
   "content_loss_acknowledged_baseline": 0,
-  "sprint_backlog_engagement_baseline": {},
+  "sprint_backlog_engagement_baseline": {
+    "Architect": 2,
+    "QA": 4
+  },
   "sprint_report_pending_release": false,
   "blocking_interactions": [
     {

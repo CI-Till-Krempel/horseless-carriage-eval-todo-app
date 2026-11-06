@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0001
 - Title: Ensure requirements.txt dependencies are included from the start of story implementation to avoid test collection errors during QA testing.
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-06
@@ -17,4 +17,7 @@ Ensure requirements.txt dependencies are included from the start of story implem
 
 
 ## Test Approach
+Verify requirements install correctly.
 
+### Tasks
+- Update requirements.txt

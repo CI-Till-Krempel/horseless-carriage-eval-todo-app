@@ -2,7 +2,7 @@
 
 - Story ID: US-0006
 - Title: View All Lists and Tasks
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-06
@@ -16,4 +16,8 @@
 Provides overview and navigation for all stored tasks.
 
 ## Test Approach
+Test viewing lists and tasks.
 
+### Tasks
+- Create route to view lists and tasks
+- Add template view

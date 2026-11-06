@@ -17,4 +17,8 @@ Ensure requirements.txt dependencies are maintained continuously alongside devel
 
 
 ## Test Approach
+Verify dependency installation.
 
+### Tasks
+- Check requirements.txt
+- Ensure all current and auth dependencies are listed

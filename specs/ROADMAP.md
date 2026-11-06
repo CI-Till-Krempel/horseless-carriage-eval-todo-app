@@ -28,18 +28,11 @@ Stories:
 Goals
 - Deliver user authentication and authorization features.
 Stories
-- [SPEC-ISSUE-0002] Ensure requirements.txt dependencies are maintained continuously alongside development.
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 - [US-0007] User Registration
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0008] User Login
@@ -57,6 +50,13 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0010] Route and Data Authorization
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [SPEC-ISSUE-0002] Ensure requirements.txt dependencies are maintained continuously alongside development.
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

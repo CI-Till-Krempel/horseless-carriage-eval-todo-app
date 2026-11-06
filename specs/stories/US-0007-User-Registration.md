@@ -15,6 +15,7 @@
 
 ## Notes
 Users can create unique accounts securely.
+- ⚠️ REVIEW DENIED at Tested by QA: AttributeError: 'Flask' object has no attribute 'before_first_request' in Flask 2.3+. Please use app.app_context() or with app.app_context(): db.create_all() instead of @app.before_first_request.
 
 ## Test Approach
 Test valid registration and duplicate username rejection.

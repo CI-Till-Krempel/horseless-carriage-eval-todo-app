@@ -1,33 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>To-Do List App</title>
+    <meta charset="utf-8">
+    <title>To-Do App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .completed { text-decoration: line-through; color: gray; }
+        .list-container { margin-bottom: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 5px; }
+    </style>
 </head>
 <body>
     <h1>To-Do Lists</h1>
-    
     <form action="/lists" method="POST">
         <input type="text" name="name" placeholder="New List Name" required>
         <button type="submit">Create List</button>
     </form>
 
-    <h2>All Lists</h2>
-    <ul>
-        {% for list_id, lst in lists.items() %}
-            <li>
-                <strong>{{ lst.name }}</strong>
-                <ul>
-                    {% for task_id, task in lst.tasks.items() %}
-                        <li>{{ task.description }}</li>
-                    {% endfor %}
-                </ul>
-                <form action="/lists/{{ list_id }}/tasks" method="POST" style="margin-top: 5px;">
-                    <input type="text" name="description" placeholder="New Task Description" required>
-                    <button type="submit">Add Task</button>
-                </form>
+    <hr>
+
+    {% for lst in lists %}
+    <div class="list-container">
+        <h2>{{ lst.name }}</h2>
+        <ul>
+            {% for task in lst.tasks %}
+            <li class="{% if task.completed %}completed{% endif %}">
+                {{ task.description }}
             </li>
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
+        <form action="/lists/{{ lst.id }}/tasks" method="POST">
+            <input type="text" name="description" placeholder="New Task Description" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+    {% endfor %}
 </body>
 </html>

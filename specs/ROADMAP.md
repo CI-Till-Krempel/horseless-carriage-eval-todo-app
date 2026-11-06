@@ -26,11 +26,48 @@ Stories:
 
 ### v0.2 — Next iteration (target: YYYY-MM)
 Goals
-
+- Deliver user authentication and authorization features.
 Stories
+- [US-0007] User Registration
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0008] User Login
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0009] User Logout
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [US-0010] Route and Data Authorization
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [SPEC-ISSUE-0002] Ensure requirements.txt dependencies are maintained continuously alongside development.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 ### Backlog (unplanned)
 
+
+Stories
 ---
 
 ### v0.1.0
@@ -59,7 +96,14 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
-- [US-0003] Mark Task Complete or Incomplete
+- [US-0006] View All Lists and Tasks
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [US-0005] Delete Entire List
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED
@@ -73,14 +117,7 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0005] Delete Entire List
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [US-0006] View All Lists and Tasks
+- [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

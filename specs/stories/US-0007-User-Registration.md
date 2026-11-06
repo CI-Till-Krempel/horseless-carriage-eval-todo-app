@@ -2,7 +2,7 @@
 
 - Story ID: US-0007
 - Title: User Registration
-- Status: Ready
+- Status: Implemented
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-06
@@ -17,9 +17,8 @@
 Users can create unique accounts securely.
 
 ## Test Approach
-Test registration flow with valid and duplicate usernames.
+Test valid registration and duplicate username rejection.
 
 ### Tasks
-- Add User model
-- Add registration route and template
-- Update requirements.txt
+- Add User model and DB table
+- Add registration endpoint and HTML form

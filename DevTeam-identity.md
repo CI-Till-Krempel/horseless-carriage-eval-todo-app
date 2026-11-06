@@ -1,0 +1,1 @@
+# DevTeam Identity Customization\n\n- DevTeam MUST maintain requirements.txt continuously alongside any package or dependency additions during code implementation, preventing test collection failures and build errors during QA testing.

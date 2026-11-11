@@ -26,5 +26,16 @@ def add_task(list_id):
                 break
     return redirect(url_for('index'))
 
+@app.route('/lists/<int:list_id>/tasks/<int:task_id>/toggle', methods=['POST'])
+def toggle_task(list_id, task_id):
+    for lst in lists:
+        if lst['id'] == list_id:
+            for task in lst['tasks']:
+                if task['id'] == task_id:
+                    task['completed'] = not task['completed']
+                    break
+            break
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True)

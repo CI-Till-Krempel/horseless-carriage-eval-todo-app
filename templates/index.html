@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>To-Do List App</title>
+    <style>
+        .completed { text-decoration: line-through; color: gray; }
+    </style>
 </head>
 <body>
     <h1>To-Do Lists</h1>
@@ -20,7 +23,12 @@
                 </form>
                 <ul>
                     {% for task in lst.tasks %}
-                        <li>{{ task.content }}</li>
+                        <li>
+                            <form action="/lists/{{ lst.id }}/tasks/{{ task.id }}/toggle" method="POST" style="display:inline;">
+                                <button type="submit">{% if task.completed %}Mark Incomplete{% else %}Mark Complete{% endif %}</button>
+                            </form>
+                            <span class="{% if task.completed %}completed{% endif %}">{{ task.content }}</span>
+                        </li>
                     {% endfor %}
                 </ul>
             </li>

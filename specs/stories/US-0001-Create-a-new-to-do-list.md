@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create a new to-do list
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-11
@@ -16,4 +16,10 @@
 Users can organize tasks into distinct lists.
 
 ## Test Approach
+Write pytest unit/integration tests covering list creation.
 
+### Tasks
+- Create requirements.txt with Flask
+- Create app.py with list creation route
+- Create templates/index.html with list creation form
+- Write tests for list creation

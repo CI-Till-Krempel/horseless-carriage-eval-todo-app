@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete a task
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-11
@@ -14,7 +14,6 @@
 
 ## Notes
 Users can clean up unwanted tasks.
-- ⚠️ REVIEW DENIED at Tested by QA: Test collection failed in tests/test_app.py: ImportError: cannot import name 'lists' from 'app'.
 
 ## Test Approach
 Pytest test for task deletion.

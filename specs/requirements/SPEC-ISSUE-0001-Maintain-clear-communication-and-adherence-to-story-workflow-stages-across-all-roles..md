@@ -18,4 +18,8 @@ Maintain clear communication and adherence to story workflow stages across all r
 
 
 ## Test Approach
+Verify documentation and workflow compliance.
 
+### Tasks
+- Document communication guidelines for all roles
+- Verify workflow stage adherence protocols

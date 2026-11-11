@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete a task
-- Status: Ready
+- Status: Implemented
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-11
@@ -16,4 +16,7 @@
 Users can clean up unwanted tasks.
 
 ## Test Approach
+Pytest test for task deletion.
 
+### Tasks
+- Implement delete task backend route and frontend delete button.

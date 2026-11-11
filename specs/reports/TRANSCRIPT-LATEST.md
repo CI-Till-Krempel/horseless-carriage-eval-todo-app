@@ -6,18 +6,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## Architect
-
-I am reviewing the implementation of US-0003 (Mark a task as complete or incomplete) from an architectural perspective.
-- 🔧 `advance_story_stage(stage="Reviewed", review_event="COMMENT", review_comment="Architecture review ...", title_or_id="US-0003")`
-
-I am transferring to QA to test US-0003.
-- 🔧 `transfer_to_agent(agent_name="QA")`
-
 ## QA
-
-Checking the project build and dependencies before testing US-0003.
-- 🔧 `check_build()`
 
 Advancing US-0003 to Tested stage and merging PR.
 - 🔧 `advance_story_stage(stage="Tested", review_comment="QA test review passe...", title_or_id="US-0003", review_event="COMMENT")`
@@ -342,6 +331,17 @@ To resolve this and conclude Sprint 2 properly, the release PR creation encounte
 
 Resolving the technical blocker regarding local CHANGELOG modifications during release PR creation.
 - 🔧 `resolve_story_blocker(resolution="The local CHANGELOG....", title_or_id="US-0004")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(body="Release v0.2.0 inclu...", title="Release v0.2.0")`
+- 🔧 `raise_story_blocker(question="CHANGELOG.md local c...", category="technical", title_or_id="US-0004")`
+- 🔧 `transfer_to_agent(agent_name="Architect")`
+
+## Architect
+
+Resolving the re-raised technical blocker regarding `CHANGELOG.md` uncommitted modifications.
+- 🔧 `resolve_story_blocker(resolution="The uncommitted CHAN...", title_or_id="US-0004")`
 - 🔧 `transfer_to_agent(agent_name="ProductOwner")`
 
 ## ProductOwner

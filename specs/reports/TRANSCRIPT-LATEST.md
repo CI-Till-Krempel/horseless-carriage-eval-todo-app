@@ -6,25 +6,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## Architect
-- 🔧 `upsert_architecture_vision(content="# Architecture Visio...")`
-
-I am transferring back to the Product Owner so they can proceed with epic and story planning now that the Architecture Vision is established.
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
 ## ProductOwner
-
-I am creating Epics for the To-Do List Web App to organize our backlog scope.
-- 🔧 `upsert_epic(epic={'description': 'Cor...)`
-
-I am creating the second Epic for the Web UI and end-to-end integration.
-- 🔧 `upsert_epic(epic={'id': 'EP-0002', 'd...)`
-
-I am updating the product roadmap to define our v1.0.0 release goals and link our epics.
-- 🔧 `update_roadmap(version="v1.0.0", stories=['EP-0001', 'EP-0002..., goals=['Deliver complete M...)`
-
-I am creating User Story US-0001 for creating a new to-do list with a name.
-- 🔧 `upsert_story(story={'value_hypothesis':...)`
 
 I am advancing User Story US-0001 to Draft stage.
 - 🔧 `advance_story_stage(title_or_id="US-0001", stage="Draft")`
@@ -345,3 +327,26 @@ I am transferring to the ScrumOrchestrator to finalize the release pull request.
 - 🔧 `create_release_pr(body="Release PR for Sprin...", title="Sprint 2 Release PR")`
 - 🔧 `integrate_open_changes()`
 - 🔧 `create_release_pr(title="Sprint 2 Release PR", body="Release PR for Sprin...")`
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `git_push(commit_message="chore: commit open c...", branch="eval-0.2.0-run91/eva...", add_all=True)`
+- 🔧 `git_push(branch="eval-0.2.0-run91/eva...", add_all=True, commit_message="chore: commit open c...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(body="Release PR for Sprin...", title="Sprint 2 Release PR")`

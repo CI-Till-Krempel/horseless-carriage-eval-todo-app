@@ -7,8 +7,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## ProductOwner
-- 🔧 `upsert_prd(content="# Product Requiremen...", filename="PRD-Todo-MVP.md")`
-- 🔧 `update_roadmap(goals=['Deliver core to-do..., stories=[], version="v1.0.0")`
 - 🔧 `upsert_epic(epic={'title': 'Core Task...)`
 - 🔧 `upsert_epic(epic={'title': 'Web User ...)`
 - 🔧 `upsert_story(story={'title': 'Create To...)`
@@ -317,4 +315,6 @@ Retrying merge for SPEC-ISSUE-0001 PR.
 
 ## ProductOwner
 - 🔧 `record_human_approval(note="Sprint 2 increment r...", approval_type="release")`
+- 🔧 `create_release_pr(body="Release PR for Sprin...", title="Release v0.2.0 - Spr...")`
+- 🔧 `integrate_open_changes()`
 - 🔧 `create_release_pr(body="Release PR for Sprin...", title="Release v0.2.0 - Spr...")`

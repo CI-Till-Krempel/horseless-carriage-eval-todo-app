@@ -17,4 +17,9 @@ Maintain robust test ID management and avoid hardcoded assumptions in test suite
 
 
 ## Test Approach
+Run pytest across the test suite to ensure robust execution without brittle ID assumptions.
 
+### Tasks
+- Review existing test suite for hardcoded IDs/locators
+- Implement robust test ID management helper or conventions
+- Verify all tests pass successfully

@@ -18,4 +18,7 @@ Ensure all team roles participate actively in sprint planning reviews and PR eng
 
 
 ## Test Approach
+Check GitHub comments and reviews.
 
+### Tasks
+- Verify role comments on PRs and planning logs.

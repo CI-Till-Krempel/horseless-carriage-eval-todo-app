@@ -14,6 +14,7 @@
 
 ## Notes
 Users can clean up unwanted tasks.
+- 🚫 BLOCKED (technical) - raised by ProductOwner: CHANGELOG.md uncommitted changes block checkout in create_release_pr.
 
 ## Test Approach
 Pytest test for task deletion.

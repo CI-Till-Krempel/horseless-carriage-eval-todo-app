@@ -60,17 +60,17 @@ Stories
 Goals
 - Implement core features and enhance test coverage for the product.
 Stories
-- [US-0004] Delete a task
+- [SPEC-ISSUE-0001] Ensure all team roles participate actively in sprint planning reviews and PR engagements.
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [SPEC-ISSUE-0001] Ensure all team roles participate actively in sprint planning reviews and PR engagements.
+- [US-0004] Delete a task
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

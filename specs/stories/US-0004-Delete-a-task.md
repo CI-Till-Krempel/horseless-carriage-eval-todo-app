@@ -14,6 +14,7 @@
 
 ## Notes
 Users can clean up unwanted tasks.
+- ⚠️ REVIEW DENIED at Tested by QA: Test collection failed in tests/test_app.py: ImportError: cannot import name 'lists' from 'app'.
 
 ## Test Approach
 Pytest test for task deletion.

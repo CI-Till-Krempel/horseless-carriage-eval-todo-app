@@ -54,13 +54,33 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
+- [SPEC-ISSUE-0002] Ensure test files correctly reference app imports before submission to avoid test collection errors.
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+---
+
+### v1.0
+Goals
+- Implement core features and enhance test coverage for the product.
+Stories
+- [SPEC-ISSUE-0001] Ensure all team roles participate actively in sprint planning reviews and PR engagements.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0004] Delete a task
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [US-0005] Delete an entire list
   - [x] DRAFT
   - [x] READY
@@ -75,13 +95,6 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
----
-
-### v1.0
-Goals
-- Deliver core To-Do List Web App functionality including list creation, task management, UI, and basic persistence.
-
-Stories
 
 
 ## Task board (Kanban)

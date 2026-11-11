@@ -2,7 +2,7 @@
 
 - Story ID: US-0004
 - Title: Delete a task
-- Status: Ready
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-11
@@ -14,6 +14,10 @@
 
 ## Notes
 Users can clean up unwanted tasks.
+- 🚫 BLOCKED (technical) - raised by ProductOwner: CHANGELOG.md uncommitted changes block checkout in create_release_pr.
 
 ## Test Approach
+Pytest test for task deletion.
 
+### Tasks
+- Implement delete task backend route and frontend delete button.

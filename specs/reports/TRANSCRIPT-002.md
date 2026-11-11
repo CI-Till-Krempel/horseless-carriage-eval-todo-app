@@ -6,17 +6,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## DevTeam
-
-I am pushing state updates for US-0003 to the feature branch.
-- 🔧 `git_push(commit_message="chore: update roadma...", branch="eval-0.2.0-run90/fea...", add_all=True)`
-
-I am marking the PR for US-0003 ready for review.
-- 🔧 `mark_pr_ready_for_review(pr_id="840")`
-
-I am transferring to Architect to review US-0003.
-- 🔧 `transfer_to_agent(agent_name="Architect")`
-
 ## Architect
 
 I am reviewing the implementation of US-0003 (Mark a task as complete or incomplete) from an architectural perspective.
@@ -346,3 +335,14 @@ I have encountered a blocker while attempting to create the release PR (`create_
 To resolve this and conclude Sprint 2 properly, the release PR creation encountered a local git state collision due to uncommitted changelog edits. Please ensure the workspace status is clean or review the release action.
 - 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
 - 🔧 `create_release_pr(title="Release v0.2.0", body="Release v0.2.0 inclu...")`
+- 🔧 `raise_story_blocker(category="technical", title_or_id="US-0004", question="Cannot check out dev...")`
+- 🔧 `transfer_to_agent(agent_name="Architect")`
+
+## Architect
+
+Resolving the technical blocker regarding local CHANGELOG modifications during release PR creation.
+- 🔧 `resolve_story_blocker(resolution="The local CHANGELOG....", title_or_id="US-0004")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(body="Release v0.2.0 inclu...", title="Release v0.2.0")`

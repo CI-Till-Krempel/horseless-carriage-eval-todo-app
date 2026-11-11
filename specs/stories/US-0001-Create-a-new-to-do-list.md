@@ -16,4 +16,10 @@
 Users can organize tasks into distinct lists.
 
 ## Test Approach
+Write pytest unit/integration tests covering list creation.
 
+### Tasks
+- Create requirements.txt with Flask
+- Create app.py with list creation route
+- Create templates/index.html with list creation form
+- Write tests for list creation

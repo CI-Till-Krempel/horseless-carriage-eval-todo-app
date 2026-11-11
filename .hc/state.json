@@ -197,7 +197,7 @@
   "sprint_number": 2,
   "sprint_backlog_pr_sprint": 2,
   "sprint_backlog_pr_opened": true,
-  "planning_output_commit_count": 16,
+  "planning_output_commit_count": 17,
   "sprint_backlog_pr_content_baseline": 8,
   "sprint_backlog": [
     {
@@ -261,6 +261,15 @@
       "sprint_number": 2,
       "recurs_since_sprint": 1,
       "issue_id": "SPEC-ISSUE-0002"
+    },
+    {
+      "action": "Ensure all team members check git status before triggering release PRs to avoid untracked file conflicts.",
+      "owner": "ScrumMaster",
+      "success_metric": "Zero checkout conflicts during release PR generation.",
+      "status": "open",
+      "category": "technical",
+      "sprint_number": 2,
+      "recurs_since_sprint": null
     }
   ],
   "decision_log": [],
@@ -268,17 +277,17 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.37100053
+    "current_usd_spend": 0.38108238
   },
   "token_usage": {
-    "total": 1988163,
+    "total": 2460408,
     "agents": {
-      "ScrumMaster": 321763,
-      "ProductOwner": 629905,
-      "DevTeam": 614617,
+      "ScrumMaster": 564814,
+      "ProductOwner": 711178,
+      "DevTeam": 690380,
       "Architect": 86322,
       "QA": 130000,
-      "ScrumOrchestrator": 205556
+      "ScrumOrchestrator": 277714
     }
   },
   "story_estimates": {
@@ -294,79 +303,79 @@
   "sprint_report_kpis": {
     "prompt_context_usage": {
       "ScrumMaster": {
+        "prompt_tokens": 6310,
         "available": true,
-        "context_window_tokens": 1048576,
-        "usage_percent": 0.6,
         "model": "scrum-eval-cheap",
-        "prompt_tokens": 6310
-      },
-      "QA": {
-        "available": true,
         "context_window_tokens": 1048576,
-        "model": "scrum-eval-cheap",
-        "usage_percent": 0.29,
-        "prompt_tokens": 2995
+        "usage_percent": 0.6
       },
       "DevTeam": {
-        "context_window_tokens": 1048576,
         "usage_percent": 0.51,
-        "model": "scrum-eval-cheap",
+        "prompt_tokens": 5386,
         "available": true,
-        "prompt_tokens": 5386
-      },
-      "ProductOwner": {
-        "prompt_tokens": 6208,
-        "model": "scrum-eval-cheap",
         "context_window_tokens": 1048576,
-        "usage_percent": 0.59,
-        "available": true
+        "model": "scrum-eval-cheap"
       },
       "Architect": {
+        "prompt_tokens": 3725,
+        "available": true,
         "usage_percent": 0.36,
         "context_window_tokens": 1048576,
-        "prompt_tokens": 3725,
-        "model": "scrum-eval-cheap",
-        "available": true
+        "model": "scrum-eval-cheap"
       },
       "ScrumOrchestrator": {
-        "available": true,
+        "usage_percent": 0.77,
         "prompt_tokens": 8030,
         "model": "scrum-eval-cheap",
-        "usage_percent": 0.77,
+        "context_window_tokens": 1048576,
+        "available": true
+      },
+      "QA": {
+        "model": "scrum-eval-cheap",
+        "prompt_tokens": 2995,
+        "available": true,
+        "usage_percent": 0.29,
         "context_window_tokens": 1048576
+      },
+      "ProductOwner": {
+        "available": true,
+        "context_window_tokens": 1048576,
+        "usage_percent": 0.59,
+        "prompt_tokens": 6208,
+        "model": "scrum-eval-cheap"
       }
-    },
-    "result_quality": {
-      "defect_escape_rate_note": "not available - no defect/bug-lifecycle tracking exists yet",
-      "customer_satisfaction": null,
-      "defect_escape_rate": null,
-      "customer_satisfaction_note": "not available - no user/customer satisfaction survey exists yet"
     },
     "security": {
       "vulnerability_scan_results": {
-        "low": 3,
-        "high": 0,
         "critical": 0,
+        "high": 0,
+        "low": 3,
         "medium": 0
       },
       "vulnerability_scan_available": true
     },
     "maintainability": {
       "tests_failed": 0,
-      "tests_available": true,
-      "code_complexity": 1.6,
       "tests_run": 1,
-      "test_coverage_available": true,
+      "tests_available": true,
+      "code_complexity_available": true,
       "test_coverage": 0.97,
-      "code_complexity_available": true
+      "test_coverage_available": true,
+      "code_complexity": 1.6
     },
     "team_effectiveness": {
-      "say_do_ratio": 1,
+      "commitment_reliability_note": "not available - no estimate-accuracy tracking exists yet",
       "commitment_reliability": null,
-      "commitment_reliability_note": "not available - no estimate-accuracy tracking exists yet"
+      "say_do_ratio": 1
+    },
+    "result_quality": {
+      "defect_escape_rate_note": "not available - no defect/bug-lifecycle tracking exists yet",
+      "defect_escape_rate": null,
+      "customer_satisfaction_note": "not available - no user/customer satisfaction survey exists yet",
+      "customer_satisfaction": null
     }
   },
-  "kpi_update_count": 2,
+  "kpi_update_count": 3,
   "kpi_baseline": 2,
   "backlog_scope_complete": false,
   "repo": {
@@ -934,6 +943,38 @@
     {
       "role": "user",
       "content": "For context:[ScrumMaster] `transfer_to_agent` tool returned result: {'result': None}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `delete_file` with parameters: {'path': 'CHANGELOG.md'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `delete_file` tool returned result: {'status': 'error', 'message': \"delete_file does not belong in the current phase ('Review, Retro & Release'). This sprint's planned work is done (or its budget is spent) - run the retrospective, KPIs, sprint report, and release PR (Scrum Master's own SPRINT CLOSE SEQUENCE). Starting new implementation work does not belong here. If this genuinely needs to happen now, call delete_file again with the exact same arguments - that immediate retry will be let through and logged as an explicit override, instead of staying permanently blocked.\"}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `delete_file` with parameters: {'path': 'CHANGELOG.md'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `delete_file` tool returned result: {'status': 'ok', 'path': '/app/eval-output/clone/CHANGELOG.md'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `transfer_to_agent` with parameters: {'agent_name': 'ProductOwner'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `transfer_to_agent` tool returned result: {'status': 'error', 'message': 'Before transferring away: real source code has been written (write_file) since the last story reached Implemented, but no advance_story_stage call has marked \\'US-0003\\' Implemented yet. If the implementation is actually done, call advance_story_stage(title_or_id, \"Implemented\") now, before transferring. If you genuinely need to transfer first (e.g. a design question for Architect) and the story really isn\\'t done yet, call transfer_to_agent again - this reminder will not repeat until further new code is written.'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] called tool `transfer_to_agent` with parameters: {'agent_name': 'ProductOwner'}"
+    },
+    {
+      "role": "user",
+      "content": "For context:[DevTeam] `transfer_to_agent` tool returned result: {'result': None}"
     }
   ],
   "hc_version": "0.2.0",
@@ -951,7 +992,7 @@
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
   "dev_touch_baseline": 4,
-  "unadvanced_write_nudge_baseline": 6,
+  "unadvanced_write_nudge_baseline": 8,
   "sprint_files_touched": [
     "specs/requirements/PRD-TodoList-MVP.md",
     "specs/architecture/ARCHITECTURE-VISION.md",
@@ -985,7 +1026,7 @@
     "specs/reports/RETRO-002.md",
     "specs/announcements/ANNOUNCEMENT-sprint-2.md"
   ],
-  "source_content_change_count": 7,
+  "source_content_change_count": 9,
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true,

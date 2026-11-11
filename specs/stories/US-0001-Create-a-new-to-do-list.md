@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create a new to-do list
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-11
@@ -16,4 +16,9 @@
 Enables users to start organizing their tasks by category or project.
 
 ## Test Approach
+Write pytest tests verifying list creation API and UI endpoint.
 
+### Tasks
+- Create app.py with Flask route for creating a list
+- Create templates/index.html with a form for list creation
+- Add unit test for list creation

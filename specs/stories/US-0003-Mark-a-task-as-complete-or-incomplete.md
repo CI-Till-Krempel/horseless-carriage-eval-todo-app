@@ -16,4 +16,9 @@
 Users can visually track finished vs unfinished items.
 
 ## Test Approach
+Write pytest tests verifying task completion toggling and visual distinction.
 
+### Tasks
+- Add toggle task completion route in app.py
+- Update index.html with completion toggle and styling for completed tasks
+- Write unit tests for task completion toggle

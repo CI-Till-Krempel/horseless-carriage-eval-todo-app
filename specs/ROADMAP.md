@@ -36,7 +36,7 @@ Stories
 - [SPEC-ISSUE-0001] Maintain robust test ID management and avoid hardcoded assumptions in test suites.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

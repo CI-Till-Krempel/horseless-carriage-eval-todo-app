@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0001
 - Title: Ensure all team roles participate actively in sprint planning reviews and PR engagements.
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: ScrumMaster
 - Last Updated: 2026-11-11
@@ -18,4 +18,7 @@ Ensure all team roles participate actively in sprint planning reviews and PR eng
 
 
 ## Test Approach
+Check GitHub comments and reviews.
 
+### Tasks
+- Verify role comments on PRs and planning logs.

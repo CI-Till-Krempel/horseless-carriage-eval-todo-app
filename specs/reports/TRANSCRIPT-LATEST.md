@@ -7,9 +7,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## DevTeam
-- 🔧 `upsert_user_doc(filename="GUIDE-Toggle-Task.md", content="# User Guide: Markin...")`
-
-I am pushing code changes for US-0003 to the feature branch.
 - 🔧 `git_push(branch="eval-0.2.0-run90/fea...", add_all=True, commit_message="feat(US-0003): imple...")`
 
 I am checking the CI status of the pull request for US-0003.
@@ -343,3 +340,5 @@ I am transferring control to the ScrumOrchestrator to create the release PR.
 
 ## ProductOwner
 - 🔧 `create_release_pr(title="Release v0.2.0", body="Release v0.2.0 inclu...")`
+- 🔧 `integrate_open_changes()`
+- 🔧 `create_release_pr(body="Release v0.2.0 inclu...", title="Release v0.2.0")`

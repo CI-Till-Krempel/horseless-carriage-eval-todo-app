@@ -6,17 +6,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## ProductOwner
-
-Recording acceptance check for US-0003.
-- 🔧 `record_acceptance_check(note="Verified task comple...", title_or_id="US-0003")`
-
-Advancing US-0003 to Accepted.
-- 🔧 `advance_story_stage(title_or_id="US-0003", stage="Accepted")`
-
-Transferring to DevTeam to implement US-0004.
-- 🔧 `transfer_to_agent(agent_name="DevTeam")`
-
 ## DevTeam
 
 I am planning US-0004 into the sprint backlog with an explicit override.
@@ -342,6 +331,17 @@ Resolving the re-raised technical blocker regarding `CHANGELOG.md` uncommitted m
 
 Resolving the blocker by confirming that the CHANGELOG.md file state can be safely committed or discarded via standard git workflow.
 - 🔧 `resolve_story_blocker(title_or_id="US-0004", resolution="The uncommitted CHAN...")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(body="Release v0.2.0 inclu...", title="Release v0.2.0")`
+- 🔧 `raise_story_blocker(question="CHANGELOG.md uncommi...", category="technical", title_or_id="US-0004")`
+- 🔧 `transfer_to_agent(agent_name="Architect")`
+
+## Architect
+
+Resolving the blocker for US-0004 regarding the release PR workflow state.
+- 🔧 `resolve_story_blocker(title_or_id="US-0004", resolution="Uncommitted changes ...")`
 - 🔧 `transfer_to_agent(agent_name="ProductOwner")`
 
 ## ProductOwner

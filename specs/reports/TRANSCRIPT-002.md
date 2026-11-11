@@ -6,17 +6,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## QA
-
-Advancing US-0003 to Tested stage and merging PR.
-- 🔧 `advance_story_stage(stage="Tested", review_comment="QA test review passe...", title_or_id="US-0003", review_event="COMMENT")`
-
-Merging the story PR for US-0003.
-- 🔧 `merge_story_pr(pr_id="840")`
-
-Transferring to ProductOwner to accept US-0003.
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
 ## ProductOwner
 
 Recording acceptance check for US-0003.
@@ -342,6 +331,17 @@ Resolving the technical blocker regarding local CHANGELOG modifications during r
 
 Resolving the re-raised technical blocker regarding `CHANGELOG.md` uncommitted modifications.
 - 🔧 `resolve_story_blocker(resolution="The uncommitted CHAN...", title_or_id="US-0004")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(body="Release v0.2.0 inclu...", title="Release v0.2.0")`
+- 🔧 `raise_story_blocker(title_or_id="US-0004", question="CHANGELOG.md uncommi...", category="technical")`
+- 🔧 `transfer_to_agent(agent_name="Architect")`
+
+## Architect
+
+Resolving the blocker by confirming that the CHANGELOG.md file state can be safely committed or discarded via standard git workflow.
+- 🔧 `resolve_story_blocker(title_or_id="US-0004", resolution="The uncommitted CHAN...")`
 - 🔧 `transfer_to_agent(agent_name="ProductOwner")`
 
 ## ProductOwner

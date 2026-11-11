@@ -8,15 +8,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 ## DevTeam
 
-I am planning US-0004 into the sprint backlog with an explicit override.
-- 🔧 `plan_sprint_backlog_item(plan={'risks_assumptions'..., title_or_id="US-0004")`
-
-I am retrying planning US-0004 into the sprint backlog with an explicit override.
-- 🔧 `plan_sprint_backlog_item(plan={'dod_checks': ['Cod..., title_or_id="US-0004")`
-
-I am starting the feature branch for US-0004.
-- 🔧 `start_feature_branch(story_id="US-0004", slug="delete-a-task")`
-
 I am updating app.py to support deleting a task.
 - 🔧 `write_file(content="from flask import Fl...", overwrite=True, path="app.py")`
 
@@ -342,6 +333,17 @@ Resolving the blocker by confirming that the CHANGELOG.md file state can be safe
 
 Resolving the blocker for US-0004 regarding the release PR workflow state.
 - 🔧 `resolve_story_blocker(title_or_id="US-0004", resolution="Uncommitted changes ...")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(body="Release v0.2.0 inclu...", title="Release v0.2.0")`
+- 🔧 `raise_story_blocker(title_or_id="US-0004", category="technical", question="CHANGELOG.md uncommi...")`
+- 🔧 `transfer_to_agent(agent_name="Architect")`
+
+## Architect
+
+Resolving the blocker for US-0004 so that the sprint workflow can progress.
+- 🔧 `resolve_story_blocker(resolution="Uncommitted CHANGELO...", title_or_id="US-0004")`
 - 🔧 `transfer_to_agent(agent_name="ProductOwner")`
 
 ## ProductOwner

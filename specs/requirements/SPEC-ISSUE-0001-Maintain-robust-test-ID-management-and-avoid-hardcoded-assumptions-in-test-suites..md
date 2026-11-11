@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0001
 - Title: Maintain robust test ID management and avoid hardcoded assumptions in test suites.
-- Status: Tested
+- Status: Accepted
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-11

@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-11
@@ -16,4 +16,11 @@
 Allows users to group and manage separate sets of tasks.
 
 ## Test Approach
+Pytest testing HTTP endpoints via Flask test client for list/task operations.
 
+### Tasks
+- Create requirements.txt and app.py with Flask backend
+- Create templates/index.html web UI
+- Implement routes for lists and tasks (create list, add task, toggle, delete task, delete list)
+- Write pytest tests for all US-0001 through US-0006 criteria
+- Create user guide doc

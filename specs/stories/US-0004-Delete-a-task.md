@@ -16,4 +16,9 @@
 Users can clean up unwanted tasks.
 
 ## Test Approach
+Write pytest tests verifying task deletion.
 
+### Tasks
+- Add delete task route in app.py
+- Update index.html with delete task button/form
+- Write unit tests for task deletion

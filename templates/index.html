@@ -12,7 +12,18 @@
     </form>
     <ul>
         {% for lst in lists %}
-            <li>{{ lst.name }}</li>
+            <li>
+                <strong>{{ lst.name }}</strong>
+                <form action="/lists/{{ lst.id }}/tasks" method="POST" style="display:inline; margin-left: 10px;">
+                    <input type="text" name="content" placeholder="New task description" required>
+                    <button type="submit">Add Task</button>
+                </form>
+                <ul>
+                    {% for task in lst.tasks %}
+                        <li>{{ task.content }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
         {% endfor %}
     </ul>
 </body>

@@ -37,5 +37,13 @@ def toggle_task(list_id, task_id):
             break
     return redirect(url_for('index'))
 
+@app.route('/lists/<int:list_id>/tasks/<int:task_id>/delete', methods=['POST'])
+def delete_task(list_id, task_id):
+    for lst in lists:
+        if lst['id'] == list_id:
+            lst['tasks'] = [task for task in lst['tasks'] if task['id'] != task_id]
+            break
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True)

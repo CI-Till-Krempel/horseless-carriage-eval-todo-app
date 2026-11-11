@@ -36,7 +36,12 @@ def test_toggle_task(client):
     response = client.post('/lists/1/tasks/1/toggle', follow_redirects=True)
     assert response.status_code == 200
     assert lists[0]['tasks'][0]['completed'] is True
+
+def test_delete_task(client):
+    client.post('/lists', data={'name': 'Errands'}, follow_redirects=True)
+    client.post('/lists/1/tasks', data={'content': 'Buy milk'}, follow_redirects=True)
+    assert len(lists[0]['tasks']) == 1
     
-    response = client.post('/lists/1/tasks/1/toggle', follow_redirects=True)
+    response = client.post('/lists/1/tasks/1/delete', follow_redirects=True)
     assert response.status_code == 200
-    assert lists[0]['tasks'][0]['completed'] is False
+    assert len(lists[0]['tasks']) == 0

@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Create To-Do List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-11
@@ -16,4 +16,9 @@
 Users can successfully establish separate categorized lists.
 
 ## Test Approach
+Write pytest tests for backend endpoints and check UI via simple test client.
 
+### Tasks
+- Create FastAPI app skeleton
+- Add POST /lists endpoint
+- Add tests for list creation

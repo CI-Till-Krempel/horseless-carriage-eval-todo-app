@@ -31,6 +31,15 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
+- [SPEC-ISSUE-0001] Maintain robust test ID management and avoid hardcoded assumptions in test suites.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 ---
 
 ### v1.0.0

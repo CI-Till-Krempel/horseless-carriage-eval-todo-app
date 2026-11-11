@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0001
 - Title: Maintain robust test ID management and avoid hardcoded assumptions in test suites.
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-11
@@ -17,4 +17,9 @@ Maintain robust test ID management and avoid hardcoded assumptions in test suite
 
 
 ## Test Approach
+Run pytest across the test suite to ensure robust execution without brittle ID assumptions.
 
+### Tasks
+- Review existing test suite for hardcoded IDs/locators
+- Implement robust test ID management helper or conventions
+- Verify all tests pass successfully

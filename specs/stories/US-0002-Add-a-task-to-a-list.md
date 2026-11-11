@@ -16,4 +16,9 @@
 Users can add specific action items to their lists.
 
 ## Test Approach
+Write pytest tests verifying task addition to a list.
 
+### Tasks
+- Add task route/logic in app.py
+- Update index.html to display task input form per list
+- Write unit tests for adding tasks

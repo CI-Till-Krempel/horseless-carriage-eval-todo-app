@@ -6,12 +6,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## ProductOwner
-- 🔧 `transfer_to_agent(agent_name="Architect")`
-
 ## Architect
-
-I am drafting the Architecture Vision for the To-Do List Web App to establish tech-stack guardrails, component boundaries, and key quality attributes.
 - 🔧 `upsert_architecture_vision(content="# Architecture Visio...")`
 
 I am transferring back to the Product Owner so they can proceed with epic and story planning now that the Architecture Vision is established.
@@ -348,3 +343,5 @@ I am transferring to the ScrumOrchestrator to finalize the release pull request.
 ## ProductOwner
 - 🔧 `record_human_approval(approval_type="release", note="Approved release for...")`
 - 🔧 `create_release_pr(body="Release PR for Sprin...", title="Sprint 2 Release PR")`
+- 🔧 `integrate_open_changes()`
+- 🔧 `create_release_pr(title="Sprint 2 Release PR", body="Release PR for Sprin...")`

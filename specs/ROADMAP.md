@@ -107,7 +107,7 @@ Stories
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
-  - [ ] TESTED
+  - [x] TESTED
   - [ ] ACCEPTED
 
 

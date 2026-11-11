@@ -8,25 +8,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 ## ProductOwner
 
-I am creating the sprint backlog PR to publish our planned sprint backlog and requirements before development begins.
-- 🔧 `create_sprint_backlog_pr(body="Sprint 1 backlog inc...", title="Sprint 1 Backlog - M...")`
-
-I am transferring to the Scrum Master to start the sprint.
-- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
-
-## ScrumMaster
-
-I am starting the sprint with our MVP goal for the To-Do List Web App.
-- 🔧 `start_sprint(goal="Deliver MVP core sto...")`
-
-I am now transferring back to the Product Owner so they can publish the sprint backlog PR.
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
-## ProductOwner
-
-I am creating the sprint backlog PR now that the sprint has been started.
-- 🔧 `create_sprint_backlog_pr(body="Sprint 1 backlog inc...", title="Sprint 1 Backlog - M...")`
-
 I am transferring to the Dev Team to begin implementing US-0001.
 - 🔧 `transfer_to_agent(agent_name="DevTeam")`
 
@@ -360,3 +341,22 @@ I am transferring to Product Owner to create the release PR now that the sprint 
 
 ## ProductOwner
 - 🔧 `create_release_pr(body="Release PR for Sprin...", title="Sprint 2 Release PR")`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+
+I am transferring to the ScrumOrchestrator to finalize the release pull request.
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `delete_file(path="CHANGELOG.md")`
+- 🔧 `delete_file(path="CHANGELOG.md")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `create_release_pr(title="Sprint 2 Release PR", body="Release PR for Sprin...")`

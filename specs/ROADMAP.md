@@ -71,8 +71,8 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0005] Delete an entire list
   - [x] DRAFT

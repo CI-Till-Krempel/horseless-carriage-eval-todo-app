@@ -7,10 +7,6 @@ _This file may only hold a rolling window of the most recent transcript entries 
 [2 earlier transcript entries omitted for token budget]
 
 ## ProductOwner
-- 🔧 `upsert_story(story={'description': 'As ...)`
-- 🔧 `upsert_story(story={'acceptance_criteri...)`
-- 🔧 `update_roadmap(stories=['US-0001', 'US-0002..., version="v1.0.0")`
-- 🔧 `advance_story_stage(title_or_id="US-0001", stage="Draft")`
 - 🔧 `advance_story_stage(stage="Ready", title_or_id="US-0001")`
 - 🔧 `upsert_story(story={'value_hypothesis':...)`
 - 🔧 `advance_story_stage(stage="Ready", title_or_id="US-0001")`
@@ -323,4 +319,9 @@ I am reviewing the release creation state. The release PR tool encountered a loc
 ## ProductOwner
 
 I have completed the Product Owner review and coordination for Sprint 2. The sprint report (`SPRINT-REPORT-002.md`), retrospective actions, KPIs, and customer announcement (`ANNOUNCEMENT-sprint-2.md`) have been successfully produced and verified.
+- 🔧 `create_release_pr(title="Release v0.2.0 - Spr...", body="Release PR for Sprin...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+- 🔧 `generate_announcement()`
+
+I have ensured the sprint review, KPIs, retrospective actions, and customer release announcement are fully generated. The release PR tool encountered a local Git checkout conflict with `CHANGELOG.md` due to untracked/local branch state changes. I am surfacing this error as required by the guardrails.
 - 🔧 `create_release_pr(title="Release v0.2.0 - Spr...", body="Release PR for Sprin...")`

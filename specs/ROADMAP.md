@@ -98,6 +98,19 @@ Stories
   - [ ] ACCEPTED
 
 
+### v2.0.0
+Goals
+
+Stories
+- [SPEC-ISSUE-0001] Maintain clear communication and adherence to story workflow stages across all roles.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
 ## Task board (Kanban)
 
 Use either the per-version boards below or one global board; duplicate as needed for each active version.

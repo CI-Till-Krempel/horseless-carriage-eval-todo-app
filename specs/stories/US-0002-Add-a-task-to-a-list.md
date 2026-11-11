@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add a task to a list
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-11
@@ -16,4 +16,9 @@
 Users can add specific action items to their lists.
 
 ## Test Approach
+Write pytest tests verifying task addition to a list.
 
+### Tasks
+- Add task route/logic in app.py
+- Update index.html to display task input form per list
+- Write unit tests for adding tasks

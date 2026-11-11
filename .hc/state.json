@@ -51,9 +51,12 @@
       "user_story": "As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready"
+      "status": "Tested"
     },
     {
       "description": "As a user, I want to mark a task as complete or incomplete so that I can track my progress.",
@@ -154,7 +157,7 @@
   "sprint_number": 1,
   "sprint_backlog_pr_sprint": 1,
   "sprint_backlog_pr_opened": false,
-  "planning_output_commit_count": 4,
+  "planning_output_commit_count": 7,
   "sprint_backlog_pr_content_baseline": 1,
   "sprint_backlog": [
     {
@@ -203,6 +206,52 @@
       ],
       "acceptance_check_count": 1,
       "acceptance_check_note": "Verified list creation feature works as expected."
+    },
+    {
+      "priority": "Must",
+      "value_hypothesis": "Users can add specific action items to their lists.",
+      "title": "Add a task to a list",
+      "description": "As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.",
+      "depends_on": [
+        "US-0001"
+      ],
+      "acceptance_criteria": [
+        "Given an existing to-do list, When the user adds a task with a short text description, Then the task appears in that list."
+      ],
+      "type": "User Story",
+      "id": "US-0002",
+      "version": "Backlog (unplanned)",
+      "user_story": "As a user, I want to add a task to a list with a short text description so that I can keep track of what needs to be done.",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
+      ],
+      "status": "Tested",
+      "risks_assumptions": [
+        "Assuming in-memory list storage structure allows appending tasks to lists by list id or index."
+      ],
+      "tasks": [
+        "Add task route/logic in app.py",
+        "Update index.html to display task input form per list",
+        "Write unit tests for adding tasks"
+      ],
+      "test_approach": "Write pytest tests verifying task addition to a list.",
+      "estimate": 600,
+      "approach": "Extend app.py and templates/index.html to support adding a task with a short text description to an existing to-do list. Update tests to verify task addition.",
+      "dod_checks": [
+        "Code reviewed-ready",
+        "Automated tests written and passing",
+        "Tokens logged",
+        "End-user docs updated"
+      ],
+      "code_files": [
+        "app.py",
+        "templates/index.html",
+        "tests/test_app.py"
+      ]
     }
   ],
   "impediment_log": [],
@@ -212,23 +261,27 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.14786469
+    "current_usd_spend": 0.23384562000000003
   },
   "token_usage": {
-    "total": 1639367,
+    "total": 2450358,
     "agents": {
       "ScrumOrchestrator": 90914,
-      "ProductOwner": 800985,
+      "ProductOwner": 840058,
       "ScrumMaster": 50750,
-      "DevTeam": 511349,
-      "Architect": 61074,
-      "QA": 124295
+      "DevTeam": 1108000,
+      "Architect": 149371,
+      "QA": 211265
     }
   },
   "story_estimates": {
     "US-0001": {
       "estimate": 500,
       "actual": 450
+    },
+    "US-0002": {
+      "estimate": 600,
+      "actual": 550
     }
   },
   "sprint_report_kpis": null,
@@ -260,7 +313,7 @@
   ],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 4,
+  "dev_touch_baseline": 7,
   "unadvanced_write_nudge_baseline": 0,
   "sprint_files_touched": [
     "specs/requirements/PRD-TodoList-MVP.md",
@@ -276,9 +329,10 @@
     "app.py",
     "templates/index.html",
     "tests/test_app.py",
-    "specs/product-docs/GUIDE-Create-List.md"
+    "specs/product-docs/GUIDE-Create-List.md",
+    "specs/product-docs/GUIDE-Add-Task.md"
   ],
-  "source_content_change_count": 4,
+  "source_content_change_count": 7,
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true,
@@ -290,17 +344,27 @@
   },
   "git_push_count": 0,
   "pr_review_calls": {
-    "Architect": 1,
-    "QA": 1
+    "Architect": 2,
+    "QA": 2
   },
-  "architect_review_baseline": 1,
-  "qa_review_baseline": 1,
+  "architect_review_baseline": 2,
+  "qa_review_baseline": 2,
   "qa_tested_baseline": 0,
   "content_loss_warnings": [],
   "content_loss_acknowledged_baseline": 0,
   "sprint_backlog_engagement_baseline": {},
   "sprint_report_pending_release": false,
-  "blocking_interactions": [],
+  "blocking_interactions": [
+    {
+      "id": 1,
+      "kind": "stalled",
+      "summary": "DevTeam overrode the 'Review, Retro & Release'-phase gate to call plan_sprint_backlog_item after being refused once.",
+      "detail": "args: {\"plan\": {\"approach\": \"Extend app.py and templates/index.html to support adding a task with a short text description to an existing to-do list. Update tests to verify task addition.\", \"code_files\": [\"app.py\", \"templates/index.html\", \"tests/test_app.py\"], \"dod_checks\": [\"Code reviewed-ready\", \"Automated tests written and passing\", \"Tokens logged\", \"End-user docs updated\"], \"estimate\": 600, \"risks_assumptions\": [\"Assuming in-memory list storage structure allows appending tasks to lists by list id or index.\"], \"tasks\": [\"Add task route/logic in app.py\", \"Update index.html to display task input form per list\", \"Write unit tests for adding tasks\"], \"test_approach\": \"Write pytest tests verifying task addition to a list.\"}, \"title_or_id\": \"US-0002\"}",
+      "created_at": "2026-11-11T15:52:14.318338+00:00",
+      "resolved": false,
+      "resolved_at": null
+    }
+  ],
   "overclaim_rejection_counts": {},
   "general_blockers": [],
   "steering_proposal_count": 0,

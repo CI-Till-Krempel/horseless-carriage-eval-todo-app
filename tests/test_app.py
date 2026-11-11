@@ -19,3 +19,11 @@ def test_create_list(client):
     assert b'Groceries' in response.data
     assert len(lists) == 1
     assert lists[0]['name'] == 'Groceries'
+
+def test_add_task(client):
+    client.post('/lists', data={'name': 'Work'}, follow_redirects=True)
+    response = client.post('/lists/1/tasks', data={'content': 'Finish report'}, follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Finish report' in response.data
+    assert len(lists[0]['tasks']) == 1
+    assert lists[0]['tasks'][0]['content'] == 'Finish report'

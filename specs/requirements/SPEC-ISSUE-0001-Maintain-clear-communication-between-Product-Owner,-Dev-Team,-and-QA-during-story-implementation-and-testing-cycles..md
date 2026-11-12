@@ -17,4 +17,4 @@ Maintain clear communication between Product Owner, Dev Team, and QA during stor
 
 
 ## Test Approach
-Verify that comments and feedback are logged appropriately during story progression.
+Verify comments and feedback are logged appropriately during story progression.

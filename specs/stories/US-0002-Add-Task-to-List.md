@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to List
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-12
@@ -14,7 +14,6 @@
 
 ## Notes
 Enables users to record actionable items within their lists.
-- ⚠️ REVIEW DENIED at Tested by QA: tests/test_todo.py has test setup errors because 'app' has no attribute 'init_db'. Existing tests need to be aligned with the current implementation.
 
 ## Test Approach
 Test adding task.

@@ -17,4 +17,7 @@ Maintain clear communication across Product Owner, Dev Team, and QA by documenti
 
 
 ## Test Approach
+Review guideline compliance
 
+### Tasks
+- Update communication documentation

@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-12
@@ -16,4 +16,7 @@
 Enables users to record actionable items within their lists.
 
 ## Test Approach
+Test adding task.
 
+### Tasks
+- Add task API and frontend

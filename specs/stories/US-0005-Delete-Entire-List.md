@@ -16,4 +16,7 @@
 Allows users to remove entire obsolete list structures.
 
 ## Test Approach
+Verify list is removed from storage and UI.
 
+### Tasks
+- Add backend and frontend logic for deleting entire list

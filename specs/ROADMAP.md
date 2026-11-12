@@ -36,9 +36,9 @@ Stories
 - [SPEC-ISSUE-0001] Maintain clear communication between Product Owner, Dev Team, and QA during story implementation and testing cycles.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 ---
 

@@ -31,12 +31,28 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
+- [SPEC-ISSUE-0001] Maintain clear communication between Product Owner, Dev Team, and QA during story implementation and testing cycles.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 ---
 
 ### v1.0.0
 Goals
 - Implement dashboard view for all lists and tasks with visual completion distinction.
 Stories
+- [[US-0001] Create To-Do List [x] ACCEPTED] 
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0001] Create To-Do List
   - [x] DRAFT
   - [x] READY

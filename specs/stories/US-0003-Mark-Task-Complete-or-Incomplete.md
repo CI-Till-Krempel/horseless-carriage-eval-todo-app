@@ -14,6 +14,7 @@
 
 ## Notes
 Users can track task completion status visually.
+- ⚠️ REVIEW DENIED at Tested by QA: Test collection failed: ImportError: cannot import name 'todo_lists' from 'app' in tests/test_app.py. Please fix the imports and test definitions.
 
 ## Test Approach
 Pytest for task completion and incompleteness.

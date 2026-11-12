@@ -14,6 +14,7 @@
 
 ## Notes
 Users can break down their lists into actionable task items.
+- ⚠️ REVIEW DENIED at Tested by QA: Unit test test_add_task failed: 'Finish report' was not found in response data when adding a task to list 1 because the list ID generated was '1' but global counters or list indexing logic caused a mismatch or re-created list in fixture without clearing task state properly.
 
 ## Test Approach
 Add pytest test case for adding tasks to a list.

@@ -6,6 +6,9 @@ def client():
     app.config['TESTING'] = True
     with app.test_client() as client:
         todo_lists.clear()
+        import app as app_module
+        app_module.counter = 1
+        app_module.task_counter = 1
         yield client
 
 def test_create_list(client):

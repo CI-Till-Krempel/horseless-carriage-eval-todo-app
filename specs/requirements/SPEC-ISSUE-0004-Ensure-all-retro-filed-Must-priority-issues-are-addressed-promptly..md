@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0004
 - Title: Ensure all retro-filed Must-priority issues are addressed promptly.
-- Status: Implemented
+- Status: Reviewed
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-12

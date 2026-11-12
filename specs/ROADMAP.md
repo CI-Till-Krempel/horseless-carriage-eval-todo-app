@@ -60,17 +60,17 @@ Stories
 Goals
 - Complete remaining features and ensure robust quality and release readiness for the final sprint.
 Stories
-- [SPEC-ISSUE-0003] Enforce strict scope and budget adherence during sprint planning and close to avoid phase overlaps.
+- [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 - [SPEC-ISSUE-0004] Ensure all retro-filed Must-priority issues are addressed promptly.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
@@ -95,13 +95,13 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
-- [US-0003] Mark Task Complete or Incomplete
+- [SPEC-ISSUE-0003] Enforce strict scope and budget adherence during sprint planning and close to avoid phase overlaps.
   - [x] DRAFT
   - [x] READY
-  - [x] IMPLEMENTED
-  - [x] REVIEWED
-  - [x] TESTED
-  - [x] ACCEPTED
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 
 
 ### v0.1.0

@@ -31,6 +31,15 @@ Stories
 
 ### Backlog (unplanned)
 
+
+Stories
+- [SPEC-ISSUE-0001] Maintain clear communication between Product Owner, Dev Team, and QA during story implementation and testing cycles.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 ---
 
 ### v1.0.0

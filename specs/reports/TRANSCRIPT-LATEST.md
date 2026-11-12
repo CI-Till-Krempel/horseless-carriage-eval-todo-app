@@ -6,11 +6,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## ScrumOrchestrator
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
 ## ProductOwner
-- 🔧 `list_docs()`
 - 🔧 `upsert_prd(content="# Product Requiremen...", filename="PRD-Todo-App.md")`
 - 🔧 `transfer_to_agent(agent_name="Architect")`
 
@@ -333,4 +329,6 @@ I am transferring to the ScrumOrchestrator to complete the release PR and finali
 - 🔧 `transfer_to_agent(agent_name="ProductOwner")`
 
 ## ProductOwner
+- 🔧 `create_release_pr(title="Release v0.2.0", body="Release PR for Sprin...")`
+- 🔧 `generate_announcement()`
 - 🔧 `create_release_pr(title="Release v0.2.0", body="Release PR for Sprin...")`

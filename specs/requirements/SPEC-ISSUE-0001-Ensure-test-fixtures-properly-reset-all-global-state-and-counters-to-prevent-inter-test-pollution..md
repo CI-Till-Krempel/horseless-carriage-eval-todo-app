@@ -17,4 +17,4 @@ Ensure test fixtures properly reset all global state and counters to prevent int
 Reliable tests prevent false positives and test pollution.
 
 ## Test Approach
-
+Run pytest to verify all tests pass without pollution.

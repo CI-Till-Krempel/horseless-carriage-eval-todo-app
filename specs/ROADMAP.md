@@ -63,7 +63,7 @@ Stories
 - [SPEC-ISSUE-0001] Ensure test fixtures properly reset all global state and counters to prevent inter-test pollution.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

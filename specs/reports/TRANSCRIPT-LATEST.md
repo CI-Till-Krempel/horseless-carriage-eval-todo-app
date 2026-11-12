@@ -264,3 +264,5 @@ I am transferring to the ScrumOrchestrator to finalize the release PR for Sprint
 
 ## ProductOwner
 - 🔧 `create_release_pr(title="Release v0.1.0 - Spr...", body="Release PR for Sprin...")`
+- 🔧 `generate_announcement()`
+- 🔧 `create_release_pr(title="Release v0.1.0 - Spr...", body="Release PR for Sprin...")`

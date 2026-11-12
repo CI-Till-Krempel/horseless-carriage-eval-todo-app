@@ -16,4 +16,8 @@
 Users can track task completion status visually.
 
 ## Test Approach
+Pytest for task completion and incompleteness.
 
+### Tasks
+- Add completion toggle endpoint/UI
+- Write tests

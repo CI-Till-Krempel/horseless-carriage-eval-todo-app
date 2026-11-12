@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0002
 - Title: Ensure sprint scope and budget are fully respected to avoid phase overlaps during sprint close.
-- Status: Ready
+- Status: Implemented
 - Priority: Must
 - Owner: ScrumMaster
 - Last Updated: 2026-11-12

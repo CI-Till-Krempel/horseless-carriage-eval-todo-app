@@ -50,9 +50,9 @@ Stories
 - [SPEC-ISSUE-0002] Ensure sprint scope and budget are fully respected to avoid phase overlaps during sprint close.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 ---
 

@@ -58,9 +58,15 @@ Stories
 
 ### v1.0.0
 Goals
-- Deliver MVP To-Do List Web App supporting list and task creation, completion, deletion, and viewing.
-
+- Complete remaining features and ensure robust quality and release readiness for the final sprint.
 Stories
+- [SPEC-ISSUE-0003] Enforce strict scope and budget adherence during sprint planning and close to avoid phase overlaps.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [SPEC-ISSUE-0004] Ensure all retro-filed Must-priority issues are addressed promptly.
   - [x] DRAFT
   - [x] READY
@@ -83,13 +89,6 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] View All Lists and Tasks
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
-- [SPEC-ISSUE-0003] Enforce strict scope and budget adherence during sprint planning and close to avoid phase overlaps.
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

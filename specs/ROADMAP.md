@@ -61,19 +61,12 @@ Goals
 - Deliver MVP To-Do List Web App supporting list and task creation, completion, deletion, and viewing.
 
 Stories
-- [SPEC-ISSUE-0003] Enforce strict scope and budget adherence during sprint planning and close to avoid phase overlaps.
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0004] Delete Task
   - [x] DRAFT
@@ -90,6 +83,13 @@ Stories
   - [ ] TESTED
   - [ ] ACCEPTED
 - [US-0006] View All Lists and Tasks
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+- [SPEC-ISSUE-0003] Enforce strict scope and budget adherence during sprint planning and close to avoid phase overlaps.
   - [x] DRAFT
   - [x] READY
   - [ ] IMPLEMENTED

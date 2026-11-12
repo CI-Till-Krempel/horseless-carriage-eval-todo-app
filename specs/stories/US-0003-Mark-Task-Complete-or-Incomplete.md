@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Ready
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-12
@@ -16,4 +16,8 @@
 Users can track task completion status visually.
 
 ## Test Approach
+Pytest for task completion and incompleteness.
 
+### Tasks
+- Add completion toggle endpoint/UI
+- Write tests

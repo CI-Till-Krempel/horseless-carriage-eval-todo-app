@@ -1,31 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>To-Do List App</title>
+    <meta charset="UTF-8">
+    <title>To-Do App</title>
 </head>
 <body>
     <h1>To-Do Lists</h1>
     
     <form action="/lists" method="POST">
-        <input type="text" name="name" placeholder="New List Name" required>
+        <input type="text" name="title" placeholder="New List Title" required>
         <button type="submit">Create List</button>
     </form>
 
     <ul>
-        {% for list_id, lst in todo_lists.items() %}
-            <li>
-                <strong>{{ lst.name }}</strong>
-                <ul>
-                    {% for task in lst.tasks %}
-                        <li>{{ task.description }}</li>
-                    {% endfor %}
-                </ul>
-                <form action="/lists/{{ list_id }}/tasks" method="POST" style="margin-top: 5px;">
-                    <input type="text" name="description" placeholder="New Task Description" required>
-                    <button type="submit">Add Task</button>
-                </form>
-            </li>
+        {% for list_id, l in lists.items() %}
+        <li>
+            <h2>{{ l.title }}</h2>
+            <form action="/lists/{{ list_id }}/tasks" method="POST">
+                <input type="text" name="content" placeholder="New Task" required>
+                <button type="submit">Add Task</button>
+            </form>
+            <ul>
+                {% for task_id, t in tasks.items() %}
+                    {% if t.list_id == list_id %}
+                    <li>
+                        <form action="/tasks/{{ task_id }}/toggle" method="POST" style="display:inline;">
+                            <input type="checkbox" {% if t.completed %}checked{% endif %} onchange="this.form.submit()">
+                        </form>
+                        <span {% if t.completed %}style="text-decoration: line-through;"{% endif %}>{{ t.content }}</span>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
         {% endfor %}
     </ul>
 </body>

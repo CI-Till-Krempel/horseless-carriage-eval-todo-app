@@ -61,26 +61,13 @@ Goals
 - Deliver MVP To-Do List Web App supporting list and task creation, completion, deletion, and viewing.
 
 Stories
-
-
-### v0.1.0
-Goals
-
-Stories
-- [SPEC-ISSUE-0001] Ensure test fixtures properly reset all global state and counters to prevent inter-test pollution.
+- [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
-- [US-0003] Mark Task Complete or Incomplete
-  - [x] DRAFT
-  - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
-  - [ ] ACCEPTED
 - [US-0004] Delete Task
   - [x] DRAFT
   - [x] READY
@@ -102,6 +89,26 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
+- [SPEC-ISSUE-0003] Enforce strict scope and budget adherence during sprint planning and close to avoid phase overlaps.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
+
+
+### v0.1.0
+Goals
+
+Stories
+- [SPEC-ISSUE-0001] Ensure test fixtures properly reset all global state and counters to prevent inter-test pollution.
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 
 
 ## Task board (Kanban)

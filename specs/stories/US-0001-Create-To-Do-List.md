@@ -16,4 +16,9 @@
 Allows users to initiate organization by creating named to-do lists.
 
 ## Test Approach
+Pytest unit and integration tests for routes and DB operations.
 
+### Tasks
+- Setup Flask & SQLite app.py
+- Create HTML UI template
+- Implement tests

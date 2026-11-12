@@ -58,10 +58,16 @@ Stories
 
 ### v1.0.0
 Goals
-- Deliver MVP To-Do List Web App supporting list and task creation, completion, deletion, and viewing.
-
+- Complete remaining features and ensure robust quality and release readiness for the final sprint.
 Stories
 - [US-0003] Mark Task Complete or Incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
+- [SPEC-ISSUE-0004] Ensure all retro-filed Must-priority issues are addressed promptly.
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED

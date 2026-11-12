@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0004
 - Title: Ensure all retro-filed Must-priority issues are addressed promptly.
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-12
@@ -17,4 +17,4 @@ Ensure correct test file paths and import conventions are verified early during 
 
 
 ## Test Approach
-
+Run pytest to verify fixtures and imports.

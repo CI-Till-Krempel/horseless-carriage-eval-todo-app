@@ -47,6 +47,26 @@ Stories
   - [x] REVIEWED
   - [x] TESTED
   - [x] ACCEPTED
+---
+
+### v1.0.0
+Goals
+- Deliver MVP To-Do List Web App supporting list and task creation, completion, deletion, and viewing.
+
+Stories
+
+
+### v0.1.0
+Goals
+
+Stories
+- [SPEC-ISSUE-0001] Ensure test fixtures properly reset all global state and counters to prevent inter-test pollution.
+  - [x] DRAFT
+  - [x] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0003] Mark Task Complete or Incomplete
   - [x] DRAFT
   - [x] READY
@@ -75,13 +95,6 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
----
-
-### v1.0.0
-Goals
-- Deliver MVP To-Do List Web App supporting list and task creation, completion, deletion, and viewing.
-
-Stories
 
 
 ## Task board (Kanban)

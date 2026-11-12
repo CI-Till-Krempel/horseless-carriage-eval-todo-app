@@ -16,4 +16,7 @@
 Keeps lists clean by removing obsolete tasks.
 
 ## Test Approach
+Verify task is removed from list.
 
+### Tasks
+- Add task deletion backend and frontend code

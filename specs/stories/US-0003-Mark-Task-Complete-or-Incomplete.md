@@ -16,4 +16,7 @@
 Allows users to track progress on individual items.
 
 ## Test Approach
+Verify status update.
 
+### Tasks
+- Add task status toggle logic

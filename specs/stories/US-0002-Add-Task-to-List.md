@@ -16,4 +16,7 @@
 Enables users to record actionable items within their lists.
 
 ## Test Approach
+Test adding task.
 
+### Tasks
+- Add task API and frontend

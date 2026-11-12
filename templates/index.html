@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>To-Do List App</title>
+</head>
+<body>
+    <h1>To-Do Lists</h1>
+    
+    <form action="/lists" method="POST">
+        <input type="text" name="name" placeholder="New List Name" required>
+        <button type="submit">Create List</button>
+    </form>
+
+    <ul>
+        {% for list_id, lst in todo_lists.items() %}
+            <li>
+                <strong>{{ lst.name }}</strong>
+                <ul>
+                    {% for task in lst.tasks %}
+                        <li>{{ task.description }}</li>
+                    {% endfor %}
+                </ul>
+                <form action="/lists/{{ list_id }}/tasks" method="POST" style="margin-top: 5px;">
+                    <input type="text" name="description" placeholder="New Task Description" required>
+                    <button type="submit">Add Task</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

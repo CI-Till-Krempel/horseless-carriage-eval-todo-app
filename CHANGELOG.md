@@ -4,5 +4,9 @@ All notable changes to this project are documented in this file. Each entry is g
 
 ## Sprint 1 - 2026-11-12
 
+- No user-facing changes in this release.
+
+## Sprint 1 - 2026-11-12
+
 - US-0001: Create To-Do List
 - US-0002: Add Task to List

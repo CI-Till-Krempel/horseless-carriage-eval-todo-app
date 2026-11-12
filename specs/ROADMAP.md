@@ -37,6 +37,13 @@ Stories
 Goals
 - Implement dashboard view for all lists and tasks with visual completion distinction.
 Stories
+- [[US-0001] Create To-Do List [x] ACCEPTED] 
+  - [ ] DRAFT
+  - [ ] READY
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0001] Create To-Do List
   - [x] DRAFT
   - [x] READY

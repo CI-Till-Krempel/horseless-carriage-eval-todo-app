@@ -2,7 +2,7 @@
 
 - Issue ID: SPEC-ISSUE-0001
 - Title: Maintain clear communication between Product Owner, Dev Team, and QA during story implementation and testing cycles.
-- Status: Tested
+- Status: Accepted
 - Priority: Must
 - Owner: DevTeam
 - Last Updated: 2026-11-12

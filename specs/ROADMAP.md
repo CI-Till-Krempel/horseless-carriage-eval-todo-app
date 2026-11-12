@@ -61,13 +61,13 @@ Goals
 - Deliver MVP To-Do List Web App supporting list and task creation, completion, deletion, and viewing.
 
 Stories
-- [US-0003] Mark Task Complete or Incomplete
+- [SPEC-ISSUE-0004] Ensure all retro-filed Must-priority issues are addressed promptly.
   - [x] DRAFT
   - [x] READY
-  - [x] IMPLEMENTED
-  - [x] REVIEWED
-  - [x] TESTED
-  - [x] ACCEPTED
+  - [ ] IMPLEMENTED
+  - [ ] REVIEWED
+  - [ ] TESTED
+  - [ ] ACCEPTED
 - [US-0004] Delete Task
   - [x] DRAFT
   - [x] READY
@@ -96,6 +96,13 @@ Stories
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
+- [US-0003] Mark Task Complete or Incomplete
+  - [x] DRAFT
+  - [x] READY
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
+  - [x] ACCEPTED
 
 
 ### v0.1.0

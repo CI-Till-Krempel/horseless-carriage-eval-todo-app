@@ -2,7 +2,7 @@
 
 - Story ID: US-0003
 - Title: Mark Task Complete or Incomplete
-- Status: Reviewed
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-12
@@ -14,7 +14,6 @@
 
 ## Notes
 Users can track task completion status visually.
-- ⚠️ REVIEW DENIED at Tested by QA: Test collection still failing: ImportError: cannot import name 'todo_lists' from 'app' in test_app.py (root level vs tests/test_app.py path). Please ensure test_app.py is located under tests/ and imports correctly.
 
 ## Test Approach
 Pytest for task completion and incompleteness.

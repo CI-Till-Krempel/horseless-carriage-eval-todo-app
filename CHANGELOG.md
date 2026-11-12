@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented in this file. Each entry is generated automatically at release time from this sprint's completed backlog items (`sprint_backlog`), not authored freehand - see RELEASE.md.
 
+## Sprint 5 - 2026-11-12
+
+- SPEC-ISSUE-0004: Ensure all retro-filed Must-priority issues are addressed promptly.
+
 ## Sprint 4 - 2026-11-12
 
 - US-0003: Mark Task Complete or Incomplete

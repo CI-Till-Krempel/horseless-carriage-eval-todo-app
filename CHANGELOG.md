@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented in this file. Each entry is generated automatically at release time from this sprint's completed backlog items (`sprint_backlog`), not authored freehand - see RELEASE.md.
 
+## Sprint 4 - 2026-11-12
+
+- US-0003: Mark Task Complete or Incomplete
+
 ## Sprint 3 - 2026-11-12
 
 - SPEC-ISSUE-0002: Ensure sprint scope and budget are fully respected to avoid phase overlaps during sprint close.

@@ -1,6 +1,6 @@
 # Issue
 
-- Issue ID: SPEC-ISSUE-0005
+- Issue ID: SPEC-ISSUE-0007
 - Title: Release audit: security scan findings need triage
 - Status: Ready
 - Priority: Should

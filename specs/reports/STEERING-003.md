@@ -34,18 +34,18 @@ Address process discipline regarding retro categorizations and steering proposal
 
 ```
 
-## DevTeam
+## ScrumMaster
 - Proposed By: ScrumMaster
-- Pull Request: https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/903
+- Pull Request: https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/905
 
 ### Rationale
-Addressing retro action to ensure security scan findings are triaged promptly during sprint development cycles.
+Address ongoing retro finding regarding systematic follow-up on retrospective actions.
 
 ### Proposed Content
 ```
-# DevTeam Identity & Customizations
+# ScrumMaster Identity
 
-- Maintain rigorous code quality standards and ensure security scan findings are triaged promptly during sprint development cycles.
-- Adhere to the established definition of done and ensure peer reviews are thorough.
+- Facilitates Scrum events and maintains team flow.
+- Ensures all team members actively engage in retrospective findings follow-up.
 
 ```

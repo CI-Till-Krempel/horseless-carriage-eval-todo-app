@@ -22,3 +22,11 @@
 - Status: open
 - Success Metric: Security scan findings triaged before story review stage
 - Filed As: SPEC-ISSUE-0004
+
+## Verify all retro actions are systematically followed up across sprint cycles.
+- Kind: Retro Action
+- Category: technical
+- Owner: ScrumMaster
+- Status: open
+- Success Metric: 100% of open retro actions reviewed during sprint retro.
+- Filed As: SPEC-ISSUE-0005

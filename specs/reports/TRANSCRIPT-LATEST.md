@@ -6,44 +6,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## ScrumOrchestrator
-- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
-
 ## ScrumMaster
-- 🔧 `start_sprint(goal="Implement priority s...")`
-- 🔧 `transfer_to_agent(agent_name="Architect")`
-
-## Architect
-- 🔧 `check_workbench_tooling()`
-- 🔧 `propose_framework_change(template_name="python-flask", rationale="Bootstrap the Python...")`
-- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
-
-## ScrumMaster
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
-## ProductOwner
-- 🔧 `list_docs()`
-- 🔧 `read_doc(path="specs/ROADMAP.md")`
-- 🔧 `list_open_issues()`
-- 🔧 `read_doc(path="specs/stories/US-000...")`
-- 🔧 `read_doc(path="specs/stories/US-000...")`
-- 🔧 `create_sprint_backlog_pr(title="Sprint Backlog - Spr...", body="Sprint Backlog for S...")`
-- 🔧 `plan_backlog_item(priority="Should", title_or_id="SPEC-ISSUE-0001", priority_justification="Demoting from Must t...")`
-- 🔧 `create_sprint_backlog_pr(title="Sprint Backlog - Spr...", body="Sprint Backlog for S...")`
-- 🔧 `record_human_approval(approval_type="sprint", note="Sprint goal and back...")`
-- 🔧 `create_sprint_backlog_pr(body="Sprint Backlog for S...", title="Sprint Backlog - Spr...")`
-- 🔧 `transfer_to_agent(agent_name="DevTeam")`
-
-## DevTeam
-- 🔧 `gh_pr_comments()`
-- 🔧 `list_docs()`
-- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
-- 🔧 `plan_sprint_backlog_item(title_or_id="US-0002", plan={'risks_assumptions'...)`
-- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
-
-## ScrumMaster
-
-I am checking the current sprint backlog and team engagement status to facilitate the review and progression of US-0002.
 - 🔧 `list_open_issues()`
 
 I am checking the blocking interactions list to see if any approvals or blockers need attention.
@@ -329,3 +292,56 @@ Transferring to ScrumOrchestrator to trigger release PR creation.
 - 🔧 `propose_version_bump(new_version="0.3.0-snapshot")`
 - 🔧 `propose_version_bump(new_version="0.2.1-snapshot")`
 - 🔧 `create_release_pr(title="Release v0.2.1", body="Release PR for Sprin...")`
+- 🔧 `generate_announcement()`
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `save_state_to_repo()`
+
+1. Current understanding / assumptions:
+   - Sprint 4 has been successfully executed and closed out through the entire close sequence: retrospective, KPI calculation, sprint report generation, release audit, version bump (`v0.2.1-snapshot`), and release PR creation (PR #904).
+   - As requested by the EVAL configuration and prompt instructions, all sprint actions have been autonomously driven to completion without requiring further user intervention.
+
+2. Missing settings and Setup status:
+   - Setup is fully complete (repository, LiteLLM virtual keys, budgets, and EVAL interaction mode are active and configured).
+
+3. Artifacts updated:
+   - Sprint report generated (`specs/reports/SPRINT-REPORT-003.md`).
+   - Release PR #904 created successfully (`eval/0.2.1-run94/develop` -> `eval/0.2.1-run94/main`).
+   - Session state successfully saved and checkpointed in the repository.
+
+4. Next actions:
+   - Sprint 4 is complete and the release PR has been filed. Ready for Sprint 5 or final evaluation review.
+- 🔧 `repo_status()`
+- 🔧 `load_state_from_repo()`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `gather_workflow_improvement_proposals()`
+- 🔧 `add_retro_action(category="technical", priority="normal", action="Verify all retro act...", owner="ScrumMaster", success_metric="100% of open retro a...")`
+- 🔧 `calculate_kpis()`
+- 🔧 `update_sprint_report(kpis={'prompt_context_usa...)`
+- 🔧 `create_sprint_report(accomplishments=['Completed sprint b..., summary="Sprint 5 successfull...")`
+- 🔧 `propose_steering_change(new_content="# ScrumMaster Identi...", role="ScrumMaster", rationale="Address ongoing retr...")`
+- 🔧 `create_sprint_report(accomplishments=['Completed sprint b..., summary="Sprint 5 successfull...")`
+
+I have successfully completed the sprint retrospective, calculated the required KPIs, updated and generated the sprint report (`specs/reports/SPRINT-REPORT-003.md`), and proposed the necessary steering change.
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="QA")`
+
+## QA
+- 🔧 `run_release_audit()`
+
+I am running the whole-increment release audit to verify build, tests, and security status before the final release PR.
+- 🔧 `transfer_to_agent(agent_name="ScrumOrchestrator")`
+
+## ScrumOrchestrator
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `run_release_audit()`
+
+I am running the whole-increment release audit to ensure the release is fully verified before creating the release PR.
+- 🔧 `create_release_pr(body="Release PR for Sprin...", title="Release Sprint 5")`

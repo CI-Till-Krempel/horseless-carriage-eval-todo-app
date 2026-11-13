@@ -8,6 +8,10 @@ All notable changes to this project are documented in this file. Each entry is g
 
 ## Sprint 3 - 2026-11-13
 
+- No user-facing changes in this release.
+
+## Sprint 3 - 2026-11-13
+
 - SPEC-ISSUE-0002: Ensure all planned stories in the sprint backlog are completed before sprint close.
 
 ## Sprint 2 - 2026-11-13

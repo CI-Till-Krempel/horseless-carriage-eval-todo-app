@@ -2,13 +2,9 @@
 
 _This file may only hold a rolling window of the most recent transcript entries across the whole run (see TRANSCRIPT_MAX_ENTRIES), not necessarily this sprint's complete history. For the full, untruncated per-run record, see the session log: `/app/sessions/transcript-eval-0.2.1-run94.log`._
 
-## ScrumOrchestrator
-- 🔧 `create_litellm_virtual_key(agent_name="ProductOwner", max_budget=100, budget_duration="1m")`
-- 🔧 `create_litellm_virtual_key(agent_name="ScrumMaster", max_budget=100, budget_duration="1m")`
-- 🔧 `create_litellm_virtual_key(agent_name="DevTeam", max_budget=100, budget_duration="1m")`
-- 🔧 `create_litellm_virtual_key(max_budget=100, budget_duration="1m", agent_name="QA")`
-- 🔧 `create_litellm_virtual_key(budget_duration="1m", agent_name="Architect", max_budget=100)`
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+## system
+
+[2 earlier transcript entries omitted for token budget]
 
 ## ProductOwner
 - 🔧 `list_docs()`
@@ -202,3 +198,124 @@ I am running the whole-increment release audit prior to creating the release PR.
 ## ProductOwner
 - 🔧 `propose_version_bump(new_version="0.1.0-snapshot")`
 - 🔧 `create_release_pr(body="Release v0.1.0: Spri...", title="Release v0.1.0")`
+- 🔧 `generate_announcement()`
+- 🔧 `gh_release_create(title="Release v0.1.0", tag="v0.1.0")`
+- 🔧 `generate_announcement()`
+
+Sprint 1 has been successfully completed and released as version `v0.1.0`. 
+
+### Summary of Accomplishments (Sprint 1)
+- **Infrastructure & Environment Setup**: Established the Python Flask development workbench (`python-flask`) with pytest, pytest-flask, and debug support.
+- **Backlog Planning**: Detailed the Epic (`EP-0001`) and User Stories (`US-0001` through `US-0006`) addressing the To-Do List Web App product vision.
+- **Feature Delivery**: Successfully implemented, reviewed, tested, and accepted **US-0001 (Create To-Do List)**:
+  - Built the Flask backend with in-memory list storage.
+  - Developed the server-rendered HTML UI for creating and viewing lists.
+  - Added comprehensive automated unit tests (`pytest`) with 97% test coverage and green build checks.
+  - Published end-user documentation and recorded token usage and estimates.
+- **Sprint Review & Release**:
+  - Conducted Scrum Master retrospective and logged team feedback and KPIs.
+  - Executed QA release audit and proposed/finalized the `v0.1.0` version bump.
+  - Created and merged the sprint planning and release Pull Requests (`develop` -> `main`).
+
+## ScrumOrchestrator
+- 🔧 `repo_status()`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `start_sprint(goal="Implement priority s...")`
+- 🔧 `transfer_to_agent(agent_name="Architect")`
+
+## Architect
+- 🔧 `check_workbench_tooling()`
+- 🔧 `propose_framework_change(template_name="python-flask", rationale="Bootstrap the Python...")`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `list_docs()`
+- 🔧 `read_doc(path="specs/ROADMAP.md")`
+- 🔧 `list_open_issues()`
+- 🔧 `read_doc(path="specs/stories/US-000...")`
+- 🔧 `read_doc(path="specs/stories/US-000...")`
+- 🔧 `create_sprint_backlog_pr(title="Sprint Backlog - Spr...", body="Sprint Backlog for S...")`
+- 🔧 `plan_backlog_item(priority="Should", title_or_id="SPEC-ISSUE-0001", priority_justification="Demoting from Must t...")`
+- 🔧 `create_sprint_backlog_pr(title="Sprint Backlog - Spr...", body="Sprint Backlog for S...")`
+- 🔧 `record_human_approval(approval_type="sprint", note="Sprint goal and back...")`
+- 🔧 `create_sprint_backlog_pr(body="Sprint Backlog for S...", title="Sprint Backlog - Spr...")`
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `gh_pr_comments()`
+- 🔧 `list_docs()`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+- 🔧 `plan_sprint_backlog_item(title_or_id="US-0002", plan={'risks_assumptions'...)`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+
+I am checking the current sprint backlog and team engagement status to facilitate the review and progression of US-0002.
+- 🔧 `list_open_issues()`
+
+I am checking the blocking interactions list to see if any approvals or blockers need attention.
+- 🔧 `list_blocking_interactions()`
+
+I am transferring to the DevTeam to ensure they proceed with implementing US-0002.
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `start_feature_branch(slug="add-task-to-list", story_id="US-0002")`
+- 🔧 `list_docs()`
+- 🔧 `read_doc(path="specs/stories/US-000...")`
+- 🔧 `write_file(path="app.py", content="from flask import Fl...")`
+- 🔧 `write_file(content="from flask import Fl...", path="app.py", overwrite=True)`
+- 🔧 `write_file(content="<!doctype html>
+<htm...", overwrite=True, path="templates/index.html")`
+- 🔧 `write_file(overwrite=True, path="tests/test_todo.py", content="import pytest
+from a...")`
+- 🔧 `git_push(branch="eval-0.2.1-run94/fea...", commit_message="feat: implement US-0...")`
+- 🔧 `gh_pr_checks(watch=True)`
+- 🔧 `log_story_tokens(title_or_id="US-0002", actual_tokens=120)`
+- 🔧 `upsert_user_doc(filename="GUIDE-Add-Task-to-Li...", content="# User Guide: Add Ta...")`
+- 🔧 `advance_story_stage(title_or_id="US-0002", stage="Implemented")`
+- 🔧 `git_push(commit_message="chore: push roadmap ...", branch="eval-0.2.1-run94/fea...")`
+- 🔧 `mark_pr_ready_for_review()`
+- 🔧 `transfer_to_agent(agent_name="Architect")`
+
+## Architect
+
+I am reviewing the implementation of US-0002 (Add Task to List) to ensure architectural integrity and correct integration.
+- 🔧 `advance_story_stage(stage="Reviewed", title_or_id="US-0002", review_comment="Architectural review...", review_event="COMMENT")`
+- 🔧 `transfer_to_agent(agent_name="QA")`
+
+## QA
+- 🔧 `check_build()`
+- 🔧 `advance_story_stage(stage="Tested", review_event="COMMENT", review_comment="QA review passed: ch...", title_or_id="US-0002")`
+- 🔧 `merge_story_pr(pr_id="894")`
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `record_acceptance_check(title_or_id="US-0002", note="Verified acceptance ...")`
+- 🔧 `advance_story_stage(title_or_id="US-0002", stage="Accepted")`
+- 🔧 `transfer_to_agent(agent_name="DevTeam")`
+
+## DevTeam
+- 🔧 `plan_sprint_backlog_item(title_or_id="US-0003", plan={'estimate': 150, 'a...)`
+- 🔧 `transfer_to_agent(agent_name="ScrumMaster")`
+
+## ScrumMaster
+- 🔧 `add_retro_action(owner="DevTeam", action="Ensure all planned s...", success_metric="All planned stories ...", category="technical")`
+- 🔧 `calculate_kpis()`
+- 🔧 `update_sprint_report(kpis={'security': {'vulne...)`
+- 🔧 `create_sprint_report(summary="Sprint 2 successfull...", accomplishments=['Successfully imple...)`
+- 🔧 `propose_steering_change(new_content="# ScrumMaster Identi...", role="ScrumMaster", rationale="Address process disc...")`
+- 🔧 `create_sprint_report(summary="Sprint 2 successfull...", accomplishments=['Successfully imple...)`
+
+I am creating the release pull request to close out Sprint 2.
+- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
+
+## ProductOwner
+- 🔧 `run_release_audit()`
+- 🔧 `propose_version_bump(new_version="0.2.0-snapshot")`
+- 🔧 `create_release_pr(body="Release v0.2.0 for S...", title="Release v0.2.0")`

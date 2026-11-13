@@ -6,11 +6,7 @@ _This file may only hold a rolling window of the most recent transcript entries 
 
 [2 earlier transcript entries omitted for token budget]
 
-## QA
-- 🔧 `transfer_to_agent(agent_name="ProductOwner")`
-
 ## ProductOwner
-- 🔧 `record_acceptance_check(note="Verified list creati...", title_or_id="US-0001")`
 - 🔧 `advance_story_stage(stage="Accepted", title_or_id="US-0001")`
 
 Transferring to ScrumMaster to run the sprint retrospective and close the sprint.
@@ -342,4 +338,6 @@ Transferring to ScrumOrchestrator to trigger release PR creation.
 ## ProductOwner
 - 🔧 `propose_version_bump(new_version="0.3.0-snapshot")`
 - 🔧 `propose_version_bump(new_version="0.2.1-snapshot")`
+- 🔧 `create_release_pr(title="Release v0.2.1", body="Release v0.2.1 cover...")`
+- 🔧 `generate_announcement()`
 - 🔧 `create_release_pr(title="Release v0.2.1", body="Release v0.2.1 cover...")`

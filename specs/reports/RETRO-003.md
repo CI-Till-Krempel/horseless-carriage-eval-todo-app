@@ -15,10 +15,10 @@
 - Success Metric: All planned stories reach Accepted status.
 - Filed As: SPEC-ISSUE-0002
 
-## Ensure all planned stories are reviewed and scheduled properly at sprint start
+## Ensure security scan findings are triaged promptly during sprint development cycles
 - Kind: Retro Action
 - Category: technical
-- Owner: ProductOwner
+- Owner: DevTeam
 - Status: open
-- Success Metric: All sprint backlog items planned and completed without blocking issues
+- Success Metric: Security scan findings triaged before story review stage
 - Filed As: SPEC-ISSUE-0004

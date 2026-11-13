@@ -37,7 +37,7 @@ Stories
   - [x] DRAFT
   - [x] READY
   - [x] IMPLEMENTED
-  - [ ] REVIEWED
+  - [x] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED
 - [SPEC-ISSUE-0003] Release audit: security scan findings need triage

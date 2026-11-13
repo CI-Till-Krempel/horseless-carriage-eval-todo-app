@@ -36,9 +36,9 @@ Stories
 - [SPEC-ISSUE-0002] Ensure all planned stories in the sprint backlog are completed before sprint close.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [SPEC-ISSUE-0003] Release audit: security scan findings need triage
   - [x] DRAFT

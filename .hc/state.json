@@ -49,9 +49,12 @@
       "version": "v1.0.0",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready",
+      "status": "Tested",
       "user_story": "As a user, I want to add a task to a list with a short description so that I know what needs to be done."
     },
     {
@@ -136,7 +139,7 @@
       "type": "Issue",
       "id": "SPEC-ISSUE-0001",
       "filed_sprint": 1,
-      "priority": "Must"
+      "priority": "Should"
     }
   ],
   "definition_of_done": [
@@ -151,21 +154,21 @@
   ],
   "sprint_goal": "Implement priority sorting and completion toggling for to-do items",
   "sprint_number": 2,
-  "sprint_backlog_pr_sprint": 0,
-  "sprint_backlog_pr_opened": true,
-  "planning_output_commit_count": 7,
-  "sprint_backlog_pr_content_baseline": 2,
+  "sprint_backlog_pr_sprint": 2,
+  "sprint_backlog_pr_opened": false,
+  "planning_output_commit_count": 9,
+  "sprint_backlog_pr_content_baseline": 7,
   "sprint_backlog": [
     {
-      "value_hypothesis": "Enables organizing tasks into separate lists.",
-      "epic_id": "EP-0001",
-      "priority": "Must",
       "acceptance_criteria": [
-        "Given the user is on the main page, When they enter a list name and click create, Then a new to-do list is created and displayed."
+        "Given a to-do list exists, When the user adds a task with a description, Then the task appears in that list."
       ],
-      "id": "US-0001",
-      "description": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
-      "title": "Create To-Do List",
+      "description": "As a user, I want to add a task to a list with a short description so that I know what needs to be done.",
+      "epic_id": "EP-0001",
+      "value_hypothesis": "Allows tracking individual items within a list.",
+      "id": "US-0002",
+      "title": "Add Task to List",
+      "priority": "Must",
       "type": "User Story",
       "version": "v1.0.0",
       "stages_completed": [
@@ -173,36 +176,24 @@
         "Ready",
         "Implemented",
         "Reviewed",
-        "Tested",
-        "Accepted"
+        "Tested"
       ],
-      "status": "Accepted",
-      "user_story": "As a user, I want to create a new to-do list with a name so that I can organize my tasks.",
-      "test_approach": "Write pytest unit tests using pytest-flask to test creating lists.",
-      "tasks": [
-        "Set up Flask application structure and requirements.txt",
-        "Implement create list route and HTML template",
-        "Write pytest unit test for creating a list"
-      ],
+      "status": "Tested",
+      "user_story": "As a user, I want to add a task to a list with a short description so that I know what needs to be done.",
       "risks_assumptions": [
-        "In-memory storage is sufficient for MVP session persistence."
-      ],
-      "estimate": 1500,
-      "code_files": [
-        "app.py",
-        "templates/index.html",
-        "requirements.txt",
-        "tests/test_todo.py"
+        "Assumes in-memory storage or basic sqlite from US-0001"
       ],
       "dod_checks": [
-        "Code reviewed-ready",
-        "Automated tests written and passing",
-        "Tokens logged",
-        "User docs updated"
+        "Tasks added via form appear in the list",
+        "Tests verify task addition"
       ],
-      "approach": "Implement Flask app with in-memory storage and HTML template for creating to-do lists.",
-      "acceptance_check_count": 1,
-      "acceptance_check_note": "Verified list creation feature meets all acceptance criteria."
+      "approach": "Implement Add Task to List feature with Flask route and HTML form/template.",
+      "code_files": [
+        "app.py",
+        "templates/index.html"
+      ],
+      "estimate": 150,
+      "test_approach": "pytest-flask unit tests for adding task endpoint"
     }
   ],
   "impediment_log": [],
@@ -221,16 +212,26 @@
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.31972595
+    "current_usd_spend": 0.4098887299999999
   },
   "token_usage": {
-    "total": 0,
-    "agents": {}
+    "total": 1045658,
+    "agents": {
+      "ScrumMaster": 106625,
+      "Architect": 103765,
+      "ProductOwner": 258626,
+      "DevTeam": 518343,
+      "QA": 58299
+    }
   },
   "story_estimates": {
     "US-0001": {
       "estimate": 1500,
       "actual": 1200
+    },
+    "US-0002": {
+      "estimate": 150,
+      "actual": 120
     }
   },
   "sprint_report_kpis": {},
@@ -257,11 +258,16 @@
   "product_released_version": "0.1.0",
   "product_version_change_type": "feature",
   "retro_baseline": 1,
-  "human_approvals": [],
+  "human_approvals": [
+    {
+      "type": "sprint",
+      "note": "Sprint goal and backlog pre-approved for Sprint 2."
+    }
+  ],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 4,
-  "unadvanced_write_nudge_baseline": 0,
+  "dev_touch_baseline": 8,
+  "unadvanced_write_nudge_baseline": 5,
   "sprint_files_touched": [
     "specs/requirements/PRD-ToDo-MVP.md",
     "specs/ROADMAP.md",
@@ -286,9 +292,10 @@
     "specs/reports/RETRO-001.md",
     "specs/reports/STEERING-001.md",
     "specs/requirements/SPEC-ISSUE-0001-Release-audit:-security-scan-findings-need-triage.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "specs/product-docs/GUIDE-Add-Task-to-List.md"
   ],
-  "source_content_change_count": 5,
+  "source_content_change_count": 8,
   "last_check_build": {
     "checked": "requirements.txt",
     "passing": true,
@@ -301,15 +308,19 @@
   "git_push_count": 0,
   "pr_review_calls": {
     "DevTeam": 1,
-    "Architect": 2,
-    "QA": 2
+    "Architect": 3,
+    "QA": 3
   },
-  "architect_review_baseline": 2,
-  "qa_review_baseline": 2,
+  "architect_review_baseline": 3,
+  "qa_review_baseline": 3,
   "qa_tested_baseline": 1,
   "content_loss_warnings": [],
   "content_loss_acknowledged_baseline": 0,
-  "sprint_backlog_engagement_baseline": {},
+  "sprint_backlog_engagement_baseline": {
+    "DevTeam": 1,
+    "Architect": 2,
+    "QA": 2
+  },
   "sprint_report_pending_release": false,
   "blocking_interactions": [
     {
@@ -318,6 +329,15 @@
       "summary": "Workbench change needs new network access: pypi.org, files.pythonhosted.org",
       "detail": "Draft PR opened by Architect: https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/887. A human operator must add the listed host(s) to NET_PROXY_EXTRA_ALLOWLIST_HOSTS in Horseless Carriage's own .env and run `docker compose up`, outside this repo, before this workbench's tests can actually reach them.",
       "created_at": "2026-11-13T12:56:55.700798+00:00",
+      "resolved": false,
+      "resolved_at": null
+    },
+    {
+      "id": 2,
+      "kind": "framework_change",
+      "summary": "Workbench change needs new network access: pypi.org, files.pythonhosted.org",
+      "detail": "Draft PR opened by Architect: https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/893. A human operator must add the listed host(s) to NET_PROXY_EXTRA_ALLOWLIST_HOSTS in Horseless Carriage's own .env and run `docker compose up`, outside this repo, before this workbench's tests can actually reach them.",
+      "created_at": "2026-11-13T13:00:13.332960+00:00",
       "resolved": false,
       "resolved_at": null
     }
@@ -336,7 +356,7 @@
       "branch": "eval-0.2.1-run94/steering/scrummaster-identity-20261113125916"
     }
   ],
-  "framework_change_proposal_count": 1,
+  "framework_change_proposal_count": 2,
   "framework_change_proposals": [
     {
       "proposed_by": "Architect",
@@ -359,6 +379,28 @@
       ],
       "pr_url": "https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/887",
       "branch": "eval-0.2.1-run94/framework/workbench-20261113125650"
+    },
+    {
+      "proposed_by": "Architect",
+      "rationale": "Bootstrap the Python Flask development workbench template for the sprint.",
+      "template_name": "python-flask",
+      "workbench_setup_script": "#!/bin/sh\n# Development Workbench: python-flask (US-0022, EP-0010)\n#\n# Toolchain for scaffolding, developing, testing, running, and debugging a\n# Flask application inside the agent image. The base agent image\n# (agent.Dockerfile, FROM python:3.11-slim) already provides Python 3.11 +\n# pip, so this script only layers the Flask-stack-specific packages on top\n# - the same \"only add what the base image doesn't already have\" shape\n# every Development Workbench template follows.\nset -e\n\npip install --no-cache-dir \\\n    flask \\\n    pytest \\\n    pytest-flask \\\n    debugpy \\\n    httpie\n\ncat <<'EOF'\npython-flask workbench ready: flask, pytest, pytest-flask, debugpy, httpie installed.\n\nScaffold (minimal app, from the project root):\n  mkdir -p app && cat > app/__init__.py <<'PY'\n  from flask import Flask\n\n  app = Flask(__name__)\n\n  @app.route(\"/\")\n  def index():\n      return \"ok\"\n  PY\n\nInstall project-declared deps:\n  pip install -r requirements.txt\n\nTest:\n  pytest\n\nRun:\n  flask --app app run --debug --host=0.0.0.0\n\nDebug (attach a remote debugger on port 5678):\n  python -m debugpy --listen 0.0.0.0:5678 --wait-for-client \\\n      -m flask --app app run --no-debugger --no-reload\n\nExploratory testing:\n  http GET http://127.0.0.1:5000/     # HTTPie against the running dev server\n  flask --app app shell               # interactive REPL with full app context\nEOF\n",
+      "mcp_config": {
+        "mcpServers": {
+          "fetch": {
+            "command": "uvx",
+            "args": [
+              "mcp-server-fetch"
+            ]
+          }
+        }
+      },
+      "additional_allowlist_hosts": [
+        "pypi.org",
+        "files.pythonhosted.org"
+      ],
+      "pr_url": "https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/893",
+      "branch": "eval-0.2.1-run94/framework/workbench-20261113130009"
     }
   ],
   "blocked_story_ids_as_of_last_report": [],

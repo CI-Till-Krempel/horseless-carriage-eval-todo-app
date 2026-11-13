@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Add Task to List
-- Status: Ready
+- Status: Tested
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-13
@@ -16,4 +16,4 @@
 Allows tracking individual items within a list.
 
 ## Test Approach
-
+pytest-flask unit tests for adding task endpoint

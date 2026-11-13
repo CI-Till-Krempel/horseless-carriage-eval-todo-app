@@ -36,7 +36,7 @@ Stories
 - [SPEC-ISSUE-0002] Ensure all planned stories in the sprint backlog are completed before sprint close.
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

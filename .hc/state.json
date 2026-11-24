@@ -72,9 +72,12 @@
       "version": "0.1.0",
       "stages_completed": [
         "Draft",
-        "Ready"
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
       ],
-      "status": "Ready"
+      "status": "Tested"
     },
     {
       "title": "Implement Data Model for Lists and Tasks",
@@ -355,29 +358,555 @@
   ],
   "sprint_goal": "Establish the technical foundation: choose and document the tech stack, implement the data model for lists and tasks, and deliver the backend API routes for all core operations (create/read/delete lists and tasks).",
   "sprint_number": 1,
-  "sprint_backlog_pr_sprint": 0,
+  "sprint_backlog_pr_sprint": 1,
   "sprint_backlog_pr_opened": true,
-  "planning_output_commit_count": 0,
-  "sprint_backlog_pr_content_baseline": 0,
-  "sprint_backlog": [],
+  "planning_output_commit_count": 4,
+  "sprint_backlog_pr_content_baseline": 2,
+  "sprint_backlog": [
+    {
+      "title": "Choose and Document Tech Stack & Persistence Approach",
+      "user_story": "As a developer, I want to understand the chosen technology stack and persistence strategy, so that I can build the app consistently and others can understand the design decisions.",
+      "acceptance_criteria": [
+        "README documents chosen language/framework",
+        "README explains why this stack was chosen",
+        "Persistence approach (in-memory, file, DB) is documented with rationale",
+        "Architecture diagram or high-level design is documented",
+        "Setup instructions are clear enough to clone and run"
+      ],
+      "priority": "Must",
+      "depends_on": [],
+      "value_hypothesis": "Team has shared understanding of architecture before implementation begins",
+      "type": "User Story",
+      "id": "US-0001",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready",
+        "Implemented",
+        "Reviewed",
+        "Tested"
+      ],
+      "status": "Tested",
+      "approach": "Create a comprehensive README.md that documents the chosen tech stack (Python/Flask), explains the rationale, documents the in-memory persistence approach with upgrade path to SQLite, provides setup and run instructions.",
+      "tasks": [
+        "Write README.md with tech stack overview and rationale",
+        "Document persistence strategy and in-memory default approach",
+        "Add setup instructions for local development",
+        "Add run instructions",
+        "Reference Architecture Vision document"
+      ],
+      "estimate": 300,
+      "risks": [
+        "README clarity for external users - must be detailed but not overwhelming"
+      ],
+      "test_approach": "Manual review - README clarity and completeness vs acceptance criteria"
+    },
+    {
+      "title": "Implement Data Model for Lists and Tasks",
+      "user_story": "As the system, I need a data model that represents lists (with names) and tasks (with text and completion status), so that the app can store and retrieve this data.",
+      "acceptance_criteria": [
+        "List entity has id and name",
+        "Task entity has id, text, completion status, and belongs to a list",
+        "Create operations work for both lists and tasks",
+        "Data persists according to chosen strategy",
+        "Data model supports all required operations (read, update, delete)"
+      ],
+      "priority": "Must",
+      "depends_on": [],
+      "value_hypothesis": "Core data layer is in place for all other features to build on",
+      "type": "User Story",
+      "id": "US-0002",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Implement core data models (List and Task classes) with in-memory dictionary storage. Create a DataStore class to manage lists and tasks with CRUD operations.",
+      "tasks": [
+        "Define List entity with id and name",
+        "Define Task entity with id, text, completed status, and list_id",
+        "Implement DataStore class with in-memory storage",
+        "Implement CRUD methods for lists and tasks",
+        "Write unit tests for data model",
+        "Test cascade deletion (delete list → delete all tasks)"
+      ],
+      "estimate": 800,
+      "risks": [
+        "In-memory loss on server restart - acceptable for MVP",
+        "ID generation strategy - use simple auto-increment"
+      ],
+      "test_approach": "Unit tests for all CRUD operations using pytest"
+    },
+    {
+      "title": "Implement Backend API Routes for List Operations",
+      "user_story": "As a frontend, I need API routes to create, read, and delete lists, so that the UI can manage lists.",
+      "acceptance_criteria": [
+        "POST /lists endpoint creates a new list with a name",
+        "GET /lists returns all lists",
+        "GET /lists/:id returns a specific list",
+        "DELETE /lists/:id deletes a list and its tasks",
+        "Errors are handled gracefully with appropriate HTTP status codes"
+      ],
+      "priority": "Must",
+      "depends_on": [
+        "US-0001"
+      ],
+      "value_hypothesis": "Frontend can interact with lists via API",
+      "type": "User Story",
+      "id": "US-0003",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Create Flask API routes for list operations: GET /api/lists, POST /api/lists, GET /api/lists/:id, DELETE /api/lists/:id. All routes return JSON and handle errors gracefully.",
+      "tasks": [
+        "Define Flask blueprints for list operations",
+        "Implement GET /api/lists endpoint",
+        "Implement POST /api/lists endpoint with validation",
+        "Implement GET /api/lists/:id endpoint",
+        "Implement DELETE /api/lists/:id endpoint",
+        "Add error handling and HTTP status codes",
+        "Write tests for all routes"
+      ],
+      "estimate": 1000,
+      "risks": [
+        "CORS headers if frontend is served differently",
+        "Input validation - implement on backend"
+      ],
+      "test_approach": "pytest with Flask test client for all HTTP routes"
+    },
+    {
+      "title": "Implement Backend API Routes for Task Operations",
+      "user_story": "As a frontend, I need API routes to create, read, update, and delete tasks, so that the UI can manage tasks.",
+      "acceptance_criteria": [
+        "POST /lists/:id/tasks creates a new task with text",
+        "GET /lists/:id/tasks returns all tasks in a list",
+        "PATCH /lists/:id/tasks/:taskId updates task completion status",
+        "DELETE /lists/:id/tasks/:taskId deletes a task",
+        "Errors are handled gracefully"
+      ],
+      "priority": "Must",
+      "depends_on": [
+        "US-0002"
+      ],
+      "value_hypothesis": "Frontend can interact with tasks via API",
+      "type": "User Story",
+      "id": "US-0004",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Create Flask API routes for task operations: POST /api/lists/:id/tasks, GET /api/lists/:id/tasks, PATCH /api/lists/:id/tasks/:taskId, DELETE /api/lists/:id/tasks/:taskId. All routes return JSON.",
+      "tasks": [
+        "Implement POST /api/lists/:id/tasks endpoint",
+        "Implement GET /api/lists/:id/tasks endpoint",
+        "Implement PATCH /api/lists/:id/tasks/:taskId endpoint for toggling completion",
+        "Implement DELETE /api/lists/:id/tasks/:taskId endpoint",
+        "Add validation for all endpoints",
+        "Add error handling (list not found, task not found, etc.)",
+        "Write tests for all routes"
+      ],
+      "estimate": 1000,
+      "risks": [
+        "Filtering tasks by list - ensure correct association",
+        "PATCH semantics for toggle operation"
+      ],
+      "test_approach": "pytest with Flask test client for all HTTP routes"
+    },
+    {
+      "title": "Implement Home/Lists View UI",
+      "user_story": "As a user, I want to see all my lists on the home page, so that I can choose which list to work with.",
+      "acceptance_criteria": [
+        "Home page displays a list of all lists with their names",
+        "Each list is clickable to view its tasks",
+        "There is a button to create a new list",
+        "The UI is clean and easy to understand without documentation",
+        "Lists load from the backend API"
+      ],
+      "priority": "Must",
+      "depends_on": [
+        "US-0003"
+      ],
+      "value_hypothesis": "User can discover and navigate between their lists",
+      "type": "User Story",
+      "id": "US-0005",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Create the home page UI that displays all lists. Implement HTML/CSS/JavaScript to fetch lists from API and display them. Include button to create new list.",
+      "tasks": [
+        "Create static HTML structure for lists view",
+        "Implement CSS styling for list display",
+        "Write JavaScript to fetch lists from /api/lists",
+        "Display lists in DOM with clickable navigation",
+        "Add 'Create List' button",
+        "Handle loading states and errors",
+        "Test API integration"
+      ],
+      "estimate": 900,
+      "risks": [
+        "CORS issues with API calls - set up Flask CORS handling",
+        "Empty state - show helpful message when no lists exist"
+      ],
+      "test_approach": "Manual testing in browser, verify API calls work"
+    },
+    {
+      "title": "Implement Create List Form",
+      "user_story": "As a user, I want to create a new list by entering a name, so that I can organize my tasks into separate lists.",
+      "acceptance_criteria": [
+        "Form accepts a list name",
+        "Form submits to backend via API",
+        "New list appears in the lists view after creation",
+        "User gets feedback (success/error) after submission",
+        "Form can be opened from the home page"
+      ],
+      "priority": "Must",
+      "depends_on": [
+        "US-0003"
+      ],
+      "value_hypothesis": "User can create lists through the UI",
+      "type": "User Story",
+      "id": "US-0006",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Implement form/modal to create a new list. Take list name as input, POST to /api/lists, refresh lists view on success.",
+      "tasks": [
+        "Create HTML form for list name input",
+        "Implement form submission handler",
+        "POST to /api/lists with list name",
+        "Handle success/error responses",
+        "Add form validation (non-empty, length check)",
+        "Close form and refresh lists view after success",
+        "Show error messages to user"
+      ],
+      "estimate": 700,
+      "risks": [
+        "Form submission without page reload - use fetch/AJAX",
+        "Validation feedback to user"
+      ],
+      "test_approach": "Manual testing - create lists via form, verify they appear"
+    },
+    {
+      "title": "Implement List Detail View with Tasks",
+      "user_story": "As a user, I want to view all tasks in a list, with clear visual distinction between completed and incomplete tasks, so that I can see what work remains.",
+      "acceptance_criteria": [
+        "List detail page shows all tasks for the selected list",
+        "Incomplete tasks are displayed differently from complete ones (e.g., strikethrough or grayed out)",
+        "There is a button to add a new task",
+        "There is a button to delete the entire list",
+        "Back button returns to lists view",
+        "Tasks load from the backend API"
+      ],
+      "priority": "Must",
+      "depends_on": [
+        "US-0004"
+      ],
+      "value_hypothesis": "User can see task status at a glance",
+      "type": "User Story",
+      "id": "US-0007",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Create list detail view showing all tasks in a list. Display completed vs incomplete tasks with visual distinction (strikethrough/opacity). Include buttons for new task and delete list.",
+      "tasks": [
+        "Create HTML structure for task list view",
+        "Implement CSS for task styling and completed state",
+        "Write JavaScript to fetch tasks for a list",
+        "Display tasks with completed/incomplete styling",
+        "Add 'Add Task' button",
+        "Add 'Delete List' button with confirmation",
+        "Implement navigation back to lists view",
+        "Handle empty task list"
+      ],
+      "estimate": 1000,
+      "risks": [
+        "Visual distinction clarity - use multiple signals (strikethrough, color, opacity)",
+        "Navigation between views - manage state carefully"
+      ],
+      "test_approach": "Manual testing - navigate to list, verify tasks display correctly"
+    },
+    {
+      "title": "Implement Add Task Form",
+      "user_story": "As a user, I want to add a new task to a list by typing a description, so that I can track what needs to be done.",
+      "acceptance_criteria": [
+        "Form accepts task text",
+        "Form submits to backend via API",
+        "New task appears in the task list after creation",
+        "Task is marked as incomplete by default",
+        "User gets feedback (success/error) after submission",
+        "Form is accessible from the list detail view"
+      ],
+      "priority": "Must",
+      "depends_on": [
+        "US-0004"
+      ],
+      "value_hypothesis": "User can create tasks through the UI",
+      "type": "User Story",
+      "id": "US-0008",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Implement form to add a new task to a list. Take task text as input, POST to /api/lists/:id/tasks, refresh tasks view on success.",
+      "tasks": [
+        "Create HTML form for task text input",
+        "Implement form submission handler",
+        "POST to /api/lists/:id/tasks with task text",
+        "Handle success/error responses",
+        "Add form validation (non-empty, length check)",
+        "Close form and refresh tasks view after success",
+        "Show error messages to user"
+      ],
+      "estimate": 600,
+      "risks": [
+        "Task form in modal or inline - keep it simple",
+        "Validation feedback"
+      ],
+      "test_approach": "Manual testing - add tasks via form, verify they appear in list"
+    },
+    {
+      "title": "Implement Toggle Task Completion",
+      "user_story": "As a user, I want to click a task to mark it as complete or incomplete, so that I can track my progress.",
+      "acceptance_criteria": [
+        "Clicking a task toggles its completion status",
+        "The UI immediately reflects the change (visual distinction)",
+        "Completion status is persisted via backend API",
+        "User gets clear visual feedback on the new status",
+        "Toggle works without page reload"
+      ],
+      "priority": "Must",
+      "depends_on": [
+        "US-0007"
+      ],
+      "value_hypothesis": "User can track task completion directly in the UI",
+      "type": "User Story",
+      "id": "US-0009",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Implement click handler on tasks to toggle completion status. PATCH /api/lists/:id/tasks/:taskId with updated completion status, update DOM immediately.",
+      "tasks": [
+        "Add click event handler to task elements",
+        "PATCH task completion status to API",
+        "Update task DOM element styling on completion toggle",
+        "Handle API errors gracefully",
+        "Provide visual feedback on click"
+      ],
+      "estimate": 500,
+      "risks": [
+        "Optimistic UI update vs server sync - balance UX and correctness"
+      ],
+      "test_approach": "Manual testing - click tasks to toggle completion, verify status persists"
+    },
+    {
+      "title": "Implement Delete Task Functionality",
+      "user_story": "As a user, I want to delete a task from a list, so that I can remove tasks I no longer need.",
+      "acceptance_criteria": [
+        "Each task has a delete button or option",
+        "Clicking delete removes the task from the list",
+        "Deletion is confirmed via backend API",
+        "Task list updates immediately after deletion",
+        "No hard page refresh required"
+      ],
+      "priority": "Must",
+      "depends_on": [
+        "US-0007"
+      ],
+      "value_hypothesis": "User can remove tasks easily",
+      "type": "User Story",
+      "id": "US-0010",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Implement delete button on tasks. DELETE /api/lists/:id/tasks/:taskId, remove task from DOM on success.",
+      "tasks": [
+        "Add delete button to each task element",
+        "Implement delete handler with optional confirmation",
+        "DELETE to /api/lists/:id/tasks/:taskId",
+        "Remove task from DOM on success",
+        "Handle errors gracefully"
+      ],
+      "estimate": 500,
+      "risks": [
+        "Accidental deletion - consider confirmation dialog"
+      ],
+      "test_approach": "Manual testing - delete tasks, verify they disappear"
+    },
+    {
+      "title": "Implement Delete List Functionality",
+      "user_story": "As a user, I want to delete an entire list (and all its tasks), so that I can remove lists I no longer need.",
+      "acceptance_criteria": [
+        "Delete list button is available in the list detail view",
+        "Deletion may request confirmation",
+        "All tasks in the list are deleted with the list",
+        "User is returned to the lists view",
+        "Deletion is confirmed via backend API"
+      ],
+      "priority": "Must",
+      "depends_on": [
+        "US-0007"
+      ],
+      "value_hypothesis": "User can clean up unwanted lists and their tasks",
+      "type": "User Story",
+      "id": "US-0011",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "Implement delete list button in list detail view. DELETE /api/lists/:id (with cascade), return to lists view on success.",
+      "tasks": [
+        "Add delete button to list detail view",
+        "Implement confirmation dialog",
+        "DELETE to /api/lists/:id",
+        "On success, navigate back to lists view",
+        "Refresh lists view after delete",
+        "Handle errors"
+      ],
+      "estimate": 500,
+      "risks": [
+        "Accidental data loss - require confirmation"
+      ],
+      "test_approach": "Manual testing - delete lists, verify cascade delete of tasks"
+    },
+    {
+      "title": "End-to-End Integration Testing",
+      "user_story": "As QA, I want to verify the complete user flow works (create list, add tasks, mark complete, delete tasks, delete list), so that the product is ready for delivery.",
+      "acceptance_criteria": [
+        "Full user flow can be executed without errors",
+        "All features work together correctly",
+        "No console errors or crashes during normal use",
+        "Visual distinction between complete/incomplete tasks is clear",
+        "All data operations persist and display correctly"
+      ],
+      "priority": "Must",
+      "depends_on": [
+        "US-0009",
+        "US-0010",
+        "US-0011"
+      ],
+      "value_hypothesis": "Product is ready to deliver to users",
+      "type": "User Story",
+      "id": "US-0012",
+      "version": "0.1.0",
+      "stages_completed": [
+        "Draft",
+        "Ready"
+      ],
+      "status": "Ready",
+      "approach": "End-to-end testing of complete user flow: create list → add tasks → toggle completion → delete task → delete list. Verify all operations work together.",
+      "tasks": [
+        "Perform full user flow in browser",
+        "Verify visual distinction of complete/incomplete tasks",
+        "Check no console errors",
+        "Test error scenarios (invalid input, etc.)",
+        "Verify data operations persist correctly",
+        "Document test results"
+      ],
+      "estimate": 400,
+      "risks": [
+        "Race conditions in multi-step flows",
+        "Browser compatibility"
+      ],
+      "test_approach": "Manual end-to-end testing of all features"
+    }
+  ],
   "impediment_log": [],
   "retro_actions": [],
-  "decision_log": [],
+  "decision_log": [
+    {
+      "title": "Tech Stack Selection: Python + Flask",
+      "decision": "Selected Python 3.11 + Flask for backend, vanilla HTML/CSS/JavaScript for frontend, with SQLite (or in-memory dictionary default) for data persistence.",
+      "rationale": "Flask is lightweight, enables rapid MVP iteration, has excellent pytest integration, and requires no build infrastructure. Vanilla frontend keeps deployment simple and direct. In-memory default allows team to focus on core features before worrying about durable persistence. This stack is fully deliverable within 5-sprint budget.",
+      "owner": "Architect"
+    },
+    {
+      "title": "Persistence Approach: In-Memory Default with SQLite Future Option",
+      "decision": "Initial implementation uses in-memory dictionary for data storage, allowing session-based use without external dependencies. SQLite available as future upgrade if durability needed.",
+      "rationale": "In-memory approach unblocks feature development immediately and keeps MVP scope tight. No DB setup, migrations, or connection pooling needed. Team can prove all features work before optimizing storage strategy. SQLite layer is straightforward to add post-MVP.",
+      "owner": "Architect"
+    }
+  ],
   "sprint_report": "",
   "budgets": {
     "total": 5000000,
     "total_usd": 15.0,
-    "current_usd_spend": 0.33524
+    "current_usd_spend": 3.4754069999999997
   },
   "token_usage": {
-    "total": 719104,
+    "total": 4078936,
     "agents": {
       "ScrumOrchestrator": 127976,
-      "ScrumMaster": 90585,
-      "ProductOwner": 500543
+      "ScrumMaster": 195275,
+      "ProductOwner": 611334,
+      "Architect": 649667,
+      "DevTeam": 1807244,
+      "QA": 687440
     }
   },
-  "story_estimates": {},
+  "story_estimates": {
+    "US-0001": {
+      "estimate": 300,
+      "actual": 290
+    },
+    "US-0002": {
+      "estimate": 800
+    },
+    "US-0003": {
+      "estimate": 1000
+    },
+    "US-0004": {
+      "estimate": 1000
+    },
+    "US-0005": {
+      "estimate": 900
+    },
+    "US-0006": {
+      "estimate": 700
+    },
+    "US-0007": {
+      "estimate": 1000
+    },
+    "US-0008": {
+      "estimate": 600
+    },
+    "US-0009": {
+      "estimate": 500
+    },
+    "US-0010": {
+      "estimate": 500
+    },
+    "US-0011": {
+      "estimate": 500
+    },
+    "US-0012": {
+      "estimate": 400
+    }
+  },
   "sprint_report_kpis": null,
   "kpi_update_count": 0,
   "kpi_baseline": 0,
@@ -461,8 +990,8 @@
   "human_approvals": [],
   "sprint_approval_baseline": 0,
   "release_approval_baseline": 0,
-  "dev_touch_baseline": 0,
-  "unadvanced_write_nudge_baseline": 0,
+  "dev_touch_baseline": 2,
+  "unadvanced_write_nudge_baseline": 5,
   "sprint_files_touched": [
     "specs/requirements/PRD-TodoApp-MVP.md",
     "specs/stories/EP-0001-List-Management.md",
@@ -481,15 +1010,32 @@
     "specs/stories/US-0010-Implement-Delete-Task-Functionality.md",
     "specs/stories/US-0011-Implement-Delete-List-Functionality.md",
     "specs/stories/US-0012-End-to-End-Integration-Testing.md",
-    "specs/ROADMAP.md"
+    "specs/ROADMAP.md",
+    "specs/architecture/ARCHITECTURE-VISION.md",
+    "README.md",
+    "requirements.txt",
+    "tests/__init__.py",
+    "tests/conftest.py",
+    "tests/test_setup.py"
   ],
-  "source_content_change_count": 0,
-  "last_check_build": null,
-  "last_pr_checks": null,
+  "source_content_change_count": 5,
+  "last_check_build": {
+    "checked": "requirements.txt",
+    "passing": true,
+    "manifest_write_count_at_check": 1
+  },
+  "last_pr_checks": {
+    "passing": true,
+    "git_push_count_at_check": 0
+  },
   "git_push_count": 0,
-  "pr_review_calls": {},
-  "architect_review_baseline": 0,
-  "qa_review_baseline": 0,
+  "pr_review_calls": {
+    "DevTeam": 1,
+    "Architect": 2,
+    "QA": 3
+  },
+  "architect_review_baseline": 2,
+  "qa_review_baseline": 3,
   "qa_tested_baseline": 0,
   "content_loss_warnings": [],
   "content_loss_acknowledged_baseline": 0,
@@ -504,6 +1050,15 @@
       "created_at": "2026-11-24T10:28:20.685008+00:00",
       "resolved": false,
       "resolved_at": null
+    },
+    {
+      "id": 2,
+      "kind": "framework_change",
+      "summary": "Workbench change needs new network access: pypi.org, files.pythonhosted.org",
+      "detail": "Draft PR opened by Architect: https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/909. A human operator must add the listed host(s) to NET_PROXY_EXTRA_ALLOWLIST_HOSTS in Horseless Carriage's own .env and run `docker compose up`, outside this repo, before this workbench's tests can actually reach them.",
+      "created_at": "2026-11-24T10:29:35.467801+00:00",
+      "resolved": false,
+      "resolved_at": null
     }
   ],
   "overclaim_rejection_counts": {},
@@ -511,8 +1066,31 @@
   "steering_proposal_count": 0,
   "steering_baseline": 0,
   "steering_proposals": [],
-  "framework_change_proposal_count": 0,
-  "framework_change_proposals": [],
+  "framework_change_proposal_count": 1,
+  "framework_change_proposals": [
+    {
+      "proposed_by": "Architect",
+      "rationale": "To-Do list app MVP requires a lightweight web framework with integrated testing. Python/Flask with SQLite for in-memory/file-based persistence is ideal for rapid iteration and delivers all 6 required features within budget. Scaffolds quickly with built-in development server and pytest integration.",
+      "template_name": "python-flask",
+      "workbench_setup_script": "#!/bin/sh\n# Development Workbench: python-flask (US-0022, EP-0010)\n#\n# Toolchain for scaffolding, developing, testing, running, and debugging a\n# Flask application inside the agent image. The base agent image\n# (agent.Dockerfile, FROM python:3.11-slim) already provides Python 3.11 +\n# pip, so this script only layers the Flask-stack-specific packages on top\n# - the same \"only add what the base image doesn't already have\" shape\n# every Development Workbench template follows.\nset -e\n\npip install --no-cache-dir \\\n    flask \\\n    pytest \\\n    pytest-flask \\\n    debugpy \\\n    httpie\n\ncat <<'EOF'\npython-flask workbench ready: flask, pytest, pytest-flask, debugpy, httpie installed.\n\nScaffold (minimal app, from the project root):\n  mkdir -p app && cat > app/__init__.py <<'PY'\n  from flask import Flask\n\n  app = Flask(__name__)\n\n  @app.route(\"/\")\n  def index():\n      return \"ok\"\n  PY\n\nInstall project-declared deps:\n  pip install -r requirements.txt\n\nTest:\n  pytest\n\nRun:\n  flask --app app run --debug --host=0.0.0.0\n\nDebug (attach a remote debugger on port 5678):\n  python -m debugpy --listen 0.0.0.0:5678 --wait-for-client \\\n      -m flask --app app run --no-debugger --no-reload\n\nExploratory testing:\n  http GET http://127.0.0.1:5000/     # HTTPie against the running dev server\n  flask --app app shell               # interactive REPL with full app context\nEOF\n",
+      "mcp_config": {
+        "mcpServers": {
+          "fetch": {
+            "command": "uvx",
+            "args": [
+              "mcp-server-fetch"
+            ]
+          }
+        }
+      },
+      "additional_allowlist_hosts": [
+        "pypi.org",
+        "files.pythonhosted.org"
+      ],
+      "pr_url": "https://github.com/CI-Till-Krempel/horseless-carriage-eval-todo-app/pull/909",
+      "branch": "eval-0.2.1-run95/framework/workbench-20261124102926"
+    }
+  ],
   "blocked_story_ids_as_of_last_report": [],
   "accepted_count_baseline": 0,
   "version_goals": {}

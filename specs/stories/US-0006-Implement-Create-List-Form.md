@@ -20,4 +20,13 @@
 User can create lists through the UI
 
 ## Test Approach
+Manual testing - create lists via form, verify they appear
 
+### Tasks
+- Create HTML form for list name input
+- Implement form submission handler
+- POST to /api/lists with list name
+- Handle success/error responses
+- Add form validation (non-empty, length check)
+- Close form and refresh lists view after success
+- Show error messages to user

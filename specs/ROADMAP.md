@@ -44,9 +44,9 @@ Stories
 - [US-0001] Choose and Document Tech Stack & Persistence Approach
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
-  - [ ] REVIEWED
-  - [ ] TESTED
+  - [x] IMPLEMENTED
+  - [x] REVIEWED
+  - [x] TESTED
   - [ ] ACCEPTED
 - [US-0002] Implement Data Model for Lists and Tasks
   - [x] DRAFT

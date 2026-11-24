@@ -20,4 +20,12 @@
 Product is ready to deliver to users
 
 ## Test Approach
+Manual end-to-end testing of all features
 
+### Tasks
+- Perform full user flow in browser
+- Verify visual distinction of complete/incomplete tasks
+- Check no console errors
+- Test error scenarios (invalid input, etc.)
+- Verify data operations persist correctly
+- Document test results

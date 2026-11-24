@@ -20,4 +20,13 @@
 Frontend can interact with lists via API
 
 ## Test Approach
+pytest with Flask test client for all HTTP routes
 
+### Tasks
+- Define Flask blueprints for list operations
+- Implement GET /api/lists endpoint
+- Implement POST /api/lists endpoint with validation
+- Implement GET /api/lists/:id endpoint
+- Implement DELETE /api/lists/:id endpoint
+- Add error handling and HTTP status codes
+- Write tests for all routes

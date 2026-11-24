@@ -20,4 +20,13 @@
 Frontend can interact with tasks via API
 
 ## Test Approach
+pytest with Flask test client for all HTTP routes
 
+### Tasks
+- Implement POST /api/lists/:id/tasks endpoint
+- Implement GET /api/lists/:id/tasks endpoint
+- Implement PATCH /api/lists/:id/tasks/:taskId endpoint for toggling completion
+- Implement DELETE /api/lists/:id/tasks/:taskId endpoint
+- Add validation for all endpoints
+- Add error handling (list not found, task not found, etc.)
+- Write tests for all routes

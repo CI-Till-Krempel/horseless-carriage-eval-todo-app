@@ -20,4 +20,13 @@
 User can discover and navigate between their lists
 
 ## Test Approach
+Manual testing in browser, verify API calls work
 
+### Tasks
+- Create static HTML structure for lists view
+- Implement CSS styling for list display
+- Write JavaScript to fetch lists from /api/lists
+- Display lists in DOM with clickable navigation
+- Add 'Create List' button
+- Handle loading states and errors
+- Test API integration

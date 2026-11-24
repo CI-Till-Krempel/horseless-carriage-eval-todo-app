@@ -47,7 +47,7 @@ Stories
   - [x] IMPLEMENTED
   - [x] REVIEWED
   - [x] TESTED
-  - [ ] ACCEPTED
+  - [x] ACCEPTED
 - [US-0002] Implement Data Model for Lists and Tasks
   - [x] DRAFT
   - [x] READY

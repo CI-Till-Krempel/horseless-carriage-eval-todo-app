@@ -2,7 +2,7 @@
 
 - Story ID: US-0001
 - Title: Choose and Document Tech Stack & Persistence Approach
-- Status: Tested
+- Status: Accepted
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-24

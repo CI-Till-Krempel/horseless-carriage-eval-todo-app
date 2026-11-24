@@ -51,7 +51,7 @@ Stories
 - [US-0002] Implement Data Model for Lists and Tasks
   - [x] DRAFT
   - [x] READY
-  - [ ] IMPLEMENTED
+  - [x] IMPLEMENTED
   - [ ] REVIEWED
   - [ ] TESTED
   - [ ] ACCEPTED

@@ -20,4 +20,11 @@
 User can remove tasks easily
 
 ## Test Approach
+Manual testing - delete tasks, verify they disappear
 
+### Tasks
+- Add delete button to each task element
+- Implement delete handler with optional confirmation
+- DELETE to /api/lists/:id/tasks/:taskId
+- Remove task from DOM on success
+- Handle errors gracefully

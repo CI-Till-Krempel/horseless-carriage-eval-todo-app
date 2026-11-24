@@ -21,4 +21,13 @@
 User can create tasks through the UI
 
 ## Test Approach
+Manual testing - add tasks via form, verify they appear in list
 
+### Tasks
+- Create HTML form for task text input
+- Implement form submission handler
+- POST to /api/lists/:id/tasks with task text
+- Handle success/error responses
+- Add form validation (non-empty, length check)
+- Close form and refresh tasks view after success
+- Show error messages to user

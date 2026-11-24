@@ -20,4 +20,12 @@
 Core data layer is in place for all other features to build on
 
 ## Test Approach
+Unit tests for all CRUD operations using pytest
 
+### Tasks
+- Define List entity with id and name
+- Define Task entity with id, text, completed status, and list_id
+- Implement DataStore class with in-memory storage
+- Implement CRUD methods for lists and tasks
+- Write unit tests for data model
+- Test cascade deletion (delete list → delete all tasks)

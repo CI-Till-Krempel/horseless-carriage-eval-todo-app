@@ -20,4 +20,12 @@
 User can clean up unwanted lists and their tasks
 
 ## Test Approach
+Manual testing - delete lists, verify cascade delete of tasks
 
+### Tasks
+- Add delete button to list detail view
+- Implement confirmation dialog
+- DELETE to /api/lists/:id
+- On success, navigate back to lists view
+- Refresh lists view after delete
+- Handle errors

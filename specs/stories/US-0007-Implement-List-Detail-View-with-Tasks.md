@@ -21,4 +21,14 @@
 User can see task status at a glance
 
 ## Test Approach
+Manual testing - navigate to list, verify tasks display correctly
 
+### Tasks
+- Create HTML structure for task list view
+- Implement CSS for task styling and completed state
+- Write JavaScript to fetch tasks for a list
+- Display tasks with completed/incomplete styling
+- Add 'Add Task' button
+- Add 'Delete List' button with confirmation
+- Implement navigation back to lists view
+- Handle empty task list

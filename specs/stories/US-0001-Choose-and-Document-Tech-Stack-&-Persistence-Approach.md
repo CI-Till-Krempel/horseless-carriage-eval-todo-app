@@ -20,4 +20,11 @@
 Team has shared understanding of architecture before implementation begins
 
 ## Test Approach
+Manual review - README clarity and completeness vs acceptance criteria
 
+### Tasks
+- Write README.md with tech stack overview and rationale
+- Document persistence strategy and in-memory default approach
+- Add setup instructions for local development
+- Add run instructions
+- Reference Architecture Vision document

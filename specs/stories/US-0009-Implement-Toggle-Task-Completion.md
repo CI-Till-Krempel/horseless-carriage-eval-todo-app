@@ -20,4 +20,11 @@
 User can track task completion directly in the UI
 
 ## Test Approach
+Manual testing - click tasks to toggle completion, verify status persists
 
+### Tasks
+- Add click event handler to task elements
+- PATCH task completion status to API
+- Update task DOM element styling on completion toggle
+- Handle API errors gracefully
+- Provide visual feedback on click

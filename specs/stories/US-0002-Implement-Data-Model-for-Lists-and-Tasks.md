@@ -2,7 +2,7 @@
 
 - Story ID: US-0002
 - Title: Implement Data Model for Lists and Tasks
-- Status: Implemented
+- Status: Ready
 - Priority: Must
 - Owner: Scrum Team
 - Last Updated: 2026-11-24
@@ -18,6 +18,7 @@
 
 ## Notes
 Core data layer is in place for all other features to build on
+- 🚫 BLOCKED (product) - raised by ProductOwner: ProductOwner and ScrumMaster bounced transfer_to_agent 6x with no progress - 🔁 [TRANSFER LOOP DETECTED] 6 transfer_to_agent hops in a row with no other tool call in between (most recently ProductOwner -> ScrumMaster) - refusing this transfer. This looks like an unproductive rotation between roles rather than a direct two-agent ping-pong. Stop transferring and actually call a tool that makes progress, or explain the blocker in plain text instead.
 
 ## Test Approach
 Unit tests for all CRUD operations using pytest
